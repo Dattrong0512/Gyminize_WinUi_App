@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "Gyminize (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "Gyminize (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
