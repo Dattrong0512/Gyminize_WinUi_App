@@ -9,21 +9,25 @@ public class ThemeSelectorService : IThemeSelectorService
 {
     private const string SettingsKey = "AppBackgroundRequestedTheme";
 
+    // Thuộc tính Theme để lưu trữ chủ đề hiện tại.
     public ElementTheme Theme { get; set; } = ElementTheme.Default;
 
     private readonly ILocalSettingsService _localSettingsService;
 
+    // Khởi tạo ThemeSelectorService với ILocalSettingsService.
     public ThemeSelectorService(ILocalSettingsService localSettingsService)
     {
         _localSettingsService = localSettingsService;
     }
 
+    // Khởi tạo dịch vụ và tải chủ đề từ cài đặt.
     public async Task InitializeAsync()
     {
         Theme = await LoadThemeFromSettingsAsync();
         await Task.CompletedTask;
     }
 
+    // Đặt chủ đề và lưu vào cài đặt.
     public async Task SetThemeAsync(ElementTheme theme)
     {
         Theme = theme;
@@ -32,6 +36,7 @@ public class ThemeSelectorService : IThemeSelectorService
         await SaveThemeInSettingsAsync(Theme);
     }
 
+    // Áp dụng chủ đề đã chọn cho ứng dụng.
     public async Task SetRequestedThemeAsync()
     {
         if (App.MainWindow.Content is FrameworkElement rootElement)
@@ -44,6 +49,7 @@ public class ThemeSelectorService : IThemeSelectorService
         await Task.CompletedTask;
     }
 
+    // Tải chủ đề từ cài đặt.
     private async Task<ElementTheme> LoadThemeFromSettingsAsync()
     {
         var themeName = await _localSettingsService.ReadSettingAsync<string>(SettingsKey);
@@ -56,6 +62,7 @@ public class ThemeSelectorService : IThemeSelectorService
         return ElementTheme.Default;
     }
 
+    // Lưu chủ đề vào cài đặt.
     private async Task SaveThemeInSettingsAsync(ElementTheme theme)
     {
         await _localSettingsService.SaveSettingAsync(SettingsKey, theme.ToString());

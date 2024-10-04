@@ -5,6 +5,7 @@ using Microsoft.UI.Xaml;
 
 namespace Gyminize.Activation;
 
+// Trình xử lý kích hoạt mặc định, triển khai từ ActivationHandler<LaunchActivatedEventArgs>
 public class DefaultActivationHandler : ActivationHandler<LaunchActivatedEventArgs>
 {
     private readonly INavigationService _navigationService;
@@ -16,7 +17,7 @@ public class DefaultActivationHandler : ActivationHandler<LaunchActivatedEventAr
 
     protected override bool CanHandleInternal(LaunchActivatedEventArgs args)
     {
-        // None of the ActivationHandlers has handled the activation.
+        // Không có ActivationHandler nào đã xử lý kích hoạt.
         return _navigationService.Frame?.Content == null;
     }
 

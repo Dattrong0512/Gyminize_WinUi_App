@@ -1,4 +1,5 @@
-﻿using Gyminize.Activation;
+﻿// Tệp App.xaml.cs chứa logic khởi động và cấu hình ứng dụng.
+using Gyminize.Activation;
 using Gyminize.Contracts.Services;
 using Gyminize.Core.Contracts.Services;
 using Gyminize.Core.Services;
@@ -14,19 +15,16 @@ using Microsoft.UI.Xaml;
 
 namespace Gyminize;
 
-// To learn more about WinUI 3, see https://docs.microsoft.com/windows/apps/winui/winui3/.
+// Lớp App kế thừa từ Application để đại diện cho ứng dụng.
 public partial class App : Application
 {
-    // The .NET Generic Host provides dependency injection, configuration, logging, and other services.
-    // https://docs.microsoft.com/dotnet/core/extensions/generic-host
-    // https://docs.microsoft.com/dotnet/core/extensions/dependency-injection
-    // https://docs.microsoft.com/dotnet/core/extensions/configuration
-    // https://docs.microsoft.com/dotnet/core/extensions/logging
+    // Thuộc tính Host cung cấp các dịch vụ như dependency injection, cấu hình, logging, và các dịch vụ khác.
     public IHost Host
     {
         get;
     }
 
+    // Phương thức tĩnh để lấy dịch vụ đã đăng ký trong Host.
     public static T GetService<T>()
         where T : class
     {
@@ -38,25 +36,30 @@ public partial class App : Application
         return service;
     }
 
+    // Thuộc tính MainWindow đại diện cho cửa sổ chính của ứng dụng.
     public static WindowEx MainWindow { get; } = new MainWindow();
 
-    public static UIElement? AppTitlebar { get; set; }
+    // Thuộc tính AppTitlebar để lưu trữ tiêu đề của ứng dụng.
+    public static UIElement? AppTitlebar
+    {
+        get; set;
+    }
 
+    // Constructor của lớp App.
     public App()
     {
         InitializeComponent();
 
+        // Khởi tạo Host với các dịch vụ cần thiết.
         Host = Microsoft.Extensions.Hosting.Host.
         CreateDefaultBuilder().
         UseContentRoot(AppContext.BaseDirectory).
         ConfigureServices((context, services) =>
         {
-            // Default Activation Handler
+            // Đăng ký Activation Handlers.
             services.AddTransient<ActivationHandler<LaunchActivatedEventArgs>, DefaultActivationHandler>();
 
-            // Other Activation Handlers
-
-            // Services
+            // Đăng ký các dịch vụ khác.
             services.AddSingleton<IThemeSelectorService, ThemeSelectorService>();
             services.AddSingleton<ILocalSettingsService, LocalSettingsService>();
             services.AddTransient<INavigationViewService, NavigationViewService>();
@@ -69,7 +72,8 @@ public partial class App : Application
             services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();
 
-            // Views and ViewModels
+
+            // Đăng ký Views và ViewModels.
             services.AddTransient<ShopDetailViewModel>();
             services.AddTransient<ShopDetailPage>();
             services.AddTransient<ShopViewModel>();
@@ -85,24 +89,27 @@ public partial class App : Application
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();
 
-            // Configuration
+            // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));
         }).
         Build();
 
+        // Đăng ký sự kiện xử lý ngoại lệ không được xử lý.
         UnhandledException += App_UnhandledException;
     }
 
+    // Phương thức xử lý ngoại lệ không được xử lý.
     private void App_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
     {
-        // TODO: Log and handle exceptions as appropriate.
-        // https://docs.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.unhandledexception.
+        // TODO: Log và xử lý ngoại lệ theo cách phù hợp.
     }
 
+    // Phương thức được gọi khi ứng dụng được khởi chạy.
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
         base.OnLaunched(args);
 
-        await App.GetService<IActivationService>().ActivateAsync(args);
+        // Kích hoạt dịch vụ kích hoạt.
+        await App.GetService<IActivationService>().ActivateAsync((object)args);
     }
 }

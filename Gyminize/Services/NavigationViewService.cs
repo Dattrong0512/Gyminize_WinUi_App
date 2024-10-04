@@ -16,16 +16,20 @@ public class NavigationViewService : INavigationViewService
 
     private NavigationView? _navigationView;
 
+    // Thuộc tính danh sách các mục menu.
     public IList<object>? MenuItems => _navigationView?.MenuItems;
 
+    // Thuộc tính mục cài đặt.
     public object? SettingsItem => _navigationView?.SettingsItem;
 
+    // Khởi tạo NavigationViewService với INavigationService và IPageService.
     public NavigationViewService(INavigationService navigationService, IPageService pageService)
     {
         _navigationService = navigationService;
         _pageService = pageService;
     }
 
+    // Khởi tạo NavigationView với NavigationView cụ thể.
     [MemberNotNull(nameof(_navigationView))]
     public void Initialize(NavigationView navigationView)
     {
@@ -34,6 +38,7 @@ public class NavigationViewService : INavigationViewService
         _navigationView.ItemInvoked += OnItemInvoked;
     }
 
+    // Hủy đăng ký các sự kiện.
     public void UnregisterEvents()
     {
         if (_navigationView != null)
@@ -43,6 +48,7 @@ public class NavigationViewService : INavigationViewService
         }
     }
 
+    // Lấy mục được chọn dựa trên loại trang.
     public NavigationViewItem? GetSelectedItem(Type pageType)
     {
         if (_navigationView != null)
@@ -53,13 +59,15 @@ public class NavigationViewService : INavigationViewService
         return null;
     }
 
+    // Xử lý sự kiện BackRequested của NavigationView.
     private void OnBackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args) => _navigationService.GoBack();
 
+    // Xử lý sự kiện ItemInvoked của NavigationView.
     private void OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
     {
         if (args.IsSettingsInvoked)
         {
-            // Navigate to the settings page.
+            // Điều hướng đến trang cài đặt.
         }
         else
         {
@@ -72,6 +80,7 @@ public class NavigationViewService : INavigationViewService
         }
     }
 
+    // Lấy mục được chọn từ danh sách các mục menu.
     private NavigationViewItem? GetSelectedItem(IEnumerable<object> menuItems, Type pageType)
     {
         foreach (var item in menuItems.OfType<NavigationViewItem>())
@@ -91,6 +100,7 @@ public class NavigationViewService : INavigationViewService
         return null;
     }
 
+    // Kiểm tra xem mục menu có phải là cho loại trang cụ thể hay không.
     private bool IsMenuItemForPageType(NavigationViewItem menuItem, Type sourcePageType)
     {
         if (menuItem.GetValue(NavigationHelper.NavigateToProperty) is string pageKey)

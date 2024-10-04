@@ -32,6 +32,7 @@ public class LocalSettingsService : ILocalSettingsService
         _fileService = fileService;
         _options = options.Value;
 
+        // Đặt đường dẫn thư mục dữ liệu ứng dụng và tệp cài đặt cục bộ.
         _applicationDataFolder = Path.Combine(_localApplicationData, _options.ApplicationDataFolder ?? _defaultApplicationDataFolder);
         _localsettingsFile = _options.LocalSettingsFile ?? _defaultLocalSettingsFile;
 
@@ -42,6 +43,7 @@ public class LocalSettingsService : ILocalSettingsService
     {
         if (!_isInitialized)
         {
+            // Đọc cài đặt từ tệp cài đặt cục bộ.
             _settings = await Task.Run(() => _fileService.Read<IDictionary<string, object>>(_applicationDataFolder, _localsettingsFile)) ?? new Dictionary<string, object>();
 
             _isInitialized = true;
@@ -52,6 +54,7 @@ public class LocalSettingsService : ILocalSettingsService
     {
         if (RuntimeHelper.IsMSIX)
         {
+            // Đọc cài đặt từ ApplicationData.Current.LocalSettings nếu ứng dụng đang chạy dưới MSIX.
             if (ApplicationData.Current.LocalSettings.Values.TryGetValue(key, out var obj))
             {
                 return await Json.ToObjectAsync<T>((string)obj);
@@ -59,6 +62,7 @@ public class LocalSettingsService : ILocalSettingsService
         }
         else
         {
+            // Đọc cài đặt từ tệp cài đặt cục bộ.
             await InitializeAsync();
 
             if (_settings != null && _settings.TryGetValue(key, out var obj))
@@ -74,10 +78,12 @@ public class LocalSettingsService : ILocalSettingsService
     {
         if (RuntimeHelper.IsMSIX)
         {
+            // Lưu cài đặt vào ApplicationData.Current.LocalSettings nếu ứng dụng đang chạy dưới MSIX.
             ApplicationData.Current.LocalSettings.Values[key] = await Json.StringifyAsync(value);
         }
         else
         {
+            // Lưu cài đặt vào tệp cài đặt cục bộ.
             await InitializeAsync();
 
             _settings[key] = await Json.StringifyAsync(value);

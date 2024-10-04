@@ -1,14 +1,14 @@
 ﻿namespace Gyminize.Activation;
 
-// Extend this class to implement new ActivationHandlers. See DefaultActivationHandler for an example.
+// Lớp cơ sở trừu tượng để triển khai các ActivationHandler mới. Xem DefaultActivationHandler để biết ví dụ.
 // https://github.com/microsoft/TemplateStudio/blob/main/docs/WinUI/activation.md
 public abstract class ActivationHandler<T> : IActivationHandler
     where T : class
 {
-    // Override this method to add the logic for whether to handle the activation.
+    // Ghi đè phương thức này để thêm logic cho việc xử lý kích hoạt.
     protected virtual bool CanHandleInternal(T args) => true;
 
-    // Override this method to add the logic for your activation handler.
+    // Ghi đè phương thức này để thêm logic cho trình xử lý kích hoạt của bạn.
     protected abstract Task HandleInternalAsync(T args);
 
     public bool CanHandle(object args) => args is T && CanHandleInternal((args as T)!);

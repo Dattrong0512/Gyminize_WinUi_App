@@ -12,6 +12,7 @@ public class PageService : IPageService
 {
     private readonly Dictionary<string, Type> _pages = new();
 
+    // Khởi tạo PageService và cấu hình các trang.
     public PageService()
     {
         Configure<HomeViewModel, HomePage>();
@@ -22,6 +23,7 @@ public class PageService : IPageService
         Configure<ShopDetailViewModel, ShopDetailPage>();
     }
 
+    // Lấy loại trang dựa trên khóa trang.
     public Type GetPageType(string key)
     {
         Type? pageType;
@@ -36,6 +38,7 @@ public class PageService : IPageService
         return pageType;
     }
 
+    // Cấu hình trang với ViewModel và View cụ thể.
     private void Configure<VM, V>()
         where VM : ObservableObject
         where V : Page

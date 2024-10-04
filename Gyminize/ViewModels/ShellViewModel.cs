@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿// ViewModel cho Shell (khung chính của ứng dụng).
+// Kế thừa từ ObservableRecipient để hỗ trợ thông báo thay đổi thuộc tính.
+using CommunityToolkit.Mvvm.ComponentModel;
 
 using Gyminize.Contracts.Services;
 using Gyminize.Views;
@@ -9,22 +11,27 @@ namespace Gyminize.ViewModels;
 
 public partial class ShellViewModel : ObservableRecipient
 {
+    // Thuộc tính kiểm tra xem có thể quay lại trang trước hay không.
     [ObservableProperty]
     private bool isBackEnabled;
 
+    // Thuộc tính lưu trữ mục được chọn trong NavigationView.
     [ObservableProperty]
     private object? selected;
 
+    // Dịch vụ điều hướng.
     public INavigationService NavigationService
     {
         get;
     }
 
+    // Dịch vụ NavigationView.
     public INavigationViewService NavigationViewService
     {
         get;
     }
 
+    // Khởi tạo ShellViewModel với INavigationService và INavigationViewService.
     public ShellViewModel(INavigationService navigationService, INavigationViewService navigationViewService)
     {
         NavigationService = navigationService;
@@ -32,6 +39,7 @@ public partial class ShellViewModel : ObservableRecipient
         NavigationViewService = navigationViewService;
     }
 
+    // Xử lý sự kiện điều hướng.
     private void OnNavigated(object sender, NavigationEventArgs e)
     {
         IsBackEnabled = NavigationService.CanGoBack;

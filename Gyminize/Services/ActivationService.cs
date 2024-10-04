@@ -1,4 +1,7 @@
-﻿using Gyminize.Activation;
+﻿// Tệp này định nghĩa dịch vụ kích hoạt ứng dụng.
+// Dịch vụ này chịu trách nhiệm xử lý các sự kiện kích hoạt của ứng dụng.
+
+using Gyminize.Activation;
 using Gyminize.Contracts.Services;
 using Gyminize.Views;
 
@@ -23,49 +26,54 @@ public class ActivationService : IActivationService
 
     public async Task ActivateAsync(object activationArgs)
     {
-        // Execute tasks before activation.
+        // Thực hiện các tác vụ trước khi kích hoạt.
         await InitializeAsync();
 
-        // Set the MainWindow Content.
+        // Đặt nội dung cho MainWindow.
         if (App.MainWindow.Content == null)
         {
             _shell = App.GetService<ShellPage>();
             App.MainWindow.Content = _shell ?? new Frame();
         }
 
-        // Handle activation via ActivationHandlers.
+        // Xử lý kích hoạt thông qua các ActivationHandlers.
         await HandleActivationAsync(activationArgs);
 
-        // Activate the MainWindow.
+        // Kích hoạt MainWindow.
         App.MainWindow.Activate();
 
-        // Execute tasks after activation.
+        // Thực hiện các tác vụ sau khi kích hoạt.
         await StartupAsync();
     }
 
     private async Task HandleActivationAsync(object activationArgs)
     {
+        // Tìm ActivationHandler có thể xử lý activationArgs.
         var activationHandler = _activationHandlers.FirstOrDefault(h => h.CanHandle(activationArgs));
 
         if (activationHandler != null)
         {
+            // Xử lý activationArgs bằng ActivationHandler tìm được.
             await activationHandler.HandleAsync(activationArgs);
         }
 
         if (_defaultHandler.CanHandle(activationArgs))
         {
+            // Xử lý activationArgs bằng defaultHandler nếu không có ActivationHandler nào khác có thể xử lý.
             await _defaultHandler.HandleAsync(activationArgs);
         }
     }
 
     private async Task InitializeAsync()
     {
+        // Khởi tạo dịch vụ chọn chủ đề.
         await _themeSelectorService.InitializeAsync().ConfigureAwait(false);
         await Task.CompletedTask;
     }
 
     private async Task StartupAsync()
     {
+        // Đặt chủ đề yêu cầu cho ứng dụng.
         await _themeSelectorService.SetRequestedThemeAsync();
         await Task.CompletedTask;
     }
