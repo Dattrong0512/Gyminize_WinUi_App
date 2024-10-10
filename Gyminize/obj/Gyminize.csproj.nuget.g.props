@@ -5,13 +5,14 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\DAT TRONG\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Bach Yen\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages;C:\Program Files\dotnet\sdk\NuGetFallbackFolder</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\DAT TRONG\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\Bach Yen\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+    <SourceRoot Include="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.windows.sdk.buildtools\10.0.22621.1\build\Microsoft.Windows.SDK.BuildTools.props" Condition="Exists('$(NuGetPackageRoot)microsoft.windows.sdk.buildtools\10.0.22621.1\build\Microsoft.Windows.SDK.BuildTools.props')" />
@@ -19,14 +20,14 @@
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\6.0.1\buildTransitive\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\6.0.1\buildTransitive\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_WindowsAppSDK Condition=" '$(PkgMicrosoft_WindowsAppSDK)' == '' ">C:\Users\DAT TRONG\.nuget\packages\microsoft.windowsappsdk\1.4.231008000</PkgMicrosoft_WindowsAppSDK>
-    <PkgWinUIEx Condition=" '$(PkgWinUIEx)' == '' ">C:\Users\DAT TRONG\.nuget\packages\winuiex\2.3.2</PkgWinUIEx>
-    <PkgCommunityToolkit_WinUI_UI_Controls_Primitives Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Primitives)' == '' ">C:\Users\DAT TRONG\.nuget\packages\communitytoolkit.winui.ui.controls.primitives\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Primitives>
-    <PkgCommunityToolkit_WinUI_UI_Controls_Media Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Media)' == '' ">C:\Users\DAT TRONG\.nuget\packages\communitytoolkit.winui.ui.controls.media\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Media>
-    <PkgCommunityToolkit_WinUI_UI_Controls_Core Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Core)' == '' ">C:\Users\DAT TRONG\.nuget\packages\communitytoolkit.winui.ui.controls.core\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Core>
-    <PkgCommunityToolkit_WinUI_UI_Controls_Markdown Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Markdown)' == '' ">C:\Users\DAT TRONG\.nuget\packages\communitytoolkit.winui.ui.controls.markdown\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Markdown>
-    <PkgCommunityToolkit_WinUI_UI_Controls_Layout Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Layout)' == '' ">C:\Users\DAT TRONG\.nuget\packages\communitytoolkit.winui.ui.controls.layout\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Layout>
-    <PkgCommunityToolkit_WinUI_UI_Controls_Input Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Input)' == '' ">C:\Users\DAT TRONG\.nuget\packages\communitytoolkit.winui.ui.controls.input\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Input>
-    <PkgCommunityToolkit_WinUI_UI_Controls_DataGrid Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_DataGrid)' == '' ">C:\Users\DAT TRONG\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_DataGrid>
+    <PkgMicrosoft_WindowsAppSDK Condition=" '$(PkgMicrosoft_WindowsAppSDK)' == '' ">C:\Users\Bach Yen\.nuget\packages\microsoft.windowsappsdk\1.4.231008000</PkgMicrosoft_WindowsAppSDK>
+    <PkgWinUIEx Condition=" '$(PkgWinUIEx)' == '' ">C:\Users\Bach Yen\.nuget\packages\winuiex\2.3.2</PkgWinUIEx>
+    <PkgCommunityToolkit_WinUI_UI_Controls_Primitives Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Primitives)' == '' ">C:\Users\Bach Yen\.nuget\packages\communitytoolkit.winui.ui.controls.primitives\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Primitives>
+    <PkgCommunityToolkit_WinUI_UI_Controls_Media Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Media)' == '' ">C:\Users\Bach Yen\.nuget\packages\communitytoolkit.winui.ui.controls.media\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Media>
+    <PkgCommunityToolkit_WinUI_UI_Controls_Core Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Core)' == '' ">C:\Users\Bach Yen\.nuget\packages\communitytoolkit.winui.ui.controls.core\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Core>
+    <PkgCommunityToolkit_WinUI_UI_Controls_Markdown Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Markdown)' == '' ">C:\Users\Bach Yen\.nuget\packages\communitytoolkit.winui.ui.controls.markdown\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Markdown>
+    <PkgCommunityToolkit_WinUI_UI_Controls_Layout Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Layout)' == '' ">C:\Users\Bach Yen\.nuget\packages\communitytoolkit.winui.ui.controls.layout\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Layout>
+    <PkgCommunityToolkit_WinUI_UI_Controls_Input Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_Input)' == '' ">C:\Users\Bach Yen\.nuget\packages\communitytoolkit.winui.ui.controls.input\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_Input>
+    <PkgCommunityToolkit_WinUI_UI_Controls_DataGrid Condition=" '$(PkgCommunityToolkit_WinUI_UI_Controls_DataGrid)' == '' ">C:\Users\Bach Yen\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2</PkgCommunityToolkit_WinUI_UI_Controls_DataGrid>
   </PropertyGroup>
 </Project>

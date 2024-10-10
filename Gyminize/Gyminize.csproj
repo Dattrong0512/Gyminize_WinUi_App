@@ -14,6 +14,22 @@
 	<UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Assets\bodyfat_male1.png" />
+    <Content Remove="Assets\bodyfat_male2.png" />
+    <Content Remove="Assets\bodyfat_male3.png" />
+    <Content Remove="Assets\bodyfat_male4.png" />
+    <Content Remove="Assets\bodyfat_male5.png" />
+    <Content Remove="Assets\iconapp.png" />
+    <Content Remove="Assets\training.jfif" />
+    <Content Remove="Assets\training1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\GuidePage1.xaml" />
+    <None Remove="Views\GuidePage2.xaml" />
+    <None Remove="Views\SigninPage.xaml" />
+    <None Remove="Views\SignupPage.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
@@ -36,6 +52,18 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\GuidePage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\GuidePage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\SigninPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\SignupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
