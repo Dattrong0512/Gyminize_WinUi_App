@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj": {}
+    "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize\\Gyminize.csproj": {}
   },
   "projects": {
-    "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {
+    "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize.Core\\Gyminize.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj",
+        "projectUniqueName": "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize.Core\\Gyminize.Core.csproj",
         "projectName": "Gyminize.Core",
-        "projectPath": "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj",
-        "packagesPath": "C:\\Users\\Bach Yen\\.nuget\\packages\\",
-        "outputPath": "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize.Core\\obj\\",
+        "projectPath": "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize.Core\\Gyminize.Core.csproj",
+        "packagesPath": "C:\\Users\\DAT TRONG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bach Yen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DAT TRONG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -51,9 +50,25 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.3.2, )"
+            },
+            "Microsoft.IdentityModel.Protocols.OpenIdConnect": {
+              "target": "Package",
+              "version": "[8.1.2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
+            },
+            "RelayCommand": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "System.ComponentModel": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -72,25 +87,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj": {
+    "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize\\Gyminize.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
+        "projectUniqueName": "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize\\Gyminize.csproj",
         "projectName": "Gyminize",
-        "projectPath": "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
-        "packagesPath": "C:\\Users\\Bach Yen\\.nuget\\packages\\",
-        "outputPath": "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize\\obj\\",
+        "projectPath": "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize\\Gyminize.csproj",
+        "packagesPath": "C:\\Users\\DAT TRONG\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bach Yen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DAT TRONG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -106,8 +120,8 @@
           "net7.0-windows10.0.19041": {
             "targetAlias": "net7.0-windows10.0.19041.0",
             "projectReferences": {
-              "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {
-                "projectPath": "J:\\StudyingOnly\\csharplearning\\WPProject\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj"
+              "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize.Core\\Gyminize.Core.csproj": {
+                "projectPath": "C:\\Users\\DAT TRONG\\OneDrive - VNU-HCMUS\\Desktop\\APP_WINUI\\WINUI\\Gyminize.Core\\Gyminize.Core.csproj"
               }
             }
           }
@@ -129,7 +143,7 @@
           "dependencies": {
             "CommunityToolkit.Mvvm": {
               "target": "Package",
-              "version": "[8.1.0, )"
+              "version": "[8.3.2, )"
             },
             "CommunityToolkit.WinUI.UI.Animations": {
               "target": "Package",
@@ -143,6 +157,10 @@
               "target": "Package",
               "version": "[6.0.1, )"
             },
+            "Microsoft.IdentityModel.Protocols.OpenIdConnect": {
+              "target": "Package",
+              "version": "[8.1.2, )"
+            },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
               "version": "[1.4.231008000, )"
@@ -150,6 +168,14 @@
             "Microsoft.Xaml.Behaviors.WinUI.Managed": {
               "target": "Package",
               "version": "[2.0.9, )"
+            },
+            "RelayCommand": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "System.ComponentModel": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             },
             "WinUIEx": {
               "target": "Package",
@@ -217,7 +243,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

@@ -12,6 +12,7 @@ using Gyminize.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace Gyminize;
 
@@ -88,6 +89,8 @@ public partial class App : Application
             services.AddTransient<HomePage>();
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();
+            services.AddTransient<SigninPage>();
+            services.AddTransient<SigninViewmodel>();
 
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));
@@ -108,8 +111,13 @@ public partial class App : Application
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
         base.OnLaunched(args);
+        
 
         // Kích hoạt dịch vụ kích hoạt.
         await App.GetService<IActivationService>().ActivateAsync((object)args);
+     
+
+        
     }
+    
 }

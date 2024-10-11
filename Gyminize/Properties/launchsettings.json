@@ -1,10 +1,14 @@
 ﻿{
-    "profiles": {
-      "Gyminize (Package)": {
-        "commandName": "MsixPackage"
-      },
-      "Gyminize (Unpackaged)": {
-        "commandName": "Project"
+  "profiles": {
+    "Gyminize (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Gyminize (Unpackaged)": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:8080",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
+  }
 }

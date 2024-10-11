@@ -21,6 +21,7 @@ public class PageService : IPageService
         Configure<DiaryViewModel, DiaryPage>();
         Configure<ShopViewModel, ShopPage>();
         Configure<ShopDetailViewModel, ShopDetailPage>();
+        Configure<SigninViewmodel, SigninPage>(); // Thêm dòng này
     }
 
     // Lấy loại trang dựa trên khóa trang.

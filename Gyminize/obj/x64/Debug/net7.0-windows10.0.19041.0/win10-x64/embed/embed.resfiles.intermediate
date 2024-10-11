@@ -4,9 +4,13 @@ Styles\FontSizes.xbf
 Styles\TextBlock.xbf
 Styles\Thickness.xbf
 Views\DiaryPage.xbf
+Views\GuidePage1.xbf
+Views\GuidePage2.xbf
 Views\HomePage.xbf
 Views\NutritionsPage.xbf
 Views\PlanPage.xbf
 Views\ShellPage.xbf
 Views\ShopDetailPage.xbf
 Views\ShopPage.xbf
+Views\SigninPage.xbf
+Views\SignupPage.xbf

@@ -1,1 +1,1 @@
-J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize\Gyminize.csproj;x64
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\Gyminize.csproj;x64

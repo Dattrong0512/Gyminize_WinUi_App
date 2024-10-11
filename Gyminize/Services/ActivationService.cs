@@ -32,7 +32,7 @@ public class ActivationService : IActivationService
         // Đặt nội dung cho MainWindow.
         if (App.MainWindow.Content == null)
         {
-            _shell = App.GetService<ShellPage>();
+            _shell = App.GetService<SigninPage>();
             App.MainWindow.Content = _shell ?? new Frame();
         }
 

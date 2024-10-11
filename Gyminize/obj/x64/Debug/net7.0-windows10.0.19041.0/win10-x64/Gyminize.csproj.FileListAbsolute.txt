@@ -680,3 +680,35 @@ J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize\obj\x64\Deb
 J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage1.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage2.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SigninPage.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SignupPage.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage1.g.i.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage1.g.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage2.g.i.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage2.g.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SigninPage.g.i.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SigninPage.g.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SignupPage.g.i.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SignupPage.g.cs
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage1.xaml
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage2.xaml
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SigninPage.xaml
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SignupPage.xaml
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage1.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage2.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SigninPage.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\SignupPage.xbf
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\training.jfif
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\training1.png
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\iconapp.png
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Bcl.TimeProvider.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.Logging.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.Protocols.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.Tokens.dll
+C:\Users\DAT TRONG\OneDrive - VNU-HCMUS\Desktop\APP_WINUI\WINUI\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\System.IdentityModel.Tokens.Jwt.dll
