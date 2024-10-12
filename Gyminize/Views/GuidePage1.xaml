@@ -6,8 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:Gyminize.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Gyminize.ViewModels"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:Guide1ViewModel />
+    </Page.DataContext>
 
     <Grid Background="#515DEF">
         <Grid.ColumnDefinitions>
@@ -50,13 +55,19 @@
                 HorizontalAlignment="Center"
                 Orientation="Horizontal">
                 <CheckBox
+                    x:Name="maleCheckBox"
                     Margin="10,0,10,10"
                     Padding="10"
-                    Content="Nam" />
+                    Checked="maleCheckBox_Checked"
+                    Content="Nam"
+                    IsChecked="{Binding MaleCheckBox.IsChecked, Mode=TwoWay}" />
                 <CheckBox
+                    x:Name="femaleCheckBox"
                     Margin="10,0,10,10"
                     Padding="10"
-                    Content="Nữ" />
+                    Checked="femaleCheckBox_Checked"
+                    Content="Nữ"
+                    IsChecked="{Binding FemaleCheckBox.IsChecked, Mode=TwoWay}" />
             </StackPanel>
             <TextBlock
                 Margin="10,10,200,10"
@@ -65,14 +76,25 @@
                 Tuổi:
             </TextBlock>
             <TextBox
+                x:Name="ageTextBox"
                 Width="300"
                 Height="40"
                 Margin="10,0,10,10"
                 Padding="10"
                 HorizontalAlignment="Center"
                 BorderBrush="#515DEF"
+                LostFocus="AgeTextBox_LostFocus"
                 PlaceholderText="18"
+                Text="{Binding AgeTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 TextAlignment="Center" />
+            <TextBlock
+                x:Name="ageErrorTextBlock"
+                HorizontalAlignment="Center"
+                FontSize="12"
+                FontStyle="Italic"
+                Foreground="Red"
+                Text="{Binding AgeErrorTextBlock.Text}"
+                Visibility="{Binding AgeErrorTextBlock.Visibility}" />
             <TextBlock
                 Margin="10,10,200,10"
                 HorizontalAlignment="Center"
@@ -80,14 +102,25 @@
                 Chiều cao:
             </TextBlock>
             <TextBox
+                x:Name="heightTextBox"
                 Width="300"
                 Height="40"
                 Margin="10,0,10,10"
                 Padding="10"
                 HorizontalAlignment="Center"
                 BorderBrush="#515DEF"
+                LostFocus="HeightTextBox_LostFocus"
                 PlaceholderText="180cm"
+                Text="{Binding HeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 TextAlignment="Center" />
+            <TextBlock
+                x:Name="heightErrorTextBlock"
+                HorizontalAlignment="Center"
+                FontSize="12"
+                FontStyle="Italic"
+                Foreground="Red"
+                Text="{Binding HeightErrorTextBlock.Text}"
+                Visibility="{Binding HeightErrorTextBlock.Visibility}" />
             <TextBlock
                 Margin="10,10,200,10"
                 HorizontalAlignment="Center"
@@ -95,16 +128,27 @@
                 Cân nặng:
             </TextBlock>
             <TextBox
+                x:Name="weightTextBox"
                 Width="300"
                 Height="40"
                 Margin="10,0,10,10"
                 Padding="10"
                 HorizontalAlignment="Center"
                 BorderBrush="#515DEF"
+                LostFocus="WeightTextBox_LostFocus"
                 PlaceholderText="75Kg"
+                Text="{Binding WeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 TextAlignment="Center" />
             <TextBlock
-                Margin="10,10,10,10"
+                x:Name="weightErrorTextBlock"
+                HorizontalAlignment="Center"
+                FontSize="12"
+                FontStyle="Italic"
+                Foreground="Red"
+                Text="{Binding WeightErrorTextBlock.Text}"
+                Visibility="{Binding WeightErrorTextBlock.Visibility}" />
+            <TextBlock
+                Margin="10,10,200,10"
                 HorizontalAlignment="Center"
                 Foreground="#3D52A0">
                 Tần suất vận động
@@ -113,32 +157,21 @@
                 Grid.Column="1"
                 HorizontalAlignment="Center"
                 Orientation="Horizontal">
-                <Button
-                    Width="120"
-                    Height="70"
+                <ComboBox
+                    Width="300"
+                    Height="40"
                     Margin="10,0,10,10"
-                    Padding="10"
-                    Background="#515DEF"
-                    Content="Thấp"
-                    Foreground="White" />
-                <Button
-                    Width="120"
-                    Height="70"
-                    Margin="10,0,10,10"
-                    Padding="10"
-                    Background="#515DEF"
-                    Content="Trung bình"
-                    Foreground="White" />
-                <Button
-                    Width="120"
-                    Height="70"
-                    Margin="10,0,10,10"
-                    Padding="10"
-                    Background="#515DEF"
-                    Content="Cao"
-                    Foreground="white" />
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    BorderBrush="#515DEF"
+                    Foreground="#3D52A0"
+                    SelectedIndex="2">
+                    <ComboBoxItem HorizontalAlignment="Center" Content="Hầu như không vận động" />
+                    <ComboBoxItem HorizontalAlignment="Center" Content="Thấp ( 1 - 2 buổi/tuần )" />
+                    <ComboBoxItem HorizontalAlignment="Center" Content="Trung Bình ( 3 - 5 buổi/tuần )" />
+                    <ComboBoxItem HorizontalAlignment="Center" Content="Cao ( 6 - 7 buổi/tuần )" />
+                </ComboBox>
             </StackPanel>
         </StackPanel>
-
     </Grid>
 </Page>

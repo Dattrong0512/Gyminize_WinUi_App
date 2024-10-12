@@ -24,3 +24,16 @@ J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize.Core\obj\De
 J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\refint\Gyminize.Core.dll
 J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.pdb
 J:\StudyingOnly\csharplearning\WPProject\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\ref\Gyminize.Core.dll
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.deps.json
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.dll
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.pdb
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.csproj.AssemblyReference.cache
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.GeneratedMSBuildEditorConfig.editorconfig
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.AssemblyInfoInputs.cache
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.AssemblyInfo.cs
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.csproj.CoreCompileInputs.cache
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.sourcelink.json
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.dll
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\refint\Gyminize.Core.dll
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.pdb
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\ref\Gyminize.Core.dll

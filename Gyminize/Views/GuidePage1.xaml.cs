@@ -12,20 +12,67 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Gyminize.ViewModels;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace Gyminize.Views
+namespace Gyminize.Views;
+
+/// <summary>
+/// An empty page that can be used on its own or navigated to within a Frame.
+/// </summary>
+public sealed partial class GuidePage1 : Page
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class GuidePage1 : Page
+    public Guide1ViewModel ViewModel { get; }
+
+    public GuidePage1()
     {
-        public GuidePage1()
+        ViewModel = App.GetService<Guide1ViewModel>();
+        InitializeComponent();
+       
+    }
+
+    
+    private void AgeTextBox_LostFocus(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is Guide1ViewModel viewModel)
         {
-            this.InitializeComponent();
+            viewModel.AgeLostFocusCommand.Execute(null);
+        }
+    }
+
+    private void HeightTextBox_LostFocus(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is Guide1ViewModel viewModel)
+        {
+            viewModel.HeightLostFocusCommand.Execute(null);
+        }
+    }
+
+    private void WeightTextBox_LostFocus(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is Guide1ViewModel viewModel)
+        {
+            viewModel.WeightLostFocusCommand.Execute(null);
+        }
+    }
+
+    
+
+    private void maleCheckBox_Checked(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is Guide1ViewModel viewModel)
+        {
+            viewModel.MaleCheckCommand.Execute(null);
+        }
+    }
+
+    private void femaleCheckBox_Checked(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is Guide1ViewModel viewModel)
+        {
+            viewModel.FemaleCheckCommand.Execute(null);
         }
     }
 }

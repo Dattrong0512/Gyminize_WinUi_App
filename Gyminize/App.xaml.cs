@@ -90,7 +90,12 @@ public partial class App : Application
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();
             services.AddTransient<SigninPage>();
+            services.AddTransient<Guide1ViewModel>();
+            services.AddTransient<GuidePage1>();
+            services.AddTransient<Guide2ViewModel>();
+            services.AddTransient<GuidePage2>();
             services.AddTransient<SigninViewmodel>();
+
 
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));
