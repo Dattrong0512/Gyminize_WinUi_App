@@ -108,11 +108,19 @@
         },
         {
           "DockedWidth": 336,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
@@ -208,8 +216,7 @@
               "RelativeToolTip": "Gyminize\\Views\\GuidePage2.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-12T06:41:05.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T06:41:05.546Z"
             },
             {
               "$type": "Document",
@@ -305,8 +312,7 @@
               "RelativeToolTip": "Gyminize\\Views\\GuidePage1.xaml.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAcwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T06:27:11.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T06:27:11.632Z"
             },
             {
               "$type": "Document",
@@ -352,7 +358,7 @@
               "RelativeDocumentMoniker": "Gyminize\\Views\\GuidePage1.xaml",
               "ToolTip": "J:\\StudyingOnly\\csharplearning\\WinProject2024\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage1.xaml",
               "RelativeToolTip": "Gyminize\\Views\\GuidePage1.xaml",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAAFcAAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAFcAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-12T06:20:52.411Z",
               "EditorCaption": ""
@@ -380,14 +386,6 @@
               "ViewState": "AgIAALQAAAAAAAAAAAAowNIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-11T10:18:13.118Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
