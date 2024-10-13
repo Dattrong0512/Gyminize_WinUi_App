@@ -65,5 +65,28 @@ namespace Gyminize.Views
                 ViewModel.PointerReleasedCommand.Execute(border);
             }
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ViewModel.OnNavigatedTo(e.Parameter);
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            ViewModel.OnNavigatedFrom();
+        }
+
+        private void backIcon_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var viewModel = (Guide2ViewModel)this.DataContext;
+            viewModel.NavigateBackCommand.Execute(null);
+        }
+
+        private void nextIcon_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            
+        }
     }
 }

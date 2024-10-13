@@ -10,7 +10,7 @@ using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 using Gyminize.Contracts.Services;
 using Gyminize.Views;
-
+using Gyminize.Models;
 namespace Gyminize.ViewModels;
 public partial class Guide1ViewModel : ObservableRecipient
 {
@@ -33,6 +33,9 @@ public partial class Guide1ViewModel : ObservableRecipient
         _heightErrorTextBlock = new TextBlock();
         _weightTextBox = new TextBox();
         _weightErrorTextBlock = new TextBlock();
+
+        SelectedActivityLevel = new ComboBoxItem { Content = "Trung Bình ( 3 - 5 buổi/tuần )" };
+
     }
 
     public ICommand MaleCheckCommand { get; }
@@ -45,6 +48,19 @@ public partial class Guide1ViewModel : ObservableRecipient
         get;
     }
 
+    private ComboBox _activityLevelComboBox;
+    public ComboBox ActivityLevelComboBox
+    {
+        get => _activityLevelComboBox;
+        set => SetProperty(ref _activityLevelComboBox, value);
+    }
+
+    private ComboBoxItem _selectedActivityLevel;
+    public ComboBoxItem SelectedActivityLevel
+    {
+        get => _selectedActivityLevel;
+        set => SetProperty(ref _selectedActivityLevel, value);
+    }
     private CheckBox _maleCheckBox;
     public CheckBox MaleCheckBox
     {
@@ -94,6 +110,13 @@ public partial class Guide1ViewModel : ObservableRecipient
         set => SetProperty(ref _weightTextBox, value);
     }
 
+    private bool _isValid;
+    public bool IsValid
+    {
+        get => _isValid;
+        set => SetProperty(ref _isValid, value);
+    }
+
     private TextBlock _weightErrorTextBlock;
     public TextBlock WeightErrorTextBlock
     {
@@ -128,17 +151,20 @@ public partial class Guide1ViewModel : ObservableRecipient
             {
                 AgeErrorTextBlock.Visibility = Visibility.Visible;
                 AgeErrorTextBlock.Text = "*Ứng dụng chỉ hỗ trợ đối tượng từ 16-70 tuổi";
+                IsValid = false;
             }
             else
             {
                 AgeErrorTextBlock.Visibility = Visibility.Collapsed;
                 AgeErrorTextBlock.Text = "*OK";
+                IsValid = true;
             }
         }
         else if (string.IsNullOrEmpty(AgeTextBox.Text))
         {
             AgeErrorTextBlock.Visibility = Visibility.Visible;
             AgeErrorTextBlock.Text = "*Vui lòng nhập một độ tuổi hợp lệ";
+            IsValid = false;
         }
     }
 
@@ -150,11 +176,13 @@ public partial class Guide1ViewModel : ObservableRecipient
             {
                 HeightErrorTextBlock.Visibility = Visibility.Visible;
                 HeightErrorTextBlock.Text = "*Chiều cao không được hỗ trợ";
+                IsValid = false;
             }
             else
             {
                 HeightErrorTextBlock.Visibility = Visibility.Collapsed;
                 HeightErrorTextBlock.Text = "*OK";
+                IsValid = false;
             }
         }
         else if (string.IsNullOrEmpty(HeightTextBox.Text))
@@ -186,12 +214,36 @@ public partial class Guide1ViewModel : ObservableRecipient
         }
     }
 
+    private int GetSelectedActivityLevel()
+    {
+        return SelectedActivityLevel?.Content switch
+        {
+            "Hầu như không vận động" => 1,
+            "Thấp ( 1 - 2 buổi/tuần )" => 2,
+            "Trung Bình ( 3 - 5 buổi/tuần )" => 3,
+            "Cao ( 6 - 7 buổi/tuần )" => 4,
+            _ => 0
+        };
+    }
+
     private void NavigateToGuidePage2()
     {
+        var customerInfo = new CustomerInfo
+        {
+            sex = MaleCheckBox.IsChecked == true ? 1 : 0,
+            Age = int.Parse(AgeTextBox.Text),
+            Weight = double.Parse(WeightTextBox.Text),
+            Height = int.Parse(HeightTextBox.Text),
+            ActivityLevel = GetSelectedActivityLevel(),
+            BodyFat = 0
+
+        };
+
+
         var pageKey = typeof(Guide2ViewModel).FullName;
         if (pageKey != null)
         {
-            _navigationService.NavigateTo(pageKey);
+            _navigationService.NavigateTo(pageKey,customerInfo);
         }
     }
 }

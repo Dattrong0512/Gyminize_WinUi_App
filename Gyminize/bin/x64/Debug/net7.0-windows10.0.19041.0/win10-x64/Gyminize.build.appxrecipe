@@ -40,6 +40,36 @@
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Gyminize.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_female_1.png">
+      <PackagePath>Assets\bodyfat_female_1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_female_2.png">
+      <PackagePath>Assets\bodyfat_female_2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_female_3.png">
+      <PackagePath>Assets\bodyfat_female_3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_female_4.png">
+      <PackagePath>Assets\bodyfat_female_4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_female_5.png">
+      <PackagePath>Assets\bodyfat_female_5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_male1.png">
+      <PackagePath>Assets\bodyfat_male1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_male2.png">
+      <PackagePath>Assets\bodyfat_male2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_male3.png">
+      <PackagePath>Assets\bodyfat_male3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_male4.png">
+      <PackagePath>Assets\bodyfat_male4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\bodyfat_male5.png">
+      <PackagePath>Assets\bodyfat_male5.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\iconapp.png">
       <PackagePath>Assets\iconapp.png</PackagePath>
     </AppxPackagedFile>

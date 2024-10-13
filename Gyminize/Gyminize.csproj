@@ -15,6 +15,11 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="Assets\bodyfat_female_1.png" />
+    <Content Remove="Assets\bodyfat_female_2.png" />
+    <Content Remove="Assets\bodyfat_female_3.png" />
+    <Content Remove="Assets\bodyfat_female_4.png" />
+    <Content Remove="Assets\bodyfat_female_5.png" />
     <Content Remove="Assets\bodyfat_male1.png" />
     <Content Remove="Assets\bodyfat_male2.png" />
     <Content Remove="Assets\bodyfat_male3.png" />
@@ -51,9 +56,48 @@
   <ItemGroup>
     <ProjectReference Include="..\Gyminize.Core\Gyminize.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\bodyfat_female_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\bodyfat_female_5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\bodyfat_female_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\bodyfat_female_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\bodyfat_female_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\bodyfat_male1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\bodyfat_male2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\bodyfat_male3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\bodyfat_male4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\bodyfat_male5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\iconapp.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

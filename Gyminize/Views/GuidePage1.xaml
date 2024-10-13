@@ -159,6 +159,7 @@
                 HorizontalAlignment="Center"
                 Orientation="Horizontal">
                 <ComboBox
+                    x:Name="ActivityLevelComboBox"
                     Width="300"
                     Height="40"
                     Margin="10,0,10,10"
@@ -166,7 +167,9 @@
                     HorizontalContentAlignment="Center"
                     BorderBrush="#515DEF"
                     Foreground="#3D52A0"
-                    SelectedIndex="2">
+                    ItemsSource="{Binding ActivityLevels}"
+                    SelectedIndex="2"
+                    SelectedItem="{Binding SelectedActivityLevel, Mode=TwoWay}">
                     <ComboBoxItem HorizontalAlignment="Center" Content="Hầu như không vận động" />
                     <ComboBoxItem HorizontalAlignment="Center" Content="Thấp ( 1 - 2 buổi/tuần )" />
                     <ComboBoxItem HorizontalAlignment="Center" Content="Trung Bình ( 3 - 5 buổi/tuần )" />

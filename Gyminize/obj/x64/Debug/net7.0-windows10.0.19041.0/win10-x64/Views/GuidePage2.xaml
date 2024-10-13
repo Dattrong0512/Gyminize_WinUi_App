@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
-    
+
     <Grid Background="#515DEF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
@@ -16,16 +16,18 @@
             <ColumnDefinition Width="150" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <FontIcon
+            <FontIcon x:ConnectionId='8' x:Name="backIcon"                         
                 FontSize="40"
                 Foreground="White"
                 Glyph="&#xE96F;" />
         </StackPanel>
         <StackPanel Grid.Column="2" VerticalAlignment="Center">
-            <FontIcon
+            <FontIcon x:ConnectionId='7'
+                x:Name="nextIcon"
                 FontSize="40"
                 Foreground="White"
-                Glyph="&#xE970;" />
+                Glyph="&#xE970;"                         
+                 />
         </StackPanel>
         <StackPanel
             Grid.Column="1"
@@ -51,7 +53,7 @@
                     <Image
                         Width="90"
                         Height="400"
-                        Source="ms-appx:///Assets/bodyfat_male5.png" />
+                        Source="{Binding ImageSource1}" />
                 </Border>
                 <Border x:ConnectionId='3'
                     x:Name="ImageBorder2"
@@ -65,7 +67,7 @@
                     <Image
                         Width="95"
                         Height="400"
-                        Source="ms-appx:///Assets/bodyfat_male4.png" />
+                        Source="{Binding ImageSource2}" />
                 </Border>
                 <Border x:ConnectionId='4'
                     x:Name="ImageBorder3"
@@ -79,7 +81,7 @@
                     <Image
                         Width="97"
                         Height="400"
-                        Source="ms-appx:///Assets/bodyfat_male3.png" />
+                        Source="{Binding ImageSource3}" />
                 </Border>
                 <Border x:ConnectionId='5'
                     x:Name="ImageBorder4"
@@ -93,7 +95,7 @@
                     <Image
                         Width="90"
                         Height="400"
-                        Source="ms-appx:///Assets/bodyfat_male2.png" />
+                        Source="{Binding ImageSource4}" />
                 </Border>
                 <Border x:ConnectionId='6'
                     x:Name="ImageBorder5"
@@ -107,7 +109,7 @@
                     <Image
                         Width="110"
                         Height="400"
-                        Source="ms-appx:///Assets/bodyfat_male1.png" />
+                        Source="{Binding ImageSource5}" />
                 </Border>
             </StackPanel>
         </StackPanel>

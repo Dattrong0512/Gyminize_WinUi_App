@@ -443,7 +443,6 @@ namespace Gyminize.Gyminize_XamlTypeInfo
         private object Activate_25_DiaryViewModel() { return new global::Gyminize.ViewModels.DiaryViewModel(); }
         private object Activate_28_GuidePage1() { return new global::Gyminize.Views.GuidePage1(); }
         private object Activate_30_GuidePage2() { return new global::Gyminize.Views.GuidePage2(); }
-        private object Activate_31_Guide2ViewModel() { return new global::Gyminize.ViewModels.Guide2ViewModel(); }
         private object Activate_32_HomePage() { return new global::Gyminize.Views.HomePage(); }
         private object Activate_33_HomeViewModel() { return new global::Gyminize.ViewModels.HomeViewModel(); }
         private object Activate_34_NutritionsPage() { return new global::Gyminize.Views.NutritionsPage(); }
