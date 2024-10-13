@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Page
     x:Class="Gyminize.Views.GuidePage1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -19,19 +19,19 @@
             <ColumnDefinition Width="150" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <FontIcon
+            <FontIcon x:ConnectionId='11'
                 x:Name="backIcon"
                 FontSize="40"
                 Foreground="Gray"
                 Glyph="&#xE96F;" />
         </StackPanel>
         <StackPanel Grid.Column="2" VerticalAlignment="Center">
-            <FontIcon
+            <FontIcon x:ConnectionId='10'
                 x:Name="nextIcon"
                 FontSize="40"
                 Foreground="White"
                 Glyph="&#xE970;"
-                Tapped="nextIcon_Tapped" />
+                                         />
         </StackPanel>
         <StackPanel
             Grid.Column="1"
@@ -55,18 +55,18 @@
                 Grid.Column="1"
                 HorizontalAlignment="Center"
                 Orientation="Horizontal">
-                <CheckBox
+                <CheckBox x:ConnectionId='8'
                     x:Name="maleCheckBox"
                     Margin="10,0,10,10"
                     Padding="10"
-                    Checked="maleCheckBox_Checked"
+                                                  
                     Content="Nam"
                     IsChecked="{Binding MaleCheckBox.IsChecked, Mode=TwoWay}" />
-                <CheckBox
+                <CheckBox x:ConnectionId='9'
                     x:Name="femaleCheckBox"
                     Margin="10,0,10,10"
                     Padding="10"
-                    Checked="femaleCheckBox_Checked"
+                                                    
                     Content="Nữ"
                     IsChecked="{Binding FemaleCheckBox.IsChecked, Mode=TwoWay}" />
             </StackPanel>
@@ -76,7 +76,7 @@
                 Foreground="#3D52A0">
                 Tuổi:
             </TextBlock>
-            <TextBox
+            <TextBox x:ConnectionId='2'
                 x:Name="ageTextBox"
                 Width="300"
                 Height="40"
@@ -84,11 +84,11 @@
                 Padding="10"
                 HorizontalAlignment="Center"
                 BorderBrush="#515DEF"
-                LostFocus="AgeTextBox_LostFocus"
+                                                
                 PlaceholderText="18"
                 Text="{Binding AgeTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 TextAlignment="Center" />
-            <TextBlock
+            <TextBlock x:ConnectionId='3'
                 x:Name="ageErrorTextBlock"
                 HorizontalAlignment="Center"
                 FontSize="12"
@@ -102,7 +102,7 @@
                 Foreground="#3D52A0">
                 Chiều cao:
             </TextBlock>
-            <TextBox
+            <TextBox x:ConnectionId='4'
                 x:Name="heightTextBox"
                 Width="300"
                 Height="40"
@@ -110,11 +110,11 @@
                 Padding="10"
                 HorizontalAlignment="Center"
                 BorderBrush="#515DEF"
-                LostFocus="HeightTextBox_LostFocus"
+                                                   
                 PlaceholderText="180cm"
                 Text="{Binding HeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 TextAlignment="Center" />
-            <TextBlock
+            <TextBlock x:ConnectionId='5'
                 x:Name="heightErrorTextBlock"
                 HorizontalAlignment="Center"
                 FontSize="12"
@@ -128,7 +128,7 @@
                 Foreground="#3D52A0">
                 Cân nặng:
             </TextBlock>
-            <TextBox
+            <TextBox x:ConnectionId='6'
                 x:Name="weightTextBox"
                 Width="300"
                 Height="40"
@@ -136,11 +136,11 @@
                 Padding="10"
                 HorizontalAlignment="Center"
                 BorderBrush="#515DEF"
-                LostFocus="WeightTextBox_LostFocus"
+                                                   
                 PlaceholderText="75Kg"
                 Text="{Binding WeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 TextAlignment="Center" />
-            <TextBlock
+            <TextBlock x:ConnectionId='7'
                 x:Name="weightErrorTextBlock"
                 HorizontalAlignment="Center"
                 FontSize="12"
@@ -176,3 +176,4 @@
         </StackPanel>
     </Grid>
 </Page>
+

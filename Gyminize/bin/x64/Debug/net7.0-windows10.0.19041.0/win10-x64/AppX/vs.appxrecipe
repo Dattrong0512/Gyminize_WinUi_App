@@ -29,13 +29,13 @@
     <AppXManifest Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-12T08:45:58.206</Modified>
+      <Modified>2024-10-13T05:44:11.920</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-10-12T08:45:06.643</Modified>
+      <Modified>2024-10-13T05:44:11.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.runtimeconfig.json">
       <PackagePath>Gyminize.runtimeconfig.json</PackagePath>
@@ -43,7 +43,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.dll">
       <PackagePath>Gyminize.dll</PackagePath>
-      <Modified>2024-10-12T08:45:57.402</Modified>
+      <Modified>2024-10-13T05:44:10.519</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\appsettings.json">
       <PackagePath>appsettings.json</PackagePath>
@@ -51,7 +51,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Gyminize.exe</PackagePath>
-      <Modified>2024-10-12T08:45:57.659</Modified>
+      <Modified>2024-10-13T05:44:10.686</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Assets\iconapp.png">
       <PackagePath>Assets\iconapp.png</PackagePath>
@@ -1095,7 +1095,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.dll">
       <PackagePath>Gyminize.Core.dll</PackagePath>
-      <Modified>2024-10-11T10:15:40.536</Modified>
+      <Modified>2024-10-13T03:06:19.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bach Yen\.nuget\packages\colorcode.winui\2.0.13\lib\net5.0-windows10.0.18362\ColorCode.WinUI.pri">
       <PackagePath>ColorCode.WinUI.pri</PackagePath>

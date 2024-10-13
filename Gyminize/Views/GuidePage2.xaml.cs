@@ -13,6 +13,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Gyminize.ViewModels;
+using Microsoft.UI;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -24,15 +25,45 @@ namespace Gyminize.Views
     /// </summary>
     public sealed partial class GuidePage2 : Page
     {
-        public Guide2ViewModel ViewModel
-        {
-            get;
-        }
+        public Guide2ViewModel ViewModel { get; }
 
         public GuidePage2()
         {
             ViewModel = App.GetService<Guide2ViewModel>();
             InitializeComponent();
+            DataContext = ViewModel;
+        }
+
+        private void Border_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            if (sender is Border border)
+            {
+                ViewModel.PointerEnteredCommand.Execute(border);
+            }
+        }
+
+        private void Border_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            if (sender is Border border)
+            {
+                ViewModel.PointerExitedCommand.Execute(border);
+            }
+        }
+
+        private void Border_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            if (sender is Border border)
+            {
+                ViewModel.PointerPressedCommand.Execute(border);
+            }
+        }
+
+        private void Border_PointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            if (sender is Border border)
+            {
+                ViewModel.PointerReleasedCommand.Execute(border);
+            }
         }
     }
 }

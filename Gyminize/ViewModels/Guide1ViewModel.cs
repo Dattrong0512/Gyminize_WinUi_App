@@ -8,17 +8,22 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
+using Gyminize.Contracts.Services;
+using Gyminize.Views;
 
 namespace Gyminize.ViewModels;
 public partial class Guide1ViewModel : ObservableRecipient
 {
-    public Guide1ViewModel()
+    private readonly INavigationService _navigationService;
+    public Guide1ViewModel(INavigationService navigationService)
     {
+        _navigationService = navigationService;
         MaleCheckCommand = new RelayCommand<RoutedEventArgs?>(MaleSexCheck);
         FemaleCheckCommand = new RelayCommand<RoutedEventArgs?>(FemaleSexCheck);    
         AgeLostFocusCommand = new RelayCommand<RoutedEventArgs?>(OnAgeLostFocus);
         HeightLostFocusCommand = new RelayCommand<RoutedEventArgs?>(OnHeightLostFocus);
         WeightLostFocusCommand = new RelayCommand<RoutedEventArgs?>(OnWeightLostFocus);
+        NavigateToGuidePage2Command = new RelayCommand(NavigateToGuidePage2);
 
         _maleCheckBox = new CheckBox();
         _femaleCheckBox = new CheckBox();
@@ -35,6 +40,10 @@ public partial class Guide1ViewModel : ObservableRecipient
     public ICommand AgeLostFocusCommand { get; }
     public ICommand HeightLostFocusCommand { get; }
     public ICommand WeightLostFocusCommand { get; }
+    public ICommand NavigateToGuidePage2Command
+    {
+        get;
+    }
 
     private CheckBox _maleCheckBox;
     public CheckBox MaleCheckBox
@@ -174,6 +183,15 @@ public partial class Guide1ViewModel : ObservableRecipient
         {
             WeightErrorTextBlock.Visibility = Visibility.Visible;
             WeightErrorTextBlock.Text = "*Vui lòng nhập một cân nặng hợp lệ";
+        }
+    }
+
+    private void NavigateToGuidePage2()
+    {
+        var pageKey = typeof(Guide2ViewModel).FullName;
+        if (pageKey != null)
+        {
+            _navigationService.NavigateTo(pageKey);
         }
     }
 }

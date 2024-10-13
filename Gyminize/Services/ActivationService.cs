@@ -32,8 +32,10 @@ public class ActivationService : IActivationService
         // Đặt nội dung cho MainWindow.
         if (App.MainWindow.Content == null)
         {
+            var frame = new Frame();
             _shell = App.GetService<GuidePage1>();
-            App.MainWindow.Content = _shell ?? new Frame();
+            frame.Content = _shell;
+            App.MainWindow.Content = frame;
         }
 
         // Xử lý kích hoạt thông qua các ActivationHandlers.

@@ -13,6 +13,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Gyminize.ViewModels;
+using Gyminize.Contracts.Services;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -30,7 +31,10 @@ public sealed partial class GuidePage1 : Page
     {
         ViewModel = App.GetService<Guide1ViewModel>();
         InitializeComponent();
-       
+
+        var navigationService = App.GetService<INavigationService>();
+        ViewModel = new Guide1ViewModel(navigationService);
+        this.DataContext = ViewModel;
     }
 
     
@@ -74,5 +78,11 @@ public sealed partial class GuidePage1 : Page
         {
             viewModel.FemaleCheckCommand.Execute(null);
         }
+    }
+
+    private void nextIcon_Tapped(object sender, TappedRoutedEventArgs e)
+    {
+        var viewModel = (Guide1ViewModel)this.DataContext;
+        viewModel.NavigateToGuidePage2Command.Execute(null);
     }
 }
