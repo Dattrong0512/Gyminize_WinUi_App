@@ -13,5 +13,5 @@ public class CustomerInfo
     public double Weight { get; set; }
     public int Height { get; set; }
     public int ActivityLevel { get; set; }
-    public int BodyFat { get; set; }
+    public double BodyFat { get; set; }
 }

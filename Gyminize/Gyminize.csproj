@@ -58,22 +58,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\bodyfat_female_2.png">
+    <None Update="Assets\BodyFat\f_2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bodyfat_female_5.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Assets\bodyfat_female_4.png">
+    <None Update="Assets\BodyFat\f_5.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\bodyfat_female_3.png">
+    <None Update="Assets\BodyFat\f_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\BodyFat\f_3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -81,22 +81,22 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bodyfat_female_1.png">
+    <None Update="Assets\BodyFat\f_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bodyfat_male1.png">
+    <None Update="Assets\BodyFat\m_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bodyfat_male2.png">
+    <None Update="Assets\BodyFat\m_2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bodyfat_male3.png">
+    <None Update="Assets\BodyFat\m_3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bodyfat_male4.png">
+    <None Update="Assets\BodyFat\m_4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bodyfat_male5.png">
+    <None Update="Assets\BodyFat\m_5.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\iconapp.png">

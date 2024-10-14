@@ -16,18 +16,20 @@
             <ColumnDefinition Width="150" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <FontIcon x:ConnectionId='8' x:Name="backIcon"                         
+            <FontIcon x:ConnectionId='8'
+                x:Name="backIcon"
                 FontSize="40"
                 Foreground="White"
-                Glyph="&#xE96F;" />
+                Glyph="&#xE96F;"
+                                         />
         </StackPanel>
         <StackPanel Grid.Column="2" VerticalAlignment="Center">
             <FontIcon x:ConnectionId='7'
                 x:Name="nextIcon"
                 FontSize="40"
                 Foreground="White"
-                Glyph="&#xE970;"                         
-                 />
+                Glyph="&#xE970;"
+                                         />
         </StackPanel>
         <StackPanel
             Grid.Column="1"
@@ -44,12 +46,14 @@
                 <Border x:ConnectionId='2'
                     x:Name="ImageBorder1"
                     Margin="10"
+                    Background="{Binding ImageBorder1Background}"
                     BorderBrush="Black"
                     BorderThickness="2"
                                                           
                                                         
                                                           
-                                                            >
+                                                            
+                    Tag="{Binding ImageSource1}">
                     <Image
                         Width="90"
                         Height="400"
@@ -58,12 +62,14 @@
                 <Border x:ConnectionId='3'
                     x:Name="ImageBorder2"
                     Margin="10"
+                    Background="{Binding ImageBorder2Background}"
                     BorderBrush="Black"
                     BorderThickness="2"
                                                           
                                                         
                                                           
-                                                            >
+                                                            
+                    Tag="{Binding ImageSource2}">
                     <Image
                         Width="95"
                         Height="400"
@@ -72,12 +78,14 @@
                 <Border x:ConnectionId='4'
                     x:Name="ImageBorder3"
                     Margin="10"
+                    Background="{Binding ImageBorder3Background}"
                     BorderBrush="Black"
                     BorderThickness="2"
                                                           
                                                         
                                                           
-                                                            >
+                                                            
+                    Tag="{Binding ImageSource3}">
                     <Image
                         Width="97"
                         Height="400"
@@ -86,12 +94,14 @@
                 <Border x:ConnectionId='5'
                     x:Name="ImageBorder4"
                     Margin="10"
+                    Background="{Binding ImageBorder4Background}"
                     BorderBrush="Black"
                     BorderThickness="2"
                                                           
                                                         
                                                           
-                                                            >
+                                                            
+                    Tag="{Binding ImageSource4}">
                     <Image
                         Width="90"
                         Height="400"
@@ -100,12 +110,14 @@
                 <Border x:ConnectionId='6'
                     x:Name="ImageBorder5"
                     Margin="10"
+                    Background="{Binding ImageBorder5Background}"
                     BorderBrush="Black"
                     BorderThickness="2"
                                                           
                                                         
                                                           
-                                                            >
+                                                            
+                    Tag="{Binding ImageSource5}">
                     <Image
                         Width="110"
                         Height="400"

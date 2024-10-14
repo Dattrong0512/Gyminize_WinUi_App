@@ -11,12 +11,18 @@ using System.Windows.Input;
 using Gyminize.Contracts.Services;
 using Gyminize.Views;
 using Gyminize.Models;
+using Microsoft.UI.Xaml.Media;
+using Windows.Gaming.Input.ForceFeedback;
+using Gyminize.Contracts.ViewModels;
+using Windows.ApplicationModel.Email;
 namespace Gyminize.ViewModels;
-public partial class Guide1ViewModel : ObservableRecipient
+public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
 {
+    private CustomerInfo _customerInfoBack;
     private readonly INavigationService _navigationService;
     public Guide1ViewModel(INavigationService navigationService)
     {
+
         _navigationService = navigationService;
         MaleCheckCommand = new RelayCommand<RoutedEventArgs?>(MaleSexCheck);
         FemaleCheckCommand = new RelayCommand<RoutedEventArgs?>(FemaleSexCheck);    
@@ -33,11 +39,16 @@ public partial class Guide1ViewModel : ObservableRecipient
         _heightErrorTextBlock = new TextBlock();
         _weightTextBox = new TextBox();
         _weightErrorTextBlock = new TextBlock();
+        _customerInfoBack = new CustomerInfo();
+        _activityLevelComboBox = new ComboBox();
+
+
+
 
         SelectedActivityLevel = new ComboBoxItem { Content = "Trung Bình ( 3 - 5 buổi/tuần )" };
-
+        
     }
-
+    
     public ICommand MaleCheckCommand { get; }
     public ICommand FemaleCheckCommand{ get;}
     public ICommand AgeLostFocusCommand { get; }
@@ -110,7 +121,7 @@ public partial class Guide1ViewModel : ObservableRecipient
         set => SetProperty(ref _weightTextBox, value);
     }
 
-    private bool _isValid;
+    private bool _isValid = false;
     public bool IsValid
     {
         get => _isValid;
@@ -182,7 +193,7 @@ public partial class Guide1ViewModel : ObservableRecipient
             {
                 HeightErrorTextBlock.Visibility = Visibility.Collapsed;
                 HeightErrorTextBlock.Text = "*OK";
-                IsValid = false;
+                IsValid = true;
             }
         }
         else if (string.IsNullOrEmpty(HeightTextBox.Text))
@@ -226,24 +237,72 @@ public partial class Guide1ViewModel : ObservableRecipient
         };
     }
 
+    private string GetActivityLevel(int activityLevel)
+    {
+        return activityLevel switch
+        {
+            1 => "Hầu như không vận động",
+            2 => "Thấp ( 1 - 2 buổi/tuần )",
+            3 => "Trung Bình ( 3 - 5 buổi/tuần )",
+            4 => "Cao ( 6 - 7 buổi/tuần )",
+            _ => "Không xác định"
+        };
+    }
+
     private void NavigateToGuidePage2()
     {
-        var customerInfo = new CustomerInfo
-        {
-            sex = MaleCheckBox.IsChecked == true ? 1 : 0,
-            Age = int.Parse(AgeTextBox.Text),
-            Weight = double.Parse(WeightTextBox.Text),
-            Height = int.Parse(HeightTextBox.Text),
-            ActivityLevel = GetSelectedActivityLevel(),
-            BodyFat = 0
+        if(IsValid == true) {
+            var customerInfo = new CustomerInfo
+            {
+                sex = MaleCheckBox.IsChecked == true ? 1 : 0,
+                Age = int.Parse(AgeTextBox.Text),
+                Weight = double.Parse(WeightTextBox.Text),
+                Height = int.Parse(HeightTextBox.Text),
+                ActivityLevel = GetSelectedActivityLevel(),
+                BodyFat = _customerInfoBack.BodyFat != 0 ? _customerInfoBack.BodyFat : 0
 
-        };
+            };
 
 
-        var pageKey = typeof(Guide2ViewModel).FullName;
-        if (pageKey != null)
-        {
-            _navigationService.NavigateTo(pageKey,customerInfo);
+            var pageKey = typeof(Guide2ViewModel).FullName;
+            if (pageKey != null)
+            {
+                _navigationService.NavigateTo(pageKey, customerInfo);
+            }
         }
+        else
+        {
+            //xu li dialog
+        }
+    }
+
+    public void OnNavigatedTo(object parameter)
+    {
+        if (parameter is CustomerInfo customerInfo)
+        {
+            _customerInfoBack = customerInfo;
+
+            if (_customerInfoBack != null)
+            {
+                if (_customerInfoBack.sex == 1)
+                {
+                    MaleCheckBox.IsChecked = true;
+                }
+                else
+                {
+                    FemaleCheckBox.IsChecked = true;
+                }
+                WeightTextBox.Text = _customerInfoBack.Weight.ToString();
+                HeightTextBox.Text = _customerInfoBack.Height.ToString();
+                AgeTextBox.Text = _customerInfoBack.Age.ToString();
+                SelectedActivityLevel = new ComboBoxItem { Content = GetActivityLevel(_customerInfoBack.ActivityLevel) };
+                customerInfo.BodyFat = _customerInfoBack.BodyFat;
+                IsValid = true;
+            }
+        }
+    }
+
+    public void OnNavigatedFrom()
+    {
     }
 }

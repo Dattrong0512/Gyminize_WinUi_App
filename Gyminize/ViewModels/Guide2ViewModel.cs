@@ -19,7 +19,19 @@ namespace Gyminize.ViewModels;
 public class Guide2ViewModel : ObservableRecipient, INavigationAware
 {
     private Border? _selectedBorder;
-    private CustomerInfo _customerInfo;
+    private CustomerInfo _customerInfo = new CustomerInfo(); 
+    private string _imageSource1 = string.Empty; 
+    private string _imageSource2 = string.Empty; 
+    private string _imageSource3 = string.Empty; 
+    private string _imageSource4 = string.Empty; 
+    private string _imageSource5 = string.Empty; 
+    private string _selectedImageSource = string.Empty;
+    private Brush _imageBorder1Background = new SolidColorBrush(Colors.Transparent);
+    private Brush _imageBorder2Background = new SolidColorBrush(Colors.Transparent);
+    private Brush _imageBorder3Background = new SolidColorBrush(Colors.Transparent);
+    private Brush _imageBorder4Background = new SolidColorBrush(Colors.Transparent);
+    private Brush _imageBorder5Background = new SolidColorBrush(Colors.Transparent);
+
 
     public ICommand PointerEnteredCommand { get; }
     public ICommand PointerExitedCommand { get; }
@@ -31,39 +43,70 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         get;
     }
     private INavigationService _navigationService;
-    private string _imageSource1;
     public string ImageSource1
     {
         get => _imageSource1;
         set => SetProperty(ref _imageSource1, value);
     }
 
-    private string _imageSource2;
     public string ImageSource2
     {
         get => _imageSource2;
         set => SetProperty(ref _imageSource2, value);
     }
 
-    private string _imageSource3;
     public string ImageSource3
     {
         get => _imageSource3;
         set => SetProperty(ref _imageSource3, value);
     }
 
-    private string _imageSource4;
     public string ImageSource4
     {
         get => _imageSource4;
         set => SetProperty(ref _imageSource4, value);
     }
 
-    private string _imageSource5;
     public string ImageSource5
     {
         get => _imageSource5;
         set => SetProperty(ref _imageSource5, value);
+    }
+
+    public Brush ImageBorder1Background
+    {
+        get => _imageBorder1Background;
+        set => SetProperty(ref _imageBorder1Background, value);
+    }
+
+    public Brush ImageBorder2Background
+    {
+        get => _imageBorder2Background;
+        set => SetProperty(ref _imageBorder2Background, value);
+    }
+
+    public Brush ImageBorder3Background
+    {
+        get => _imageBorder3Background;
+        set => SetProperty(ref _imageBorder3Background, value);
+    }
+
+    public Brush ImageBorder4Background
+    {
+        get => _imageBorder4Background;
+        set => SetProperty(ref _imageBorder4Background, value);
+    }
+
+    public Brush ImageBorder5Background
+    {
+        get => _imageBorder5Background;
+        set => SetProperty(ref _imageBorder5Background, value);
+    }
+
+    public string SelectedImageSource
+    {
+        get => _selectedImageSource;
+        set => SetProperty(ref _selectedImageSource, value);
     }
 
     public Guide2ViewModel(INavigationService navigationService)
@@ -100,7 +143,6 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         {
             if (_selectedBorder != null)
             {
-                // Reset the previously selected border
                 _selectedBorder.BorderBrush = new SolidColorBrush(Colors.Black);
                 _selectedBorder.Background = new SolidColorBrush(Colors.Transparent);
             }
@@ -109,9 +151,93 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
             _selectedBorder = border;
             border.BorderBrush = new SolidColorBrush(Colors.DarkBlue);
             border.Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+
+            if (border.Tag is string imageSource)
+            {
+                SelectedImageSource = imageSource;
+                _customerInfo.BodyFat = GetBodyFatFromImgSource(imageSource);
+            }
         }
     }
 
+    private double GetBodyFatFromImgSource(string imgsrc)
+    {
+        int lastSlashIndex = imgsrc.LastIndexOf('/');
+        string fileNameWithExtension = imgsrc.Substring(lastSlashIndex + 1);
+        int lastDotIndex = fileNameWithExtension.LastIndexOf('.');
+        string fileNameWithoutExtension = fileNameWithExtension.Substring(0, lastDotIndex);
+
+        switch (fileNameWithoutExtension)
+        {
+            case "m_1":
+                return 31.5;
+            case "m_2":
+                return 23.5;
+            case "m_3":
+                return 16.5;
+            case "m_4":
+                return 12.0;
+            case "m_5":
+                return 7.5;
+            case "f_1":
+                return 31.5;
+            case "f_2":
+                return 27.0;
+            case "f_3":
+                return 20.5;
+            case "f_4":
+                return 16.5;
+            case "f_5":
+                return 14.5;
+            default:
+                return 0.0;
+
+        }
+    }
+
+    private string GetImgSourceFromBodyFat(double bodyFat, bool isMale)
+    {
+        string prefix = isMale ? "m_" : "f_";
+        string fileName = bodyFat switch
+        {
+            31.5 => $"{prefix}1.png",
+            23.5 => $"{prefix}2.png",
+            16.5 when isMale => $"{prefix}3.png",
+            16.5 when !isMale => $"{prefix}4.png",
+            12.0 => $"{prefix}4.png",
+            7.5 => $"{prefix}5.png",
+            27.0 => $"{prefix}2.png",
+            20.5 => $"{prefix}3.png",
+            14.5 => $"{prefix}5.png",
+            _ => throw new ArgumentException("Invalid body fat percentage")
+        };
+
+        return $"ms-appx:///Assets/BodyFat/{fileName}";
+    }
+    private void HighlightSelectedImage()
+    {
+        if (SelectedImageSource == ImageSource1)
+        {
+            ImageBorder1Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+        }
+        else if (SelectedImageSource == ImageSource2)
+        {
+            ImageBorder2Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+        }
+        else if (SelectedImageSource == ImageSource3)
+        {
+            ImageBorder3Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+        }
+        else if (SelectedImageSource == ImageSource4)
+        {
+            ImageBorder4Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+        }
+        else if (SelectedImageSource == ImageSource5)
+        {
+            ImageBorder5Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+        }
+    }
+    
     private void OnPointerReleased(Border? border)
     {
         if (border != null && border == _selectedBorder)
@@ -129,19 +255,24 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
             // Set image sources based on gender
             if (_customerInfo.sex == 1) // Male
             {
-                ImageSource1 = "ms-appx:///Assets/bodyfat_male5.png";
-                ImageSource2 = "ms-appx:///Assets/bodyfat_male4.png";
-                ImageSource3 = "ms-appx:///Assets/bodyfat_male3.png";
-                ImageSource4 = "ms-appx:///Assets/bodyfat_male2.png";
-                ImageSource5 = "ms-appx:///Assets/bodyfat_male1.png";
+                ImageSource1 = "ms-appx:///Assets/BodyFat/m_5.png";
+                ImageSource2 = "ms-appx:///Assets/BodyFat/m_4.png";
+                ImageSource3 = "ms-appx:///Assets/BodyFat/m_3.png";
+                ImageSource4 = "ms-appx:///Assets/BodyFat/m_2.png";
+                ImageSource5 = "ms-appx:///Assets/BodyFat/m_1.png";
             }
             else // Female
             {
-                ImageSource1 = "ms-appx:///Assets/bodyfat_female_5.png";
-                ImageSource2 = "ms-appx:///Assets/bodyfat_female_4.png";
-                ImageSource3 = "ms-appx:///Assets/bodyfat_female_3.png";
-                ImageSource4 = "ms-appx:///Assets/bodyfat_female_2.png";
-                ImageSource5 = "ms-appx:///Assets/bodyfat_female_1.png";
+                ImageSource1 = "ms-appx:///Assets/BodyFat/f_5.png";
+                ImageSource2 = "ms-appx:///Assets/BodyFat/f_4.png";
+                ImageSource3 = "ms-appx:///Assets/BodyFat/f_3.png";
+                ImageSource4 = "ms-appx:///Assets/BodyFat/f_2.png";
+                ImageSource5 = "ms-appx:///Assets/BodyFat/f_1.png";
+            }
+            if (_customerInfo.BodyFat != 0)
+            {
+                SelectedImageSource = GetImgSourceFromBodyFat(_customerInfo.BodyFat, _customerInfo.sex == 1);
+                HighlightSelectedImage();
             }
         }
     }
