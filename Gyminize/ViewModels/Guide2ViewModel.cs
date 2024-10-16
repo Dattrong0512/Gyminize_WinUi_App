@@ -19,7 +19,7 @@ namespace Gyminize.ViewModels;
 public class Guide2ViewModel : ObservableRecipient, INavigationAware
 {
     private Border? _selectedBorder;
-    private CustomerInfo _customerInfo = new CustomerInfo(); 
+    private CustomerInfo _customerInfo; 
     private string _imageSource1 = string.Empty; 
     private string _imageSource2 = string.Empty; 
     private string _imageSource3 = string.Empty; 
@@ -39,6 +39,10 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
     public ICommand PointerReleasedCommand { get; }
 
     public ICommand NavigateBackCommand
+    {
+        get;
+    }
+    public ICommand NavigateNextCommand
     {
         get;
     }
@@ -108,6 +112,12 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         get => _selectedImageSource;
         set => SetProperty(ref _selectedImageSource, value);
     }
+    private bool _isValid = false;
+    public bool IsValid
+    {
+        get => _isValid;
+        set => SetProperty(ref _isValid, value);
+    }
 
     public Guide2ViewModel(INavigationService navigationService)
     {
@@ -117,6 +127,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         PointerPressedCommand = new RelayCommand<Border?>(OnPointerPressed);
         PointerReleasedCommand = new RelayCommand<Border?>(OnPointerReleased);
         NavigateBackCommand = new RelayCommand(NavigateBack);
+        NavigateNextCommand = new RelayCommand(NavigateNext);
     }
 
     private void OnPointerEntered(Border? border)
@@ -126,6 +137,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
             border.BorderBrush = new SolidColorBrush(Colors.Blue);
             border.Background = new SolidColorBrush(ColorHelper.FromArgb(255, 81, 93, 239)); // #515DEF
         }
+        IsValid = true;
     }
 
     private void OnPointerExited(Border? border)
@@ -236,6 +248,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         {
             ImageBorder5Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
         }
+        IsValid = true;
     }
     
     private void OnPointerReleased(Border? border)
@@ -274,6 +287,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
                 SelectedImageSource = GetImgSourceFromBodyFat(_customerInfo.BodyFat, _customerInfo.sex == 1);
                 HighlightSelectedImage();
             }
+            
         }
     }
 
@@ -288,6 +302,21 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         if (pageKey != null)
         {
             _navigationService.NavigateTo(pageKey, _customerInfo);
+        }
+    }
+    private void NavigateNext()
+    {
+        if (IsValid == true)
+        {
+            var pageKey = typeof(Guide3ViewModel).FullName;
+            if (pageKey != null)
+            {
+                _navigationService.NavigateTo(pageKey, _customerInfo);
+            }
+        }
+        else
+        {
+            //xu li dialog
         }
     }
 }

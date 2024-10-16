@@ -24,6 +24,7 @@ public class PageService : IPageService
         Configure<SigninViewmodel, SigninPage>(); // Thêm dòng này
         Configure<Guide1ViewModel, GuidePage1>();
         Configure<Guide2ViewModel, GuidePage2>();
+        Configure<Guide3ViewModel, GuidePage3>();
     }
 
     // Lấy loại trang dựa trên khóa trang.

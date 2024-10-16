@@ -86,7 +86,8 @@ namespace Gyminize.Views
 
         private void nextIcon_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            
+            var viewModel = (Guide2ViewModel)this.DataContext;
+            viewModel.NavigateNextCommand.Execute(null);
         }
     }
 }

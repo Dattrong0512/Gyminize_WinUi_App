@@ -95,6 +95,8 @@ public partial class App : Application
             services.AddTransient<Guide2ViewModel>();
             services.AddTransient<GuidePage2>();
             services.AddTransient<SigninViewmodel>();
+            services.AddTransient<Guide3ViewModel>();
+            services.AddTransient<GuidePage3>();
 
 
             // Đăng ký cấu hình.

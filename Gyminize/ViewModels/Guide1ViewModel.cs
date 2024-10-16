@@ -225,26 +225,26 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
-    private int GetSelectedActivityLevel()
+    private double GetSelectedActivityLevel()
     {
         return SelectedActivityLevel?.Content switch
         {
-            "Hầu như không vận động" => 1,
-            "Thấp ( 1 - 2 buổi/tuần )" => 2,
-            "Trung Bình ( 3 - 5 buổi/tuần )" => 3,
-            "Cao ( 6 - 7 buổi/tuần )" => 4,
-            _ => 0
+            "Hầu như không vận động" => 1.2,
+            "Thấp ( 1 - 3 buổi/tuần )" => 1.375,
+            "Trung Bình ( 3 - 5 buổi/tuần )" => 1.55,
+            "Cao ( 6 - 7 buổi/tuần )" => 1.725,
+            _ => 0.0
         };
     }
 
-    private string GetActivityLevel(int activityLevel)
+    private string GetActivityLevel(double activityLevel)
     {
         return activityLevel switch
         {
-            1 => "Hầu như không vận động",
-            2 => "Thấp ( 1 - 2 buổi/tuần )",
-            3 => "Trung Bình ( 3 - 5 buổi/tuần )",
-            4 => "Cao ( 6 - 7 buổi/tuần )",
+            1.2 => "Hầu như không vận động",
+            1.375 => "Thấp ( 1 - 3 buổi/tuần )",
+            1.55 => "Trung Bình ( 3 - 5 buổi/tuần )",
+            1.725 => "Cao ( 6 - 7 buổi/tuần )",
             _ => "Không xác định"
         };
     }

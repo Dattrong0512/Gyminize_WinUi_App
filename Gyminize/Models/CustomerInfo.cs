@@ -12,6 +12,10 @@ public class CustomerInfo
     public int Age { get; set; }
     public double Weight { get; set; }
     public int Height { get; set; }
-    public int ActivityLevel { get; set; }
+    public double ActivityLevel { get; set; }
+    public int Tdee
+    {
+        get; set;
+    }
     public double BodyFat { get; set; }
 }

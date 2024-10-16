@@ -1095,3 +1095,8 @@ J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x6
 J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\BodyFat\m_3.png
 J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\BodyFat\m_4.png
 J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\BodyFat\m_5.png
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage3.g.i.cs
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage3.g.cs
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage3.xaml
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage3.xbf
+J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Views\GuidePage3.xbf
