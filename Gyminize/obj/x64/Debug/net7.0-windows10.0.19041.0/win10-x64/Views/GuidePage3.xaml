@@ -132,7 +132,7 @@
                             <Run
                                 FontSize="12"
                                 FontStyle="Italic"
-                                Text="Protein" />
+                                Text="Proteins" />
                         </TextBlock>
                         <TextBlock
                             Grid.Row="2"
@@ -264,7 +264,7 @@
                             <Run
                                 FontSize="12"
                                 FontStyle="Italic"
-                                Text="Protein" />
+                                Text="Proteins" />
                         </TextBlock>
                         <TextBlock
                             Grid.Row="2"

@@ -1,3 +1,4 @@
+runtimes\win-x64\native\WebView2Loader.dll
 Assets\BodyFat\f_1.png
 Assets\BodyFat\f_2.png
 Assets\BodyFat\f_3.png
@@ -8,7 +9,12 @@ Assets\BodyFat\m_2.png
 Assets\BodyFat\m_3.png
 Assets\BodyFat\m_4.png
 Assets\BodyFat\m_5.png
+Assets\Icon\clock.svg
+Assets\Icon\dumbell.svg
+Assets\Icon\food.png
+Assets\Icon\goal.png
 Assets\LockScreenLogo.scale-200.png
+Assets\motivation.jpg
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png

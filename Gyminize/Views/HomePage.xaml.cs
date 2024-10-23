@@ -1,6 +1,9 @@
 ﻿using Gyminize.ViewModels;
 
+
 using Microsoft.UI.Xaml.Controls;
+using System;
+
 
 namespace Gyminize.Views;
 

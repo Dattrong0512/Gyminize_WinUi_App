@@ -1,1 +1,1 @@
-J:\StudyingOnly\csharplearning\WinProject2024\Gyminize_WinUi_App\Gyminize\Gyminize.csproj;x64
+J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\Gyminize.csproj;x64

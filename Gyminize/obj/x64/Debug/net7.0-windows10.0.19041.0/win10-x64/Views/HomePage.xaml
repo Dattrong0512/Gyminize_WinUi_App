@@ -7,7 +7,265 @@
     mc:Ignorable="d">
 
     <Grid x:ConnectionId='2' x:Name="ContentArea">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Vertical">
+            <Border
+                Width="350"
+                Height="250"
+                Padding="20"
+                Background="White"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="20">
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <ProgressRing
+                            Width="200"
+                            Height="200"
+                            HorizontalAlignment="Center"
+                            Background="LightGray"
+                            IsIndeterminate="False"
+                            Value="50" />
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                FontSize="28"
+                                Foreground="Black"
+                                Text="1000" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Foreground="Black"
+                                Text="Calories còn lại" />
+                        </StackPanel>
+                    </Grid>
+                    <!--  Dòng chèn icon và chữ  -->
+                    <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                        <StackPanel
+                            Margin="10"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Margin="0,0,10,0"
+                                Source="ms-appx:///Assets/Icon/goal.png" />
+                            <TextBlock>
+                                <Run FontSize="15" Text="Mục tiêu" />
+                                <LineBreak />
+                                <Run FontSize="20" Text="2000" />
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="10"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Margin="0,0,10,0"
+                                Source="ms-appx:///Assets/Icon/food.png" />
+                            <TextBlock>
+                                <Run FontSize="15" Text="Thức ăn" />
+                                <LineBreak />
+                                <Run FontSize="20" Text="1000" />
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border
+                Width="340"
+                Margin="20"
+                Padding="10"
+                Background="white"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="20">
+                <StackPanel Margin="10" Orientation="Vertical">
+                    <TextBlock Margin="40,0,10,10" Text="Tập luyện" />
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Image
+                            Width="24"
+                            Height="24"
+                            Margin="0,0,10,0"
+                            Source="ms-appx:///Assets/Icon/clock.svg" />
+                        <TextBlock>
+                            <Run x:ConnectionId='4'
+                                x:Name="exercised_hour"
+                                FontSize="20"
+                                Text="02:00" />
+                            <Run Text="giờ" />
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel
+                        Margin="20,0,0,0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Margin="0,0,10,0"
+                            Source="ms-appx:///Assets/Icon/dumbell.svg" />
+                        <TextBlock>
+                            <Run x:ConnectionId='3'
+                                x:Name="exercised_remain"
+                                FontSize="20"
+                                Text="2" />
+                            <Run Text="bài tập còn lại" />
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Border
+                Width="365"
+                Height="290"
+                Margin="10"
+                Padding="0"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Image Source="ms-appx:///Assets/motivation.jpg" Stretch="Fill" />
+            </Border>
+            <Border
+                Margin="10"
+                Background="White"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <TextBlock Margin="10"> <Run Text="Cân nặng" /></TextBlock>
+                    <TextBlock Margin="10" HorizontalAlignment="Center"> <Run FontSize="40" Text="80" /> <Run FontSize="20 " Text="Kg" /></TextBlock>
+
+                    <Button
+                        Grid.Row="1"
+                        Width="50"
+                        Height="50"
+                        Margin="10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+                        <FontIcon Glyph="&#xE70F;" />
+                    </Button>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+        <StackPanel
+            Grid.Column="2"
+            HorizontalAlignment="Center"
+            Orientation="Vertical">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                Text="Khám phá" />
+            <Border
+                Margin="10"
+                Padding="10"
+                Background="White"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="10">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse
+                        Width="30"
+                        Height="30"
+                        Fill="LightBlue">
+                        <Ellipse.Stroke>
+                            <SolidColorBrush Color="Blue" />
+                        </Ellipse.Stroke>
+                    </Ellipse>
+                    <TextBlock
+                        Margin="10,10,10,5"
+                        HorizontalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Text="Sleep" />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="14"
+                        Foreground="Gray"
+                        Text="Eat right, sleep tight" />
+                </StackPanel>
+            </Border>
+
+            <!--  Border for Recipes  -->
+            <Border
+                Grid.Column="1"
+                Margin="10"
+                Padding="10"
+                Background="White"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="10">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse
+                        Width="30"
+                        Height="30"
+                        Fill="LightBlue">
+                        <Ellipse.Stroke>
+                            <SolidColorBrush Color="Blue" />
+                        </Ellipse.Stroke>
+                    </Ellipse>
+                    <TextBlock
+                        Margin="10,10,10,5"
+                        HorizontalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Text="Recipes" />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="14"
+                        Foreground="Gray"
+                        Text="Cook, eat, log, repeat" />
+                </StackPanel>
+            </Border>
+
+            <!--  Border for Workouts  -->
+            <Border
+                Grid.Row="1"
+                Margin="10"
+                Padding="10"
+                Background="White"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="10">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse
+                        Width="30"
+                        Height="30"
+                        Fill="LightBlue">
+                        <Ellipse.Stroke>
+                            <SolidColorBrush Color="Blue" />
+                        </Ellipse.Stroke>
+                    </Ellipse>
+                    <TextBlock
+                        Margin="10,10,10,5"
+                        HorizontalAlignment="Center"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Text="Workouts" />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="14"
+                        Foreground="Gray"
+                        Text="Sweating is self-care" />
+                </StackPanel>
+            </Border>
+
+
+        </StackPanel>
     </Grid>
 </Page>
+
 
