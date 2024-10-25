@@ -6,8 +6,274 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:ConnectionId='2' x:Name="ContentArea">
-        
+    <Grid x:ConnectionId='2'
+        x:Name="ContentArea"
+        Padding="20"
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <!--  Cột trái để hiển thị các bữa ăn  -->
+            <ColumnDefinition Width="*" />
+            <!--  Cột phải để hiển thị thư viện thực phẩm  -->
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Cột Trái: Danh sách các bữa ăn (Bữa Sáng, Bữa Trưa, Bữa Tối, Bữa Xế)  -->
+        <StackPanel Grid.Column="0" Spacing="20">
+            <TextBlock
+                FontSize="24"
+                FontWeight="Bold"
+                Text="{Binding TotalCaloriesExpression}" />
+
+            <!--  Phần Bữa Sáng  -->
+            <StackPanel>
+                <TextBlock
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    Text="Bữa Sáng" />
+                <ItemsControl x:ConnectionId='12' x:Name="BreakfastItemsControl">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Margin="5"
+                                Padding="10"
+                                Background="White"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  Cột Trái: Tên thực phẩm và số lượng  -->
+                                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                        <TextBlock
+                                            FontSize="16"
+                                            FontWeight="Bold"
+                                            Text="{Binding Name}" />
+                                        <TextBlock
+                                            FontSize="14"
+                                            Foreground="Gray"
+                                            Text="{Binding Amount}" />
+                                    </StackPanel>
+
+                                    <!--  Cột Phải: Lượng calo  -->
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        Text="{Binding Calories}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
+            <!--  Phần Bữa Trưa  -->
+            <StackPanel>
+                <TextBlock
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    Text="Bữa Trưa" />
+                <ItemsControl x:ConnectionId='10' x:Name="LunchItemsControl">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Margin="5"
+                                Padding="10"
+                                Background="White"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  Cột Trái: Tên thực phẩm và số lượng  -->
+                                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                        <TextBlock
+                                            FontSize="16"
+                                            FontWeight="Bold"
+                                            Text="{Binding Name}" />
+                                        <TextBlock
+                                            FontSize="14"
+                                            Foreground="Gray"
+                                            Text="{Binding Amount}" />
+                                    </StackPanel>
+
+                                    <!--  Cột Phải: Lượng calo  -->
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        Text="{Binding Calories}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
+            <!--  Phần Bữa Tối  -->
+            <StackPanel>
+                <TextBlock
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    Text="Bữa Tối" />
+                <ItemsControl x:ConnectionId='8' x:Name="DinnerItemsControl">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Margin="5"
+                                Padding="10"
+                                Background="White"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  Cột Trái: Tên thực phẩm và số lượng  -->
+                                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                        <TextBlock
+                                            FontSize="16"
+                                            FontWeight="Bold"
+                                            Text="{Binding Name}" />
+                                        <TextBlock
+                                            FontSize="14"
+                                            Foreground="Gray"
+                                            Text="{Binding Amount}" />
+                                    </StackPanel>
+
+                                    <!--  Cột Phải: Lượng calo  -->
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        Text="{Binding Calories}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
+            <!--  Phần Bữa Xế  -->
+            <StackPanel>
+                <TextBlock
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    Text="Bữa Xế" />
+                <ItemsControl x:ConnectionId='6' x:Name="SnackItemsControl">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Margin="5"
+                                Padding="10"
+                                Background="White"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  Cột Trái: Tên thực phẩm và số lượng  -->
+                                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                        <TextBlock
+                                            FontSize="16"
+                                            FontWeight="Bold"
+                                            Text="{Binding Name}" />
+                                        <TextBlock
+                                            FontSize="14"
+                                            Foreground="Gray"
+                                            Text="{Binding Amount}" />
+                                    </StackPanel>
+
+                                    <!--  Cột Phải: Lượng calo  -->
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        Text="{Binding Calories}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </StackPanel>
+
+        <!--  Cột Phải: Thư viện thực phẩm  -->
+        <StackPanel Grid.Column="1" Spacing="10">
+            <TextBlock
+                FontSize="24"
+                FontWeight="Bold"
+                Text="Thư Viện Thực Phẩm" />
+            <ListView x:ConnectionId='3'
+                x:Name="FoodLibrary"
+                ItemsSource="{Binding FoodLibraryItems}"
+                SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            Margin="5"
+                            Padding="10"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--  Cột Trái: Tên thực phẩm và số lượng  -->
+                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                    <TextBlock
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="{Binding Name}" />
+                                    <TextBlock
+                                        FontSize="14"
+                                        Foreground="Gray"
+                                        Text="{Binding Amount}" />
+                                </StackPanel>
+
+                                <!--  Cột Phải: Lượng calo và nút Thêm  -->
+                                <StackPanel
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Spacing="10">
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        Text="{Binding Calories}" />
+                                    <Button x:ConnectionId='5'
+                                        Padding="5,2"
+                                        VerticalAlignment="Center"
+                                                               
+                                        Content="Thêm"
+                                        Tag="{Binding}" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>
 
