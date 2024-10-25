@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\gyminize_winui_app\\gyminize\\views\\nutritionspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\nutritionspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\gyminize_winui_app\\gyminize\\views\\nutritionspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\nutritionspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\gyminize_winui_app\\gyminize\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\gyminize_winui_app\\gyminize\\views\\nutritionspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\nutritionspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\gyminize_winui_app\\gyminize\\models\\mockfooditemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -180,11 +180,11 @@
         },
         {
           "DockedWidth": 336,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HomePage.xaml.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\Views\\HomePage.xaml.cs",
               "RelativeDocumentMoniker": "Gyminize\\Views\\HomePage.xaml.cs",
@@ -193,8 +193,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T05:14:24.98Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -207,18 +206,17 @@
               "ViewState": "AgIAAMkAAAAAAAAAAAAAAPoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-23T03:14:01.314Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "NutritionsPage.xaml",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\Views\\NutritionsPage.xaml",
               "RelativeDocumentMoniker": "Gyminize\\Views\\NutritionsPage.xaml",
               "ToolTip": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\Views\\NutritionsPage.xaml",
               "RelativeToolTip": "Gyminize\\Views\\NutritionsPage.xaml",
-              "ViewState": "AgIAACUAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAAACoBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-25T02:18:48.787Z",
               "IsPinned": true,
@@ -226,13 +224,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "NutritionsPage.xaml.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\Views\\NutritionsPage.xaml.cs",
               "RelativeDocumentMoniker": "Gyminize\\Views\\NutritionsPage.xaml.cs",
               "ToolTip": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\Views\\NutritionsPage.xaml.cs",
               "RelativeToolTip": "Gyminize\\Views\\NutritionsPage.xaml.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwDUAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAqwFcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T10:21:23.398Z",
               "IsPinned": true,
@@ -240,13 +238,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NutritionsViewModel.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "RelativeDocumentMoniker": "Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "ToolTip": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "RelativeToolTip": "Gyminize\\ViewModels\\NutritionsViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswDoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T06:26:36.465Z",
               "IsPinned": true,
@@ -278,8 +276,7 @@
               "RelativeToolTip": "Gyminize\\Models\\MockFoodItemData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T05:53:06.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T05:53:06.14Z"
             },
             {
               "$type": "Document",
@@ -291,8 +288,7 @@
               "RelativeToolTip": "Gyminize\\Models\\FoodItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T05:52:20.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T05:52:20.057Z"
             },
             {
               "$type": "Document",

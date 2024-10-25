@@ -65,4 +65,32 @@ public sealed partial class NutritionsPage : Page
             }
         }
     }
+
+    private void DelButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+    {
+        // Lấy thực phẩm được chọn từ Tag
+        var selectedFood = (sender as Button).Tag as FoodItem;
+
+        // Xóa thực phẩm khỏi bữa ăn tương ứng
+        if (ViewModel.BreakfastItems.Contains(selectedFood))
+        {
+            ViewModel.BreakfastItems.Remove(selectedFood);
+            BreakfastItemsControl.Items.Remove(selectedFood);
+        }
+        else if (ViewModel.LunchItems.Contains(selectedFood))
+        {
+            ViewModel.LunchItems.Remove(selectedFood);
+            LunchItemsControl.Items.Remove(selectedFood);
+        }
+        else if (ViewModel.DinnerItems.Contains(selectedFood))
+        {
+            ViewModel.DinnerItems.Remove(selectedFood);
+            DinnerItemsControl.Items.Remove(selectedFood);
+        }
+        else if (ViewModel.SnackItems.Contains(selectedFood))
+        {
+            ViewModel.SnackItems.Remove(selectedFood);
+            SnackItemsControl.Items.Remove(selectedFood);
+        }
+    }
 }

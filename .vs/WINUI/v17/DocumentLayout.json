@@ -193,8 +193,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T05:14:24.98Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -207,8 +206,7 @@
               "ViewState": "AgIAAMkAAAAAAAAAAAAAAPoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-23T03:14:01.314Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -218,7 +216,7 @@
               "RelativeDocumentMoniker": "Gyminize\\Views\\NutritionsPage.xaml",
               "ToolTip": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\Views\\NutritionsPage.xaml",
               "RelativeToolTip": "Gyminize\\Views\\NutritionsPage.xaml",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAcwNsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAAAB4BAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-25T02:18:48.787Z",
               "IsPinned": true,
@@ -232,7 +230,7 @@
               "RelativeDocumentMoniker": "Gyminize\\Views\\NutritionsPage.xaml.cs",
               "ToolTip": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\Views\\NutritionsPage.xaml.cs",
               "RelativeToolTip": "Gyminize\\Views\\NutritionsPage.xaml.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwDUAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAqwFcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T10:21:23.398Z",
               "IsPinned": true,
@@ -246,7 +244,7 @@
               "RelativeDocumentMoniker": "Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "ToolTip": "J:\\Study\\WindowPrograming\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "RelativeToolTip": "Gyminize\\ViewModels\\NutritionsViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswDoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T06:26:36.465Z",
               "IsPinned": true,
@@ -278,8 +276,7 @@
               "RelativeToolTip": "Gyminize\\Models\\MockFoodItemData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T05:53:06.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T05:53:06.14Z"
             },
             {
               "$type": "Document",
@@ -291,8 +288,7 @@
               "RelativeToolTip": "Gyminize\\Models\\FoodItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T05:52:20.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T05:52:20.057Z"
             },
             {
               "$type": "Document",
