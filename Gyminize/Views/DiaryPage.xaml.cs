@@ -15,5 +15,7 @@ public sealed partial class DiaryPage : Page
     {
         ViewModel = App.GetService<DiaryViewModel>();
         InitializeComponent();
+        MyCalendarView.MinDate = new DateTimeOffset(new DateTime(2023, 1, 1));
+        MyCalendarView.MaxDate = new DateTimeOffset(new DateTime(2025, 12, 31));
     }
 }

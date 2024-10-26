@@ -4,10 +4,104 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     mc:Ignorable="d">
 
     <Grid x:ConnectionId='2' x:Name="ContentArea">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <CalendarView x:ConnectionId='3'
+            x:Name="MyCalendarView"
+            Grid.Column="0"
+            Width="500"
+            Height="400"
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            DisplayMode="Month"
+            FirstDayOfWeek="Monday" />
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.Row="0"
+                Margin="10"
+                Padding="5"
+                Background="White"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="10">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Margin="10"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Text="Thông tin chi tiết" />
+                    <TextBlock Margin="10">
+                        <Run FontSize="14" Text="Ngày ghi nhật ký:" />
+                        <!--  Binding ngày hiện tại  -->
+                        <Run FontSize="14" Text="10/10/2023" />
+                    </TextBlock>
+                    <TextBlock Margin="10">
+                        <Run FontSize="14" Text="Cân nặng:" />
+                        <!--  Binding cân nặng  -->
+                        <Run FontSize="14" Text="80" />
+                        <Run FontSize="14" Text="Kg" />
+                    </TextBlock>
+                    <TextBlock Margin="10">
+                        <Run FontSize="14" Text="Calories Tiêu thụ: " />
+                        <!--  Binding calories đã tiêu thụ  -->
+                        <Run FontSize="14" Text="2000" />
+                        <Run FontSize="14" Text="/" />
+                        <!--  Binding TDEE  -->
+                        <Run FontSize="14" Text="3000" />
+
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border
+                Grid.Row="1"
+                Margin="10"
+                Padding="5"
+                Background="White"
+                BorderBrush="DarkCyan"
+                BorderThickness="1"
+                CornerRadius="10">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Margin="10"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Text="Thông tin chi tiết" />
+                    <TextBlock Margin="10">
+                        <Run FontSize="14" Text="Ngày ghi nhật ký:" />
+                        <!--  Binding ngày hiện tại  -->
+                        <Run FontSize="14" Text="10/10/2023" />
+                    </TextBlock>
+                    <TextBlock Margin="10">
+                        <Run FontSize="14" Text="Cân nặng:" />
+                        <!--  Binding cân nặng  -->
+                        <Run FontSize="14" Text="80" />
+                        <Run FontSize="14" Text="Kg" />
+                    </TextBlock>
+                    <TextBlock Margin="10">
+                        <Run FontSize="14" Text="Calories Tiêu thụ: " />
+                        <!--  Binding calories đã tiêu thụ  -->
+                        <Run FontSize="14" Text="2000" />
+                        <Run FontSize="14" Text="/" />
+                        <!--  Binding TDEE  -->
+                        <Run FontSize="14" Text="3000" />
+
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Page>
 

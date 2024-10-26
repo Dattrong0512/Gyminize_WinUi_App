@@ -29,13 +29,13 @@
     <AppXManifest Include="J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-25T14:16:50.823</Modified>
+      <Modified>2024-10-26T09:18:55.272</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-10-25T14:16:49.899</Modified>
+      <Modified>2024-10-26T09:18:54.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.runtimeconfig.json">
       <PackagePath>Gyminize.runtimeconfig.json</PackagePath>
@@ -43,7 +43,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.dll">
       <PackagePath>Gyminize.dll</PackagePath>
-      <Modified>2024-10-25T14:16:49.157</Modified>
+      <Modified>2024-10-26T09:18:52.445</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\appsettings.json">
       <PackagePath>appsettings.json</PackagePath>
@@ -51,7 +51,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Gyminize.exe</PackagePath>
-      <Modified>2024-10-25T14:16:49.456</Modified>
+      <Modified>2024-10-26T09:18:52.936</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bach Yen\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
