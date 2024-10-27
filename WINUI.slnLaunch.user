@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Gyminize\\Gyminize.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\Gyminize_API\\Gyminize_API\\Gyminize_API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

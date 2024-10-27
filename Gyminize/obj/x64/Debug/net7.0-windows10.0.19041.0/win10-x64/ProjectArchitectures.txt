@@ -1,1 +1,1 @@
-J:\Study\WindowPrograming\Gyminize_WinUi_App\Gyminize\Gyminize.csproj;x64
+C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Gyminize.csproj;x64

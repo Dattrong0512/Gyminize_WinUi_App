@@ -6,7 +6,7 @@ namespace Gyminize.Core.Helpers;
 public static class Json
 {
     // Phương thức bất đồng bộ để chuyển đổi chuỗi JSON thành đối tượng kiểu T.
-    public static async Task<T> ToObjectAsync<T>(string value)
+    public static async Task<T> ToObjectAsync<T>(string value) 
     {
         return await Task.Run<T>(() =>
         {

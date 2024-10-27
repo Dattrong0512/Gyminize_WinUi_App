@@ -15,30 +15,32 @@ using Windows.Storage.Streams;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Navigation;
 using System.Text.Json;
-
+using Newtonsoft.Json;
+using Gyminize.Models;
 namespace Gyminize.ViewModels
 {
     public partial class SigninViewmodel : ObservableObject
     {
         [ObservableProperty]
         private string loginStatus;
-
+        private Customer Customer { get; set; }
         public ICommand LoginCommand
         {
             get;
         }
 
         // OAuth 2.0 client configuration
-        const string clientID = "25264695175-iaas6asgfvbphspkdso5gfvsvd5huk3u.apps.googleusercontent.com";
-        const string clientSecret = "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"; // Thêm client_secret
+        const string clientID = "25264695175-026qgqsmvslrgn5gm2vj9gseu1ugf4ro.apps.googleusercontent.com";
+        const string clientSecret = "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"; // Thêm client_secret
         const string redirectURI = "http://localhost:8080";  // Sử dụng URI localhost để nhận phản hồi
         const string authorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
         const string tokenEndpoint = "https://oauth2.googleapis.com/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
-
+        
         public SigninViewmodel()
         {
             LoginCommand = new RelayCommand(OnLogin);
+            Customer = new Customer();
         }
 
         private async void OnLogin()
@@ -56,7 +58,7 @@ namespace Gyminize.ViewModels
 
             // Create the OAuth 2.0 authorization request URL
             string authorizationRequest = string.Format(
-                "{0}?response_type=code&scope=openid%20profile&redirect_uri={1}&client_id={2}&state={3}&code_challenge={4}&code_challenge_method={5}",
+                "{0}?response_type=code&scope=openid%20profile%20email&redirect_uri={1}&client_id={2}&state={3}&code_challenge={4}&code_challenge_method={5}",
                 authorizationEndpoint,
                 Uri.EscapeDataString(redirectURI),
                 clientID,
@@ -64,6 +66,7 @@ namespace Gyminize.ViewModels
                 codeChallenge,
                 codeChallengeMethod
             );
+
 
             // Open the authorization request URL in the browser
             var success = await Launcher.LaunchUriAsync(new Uri(authorizationRequest));
@@ -81,7 +84,7 @@ namespace Gyminize.ViewModels
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:8080/"); // Listening on port 8080
             listener.Start();
-            output("Listening for OAuth callback on http://localhost:8080/...");
+            //output("Listening for OAuth callback on http://localhost:8080/...");
 
             HttpListenerContext context = await listener.GetContextAsync(); // Wait for the request
             HttpListenerRequest request = context.Request;
@@ -120,7 +123,7 @@ namespace Gyminize.ViewModels
             localSettings.Values["state"] = null;
 
             // Authorization Code is now ready to use!
-            output($"Authorization code: {code}");
+            //output($"Authorization code: {code}");
 
             string codeVerifier = (string)localSettings.Values["code_verifier"];
             await ExchangeCodeForTokensAsync(code, codeVerifier);  // Sử dụng mã ủy quyền để lấy token
@@ -174,16 +177,70 @@ namespace Gyminize.ViewModels
 
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
 
-                // Make a call to the Userinfo endpoint
-                output("Making API Call to Userinfo...");
+                //// Make a call to the Userinfo endpoint
+                //output("Making API Call to Userinfo...");
                 HttpResponseMessage userinfoResponse = await client.GetAsync(userInfoEndpoint);
                 string userinfoResponseContent = await userinfoResponse.Content.ReadAsStringAsync();
 
                 // Output the Userinfo API response
-                output(userinfoResponseContent);
+                //output(userinfoResponseContent);
+                ProcessingDataLogin(userinfoResponseContent);
+
             }
         }
 
+        private void ProcessingDataLogin(string DataLogin)
+        {
+            // Parse JSON response from Google user info
+            var userInfo = JsonConvert.DeserializeObject<Dictionary<string, string>>(DataLogin);
+
+            if (userInfo != null)
+            {
+                // Extract 'sub' as password
+                string password = userInfo.ContainsKey("sub") ? userInfo["sub"] : string.Empty;
+
+                // Extract 'email' as username
+                string username = userInfo.ContainsKey("email") ? userInfo["email"] : string.Empty;
+
+                //// Output or process username and password as needed
+                output($"username: {username}");
+                output($"password: {password}");
+                CheckCustomerByGet(username, password);
+            }
+            else
+            {
+                output("Failed to parse user info.");
+            }
+        }
+        private void CheckCustomerByGet(string username, string password)
+        {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7141/");
+            var response = client.GetAsync("api/Customer/get/username/" + username).Result;
+            if (response.StatusCode==HttpStatusCode.OK)
+            {
+                var json = response.Content.ReadAsStringAsync().Result;
+                Customer = JsonConvert.DeserializeObject<Customer>(json);
+                //output(Customer.username);
+            }
+            else
+            {
+                PostCustomer(username, password);
+            }
+        }
+        private void PostCustomer(string username, string password)
+        {
+            Customer.customer_name= username;
+            Customer.auth_type = 2;
+            Customer.username = username;
+            Customer.customer_password = password;
+
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7141/");
+            var json = System.Text.Json.JsonSerializer.Serialize(Customer);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = client.PostAsync("api/Customer/create", content).Result;
+        }
         // Utility methods for base64 encoding and hashing
         private static string randomDataBase64url(uint length)
         {
