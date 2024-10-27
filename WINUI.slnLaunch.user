@@ -7,7 +7,7 @@
         "Action": "Start"
       },
       {
-        "Path": "..\\Gyminize_API\\Gyminize_API\\Gyminize_API.csproj",
+        "Path": "Gyminize_API\\Gyminize_API.csproj",
         "Action": "Start"
       }
     ]

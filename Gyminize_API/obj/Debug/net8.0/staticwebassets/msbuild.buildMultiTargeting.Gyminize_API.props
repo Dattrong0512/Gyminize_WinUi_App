@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Gyminize_API.props" />
+</Project>

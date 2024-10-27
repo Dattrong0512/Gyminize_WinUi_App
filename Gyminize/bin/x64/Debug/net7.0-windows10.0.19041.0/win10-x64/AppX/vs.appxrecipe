@@ -29,21 +29,21 @@
     <AppXManifest Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-27T06:47:50.391</Modified>
+      <Modified>2024-10-27T07:26:45.786</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-10-27T03:11:03.384</Modified>
+      <Modified>2024-10-27T07:26:45.332</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.runtimeconfig.json">
       <PackagePath>Gyminize.runtimeconfig.json</PackagePath>
-      <Modified>2024-10-27T03:11:03.008</Modified>
+      <Modified>2024-10-27T07:26:45.004</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.dll">
       <PackagePath>Gyminize.dll</PackagePath>
-      <Modified>2024-10-27T06:47:49.831</Modified>
+      <Modified>2024-10-27T07:26:44.114</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\appsettings.json">
       <PackagePath>appsettings.json</PackagePath>
@@ -51,7 +51,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Gyminize.exe</PackagePath>
-      <Modified>2024-10-27T06:47:49.860</Modified>
+      <Modified>2024-10-27T07:26:44.145</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -1151,7 +1151,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.dll">
       <PackagePath>Gyminize.Core.dll</PackagePath>
-      <Modified>2024-10-27T03:07:30.412</Modified>
+      <Modified>2024-10-27T07:26:31.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\lib_manual\net6.0-windows10.0.17763.0\Microsoft.Web.WebView2.Core.Projection.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
@@ -1159,7 +1159,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.deps.json">
       <PackagePath>Gyminize.deps.json</PackagePath>
-      <Modified>2024-10-27T03:11:02.821</Modified>
+      <Modified>2024-10-27T07:26:44.848</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\colorcode.winui\2.0.13\lib\net5.0-windows10.0.18362\ColorCode.WinUI.pri">
       <PackagePath>ColorCode.WinUI.pri</PackagePath>
@@ -1219,19 +1219,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\clock.svg">
       <PackagePath>Assets\Icon\clock.svg</PackagePath>
-      <Modified>2024-10-27T02:20:22.652</Modified>
+      <Modified>2024-10-27T07:06:44.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\dumbell.svg">
       <PackagePath>Assets\Icon\dumbell.svg</PackagePath>
-      <Modified>2024-10-27T02:20:22.652</Modified>
+      <Modified>2024-10-27T07:06:44.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\food.png">
       <PackagePath>Assets\Icon\food.png</PackagePath>
-      <Modified>2024-10-27T02:20:22.652</Modified>
+      <Modified>2024-10-27T07:06:44.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\goal.png">
       <PackagePath>Assets\Icon\goal.png</PackagePath>
-      <Modified>2024-10-27T02:20:22.652</Modified>
+      <Modified>2024-10-27T07:06:44.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -1239,7 +1239,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\motivation.jpg">
       <PackagePath>Assets\motivation.jpg</PackagePath>
-      <Modified>2024-10-27T02:20:22.652</Modified>
+      <Modified>2024-10-27T07:06:44.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
