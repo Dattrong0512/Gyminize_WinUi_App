@@ -97,7 +97,8 @@ public partial class App : Application
             services.AddTransient<SigninViewmodel>();
             services.AddTransient<Guide3ViewModel>();
             services.AddTransient<GuidePage3>();
-
+            services.AddTransient<SignupPage>();
+            services.AddTransient<SignupViewModel>();
 
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));

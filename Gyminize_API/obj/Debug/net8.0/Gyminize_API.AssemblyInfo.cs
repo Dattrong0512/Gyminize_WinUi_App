@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gyminize_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76a1b5a0d7f5d9f227a44788546704258985e596")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf030f3412605112d9e07c65db2f6f9362b140ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gyminize_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gyminize_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
