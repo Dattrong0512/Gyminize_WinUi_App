@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-27T07:26:45.786</Modified>
+      <Modified>2024-10-27T08:05:20.182</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,7 +43,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.dll">
       <PackagePath>Gyminize.dll</PackagePath>
-      <Modified>2024-10-27T07:26:44.114</Modified>
+      <Modified>2024-10-27T08:05:19.307</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\appsettings.json">
       <PackagePath>appsettings.json</PackagePath>
@@ -51,7 +51,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Gyminize.exe</PackagePath>
-      <Modified>2024-10-27T07:26:44.145</Modified>
+      <Modified>2024-10-27T08:05:19.369</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -1151,7 +1151,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.dll">
       <PackagePath>Gyminize.Core.dll</PackagePath>
-      <Modified>2024-10-27T07:26:31.265</Modified>
+      <Modified>2024-10-27T08:05:06.338</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\lib_manual\net6.0-windows10.0.17763.0\Microsoft.Web.WebView2.Core.Projection.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
