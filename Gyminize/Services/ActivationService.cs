@@ -33,7 +33,7 @@ public class ActivationService : IActivationService
         if (App.MainWindow.Content == null)
         {
             var frame = new Frame();
-            _shell = App.GetService<SignupPage>();
+            _shell = App.GetService<SigninPage>();
             frame.Content = _shell;
             App.MainWindow.Content = frame;
         }

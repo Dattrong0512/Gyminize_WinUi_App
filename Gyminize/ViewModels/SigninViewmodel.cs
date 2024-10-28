@@ -12,8 +12,6 @@ using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 using Windows.Security.Cryptography;
 using Windows.Storage.Streams;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Navigation;
 using System.Text.Json;
 using Newtonsoft.Json;
 using Gyminize.Models;
@@ -23,8 +21,17 @@ namespace Gyminize.ViewModels
     {
         [ObservableProperty]
         private string loginStatus;
+
+        [ObservableProperty]
+        private string username;
+        [ObservableProperty]
+        private string password;
         private Customer Customer { get; set; }
-        public ICommand LoginCommand
+        public ICommand LoginCommandByGoogle
+        {
+            get;
+        }
+        public ICommand LoginCommandByUser
         {
             get;
         }
@@ -39,11 +46,29 @@ namespace Gyminize.ViewModels
         
         public SigninViewmodel()
         {
-            LoginCommand = new RelayCommand(OnLogin);
+            LoginCommandByGoogle = new RelayCommand(OnLoginByGoogle);
+            LoginCommandByUser = new RelayCommand(OnLoginByUser);
             Customer = new Customer();
         }
-
-        private async void OnLogin()
+        private async void OnLoginByUser()
+        {
+            if (CheckCustomerByGet(Username, Password))
+            {
+               if(Password!= Customer.customer_password)
+                {
+                    output("Mật khẩu không đúng!");
+                }
+                else
+                {
+                    output("Đăng nhập thành công!");
+                }          
+            }
+            else 
+            {
+                output("Tài khoản chưa tồn tại, vui lòng đăng kí");
+            }
+        }
+        private async void OnLoginByGoogle()
         {
             // Generate state and PKCE values
             string state = randomDataBase64url(32);
@@ -205,14 +230,19 @@ namespace Gyminize.ViewModels
                 //// Output or process username and password as needed
                 output($"username: {username}");
                 output($"password: {password}");
-                CheckCustomerByGet(username, password);
+                if (!CheckCustomerByGet(username, password))
+                {
+                    PostCustomer(username, password);
+                }
+                else { //Nothing todo
+                      }
             }
             else
             {
                 output("Failed to parse user info.");
             }
         }
-        private void CheckCustomerByGet(string username, string password)
+        private bool CheckCustomerByGet(string username, string password)
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7141/");
@@ -221,11 +251,11 @@ namespace Gyminize.ViewModels
             {
                 var json = response.Content.ReadAsStringAsync().Result;
                 Customer = JsonConvert.DeserializeObject<Customer>(json);
-                //output(Customer.username);
+                return true;
             }
             else
             {
-                PostCustomer(username, password);
+                return false;             
             }
         }
         private void PostCustomer(string username, string password)
@@ -239,6 +269,7 @@ namespace Gyminize.ViewModels
             client.BaseAddress = new Uri("https://localhost:7141/");
             var json = System.Text.Json.JsonSerializer.Serialize(Customer);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+
             var response = client.PostAsync("api/Customer/create", content).Result;
         }
         // Utility methods for base64 encoding and hashing
@@ -264,7 +295,7 @@ namespace Gyminize.ViewModels
 
         public void output(string message)
         {
-            LoginStatus += message + Environment.NewLine;
+            LoginStatus = message;
             Debug.WriteLine(message);
         }
     }

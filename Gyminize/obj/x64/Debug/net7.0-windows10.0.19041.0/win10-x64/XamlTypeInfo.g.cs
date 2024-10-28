@@ -1256,8 +1256,11 @@ namespace Gyminize.Gyminize_XamlTypeInfo
                 userType = new global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
                 userType.Activator = Activate_84_SigninViewmodel;
                 userType.StaticInitializer = StaticInitializer_84_SigninViewmodel;
-                userType.AddMemberName("LoginCommand");
+                userType.AddMemberName("LoginCommandByGoogle");
+                userType.AddMemberName("LoginCommandByUser");
                 userType.AddMemberName("LoginStatus");
+                userType.AddMemberName("Username");
+                userType.AddMemberName("Password");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -1280,6 +1283,7 @@ namespace Gyminize.Gyminize_XamlTypeInfo
                 userType.AddMemberName("Username");
                 userType.AddMemberName("Password");
                 userType.AddMemberName("ConfirmPassword");
+                userType.AddMemberName("IsAgree");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -2384,122 +2388,157 @@ namespace Gyminize.Gyminize_XamlTypeInfo
             var that = (global::Gyminize.Views.ShopPage)instance;
             return that.ViewModel;
         }
-        private object get_112_SigninViewmodel_LoginCommand(object instance)
+        private object get_112_SigninViewmodel_LoginCommandByGoogle(object instance)
         {
             var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
-            return that.LoginCommand;
+            return that.LoginCommandByGoogle;
         }
-        private object get_113_SigninViewmodel_LoginStatus(object instance)
+        private object get_113_SigninViewmodel_LoginCommandByUser(object instance)
+        {
+            var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
+            return that.LoginCommandByUser;
+        }
+        private object get_114_SigninViewmodel_LoginStatus(object instance)
         {
             var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
             return that.LoginStatus;
         }
-        private void set_113_SigninViewmodel_LoginStatus(object instance, object Value)
+        private void set_114_SigninViewmodel_LoginStatus(object instance, object Value)
         {
             var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
             that.LoginStatus = (global::System.String)Value;
         }
-        private object get_114_SigninPage_ViewModel(object instance)
+        private object get_115_SigninViewmodel_Username(object instance)
+        {
+            var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
+            return that.Username;
+        }
+        private void set_115_SigninViewmodel_Username(object instance, object Value)
+        {
+            var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
+            that.Username = (global::System.String)Value;
+        }
+        private object get_116_SigninViewmodel_Password(object instance)
+        {
+            var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
+            return that.Password;
+        }
+        private void set_116_SigninViewmodel_Password(object instance, object Value)
+        {
+            var that = (global::Gyminize.ViewModels.SigninViewmodel)instance;
+            that.Password = (global::System.String)Value;
+        }
+        private object get_117_SigninPage_ViewModel(object instance)
         {
             var that = (global::Gyminize.Views.SigninPage)instance;
             return that.ViewModel;
         }
-        private object get_115_SignupViewModel_SignupCommand(object instance)
+        private object get_118_SignupViewModel_SignupCommand(object instance)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             return that.SignupCommand;
         }
-        private object get_116_SignupViewModel_SignupStatus(object instance)
+        private object get_119_SignupViewModel_SignupStatus(object instance)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             return that.SignupStatus;
         }
-        private void set_116_SignupViewModel_SignupStatus(object instance, object Value)
+        private void set_119_SignupViewModel_SignupStatus(object instance, object Value)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             that.SignupStatus = (global::System.String)Value;
         }
-        private object get_117_SignupViewModel_Username(object instance)
+        private object get_120_SignupViewModel_Username(object instance)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             return that.Username;
         }
-        private void set_117_SignupViewModel_Username(object instance, object Value)
+        private void set_120_SignupViewModel_Username(object instance, object Value)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             that.Username = (global::System.String)Value;
         }
-        private object get_118_SignupViewModel_Password(object instance)
+        private object get_121_SignupViewModel_Password(object instance)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             return that.Password;
         }
-        private void set_118_SignupViewModel_Password(object instance, object Value)
+        private void set_121_SignupViewModel_Password(object instance, object Value)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             that.Password = (global::System.String)Value;
         }
-        private object get_119_SignupViewModel_ConfirmPassword(object instance)
+        private object get_122_SignupViewModel_ConfirmPassword(object instance)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             return that.ConfirmPassword;
         }
-        private void set_119_SignupViewModel_ConfirmPassword(object instance, object Value)
+        private void set_122_SignupViewModel_ConfirmPassword(object instance, object Value)
         {
             var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
             that.ConfirmPassword = (global::System.String)Value;
         }
-        private object get_120_SignupPage_viewmodel(object instance)
+        private object get_123_SignupViewModel_IsAgree(object instance)
+        {
+            var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
+            return that.IsAgree;
+        }
+        private void set_123_SignupViewModel_IsAgree(object instance, object Value)
+        {
+            var that = (global::Gyminize.ViewModels.SignupViewModel)instance;
+            that.IsAgree = (global::System.Boolean)Value;
+        }
+        private object get_124_SignupPage_viewmodel(object instance)
         {
             var that = (global::Gyminize.Views.SignupPage)instance;
             return that.viewmodel;
         }
-        private object get_121_TreeViewNode_Children(object instance)
+        private object get_125_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_122_TreeViewNode_Content(object instance)
+        private object get_126_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_122_TreeViewNode_Content(object instance, object Value)
+        private void set_126_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_123_TreeViewNode_Depth(object instance)
+        private object get_127_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_124_TreeViewNode_HasChildren(object instance)
+        private object get_128_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_125_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_129_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_125_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_129_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_126_TreeViewNode_IsExpanded(object instance)
+        private object get_130_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_126_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_130_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_127_TreeViewNode_Parent(object instance)
+        private object get_131_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -3266,104 +3305,128 @@ namespace Gyminize.Gyminize_XamlTypeInfo
                 xamlMember.Getter = get_111_ShopPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "Gyminize.ViewModels.SigninViewmodel.LoginCommand":
+            case "Gyminize.ViewModels.SigninViewmodel.LoginCommandByGoogle":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SigninViewmodel");
-                xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "LoginCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_112_SigninViewmodel_LoginCommand;
+                xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "LoginCommandByGoogle", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_112_SigninViewmodel_LoginCommandByGoogle;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Gyminize.ViewModels.SigninViewmodel.LoginCommandByUser":
+                userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SigninViewmodel");
+                xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "LoginCommandByUser", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_113_SigninViewmodel_LoginCommandByUser;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Gyminize.ViewModels.SigninViewmodel.LoginStatus":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SigninViewmodel");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "LoginStatus", "String");
-                xamlMember.Getter = get_113_SigninViewmodel_LoginStatus;
-                xamlMember.Setter = set_113_SigninViewmodel_LoginStatus;
+                xamlMember.Getter = get_114_SigninViewmodel_LoginStatus;
+                xamlMember.Setter = set_114_SigninViewmodel_LoginStatus;
+                break;
+            case "Gyminize.ViewModels.SigninViewmodel.Username":
+                userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SigninViewmodel");
+                xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Username", "String");
+                xamlMember.Getter = get_115_SigninViewmodel_Username;
+                xamlMember.Setter = set_115_SigninViewmodel_Username;
+                break;
+            case "Gyminize.ViewModels.SigninViewmodel.Password":
+                userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SigninViewmodel");
+                xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Password", "String");
+                xamlMember.Getter = get_116_SigninViewmodel_Password;
+                xamlMember.Setter = set_116_SigninViewmodel_Password;
                 break;
             case "Gyminize.Views.SigninPage.ViewModel":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.Views.SigninPage");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "ViewModel", "Gyminize.ViewModels.SigninViewmodel");
-                xamlMember.Getter = get_114_SigninPage_ViewModel;
+                xamlMember.Getter = get_117_SigninPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Gyminize.ViewModels.SignupViewModel.SignupCommand":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SignupViewModel");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "SignupCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_115_SignupViewModel_SignupCommand;
+                xamlMember.Getter = get_118_SignupViewModel_SignupCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Gyminize.ViewModels.SignupViewModel.SignupStatus":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SignupViewModel");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "SignupStatus", "String");
-                xamlMember.Getter = get_116_SignupViewModel_SignupStatus;
-                xamlMember.Setter = set_116_SignupViewModel_SignupStatus;
+                xamlMember.Getter = get_119_SignupViewModel_SignupStatus;
+                xamlMember.Setter = set_119_SignupViewModel_SignupStatus;
                 break;
             case "Gyminize.ViewModels.SignupViewModel.Username":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SignupViewModel");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_117_SignupViewModel_Username;
-                xamlMember.Setter = set_117_SignupViewModel_Username;
+                xamlMember.Getter = get_120_SignupViewModel_Username;
+                xamlMember.Setter = set_120_SignupViewModel_Username;
                 break;
             case "Gyminize.ViewModels.SignupViewModel.Password":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SignupViewModel");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_118_SignupViewModel_Password;
-                xamlMember.Setter = set_118_SignupViewModel_Password;
+                xamlMember.Getter = get_121_SignupViewModel_Password;
+                xamlMember.Setter = set_121_SignupViewModel_Password;
                 break;
             case "Gyminize.ViewModels.SignupViewModel.ConfirmPassword":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SignupViewModel");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "ConfirmPassword", "String");
-                xamlMember.Getter = get_119_SignupViewModel_ConfirmPassword;
-                xamlMember.Setter = set_119_SignupViewModel_ConfirmPassword;
+                xamlMember.Getter = get_122_SignupViewModel_ConfirmPassword;
+                xamlMember.Setter = set_122_SignupViewModel_ConfirmPassword;
+                break;
+            case "Gyminize.ViewModels.SignupViewModel.IsAgree":
+                userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.ViewModels.SignupViewModel");
+                xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "IsAgree", "Boolean");
+                xamlMember.Getter = get_123_SignupViewModel_IsAgree;
+                xamlMember.Setter = set_123_SignupViewModel_IsAgree;
                 break;
             case "Gyminize.Views.SignupPage.viewmodel":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Gyminize.Views.SignupPage");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "viewmodel", "Gyminize.ViewModels.SignupViewModel");
-                xamlMember.Getter = get_120_SignupPage_viewmodel;
+                xamlMember.Getter = get_124_SignupPage_viewmodel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_121_TreeViewNode_Children;
+                xamlMember.Getter = get_125_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_122_TreeViewNode_Content;
-                xamlMember.Setter = set_122_TreeViewNode_Content;
+                xamlMember.Getter = get_126_TreeViewNode_Content;
+                xamlMember.Setter = set_126_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_123_TreeViewNode_Depth;
+                xamlMember.Getter = get_127_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_124_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_128_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_125_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_125_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_129_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_129_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_126_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_126_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_130_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_130_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::Gyminize.Gyminize_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::Gyminize.Gyminize_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_127_TreeViewNode_Parent;
+                xamlMember.Getter = get_131_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

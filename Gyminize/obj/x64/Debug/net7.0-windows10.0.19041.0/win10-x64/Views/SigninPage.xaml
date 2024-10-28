@@ -40,13 +40,15 @@
                     Height="40"
                     Margin="10"
                     Padding="10"
-                    PlaceholderText="Tên đăng nhập" />
+                    PlaceholderText="Tên đăng nhập" 
+                    Text="{Binding Username, Mode=TwoWay}"/>
                 <PasswordBox
                     Width="300"
                     Height="40"
                     Margin="10"
                     Padding="10"
-                    PlaceholderText="Mật khẩu" />
+                    PlaceholderText="Mật khẩu" 
+                    Password="{Binding Password, Mode=TwoWay}"/>
 
                 <CheckBox
                     Margin="15,0,0,0"
@@ -61,6 +63,7 @@
                     Background="#515DEF"
                     Content="Đăng nhập"
                     Foreground="White" 
+                    Command="{Binding LoginCommandByUser}"
                     />
 
                 <TextBlock
