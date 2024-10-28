@@ -15,6 +15,7 @@ using Windows.Storage.Streams;
 using System.Text.Json;
 using Newtonsoft.Json;
 using Gyminize.Models;
+using Gyminize.Contracts.Services;
 namespace Gyminize.ViewModels
 {
     public partial class SigninViewmodel : ObservableObject
@@ -26,12 +27,17 @@ namespace Gyminize.ViewModels
         private string username;
         [ObservableProperty]
         private string password;
+        private readonly INavigationService _navigationService;
         private Customer Customer { get; set; }
         public ICommand LoginCommandByGoogle
         {
             get;
         }
         public ICommand LoginCommandByUser
+        {
+            get;
+        }
+        public ICommand SignUpNavigateCommand
         {
             get;
         }
@@ -44,11 +50,21 @@ namespace Gyminize.ViewModels
         const string tokenEndpoint = "https://oauth2.googleapis.com/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
         
-        public SigninViewmodel()
+        public SigninViewmodel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
             LoginCommandByGoogle = new RelayCommand(OnLoginByGoogle);
             LoginCommandByUser = new RelayCommand(OnLoginByUser);
+            SignUpNavigateCommand = new RelayCommand(OnSignUpByUserNavigate);
             Customer = new Customer();
+        }
+        private void OnSignUpByUserNavigate()
+        {
+            var pageKey = typeof(SignupViewModel).FullName;
+            if (pageKey != null)
+            {
+                _navigationService.NavigateTo(pageKey);
+            }
         }
         private async void OnLoginByUser()
         {
@@ -60,6 +76,22 @@ namespace Gyminize.ViewModels
                 }
                 else
                 {
+                    if (CheckCustomerHealthByUsername(Username))
+                    {
+                        var pageKey = typeof(HomeViewModel).FullName;
+                        if (pageKey != null)
+                        {
+                            _navigationService.NavigateTo(pageKey);
+                        }
+                    }
+                    else
+                    {
+                        var pageKey = typeof(Guide1ViewModel).FullName;
+                        if (pageKey != null)
+                        {
+                            _navigationService.NavigateTo(pageKey, Username);
+                        }
+                    }
                     output("Đăng nhập thành công!");
                 }          
             }
@@ -233,9 +265,30 @@ namespace Gyminize.ViewModels
                 if (!CheckCustomerByGet(username, password))
                 {
                     PostCustomer(username, password);
+                    var pageKey = typeof(Guide1ViewModel).FullName;
+                    if (pageKey != null)
+                    {
+                        _navigationService.NavigateTo(pageKey, username);
+                    }
                 }
-                else { //Nothing todo
-                      }
+                else { 
+                    if (CheckCustomerHealthByUsername(username))
+                    {
+                        var pageKey = typeof(HomeViewModel).FullName;
+                        if (pageKey != null)
+                        {
+                            _navigationService.NavigateTo(pageKey);
+                        }
+                    }
+                    else
+                    {
+                        var pageKey = typeof(Guide1ViewModel).FullName;
+                        if (pageKey != null)
+                        {
+                            _navigationService.NavigateTo(pageKey, username);
+                        }
+                    }
+                }
             }
             else
             {
@@ -258,6 +311,38 @@ namespace Gyminize.ViewModels
                 return false;             
             }
         }
+
+        private bool CheckCustomerHealthByUsername(string username)
+        {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:7141/");
+
+            // Step 1: Get customer_id from customer table based on username
+            var customerResponse = client.GetAsync("api/Customer/get/username/" + username).Result;
+            if (customerResponse.StatusCode != HttpStatusCode.OK)
+            {
+                return false; // Customer not found
+            }
+
+            var customerJson = customerResponse.Content.ReadAsStringAsync().Result;
+            var customer = JsonConvert.DeserializeObject<Customer>(customerJson);
+            if (customer == null)
+            {
+                return false; // Customer not found
+            }
+
+            // Step 2: Check if customer_id exists in customer_health table
+            var healthResponse = client.GetAsync("api/CustomerHealth/get/customer_id/" + customer.customer_id).Result;
+            if (healthResponse.StatusCode == HttpStatusCode.OK)
+            {
+                return true; // Customer health data exists
+            }
+            else
+            {
+                return false; // Customer health data does not exist
+            }
+        }
+
         private void PostCustomer(string username, string password)
         {
             Customer.customer_name= username;

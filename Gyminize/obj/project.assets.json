@@ -17180,23 +17180,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Bach Yen\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
+      "projectUniqueName": "J:\\Study\\WindowPrograming\\Gyminize_Until_ML1\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
       "projectName": "Gyminize",
-      "projectPath": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
-      "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize\\obj\\",
+      "projectPath": "J:\\Study\\WindowPrograming\\Gyminize_Until_ML1\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
+      "packagesPath": "C:\\Users\\Bach Yen\\.nuget\\packages\\",
+      "outputPath": "J:\\Study\\WindowPrograming\\Gyminize_Until_ML1\\Gyminize_WinUi_App\\Gyminize\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bach Yen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -17212,8 +17214,8 @@
         "net7.0-windows10.0.19041": {
           "targetAlias": "net7.0-windows10.0.19041.0",
           "projectReferences": {
-            "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {
-              "projectPath": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj"
+            "J:\\Study\\WindowPrograming\\Gyminize_Until_ML1\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {
+              "projectPath": "J:\\Study\\WindowPrograming\\Gyminize_Until_ML1\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj"
             }
           }
         }
@@ -17226,9 +17228,8 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+        "auditMode": "direct"
+      }
     },
     "frameworks": {
       "net7.0-windows10.0.19041": {
@@ -17336,11 +17337,11 @@
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           },
-          "Microsoft.Windows.SDK.NET.Ref.Windows": {
+          "Microsoft.Windows.SDK.NET.Ref": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
@@ -17354,82 +17355,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Net.Http' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-7jgj-8wvc-jh57",
-      "libraryId": "System.Net.Http",
-      "targetGraphs": [
-        "net7.0-windows10.0.19041",
-        "net7.0-windows10.0.19041/win10-arm64",
-        "net7.0-windows10.0.19041/win10-x64",
-        "net7.0-windows10.0.19041/win10-x86"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5f2m-466j-3848",
-      "libraryId": "System.Private.Uri",
-      "targetGraphs": [
-        "net7.0-windows10.0.19041/win10-arm64",
-        "net7.0-windows10.0.19041/win10-x64",
-        "net7.0-windows10.0.19041/win10-x86"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Private.Uri' 4.3.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-x5qj-9vmx-7g6g",
-      "libraryId": "System.Private.Uri",
-      "targetGraphs": [
-        "net7.0-windows10.0.19041/win10-arm64",
-        "net7.0-windows10.0.19041/win10-x64",
-        "net7.0-windows10.0.19041/win10-x86"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Private.Uri' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-xhfc-gr8f-ffwc",
-      "libraryId": "System.Private.Uri",
-      "targetGraphs": [
-        "net7.0-windows10.0.19041/win10-arm64",
-        "net7.0-windows10.0.19041/win10-x64",
-        "net7.0-windows10.0.19041/win10-x86"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.Json' 6.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net7.0-windows10.0.19041",
-        "net7.0-windows10.0.19041/win10-arm64",
-        "net7.0-windows10.0.19041/win10-x64",
-        "net7.0-windows10.0.19041/win10-x86"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.RegularExpressions' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cmhx-cq75-c4mj",
-      "libraryId": "System.Text.RegularExpressions",
-      "targetGraphs": [
-        "net7.0-windows10.0.19041",
-        "net7.0-windows10.0.19041/win10-arm64",
-        "net7.0-windows10.0.19041/win10-x64",
-        "net7.0-windows10.0.19041/win10-x86"
-      ]
-    }
-  ]
+  }
 }

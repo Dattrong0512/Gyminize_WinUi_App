@@ -33,15 +33,16 @@
     <Content Remove="Assets\bodyfat_male4.png" />
     <Content Remove="Assets\bodyfat_male5.png" />
     <Content Remove="Assets\iconapp.png" />
-    <Content Remove="Assets\training.jfif" />
     <Content Remove="Assets\training1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Assets\google.png" />
     <None Remove="Assets\Icon\clock.svg" />
     <None Remove="Assets\Icon\dumbell.svg" />
     <None Remove="Assets\Icon\food.png" />
     <None Remove="Assets\Icon\goal.png" />
     <None Remove="Assets\motivation.jpg" />
+    <None Remove="Assets\training2.png" />
     <None Remove="Views\GuidePage1.xaml" />
     <None Remove="Views\GuidePage2.xaml" />
     <None Remove="Views\GuidePage3.xaml" />
@@ -114,9 +115,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\iconapp.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\training.jfif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\training1.png">

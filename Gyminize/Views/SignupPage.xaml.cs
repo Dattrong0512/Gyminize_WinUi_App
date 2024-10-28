@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Gyminize.ViewModels;
 using System.Globalization;
+using Gyminize.Contracts.Services;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -33,6 +34,9 @@ namespace Gyminize.Views
         {
             viewmodel = App.GetService<SignupViewModel>();
             this.InitializeComponent();
+            var navigationService = App.GetService<INavigationService>();
+            ViewModel = new SigninViewmodel(navigationService);
+            this.DataContext = ViewModel;
         }
     }
 

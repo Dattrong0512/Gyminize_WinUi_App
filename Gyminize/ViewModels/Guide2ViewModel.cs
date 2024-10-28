@@ -31,7 +31,12 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
     private Brush _imageBorder3Background = new SolidColorBrush(Colors.Transparent);
     private Brush _imageBorder4Background = new SolidColorBrush(Colors.Transparent);
     private Brush _imageBorder5Background = new SolidColorBrush(Colors.Transparent);
-
+    private Brush _imageBorder1BorderBrush = new SolidColorBrush(Colors.Black);
+    private Brush _imageBorder2BorderBrush = new SolidColorBrush(Colors.Black);
+    private Brush _imageBorder3BorderBrush = new SolidColorBrush(Colors.Black);
+    private Brush _imageBorder4BorderBrush = new SolidColorBrush(Colors.Black);
+    private Brush _imageBorder5BorderBrush = new SolidColorBrush(Colors.Black);
+   
 
     public ICommand PointerEnteredCommand { get; }
     public ICommand PointerExitedCommand { get; }
@@ -107,6 +112,36 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         set => SetProperty(ref _imageBorder5Background, value);
     }
 
+    public Brush ImageBorder1BorderBrush
+    {
+        get => _imageBorder1BorderBrush;
+        set => SetProperty(ref _imageBorder1BorderBrush, value);
+    }
+
+    public Brush ImageBorder2BorderBrush
+    {
+        get => _imageBorder2BorderBrush;
+        set => SetProperty(ref _imageBorder2BorderBrush, value);
+    }
+
+    public Brush ImageBorder3BorderBrush
+    {
+        get => _imageBorder2BorderBrush;
+        set => SetProperty(ref _imageBorder3BorderBrush, value);
+    }
+
+    public Brush ImageBorder4BorderBrush
+    {
+        get => _imageBorder2BorderBrush;
+        set => SetProperty(ref _imageBorder4BorderBrush, value);
+    }
+
+    public Brush ImageBorder5BorderBrush
+    {
+        get => _imageBorder2BorderBrush;
+        set => SetProperty(ref _imageBorder5BorderBrush, value);
+    }
+
     public string SelectedImageSource
     {
         get => _selectedImageSource;
@@ -128,6 +163,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         PointerReleasedCommand = new RelayCommand<Border?>(OnPointerReleased);
         NavigateBackCommand = new RelayCommand(NavigateBack);
         NavigateNextCommand = new RelayCommand(NavigateNext);
+       
     }
 
     private void OnPointerEntered(Border? border)
@@ -230,23 +266,28 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
     {
         if (SelectedImageSource == ImageSource1)
         {
-            ImageBorder1Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+            ImageBorder1BorderBrush = new SolidColorBrush(Colors.Blue);
+            ImageBorder1Background = new SolidColorBrush(ColorHelper.FromArgb(255, 81, 93, 239));
         }
         else if (SelectedImageSource == ImageSource2)
         {
-            ImageBorder2Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+            ImageBorder2BorderBrush = new SolidColorBrush(Colors.Blue);
+            ImageBorder2Background = new SolidColorBrush(ColorHelper.FromArgb(255, 81, 93, 239));
         }
         else if (SelectedImageSource == ImageSource3)
         {
-            ImageBorder3Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+            ImageBorder3BorderBrush = new SolidColorBrush(Colors.Blue);
+            ImageBorder3Background = new SolidColorBrush(ColorHelper.FromArgb(255, 81, 93, 239));
         }
         else if (SelectedImageSource == ImageSource4)
         {
-            ImageBorder4Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+            ImageBorder4BorderBrush = new SolidColorBrush(Colors.Blue);
+            ImageBorder4Background = new SolidColorBrush(ColorHelper.FromArgb(255, 81, 93, 239));
         }
         else if (SelectedImageSource == ImageSource5)
         {
-            ImageBorder5Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
+            ImageBorder5BorderBrush = new SolidColorBrush(Colors.Blue);
+            ImageBorder5Background = new SolidColorBrush(ColorHelper.FromArgb(255, 81, 93, 239));
         }
         IsValid = true;
     }

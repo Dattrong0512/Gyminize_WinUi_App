@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "7s8V/ztAhoEfxRrZx0L1qNqRWjR5z19wyy9YFZ5+9KQ=",
+  "Hash": "XMg7P2Y8r12ojbsp9baXLvBV0tcS0iNn8m1Kyw81HwA=",
   "Source": "Gyminize_API",
   "BasePath": "_content/Gyminize_API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

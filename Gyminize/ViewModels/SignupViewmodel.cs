@@ -9,6 +9,8 @@ using Windows.Gaming.Input.ForceFeedback;
 using System.Net.Http;
 using System.Net;
 using Gyminize.ViewModels;
+using Gyminize.Contracts.Services;
+using Gyminize.Services;
 namespace Gyminize.ViewModels
 {
     public partial class SignupViewModel : ObservableObject
@@ -27,13 +29,16 @@ namespace Gyminize.ViewModels
 
         [ObservableProperty]
         private bool isAgree;
+
+        private readonly INavigationService _navigationService;
         public ICommand SignupCommand
         {
             get;
         }
 
-        public SignupViewModel()
+        public SignupViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
             SignupCommand = new RelayCommand(OnSignUp);
         }
         private bool checkExistCustomer(string username)
@@ -66,6 +71,11 @@ namespace Gyminize.ViewModels
                         if (IsAgree == true)
                         {
                             PostCustomer(Username, Password);
+                            var pageKey = typeof(Guide1ViewModel).FullName;
+                            if (pageKey != null)
+                            {
+                                _navigationService.NavigateTo(pageKey, Username);
+                            }
                             SignupStatus = $"Đăng ký thành công cho {Username}!";
                         }
                         else

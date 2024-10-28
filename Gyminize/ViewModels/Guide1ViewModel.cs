@@ -18,6 +18,7 @@ using Windows.ApplicationModel.Email;
 namespace Gyminize.ViewModels;
 public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
 {
+    private string _username;
     private CustomerInfo _customerInfoBack;
     private readonly INavigationService _navigationService;
     public Guide1ViewModel(INavigationService navigationService)
@@ -41,9 +42,6 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         _weightErrorTextBlock = new TextBlock();
         _customerInfoBack = new CustomerInfo();
         _activityLevelComboBox = new ComboBox();
-
-
-
 
         SelectedActivityLevel = new ComboBoxItem { Content = "Trung Bình ( 3 - 5 buổi/tuần )" };
         
@@ -254,6 +252,7 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         if(IsValid == true) {
             var customerInfo = new CustomerInfo
             {
+                username = _username,
                 sex = MaleCheckBox.IsChecked == true ? 1 : 0,
                 Age = int.Parse(AgeTextBox.Text),
                 Weight = double.Parse(WeightTextBox.Text),
@@ -299,6 +298,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
                 customerInfo.BodyFat = _customerInfoBack.BodyFat;
                 IsValid = true;
             }
+        } else if(parameter is string user)
+        {
+            _username = user;
         }
     }
 
