@@ -26,6 +26,7 @@ public class PageService : IPageService
         Configure<Guide2ViewModel, GuidePage2>();
         Configure<Guide3ViewModel, GuidePage3>();
         Configure<SignupViewModel, SignupPage>();
+        Configure<ShellViewModel, ShellPage>();
     }
 
     // Lấy loại trang dựa trên khóa trang.

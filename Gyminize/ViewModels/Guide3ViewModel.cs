@@ -11,12 +11,20 @@ using Microsoft.UI.Xaml.Media;
 using Gyminize.Helpers;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
+using Newtonsoft.Json;
+using System.Net;
+using Gyminize.Views;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+
+
 namespace Gyminize.ViewModels;
 public class Guide3ViewModel : ObservableRecipient, INavigationAware
 {
     private CustomerInfo _customerInfo;
-    private INavigationService _navigationService;
+    private readonly INavigationService _navigationService;
     private double _bmi;
+    private UIElement? _shell = null;
     public double BMIStat
     {
         get => _bmi;
@@ -109,7 +117,7 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     }
     public Guide3ViewModel(INavigationService navigationService)
     {
-        _navigationService = navigationService;
+        _navigationService = navigationService; 
         NavigateBackCommand = new RelayCommand(NavigateBack);
         NavigateNextCommand = new RelayCommand(NavigateNext);
     }
@@ -136,6 +144,62 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    private int GetCustomerIdByUsername(string username)
+    {
+        var client = new HttpClient();
+        client.BaseAddress = new Uri("https://localhost:7141/");
+        var response = client.GetAsync("api/Customer/get/username/" + username).Result;
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var json = response.Content.ReadAsStringAsync().Result;
+            var customer = JsonConvert.DeserializeObject<Customer>(json);
+            return customer.customer_id;
+        }
+        else
+        {
+            return -1; // Customer not found
+        }
+    }
+
+    private bool InsertCustomerHealth(CustomerInfo customerInfo, int customerId)
+    {
+        var client = new HttpClient();
+        client.BaseAddress = new Uri("https://localhost:7141/");
+
+        var customerHealth = new
+        {
+            customer_id = customerId,
+            gender = customerInfo.sex,
+            height = customerInfo.Height,
+            weight = customerInfo.Weight,
+            age = customerInfo.Age,
+            activity_level = customerInfo.ActivityLevel,
+            body_fat = customerInfo.BodyFat,
+            tdee = customerInfo.Tdee
+        };
+
+        var json = JsonConvert.SerializeObject(customerHealth);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = client.PostAsync("api/CustomerHealth/create", content).Result;
+        return response.StatusCode == HttpStatusCode.Created;
+    }
+
+    public bool AddCustomerHealthByUsername(CustomerInfo customerInfo)
+    {
+        var customerId = GetCustomerIdByUsername(customerInfo.username);
+        if (customerId != -1)
+        {
+            return InsertCustomerHealth(customerInfo, customerId);
+        }
+        else
+        {
+            return false; // Customer not found
+        }
+    }
+
+
+
     public void OnNavigatedFrom()
     {
         // Perform any necessary actions when navigating away from the page
@@ -152,6 +216,20 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
 
     private void NavigateNext()
     {
+        _ = AddCustomerHealthByUsername(_customerInfo);
+        //var pageKey = typeof(ShellViewModel).FullName;
+        //if (pageKey != null)
+        //{
+        //    _navigationService.NavigateTo(pageKey, _customerInfo.username);
+        //}
+        if (App.MainWindow.Content != null)
+        {
+            var frame = new Frame();
+            _shell = App.GetService<ShellPage>();
+            frame.Content = _shell;
+            App.MainWindow.Content = frame;
+            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, _customerInfo.username);
+        }
     }
 }
 

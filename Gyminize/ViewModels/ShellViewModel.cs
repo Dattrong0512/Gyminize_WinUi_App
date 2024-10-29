@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 using Gyminize.Contracts.Services;
 using Gyminize.Views;
-
+using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
 namespace Gyminize.ViewModels;
@@ -29,6 +29,13 @@ public partial class ShellViewModel : ObservableRecipient
     public INavigationViewService NavigationViewService
     {
         get;
+    }
+    private Frame _frame;
+
+    // Phương thức này sẽ được gọi từ ShellPage để gán Frame cho ViewModel
+    public void SetFrame(Frame frame)
+    {
+        _frame = frame;
     }
 
     // Khởi tạo ShellViewModel với INavigationService và INavigationViewService.

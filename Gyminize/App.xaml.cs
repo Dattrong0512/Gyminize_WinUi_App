@@ -119,13 +119,11 @@ public partial class App : Application
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
         base.OnLaunched(args);
-        
 
-        // Kích hoạt dịch vụ kích hoạt.
-        await App.GetService<IActivationService>().ActivateAsync((object)args);
-     
+       
 
-        
+        // Kích hoạt dịch vụ kích hoạt
+        await App.GetService<IActivationService>().ActivateAsync(args);
     }
     
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Gyminize.Contracts.Services;
 using Gyminize.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -32,7 +33,10 @@ public sealed partial class GuidePage3 : Page
     {
         ViewModel = App.GetService<Guide3ViewModel>();
         InitializeComponent();
-        DataContext = ViewModel;
+
+        var navigationService = App.GetService<INavigationService>();
+        ViewModel = new Guide3ViewModel(navigationService);
+        this.DataContext = ViewModel;
     }
 
     private void backIcon_Tapped(object sender, TappedRoutedEventArgs e)

@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Gyminize.ViewModels;
 using Microsoft.UI;
+using Gyminize.Contracts.Services;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -31,7 +32,9 @@ namespace Gyminize.Views
         {
             ViewModel = App.GetService<Guide2ViewModel>();
             InitializeComponent();
-            DataContext = ViewModel;
+            var navigationService = App.GetService<INavigationService>();
+            ViewModel = new Guide2ViewModel(navigationService);
+            this.DataContext = ViewModel;
         }
 
         private void Border_PointerEntered(object sender, PointerRoutedEventArgs e)

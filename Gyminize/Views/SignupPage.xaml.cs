@@ -26,16 +26,16 @@ namespace Gyminize.Views
     /// </summary>
     public sealed partial class SignupPage : Page
     {
-        public SignupViewModel viewmodel
+        public SignupViewModel ViewModel
         {
             get;
         }
         public SignupPage()
         {
-            viewmodel = App.GetService<SignupViewModel>();
+            ViewModel = App.GetService<SignupViewModel>();
             this.InitializeComponent();
             var navigationService = App.GetService<INavigationService>();
-            ViewModel = new SigninViewmodel(navigationService);
+            ViewModel = new SignupViewModel(navigationService);
             this.DataContext = ViewModel;
         }
     }
