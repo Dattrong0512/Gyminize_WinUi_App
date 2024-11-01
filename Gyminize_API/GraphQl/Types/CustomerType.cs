@@ -1,5 +1,5 @@
-﻿using GraphQL.Types;
-using Gyminize_API.Data.Models;
+﻿    using GraphQL.Types;
+    using Gyminize_API.Data.Models;
 
 namespace Gyminize_API.GraphQl.Types
 {

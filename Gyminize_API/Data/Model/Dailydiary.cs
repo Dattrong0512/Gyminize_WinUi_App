@@ -1,42 +1,44 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Gyminize_API.Data.Model;
-namespace Gyminize_API.Data.Models
+using Gyminize_API.Data.Models;
+namespace Gyminize_API.Data.Model
 {
+    [Table("daily_diary")]
 
-    [Table("customer")]
-    public class Customer
+    public class Dailydiary
     {
         [Key]
+        public int dailydiary_id
+        {
+            get; set;
+        }
+        [ForeignKey("Customer")]
         public int customer_id
         {
             get; set;
         }
-        public required string? customer_name
+        public DateTime diary_date
         {
             get; set;
         }
-        public required int auth_type
+        public int calories_remain
         {
             get; set;
         }
-        public required string username
+        public string notes
         {
             get; set;
         }
-        public required string customer_password
+        public Customer Customer
         {
             get; set;
         }
-        public  Customer_health Customer_health
-        {
-            get; set;
-        }
-        public ICollection<Dailydiary> Dailydiaries
+        public ICollection<Fooddetail> Fooddetails
         {
             get; set;
         }
     }
 
 }
+

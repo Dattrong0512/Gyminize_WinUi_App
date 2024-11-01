@@ -122,6 +122,22 @@
   },
   {
     "ContainingType": "Gyminize_API.Controllers.CustomerhealthController",
+    "Method": "DeleteCustomerHealth",
+    "RelativePath": "api/Customerhealth/delete/{customerId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.CustomerhealthController",
     "Method": "GetCustomerHealthByCustomerId",
     "RelativePath": "api/Customerhealth/get/{customerId}",
     "HttpMethod": "GET",
@@ -131,6 +147,264 @@
       {
         "Name": "customerId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.CustomerhealthController",
+    "Method": "UpdateCustomerHealth",
+    "RelativePath": "api/Customerhealth/update/{customerId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "customerhealth",
+        "Type": "Gyminize_API.Data.Model.Customer_health",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.DailydiaryController",
+    "Method": "GetAllDailyDiary",
+    "RelativePath": "api/Dailydiary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.DailydiaryController",
+    "Method": "AddDailyDiary",
+    "RelativePath": "api/Dailydiary/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dailyDiary",
+        "Type": "Gyminize_API.Data.Model.Dailydiary",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.DailydiaryController",
+    "Method": "DeleteDailyDiary",
+    "RelativePath": "api/Dailydiary/delete/{dailydiary_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dailydiary_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.DailydiaryController",
+    "Method": "GetDailyDiaryById",
+    "RelativePath": "api/Dailydiary/get/{dailydiary_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dailydiary_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.DailydiaryController",
+    "Method": "UpdateDailyDiary",
+    "RelativePath": "api/Dailydiary/update/{dailydiary_id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dailydiary_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dailyDiary",
+        "Type": "Gyminize_API.Data.Model.Dailydiary",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.Foodcontroller",
+    "Method": "GetAllFood",
+    "RelativePath": "api/Food",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.Foodcontroller",
+    "Method": "AddFood",
+    "RelativePath": "api/Food/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food",
+        "Type": "Gyminize_API.Data.Model.Food",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.Foodcontroller",
+    "Method": "DeleteFood",
+    "RelativePath": "api/Food/delete/{food_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.Foodcontroller",
+    "Method": "GetFoodById",
+    "RelativePath": "api/Food/get/{food_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.Foodcontroller",
+    "Method": "UpdateFood",
+    "RelativePath": "api/Food/update/{food_id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "food",
+        "Type": "Gyminize_API.Data.Model.Food",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.FoodetailController",
+    "Method": "GetAllFoodetail",
+    "RelativePath": "api/Foodetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.FoodetailController",
+    "Method": "AddFooddetail",
+    "RelativePath": "api/Foodetail/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "foodetail",
+        "Type": "Gyminize_API.Data.Model.Fooddetail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.FoodetailController",
+    "Method": "DeleteFooddetail",
+    "RelativePath": "api/Foodetail/delete/{food_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.FoodetailController",
+    "Method": "GetFooddetailById",
+    "RelativePath": "api/Foodetail/get/{food_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.FoodetailController",
+    "Method": "UpdateFooddetail",
+    "RelativePath": "api/Foodetail/update/{food_id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food_id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "foodetail",
+        "Type": "Gyminize_API.Data.Model.Fooddetail",
         "IsRequired": true
       }
     ],

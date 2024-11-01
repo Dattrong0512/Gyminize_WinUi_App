@@ -23,7 +23,14 @@ builder.Services.AddScoped<CustomerMutation>();
 builder.Services.AddScoped<CustomerHealthRepository>();
 builder.Services.AddScoped<CustomerhealthMutations>();
 builder.Services.AddScoped<CustomerhealthQuery>();
+builder.Services.AddScoped<DailydiaryRepository>();
+builder.Services.AddScoped<DailydiaryQuery>();
+builder.Services.AddScoped<FooddetailRepository>();
+builder.Services.AddScoped<FooddetailQuery>();
+builder.Services.AddScoped<FoodRepository>();
+builder.Services.AddScoped<FoodQueries>();
 builder.Services.AddScoped<AppSchema>();
+
 // register graphQL
 builder.Services.AddGraphQL().AddSystemTextJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -53,7 +60,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c=>c.SwaggerEndpoint("/swagger/v1/swagger.json","Gyminize_API"));
 }
 
 

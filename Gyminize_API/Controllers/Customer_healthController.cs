@@ -37,7 +37,27 @@ namespace Gyminize_API.Controllers
             var newCustomerHealth = _repository.AddCustomerHealth(customerhealth);
             return Ok(newCustomerHealth);
         }
-
+        [HttpDelete("delete/{customerId:int}")]
+        public IActionResult DeleteCustomerHealth(int customerId)
+        {
+            var customerHealth = _repository.GetCustomerHealthByCustomerId(customerId);
+            if (customerHealth == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _repository.DeleteCustomerHealth(customerId);
+            }
+           
+            return Ok();
+        }
+        [HttpPut("update/{customerId:int}")]
+        public IActionResult UpdateCustomerHealth(int customerId, Customer_health customerhealth)
+        {
+            var updateCustomerHealth = _repository.UpdateCustomerHealth(customerhealth);
+            return Ok(updateCustomerHealth);
+        }
     }
 }
 
