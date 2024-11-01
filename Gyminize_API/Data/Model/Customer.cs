@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Gyminize_API.Data.Model;
 namespace Gyminize_API.Data.Models
 {
 
@@ -28,7 +29,10 @@ namespace Gyminize_API.Data.Models
         {
             get; set;
         }
-
+        public virtual Customer_health Customer_health
+        {
+            get; set;
+        }
     }
 
 }

@@ -20,6 +20,9 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<CustomerRepository>();
 builder.Services.AddScoped<CustomerQuery>();
 builder.Services.AddScoped<CustomerMutation>();
+builder.Services.AddScoped<CustomerHealthRepository>();
+builder.Services.AddScoped<CustomerhealthMutations>();
+builder.Services.AddScoped<CustomerhealthQuery>();
 builder.Services.AddScoped<AppSchema>();
 // register graphQL
 builder.Services.AddGraphQL().AddSystemTextJson();

@@ -21,6 +21,7 @@ namespace Gyminize_API.Data.Repositories
                 Console.WriteLine($"Error in GetAllCustomer: {ex.Message}");
                 throw;
             }
+            
         }
 
         public Customer? GetCustomerById(int id)

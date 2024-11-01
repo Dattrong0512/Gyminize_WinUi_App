@@ -93,5 +93,47 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.CustomerhealthController",
+    "Method": "GetAllCustomerHealth",
+    "RelativePath": "api/Customerhealth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.CustomerhealthController",
+    "Method": "AddCustomerHealth",
+    "RelativePath": "api/Customerhealth/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerhealth",
+        "Type": "Gyminize_API.Data.Model.Customer_health",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gyminize_API.Controllers.CustomerhealthController",
+    "Method": "GetCustomerHealthByCustomerId",
+    "RelativePath": "api/Customerhealth/get/{customerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

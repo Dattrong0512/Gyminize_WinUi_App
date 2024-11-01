@@ -1,21 +1,26 @@
-﻿using Gyminize_API.Data.Models;
+﻿using Gyminize_API.Data.Model;
+using Gyminize_API.Data.Models;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.EntityFrameworkCore;
 namespace Gyminize_API.Data
 {
-    public class EntityDatabaseContext : DbContext//Một lớp của EntityFramwork để tương tác với csdl
+    public class EntityDatabaseContext : DbContext
     {
-        //DbContextOptions chứa cấu hình cần thiết để kết nối với csdl, ở đây ngữ cảnh là EntityDatabaseContext
-        public EntityDatabaseContext(DbContextOptions<EntityDatabaseContext> options) : base(options)//Dùng để truyền các cấu hình đã được cấu hình lúc khởi tạo,
-                                                                                                     //cho lớp cha là DBcontextOptions
-                                                                                                     //Các cấu hình này đã được tiêm vào qua DI
+        public EntityDatabaseContext(DbContextOptions<EntityDatabaseContext> options) : base(options)
         {
-
-        }
-        public DbSet<Customer> CustomerEntity
-        {
-            get; set;
         }
 
+        public DbSet<Customer> CustomerEntity { get; set; }
+        public DbSet<Customer_health> CustomerHealthEntity { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>()
+                .HasOne(c => c.Customer_health)
+                .WithOne(ch => ch.Customer)
+                .HasForeignKey<Customer_health>(ch => ch.customer_id);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

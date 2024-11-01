@@ -1575,7 +1575,6 @@ C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0
 C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\BodyFat\m_4.png
 C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\BodyFat\m_5.png
 C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\iconapp.png
-C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\training.jfif
 C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Assets\training1.png
 C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.exe
 C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\appsettings.json

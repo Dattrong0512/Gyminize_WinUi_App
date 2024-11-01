@@ -155,6 +155,72 @@
           }
         }
       }
+    },
+    "/api/Customerhealth": {
+      "get": {
+        "tags": [
+          "Customerhealth"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Customerhealth/get/{customerId}": {
+      "get": {
+        "tags": [
+          "Customerhealth"
+        ],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Customerhealth/create": {
+      "post": {
+        "tags": [
+          "Customerhealth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer_health"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer_health"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer_health"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -181,6 +247,50 @@
           "customer_password": {
             "type": "string",
             "nullable": true
+          },
+          "customer_health": {
+            "$ref": "#/components/schemas/Customer_health"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Customer_health": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activity_level": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "body_fat": {
+            "type": "number",
+            "format": "double"
+          },
+          "tdee": {
+            "type": "number",
+            "format": "double"
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
           }
         },
         "additionalProperties": false
