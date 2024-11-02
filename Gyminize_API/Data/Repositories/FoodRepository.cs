@@ -43,7 +43,7 @@ namespace Gyminize_API.Data.Repositories
                 check_food.calories = food.calories;
                 check_food.protein = food.protein;
                 check_food.carbs = food.carbs;
-                check_food.fat = food.fat;
+                check_food.fats = food.fats;
                 return food;
             }
             _context.SaveChanges();

@@ -27,7 +27,7 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public double fat
+        public double fats
         {
             get; set;
         }

@@ -819,7 +819,7 @@
             "type": "number",
             "format": "double"
           },
-          "fat": {
+          "fats": {
             "type": "number",
             "format": "double"
           },

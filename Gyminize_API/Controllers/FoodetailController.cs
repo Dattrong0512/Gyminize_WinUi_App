@@ -9,6 +9,10 @@ namespace Gyminize_API.Controllers
     public class FoodetailController : ControllerBase
     {
         private readonly FooddetailRepository _foodetailRepository;
+        public FoodetailController(FooddetailRepository foodetailRepository)
+        {
+            _foodetailRepository = foodetailRepository;
+        }
         [HttpGet]
         public IActionResult GetAllFoodetail()
         {

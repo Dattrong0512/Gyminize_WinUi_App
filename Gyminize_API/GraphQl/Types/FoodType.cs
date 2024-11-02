@@ -12,7 +12,7 @@ namespace Gyminize_API.GraphQl.Types
             Field(x => x.calories, type: typeof(IntGraphType)).Description("Calories in the food");
             Field(x => x.protein, type: typeof(DoubleGraphType)).Description("Protein in the food");
             Field(x => x.carbs, type: typeof(DoubleGraphType)).Description("Carbs in the food");
-            Field(x => x.fat, type: typeof(DoubleGraphType)).Description("Fat in the food");
+            Field(x => x.fats, type: typeof(DoubleGraphType)).Description("Fat in the food");
         }
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Gyminize_API.Data.Models;
 namespace Gyminize_API.Data.Model
 {
-    [Table("daily_diary")]
+    [Table("dailydiary")]
 
     public class Dailydiary
     {
