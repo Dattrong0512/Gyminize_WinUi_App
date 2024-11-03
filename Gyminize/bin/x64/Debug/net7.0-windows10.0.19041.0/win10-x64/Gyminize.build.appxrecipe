@@ -10,73 +10,73 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>ab6df52e-cba7-472f-9c07-9a5968cacf7f</PackageIdentityName>
     <PackageIdentityPublisher>CN=DAT TRONG</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.runtimeconfig.json">
       <PackagePath>Gyminize.runtimeconfig.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.dll">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.dll">
       <PackagePath>Gyminize.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\appsettings.json">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\appsettings.json">
       <PackagePath>appsettings.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\obj\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Gyminize.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_1.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_1.png">
       <PackagePath>Assets\BodyFat\f_1.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_2.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_2.png">
       <PackagePath>Assets\BodyFat\f_2.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_3.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_3.png">
       <PackagePath>Assets\BodyFat\f_3.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_4.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_4.png">
       <PackagePath>Assets\BodyFat\f_4.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_5.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\f_5.png">
       <PackagePath>Assets\BodyFat\f_5.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_1.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_1.png">
       <PackagePath>Assets\BodyFat\m_1.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_2.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_2.png">
       <PackagePath>Assets\BodyFat\m_2.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_3.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_3.png">
       <PackagePath>Assets\BodyFat\m_3.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_4.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_4.png">
       <PackagePath>Assets\BodyFat\m_4.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_5.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\BodyFat\m_5.png">
       <PackagePath>Assets\BodyFat\m_5.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\iconapp.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\iconapp.png">
       <PackagePath>Assets\iconapp.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\training1.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\training1.png">
       <PackagePath>Assets\training1.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.20\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
@@ -859,13 +859,13 @@
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.dll">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.dll">
       <PackagePath>Gyminize.Core.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\microsoft.web.webview2\1.0.2651.64\lib_manual\net6.0-windows10.0.17763.0\Microsoft.Web.WebView2.Core.Projection.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.deps.json">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\bin\x64\Debug\net7.0-windows10.0.19041.0\win10-x64\Gyminize.deps.json">
       <PackagePath>Gyminize.deps.json</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\colorcode.winui\2.0.13\lib\net5.0-windows10.0.18362\ColorCode.WinUI.pri">
@@ -910,49 +910,49 @@
     <AppxPackagedFile Include="C:\Users\Hi\.nuget\packages\winuiex\2.3.2\lib\net6.0-windows10.0.18362\WinUIEx.pri">
       <PackagePath>WinUIEx.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\google.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\google.png">
       <PackagePath>Assets\google.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\clock.svg">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Icon\clock.svg">
       <PackagePath>Assets\Icon\clock.svg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\dumbell.svg">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Icon\dumbell.svg">
       <PackagePath>Assets\Icon\dumbell.svg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\food.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Icon\food.png">
       <PackagePath>Assets\Icon\food.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Icon\goal.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Icon\goal.png">
       <PackagePath>Assets\Icon\goal.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\motivation.jpg">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\motivation.jpg">
       <PackagePath>Assets\motivation.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\training2.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\training2.png">
       <PackagePath>Assets\training2.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Hi\Desktop\Gyminize_WinUi_App\Gyminize\Assets\WindowIcon.ico">
+    <AppxPackagedFile Include="C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Assets\WindowIcon.ico">
       <PackagePath>Assets\WindowIcon.ico</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

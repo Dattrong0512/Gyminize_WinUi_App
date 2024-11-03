@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OagiOl4X+F4=",
+  "dgSpecHash": "pKTdricD0n8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
+  "projectFilePath": "C:\\Users\\Hi\\Desktop\\code\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hi\\.nuget\\packages\\colorcode.core\\2.0.13\\colorcode.core.2.0.13.nupkg.sha512",
     "C:\\Users\\Hi\\.nuget\\packages\\colorcode.winui\\2.0.13\\colorcode.winui.2.0.13.nupkg.sha512",

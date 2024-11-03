@@ -47,9 +47,10 @@ public class Customer_health
         get; set;
     }
 
-    public required Customer Customer
+    public virtual Customer? Customer
     {
         get; set;
-    }
+    }  
+   
 }
 

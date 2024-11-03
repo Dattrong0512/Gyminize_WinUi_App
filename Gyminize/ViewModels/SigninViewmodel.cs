@@ -332,7 +332,7 @@ namespace Gyminize.ViewModels
             }
 
             // Step 2: Check if customer_id exists in customer_health table
-            var healthResponse = client.GetAsync("api/CustomerHealth/get/customer_id/" + customer.customer_id).Result;
+            var healthResponse = client.GetAsync("api/Customerhealth/get/" + customer.customer_id).Result;
             if (healthResponse.StatusCode == HttpStatusCode.OK)
             {
                 return true; // Customer health data exists

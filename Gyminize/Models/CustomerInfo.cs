@@ -10,10 +10,10 @@ public class CustomerInfo
     public string? username { get; set; }
     public int sex { get; set; }
     public int Age { get; set; }
-    public double Weight { get; set; }
+    public int Weight { get; set; }
     public int Height { get; set; }
-    public double ActivityLevel { get; set; }
-    public int Tdee
+    public int ActivityLevel { get; set; }
+    public double Tdee
     {
         get; set;
     }

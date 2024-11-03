@@ -16,6 +16,7 @@ using System.Net;
 using Gyminize.Views;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
+using System.Diagnostics;
 
 
 namespace Gyminize.ViewModels;
@@ -25,6 +26,10 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     private readonly INavigationService _navigationService;
     private double _bmi;
     private UIElement? _shell = null;
+    private CustomerHealth customerHealth
+    {
+        get; set;
+    }
     public double BMIStat
     {
         get => _bmi;
@@ -117,7 +122,8 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     }
     public Guide3ViewModel(INavigationService navigationService)
     {
-        _navigationService = navigationService; 
+        _navigationService = navigationService;
+        customerHealth = new CustomerHealth();
         NavigateBackCommand = new RelayCommand(NavigateBack);
         NavigateNextCommand = new RelayCommand(NavigateNext);
     }
@@ -166,24 +172,44 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         var client = new HttpClient();
         client.BaseAddress = new Uri("https://localhost:7141/");
 
-        var customerHealth = new
+        try
         {
-            customer_id = customerId,
-            gender = customerInfo.sex,
-            height = customerInfo.Height,
-            weight = customerInfo.Weight,
-            age = customerInfo.Age,
-            activity_level = customerInfo.ActivityLevel,
-            body_fat = customerInfo.BodyFat,
-            tdee = customerInfo.Tdee
-        };
+            customerHealth.customer_id = customerId;
+            customerHealth.gender = customerInfo.sex;
+            customerHealth.height = customerInfo.Height;
+            customerHealth.weight = customerInfo.Weight;  // Ensure this is an integer
+            customerHealth.age = customerInfo.Age;
+            customerHealth.activity_level = customerInfo.ActivityLevel;
+            customerHealth.body_fat = (decimal)customerInfo.BodyFat;
+            customerHealth.tdee = (decimal)customerInfo.Tdee;
+            
 
-        var json = JsonConvert.SerializeObject(customerHealth);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
+            // Serialize the object to JSON
+            var json = JsonConvert.SerializeObject(customerHealth);
+            Debug.WriteLine($"Request JSON: {json}");
 
-        var response = client.PostAsync("api/CustomerHealth/create", content).Result;
-        return response.StatusCode == HttpStatusCode.Created;
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            // Send the request and wait for the response
+            var response = client.PostAsync("api/Customerhealth/create", content).Result;
+
+            // Read the error content if the request failed
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorContent = response.Content.ReadAsStringAsync().Result;
+                Debug.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                Debug.WriteLine($"Error Details: {errorContent}");
+            }
+
+            return response.StatusCode == HttpStatusCode.Created;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"An error occurred: {ex.Message}");
+            return false;
+        }
     }
+     
 
     public bool AddCustomerHealthByUsername(CustomerInfo customerInfo)
     {

@@ -255,9 +255,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
                 username = _username,
                 sex = MaleCheckBox.IsChecked == true ? 1 : 0,
                 Age = int.Parse(AgeTextBox.Text),
-                Weight = double.Parse(WeightTextBox.Text),
+                Weight = int.Parse(WeightTextBox.Text),
                 Height = int.Parse(HeightTextBox.Text),
-                ActivityLevel = GetSelectedActivityLevel(),
+                ActivityLevel = ((int)GetSelectedActivityLevel()),
                 BodyFat = _customerInfoBack.BodyFat != 0 ? _customerInfoBack.BodyFat : 0
 
             };

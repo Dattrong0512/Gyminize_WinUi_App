@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj": {}
+    "C:\\Users\\Hi\\Desktop\\code\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj": {
+    "C:\\Users\\Hi\\Desktop\\code\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj",
+        "projectUniqueName": "C:\\Users\\Hi\\Desktop\\code\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj",
         "projectName": "Gyminize_API",
-        "projectPath": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj",
+        "projectPath": "C:\\Users\\Hi\\Desktop\\code\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.csproj",
         "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hi\\Desktop\\Gyminize_WinUi_App\\Gyminize_API\\obj\\",
+        "outputPath": "C:\\Users\\Hi\\Desktop\\code\\Gyminize_WinUi_App\\Gyminize_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
