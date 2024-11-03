@@ -10,12 +10,15 @@ using Microsoft.UI.Xaml;
 using Gyminize.Contracts.ViewModels;
 using System.Diagnostics;
 using System.Windows.Input;
+using Gyminize.APIServices;
+using System.Net;
 namespace Gyminize.ViewModels;
 
-public partial class HomeViewModel : ObservableRecipient, INavigationAware
+public partial class HomeViewModel : ObservableObject, INavigationAware
 {
     private readonly INavigationService _navigationService;
     private bool _isWeightTextBoxEnabled;
+    private CustomerHealth _customerHealth;
     public bool IsWeightTextBoxEnabled
     {
         get => _isWeightTextBoxEnabled;
@@ -23,23 +26,13 @@ public partial class HomeViewModel : ObservableRecipient, INavigationAware
     }
 
     private int _weight;
+    private Customer _customer;
 
-    public string WeightText
-    {
-        get => _weight.ToString();
-        set
-        {
-            if (int.TryParse(value, out int result))
-            {
-                _weight = result;
-            }
-            else
-            {
-                _weight = 0;
-            }
-            OnPropertyChanged();
-        }
-    }
+    [ObservableProperty]
+    private string weightText;
+    [ObservableProperty]
+    private string goalCalories;
+    private string username;
 
     public RelayCommand OpenWorkoutLinkCommand
     {
@@ -66,7 +59,11 @@ public partial class HomeViewModel : ObservableRecipient, INavigationAware
         OpenRecipeLinkCommand = new RelayCommand(OpenRecipeLink);
         EditWeightCommand = new RelayCommand(OpenEditWeight);
         IsWeightTextBoxEnabled = false;
-        WeightText = "80";
+       
+        _customer = new Customer();
+
+
+
     }
 
     private void OpenWorkoutLink()
@@ -106,9 +103,26 @@ public partial class HomeViewModel : ObservableRecipient, INavigationAware
 
     public void OnNavigatedTo(object parameter)
     {
+        if (parameter is string customerName)
+        {
+            string endpoint = $"api/Customer/get/username/" + customerName;
+
+            // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
+            _customer = ApiServices.Get<Customer>(endpoint);
+            endpoint = "";
+             endpoint = $"api/Customerhealth/get/" + _customer.customer_id;
+
+
+            // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
+            _customerHealth = ApiServices.Get<CustomerHealth>(endpoint);
+            Debug.WriteLine(_customerHealth.weight);
+            WeightText = _customerHealth.weight.ToString();
+            GoalCalories = ((int)_customerHealth.tdee).ToString();
+        }
     }
 
     public void OnNavigatedFrom()
     {
+
     }
 }

@@ -29,6 +29,7 @@ namespace Gyminize.ViewModels
 
         [ObservableProperty]
         private string username;
+
         [ObservableProperty]
         private string password;
         private readonly INavigationService _navigationService;
@@ -89,7 +90,7 @@ namespace Gyminize.ViewModels
                             _shell = App.GetService<ShellPage>();
                             frame.Content = _shell;
                             App.MainWindow.Content = frame;
-                            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, customer.customer_id);
+                            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, customer.customer_name);
                         }
                     }
                     else
