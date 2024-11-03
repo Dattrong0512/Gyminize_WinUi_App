@@ -9,6 +9,7 @@ namespace Gyminize_API.Data.Models
     public class Customer
     {
         [Key]
+        
         public int customer_id
         {
             get; set;
@@ -29,11 +30,12 @@ namespace Gyminize_API.Data.Models
         {
             get; set;
         }
-        public  Customer_health Customer_health
+        public virtual Customer_health? Customer_health
         {
             get; set;
         }
-        public ICollection<Dailydiary> Dailydiaries
+
+        public virtual ICollection<Dailydiary>? Dailydiaries
         {
             get; set;
         }

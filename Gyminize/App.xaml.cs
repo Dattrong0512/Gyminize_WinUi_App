@@ -100,6 +100,8 @@ public partial class App : Application
             services.AddTransient<SignupPage>();
             services.AddTransient<SignupViewModel>();
 
+            services.AddSingleton<Customer>();
+
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));
         }).

@@ -28,7 +28,7 @@ namespace Gyminize.ViewModels
         [ObservableProperty]
         private string password;
         private readonly INavigationService _navigationService;
-        private Customer Customer { get; set; }
+        private Customer customer;
         public ICommand LoginCommandByGoogle
         {
             get;
@@ -56,7 +56,7 @@ namespace Gyminize.ViewModels
             LoginCommandByGoogle = new RelayCommand(OnLoginByGoogle);
             LoginCommandByUser = new RelayCommand(OnLoginByUser);
             SignUpNavigateCommand = new RelayCommand(OnSignUpByUserNavigate);
-            Customer = new Customer();
+            var customer = Customer.Instance; // Lấy instance duy nhất của Customer
         }
         private void OnSignUpByUserNavigate()
         {
@@ -70,7 +70,7 @@ namespace Gyminize.ViewModels
         {
             if (CheckCustomerByGet(Username, Password))
             {
-               if(Password!= Customer.customer_password)
+               if(Password!= customer.customer_password)
                 {
                     output("Mật khẩu không đúng!");
                 }
@@ -81,7 +81,7 @@ namespace Gyminize.ViewModels
                         var pageKey = typeof(HomeViewModel).FullName;
                         if (pageKey != null)
                         {
-                            _navigationService.NavigateTo(pageKey);
+                            _navigationService.NavigateTo(pageKey,Username);
                         }
                     }
                     else
@@ -141,7 +141,7 @@ namespace Gyminize.ViewModels
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:8080/"); // Listening on port 8080
             listener.Start();
-            //output("Listening for OAuth callback on http://localhost:8080/...");
+        
 
             HttpListenerContext context = await listener.GetContextAsync(); // Wait for the request
             HttpListenerRequest request = context.Request;
@@ -303,7 +303,7 @@ namespace Gyminize.ViewModels
             if (response.StatusCode==HttpStatusCode.OK)
             {
                 var json = response.Content.ReadAsStringAsync().Result;
-                Customer = JsonConvert.DeserializeObject<Customer>(json);
+                customer = JsonConvert.DeserializeObject<Customer>(json);
                 return true;
             }
             else
@@ -345,17 +345,19 @@ namespace Gyminize.ViewModels
 
         private void PostCustomer(string username, string password)
         {
-            Customer.customer_name= username;
-            Customer.auth_type = 2;
-            Customer.username = username;
-            Customer.customer_password = password;
+            customer = Customer.Instance;
+            customer.customer_name= username;
+            customer.auth_type = 2;
+            customer.username = username;
+            customer.customer_password = password;
 
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7141/");
-            var json = System.Text.Json.JsonSerializer.Serialize(Customer);
+            var json = System.Text.Json.JsonSerializer.Serialize(customer);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             var response = client.PostAsync("api/Customer/create", content).Result;
+            
         }
         // Utility methods for base64 encoding and hashing
         private static string randomDataBase64url(uint length)

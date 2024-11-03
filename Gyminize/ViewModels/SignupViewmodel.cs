@@ -100,13 +100,41 @@ namespace Gyminize.ViewModels
         }
         private void PostCustomer(string username, string password)
         {
-            Customer customer = new Customer(username,1,username,password);
+            Customer customer = new Customer(username, 1, username, password);
+            Console.WriteLine(customer);
+
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7141/");
-            var json = System.Text.Json.JsonSerializer.Serialize(customer);
-            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var response = client.PostAsync("api/Customer/create", content).Result;
+
+            try
+            {
+                // Serialize customer object to JSON
+                var json = System.Text.Json.JsonSerializer.Serialize(customer);
+                var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+                // Send the POST request
+                var response = client.PostAsync("api/Customer/create", content).Result;
+
+                // Check if the response indicates success
+                if (response.IsSuccessStatusCode)
+                {
+                    output("Customer created successfully.");
+                }
+                else
+                {
+                    // Read the error content if the request failed
+                    var errorContent = response.Content.ReadAsStringAsync().Result;
+                    output($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    output($"Error Details: {errorContent}");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                output($"An error occurred: {ex.Message}");
+            }
         }
+
         private void output(string message)
         {
             Debug.WriteLine(message);

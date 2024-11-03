@@ -9,5 +9,6 @@ public partial class DiaryViewModel : ObservableRecipient
     // Khởi tạo DiaryViewModel.
     public DiaryViewModel()
     {
+
     }
 }

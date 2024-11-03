@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gyminize.Models
 {
-    class Customer
+    public class Customer
     {
         public int customer_id
         {
@@ -28,13 +28,11 @@ namespace Gyminize.Models
         {
             get; set;
         }
-        public Customer( string customer_name, int auth_type, string username, string customer_password)
-        {
-            this.customer_name = customer_name;
-            this.auth_type = auth_type;
-            this.username = username;
-            this.customer_password = customer_password;
-        }
+
+        // Tạo một instance duy nhất của Customer
+        public static Customer _instance;
+
+        // Constructor là private để ngăn không cho tạo instance từ bên ngoài
         public Customer()
         {
             this.customer_name = "";
@@ -42,5 +40,28 @@ namespace Gyminize.Models
             this.username = "";
             this.customer_password = "";
         }
+
+        public Customer(string customername,int auth_type, string username, string password)
+        {
+
+            this.customer_name = customername;
+            this.auth_type = auth_type;
+            this.username = username;
+            this.customer_password = password;
+        }
+        // Phương thức static để lấy instance duy nhất của Customer
+        public static Customer Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Customer();
+                }
+                return _instance;
+            }
+            
+        }
     }
+
 }

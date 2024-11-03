@@ -306,5 +306,6 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
 
     public void OnNavigatedFrom()
     {
+
     }
 }

@@ -34,6 +34,11 @@ namespace Gyminize_API.Data.Repositories
         }
         public Customer addCustomer(Customer customer)
         {
+            var existingCustomer = _context.CustomerEntity.Find(customer.customer_id);
+            if (existingCustomer != null)
+            {
+                throw new Exception("Customer with the same ID already exists.");
+            }
             _context.CustomerEntity.Add(customer);
             _context.SaveChanges();
             return customer;
