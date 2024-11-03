@@ -56,7 +56,7 @@ namespace Gyminize.ViewModels
             LoginCommandByGoogle = new RelayCommand(OnLoginByGoogle);
             LoginCommandByUser = new RelayCommand(OnLoginByUser);
             SignUpNavigateCommand = new RelayCommand(OnSignUpByUserNavigate);
-            var customer = Customer.Instance; // Lấy instance duy nhất của Customer
+            var customer = new Customer();
         }
         private void OnSignUpByUserNavigate()
         {
@@ -345,7 +345,7 @@ namespace Gyminize.ViewModels
 
         private void PostCustomer(string username, string password)
         {
-            customer = Customer.Instance;
+            
             customer.customer_name= username;
             customer.auth_type = 2;
             customer.username = username;

@@ -305,6 +305,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
     {
         if (parameter is CustomerInfo customerInfo)
         {
+            
             _customerInfo = customerInfo;
             // Set image sources based on gender
             if (_customerInfo.sex == 1) // Male

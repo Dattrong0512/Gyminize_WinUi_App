@@ -30,9 +30,9 @@ namespace Gyminize.Models
         }
 
         // Tạo một instance duy nhất của Customer
-        public static Customer _instance;
+        
 
-        // Constructor là private để ngăn không cho tạo instance từ bên ngoài
+ 
         public Customer()
         {
             this.customer_name = "";
@@ -50,18 +50,7 @@ namespace Gyminize.Models
             this.customer_password = password;
         }
         // Phương thức static để lấy instance duy nhất của Customer
-        public static Customer Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new Customer();
-                }
-                return _instance;
-            }
-            
-        }
+        
     }
 
 }

@@ -254,7 +254,8 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
             _shell = App.GetService<ShellPage>();
             frame.Content = _shell;
             App.MainWindow.Content = frame;
-            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, _customerInfo.username);
+            var id = GetCustomerIdByUsername(_customerInfo.username);
+            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, id);
         }
     }
 }
