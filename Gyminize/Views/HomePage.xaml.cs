@@ -1,4 +1,5 @@
-﻿using Gyminize.ViewModels;
+﻿using Gyminize.Contracts.Services;
+using Gyminize.ViewModels;
 
 
 using Microsoft.UI.Xaml.Controls;
@@ -18,5 +19,27 @@ public sealed partial class HomePage : Page
     {
         ViewModel = App.GetService<HomeViewModel>();
         InitializeComponent();
+
+        var navigationService = App.GetService<INavigationService>();
+        ViewModel = new HomeViewModel(navigationService);
+        this.DataContext = ViewModel;
+    }
+
+    private void OnWorkoutBorderTapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
+    {
+        var viewModel = (HomeViewModel)this.DataContext;
+        viewModel.OpenWorkoutLinkCommand.Execute(null);
+    }
+
+    private void OnSleepBorderTapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
+    {
+        var viewModel = (HomeViewModel)this.DataContext;
+        viewModel.OpenSleepLinkCommand.Execute(null);
+    }
+
+    private void OnRecipeBorderTapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
+    {
+        var viewModel = (HomeViewModel)this.DataContext;
+        viewModel.OpenRecipeLinkCommand.Execute(null);
     }
 }

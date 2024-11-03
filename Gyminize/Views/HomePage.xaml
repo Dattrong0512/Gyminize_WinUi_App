@@ -145,16 +145,33 @@
                 BorderThickness="1"
                 CornerRadius="10">
                 <Grid>
-                    <TextBlock Margin="10"> <Run Text="Cân nặng" /></TextBlock>
-                    <TextBlock Margin="10" HorizontalAlignment="Center"> <Run FontSize="40" Text="80" /> <Run FontSize="20 " Text="Kg" /></TextBlock>
+                    <TextBlock Margin="10">Cân nặng</TextBlock>
+                    <StackPanel
+                        Margin="10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
 
+                        <TextBox
+                            Width="100"
+                            FontSize="40"
+                            IsEnabled="{Binding IsWeightTextBoxEnabled, Mode=TwoWay}"
+                            Text="{Binding WeightText, Mode=TwoWay}" />
+
+                        <TextBlock
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            Text="Kg" />
+                    </StackPanel>
                     <Button
                         Grid.Row="1"
                         Width="50"
                         Height="50"
                         Margin="10"
                         HorizontalAlignment="Right"
-                        VerticalAlignment="Center">
+                        VerticalAlignment="Center"
+                        Command="{Binding EditWeightCommand}">
                         <FontIcon Glyph="&#xE70F;" />
                     </Button>
                 </Grid>
@@ -175,7 +192,8 @@
                 Background="White"
                 BorderBrush="DarkCyan"
                 BorderThickness="1"
-                CornerRadius="10">
+                CornerRadius="10"
+                Tapped="OnSleepBorderTapped">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Ellipse
                         Width="30"
@@ -207,7 +225,8 @@
                 Background="White"
                 BorderBrush="DarkCyan"
                 BorderThickness="1"
-                CornerRadius="10">
+                CornerRadius="10"
+                Tapped="OnRecipeBorderTapped">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Ellipse
                         Width="30"
@@ -239,7 +258,8 @@
                 Background="White"
                 BorderBrush="DarkCyan"
                 BorderThickness="1"
-                CornerRadius="10">
+                CornerRadius="10"
+                Tapped="OnWorkoutBorderTapped">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Ellipse
                         Width="30"

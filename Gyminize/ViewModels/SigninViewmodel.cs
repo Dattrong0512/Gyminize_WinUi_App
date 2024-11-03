@@ -16,6 +16,10 @@ using System.Text.Json;
 using Newtonsoft.Json;
 using Gyminize.Models;
 using Gyminize.Contracts.Services;
+using Gyminize.Views;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Windows.ApplicationModel.Background;
 namespace Gyminize.ViewModels
 {
     public partial class SigninViewmodel : ObservableObject
@@ -29,6 +33,7 @@ namespace Gyminize.ViewModels
         private string password;
         private readonly INavigationService _navigationService;
         private Customer customer;
+        private UIElement? _shell = null;
         public ICommand LoginCommandByGoogle
         {
             get;
@@ -78,10 +83,13 @@ namespace Gyminize.ViewModels
                 {
                     if (CheckCustomerHealthByUsername(Username))
                     {
-                        var pageKey = typeof(HomeViewModel).FullName;
-                        if (pageKey != null)
+                        if (App.MainWindow.Content != null)
                         {
-                            _navigationService.NavigateTo(pageKey,Username);
+                            var frame = new Frame();
+                            _shell = App.GetService<ShellPage>();
+                            frame.Content = _shell;
+                            App.MainWindow.Content = frame;
+                            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, customer.customer_id);
                         }
                     }
                     else
@@ -345,7 +353,10 @@ namespace Gyminize.ViewModels
 
         private void PostCustomer(string username, string password)
         {
-            
+            if(customer == null)
+            {
+                customer = new Customer();  
+            }
             customer.customer_name= username;
             customer.auth_type = 2;
             customer.username = username;

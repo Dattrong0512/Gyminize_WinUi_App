@@ -1,1 +1,0 @@
-C:\Users\Hi\Desktop\code\Gyminize_WinUi_App\Gyminize\Gyminize.csproj;x64
