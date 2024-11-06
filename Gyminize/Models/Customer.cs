@@ -28,26 +28,28 @@ namespace Gyminize.Models
         {
             get; set;
         }
+        public int role_user
+        {
+            get; set;
+        }
 
-        // Tạo một instance duy nhất của Customer
-        
-
- 
         public Customer()
         {
             this.customer_name = "";
-            this.auth_type = 0;
+            this.auth_type = 1;
             this.username = "";
             this.customer_password = "";
+            this.role_user = 1;
         }
 
-        public Customer(string customername,int auth_type, string username, string password)
+        public Customer(string customername,int auth_type, string username, string password, int role_user)
         {
 
             this.customer_name = customername;
             this.auth_type = auth_type;
             this.username = username;
             this.customer_password = password;
+            this.role_user = role_user;
         }
         // Phương thức static để lấy instance duy nhất của Customer
         

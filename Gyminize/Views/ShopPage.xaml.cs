@@ -6,14 +6,14 @@ namespace Gyminize.Views;
 
 public sealed partial class ShopPage : Page
 {
-    public ShopViewModel ViewModel
-    {
-        get;
-    }
+    //public ShopViewModel ViewModel
+    //{
+    //    get;
+    //}
 
-    public ShopPage()
-    {
-        ViewModel = App.GetService<ShopViewModel>();
-        InitializeComponent();
-    }
+    //public ShopPage()
+    //{
+    //    ViewModel = App.GetService<ShopViewModel>();
+    //    InitializeComponent();
+    //}
 }

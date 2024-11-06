@@ -12,7 +12,9 @@ namespace Gyminize_API.GraphQl.Types
             Field<NonNullGraphType<DoubleGraphType>>("protein");
             Field<NonNullGraphType<DoubleGraphType>>("carbs");
             Field<NonNullGraphType<DoubleGraphType>>("fats");
-          
+            Field<NonNullGraphType<StringGraphType>>("serving_unit");
+
+
         }
     }
 }

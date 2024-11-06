@@ -13,6 +13,7 @@ namespace Gyminize_API.GraphQl.Types
             Field(x => x.protein, type: typeof(DoubleGraphType)).Description("Protein in the food");
             Field(x => x.carbs, type: typeof(DoubleGraphType)).Description("Carbs in the food");
             Field(x => x.fats, type: typeof(DoubleGraphType)).Description("Fat in the food");
+            Field(x => x.serving_unit, type: typeof(StringGraphType)).Description("Serving size of the food");
         }
     }
 }

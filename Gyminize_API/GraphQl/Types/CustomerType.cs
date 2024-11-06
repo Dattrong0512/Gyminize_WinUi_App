@@ -11,6 +11,7 @@ namespace Gyminize_API.GraphQl.Types
             Field(x => x.auth_type, type: typeof(IntGraphType)).Description("Auth");
             Field(x => x.username, type: typeof(StringGraphType)).Description("Username of customer");
             Field(x => x.customer_password, type: typeof(StringGraphType)).Description("Password of customer");
+            Field(x => x.role_user, type: typeof(IntGraphType)).Description("Role of user");
         }
     }
 }

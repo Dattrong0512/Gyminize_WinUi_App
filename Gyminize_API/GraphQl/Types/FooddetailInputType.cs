@@ -8,7 +8,9 @@ namespace Gyminize_API.GraphQl.Types
             Name = "FooddetailInput";
             Field<NonNullGraphType<IntGraphType>>("dailydiary_id");
             Field<NonNullGraphType<IntGraphType>>("food_id");
+            Field<NonNullGraphType<IntGraphType>>("meal_type");
             Field<NonNullGraphType<IntGraphType>>("food_amount");
+            Field<FoodType>("food");
         }
     }
 }

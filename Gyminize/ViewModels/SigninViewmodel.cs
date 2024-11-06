@@ -20,21 +20,24 @@ using Gyminize.Views;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using Windows.ApplicationModel.Background;
+using Gyminize.Services;
+using Windows.Web.AtomPub;
+using Gyminize.Core.Services;
 namespace Gyminize.ViewModels
 {
     public partial class SigninViewmodel : ObservableObject
     {
+
         [ObservableProperty]
         private string loginStatus;
-
         [ObservableProperty]
         private string username;
-
         [ObservableProperty]
         private string password;
         private readonly INavigationService _navigationService;
         private Customer customer;
         private UIElement? _shell = null;
+        public  ILocalSettingsService _localSettingsService;
         public ICommand LoginCommandByGoogle
         {
             get;
@@ -56,13 +59,15 @@ namespace Gyminize.ViewModels
         const string tokenEndpoint = "https://oauth2.googleapis.com/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
         
-        public SigninViewmodel(INavigationService navigationService)
+        public SigninViewmodel(INavigationService navigationService, ILocalSettingsService localSettings)
         {
             _navigationService = navigationService;
             LoginCommandByGoogle = new RelayCommand(OnLoginByGoogle);
             LoginCommandByUser = new RelayCommand(OnLoginByUser);
             SignUpNavigateCommand = new RelayCommand(OnSignUpByUserNavigate);
             var customer = new Customer();
+            _localSettingsService = localSettings;
+
         }
         private void OnSignUpByUserNavigate()
         {
@@ -90,7 +95,8 @@ namespace Gyminize.ViewModels
                             _shell = App.GetService<ShellPage>();
                             frame.Content = _shell;
                             App.MainWindow.Content = frame;
-                            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, customer.customer_name);
+                            await _localSettingsService.SaveSettingAsync("customer_id", customer.customer_id);
+                            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!);
                         }
                     }
                     else
@@ -101,6 +107,10 @@ namespace Gyminize.ViewModels
                             _navigationService.NavigateTo(pageKey, Username);
                         }
                     }
+
+
+
+
                     output("Đăng nhập thành công!");
                 }          
             }
@@ -362,6 +372,7 @@ namespace Gyminize.ViewModels
             customer.auth_type = 2;
             customer.username = username;
             customer.customer_password = password;
+            customer.role_user = 1;
 
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7141/");

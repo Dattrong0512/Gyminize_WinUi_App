@@ -1,74 +1,169 @@
-﻿// ViewModel cho trang dinh dưỡng.
-// Kế thừa từ ObservableRecipient để hỗ trợ thông báo thay đổi thuộc tính.
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Gyminize.Models;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Gyminize.Contracts.Services;
+using Gyminize.Core.Services;
 
-namespace Gyminize.ViewModels;
-
-public partial class NutritionsViewModel : ObservableRecipient
+namespace Gyminize.ViewModels
 {
-    private ObservableCollection<FoodItem> breakfastItems = new ObservableCollection<FoodItem>();
-    private ObservableCollection<FoodItem> lunchItems = new ObservableCollection<FoodItem>();
-    private ObservableCollection<FoodItem> dinnerItems = new ObservableCollection<FoodItem>();
-    private ObservableCollection<FoodItem> snackItems = new ObservableCollection<FoodItem>();
-    private ObservableCollection<FoodItem> foodLibraryItems = new ObservableCollection<FoodItem>();
-
-    public ObservableCollection<FoodItem> BreakfastItems
+    public partial class NutritionsViewModel : ObservableObject
     {
-        get => breakfastItems;
-        set => SetProperty(ref breakfastItems, value);
-    }
-
-    public ObservableCollection<FoodItem> LunchItems
-    {
-        get => lunchItems;
-        set => SetProperty(ref lunchItems, value);
-    }
-
-    public ObservableCollection<FoodItem> DinnerItems
-    {
-        get => dinnerItems;
-        set => SetProperty(ref dinnerItems, value);
-    }
-
-    public ObservableCollection<FoodItem> SnackItems
-    {
-        get => snackItems;
-        set => SetProperty(ref snackItems, value);
-    }
-
-    public ObservableCollection<FoodItem> FoodLibraryItems
-    {
-        get => foodLibraryItems;
-        set => SetProperty(ref foodLibraryItems, value);
-    }
-
-    public string TotalCaloriesExpression
-    {
-        get
+        public ILocalSettingsService LocalSetting
         {
-            int totalCalories = BreakfastItems.Sum(item => item.Calories) +
-                                LunchItems.Sum(item => item.Calories) +
-                                DinnerItems.Sum(item => item.Calories) +
-                                SnackItems.Sum(item => item.Calories);
-            return $"2000 - {totalCalories} = {2000 - totalCalories}";
+            get;
+        }
+        private readonly INavigationService _navigationService;
+
+        public Dailydiary CurrentDailydiary
+        {
+            get; set;
+        }
+
+        public ObservableCollection<FoodDetail> BreakfastItems { get; set; } = new ObservableCollection<FoodDetail>();
+        public ObservableCollection<FoodDetail> LunchItems { get; set; } = new ObservableCollection<FoodDetail>();
+        public ObservableCollection<FoodDetail> DinnerItems { get; set; } = new ObservableCollection<FoodDetail>();
+        public ObservableCollection<FoodDetail> SnackItems { get; set; } = new ObservableCollection<FoodDetail>();
+
+        public ObservableCollection<Food> FoodLibraryItems { get; set; } = new ObservableCollection<Food>();
+
+        private string _totalCaloriesExpression;
+        public string TotalCaloriesExpression
+        {
+            get => _totalCaloriesExpression;
+            set => SetProperty(ref _totalCaloriesExpression, value);
+        }
+
+        public ICommand AddFoodCommand
+        {
+            get;
+        }
+        public ICommand DeleteFoodCommand
+        {
+            get;
+        }
+
+        public NutritionsViewModel(INavigationService navigationService, ILocalSettingsService localSetting)
+        {
+            _navigationService = navigationService;
+            LocalSetting = localSetting;
+
+            AddFoodCommand = new RelayCommand<Food>(AddFoodToMeal);
+            DeleteFoodCommand = new RelayCommand<FoodDetail>(DeleteFoodFromMeal);
+
+            LoadFoodLibraryAsync();
+            LoadDailyDiary();
+        }
+
+        private async Task LoadFoodLibraryAsync()
+        {
+            try
+            {
+                var foods = ApiServices.Get<List<Food>>("api/Food");
+                if (foods != null && foods.Any())
+                {
+                    FoodLibraryItems.Clear();
+                    foreach (var food in foods)
+                    {
+                        FoodLibraryItems.Add(food);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error loading food library: {ex.Message}");
+            }
+        }
+
+        private async Task LoadDailyDiary()
+        {
+            try
+            {
+                var customerId = await LocalSetting.ReadSettingAsync<string>("customer_id");
+                CurrentDailydiary = ApiServices.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{customerId}");
+
+                if (CurrentDailydiary != null)
+                {
+                    BreakfastItems.Clear();
+                    LunchItems.Clear();
+                    DinnerItems.Clear();
+                    SnackItems.Clear();
+
+                    foreach (var foodDetail in CurrentDailydiary.Fooddetails)
+                    {
+                        switch (foodDetail.meal_type)
+                        {
+                            case 1:
+                                BreakfastItems.Add(foodDetail);
+                                break;
+                            case 2:
+                                LunchItems.Add(foodDetail);
+                                break;
+                            case 3:
+                                DinnerItems.Add(foodDetail);
+                                break;
+                            case 4:
+                                SnackItems.Add(foodDetail);
+                                break;
+                        }
+                    }
+
+                    UpdateTotalCaloriesExpression();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error loading daily diary: {ex.Message}");
+            }
+        }
+
+        private void UpdateTotalCaloriesExpression()
+        {
+            int totalCalories = BreakfastItems.Sum(item => item.Food.calories) +
+                                LunchItems.Sum(item => item.Food.calories) +
+                                DinnerItems.Sum(item => item.Food.calories) +
+                                SnackItems.Sum(item => item.Food.calories);
+
+            TotalCaloriesExpression = $"{CurrentDailydiary.total_calories} - {totalCalories} = {CurrentDailydiary.total_calories - totalCalories}";
+        }
+
+        private void AddFoodToMeal(Food food)
+        {
+            var foodDetail = new FoodDetail
+            {
+                food_id = food.food_id,
+                food_amount = 100, // mặc định số lượng là 100 gram, có thể tuỳ chỉnh
+                meal_type = 1, // ví dụ bữa sáng
+                Food = food
+            };
+
+            BreakfastItems.Add(foodDetail);
+            UpdateTotalCaloriesExpression();
+        }
+
+        private void DeleteFoodFromMeal(FoodDetail foodDetail)
+        {
+            if (BreakfastItems.Contains(foodDetail))
+            {
+                BreakfastItems.Remove(foodDetail);
+            }
+            else if (LunchItems.Contains(foodDetail))
+            {
+                LunchItems.Remove(foodDetail);
+            }
+            else if (DinnerItems.Contains(foodDetail))
+            {
+                DinnerItems.Remove(foodDetail);
+            }
+            else if (SnackItems.Contains(foodDetail))
+            {
+                SnackItems.Remove(foodDetail);
+            }
+
+            UpdateTotalCaloriesExpression();
         }
     }
-
-    public NutritionsViewModel()
-    {
-        LoadSampleData();
-        BreakfastItems.CollectionChanged += (s, e) => OnPropertyChanged(nameof(TotalCaloriesExpression));
-        LunchItems.CollectionChanged += (s, e) => OnPropertyChanged(nameof(TotalCaloriesExpression));
-        DinnerItems.CollectionChanged += (s, e) => OnPropertyChanged(nameof(TotalCaloriesExpression));
-        SnackItems.CollectionChanged += (s, e) => OnPropertyChanged(nameof(TotalCaloriesExpression));
-    }
-
-    private void LoadSampleData()
-    {
-        var sampleDataService = new SampleFoodDataService();
-        this.FoodLibraryItems = sampleDataService.GetSampleFoodData();
-    }
 }
-

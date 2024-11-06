@@ -9,6 +9,7 @@ public partial class PlanViewModel : ObservableRecipient
     // Khởi tạo PlanViewModel.
     public PlanViewModel()
     {
+
     }
 }
 

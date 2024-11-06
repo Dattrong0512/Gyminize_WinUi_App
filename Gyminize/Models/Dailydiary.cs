@@ -1,19 +1,15 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using Gyminize_API.Data.Models;
-namespace Gyminize_API.Data.Model
-{
-    [Table("dailydiary")]
 
+namespace Gyminize.Models
+{
     public class Dailydiary
     {
-        [Key]
         public int dailydiary_id
         {
             get; set;
         }
-        [ForeignKey("Customer")]
         public int customer_id
         {
             get; set;
@@ -33,7 +29,7 @@ namespace Gyminize_API.Data.Model
         public decimal total_calories
         {
             get; set;
-        }   
+        }
         public string notes
         {
             get; set;
@@ -42,11 +38,11 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public ICollection<Fooddetail> Fooddetails
+
+        // Danh sách FoodDetail
+        public ICollection<FoodDetail> Fooddetails
         {
             get; set;
         }
     }
-
 }
-

@@ -11,35 +11,38 @@
         Padding="20"
         Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
-            <!--  Cột trái để hiển thị các bữa ăn  -->
+            <!-- Cột trái để hiển thị các bữa ăn -->
             <ColumnDefinition Width="*" />
-            <!--  Cột phải để hiển thị thư viện thực phẩm  -->
+            <!-- Cột phải để hiển thị thư viện thực phẩm -->
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+
+        <!-- Phần bên trái: Hiển thị danh sách các bữa ăn -->
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+
+            <!-- Tổng lượng calo -->
             <TextBlock
                 Grid.Row="0"
                 Margin="0,0,10,10"
                 FontSize="24"
                 FontWeight="Bold"
                 Text="{Binding TotalCaloriesExpression}" />
-            <!--  Cột Trái: Danh sách các bữa ăn (Bữa Sáng, Bữa Trưa, Bữa Tối, Bữa Xế)  -->
+
+            <!-- Danh sách các bữa ăn (Bữa Sáng, Bữa Trưa, Bữa Tối, Bữa Xế) -->
             <ScrollViewer
                 Grid.Row="1"
                 Margin="0,0,10,0"
                 VerticalScrollBarVisibility="Auto">
                 <StackPanel Spacing="20">
-                    <!--  Phần Bữa Sáng  -->
+
+                    <!-- Bữa Sáng -->
                     <StackPanel>
-                        <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
-                            Text="Bữa Sáng" />
-                        <ItemsControl x:Name="BreakfastItemsControl">
+                        <TextBlock FontSize="20" FontWeight="SemiBold" Text="Bữa Sáng" />
+                        <ItemsControl ItemsSource="{Binding BreakfastItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border
@@ -54,33 +57,17 @@
                                                 <ColumnDefinition Width="2*" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-
-                                            <!--  Cột Trái: Tên thực phẩm và số lượng  -->
+                        
+                                            <!-- Tên thực phẩm và số lượng -->
                                             <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                                <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
-                                                <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
+                                                <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding BreakfastItems.Food.food_name}" />
+                                                <TextBlock FontSize="14" Foreground="Gray" Text="{Binding BreakfastItems.food_amount}" />
                                             </StackPanel>
 
-                                            <!--  Cột Phải: Lượng calo  -->
+                                            <!-- Lượng calo và nút xóa -->
                                             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                                <!--  Cột Phải: Lượng calo  -->
-                                                <TextBlock
-                                                    Grid.Column="1"
-                                                    Margin="10"
-                                                    VerticalAlignment="Center"
-                                                    FontSize="16"
-                                                    Text="{Binding Calories}" />
-                                                <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
-                                                    Click="DelButton_Click"
-                                                    Tag="{Binding}">
+                                                <TextBlock Grid.Column="1" Margin="10" VerticalAlignment="Center" FontSize="16" Text="{Binding BreakfastItems.Food.calories}" />
+                                                <Button Padding="2,2" VerticalAlignment="Center" Command="{Binding DeleteFoodCommand, Mode=TwoWay}">
                                                     <FontIcon Glyph="&#xE74D;" />
                                                 </Button>
                                             </StackPanel>
@@ -91,54 +78,27 @@
                         </ItemsControl>
                     </StackPanel>
 
-                    <!--  Phần Bữa Trưa  -->
+                    <!-- Các bữa ăn khác: Bữa Trưa, Bữa Tối, Bữa Xế -->
+                    <!-- Tương tự như Bữa Sáng -->
+
                     <StackPanel>
-                        <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
-                            Text="Bữa Trưa" />
-                        <ItemsControl x:Name="LunchItemsControl">
+                        <TextBlock FontSize="20" FontWeight="SemiBold" Text="Bữa Trưa" />
+                        <ItemsControl ItemsSource="{Binding LunchItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border
-                                        Margin="5"
-                                        Padding="10"
-                                        Background="White"
-                                        BorderBrush="Black"
-                                        BorderThickness="1"
-                                        CornerRadius="5">
+                                    <Border Margin="5" Padding="10" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="2*" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-
-                                            <!--  Cột Trái: Tên thực phẩm và số lượng  -->
                                             <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                                <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
-                                                <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
+                                                <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding food_name}" />
+                                                <TextBlock FontSize="14" Foreground="Gray" Text="{Binding food_amount}" />
                                             </StackPanel>
-
-                                            <!--  Cột Phải: Lượng calo  -->
                                             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                                <!--  Cột Phải: Lượng calo  -->
-                                                <TextBlock
-                                                    Grid.Column="1"
-                                                    Margin="10"
-                                                    VerticalAlignment="Center"
-                                                    FontSize="16"
-                                                    Text="{Binding Calories}" />
-                                                <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
-                                                    Click="DelButton_Click"
-                                                    Tag="{Binding}">
+                                                <TextBlock Grid.Column="1" Margin="10" VerticalAlignment="Center" FontSize="16" Text="{Binding Calories}" />
+                                                <Button Padding="2,2" VerticalAlignment="Center" Command="{Binding DeleteFoodCommand, Mode=TwoWay}">
                                                     <FontIcon Glyph="&#xE74D;" />
                                                 </Button>
                                             </StackPanel>
@@ -149,165 +109,33 @@
                         </ItemsControl>
                     </StackPanel>
 
-                    <!--  Phần Bữa Tối  -->
-                    <StackPanel>
-                        <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
-                            Text="Bữa Tối" />
-                        <ItemsControl x:Name="DinnerItemsControl">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border
-                                        Margin="5"
-                                        Padding="10"
-                                        Background="White"
-                                        BorderBrush="Black"
-                                        BorderThickness="1"
-                                        CornerRadius="5">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
+                    <!-- Bữa Tối và Bữa Xế sẽ tương tự -->
 
-                                            <!--  Cột Trái: Tên thực phẩm và số lượng  -->
-                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                                <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
-                                                <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
-                                            </StackPanel>
-                                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                                <!--  Cột Phải: Lượng calo  -->
-                                                <TextBlock
-                                                    Grid.Column="1"
-                                                    Margin="10"
-                                                    VerticalAlignment="Center"
-                                                    FontSize="16"
-                                                    Text="{Binding Calories}" />
-                                                <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
-                                                    Click="DelButton_Click"
-                                                    Tag="{Binding}">
-                                                    <FontIcon Glyph="&#xE74D;" />
-                                                </Button>
-                                            </StackPanel>
-                                        </Grid>
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
-
-                    <!--  Phần Bữa Xế  -->
-                    <StackPanel>
-                        <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
-                            Text="Bữa Xế" />
-                        <ItemsControl x:Name="SnackItemsControl">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border
-                                        Margin="5"
-                                        Padding="10"
-                                        Background="White"
-                                        BorderBrush="Black"
-                                        BorderThickness="1"
-                                        CornerRadius="5">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-
-                                            <!--  Cột Trái: Tên thực phẩm và số lượng  -->
-                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                                <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
-                                                <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
-                                            </StackPanel>
-
-                                            <!--  Cột Phải: Lượng calo  -->
-                                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                                <!--  Cột Phải: Lượng calo  -->
-                                                <TextBlock
-                                                    Grid.Column="1"
-                                                    Margin="10"
-                                                    VerticalAlignment="Center"
-                                                    FontSize="16"
-                                                    Text="{Binding Calories}" />
-                                                <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
-                                                    Click="DelButton_Click"
-                                                    Tag="{Binding}">
-                                                    <FontIcon Glyph="&#xE74D;" />
-                                                </Button>
-                                            </StackPanel>
-                                        </Grid>
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
-        <Button
-            Grid.Column="1"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Content="Thêm thức ăn riêng" />
-        <!--  Cột Phải: Thư viện thực phẩm  -->
+
+        <!-- Phần bên phải: Thư viện thực phẩm -->
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+
+            <!-- Tiêu đề Kho Thực Phẩm -->
             <TextBlock
                 Grid.Row="0"
                 FontSize="24"
                 FontWeight="Bold"
                 Text="Kho thực phẩm" />
-            <TextBox
-                Grid.Row="1"
-                Width="400"
-                Height="40"
-                Margin="10,10,10,10"
-                Padding="10"
-                HorizontalAlignment="Center"
-                PlaceholderText="Tìm kiếm thức ăn từ kho dữ liệu" />
-            <Button
-                Grid.Row="1"
-                Width="40"
-                Height="40"
-                Margin="0,0,20,0"
-                Padding="2,2"
-                HorizontalAlignment="Right">
-                <FontIcon Glyph="&#xE721;" />
-            </Button>
 
+            <!-- Danh sách thực phẩm từ thư viện -->
             <ScrollViewer
-                Grid.Row="2"
+                Grid.Row="1"
                 Margin="10,0,0,0"
                 VerticalScrollBarVisibility="Auto">
                 <StackPanel Spacing="10">
-
                     <ListView
-                        x:Name="FoodLibrary"
                         ItemsSource="{Binding FoodLibraryItems}"
                         SelectionMode="Single">
                         <ListView.ItemTemplate>
@@ -325,34 +153,19 @@
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
 
-                                        <!--  Cột Trái: Tên thực phẩm và số lượng  -->
+                                        <!-- Tên thực phẩm và lượng calo -->
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                            <TextBlock
-                                                FontSize="16"
-                                                FontWeight="Bold"
-                                                Text="{Binding Name}" />
-                                            <TextBlock
-                                                FontSize="14"
-                                                Foreground="Gray"
-                                                Text="{Binding Amount}" />
+                                            <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding food_name}" />
+                                            <TextBlock FontSize="14" Foreground="Gray" Text="{Binding calories}" />
                                         </StackPanel>
 
-                                        <!--  Cột Phải: Lượng calo và nút Thêm  -->
+                                        <!-- Nút thêm thực phẩm vào bữa ăn -->
                                         <StackPanel
                                             Grid.Column="1"
                                             HorizontalAlignment="Right"
-                                            VerticalAlignment="Center"
                                             Orientation="Horizontal"
                                             Spacing="10">
-                                            <TextBlock
-                                                VerticalAlignment="Center"
-                                                FontSize="16"
-                                                Text="{Binding Calories}" />
-                                            <Button
-                                                Padding="2,2"
-                                                VerticalAlignment="Center"
-                                                Click="AddButton_Click"
-                                                Tag="{Binding}">
+                                            <Button Padding="2,2" Command="{Binding AddFoodCommand, Mode=TwoWay}">
                                                 <FontIcon Glyph="&#xE710;" />
                                             </Button>
                                         </StackPanel>

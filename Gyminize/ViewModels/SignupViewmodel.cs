@@ -100,7 +100,7 @@ namespace Gyminize.ViewModels
         }
         private void PostCustomer(string username, string password)
         {
-            Customer customer = new Customer(username, 1, username, password);
+            Customer customer = new Customer(username, 1, username, password, 1);
             Console.WriteLine(customer);
 
             var client = new HttpClient();

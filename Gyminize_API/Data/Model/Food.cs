@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Gyminize_API.Data.Model
 {
@@ -15,7 +16,7 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public decimal calories
+        public int calories
         {
             get; set;
         }
@@ -31,7 +32,12 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public ICollection<Fooddetail> Fooddetails
+        public string serving_unit
+        {
+            get; set;
+        }
+        [JsonIgnore]
+       public ICollection<Fooddetail> Fooddetails
         {
             get; set;
         }

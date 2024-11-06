@@ -19,13 +19,13 @@ namespace Gyminize_API.GraphQl.Queries
                 arguments: new QueryArguments(
                     new QueryArgument<NonNullGraphType<IntGraphType>>
                     {
-                        Name = "dailydiary_id"
+                        Name = "customer_id"
                     }
                 ),
                 resolve: context =>
                 {
-                    var id = context.GetArgument<int>("dailydiary_id");
-                    return repository.GetDailydiaryById(id);
+                    var id = context.GetArgument<int>("customer_id");
+                    return repository.GetDailydiaryByIdCustomer(id);
                 }
                 );
         }

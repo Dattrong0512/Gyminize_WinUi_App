@@ -1,23 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Gyminize_API.Data.Model
+namespace Gyminize.Models
 {
-    [Table("fooddetail")]
-    public class Fooddetail
+    public class FoodDetail
     {
-        [Key]
         public int fooddetail_id
         {
             get; set;
         }
-        [ForeignKey("Dailydiary")]
         public int dailydiary_id
         {
             get; set;
         }
-        [ForeignKey("Food")]
         public int food_id
         {
             get; set;
@@ -30,16 +26,9 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        [JsonIgnore]
-        public Dailydiary? Dailydiary
-        {
-            get; set;
-        }
         public Food? Food
         {
             get; set;
         }
     }
 }
-
-

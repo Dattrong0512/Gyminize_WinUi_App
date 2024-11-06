@@ -70,14 +70,15 @@ public partial class App : Application
             services.AddSingleton<INavigationService, NavigationService>();
 
             // Core Services
-            services.AddSingleton<ISampleDataService, SampleDataService>();
+            //services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();
 
 
             // Đăng ký Views và ViewModels.
-            services.AddTransient<ShopDetailViewModel>();
+            //services.AddTransient<ShopDetailViewModel>();
+            //services.AddTransient<ShopViewModel>();
             services.AddTransient<ShopDetailPage>();
-            services.AddTransient<ShopViewModel>();
+
             services.AddTransient<ShopPage>();
             services.AddTransient<DiaryViewModel>();
             services.AddTransient<DiaryPage>();
@@ -101,7 +102,6 @@ public partial class App : Application
             services.AddTransient<SignupViewModel>();
 
             services.AddSingleton<Customer>();
-
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));
         }).

@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Gyminize.APIServices
+namespace Gyminize.Core.Services
 {
     public static class ApiServices
     {

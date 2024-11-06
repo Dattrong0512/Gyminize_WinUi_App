@@ -148,4 +148,8 @@
   <ItemGroup>
     <PRIResource Remove="Assets\Icon\NewFolder\**" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="ApiServices\" />
+  </ItemGroup>
 </Project>

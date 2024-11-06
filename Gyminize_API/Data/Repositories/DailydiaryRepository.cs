@@ -1,4 +1,5 @@
 ﻿using Gyminize_API.Data.Model;
+using Microsoft.EntityFrameworkCore;
 namespace Gyminize_API.Data.Repositories
 {
     public class DailydiaryRepository
@@ -22,6 +23,24 @@ namespace Gyminize_API.Data.Repositories
             }
 
         }
+        public Dailydiary? GetDailydiaryByIdCustomer(int customerId)
+        {
+            try
+            {
+                // Sử dụng Include để nạp đối tượng Fooddetails và Food liên quan
+                return _context.DailydiaryEntity
+                    .Include(dd => dd.Fooddetails)          // Nạp Fooddetails liên quan
+                    .ThenInclude(fd => fd.Food)              // Nạp Food trong từng Fooddetail
+                    .FirstOrDefault(dd => dd.customer_id == customerId);
+            }
+            catch (Exception ex)
+            {
+                // Log chi tiết lỗi
+                Console.WriteLine($"Error in GetDailydiaryByIdCustomer: {ex.Message}");
+                throw;
+            }
+        }
+
         public Dailydiary? GetDailydiaryById(int id)
         {
             return _context.DailydiaryEntity.Where(x => x.dailydiary_id == id).FirstOrDefault();
@@ -41,6 +60,8 @@ namespace Gyminize_API.Data.Repositories
                 check_dailydiary.customer_id = dailydiary.customer_id;
                 check_dailydiary.diary_date = dailydiary.diary_date;
                 check_dailydiary.calories_remain = dailydiary.calories_remain;
+                check_dailydiary.daily_weight = dailydiary.daily_weight;
+                check_dailydiary.total_calories = dailydiary.total_calories;
                 check_dailydiary.notes = dailydiary.notes;
                 return dailydiary;
             }

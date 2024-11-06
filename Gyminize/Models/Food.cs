@@ -5,23 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Gyminize.Models;
-public class FoodItem
+public class Food
 {
-    // Tên thực phẩm.
-    public string Name
+    public int food_id
+    {
+        get; set;
+    }
+    public string food_name
     {
         get; set;
     }
 
     // Lượng calo.
-    public int Calories
+    public int calories
     {
         get; set;
     }
+    public double protein;
 
-    // Số lượng (kèm đơn vị).
-    public string Amount
-    {
-        get; set;
-    }
+    public double carbs;
+
+    public double fats;
+
+    public string serving_unit;
+
 }

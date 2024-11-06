@@ -10,7 +10,7 @@ namespace Gyminize_API.GraphQl.Types
             Field<IntGraphType>("auth_type");
             Field<StringGraphType>("username");
             Field<StringGraphType>("customer_password");
-         
+            Field<IntGraphType>("role_user");   
         }
     }
 }

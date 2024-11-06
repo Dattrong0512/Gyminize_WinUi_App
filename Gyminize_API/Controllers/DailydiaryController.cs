@@ -31,7 +31,7 @@ namespace Gyminize_API.Controllers
             }
         }
 
-        [HttpGet("get/{dailydiary_id:int}")]
+        [HttpGet("get/daily_id/{dailydiary_id:int}")]
         public IActionResult GetDailyDiaryById(int dailydiary_id)
         {
             var dailyDiary = _dailyDiaryRepository.GetDailydiaryById(dailydiary_id);
@@ -41,7 +41,16 @@ namespace Gyminize_API.Controllers
             }
             return Ok(dailyDiary);
         }
-
+        [HttpGet("get/daily_customer/{customer_id:int}")]
+        public IActionResult GetDailydiaryByIdCustomer(int customer_id)
+        {
+            var dailyDiary = _dailyDiaryRepository.GetDailydiaryByIdCustomer(customer_id);
+            if (dailyDiary == null)
+            {
+                return NotFound();
+            }
+            return Ok(dailyDiary);
+        }
         [HttpPost("create")]
         public IActionResult AddDailyDiary(Dailydiary dailyDiary)
         {

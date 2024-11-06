@@ -29,7 +29,7 @@ namespace Gyminize_API.Data
                 .HasMany(c => c.Dailydiaries)  // Giả sử có thuộc tính Dailydiaries trong Customer
                 .WithOne(d => d.Customer)      // Giả sử có thuộc tính Customer trong Dailydiary
                 .HasForeignKey(d => d.customer_id);  // customer_id là khóa ngoại trong Dailydiary
-            //Mối quan hệ giauwx daily và fooddetail
+            //Mối quan hệ giữa dailydiary và fooddetail
             modelBuilder.Entity<Dailydiary>()
                 .HasMany(d => d.Fooddetails)
                 .WithOne(f => f.Dailydiary)

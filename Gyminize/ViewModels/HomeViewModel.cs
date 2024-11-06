@@ -7,11 +7,14 @@ using Gyminize.Models;
 using Gyminize.Services;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
+using Gyminize.Core.Services;
 using Gyminize.Contracts.ViewModels;
 using System.Diagnostics;
 using System.Windows.Input;
-using Gyminize.APIServices;
 using System.Net;
+using System.Runtime.InteropServices;
+using Windows.Storage;
+
 namespace Gyminize.ViewModels;
 
 public partial class HomeViewModel : ObservableObject, INavigationAware
@@ -24,10 +27,9 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         get => _isWeightTextBoxEnabled;
         private set => SetProperty(ref _isWeightTextBoxEnabled, value);
     }
-
+    public ILocalSettingsService localsetting;
     private int _weight;
     private Customer _customer;
-
     [ObservableProperty]
     private string weightText;
     [ObservableProperty]
@@ -50,8 +52,8 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
     {
         get;
     }
-
-    public HomeViewModel(INavigationService navigationService)
+   
+    public HomeViewModel(INavigationService navigationService, ILocalSettingsService localSettings)
     {
         _navigationService = navigationService;
         OpenWorkoutLinkCommand = new RelayCommand(OpenWorkoutLink);
@@ -59,9 +61,8 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         OpenRecipeLinkCommand = new RelayCommand(OpenRecipeLink);
         EditWeightCommand = new RelayCommand(OpenEditWeight);
         IsWeightTextBoxEnabled = false;
-       
         _customer = new Customer();
-
+        localsetting = localSettings;
 
 
     }
@@ -101,24 +102,15 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         IsWeightTextBoxEnabled = true;
     }
 
-    public void OnNavigatedTo(object parameter)
+    public async void OnNavigatedTo(object parameter)
     {
-        if (parameter is string customerName)
-        {
-            string endpoint = $"api/Customer/get/username/" + customerName;
+        var customer_id = await localsetting.ReadSettingAsync<string>("customer_id");
+        var endpoint = $"api/Customerhealth/get/" + customer_id;
 
-            // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
-            _customer = ApiServices.Get<Customer>(endpoint);
-            endpoint = "";
-             endpoint = $"api/Customerhealth/get/" + _customer.customer_id;
-
-
-            // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
-            _customerHealth = ApiServices.Get<CustomerHealth>(endpoint);
-            Debug.WriteLine(_customerHealth.weight);
-            WeightText = _customerHealth.weight.ToString();
-            GoalCalories = ((int)_customerHealth.tdee).ToString();
-        }
+        // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
+        _customerHealth = ApiServices.Get<CustomerHealth>(endpoint);
+        WeightText = _customerHealth.weight.ToString();
+        GoalCalories = ((int)_customerHealth.tdee).ToString();
     }
 
     public void OnNavigatedFrom()

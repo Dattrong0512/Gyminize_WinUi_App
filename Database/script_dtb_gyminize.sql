@@ -1,21 +1,21 @@
 
 
 
- -- DROP TABLE IF EXISTS OrderDetail;
- -- DROP TABLE IF EXISTS Orders;
- -- DROP TABLE IF EXISTS Product;
- -- DROP TABLE IF EXISTS Category;
- -- DROP TABLE IF EXISTS FoodDetail;
- -- DROP TABLE IF EXISTS Food;
- -- DROP TABLE IF EXISTS DailyDiary;
- -- DROP TABLE IF EXISTS ExerciseDetail;
- -- DROP TABLE IF EXISTS Exercise;
- -- DROP TABLE IF EXISTS WorkoutDetail;
- -- DROP TABLE IF EXISTS Typeworkout;
- -- DROP TABLE IF EXISTS PlanDetail;
- -- DROP TABLE IF EXISTS Plan;
- -- DROP TABLE IF EXISTS Customer_Health;
- -- DROP TABLE IF EXISTS Customer;
+ DROP TABLE IF EXISTS OrderDetail;
+ DROP TABLE IF EXISTS Orders;
+ DROP TABLE IF EXISTS Product;
+ DROP TABLE IF EXISTS Category;
+ DROP TABLE IF EXISTS FoodDetail;
+ DROP TABLE IF EXISTS Food;
+ DROP TABLE IF EXISTS DailyDiary;
+ DROP TABLE IF EXISTS ExerciseDetail;
+ DROP TABLE IF EXISTS Exercise;
+ DROP TABLE IF EXISTS WorkoutDetail;
+ DROP TABLE IF EXISTS Typeworkout;
+ DROP TABLE IF EXISTS PlanDetail;
+ DROP TABLE IF EXISTS Plan;
+ DROP TABLE IF EXISTS Customer_Health;
+ DROP TABLE IF EXISTS Customer;
 
 
  
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS DailyDiary (
     diary_date DATE NOT NULL,
     calories_remain DECIMAL(10,2) NOT NULL,
 	daily_weight INT NOT NULL,
-	daily_tdde DECIMAL(10,2) NOT NULL,
+	total_calories DECIMAL(10,2) NOT NULL,
     notes TEXT
 );
 
@@ -204,7 +204,7 @@ VALUES
 (10, 1, 178, 70, 33, 1.6, 21.0, 2300);
 
 -- Chèn dữ liệu vào bảng DailyDiary
-INSERT INTO DailyDiary (customer_id, diary_date, calories_remain, daily_weight, daily_tdde, notes)
+INSERT INTO DailyDiary (customer_id, diary_date, calories_remain, daily_weight, total_calories, notes)
 VALUES 
 (1, '2024-11-01', 500, 75, 2200, 'Feeling great today'),
 (2, '2024-11-01', 200, 60, 1800, 'Busy day'),

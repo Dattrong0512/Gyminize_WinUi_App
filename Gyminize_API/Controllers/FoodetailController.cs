@@ -37,6 +37,18 @@ namespace Gyminize_API.Controllers
             }
             return Ok(foodetail);
         }
+
+        //[HttpGet("get/dailyfood/{customer_id:int}")]
+        //public IActionResult GetFoodDetailsByCustomerId(int customer_id)
+        //{
+        //    var foodDetails = _foodetailRepository.GetFoodDetailsByCustomerId(customer_id);
+        //    if (foodDetails == null || !foodDetails.Any())
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(foodDetails);
+        //}
+
         [HttpPost("create")]
         public IActionResult AddFooddetail(Fooddetail foodetail)
         {

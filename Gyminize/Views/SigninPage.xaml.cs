@@ -14,7 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Gyminize.ViewModels;
 using Gyminize.Contracts.Services;
-
+using Gyminize.Core.Services;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -25,17 +25,19 @@ namespace Gyminize.Views
     /// </summary>
     public sealed partial class SigninPage : Page
     {
+        
         public SigninViewmodel ViewModel
         {
             get;
         }
-
+        
         public SigninPage()
         {
             ViewModel = App.GetService<SigninViewmodel>();
             InitializeComponent();
             var navigationService = App.GetService<INavigationService>();
-            ViewModel = new SigninViewmodel(navigationService);
+            var setting = App.GetService<ILocalSettingsService>();
+            ViewModel = new SigninViewmodel(navigationService, setting);
             this.DataContext = ViewModel;
         }
     }

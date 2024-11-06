@@ -30,6 +30,10 @@ namespace Gyminize_API.Data.Models
         {
             get; set;
         }
+        public required int role_user
+        {
+            get; set;
+        }
         public virtual Customer_health? Customer_health
         {
             get; set;
