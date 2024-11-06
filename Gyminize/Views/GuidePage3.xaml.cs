@@ -34,21 +34,9 @@ public sealed partial class GuidePage3 : Page
     {
         ViewModel = App.GetService<Guide3ViewModel>();
         InitializeComponent();
-
+        var windowService = App.GetService<IWindowService>();
         var navigationService = App.GetService<INavigationService>();
-        ViewModel = new Guide3ViewModel(navigationService);
+        ViewModel = new Guide3ViewModel(navigationService, windowService);
         this.DataContext = ViewModel;
-    }
-
-    private void backIcon_Tapped(object sender, TappedRoutedEventArgs e)
-    {
-        var viewModel = (Guide3ViewModel)this.DataContext;
-        viewModel.NavigateBackCommand.Execute(null);
-    }
-
-    private void nextIcon_Tapped(object sender, TappedRoutedEventArgs e)
-    {
-        var viewModel = (Guide3ViewModel)this.DataContext;
-        viewModel.NavigateNextCommand.Execute(null);
     }
 }

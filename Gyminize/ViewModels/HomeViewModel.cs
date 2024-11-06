@@ -20,6 +20,7 @@ namespace Gyminize.ViewModels;
 public partial class HomeViewModel : ObservableObject, INavigationAware
 {
     private readonly INavigationService _navigationService;
+    private readonly IWindowService _windowService;
     private bool _isWeightTextBoxEnabled;
     private CustomerHealth _customerHealth;
     public bool IsWeightTextBoxEnabled
@@ -53,9 +54,10 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         get;
     }
    
-    public HomeViewModel(INavigationService navigationService, ILocalSettingsService localSettings)
+    public HomeViewModel(INavigationService navigationService, IWindowService windowService ,ILocalSettingsService localSettings)
     {
         _navigationService = navigationService;
+        _windowService = windowService;
         OpenWorkoutLinkCommand = new RelayCommand(OpenWorkoutLink);
         OpenSleepLinkCommand = new RelayCommand(OpenSleepLink);
         OpenRecipeLinkCommand = new RelayCommand(OpenRecipeLink);
@@ -63,7 +65,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         IsWeightTextBoxEnabled = false;
         _customer = new Customer();
         localsetting = localSettings;
-
+        _windowService.SetWindowSize(1500, 800);
 
     }
 

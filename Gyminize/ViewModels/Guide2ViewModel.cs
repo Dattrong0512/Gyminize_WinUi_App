@@ -51,7 +51,8 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
     {
         get;
     }
-    private INavigationService _navigationService;
+    private readonly INavigationService _navigationService;
+    private readonly IWindowService _windowService;
     public string ImageSource1
     {
         get => _imageSource1;
@@ -153,17 +154,21 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         get => _isValid;
         set => SetProperty(ref _isValid, value);
     }
+    
 
-    public Guide2ViewModel(INavigationService navigationService)
+    public Guide2ViewModel(INavigationService navigationService, IWindowService windowService)
     {
         _navigationService = navigationService;
+        _windowService = windowService;
         PointerEnteredCommand = new RelayCommand<Border?>(OnPointerEntered);
         PointerExitedCommand = new RelayCommand<Border?>(OnPointerExited);
         PointerPressedCommand = new RelayCommand<Border?>(OnPointerPressed);
         PointerReleasedCommand = new RelayCommand<Border?>(OnPointerReleased);
         NavigateBackCommand = new RelayCommand(NavigateBack);
         NavigateNextCommand = new RelayCommand(NavigateNext);
-       
+        _windowService.SetWindowSize(1200, 800);
+        _windowService.SetIsMaximizable(false);
+        _windowService.SetIsResizable(false);
     }
 
     private void OnPointerEntered(Border? border)

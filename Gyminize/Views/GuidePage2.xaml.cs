@@ -32,8 +32,9 @@ namespace Gyminize.Views
         {
             ViewModel = App.GetService<Guide2ViewModel>();
             InitializeComponent();
+            var windowService = App.GetService<IWindowService>();
             var navigationService = App.GetService<INavigationService>();
-            ViewModel = new Guide2ViewModel(navigationService);
+            ViewModel = new Guide2ViewModel(navigationService, windowService);
             this.DataContext = ViewModel;
         }
 
@@ -81,16 +82,6 @@ namespace Gyminize.Views
             ViewModel.OnNavigatedFrom();
         }
 
-        private void backIcon_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var viewModel = (Guide2ViewModel)this.DataContext;
-            viewModel.NavigateBackCommand.Execute(null);
-        }
-
-        private void nextIcon_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var viewModel = (Guide2ViewModel)this.DataContext;
-            viewModel.NavigateNextCommand.Execute(null);
-        }
+        
     }
 }

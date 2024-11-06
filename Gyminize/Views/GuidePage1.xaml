@@ -12,152 +12,155 @@
 
 
 
-    <Grid Background="#515DEF">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="150" />
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <FontIcon
-                x:Name="backIcon"
-                FontSize="40"
-                Foreground="Gray"
-                Glyph="&#xE96F;" />
-        </StackPanel>
-        <StackPanel Grid.Column="2" VerticalAlignment="Center">
-            <FontIcon
-                x:Name="nextIcon"
-                FontSize="40"
-                Foreground="White"
-                Glyph="&#xE970;"
-                Tapped="nextIcon_Tapped" />
-        </StackPanel>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Width="700"
+            Margin="20,20,20,20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20"
+            Foreground="#3D52A0"
+            TextAlignment="Center"
+            TextWrapping="Wrap">
+            Trước khi bắt đầu, chúng tôi cần thu thập một ít thông tin của bạn để hỗ trợ quá trình tập luyện
+        </TextBlock>
         <StackPanel
-            Grid.Column="1"
-            Background="White"
-            Orientation="Vertical">
-            <TextBlock
-                Margin="20"
-                HorizontalAlignment="Center"
-                FontSize="18"
-                Foreground="#3D52A0">
-                Trước khi bắt đầu, chúng tôi cần thu thập một ít thông tin của bạn để hỗ trợ quá trình tập luyện
-            </TextBlock>
-            <TextBlock
-                Margin="10,10,200,10"
-                HorizontalAlignment="Center"
-                FontSize="14"
-                Foreground="#3D52A0">
-                Giới tính:
-            </TextBlock>
-            <StackPanel
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                Orientation="Horizontal">
-                <CheckBox
-                    x:Name="maleCheckBox"
+            Grid.Row="1"
+            Margin="10"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <StackPanel Margin="20" Orientation="Vertical">
+                <TextBlock
+                    Margin="10,10,200,10"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Foreground="#3D52A0">
+                    Tuổi:
+                </TextBlock>
+                <TextBox
+                    x:Name="ageTextBox"
+                    Width="300"
+                    Height="40"
                     Margin="10,0,10,10"
-                    Padding="10"
-                    Checked="maleCheckBox_Checked"
-                    Content="Nam"
-                    IsChecked="{Binding MaleCheckBox.IsChecked, Mode=TwoWay}" />
-                <CheckBox
-                    x:Name="femaleCheckBox"
+                    Padding="8"
+                    HorizontalAlignment="Center"
+                    BorderBrush="#515DEF"
+                    FontSize="16"
+                    LostFocus="AgeTextBox_LostFocus"
+                    PlaceholderText="18"
+                    Text="{Binding AgeTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    TextAlignment="Center" />
+                <TextBlock
+                    x:Name="ageErrorTextBlock"
+                    HorizontalAlignment="Center"
+                    FontSize="13"
+                    FontStyle="Italic"
+                    Foreground="Red"
+                    Text="{Binding AgeErrorTextBlock.Text}"
+                    Visibility="{Binding AgeErrorTextBlock.Visibility}" />
+                <TextBlock
+                    Margin="10,10,200,10"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Foreground="#3D52A0">
+                    Chiều cao:
+                </TextBlock>
+                <TextBox
+                    x:Name="heightTextBox"
+                    Width="300"
+                    Height="40"
                     Margin="10,0,10,10"
-                    Padding="10"
-                    Checked="femaleCheckBox_Checked"
-                    Content="Nữ"
-                    IsChecked="{Binding FemaleCheckBox.IsChecked, Mode=TwoWay}" />
+                    Padding="8"
+                    HorizontalAlignment="Center"
+                    BorderBrush="#515DEF"
+                    FontSize="16"
+                    LostFocus="HeightTextBox_LostFocus"
+                    PlaceholderText="180cm"
+                    Text="{Binding HeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    TextAlignment="Center" />
+                <TextBlock
+                    x:Name="heightErrorTextBlock"
+                    HorizontalAlignment="Center"
+                    FontSize="13"
+                    FontStyle="Italic"
+                    Foreground="Red"
+                    Text="{Binding HeightErrorTextBlock.Text}"
+                    Visibility="{Binding HeightErrorTextBlock.Visibility}" />
+                <TextBlock
+                    Margin="10,10,200,10"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Foreground="#3D52A0">
+                    Cân nặng:
+                </TextBlock>
+                <TextBox
+                    x:Name="weightTextBox"
+                    Width="300"
+                    Height="40"
+                    Margin="10,0,10,10"
+                    Padding="8"
+                    HorizontalAlignment="Center"
+                    BorderBrush="#515DEF"
+                    FontSize="16"
+                    LostFocus="WeightTextBox_LostFocus"
+                    PlaceholderText="75Kg"
+                    Text="{Binding WeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    TextAlignment="Center" />
+                <TextBlock
+                    x:Name="weightErrorTextBlock"
+                    HorizontalAlignment="Center"
+                    FontSize="13"
+                    FontStyle="Italic"
+                    Foreground="Red"
+                    Text="{Binding WeightErrorTextBlock.Text}"
+                    Visibility="{Binding WeightErrorTextBlock.Visibility}" />
             </StackPanel>
-            <TextBlock
-                Margin="10,10,200,10"
-                HorizontalAlignment="Center"
-                Foreground="#3D52A0">
-                Tuổi:
-            </TextBlock>
-            <TextBox
-                x:Name="ageTextBox"
-                Width="300"
-                Height="40"
-                Margin="10,0,10,10"
-                Padding="10"
-                HorizontalAlignment="Center"
-                BorderBrush="#515DEF"
-                LostFocus="AgeTextBox_LostFocus"
-                PlaceholderText="18"
-                Text="{Binding AgeTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                TextAlignment="Center" />
-            <TextBlock
-                x:Name="ageErrorTextBlock"
-                HorizontalAlignment="Center"
-                FontSize="12"
-                FontStyle="Italic"
-                Foreground="Red"
-                Text="{Binding AgeErrorTextBlock.Text}"
-                Visibility="{Binding AgeErrorTextBlock.Visibility}" />
-            <TextBlock
-                Margin="10,10,200,10"
-                HorizontalAlignment="Center"
-                Foreground="#3D52A0">
-                Chiều cao:
-            </TextBlock>
-            <TextBox
-                x:Name="heightTextBox"
-                Width="300"
-                Height="40"
-                Margin="10,0,10,10"
-                Padding="10"
-                HorizontalAlignment="Center"
-                BorderBrush="#515DEF"
-                LostFocus="HeightTextBox_LostFocus"
-                PlaceholderText="180cm"
-                Text="{Binding HeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                TextAlignment="Center" />
-            <TextBlock
-                x:Name="heightErrorTextBlock"
-                HorizontalAlignment="Center"
-                FontSize="12"
-                FontStyle="Italic"
-                Foreground="Red"
-                Text="{Binding HeightErrorTextBlock.Text}"
-                Visibility="{Binding HeightErrorTextBlock.Visibility}" />
-            <TextBlock
-                Margin="10,10,200,10"
-                HorizontalAlignment="Center"
-                Foreground="#3D52A0">
-                Cân nặng:
-            </TextBlock>
-            <TextBox
-                x:Name="weightTextBox"
-                Width="300"
-                Height="40"
-                Margin="10,0,10,10"
-                Padding="10"
-                HorizontalAlignment="Center"
-                BorderBrush="#515DEF"
-                LostFocus="WeightTextBox_LostFocus"
-                PlaceholderText="75Kg"
-                Text="{Binding WeightTextBox.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                TextAlignment="Center" />
-            <TextBlock
-                x:Name="weightErrorTextBlock"
-                HorizontalAlignment="Center"
-                FontSize="12"
-                FontStyle="Italic"
-                Foreground="Red"
-                Text="{Binding WeightErrorTextBlock.Text}"
-                Visibility="{Binding WeightErrorTextBlock.Visibility}" />
-            <TextBlock
-                Margin="10,10,200,10"
-                HorizontalAlignment="Center"
-                Foreground="#3D52A0">
-                Tần suất vận động
-            </TextBlock>
             <StackPanel
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                Orientation="Horizontal">
+                Margin="20"
+                Background="White"
+                Orientation="Vertical">
+                <TextBlock
+                    Margin="10,10,200,10"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Foreground="#3D52A0">
+                    Giới tính:
+                </TextBlock>
+                <StackPanel
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <CheckBox
+                        x:Name="maleCheckBox"
+                        Margin="10,0,10,10"
+                        Padding="10"
+                        Checked="maleCheckBox_Checked"
+                        Content="Nam"
+                        FontSize="16"
+                        IsChecked="{Binding MaleCheckBox.IsChecked, Mode=TwoWay}" />
+                    <CheckBox
+                        x:Name="femaleCheckBox"
+                        Margin="10,0,10,10"
+                        Padding="10"
+                        Checked="femaleCheckBox_Checked"
+                        Content="Nữ"
+                        FontSize="16"
+                        IsChecked="{Binding FemaleCheckBox.IsChecked, Mode=TwoWay}" />
+                </StackPanel>
+                <TextBlock
+                    Margin="10,30,10,10"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Foreground="#3D52A0">
+                    Tần suất vận động
+                </TextBlock>
+
                 <ComboBox
                     x:Name="ActivityLevelComboBox"
                     Width="300"
@@ -166,16 +169,29 @@
                     HorizontalAlignment="Center"
                     HorizontalContentAlignment="Center"
                     BorderBrush="#515DEF"
+                    FontSize="16"
                     Foreground="#3D52A0"
                     ItemsSource="{Binding ActivityLevels}"
-                    SelectedIndex="2"
+                    SelectedIndex="0"
                     SelectedItem="{Binding SelectedActivityLevel, Mode=TwoWay}">
                     <ComboBoxItem HorizontalAlignment="Center" Content="Hầu như không vận động" />
                     <ComboBoxItem HorizontalAlignment="Center" Content="Thấp ( 1 - 2 buổi/tuần )" />
                     <ComboBoxItem HorizontalAlignment="Center" Content="Trung Bình ( 3 - 5 buổi/tuần )" />
                     <ComboBoxItem HorizontalAlignment="Center" Content="Cao ( 6 - 7 buổi/tuần )" />
                 </ComboBox>
+
             </StackPanel>
         </StackPanel>
+        <Button
+            Grid.Row="2"
+            Width="200"
+            Height="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#515DEF"
+            Command="{Binding NavigateToGuidePage2Command}"
+            Content="Tiếp tục"
+            FontSize="17"
+            Foreground="White" />
     </Grid>
 </Page>

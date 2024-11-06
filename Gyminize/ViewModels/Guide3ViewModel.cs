@@ -24,6 +24,7 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
 {
     private CustomerInfo _customerInfo;
     private readonly INavigationService _navigationService;
+    private readonly IWindowService _windowService;
     private double _bmi;
     private UIElement? _shell = null;
     private CustomerHealth customerHealth
@@ -120,12 +121,16 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     {
         get;
     }
-    public Guide3ViewModel(INavigationService navigationService)
+    public Guide3ViewModel(INavigationService navigationService, IWindowService windowService)
     {
+        _windowService = windowService;
         _navigationService = navigationService;
         customerHealth = new CustomerHealth();
         NavigateBackCommand = new RelayCommand(NavigateBack);
         NavigateNextCommand = new RelayCommand(NavigateNext);
+        _windowService.SetWindowSize(1200, 900);
+        _windowService.SetIsMaximizable(false);
+        _windowService.SetIsResizable(false);
     }
 
 

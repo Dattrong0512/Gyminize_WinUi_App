@@ -1,0 +1,536 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\shellpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\shellpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\viewmodels\\shellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\shellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\services\\navigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\services\\navigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\services\\windowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\services\\windowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\services\\themeselectorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\services\\themeselectorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\services\\localsettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\services\\localsettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\viewmodels\\guide2viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\guide2viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\contracts\\services\\iactivationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\contracts\\services\\iactivationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\contracts\\services\\iwindowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\contracts\\services\\iwindowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\services\\activationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\services\\activationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\viewmodels\\guide1viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\guide1viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\viewmodels\\guide3viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\guide3viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\guidepage3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\guidepage3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\guidepage3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\guidepage3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\guidepage2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\guidepage2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\guidepage1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\guidepage1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\guidepage1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\guidepage1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\views\\guidepage2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\views\\guidepage2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bach Yen\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.240923002\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD00726-77A2-481C-B93F-69D2C93C3AD2}|Gyminize_API\\Gyminize_API.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize_api\\gyminize_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{8FD00726-77A2-481C-B93F-69D2C93C3AD2}|Gyminize_API\\Gyminize_API.csproj|solutionrelative:gyminize_api\\gyminize_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize\\gyminize.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\gyminize.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FD00726-77A2-481C-B93F-69D2C93C3AD2}|Gyminize_API\\Gyminize_API.csproj|j:\\study\\windowprograming\\clone_4\\gyminize_winui_app\\gyminize_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8FD00726-77A2-481C-B93F-69D2C93C3AD2}|Gyminize_API\\Gyminize_API.csproj|solutionrelative:gyminize_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShellPage.xaml",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\ShellPage.xaml",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\ShellPage.xaml",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\ShellPage.xaml",
+              "RelativeToolTip": "Gyminize\\Views\\ShellPage.xaml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T14:25:48.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavigationService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\NavigationService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Services\\NavigationService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\NavigationService.cs",
+              "RelativeToolTip": "Gyminize\\Services\\NavigationService.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:25:16.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LocalSettingsService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\LocalSettingsService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Services\\LocalSettingsService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\LocalSettingsService.cs",
+              "RelativeToolTip": "Gyminize\\Services\\LocalSettingsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:24:32.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ThemeSelectorService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\ThemeSelectorService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Services\\ThemeSelectorService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\ThemeSelectorService.cs",
+              "RelativeToolTip": "Gyminize\\Services\\ThemeSelectorService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:24:03.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PageService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\PageService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Services\\PageService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\PageService.cs",
+              "RelativeToolTip": "Gyminize\\Services\\PageService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:23:28.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShellViewModel.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\ShellViewModel.cs",
+              "RelativeDocumentMoniker": "Gyminize\\ViewModels\\ShellViewModel.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\ShellViewModel.cs",
+              "RelativeToolTip": "Gyminize\\ViewModels\\ShellViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:23:12.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ActivationService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\ActivationService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Services\\ActivationService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\ActivationService.cs",
+              "RelativeToolTip": "Gyminize\\Services\\ActivationService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAACMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:17:21.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "Gyminize\\ViewModels\\HomeViewModel.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\HomeViewModel.cs",
+              "RelativeToolTip": "Gyminize\\ViewModels\\HomeViewModel.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwDoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:08:36.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomePage.xaml.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\HomePage.xaml.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\HomePage.xaml.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\HomePage.xaml.cs",
+              "RelativeToolTip": "Gyminize\\Views\\HomePage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T14:08:16.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\HomePage.xaml",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\HomePage.xaml",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\HomePage.xaml",
+              "RelativeToolTip": "Gyminize\\Views\\HomePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T14:07:37.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Guide3ViewModel.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\Guide3ViewModel.cs",
+              "RelativeDocumentMoniker": "Gyminize\\ViewModels\\Guide3ViewModel.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\Guide3ViewModel.cs",
+              "RelativeToolTip": "Gyminize\\ViewModels\\Guide3ViewModel.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAswIIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T13:46:29.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Guide2ViewModel.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\Guide2ViewModel.cs",
+              "RelativeDocumentMoniker": "Gyminize\\ViewModels\\Guide2ViewModel.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\Guide2ViewModel.cs",
+              "RelativeToolTip": "Gyminize\\ViewModels\\Guide2ViewModel.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAwKgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T13:43:52.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Gyminize\\MainWindow.xaml",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\MainWindow.xaml",
+              "RelativeToolTip": "Gyminize\\MainWindow.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T13:42:44.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IActivationService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Contracts\\Services\\IActivationService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Contracts\\Services\\IActivationService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Contracts\\Services\\IActivationService.cs",
+              "RelativeToolTip": "Gyminize\\Contracts\\Services\\IActivationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T13:40:00.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GuidePage3.xaml.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage3.xaml.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\GuidePage3.xaml.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage3.xaml.cs",
+              "RelativeToolTip": "Gyminize\\Views\\GuidePage3.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T13:32:34.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GuidePage3.xaml",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage3.xaml",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\GuidePage3.xaml",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage3.xaml",
+              "RelativeToolTip": "Gyminize\\Views\\GuidePage3.xaml",
+              "ViewState": "AgIAACYBAAAAAAAAAAAAAC8BAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T13:28:40.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GuidePage2.xaml.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage2.xaml.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\GuidePage2.xaml.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage2.xaml.cs",
+              "RelativeToolTip": "Gyminize\\Views\\GuidePage2.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T13:13:27.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GuidePage2.xaml",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage2.xaml",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\GuidePage2.xaml",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage2.xaml",
+              "RelativeToolTip": "Gyminize\\Views\\GuidePage2.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T13:12:15.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "DocumentMoniker": "C:\\Users\\Bach Yen\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.240923002\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "ToolTip": "C:\\Users\\Bach Yen\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.240923002\\buildTransitive\\Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
+              "ViewState": "AgIAANwBAAAAAAAAAAAqwPgBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-11-06T12:57:55.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GuidePage1.xaml.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage1.xaml.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\GuidePage1.xaml.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage1.xaml.cs",
+              "RelativeToolTip": "Gyminize\\Views\\GuidePage1.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAswCMAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:57:09.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GuidePage1.xaml",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage1.xaml",
+              "RelativeDocumentMoniker": "Gyminize\\Views\\GuidePage1.xaml",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Views\\GuidePage1.xaml",
+              "RelativeToolTip": "Gyminize\\Views\\GuidePage1.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T12:56:50.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Guide1ViewModel.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\Guide1ViewModel.cs",
+              "RelativeDocumentMoniker": "Gyminize\\ViewModels\\Guide1ViewModel.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\Guide1ViewModel.cs",
+              "RelativeToolTip": "Gyminize\\ViewModels\\Guide1ViewModel.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:56:44.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Gyminize\\App.xaml.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\App.xaml.cs",
+              "RelativeToolTip": "Gyminize\\App.xaml.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwEcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:55:56.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "App.xaml",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\App.xaml",
+              "RelativeDocumentMoniker": "Gyminize\\App.xaml",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\App.xaml",
+              "RelativeToolTip": "Gyminize\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-06T12:55:53.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IWindowService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Contracts\\Services\\IWindowService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Contracts\\Services\\IWindowService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Contracts\\Services\\IWindowService.cs",
+              "RelativeToolTip": "Gyminize\\Contracts\\Services\\IWindowService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:52:50.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WindowService.cs",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\WindowService.cs",
+              "RelativeDocumentMoniker": "Gyminize\\Services\\WindowService.cs",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Services\\WindowService.cs",
+              "RelativeToolTip": "Gyminize\\Services\\WindowService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:52:41.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Gyminize",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
+              "RelativeDocumentMoniker": "Gyminize\\Gyminize.csproj",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj",
+              "RelativeToolTip": "Gyminize\\Gyminize.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-06T12:51:31.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize_API\\appsettings.json",
+              "RelativeDocumentMoniker": "Gyminize_API\\appsettings.json",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize_API\\appsettings.json",
+              "RelativeToolTip": "Gyminize_API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-06T12:50:52.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Gyminize_API.http",
+              "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.http",
+              "RelativeDocumentMoniker": "Gyminize_API\\Gyminize_API.http",
+              "ToolTip": "J:\\Study\\WindowPrograming\\Clone_4\\Gyminize_WinUi_App\\Gyminize_API\\Gyminize_API.http",
+              "RelativeToolTip": "Gyminize_API\\Gyminize_API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-06T12:50:50.362Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 461,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -21,9 +21,10 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
     private string _username;
     private CustomerInfo _customerInfoBack;
     private readonly INavigationService _navigationService;
-    public Guide1ViewModel(INavigationService navigationService)
+    private readonly IWindowService _windowService;
+    public Guide1ViewModel(INavigationService navigationService, IWindowService windowService)
     {
-
+        _windowService = windowService;
         _navigationService = navigationService;
         MaleCheckCommand = new RelayCommand<RoutedEventArgs?>(MaleSexCheck);
         FemaleCheckCommand = new RelayCommand<RoutedEventArgs?>(FemaleSexCheck);    
@@ -44,7 +45,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         _activityLevelComboBox = new ComboBox();
 
         SelectedActivityLevel = new ComboBoxItem { Content = "Trung Bình ( 3 - 5 buổi/tuần )" };
-        
+        _windowService.SetIsResizable(false);
+        _windowService.SetIsMaximizable(false);
+        _windowService.SetWindowSize(1200, 800);
     }
     
     public ICommand MaleCheckCommand { get; }

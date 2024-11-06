@@ -26,14 +26,14 @@ namespace Gyminize.Views;
 public sealed partial class GuidePage1 : Page
 {
     public Guide1ViewModel ViewModel { get; }
-
+    
     public GuidePage1()
     {
         ViewModel = App.GetService<Guide1ViewModel>();
         InitializeComponent();
-
+        var windowService = App.GetService<IWindowService>();
         var navigationService = App.GetService<INavigationService>();
-        ViewModel = new Guide1ViewModel(navigationService);
+        ViewModel = new Guide1ViewModel(navigationService, windowService);
         this.DataContext = ViewModel;
     }
 
@@ -80,9 +80,5 @@ public sealed partial class GuidePage1 : Page
         }
     }
 
-    private void nextIcon_Tapped(object sender, TappedRoutedEventArgs e)
-    {
-        var viewModel = (Guide1ViewModel)this.DataContext;
-        viewModel.NavigateToGuidePage2Command.Execute(null);
-    }
+   
 }
