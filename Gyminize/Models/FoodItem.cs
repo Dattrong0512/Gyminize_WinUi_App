@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Gyminize.Models;
-public class Food
+public class FoodItem
 {
     public int food_id
     {
@@ -21,15 +21,12 @@ public class Food
     {
         get; set;
     }
-    public double protein;
 
-    public double carbs;
-
-    public double fats;
-
-    public string serving_unit
+    public int amount
     {
         get; set;
     }
 
+    
+    public string serving_unit;
 }

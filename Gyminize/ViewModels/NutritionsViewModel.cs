@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Gyminize.Contracts.Services;
 using Gyminize.Core.Services;
+using Microsoft.UI.Xaml.Controls;
+using System.Reflection.Metadata;
 
 namespace Gyminize.ViewModels
 {
@@ -17,7 +19,7 @@ namespace Gyminize.ViewModels
             get;
         }
         private readonly INavigationService _navigationService;
-
+        private readonly IDialogService _dialogService;
         public Dailydiary CurrentDailydiary
         {
             get; set;
@@ -37,25 +39,26 @@ namespace Gyminize.ViewModels
             set => SetProperty(ref _totalCaloriesExpression, value);
         }
 
-        public ICommand AddFoodCommand
+        public ICommand DeleteFoodFromMealCommand
         {
             get;
         }
-        public ICommand DeleteFoodCommand
+        public ICommand AddFoodToMealCommand
         {
             get;
         }
 
-        public NutritionsViewModel(INavigationService navigationService, ILocalSettingsService localSetting)
+        public NutritionsViewModel(INavigationService navigationService,IDialogService dialogService ,ILocalSettingsService localSetting)
         {
             _navigationService = navigationService;
             LocalSetting = localSetting;
-
-            AddFoodCommand = new RelayCommand<Food>(AddFoodToMeal);
-            DeleteFoodCommand = new RelayCommand<FoodDetail>(DeleteFoodFromMeal);
+            _dialogService = dialogService;
+            DeleteFoodFromMealCommand = new RelayCommand<FoodDetail?>(DeleteFoodFromMeal);
+            AddFoodToMealCommand = new AsyncRelayCommand<Food?>(AddFoodToMealAsync); // Sửa lại dòng này
 
             LoadFoodLibraryAsync();
             LoadDailyDiary();
+            
         }
 
         private async Task LoadFoodLibraryAsync()
@@ -122,26 +125,54 @@ namespace Gyminize.ViewModels
 
         private void UpdateTotalCaloriesExpression()
         {
-            int totalCalories = BreakfastItems.Sum(item => item.Food.calories) +
-                                LunchItems.Sum(item => item.Food.calories) +
-                                DinnerItems.Sum(item => item.Food.calories) +
-                                SnackItems.Sum(item => item.Food.calories);
+            int totalCalories = BreakfastItems.Sum(item => item.TotalCalories) +
+                                LunchItems.Sum(item => item.TotalCalories) +
+                                DinnerItems.Sum(item => item.TotalCalories) +
+                                SnackItems.Sum(item => item.TotalCalories);
 
-            TotalCaloriesExpression = $"{CurrentDailydiary.total_calories} - {totalCalories} = {CurrentDailydiary.total_calories - totalCalories}";
+            TotalCaloriesExpression = $"{CurrentDailydiary.total_calories:F0} - {totalCalories} = {CurrentDailydiary.total_calories - totalCalories:F0}";
         }
 
-        private void AddFoodToMeal(Food food)
-        {
-            var foodDetail = new FoodDetail
-            {
-                food_id = food.food_id,
-                food_amount = 100, // mặc định số lượng là 100 gram, có thể tuỳ chỉnh
-                meal_type = 1, // ví dụ bữa sáng
-                Food = food
-            };
+        
 
-            BreakfastItems.Add(foodDetail);
-            UpdateTotalCaloriesExpression();
+        private async Task AddFoodToMealAsync(Food? selectedFood)
+        {
+            if (selectedFood == null)
+                return;
+
+            var (selectedMeal, quantity) = await _dialogService.ShowMealSelectionDialogAsync();
+
+            if (!string.IsNullOrEmpty(selectedMeal))
+            {
+                var foodDetail = new FoodDetail
+                {
+                    food_id = selectedFood.food_id,
+                    food_amount = quantity, // Số lượng từ NumberBox
+                    Food = selectedFood
+                };
+
+                switch (selectedMeal)
+                {
+                    case "Bữa Sáng":
+                        foodDetail.meal_type = 1;
+                        BreakfastItems.Add(foodDetail);
+                        break;
+                    case "Bữa Trưa":
+                        foodDetail.meal_type = 2;
+                        LunchItems.Add(foodDetail);
+                        break;
+                    case "Bữa Tối":
+                        foodDetail.meal_type = 3;
+                        DinnerItems.Add(foodDetail);
+                        break;
+                    case "Bữa Xế":
+                        foodDetail.meal_type = 4;
+                        SnackItems.Add(foodDetail);
+                        break;
+                }
+
+                UpdateTotalCaloriesExpression();
+            }
         }
 
         private void DeleteFoodFromMeal(FoodDetail foodDetail)

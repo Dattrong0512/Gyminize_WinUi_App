@@ -58,7 +58,7 @@
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Nutritions" helpers:NavigationHelper.NavigateTo="Gyminize.ViewModels.NutritionsViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xED56;" />
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xED;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Diary" helpers:NavigationHelper.NavigateTo="Gyminize.ViewModels.DiaryViewModel">

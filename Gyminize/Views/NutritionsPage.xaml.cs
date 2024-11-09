@@ -19,7 +19,8 @@ namespace Gyminize.Views
             DataContext = ViewModel;
             var navigationService = App.GetService<INavigationService>();
             var setting = App.GetService<ILocalSettingsService>();
-            ViewModel = new NutritionsViewModel(navigationService, setting);
+            var dialogService = App.GetService<IDialogService>();
+            ViewModel = new NutritionsViewModel(navigationService,dialogService, setting);
             this.DataContext = ViewModel;
         }
     }

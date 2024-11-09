@@ -30,5 +30,6 @@ namespace Gyminize.Models
         {
             get; set;
         }
+        public int TotalCalories => Food != null ? Food.calories * food_amount : 0;
     }
 }

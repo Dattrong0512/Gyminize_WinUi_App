@@ -35,7 +35,7 @@ namespace Gyminize_API.Data.Repositories
         {
             try
             {
-                DateTime today = new DateTime(2024, 11, 1);
+                DateTime today = new DateTime(2024, 11, 2);
                 today = DateTime.SpecifyKind(today, DateTimeKind.Utc);
 
 
