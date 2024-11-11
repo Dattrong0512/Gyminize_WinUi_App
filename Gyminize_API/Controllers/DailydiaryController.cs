@@ -41,10 +41,10 @@ namespace Gyminize_API.Controllers
             }
             return Ok(dailyDiary);
         }
-        [HttpGet("get/daily_customer/{customer_id:int}")]
-        public IActionResult GetDailydiaryByIdCustomer(int customer_id)
+        [HttpGet("get/daily_customer/{customer_id:int}/day/{day}")]
+        public IActionResult GetDailydiaryByIdCustomer(int customer_id, DateTime day)
         {
-            var dailyDiary = _dailyDiaryRepository.GetDailydiaryByIdCustomer(customer_id);
+            var dailyDiary = _dailyDiaryRepository.GetDailydiaryByIdCustomer(customer_id, day);
             if (dailyDiary == null)
             {
                 return NotFound();

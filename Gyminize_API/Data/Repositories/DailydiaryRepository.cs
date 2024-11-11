@@ -1,5 +1,6 @@
 ﻿using Gyminize_API.Data.Model;
 using Microsoft.EntityFrameworkCore;
+using System.Data.SqlTypes;
 namespace Gyminize_API.Data.Repositories
 {
     public class DailydiaryRepository
@@ -23,23 +24,40 @@ namespace Gyminize_API.Data.Repositories
             }
 
         }
-        public Dailydiary? GetDailydiaryByIdCustomer(int customerId)
+        public Dailydiary? GetDailydiaryByIdCustomer(int customerId, DateTime day)
         {
             try
             {
-                // Sử dụng Include để nạp đối tượng Fooddetails và Food liên quan
-                return _context.DailydiaryEntity
-                    .Include(dd => dd.Fooddetails)          // Nạp Fooddetails liên quan
-                    .ThenInclude(fd => fd.Food)              // Nạp Food trong từng Fooddetail
-                    .FirstOrDefault(dd => dd.customer_id == customerId);
+                
+               
+                // Lấy tất cả các bản ghi của customerId từ cơ sở dữ liệu
+                var context = _context.DailydiaryEntity
+                    .Include(dd => dd.Fooddetails)
+                    .ThenInclude(fd => fd.Food)
+                    .Where(dd => dd.customer_id == customerId)
+                    .ToList();
+
+                // Lọc các bản ghi có diary_date là ngày 2-11-2024 từ danh sách đã lấy
+                var filteredList = context
+                    .FirstOrDefault(dd => dd.diary_date.Date == day.Date);
+               
+
+                return filteredList;
+
+
+
+
+
             }
             catch (Exception ex)
             {
-                // Log chi tiết lỗi
                 Console.WriteLine($"Error in GetDailydiaryByIdCustomer: {ex.Message}");
                 throw;
             }
         }
+
+
+
 
         public Dailydiary? GetDailydiaryById(int id)
         {

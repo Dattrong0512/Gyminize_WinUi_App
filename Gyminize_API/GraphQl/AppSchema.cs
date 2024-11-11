@@ -8,7 +8,7 @@ namespace Gyminize_API.GraphQL
     public class AppSchema : Schema
     {
         public AppSchema(CustomerQuery customerQuery, CustomerMutation customerMutation, CustomerhealthQuery customerHealthQuery, CustomerhealthMutations customerHealthMutation,
-            DailydiaryQuery dailydiaryQuery, FooddetailQuery fooddetailQuery, FoodQueries foodQueries)
+            DailydiaryQuery dailydiaryQuery, FooddetailQuery fooddetailQuery,FooddetailMutations fooddetailMutations ,FoodQueries foodQueries)
         {
             // Tạo một ObjectGraphType để gộp các Query
             var combinedQuery = new ObjectGraphType { Name = "Query" };
@@ -29,6 +29,7 @@ namespace Gyminize_API.GraphQL
             var combinedMutation = new ObjectGraphType { Name = "Mutation" };
             combinedMutation.AddField(customerMutation.Fields.Find("addCustomer")); // Thêm field từ CustomerMutation
             combinedMutation.AddField(customerHealthMutation.Fields.Find("addCustomer_health")); // Thêm field từ CustomerHealthMutation
+            combinedMutation.AddField(fooddetailMutations.Fields.Find("addOrUpdateFooddetail"));
 
             this.Mutation = combinedMutation;
         }

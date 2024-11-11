@@ -36,13 +36,17 @@ namespace Gyminize_API.Data
                 .HasForeignKey(f => f.dailydiary_id);
             //Mối quan hệ giữa food và foodetail
             modelBuilder.Entity<Food>()
-                .HasMany(d=>d.Fooddetails)
+                .HasMany(d => d.Fooddetails)
                 .WithOne(f => f.Food)
-                .HasForeignKey(f => f.food_id);
+                .HasForeignKey(f => f.food_id)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade); // Thiết lập cascade delete
+
+
 
             base.OnModelCreating(modelBuilder);
 
-            
+
         }
     }
 }

@@ -37,10 +37,11 @@ namespace Gyminize_API.Data.Model
             get; set;
         }
         [JsonIgnore]
-       public ICollection<Fooddetail> Fooddetails
+        public ICollection<Fooddetail>? Fooddetails
         {
             get; set;
         }
+
     }
 }
 

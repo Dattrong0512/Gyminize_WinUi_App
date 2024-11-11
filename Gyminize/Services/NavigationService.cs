@@ -13,6 +13,7 @@ namespace Gyminize.Services;
 
 // Để biết thêm thông tin về điều hướng giữa các trang, xem
 // https://github.com/microsoft/TemplateStudio/blob/main/docs/WinUI/navigation.md
+
 public class NavigationService : INavigationService
 {
     private readonly IPageService _pageService;

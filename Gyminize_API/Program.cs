@@ -26,6 +26,7 @@ builder.Services.AddScoped<CustomerhealthQuery>();
 builder.Services.AddScoped<DailydiaryRepository>();
 builder.Services.AddScoped<DailydiaryQuery>();
 builder.Services.AddScoped<FooddetailRepository>();
+builder.Services.AddScoped<FooddetailMutations>();
 builder.Services.AddScoped<FooddetailQuery>();
 builder.Services.AddScoped<FoodRepository>();
 builder.Services.AddScoped<FoodQueries>();

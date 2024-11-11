@@ -13,30 +13,30 @@ namespace Gyminize_API.Controllers
         {
             _foodetailRepository = foodetailRepository;
         }
-        [HttpGet]
-        public IActionResult GetAllFoodetail()
-        {
-            try
-            {
-                var allFoodetail = _foodetailRepository.GetAllFooddetail();
-                return Ok(allFoodetail);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return StatusCode(500, "Internal server error");
-            }
-        }
-        [HttpGet("get/{food_id:int}")]
-        public IActionResult GetFooddetailById(int food_id)
-        {
-            var foodetail = _foodetailRepository.GetFooddetailById(food_id);
-            if (foodetail == null)
-            {
-                return NotFound();
-            }
-            return Ok(foodetail);
-        }
+        //[HttpGet]
+        //public IActionResult GetAllFoodetail()
+        //{
+        //    try
+        //    {
+        //        var allFoodetail = _foodetailRepository.GetAllFooddetail();
+        //        return Ok(allFoodetail);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error: {ex.Message}");
+        //        return StatusCode(500, "Internal server error");
+        //    }
+        //}
+        //[HttpGet("get/{food_id:int}")]
+        //public IActionResult GetFooddetailById(int food_id)
+        //{
+        //    var foodetail = _foodetailRepository.GetFooddetailById(food_id);
+        //    if (foodetail == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(foodetail);
+        //}
 
         //[HttpGet("get/dailyfood/{customer_id:int}")]
         //public IActionResult GetFoodDetailsByCustomerId(int customer_id)
@@ -55,24 +55,31 @@ namespace Gyminize_API.Controllers
             var newFoodetail = _foodetailRepository.addFooddetail(foodetail);
             return Ok(newFoodetail);
         }
-        [HttpPut("update/{food_id:int}")]
-        public IActionResult UpdateFooddetail(int food_id, Fooddetail foodetail)
+        [HttpPut("update")]
+        public IActionResult UpdateFooddetail([FromBody] Fooddetail fooddetail)
         {
-            var updateFooddetail = _foodetailRepository.updateFooddetail(food_id, foodetail);
+            var updateFooddetail = _foodetailRepository.AddOrUpdateFooddetail(
+                fooddetail.dailydiary_id,
+                fooddetail.meal_type, 
+                fooddetail.Food,
+                fooddetail.food_amount
+               
+
+            );
             return Ok(updateFooddetail);
         }
-        [HttpDelete("delete/{food_id:int}")]
-        public IActionResult DeleteFooddetail(int food_id)
+        [HttpDelete("delete")]
+        public IActionResult DeleteFooddetail([FromBody] Fooddetail fooddetail)
         {
-            var foodetail = _foodetailRepository.GetFooddetailById(food_id);
-            if (foodetail == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                _foodetailRepository.DeleteFooddetail(foodetail);
-            }
+
+            var deleteFood = _foodetailRepository.DeleteFoodFromFooddetail(
+                fooddetail.dailydiary_id,
+                fooddetail.meal_type,
+                fooddetail.Food
+
+
+            );
+
             return Ok();
         }
 
