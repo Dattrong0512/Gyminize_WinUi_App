@@ -43,6 +43,10 @@ namespace Gyminize_API.Data.Models
         {
             get; set;
         }
+        public virtual ICollection<Plandetail>? Plandetails
+        {
+            get; set;
+        }
     }
 
 }

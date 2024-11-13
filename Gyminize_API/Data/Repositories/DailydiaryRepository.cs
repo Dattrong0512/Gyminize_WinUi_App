@@ -37,7 +37,7 @@ namespace Gyminize_API.Data.Repositories
                     .Where(dd => dd.customer_id == customerId)
                     .ToList();
 
-                // Lọc các bản ghi có diary_date là ngày 2-11-2024 từ danh sách đã lấy
+            
                 var filteredList = context
                     .FirstOrDefault(dd => dd.diary_date.Date == day.Date);
                

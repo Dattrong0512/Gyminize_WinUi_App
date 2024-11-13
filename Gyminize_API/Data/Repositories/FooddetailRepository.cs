@@ -11,11 +11,7 @@ namespace Gyminize_API.Data.Repositories
             _context = context;
         }
 
-   
-        //public Fooddetail? GetFooddetailById(int id)
-        //{
-        //    return _context.FooddetailEntity.Where(x => x.food_id == id).FirstOrDefault();
-        //}
+  
         public Fooddetail addFooddetail(Fooddetail fooddetail)
         {
             _context.FooddetailEntity.Add(fooddetail);
@@ -129,29 +125,7 @@ namespace Gyminize_API.Data.Repositories
 
 
 
-        //public Fooddetail updateFooddetail(int id, Fooddetail fooddetail)
-        //{
-        //    var check_fooddetail = _context.FooddetailEntity.Where(x => x.food_id == fooddetail.food_id).FirstOrDefault();
-        //    if (check_fooddetail != null)
-        //    {
-        //        check_fooddetail.food_id = fooddetail.food_id;
-        //        check_fooddetail.dailydiary_id = fooddetail.dailydiary_id;
-        //        check_fooddetail.food_amount = fooddetail.food_amount;
-        //        check_fooddetail.meal_type = fooddetail.meal_type;
-        //        return fooddetail;
-        //    }
-        //    _context.SaveChanges();
-        //    return check_fooddetail;
-        //}
-        //public void DeleteFooddetail(Fooddetail fooddetail)
-        //{
-        //    var check_fooddetail = _context.FooddetailEntity.Where(x => x.food_id == fooddetail.food_id).FirstOrDefault();
-        //    if (check_fooddetail != null)
-        //    {
-        //        _context.FooddetailEntity.Remove(fooddetail);
-        //    }
-        //    _context.SaveChanges();
-        //}
+       
     }
 }
 

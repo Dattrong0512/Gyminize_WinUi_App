@@ -1,5 +1,5 @@
 ﻿using Gyminize_API.Data.Model;
-using Gyminize_API.Data.Models;
+
 
 namespace Gyminize_API.Data.Repositories
 {

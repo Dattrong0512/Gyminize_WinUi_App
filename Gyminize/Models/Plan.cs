@@ -1,15 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-using Gyminize_API.Data.Model;
-using Microsoft.EntityFrameworkCore;
-namespace Gyminize_API.Data.Model
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Gyminize.Models
 {
-    [Table("plan")]
     public class Plan
     {
-        [Key]
         public int plan_id
         {
             get; set;
@@ -30,20 +29,7 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        [JsonIgnore]
-        public ICollection<Plandetail> ? Plandetail
-        {
-            get; set;
-        }
+
     }
 }
-
-
-
-
-
-
-
-
-
 

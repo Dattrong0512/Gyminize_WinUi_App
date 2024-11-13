@@ -17,6 +17,12 @@ namespace Gyminize_API.Data
 
         public DbSet<Fooddetail> FooddetailEntity { get; set; }
         public DbSet<Food> FoodEntity { get; set; }
+         public DbSet<Plan> PlanEntity { get; set; }
+        public DbSet<Plandetail> PlanDetailEntity { get; set; }
+        public DbSet<Typeworkout> TypeworkoutEntity { get; set; }
+        public DbSet<Workoutdetail> WorkoutDetailEntity { get; set; }
+        public DbSet<Exercise> ExerciseEntity { get; set; }
+        public DbSet<Exercisedetail> ExerciseDetailEntity { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>()
@@ -43,6 +49,42 @@ namespace Gyminize_API.Data
                 .OnDelete(DeleteBehavior.Cascade); // Thiết lập cascade delete
 
 
+
+            // Mối quan hệ giữa Plan và PlanDetail (1-n)
+            modelBuilder.Entity<Plan>()
+                .HasMany(p => p.Plandetail)
+                .WithOne(pd => pd.Plan)
+                .HasForeignKey(pd => pd.plan_id);
+
+            // Mối quan hệ giữa Customer và PlanDetail (1-n)
+            modelBuilder.Entity<Customer>()
+                .HasMany(c => c.Plandetails)
+                .WithOne(pd => pd.Customer)
+                .HasForeignKey(pd => pd.customer_id);
+
+            // Mối quan hệ giữa Typeworkout và WorkoutDetail (1-n)
+            modelBuilder.Entity<Typeworkout>()
+                .HasMany(tw => tw.Workoutdetails)
+                .WithOne(wd => wd.Typeworkout)
+                .HasForeignKey(wd => wd.typeworkout_id);
+
+            // Mối quan hệ giữa Plan và WorkoutDetail (1-n)
+            modelBuilder.Entity<Plan>()
+                .HasMany(p => p.Workoutdetails)
+                .WithOne(wd => wd.Plan)
+                .HasForeignKey(wd => wd.plan_id);
+
+            // Mối quan hệ giữa Typeworkout và ExerciseDetail (1-n)
+            modelBuilder.Entity<Typeworkout>()
+                .HasMany(tw => tw.Exercisedetails)
+                .WithOne(ed => ed.Typeworkout)
+                .HasForeignKey(ed => ed.typeworkout_id);
+
+            // Mối quan hệ giữa Exercise và ExerciseDetail (1-n)
+            modelBuilder.Entity<Exercise>()
+                .HasMany(e => e.Exercisedetails)
+                .WithOne(ed => ed.Exercise)
+                .HasForeignKey(ed => ed.exercise_id);
 
             base.OnModelCreating(modelBuilder);
 

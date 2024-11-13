@@ -8,7 +8,7 @@ namespace Gyminize_API.GraphQL
     public class AppSchema : Schema
     {
         public AppSchema(CustomerQuery customerQuery, CustomerMutation customerMutation, CustomerhealthQuery customerHealthQuery, CustomerhealthMutations customerHealthMutation,
-            DailydiaryQuery dailydiaryQuery, FooddetailQuery fooddetailQuery,FooddetailMutations fooddetailMutations ,FoodQueries foodQueries)
+            DailydiaryQuery dailydiaryQuery, DailydiaryMutations dailydiaryMutations, FoodQueries foodQueries, PlandetailQuery plandetailQuery, PlandetailMutation plandetailMutation)
         {
             // Tạo một ObjectGraphType để gộp các Query
             var combinedQuery = new ObjectGraphType { Name = "Query" };
@@ -18,8 +18,7 @@ namespace Gyminize_API.GraphQL
             combinedQuery.AddField(customerHealthQuery.Fields.Find("customer_health_id")); // Thêm field từ CustomerHealthQuery
             combinedQuery.AddField(dailydiaryQuery.Fields.Find("dailydiaries")); 
             combinedQuery.AddField(dailydiaryQuery.Fields.Find("dailydiary")); 
-            combinedQuery.AddField(fooddetailQuery.Fields.Find("fooddetails"));
-            combinedQuery.AddField(fooddetailQuery.Fields.Find("fooddetail")); 
+            combinedQuery.AddField(plandetailQuery.Fields.Find("GetplandetailById"));
             //combinedQuery.AddField(foodQueries.Fields.Find("foodDetailsByCustomer"));
             combinedQuery.AddField(foodQueries.Fields.Find("foods"));
             combinedQuery.AddField(foodQueries.Fields.Find("food"));
@@ -29,7 +28,8 @@ namespace Gyminize_API.GraphQL
             var combinedMutation = new ObjectGraphType { Name = "Mutation" };
             combinedMutation.AddField(customerMutation.Fields.Find("addCustomer")); // Thêm field từ CustomerMutation
             combinedMutation.AddField(customerHealthMutation.Fields.Find("addCustomer_health")); // Thêm field từ CustomerHealthMutation
-            combinedMutation.AddField(fooddetailMutations.Fields.Find("addOrUpdateFooddetail"));
+            combinedMutation.AddField(dailydiaryMutations.Fields.Find("addDailydiary"));
+            combinedMutation.AddField(plandetailMutation.Fields.Find("addPlandetail"));
 
             this.Mutation = combinedMutation;
         }

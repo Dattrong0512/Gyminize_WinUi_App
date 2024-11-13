@@ -1,25 +1,23 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using Gyminize_API.Data.Model;
-using Gyminize_API.Data.Models;
-using Microsoft.EntityFrameworkCore;
-namespace Gyminize_API.Data.Model
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Gyminize.Models
 {
-    [Table("plandetail")]
     public class Plandetail
     {
-        [Key]
         public int plandetail_id
         {
             get; set;
         }
-        [ForeignKey("Plan")]
         public int plan_id
         {
             get; set;
         }
-        [ForeignKey("Customer")]
         public int customer_id
         {
             get; set;
@@ -36,24 +34,9 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public Plan ? Plan
+        public Plan? Plan
         {
             get; set;
         }
-        public Customer? Customer
-        {
-            get; set;
-        }
-        
     }
 }
-
-
-
-
-
-
-
-
-
-

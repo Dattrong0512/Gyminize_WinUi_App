@@ -13,42 +13,6 @@ namespace Gyminize_API.Controllers
         {
             _foodetailRepository = foodetailRepository;
         }
-        //[HttpGet]
-        //public IActionResult GetAllFoodetail()
-        //{
-        //    try
-        //    {
-        //        var allFoodetail = _foodetailRepository.GetAllFooddetail();
-        //        return Ok(allFoodetail);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Error: {ex.Message}");
-        //        return StatusCode(500, "Internal server error");
-        //    }
-        //}
-        //[HttpGet("get/{food_id:int}")]
-        //public IActionResult GetFooddetailById(int food_id)
-        //{
-        //    var foodetail = _foodetailRepository.GetFooddetailById(food_id);
-        //    if (foodetail == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(foodetail);
-        //}
-
-        //[HttpGet("get/dailyfood/{customer_id:int}")]
-        //public IActionResult GetFoodDetailsByCustomerId(int customer_id)
-        //{
-        //    var foodDetails = _foodetailRepository.GetFoodDetailsByCustomerId(customer_id);
-        //    if (foodDetails == null || !foodDetails.Any())
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(foodDetails);
-        //}
-
         [HttpPost("create")]
         public IActionResult AddFooddetail(Fooddetail foodetail)
         {

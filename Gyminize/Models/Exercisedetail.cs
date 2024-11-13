@@ -1,25 +1,23 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-using Gyminize_API.Data.Model;
-using Microsoft.EntityFrameworkCore;
-namespace Gyminize_API.Data.Model
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Gyminize.Models
 {
-    [Table("exercisedetail")]
     public class Exercisedetail
     {
-        [Key]
         public int exercisedetail_id
         {
             get; set;
         }
-        [ForeignKey("Typeworkout")]
         public int typeworkout_id
         {
             get; set;
         }
-        [ForeignKey("Exercise")]
         public int exercise_id
         {
             get; set;
@@ -32,21 +30,6 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        [JsonIgnore]
-        public Typeworkout? Typeworkout
-        {
-            get; set;
-        }
 
     }
 }
-
-
-
-
-
-
-
-
-
-

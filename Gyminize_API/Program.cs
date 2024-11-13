@@ -25,11 +25,14 @@ builder.Services.AddScoped<CustomerhealthMutations>();
 builder.Services.AddScoped<CustomerhealthQuery>();
 builder.Services.AddScoped<DailydiaryRepository>();
 builder.Services.AddScoped<DailydiaryQuery>();
+builder.Services.AddScoped<DailydiaryMutations>();
 builder.Services.AddScoped<FooddetailRepository>();
 builder.Services.AddScoped<FooddetailMutations>();
-builder.Services.AddScoped<FooddetailQuery>();
 builder.Services.AddScoped<FoodRepository>();
 builder.Services.AddScoped<FoodQueries>();
+builder.Services.AddScoped<PlandetailRepository>();
+builder.Services.AddScoped<PlandetailQuery>();
+builder.Services.AddScoped<PlandetailMutation>();
 builder.Services.AddScoped<AppSchema>();
 
 // register graphQL
