@@ -10,6 +10,7 @@ using Gyminize.Core.Services;
 using Microsoft.UI.Xaml.Controls;
 using System.Reflection.Metadata;
 using System.Diagnostics;
+using System.Net;
 
 namespace Gyminize.ViewModels
 {
@@ -119,6 +120,20 @@ namespace Gyminize.ViewModels
                     }
 
                     UpdateTotalCaloriesExpression();
+                }
+                else
+                {
+                    var endpoint = $"api/Customerhealth/get/" + CustomerId;
+                    var _customerHealth = ApiServices.Get<CustomerHealth>(endpoint);
+                    Dailydiary newDailydiary = new Dailydiary();
+                    newDailydiary.customer_id = _customerHealth.customer_id;
+                    newDailydiary.diary_date = day;
+                    newDailydiary.daily_weight = _customerHealth.weight;
+                    newDailydiary.calories_remain = Convert.ToInt32(_customerHealth.tdee);
+                    newDailydiary.total_calories = Convert.ToInt32(_customerHealth.tdee);
+                    newDailydiary.notes = "nothing";
+                    var newDailyDiary = ApiServices.Post<Dailydiary>("api/Dailydiary/create", newDailydiary);
+
                 }
             }
             catch (Exception ex)

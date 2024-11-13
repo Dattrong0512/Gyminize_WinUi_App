@@ -38,11 +38,11 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public Customer Customer
+        public Customer? Customer
         {
             get; set;
         }
-        public ICollection<Fooddetail> Fooddetails
+        public ICollection<Fooddetail>? Fooddetails
         {
             get; set;
         }

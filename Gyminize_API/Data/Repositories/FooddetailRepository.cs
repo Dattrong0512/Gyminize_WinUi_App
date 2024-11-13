@@ -11,60 +11,11 @@ namespace Gyminize_API.Data.Repositories
             _context = context;
         }
 
-        //public List<Fooddetail> GetAllFooddetail()
+   
+        //public Fooddetail? GetFooddetailById(int id)
         //{
-        //    try
-        //    {
-        //        // Sử dụng Include để nạp đối tượng Food liên quan
-        //        return _context.FooddetailEntity
-        //            .Include(fd => fd.Food)
-        //            .ToList();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Log chi tiết lỗi
-        //        Console.WriteLine($"Error in GetAllFooddetail: {ex.Message}");
-        //        throw;
-        //    }
+        //    return _context.FooddetailEntity.Where(x => x.food_id == id).FirstOrDefault();
         //}
-
-        //public List<Fooddetail> GetFoodDetailsByCustomerId(int customerId)
-        //{
-        //    try
-        //    {
-        //        DateTime today = new DateTime(2024, 11, 1);
-        //        today = DateTime.SpecifyKind(today, DateTimeKind.Utc);
-
-
-
-        //        // Tìm daily_diary_id của customer trong ngày hiện tại
-        //        var dailyDiary = _context.DailydiaryEntity
-        //            .FirstOrDefault(d => d.customer_id == customerId && d.diary_date == today);
-
-        //        if (dailyDiary == null)
-        //        {
-        //            // Nếu không tìm thấy daily_diary cho ngày hiện tại, trả về danh sách rỗng
-        //            return new List<Fooddetail>();
-        //        }
-
-        //        int dailyDiaryId = dailyDiary.dailydiary_id;
-
-        //        // Trả về tất cả fooddetail của daily_diary_id tìm được
-        //        return _context.FooddetailEntity
-        //            .Where(fd => fd.dailydiary_id == dailyDiaryId)
-        //            .ToList();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Log chi tiết lỗi nếu có lỗi xảy ra
-        //        Console.WriteLine($"Error in GetFoodDetailsByCustomerId: {ex.Message}");
-        //        throw;
-        //    }
-        //}
-        public Fooddetail? GetFooddetailById(int id)
-        {
-            return _context.FooddetailEntity.Where(x => x.food_id == id).FirstOrDefault();
-        }
         public Fooddetail addFooddetail(Fooddetail fooddetail)
         {
             _context.FooddetailEntity.Add(fooddetail);
@@ -133,30 +84,40 @@ namespace Gyminize_API.Data.Repositories
         {
             try
             {
-                // Tìm `Fooddetail` dựa trên `dailydiary_id` và `meal_type`
-                var existingFooddetail = _context.FooddetailEntity
+                // Tìm tất cả các bản ghi `Fooddetail` dựa trên `dailydiary_id` và `meal_type`
+                var existingFooddetails = _context.FooddetailEntity
                     .Include(fd => fd.Food)
-                    .FirstOrDefault(fd => fd.dailydiary_id == dailydiaryId && fd.meal_type == mealType);
+                    .Where(fd => fd.dailydiary_id == dailydiaryId && fd.meal_type == mealType)
+                    .ToList();
 
-                if (existingFooddetail != null && existingFooddetail.Food != null)
+                if (existingFooddetails != null && existingFooddetails.Any())
                 {
-                    // Kiểm tra xem `Food` và `food_amount` có khớp với `Fooddetail` không
-                    if (existingFooddetail.Food.food_id == food.food_id)
+                    bool isDeleted = false;
+                    foreach (var foodDetail in existingFooddetails)
                     {
-                        // Xóa `Food` khỏi `Fooddetail` nếu khớp
-                        existingFooddetail.Food = null;
-                        existingFooddetail.food_amount = 0; // Đặt `food_amount` về 0 hoặc giá trị mặc định
+                        // Kiểm tra xem `Food` có khớp với `Fooddetail` không
+                        if (foodDetail.Food != null && foodDetail.Food.food_id == food.food_id)
+                        {
+                            // Xóa `Food` khỏi `Fooddetail` nếu khớp
+                            foodDetail.Food = null;
+                            foodDetail.food_amount = 0; // Đặt `food_amount` về 0 hoặc giá trị mặc định
+                            isDeleted = true;
+                        }
+                    }
+
+                    if (isDeleted)
+                    {
                         _context.SaveChanges();
                         return true;
                     }
                     else
                     {
-                        Console.WriteLine("Food or amount does not match the existing Fooddetail.");
+                        Console.WriteLine("Food or amount does not match any existing Fooddetail.");
                         return false;
                     }
                 }
 
-                Console.WriteLine("Fooddetail or Food not found.");
+                Console.WriteLine("No matching Fooddetail or Food found.");
                 return false;
             }
             catch (Exception ex)
@@ -165,6 +126,7 @@ namespace Gyminize_API.Data.Repositories
                 return false;
             }
         }
+
 
 
         //public Fooddetail updateFooddetail(int id, Fooddetail fooddetail)
