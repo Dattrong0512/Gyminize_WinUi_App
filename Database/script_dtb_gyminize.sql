@@ -1,6 +1,3 @@
-
-
-
  DROP TABLE IF EXISTS OrderDetail;
  DROP TABLE IF EXISTS Orders;
  DROP TABLE IF EXISTS Product;
@@ -131,11 +128,10 @@ CREATE TABLE IF NOT EXISTS Typeworkout (
     description TEXT
 );
 
--- Tạo bảng WorkoutDetail
 CREATE TABLE IF NOT EXISTS WorkoutDetail (
     workoutdetail_id SERIAL PRIMARY KEY,
     typeworkout_id INT REFERENCES Typeworkout(typeworkout_id),
-    plan_id INT REFERENCES Plan(plan_id),
+    plandetail_id INT REFERENCES PlanDetail(plandetail_id), -- Update foreign key to reference PlanDetail
     date_workout DATE,
     description TEXT
 );
@@ -402,7 +398,7 @@ DECLARE
     v_date DATE := NEW.start_date;  -- Ngày bắt đầu lấy từ PlanDetail
     v_count INT := 0;  -- Đếm số buổi tập
 BEGIN
-    -- Kiểm tra giá trị plan_id
+    -- Kiểm tra giá trị plan_id trong PlanDetail
     RAISE NOTICE 'Trigger activated for plan_id: %', NEW.plan_id;
 
     -- Kế hoạch 3 ngày mỗi tuần (Push, Pull, Leg, nghỉ xen kẽ)
@@ -410,14 +406,14 @@ BEGIN
         WHILE v_date <= NEW.end_date LOOP
             CASE v_count % 3
                 WHEN 0 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (1, NEW.plan_id, v_date, 'Push day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (1, NEW.plandetail_id, v_date, 'Push day');
                 WHEN 1 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (2, NEW.plan_id, v_date, 'Pull day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (2, NEW.plandetail_id, v_date, 'Pull day');
                 WHEN 2 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (3, NEW.plan_id, v_date, 'Leg day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (3, NEW.plandetail_id, v_date, 'Leg day');
             END CASE;
             v_count := v_count + 1;
             v_date := v_date + INTERVAL '2 days';  -- Nghỉ 1 ngày giữa các buổi tập
@@ -428,17 +424,17 @@ BEGIN
         WHILE v_date <= NEW.end_date LOOP
             CASE v_count % 4
                 WHEN 0 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (1, NEW.plan_id, v_date, 'Push day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (1, NEW.plandetail_id, v_date, 'Push day');
                 WHEN 1 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (2, NEW.plan_id, v_date, 'Pull day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (2, NEW.plandetail_id, v_date, 'Pull day');
                 WHEN 2 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (3, NEW.plan_id, v_date, 'Leg day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (3, NEW.plandetail_id, v_date, 'Leg day');
                 WHEN 3 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (4, NEW.plan_id, v_date, 'Fullbody day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (4, NEW.plandetail_id, v_date, 'Fullbody day');
             END CASE;
             v_count := v_count + 1;
             v_date := v_date + INTERVAL '2 days';  -- Nghỉ 1 ngày giữa các buổi tập
@@ -449,22 +445,22 @@ BEGIN
         WHILE v_date <= NEW.end_date LOOP
             CASE v_count % 5
                 WHEN 0 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (1, NEW.plan_id, v_date, 'Push day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (1, NEW.plandetail_id, v_date, 'Push day');
                 WHEN 1 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (2, NEW.plan_id, v_date, 'Pull day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (2, NEW.plandetail_id, v_date, 'Pull day');
                 WHEN 2 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (3, NEW.plan_id, v_date, 'Leg day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (3, NEW.plandetail_id, v_date, 'Leg day');
                 WHEN 3 THEN
                     v_date := v_date + INTERVAL '1 day';  -- Nghỉ 1 ngày ở giữa
                 WHEN 4 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (1, NEW.plan_id, v_date, 'Push day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (1, NEW.plandetail_id, v_date, 'Push day');
                 WHEN 5 THEN
-                    INSERT INTO WorkoutDetail (typeworkout_id, plan_id, date_workout, description)
-                    VALUES (2, NEW.plan_id, v_date, 'Pull day');
+                    INSERT INTO WorkoutDetail (typeworkout_id, plandetail_id, date_workout, description)
+                    VALUES (2, NEW.plandetail_id, v_date, 'Pull day');
             END CASE;
             v_count := v_count + 1;
             v_date := v_date + INTERVAL '1 day';  -- Tiếp tục lặp lại chu kỳ
@@ -476,15 +472,17 @@ END;
 $$ LANGUAGE plpgsql;
 
 --Kích hoạt trigger
-CREATE or replace TRIGGER trg_generate_workout_details
+DROP TRIGGER IF EXISTS trg_generate_workout_details ON PlanDetail;
+
+CREATE TRIGGER trg_generate_workout_details
 AFTER INSERT ON PlanDetail
 FOR EACH ROW
 EXECUTE FUNCTION generate_workout_details();
 
 -- Test trigger
 INSERT INTO PlanDetail (plan_id, customer_id, start_date, end_date)
-VALUES (1, 1, '2024-11-04', '2025-01-01');
+VALUES (1, 1, '2024-11-12', '2025-01-07');
+
 select * from PlanDetail
 SELECT * FROM WorkoutDetail;
-delete from WorkoutDetail;
-delete from PlanDetail;
+
