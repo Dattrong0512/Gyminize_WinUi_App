@@ -104,6 +104,8 @@ public partial class App : Application
             services.AddTransient<GuidePage3>();
             services.AddTransient<SignupPage>();
             services.AddTransient<SignupViewModel>();
+            services.AddTransient<PlanSelectionPage>();
+            services.AddTransient<PlanSelectionViewModel>();
 
             services.AddSingleton<Customer>();
             // Đăng ký cấu hình.

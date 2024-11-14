@@ -38,12 +38,21 @@ public partial class ShellViewModel : ObservableRecipient
         _frame = frame;
     }
 
+    private bool _isSelectionNeeded;
+    public bool IsSelectionNeeded
+    {
+        get => _isSelectionNeeded;
+        set => SetProperty(ref _isSelectionNeeded, value);
+    }
+
+
     // Khởi tạo ShellViewModel với INavigationService và INavigationViewService.
     public ShellViewModel(INavigationService navigationService, INavigationViewService navigationViewService)
     {
         NavigationService = navigationService;
         NavigationService.Navigated += OnNavigated;
         NavigationViewService = navigationViewService;
+        IsSelectionNeeded = false;
     }
 
     // Xử lý sự kiện điều hướng.
