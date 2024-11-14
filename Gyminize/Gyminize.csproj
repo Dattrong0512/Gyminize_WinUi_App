@@ -16,10 +16,14 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="ApiServices\**" />
     <Compile Remove="Assets\Icon\NewFolder\**" />
     <Content Remove="Assets\Icon\NewFolder\**" />
+    <EmbeddedResource Remove="ApiServices\**" />
     <EmbeddedResource Remove="Assets\Icon\NewFolder\**" />
+    <None Remove="ApiServices\**" />
     <None Remove="Assets\Icon\NewFolder\**" />
+    <Page Remove="ApiServices\**" />
     <Page Remove="Assets\Icon\NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
@@ -155,7 +159,10 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="ApiServices\" />
     <Folder Include="Assets\planselection_model\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PRIResource Remove="ApiServices\**" />
   </ItemGroup>
 </Project>

@@ -14,14 +14,13 @@ namespace Gyminize_API.Data.Repositories
         public Plandetail? GetPlandetailById(int customerID, int planID)
         {
             var planDetail = _context.PlanDetailEntity
-               .Include(pd => pd.Plan) // Bao gồm đối tượng Plan
-                   .ThenInclude(p => p.Workoutdetails) // Bao gồm Workoutdetails từ Plan
-                       .ThenInclude(wd => wd.Typeworkout) // Bao gồm Typeworkout từ Workoutdetails
-                       .ThenInclude(Exd=>Exd.Exercisedetails)
-                       .ThenInclude(Ex=>Ex.Exercise)
-               .Where(pd => pd.customer_id == customerID && pd.plan_id == planID)
-               .FirstOrDefault(); // Kết thúc truy vấn với FirstOrDefault để trả về một Plandetail
-
+                  .Include(pd => pd.Plan) // Bao gồm đối tượng Plan
+                  .Include(pd => pd.Workoutdetails) // Bao gồm danh sách Workoutdetails từ Plandetail
+                      .ThenInclude(wd => wd.Typeworkout) // Bao gồm Typeworkout từ mỗi Workoutdetail
+                      .ThenInclude(tw => tw.Exercisedetails) // Bao gồm danh sách Exercisedetails từ Typeworkout
+                          .ThenInclude(ed => ed.Exercise) // Bao gồm đối tượng Exercise từ mỗi Exercisedetail
+                  .Where(pd => pd.customer_id == customerID && pd.plan_id == planID)
+                  .FirstOrDefault(); // Kết thúc truy vấn với FirstOrDefault để trả về một Plandetail
 
             return planDetail;
         }

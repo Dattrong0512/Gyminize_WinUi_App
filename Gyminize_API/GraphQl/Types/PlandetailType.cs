@@ -20,6 +20,12 @@ namespace Gyminize_API.GraphQl.Types
                 resolve: context => context.Source.Plan,
                 description: "The associated plan object"
             );
+            // Thêm trường liên kết đến Workoutdetails
+            Field<ListGraphType<WorkoutdetailType>>(
+                "workoutdetails",
+                resolve: context => context.Source.Workoutdetails,
+                description: "List of workout details associated with the plan"
+            );
 
         }
     }

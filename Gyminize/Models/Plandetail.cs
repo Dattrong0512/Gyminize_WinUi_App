@@ -38,5 +38,9 @@ namespace Gyminize.Models
         {
             get; set;
         }
+        public ICollection<Workoutdetail>? Workoutdetails
+        {
+            get; set;
+        }
     }
 }

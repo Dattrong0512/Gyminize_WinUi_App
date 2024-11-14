@@ -141,10 +141,10 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
             Debug.WriteLine("Get request successful!");
             Debug.WriteLine(plandetail);
             Debug.WriteLine(plandetail.Plan);
-            Debug.WriteLine(plandetail.Plan.Workoutdetails);
-            if (plandetail.Plan?.Workoutdetails != null)
+            Debug.WriteLine(plandetail.Workoutdetails);
+            if (plandetail.Workoutdetails != null)
             {
-                foreach (var workout in plandetail.Plan.Workoutdetails)
+                foreach (var workout in plandetail.Workoutdetails)
                 {
         
                     if (workout.Typeworkout?.Exercisedetails != null)

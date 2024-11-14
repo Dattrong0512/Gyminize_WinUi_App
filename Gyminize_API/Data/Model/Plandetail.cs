@@ -44,7 +44,11 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        
+        public ICollection<Workoutdetail>? Workoutdetails
+        {
+            get; set;
+        }
+
     }
 }
 

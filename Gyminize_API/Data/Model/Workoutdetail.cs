@@ -20,8 +20,8 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        [ForeignKey("Plan")]
-        public int plan_id
+        [ForeignKey("Plandetail")]
+        public int plandetail_id
         {
             get; set;
         }
@@ -38,7 +38,7 @@ namespace Gyminize_API.Data.Model
             get; set;
         }
         [JsonIgnore]
-        public Plan? Plan
+        public Plandetail? Plandetail
         {
             get; set;
         }

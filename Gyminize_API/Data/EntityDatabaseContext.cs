@@ -69,10 +69,10 @@ namespace Gyminize_API.Data
                 .HasForeignKey(wd => wd.typeworkout_id);
 
             // Mối quan hệ giữa Plan và WorkoutDetail (1-n)
-            modelBuilder.Entity<Plan>()
+            modelBuilder.Entity<Plandetail>()
                 .HasMany(p => p.Workoutdetails)
-                .WithOne(wd => wd.Plan)
-                .HasForeignKey(wd => wd.plan_id);
+                .WithOne(wd => wd.Plandetail)
+                .HasForeignKey(wd => wd.plandetail_id);
 
             // Mối quan hệ giữa Typeworkout và ExerciseDetail (1-n)
             modelBuilder.Entity<Typeworkout>()

@@ -12,12 +12,6 @@ namespace Gyminize_API.GraphQl.Types
             Field(x => x.description).Description("Description of the plan");
             Field(x => x.duration_week, type: typeof(IntGraphType)).Description("Duration of the plan in weeks");
 
-            // Thêm trường liên kết đến Workoutdetails
-            Field<ListGraphType<WorkoutdetailType>>(
-                "workoutdetails",
-                resolve: context => context.Source.Workoutdetails,
-                description: "List of workout details associated with the plan"
-            );
         }
     }
 }
