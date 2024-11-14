@@ -36,7 +36,8 @@ public sealed partial class GuidePage3 : Page
         InitializeComponent();
         var windowService = App.GetService<IWindowService>();
         var navigationService = App.GetService<INavigationService>();
-        ViewModel = new Guide3ViewModel(navigationService, windowService);
+        var setting  = App.GetService<ILocalSettingsService>();
+        ViewModel = new Guide3ViewModel(navigationService, windowService, setting);
         this.DataContext = ViewModel;
     }
 }

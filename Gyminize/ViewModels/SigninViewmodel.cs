@@ -265,7 +265,7 @@ namespace Gyminize.ViewModels
             }
         }
 
-        private void ProcessingDataLogin(string DataLogin)
+        private async void ProcessingDataLogin(string DataLogin)
         {
             // Parse JSON response from Google user info
             var userInfo = JsonConvert.DeserializeObject<Dictionary<string, string>>(DataLogin);
@@ -293,6 +293,7 @@ namespace Gyminize.ViewModels
                 else { 
                     if (CheckCustomerHealthByUsername(username))
                     {
+                        await _localSettingsService.SaveSettingAsync("customer_id", customer.customer_id);
                         var pageKey = typeof(HomeViewModel).FullName;
                         if (pageKey != null)
                         {

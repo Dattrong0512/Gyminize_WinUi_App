@@ -17,6 +17,7 @@ using Gyminize.Views;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using System.Diagnostics;
+using Gyminize.Services;
 
 
 namespace Gyminize.ViewModels;
@@ -27,6 +28,8 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     private readonly IWindowService _windowService;
     private double _bmi;
     private UIElement? _shell = null;
+    private int customerId;
+    public ILocalSettingsService _localsetting;
     private CustomerHealth customerHealth
     {
         get; set;
@@ -121,7 +124,7 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     {
         get;
     }
-    public Guide3ViewModel(INavigationService navigationService, IWindowService windowService)
+    public Guide3ViewModel(INavigationService navigationService, IWindowService windowService, ILocalSettingsService localsetting)
     {
         _windowService = windowService;
         _navigationService = navigationService;
@@ -131,13 +134,17 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         _windowService.SetWindowSize(1200, 900);
         _windowService.SetIsMaximizable(false);
         _windowService.SetIsResizable(false);
+        _localsetting = localsetting;
     }
 
 
-    public void OnNavigatedTo(object parameter)
+    public async void OnNavigatedTo(object parameter)
     {
+        
         if (parameter is CustomerInfo customerInfo)
         {
+            customerId = GetCustomerIdByUsername(customerInfo.username);
+            await SaveLocalSettings(customerId);
             _customerInfo = customerInfo;
             TDEEStat = Math.Round(HealthCalculator.CalculateTDEE(_customerInfo.Weight, _customerInfo.BodyFat, _customerInfo.ActivityLevel),0);
             BMIStat = Math.Round(HealthCalculator.CalculateBMI(_customerInfo.Weight, _customerInfo.Height),1);
@@ -218,9 +225,11 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
 
     public bool AddCustomerHealthByUsername(CustomerInfo customerInfo)
     {
-        var customerId = GetCustomerIdByUsername(customerInfo.username);
+        
+    
         if (customerId != -1)
         {
+            
             return InsertCustomerHealth(customerInfo, customerId);
         }
         else
@@ -229,11 +238,20 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    // Chuyển đổi hàm này thành Task thay vì void
+    private async Task SaveLocalSettings(int customerId)
+    {
+        await _localsetting.SaveSettingAsync("customer_id", customerId.ToString()); 
+        // Đọc lại giá trị để kiểm tra
+        var testValue = await _localsetting.ReadSettingAsync<string>("customer_id");
+        Console.WriteLine("Giá trị vừa lưu là: " + testValue);
+       
+    }
 
 
     public void OnNavigatedFrom()
     {
-        // Perform any necessary actions when navigating away from the page
+        
     }
 
     private void NavigateBack()
@@ -248,18 +266,14 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     private void NavigateNext()
     {
         _ = AddCustomerHealthByUsername(_customerInfo);
-        //var pageKey = typeof(ShellViewModel).FullName;
-        //if (pageKey != null)
-        //{
-        //    _navigationService.NavigateTo(pageKey, _customerInfo.username);
-        //}
+
         if (App.MainWindow.Content != null)
         {
             var frame = new Frame();
             _shell = App.GetService<ShellPage>();
             frame.Content = _shell;
             App.MainWindow.Content = frame;
-            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!, _customerInfo.username);
+            _navigationService.NavigateTo(typeof(HomeViewModel).FullName!);
         }
     }
 }
