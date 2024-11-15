@@ -8,12 +8,16 @@ using Gyminize.Contracts.Services;
 using Gyminize.Core.Services;
 using Gyminize.Helpers;
 using Gyminize.Models;
+using Microsoft.UI.Xaml;
+using Windows.ApplicationModel.VoiceCommands;
+using Windows.Security.ExchangeActiveSyncProvisioning;
 namespace Gyminize.ViewModels;
 
 public partial class PlanViewModel : ObservableRecipient
 {
     // Khởi tạo PlanViewModel.
     private readonly INavigationService _navigationService;
+    private readonly IDialogService _dialogService;
     private string _planName;
     public string PlanName
     {
@@ -125,8 +129,56 @@ public partial class PlanViewModel : ObservableRecipient
         set => SetProperty(ref _endDate, value);
     }
 
+    private bool _isBreakDay;
+    public bool IsBreakDay
+    {
+        get => _isBreakDay;
+        set => SetProperty(ref _isBreakDay, value);
+    }
 
+    private bool _isWorkoutDay;
+    public bool IsWorkoutDay
+    {
+        get => _isWorkoutDay;
+        set => SetProperty(ref _isWorkoutDay, value);
+    }
+
+    private string _statusText;
+    public string StatusText
+    {
+        get => _statusText;
+        set => SetProperty(ref _statusText, value);
+    }
+
+    private string _workoutDetailDescription;
+    public string WorkoutDetailDescription
+    {
+        get => _workoutDetailDescription;
+        set => SetProperty(ref _workoutDetailDescription, value);
+    }
+    private bool _isFinished;
+    public bool IsFinished
+    {
+        get => _isFinished;
+        set => SetProperty(ref _isFinished, value);
+    }
+
+    private Visibility _workoutButtonVisibility;
+    public Visibility WorkoutButtonVisibility
+    {
+        get => _workoutButtonVisibility;
+        set => SetProperty(ref _workoutButtonVisibility, value);
+    }
     public ICommand SelectWorkoutDetailCommand
+    {
+        get;
+    }
+
+    public ICommand PlayingWorkoutExercisesCommand
+    {
+        get;
+    }
+    public ICommand ShowSingleExerciseVideoCommand
     {
         get;
     }
@@ -135,10 +187,15 @@ public partial class PlanViewModel : ObservableRecipient
     public ObservableCollection<Workoutdetail> WeekDaysItems { get; set; } = new ObservableCollection<Workoutdetail>();
 
     public List<Workoutdetail> WorkoutDetailsItems { get; set; } = new List<Workoutdetail>();
-    public PlanViewModel(INavigationService navigationService)
+    public PlanViewModel(INavigationService navigationService, IDialogService dialogService)
     {
+        _isFinished = false;
         _navigationService = navigationService;
+        _dialogService = dialogService;
+        _statusText = "Bạn vẫn chưa hoàn thành bài tập ngày hôm nay (" + DateTime.Now.ToString("dd/MM") + ")";
         SelectWorkoutDetailCommand = new RelayCommand<Workoutdetail>(SelectWorkoutDetail);
+        ShowSingleExerciseVideoCommand = new RelayCommand<Exercisedetail>(ShowSingleExerciseVideo);
+        PlayingWorkoutExercisesCommand = new RelayCommand(PlayingWorkoutExercises);
         LoadSampleData();
         LoadCurrentWeekDays(_startDate);
         PlanName = "Ke Hoach 4 Ngay";
@@ -151,6 +208,7 @@ public partial class PlanViewModel : ObservableRecipient
         {
             SelectWorkoutDetail(currentDayWorkoutDetail);
         }
+        
     }
 
     public static List<Workoutdetail> GetWeekWorkoutDetails(DateTime startDate, int weekNumber, List<Workoutdetail> workoutDetails)
@@ -192,6 +250,7 @@ public partial class PlanViewModel : ObservableRecipient
             _startDate = currentPlandetail.start_date;
             _endDate = currentPlandetail.end_date;
             WorkoutDetailsItems = currentPlandetail.Workoutdetails.ToList();
+            
         }
         catch (Exception ex)
         {
@@ -215,6 +274,16 @@ public partial class PlanViewModel : ObservableRecipient
         Day5 = weekWorkoutDetails[4].date_workout.ToString("dd/MM");
         Day6 = weekWorkoutDetails[5].date_workout.ToString("dd/MM");
         Day7 = weekWorkoutDetails[6].date_workout.ToString("dd/MM");
+        for (var i = 0; i < WeekDaysItems.Count(); i++)
+        {
+            if (WeekDaysItems[i].IsCurrentDay && WeekDaysItems[i].typeworkout_id == 0)
+            {
+                StatusText = "Hôm nay là ngày nghỉ";
+                WorkoutButtonVisibility = Visibility.Collapsed;
+                break;
+            }
+            WorkoutButtonVisibility = Visibility.Visible;
+        }
     }
     public void SelectWorkoutDetail(Workoutdetail selectedWorkoutDetail)
     {
@@ -234,12 +303,37 @@ public partial class PlanViewModel : ObservableRecipient
         if (typeworkout == 0)
         {
             //do nothing
+            IsBreakDay = true;
+            IsWorkoutDay = !IsBreakDay;
+            WorkoutDetailDescription = "Ngày nghỉ";
         }
         else
         {
             ExerciseItems = new ObservableCollection<Exercisedetail>(selectedWorkoutDetail.Typeworkout.Exercisedetails.ToList());
-            OnPropertyChanged(nameof(ExerciseItems)); 
+            OnPropertyChanged(nameof(ExerciseItems));
+            IsBreakDay = false;
+            IsWorkoutDay = !IsBreakDay;
+            WorkoutDetailDescription = selectedWorkoutDetail.description;
         }
+    }
+
+    public async void PlayingWorkoutExercises()
+    {
+        var currentDayWorkoutDetail = WeekDaysItems.FirstOrDefault(item => item.IsCurrentDay);
+        if (currentDayWorkoutDetail?.Typeworkout?.Exercisedetails != null)
+        {
+            IsFinished = await _dialogService.ShowFullExerciseWorkoutDialogAsync(currentDayWorkoutDetail.Typeworkout.Exercisedetails.ToList());
+        }
+        if(IsFinished == true)
+        {
+            StatusText = "Bạn đã hoàn thành bài tập ngày hôm nay (" + DateTime.Now.ToString("dd/MM") + ")";
+        }
+    }
+
+    public void ShowSingleExerciseVideo(Exercisedetail ex)
+    {
+        var exercise = ex.Exercise;
+        _dialogService.ShowExerciseVideoDialogAsync(exercise);
     }
 }
 

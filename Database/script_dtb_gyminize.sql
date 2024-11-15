@@ -324,30 +324,30 @@ VALUES
 INSERT INTO Exercise (exercise_name, description, linkvideo, reps)
 VALUES 
 -- Các bài tập cho ngày Push
-('Bench Press', 'Bài tập ngực với tạ đòn', 'https://example.com/benchpress', 10),
-('Shoulder Press', 'Bài tập vai với tạ đòn', 'https://example.com/shoulderpress', 10),
-('Chest Fly', 'Bài tập ngực với máy', 'https://example.com/chestfly', 12),
-('Tricep Dips', 'Bài tập tay sau', 'https://example.com/tricepdips', 12),
-('Push Ups', 'Chống đẩy', 'https://example.com/pushups', 15),
+('Bench Press', 'Bài tập ngực với tạ đòn', 'https://www.youtube.com/embed/SCVCLChPQFY', 10),
+('Shoulder Press', 'Bài tập vai với tạ đòn', 'https://www.youtube.com/embed/5yWaNOvgFCM', 10),
+('Chest Fly', 'Bài tập ngực với máy', 'https://www.youtube.com/embed/eGjt4lk6g34', 12),
+('Tricep Dips', 'Bài tập tay sau', 'https://www.youtube.com/embed/qrS6aa0aQ9I', 12),
+('Push Ups', 'Chống đẩy', 'https://www.youtube.com/embed/0pkjOk0EiAk', 15),
 
 -- Các bài tập cho ngày Pull
-('Pull Ups', 'Bài tập kéo xà', 'https://example.com/pullups', 8),
-('Barbell Row', 'Bài tập lưng với tạ đòn', 'https://example.com/barbellrow', 10),
-('Lat Pulldown', 'Bài tập lưng với máy kéo', 'https://example.com/latpulldown', 12),
-('Dumbbell Row', 'Bài tập lưng với tạ tay', 'https://example.com/dumbbellrow', 10),
-('Bicep Curl', 'Bài tập tay trước với tạ', 'https://example.com/bicepcurl', 12),
+('Pull Ups', 'Bài tập kéo xà', 'https://www.youtube.com/embed/aAggnpPyR6E', 8),
+('Barbell Row', 'Bài tập lưng với tạ đòn', 'https://www.youtube.com/embed/6FZHJGzMFEc', 10),
+('Lat Pulldown', 'Bài tập lưng với máy kéo', 'https://www.youtube.com/embed/JGeRYIZdojU', 12),
+('Dumbbell Row', 'Bài tập lưng với tạ tay', 'https://www.youtube.com/embed/6gvmcqr226U', 10),
+('Bicep Curl', 'Bài tập tay trước với tạ', 'https://www.youtube.com/embed/HnHuhf4hEWY', 12),
 
 -- Các bài tập cho ngày Leg
-('Squats', 'Bài tập chân với tạ đòn', 'https://example.com/squats', 12),
-('Leg Press', 'Bài tập đẩy chân', 'https://example.com/legpress', 12),
-('Lunges', 'Bài tập bước chân', 'https://example.com/lunges', 12),
-('Leg Curls', 'Bài tập cơ chân sau', 'https://example.com/legcurls', 12),
+('Squats', 'Bài tập chân với tạ đòn', 'https://www.youtube.com/embed/QmZAiBqPvZw', 12),
+('Leg Press', 'Bài tập đẩy chân', 'https://www.youtube.com/embed/qCR9bN3G1t4', 12),
+('Lunges', 'Bài tập bước chân', 'https://www.youtube.com/embed/DlhojghkaQ0', 12),
+('Leg Curls', 'Bài tập cơ chân sau', 'https://www.youtube.com/embed/SbSNUXPRkc8', 12),
 
-('Barbell Curl', 'Bài tập tay trước với tạ đòn', 'https://example.com/barbellcurl', 12),  -- Tay trước
-('Tricep Pushdown', 'Bài tập tay sau với máy kéo cáp', 'https://example.com/triceppushdown', 12), -- Tay sau
-('Lat Pulldown', 'Bài tập lưng rộng với máy kéo', 'https://example.com/latpulldown', 10),  -- Lưng rộng
-('Seated Row', 'Bài tập lưng dày với máy', 'https://example.com/seatedrow', 12),  -- Lưng dày
-('Leg Press', 'Bài tập chân với máy đẩy', 'https://example.com/legpress', 12);  -- Chân
+('Barbell Curl', 'Bài tập tay trước với tạ đòn', 'https://www.youtube.com/embed/wyU4gwpOO3k', 12),  -- Tay trước
+('Tricep Pushdown', 'Bài tập tay sau với máy kéo cáp', 'https://www.youtube.com/embed/LXkCrxn3caQ', 12), -- Tay sau
+('Lat Pulldown', 'Bài tập lưng rộng với máy kéo', 'https://www.youtube.com/embed/JGeRYIZdojU', 10),  -- Lưng rộng
+('Seated Row', 'Bài tập lưng dày với máy', 'https://www.youtube.com/embed/lJoozxC0Rns', 12),  -- Lưng dày
+('Leg Press', 'Bài tập chân với máy đẩy', 'https://www.youtube.com/embed/qCR9bN3G1t4', 12);  -- Chân
 -- Kế hoạch 1 (3, 4, hoặc 5 ngày)
 -- Ngày Push: 5 bài tập, mỗi bài 3 set (tổng 15 set)
 
@@ -483,6 +483,9 @@ EXECUTE FUNCTION generate_workout_details();
 INSERT INTO PlanDetail (plan_id, customer_id, start_date, end_date)
 VALUES (1, 1, '2024-11-12', '2025-01-07');
 
-select * from PlanDetail
+select * from PlanDetail;
 SELECT * FROM WorkoutDetail;
+select * from ExerciseDetail;
+select * from exercise;
+select * from TypeWorkout;
 

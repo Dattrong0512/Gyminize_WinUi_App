@@ -9,6 +9,7 @@
 
     <Page.Resources>
         <local:DayBorderBrushConverter x:Key="DayBorderBrushConverter" />
+        <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
         <local:DayBorderBackGroundConverter x:Key="DayBorderBackgroundConverter" />
         <Style x:Key="DayBorderStyle" TargetType="Border">
             <Setter Property="Width" Value="130" />
@@ -67,6 +68,23 @@
                 <Run Text="{Binding WeekNumber}" />
             </TextBlock>
 
+            <StackPanel
+                Grid.Row="1"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock
+                    FontSize="21"
+                    FontWeight="Bold"
+                    Text="{Binding StatusText}" />
+                <Button
+                    Height="40"
+                    Padding="8"
+                    Command="{Binding PlayingWorkoutExercisesCommand}"
+                    Visibility="{Binding WorkoutButtonVisibility}">
+                    <TextBlock FontSize="16" Text="Bắt đầu bài tập" />
+                </Button>
+            </StackPanel>
             <Grid Grid.Row="2" Margin="0,50,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*" />
@@ -204,18 +222,28 @@
                         </Border>
                     </StackPanel>
                 </Grid>
-
-                <TextBlock
+                <StackPanel
                     Grid.Column="1"
                     Margin="30,0,0,0"
-                    FontSize="20"
-                    FontWeight="Bold"
-                    Text="Thông tin ngày tập" />
+                    Orientation="Horizontal">
+                    <TextBlock>
+                        <Run
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="Thông tin ngày tập: " />
+                        <Run FontSize="19" Text="{Binding WorkoutDetailDescription, Mode=TwoWay}" />
+                    </TextBlock>
+                    <TextBlock
+                        FontSize="19"
+                        Text=" (3 Set mỗi bài)"
+                        Visibility="{Binding IsWorkoutDay, Mode=TwoWay, Converter={StaticResource InverseBoolToVisibilityConverter}}" />
+                </StackPanel>
+
                 <ScrollViewer
                     Grid.Column="1"
                     Margin="50,40,0,0"
                     VerticalScrollBarVisibility="Auto"
-                    Visibility ="{Binding IsWorkoutDay}">
+                    Visibility="{Binding IsWorkoutDay, Mode=TwoWay, Converter={StaticResource InverseBoolToVisibilityConverter}}">
                     <StackPanel Spacing="10">
                         <ListView ItemsSource="{Binding ExerciseItems}" SelectionMode="Single">
                             <ListView.ItemTemplate>
@@ -229,6 +257,7 @@
                                         CornerRadius="5">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="2*" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
@@ -238,19 +267,25 @@
                                                     FontSize="16"
                                                     FontWeight="Bold"
                                                     Text="{Binding Exercise.exercise_name}" />
-                                                <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Exercise.reps}" />
+                                                <TextBlock FontSize="14" Foreground="Gray">
+                                                    <Run Text="{Binding Exercise.reps}" />
+                                                    <Run Text="reps" />
+                                                </TextBlock>
                                             </StackPanel>
-                                            <StackPanel
+                                            <TextBlock
                                                 Grid.Column="1"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Center"
+                                                FontSize="16"
+                                                Text="{Binding Exercise.description}" />
+                                            <StackPanel
+                                                Grid.Column="2"
                                                 HorizontalAlignment="Right"
                                                 Orientation="Horizontal"
                                                 Spacing="10">
                                                 <Button
                                                     Padding="2,2"
-                                                    Command="{Binding DataContext.AddFoodToMealCommand, ElementName=ContentArea, Mode=TwoWay}"
+                                                    Command="{Binding DataContext.ShowSingleExerciseVideoCommand, ElementName=ContentArea, Mode=TwoWay}"
                                                     CommandParameter="{Binding}">
                                                     <TextBlock Text="Xem" />
                                                 </Button>
@@ -263,9 +298,11 @@
                     </StackPanel>
                 </ScrollViewer>
                 <TextBlock
+                    Grid.Column="1"
+                    Margin="50,40,0,0"
                     Text="Hôm nay không có bài tập nào, nghỉ ngơi cũng là một hình thức luyện tập !!"
                     TextWrapping="Wrap"
-                    Visibility="{Binding IsBreakDay}" />
+                    Visibility="{Binding IsBreakDay, Mode=TwoWay, Converter={StaticResource InverseBoolToVisibilityConverter}}" />
             </Grid>
         </Grid>
     </Grid>

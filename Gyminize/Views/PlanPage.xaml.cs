@@ -18,7 +18,8 @@ public sealed partial class PlanPage : Page
         ViewModel = App.GetService<PlanViewModel>();
         InitializeComponent();
         var navigationService = App.GetService<INavigationService>();
-        ViewModel = new PlanViewModel(navigationService);
+        var dialogService = App.GetService<IDialogService>();
+        ViewModel = new PlanViewModel(navigationService, dialogService);
         DataContext = ViewModel;
 
     }
