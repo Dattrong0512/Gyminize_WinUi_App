@@ -214,7 +214,8 @@
                 <ScrollViewer
                     Grid.Column="1"
                     Margin="50,40,0,0"
-                    VerticalScrollBarVisibility="Auto">
+                    VerticalScrollBarVisibility="Auto"
+                    Visibility ="{Binding IsWorkoutDay}">
                     <StackPanel Spacing="10">
                         <ListView ItemsSource="{Binding ExerciseItems}" SelectionMode="Single">
                             <ListView.ItemTemplate>
@@ -236,11 +237,11 @@
                                                 <TextBlock
                                                     FontSize="16"
                                                     FontWeight="Bold"
-                                                    Text="{Binding ExerciseName}" />
+                                                    Text="{Binding Exercise.exercise_name}" />
                                                 <TextBlock
                                                     FontSize="14"
                                                     Foreground="Gray"
-                                                    Text="{Binding Reps}" />
+                                                    Text="{Binding Exercise.reps}" />
                                             </StackPanel>
                                             <StackPanel
                                                 Grid.Column="1"
@@ -251,7 +252,7 @@
                                                     Padding="2,2"
                                                     Command="{Binding DataContext.AddFoodToMealCommand, ElementName=ContentArea, Mode=TwoWay}"
                                                     CommandParameter="{Binding}">
-                                                    <TextBlock Text="Bắt đầu" />
+                                                    <TextBlock Text="Xem" />
                                                 </Button>
                                             </StackPanel>
                                         </Grid>
@@ -261,7 +262,10 @@
                         </ListView>
                     </StackPanel>
                 </ScrollViewer>
-
+                <TextBlock
+                    Text="Hôm nay không có bài tập nào, nghỉ ngơi cũng là một hình thức luyện tập !!"
+                    TextWrapping="Wrap"
+                    Visibility="{Binding IsBreakDay}" />
             </Grid>
         </Grid>
     </Grid>

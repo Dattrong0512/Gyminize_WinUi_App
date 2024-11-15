@@ -1,5 +1,5 @@
 ﻿using Gyminize.Contracts.Services;
-using Gyminize.Helpers;
+using Gyminize.Models;
 using Gyminize.ViewModels;
 
 using Microsoft.UI.Xaml.Controls;
@@ -25,7 +25,7 @@ public sealed partial class PlanPage : Page
 
     private void DayBorder_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
     {
-        if (sender is Border border && border.DataContext is WorkoutDetail workoutDetail)
+        if (sender is Border border && border.DataContext is Workoutdetail workoutDetail)
         {
             ViewModel.SelectWorkoutDetailCommand.Execute(workoutDetail);
         }

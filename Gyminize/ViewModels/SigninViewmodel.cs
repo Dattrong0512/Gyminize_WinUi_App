@@ -293,12 +293,12 @@ namespace Gyminize.ViewModels
                 else { 
                     if (CheckCustomerHealthByUsername(username))
                     {
+                        var frame = new Frame();
+                        _shell = App.GetService<ShellPage>();
+                        frame.Content = _shell;
+                        App.MainWindow.Content = frame;
                         await _localSettingsService.SaveSettingAsync("customer_id", customer.customer_id);
-                        var pageKey = typeof(HomeViewModel).FullName;
-                        if (pageKey != null)
-                        {
-                            _navigationService.NavigateTo(pageKey);
-                        }
+                        _navigationService.NavigateTo(typeof(HomeViewModel).FullName!);
                     }
                     else
                     {

@@ -231,7 +231,7 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         return SelectedActivityLevel?.Content switch
         {
             "Hầu như không vận động" => 1,
-            "Thấp ( 1 - 3 buổi/tuần )" => 2,
+            "Thấp ( 1 - 2 buổi/tuần )" => 2,
             "Trung Bình ( 3 - 5 buổi/tuần )" => 3,
             "Cao ( 6 - 7 buổi/tuần )" => 4,
             _ => 0
@@ -243,7 +243,7 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         return activityLevel switch
         {
             1 => "Hầu như không vận động",
-            2 => "Thấp ( 1 - 3 buổi/tuần )",
+            2 => "Thấp ( 1 - 2 buổi/tuần )",
             3 => "Trung Bình ( 3 - 5 buổi/tuần )",
             4 => "Cao ( 6 - 7 buổi/tuần )",
             _ => "Không xác định"

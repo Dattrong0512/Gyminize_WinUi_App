@@ -111,6 +111,20 @@ public partial class PlanViewModel : ObservableRecipient
     //    get => _isSelected;
     //    set => SetProperty(ref _isSelected, value);
     //}
+    private DateTime _startDate;
+    public DateTime StartDate
+    {
+        get => _startDate;
+        set => SetProperty(ref _startDate, value);
+    }
+
+    private DateTime _endDate;
+    public DateTime EndDate
+    {
+        get => _endDate;
+        set => SetProperty(ref _endDate, value);
+    }
+
 
     public ICommand SelectWorkoutDetailCommand
     {
@@ -125,11 +139,10 @@ public partial class PlanViewModel : ObservableRecipient
     {
         _navigationService = navigationService;
         SelectWorkoutDetailCommand = new RelayCommand<Workoutdetail>(SelectWorkoutDetail);
-        DateTime dateTime = new DateTime(2024, 11, 12);
         LoadSampleData();
-        LoadCurrentWeekDays(dateTime);
+        LoadCurrentWeekDays(_startDate);
         PlanName = "Ke Hoach 4 Ngay";
-        TotalDay = 56;
+        TotalDay = (_endDate - _startDate).Days;
         DayProgress = ((double)CompleteDay / (double)TotalDay) * 100;
 
         //Lấy thông tin cho ngày hôm nay
@@ -169,24 +182,16 @@ public partial class PlanViewModel : ObservableRecipient
     }
     private void LoadSampleData()
     {
-        //var sampleExerciseDetails = ExerciseDetail.GetCompleteSampleExerciseDetails();
-        //var sampleWorkoutDetails = WorkoutDetail.GetSampleWorkoutDetails();
-
-        //ExerciseItems = new ObservableCollection<ExerciseDetail>(sampleExerciseDetails);
-        //WorkoutDetailsItems = new List<WorkoutDetail>(sampleWorkoutDetails);
-
         try
         {
             int customer_id = 1;
-            var workouts = ApiServices.Get<List<Workoutdetail>>($"api/Plandetail/get/plandetail/{customer_id}");
-            if (workouts != null && workouts.Any())
-            {
-                WorkoutDetailsItems.Clear();
-                foreach (var items in workouts)
-                {
-                    WorkoutDetailsItems.Add(items);
-                }
-            }
+            var plandetails = ApiServices.Get<Plandetail>($"api/Plandetail/get/plandetail/{customer_id}");
+            DateTime currentDate = DateTime.Now;
+  
+            Plandetail currentPlandetail = plandetails;
+            _startDate = currentPlandetail.start_date;
+            _endDate = currentPlandetail.end_date;
+            WorkoutDetailsItems = currentPlandetail.Workoutdetails.ToList();
         }
         catch (Exception ex)
         {
@@ -210,38 +215,7 @@ public partial class PlanViewModel : ObservableRecipient
         Day5 = weekWorkoutDetails[4].date_workout.ToString("dd/MM");
         Day6 = weekWorkoutDetails[5].date_workout.ToString("dd/MM");
         Day7 = weekWorkoutDetails[6].date_workout.ToString("dd/MM");
-
-
-
-        //Filter theo type workout (có thể bỏ nếu muốn tra trực tiếp)
-        //var currentWorkoutDetail = weekWorkoutDetails.FirstOrDefault(wd => wd.DateWorkout.Date == currentDate.Date);
-        //if (currentWorkoutDetail != null)
-        //{
-        //    var filteredExerciseItems = ExerciseDetail.GetCompleteSampleExerciseDetails()
-        //        .Where(ed => ed.TypeworkoutId == currentWorkoutDetail.TypeworkoutId)
-        //        .ToList();
-        //    ExerciseItems = new ObservableCollection<ExerciseDetail>(filteredExerciseItems);
-        //}
-
-        //var currentWorkoutDetail = weekWorkoutDetails.FirstOrDefault(wd => wd.DateWorkout.Date == currentDate.Date);
-        //if (currentWorkoutDetail != null)
-        //{
-        //    int currentTypeWorkoutId = currentWorkoutDetail.TypeworkoutId;
-        //    // Sử dụng currentTypeWorkoutId theo nhu cầu của bạn
-        //    FilterExercisesByTypeWorkoutId(2);
-        //}
     }
-
-    //public void FilterExercisesByTypeWorkoutId(int typeworkoutId)
-    //{
-    //    var filteredExercises = ExerciseDetail.GetCompleteSampleExerciseDetails()
-    //        .Where(exercise => exercise.TypeworkoutId == typeworkoutId)
-    //        .ToList();
-
-    //    ExerciseItems = new ObservableCollection<ExerciseDetail>(filteredExercises);
-    //    OnPropertyChanged(nameof(ExerciseItems)); // Đảm bảo cập nhật giao diện khi ExerciseItems thay đổi
-    //}
-
     public void SelectWorkoutDetail(Workoutdetail selectedWorkoutDetail)
     {
         for (var i = 0; i < WeekDaysItems.Count(); i++)
@@ -256,13 +230,16 @@ public partial class PlanViewModel : ObservableRecipient
             }
         }
 
-
-
-        //// Lấy TypeworkoutId của ngày được chọn và lọc các bài tập
-        //if (selectedWorkoutDetail != null)
-        //{
-        //    FilterExercisesByTypeWorkoutId(selectedWorkoutDetail.TypeworkoutId);
-        //}
+        int typeworkout = selectedWorkoutDetail.typeworkout_id;
+        if (typeworkout == 0)
+        {
+            //do nothing
+        }
+        else
+        {
+            ExerciseItems = new ObservableCollection<Exercisedetail>(selectedWorkoutDetail.Typeworkout.Exercisedetails.ToList());
+            OnPropertyChanged(nameof(ExerciseItems)); 
+        }
     }
 }
 
