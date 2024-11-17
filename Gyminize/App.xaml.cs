@@ -81,9 +81,9 @@ public partial class App : Application
             // Đăng ký Views và ViewModels.
             //services.AddTransient<ShopDetailViewModel>();
             //services.AddTransient<ShopViewModel>();
-            services.AddTransient<ShopDetailPage>();
+            //services.AddTransient<ShopDetailPage>();
 
-            services.AddTransient<ShopPage>();
+            //services.AddTransient<ShopPage>();
             services.AddTransient<DiaryViewModel>();
             services.AddTransient<DiaryPage>();
             services.AddTransient<NutritionsViewModel>();

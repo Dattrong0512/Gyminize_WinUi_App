@@ -33,10 +33,6 @@ public partial class PlanSelectionPage : Page
     {
         ViewModel = App.GetService<PlanSelectionViewModel>();
         InitializeComponent();
-        var navigationService = App.GetService<INavigationService>();
-        var localsettingService = App.GetService<ILocalSettingsService>();
-        ViewModel = new PlanSelectionViewModel(navigationService, localsettingService);
         DataContext = ViewModel;
-
     }
 }

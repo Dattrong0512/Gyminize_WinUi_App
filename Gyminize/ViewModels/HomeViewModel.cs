@@ -114,57 +114,53 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         WeightText = _customerHealth.weight.ToString();
         GoalCalories = ((int)_customerHealth.tdee).ToString();
 
-
-
-
-
-        // API này dùng để tạo một plan mới cho customer, ở đây mặc định sẽ là plan 1, tức là 3 ngày 1 tuần
-        endpoint = "";
-        endpoint = $"api/Plandetail/create/customer_id/" + customer_id+"/plan/1";
-        var result = ApiServices.Post<Plandetail>(endpoint,null);
-        // Kiểm tra kết quả
-        if (result != null)
-        {
-            Debug.WriteLine("POST request successful!");
-        }
-        else
-        {
-            Debug.WriteLine("POST request failed.");
-        }
-        // API này dùng để kiểm tra xem nó trả về đúng cái đối tượng plandetail không, các đối tượng này đã được cấu hình ở model để link với nhau
-        endpoint = "";
-        endpoint = $"api/Plandetail/get/plandetail/" + customer_id;
-        Plandetail plandetail =  ApiServices.Get<Plandetail>(endpoint);
-        // Kiểm tra kết quả
-        if (plandetail != null)
-        {
-            Debug.WriteLine("Get request successful!");
-            Debug.WriteLine(plandetail);
-            Debug.WriteLine(plandetail.Plan);
-            Debug.WriteLine(plandetail.Workoutdetails);
-            if (plandetail.Workoutdetails != null)
-            {
-                foreach (var workout in plandetail.Workoutdetails)
-                {
+        //// API này dùng để tạo một plan mới cho customer, ở đây mặc định sẽ là plan 1, tức là 3 ngày 1 tuần
+        //endpoint = "";
+        //endpoint = $"api/Plandetail/create/customer_id/" + customer_id+"/plan/1";
+        //var result = ApiServices.Post<Plandetail>(endpoint,null);
+        //// Kiểm tra kết quả
+        //if (result != null)
+        //{
+        //    Debug.WriteLine("POST request successful!");
+        //}
+        //else
+        //{
+        //    Debug.WriteLine("POST request failed.");
+        //}
+        //// API này dùng để kiểm tra xem nó trả về đúng cái đối tượng plandetail không, các đối tượng này đã được cấu hình ở model để link với nhau
+        //endpoint = "";
+        //endpoint = $"api/Plandetail/get/plandetail/" + customer_id;
+        //Plandetail plandetail =  ApiServices.Get<Plandetail>(endpoint);
+        //// Kiểm tra kết quả
+        //if (plandetail != null)
+        //{
+        //    Debug.WriteLine("Get request successful!");
+        //    Debug.WriteLine(plandetail);
+        //    Debug.WriteLine(plandetail.Plan);
+        //    Debug.WriteLine(plandetail.Workoutdetails);
+        //    if (plandetail.Workoutdetails != null)
+        //    {
+        //        foreach (var workout in plandetail.Workoutdetails)
+        //        {
         
-                    if (workout.Typeworkout?.Exercisedetails != null)
-                    {
-                        Debug.WriteLine(workout.Typeworkout);
-                        Debug.WriteLine(workout.Typeworkout.description);
-                        foreach (var exerciseDetail in workout.Typeworkout.Exercisedetails)
-                        {
-                            Debug.WriteLine(exerciseDetail);
-                            Debug.WriteLine(exerciseDetail.Exercise.exercise_name);
-                        }
-                    }
-                }
-            }
+        //            if (workout.Typeworkout?.Exercisedetails != null)
+        //            {
+        //                Debug.WriteLine(workout.Typeworkout);
+        //                Debug.WriteLine(workout.Typeworkout.description);
+        //                foreach (var exerciseDetail in workout.Typeworkout.Exercisedetails)
+        //                {
+        //                    Debug.WriteLine(exerciseDetail);
+        //                    Debug.WriteLine(exerciseDetail.Exercise.exercise_name);
+        //                }
+        //            }
+        //        }
+        //    }
 
-        }
-        else
-        {
-            Debug.WriteLine("POST request failed.");
-        }
+        //}
+        //else
+        //{
+        //    Debug.WriteLine("POST request failed.");
+        //}
     }
 
     public void OnNavigatedFrom()

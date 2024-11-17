@@ -11,7 +11,7 @@ namespace Gyminize_API.Data.Repositories
         {
             _context = context;
         }
-        public Plandetail? GetPlandetailById(int customerID, int planID)
+        public Plandetail? GetPlandetailById(int customerID)
         {
             var planDetail = _context.PlanDetailEntity
                   .Include(pd => pd.Plan) // Bao gồm đối tượng Plan
@@ -19,7 +19,7 @@ namespace Gyminize_API.Data.Repositories
                       .ThenInclude(wd => wd.Typeworkout) // Bao gồm Typeworkout từ mỗi Workoutdetail
                       .ThenInclude(tw => tw.Exercisedetails) // Bao gồm danh sách Exercisedetails từ Typeworkout
                           .ThenInclude(ed => ed.Exercise) // Bao gồm đối tượng Exercise từ mỗi Exercisedetail
-                  .Where(pd => pd.customer_id == customerID && pd.plan_id == planID)
+                  .Where(pd => pd.customer_id == customerID)
                   .FirstOrDefault(); // Kết thúc truy vấn với FirstOrDefault để trả về một Plandetail
 
             return planDetail;
@@ -36,8 +36,8 @@ namespace Gyminize_API.Data.Repositories
                 }
                 else
                 {
-                    DateTime start_day = new DateTime(2024, 11, 1, 0, 0, 0, DateTimeKind.Utc);
-                    DateTime endDate = start_day.AddMonths(2);
+                    DateTime start_day = DateTime.SpecifyKind(DateTime.Now.Date, DateTimeKind.Utc);
+                    DateTime endDate = start_day.AddDays(56);
 
                     Plandetail plandetail = new Plandetail
                     {

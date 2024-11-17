@@ -308,6 +308,7 @@ public partial class PlanViewModel : ObservableRecipient
                 WorkoutButtonVisibility = Visibility.Collapsed;
                 break;
             }
+            StatusText = "Bạn vẫn chưa hoàn thành bài tập hôm nay (" + DateTime.Now.ToString("dd/MM") + ") ";
             WorkoutButtonVisibility = Visibility.Visible;
         }
     }
@@ -361,5 +362,7 @@ public partial class PlanViewModel : ObservableRecipient
         var exercise = ex.Exercise;
         _dialogService.ShowExerciseVideoDialogAsync(exercise);
     }
+
+    
 }
 

@@ -21,9 +21,9 @@ namespace Gyminize_API.GraphQl.Queries
                 ),
                 resolve: context =>
                 {
-                    int day = 1;
+                    
                     var id = context.GetArgument<int>("customer_id");
-                    return repository.GetPlandetailById(id, day);
+                    return repository.GetPlandetailById(id);
                 }
                 );
         }

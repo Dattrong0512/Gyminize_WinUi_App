@@ -3,6 +3,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
 using Gyminize.Contracts.Services;
+using Gyminize.Core.Services;
+using Gyminize.Models;
+using Gyminize.Services;
 using Gyminize.Views;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
@@ -24,7 +27,7 @@ public partial class ShellViewModel : ObservableRecipient
     {
         get;
     }
-
+    private ILocalSettingsService _localsettings;
     // Dịch vụ NavigationView.
     public INavigationViewService NavigationViewService
     {
@@ -47,12 +50,31 @@ public partial class ShellViewModel : ObservableRecipient
 
 
     // Khởi tạo ShellViewModel với INavigationService và INavigationViewService.
-    public ShellViewModel(INavigationService navigationService, INavigationViewService navigationViewService)
+    public ShellViewModel(INavigationService navigationService, INavigationViewService navigationViewService, ILocalSettingsService localSettingsService)
     {
+        _localsettings = localSettingsService;
         NavigationService = navigationService;
+        CheckPlanSelectionNeeded();
         NavigationService.Navigated += OnNavigated;
         NavigationViewService = navigationViewService;
-        IsSelectionNeeded = false;
+        //IsSelectionNeeded = false;
+    }
+
+    public async void CheckPlanSelectionNeeded()
+    {
+        var customer_id = await _localsettings.ReadSettingAsync<string>("customer_id");
+        var endpoint = "";
+        endpoint = $"api/Plandetail/get/plandetail/" + customer_id;
+        Plandetail plandetail = ApiServices.Get<Plandetail>(endpoint);
+        // Kiểm tra kết quả
+        if (plandetail != null)
+        {
+            IsSelectionNeeded = false;
+        }
+        else
+        {
+            IsSelectionNeeded = true;
+        }
     }
 
     // Xử lý sự kiện điều hướng.

@@ -18,8 +18,8 @@ namespace Gyminize_API.Controllers
         [HttpGet("get/plandetail/{customerId:int}")] // Loại bỏ khoảng trắng
         public IActionResult GetPlandetailByCustomerId(int customerId)
         {
-            int planID = 1;
-            var plandetail = _plandetailRepository.GetPlandetailById(customerId, planID);
+           
+            var plandetail = _plandetailRepository.GetPlandetailById(customerId);
             if (plandetail == null)
             {
                 return NotFound();

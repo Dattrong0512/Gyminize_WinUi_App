@@ -63,7 +63,7 @@
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Nutritions" helpers:NavigationHelper.NavigateTo="Gyminize.ViewModels.NutritionsViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xED;" />
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xED56;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem x:Uid="Shell_Diary" helpers:NavigationHelper.NavigateTo="Gyminize.ViewModels.DiaryViewModel">
@@ -71,11 +71,7 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE787;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem x:Uid="Shell_Shop" helpers:NavigationHelper.NavigateTo="Gyminize.ViewModels.ShopViewModel">
-                    <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE719;" />
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+
             </NavigationView.MenuItems>
             <NavigationView.HeaderTemplate>
                 <DataTemplate>

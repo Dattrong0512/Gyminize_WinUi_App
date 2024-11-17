@@ -16,7 +16,7 @@ public class PageService : IPageService
     public PageService()
     {
         Configure<HomeViewModel, HomePage>();
-        Configure<PlanViewModel, PlanPage>();
+        
         Configure<NutritionsViewModel, NutritionsPage>();
         Configure<DiaryViewModel, DiaryPage>();
         //Configure<ShopViewModel, ShopPage>();
@@ -27,6 +27,8 @@ public class PageService : IPageService
         Configure<Guide3ViewModel, GuidePage3>();
         Configure<SignupViewModel, SignupPage>();
         Configure<ShellViewModel, ShellPage>();
+        Configure<PlanSelectionViewModel, PlanSelectionPage>();
+        Configure<PlanViewModel, PlanPage>();
     }
 
     // Lấy loại trang dựa trên khóa trang.

@@ -76,3 +76,16 @@ J:\Study\WindowPrograming\Clone_8\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net
 J:\Study\WindowPrograming\Clone_8\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\refint\Gyminize.Core.dll
 J:\Study\WindowPrograming\Clone_8\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.pdb
 J:\Study\WindowPrograming\Clone_8\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\ref\Gyminize.Core.dll
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.deps.json
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.dll
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\bin\Debug\net7.0\Gyminize.Core.pdb
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.csproj.AssemblyReference.cache
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.GeneratedMSBuildEditorConfig.editorconfig
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.AssemblyInfoInputs.cache
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.AssemblyInfo.cs
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.csproj.CoreCompileInputs.cache
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.sourcelink.json
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.dll
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\refint\Gyminize.Core.dll
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\Gyminize.Core.pdb
+J:\Study\WindowPrograming\Clone_9\Gyminize_WinUi_App\Gyminize.Core\obj\Debug\net7.0\ref\Gyminize.Core.dll
