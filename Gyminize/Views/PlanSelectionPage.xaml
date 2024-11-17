@@ -14,14 +14,14 @@
         </Grid.ColumnDefinitions>
         <Grid
             Grid.Column="0"
-            Width="250"
-            Height="300"
+            Width="300"
+            Height="400"
             Background="#1A1EBA"
             CornerRadius="20">
 
             <!--  Hình ảnh phía sau  -->
             <Image
-                Opacity="1"
+                Opacity="0.8"
                 Source="ms-appx:///Assets/planselection_model/beginner.png"
                 Stretch="UniformToFill" />
 
@@ -30,17 +30,17 @@
                 <TextBlock
                     FontSize="14"
                     Foreground="White"
-                    Text="7×4 PLAN" />
+                    Text="8 TUẦN" />
                 <TextBlock
                     FontSize="26"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="MASSIVE" />
+                    Text="LỊCH TẬP" />
                 <TextBlock
                     FontSize="26"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="UPPER BODY" />
+                    Text="3 NGÀY / TUẦN" />
             </StackPanel>
 
             <!--  Text phần mô tả  -->
@@ -54,27 +54,29 @@
 
             <!--  Nút bấm Start  -->
             <Button
-                Width="120"
-                Height="35"
+                Width="180"
+                Height="55"
                 Margin="0,0,0,20"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
                 Background="White"
-                Content="Start"
-                CornerRadius="15"
+                Command="{Binding Plan1SelectedCommand}"
+                Content="Bắt đầu"
+                CornerRadius="20"
+                FontSize="24"
                 FontWeight="Bold"
                 Foreground="#1A1EBA" />
         </Grid>
         <Grid
             Grid.Column="1"
-            Width="250"
-            Height="300"
+            Width="300"
+            Height="400"
             Background="Green"
             CornerRadius="20">
 
             <!--  Hình ảnh phía sau  -->
             <Image
-                Opacity="1"
+                Opacity="0.8"
                 Source="ms-appx:///Assets/planselection_model/average.png"
                 Stretch="UniformToFill" />
 
@@ -83,17 +85,17 @@
                 <TextBlock
                     FontSize="14"
                     Foreground="White"
-                    Text="7×4 PLAN" />
+                    Text="8 TUẦN" />
                 <TextBlock
                     FontSize="26"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="MASSIVE" />
+                    Text="LỊCH TẬP" />
                 <TextBlock
                     FontSize="26"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="UPPER BODY" />
+                    Text="4 NGÀY / TUẦN" />
             </StackPanel>
 
             <!--  Text phần mô tả  -->
@@ -107,27 +109,29 @@
 
             <!--  Nút bấm Start  -->
             <Button
-                Width="120"
-                Height="35"
+                Width="180"
+                Height="55"
                 Margin="0,0,0,20"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
                 Background="White"
-                Content="Start"
-                CornerRadius="15"
+                Command="{Binding Plan2SelectedCommand}"
+                Content="Bắt đầu"
+                CornerRadius="20"
+                FontSize="24"
                 FontWeight="Bold"
                 Foreground="Green" />
         </Grid>
         <Grid
             Grid.Column="2"
-            Width="250"
-            Height="300"
-            Background="LightCoral"
+            Width="300"
+            Height="400"
+            Background="DarkOrange"
             CornerRadius="20">
 
             <!--  Hình ảnh phía sau  -->
             <Image
-                Opacity="1"
+                Opacity="0.8"
                 Source="ms-appx:///Assets/planselection_model/expert.png"
                 Stretch="UniformToFill" />
 
@@ -136,17 +140,17 @@
                 <TextBlock
                     FontSize="14"
                     Foreground="White"
-                    Text="7×4 PLAN" />
+                    Text="8 TUẦN" />
                 <TextBlock
                     FontSize="26"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="MASSIVE" />
+                    Text="LỊCH TẬP" />
                 <TextBlock
                     FontSize="26"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="UPPER BODY" />
+                    Text="5 NGÀY / TUẦN" />
             </StackPanel>
 
             <!--  Text phần mô tả  -->
@@ -160,16 +164,18 @@
 
             <!--  Nút bấm Start  -->
             <Button
-                Width="120"
-                Height="35"
+                Width="180"
+                Height="55"
                 Margin="0,0,0,20"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
                 Background="White"
-                Content="Start"
-                CornerRadius="15"
+                Command="{Binding Plan3SelectedCommand}"
+                Content="Bắt đầu"
+                CornerRadius="20"
+                FontSize="24"
                 FontWeight="Bold"
-                Foreground="LightCoral" />
+                Foreground="DarkOrange" />
         </Grid>
     </Grid>
 </Page>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Gyminize.Contracts.Services;
+using Gyminize.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -20,10 +22,21 @@ namespace Gyminize.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class PlanSelectionPage : Page
+public partial class PlanSelectionPage : Page
 {
+    public PlanSelectionViewModel ViewModel
+    {
+        get;
+    }
+
     public PlanSelectionPage()
     {
-        this.InitializeComponent();
+        ViewModel = App.GetService<PlanSelectionViewModel>();
+        InitializeComponent();
+        var navigationService = App.GetService<INavigationService>();
+        var localsettingService = App.GetService<ILocalSettingsService>();
+        ViewModel = new PlanSelectionViewModel(navigationService, localsettingService);
+        DataContext = ViewModel;
+
     }
 }

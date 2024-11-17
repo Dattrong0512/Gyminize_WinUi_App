@@ -47,6 +47,9 @@
     <None Remove="Assets\Icon\food.png" />
     <None Remove="Assets\Icon\goal.png" />
     <None Remove="Assets\motivation.jpg" />
+    <None Remove="Assets\planselection_model\average.png" />
+    <None Remove="Assets\planselection_model\beginner.png" />
+    <None Remove="Assets\planselection_model\expert.png" />
     <None Remove="Assets\training2.png" />
     <None Remove="Views\GuidePage1.xaml" />
     <None Remove="Views\GuidePage2.xaml" />
@@ -156,10 +159,6 @@
   
   <ItemGroup>
     <PRIResource Remove="Assets\Icon\NewFolder\**" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Assets\planselection_model\" />
   </ItemGroup>
   
   <ItemGroup>

@@ -1,10 +1,12 @@
 ﻿// ViewModel cho trang kế hoạch.
 // Kế thừa từ ObservableRecipient để hỗ trợ thông báo thay đổi thuộc tính.
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Gyminize.Contracts.Services;
+using Gyminize.Contracts.ViewModels;
 using Gyminize.Core.Services;
 using Gyminize.Helpers;
 using Gyminize.Models;
@@ -18,6 +20,7 @@ public partial class PlanViewModel : ObservableRecipient
     // Khởi tạo PlanViewModel.
     private readonly INavigationService _navigationService;
     private readonly IDialogService _dialogService;
+    private readonly ILocalSettingsService _localsetting;
     private string _planName;
     public string PlanName
     {
@@ -26,6 +29,14 @@ public partial class PlanViewModel : ObservableRecipient
     }
 
     private int _weekNumber;
+    
+    private int _customerId;
+    public int CustomerId
+    {
+        get => _customerId;
+        set => SetProperty(ref _customerId, value);
+    }
+
     public int WeekNumber
     {
         get => _weekNumber;
@@ -171,46 +182,69 @@ public partial class PlanViewModel : ObservableRecipient
     }
     public ICommand SelectWorkoutDetailCommand
     {
-        get;
+        get; set;
     }
 
     public ICommand PlayingWorkoutExercisesCommand
     {
-        get;
+        get; set;
     }
     public ICommand ShowSingleExerciseVideoCommand
     {
-        get;
+        get; set;
     }
     public ObservableCollection<Exercisedetail> ExerciseItems { get; set; } = new ObservableCollection<Exercisedetail>();
 
-    public ObservableCollection<Workoutdetail> WeekDaysItems { get; set; } = new ObservableCollection<Workoutdetail>();
+    private ObservableCollection<Workoutdetail> _weekDaysItems = new ObservableCollection<Workoutdetail>();
+    public ObservableCollection<Workoutdetail> WeekDaysItems
+    {
+        get => _weekDaysItems;
+        set
+        {
+            SetProperty(ref _weekDaysItems, value);
+            (SelectWorkoutDetailCommand as RelayCommand)?.NotifyCanExecuteChanged();
+        }
+    }
 
     public List<Workoutdetail> WorkoutDetailsItems { get; set; } = new List<Workoutdetail>();
-    public PlanViewModel(INavigationService navigationService, IDialogService dialogService)
+    public PlanViewModel(INavigationService navigationService, IDialogService dialogService, ILocalSettingsService localSettings)
     {
+        _localsetting = localSettings;
+        
         _isFinished = false;
         _navigationService = navigationService;
         _dialogService = dialogService;
-        _statusText = "Bạn vẫn chưa hoàn thành bài tập ngày hôm nay (" + DateTime.Now.ToString("dd/MM") + ")";
         SelectWorkoutDetailCommand = new RelayCommand<Workoutdetail>(SelectWorkoutDetail);
         ShowSingleExerciseVideoCommand = new RelayCommand<Exercisedetail>(ShowSingleExerciseVideo);
         PlayingWorkoutExercisesCommand = new RelayCommand(PlayingWorkoutExercises);
+        InitializeViewModelAsync();
+        
+    }
+
+    private async void InitializeViewModelAsync()
+    {
+        await GetCustomerID();
         LoadSampleData();
         LoadCurrentWeekDays(_startDate);
-        PlanName = "Ke Hoach 4 Ngay";
+
+        PlanName = "Kế Hoạch 4 Ngày";
         TotalDay = (_endDate - _startDate).Days;
         DayProgress = ((double)CompleteDay / (double)TotalDay) * 100;
 
-        //Lấy thông tin cho ngày hôm nay
         var currentDayWorkoutDetail = WeekDaysItems.FirstOrDefault(item => item.IsCurrentDay);
         if (currentDayWorkoutDetail != null)
         {
             SelectWorkoutDetail(currentDayWorkoutDetail);
         }
-        
+    }
+    
+    public async Task GetCustomerID()
+    {
+        var customer_id = await _localsetting.ReadSettingAsync<string>("customer_id");
+        CustomerId = int.Parse(customer_id);
     }
 
+  
     public static List<Workoutdetail> GetWeekWorkoutDetails(DateTime startDate, int weekNumber, List<Workoutdetail> workoutDetails)
     {
         // Tính toán ngày bắt đầu của tuần (mỗi tuần cách nhau 7 ngày)
@@ -240,22 +274,14 @@ public partial class PlanViewModel : ObservableRecipient
     }
     private void LoadSampleData()
     {
-        try
-        {
-            int customer_id = 1;
-            var plandetails = ApiServices.Get<Plandetail>($"api/Plandetail/get/plandetail/{customer_id}");
-            DateTime currentDate = DateTime.Now;
-  
-            Plandetail currentPlandetail = plandetails;
-            _startDate = currentPlandetail.start_date;
-            _endDate = currentPlandetail.end_date;
-            WorkoutDetailsItems = currentPlandetail.Workoutdetails.ToList();
-            
-        }
-        catch (Exception ex)
-        {
-            System.Diagnostics.Debug.WriteLine($"Error loading workout details library: {ex.Message}");
-        }
+        //CustomerId = 1 khao
+        var plandetails = ApiServices.Get<Plandetail>($"api/Plandetail/get/plandetail/{CustomerId}");
+        DateTime currentDate = DateTime.Now;
+
+        Plandetail currentPlandetail = plandetails;
+        _startDate = currentPlandetail.start_date;
+        _endDate = currentPlandetail.end_date;
+        WorkoutDetailsItems = currentPlandetail.Workoutdetails.ToList();
     }
     public void LoadCurrentWeekDays(DateTime startDate)
     {
