@@ -3,9 +3,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:vm="using:Gyminize.ViewModels"
     xmlns:local="using:Gyminize.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Gyminize.ViewModels"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
@@ -63,8 +63,7 @@
                             <TextBlock>
                                 <Run FontSize="15" Text="Mục tiêu" />
                                 <LineBreak />
-                                <Run FontSize="20" Text="{Binding GoalCalories}" 
-                                     />
+                                <Run FontSize="20" Text="{Binding GoalCalories}" />
                             </TextBlock>
                         </StackPanel>
                         <StackPanel
@@ -104,7 +103,7 @@
                             Source="ms-appx:///Assets/Icon/clock.svg" />
                         <TextBlock>
                             <Run
-                                x:Name="exercised_hour" 
+                                x:Name="exercised_hour"
                                 FontSize="20"
                                 Text="01:30" />
                             <Run Text="giờ" />
@@ -167,16 +166,27 @@
                             FontSize="20"
                             Text="Kg" />
                     </StackPanel>
-                    <Button
+                    <StackPanel
                         Grid.Row="1"
-                        Width="50"
-                        Height="50"
-                        Margin="10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
-                        Command="{Binding EditWeightCommand}">
-                        <FontIcon Glyph="&#xE70F;" />
-                    </Button>
+                        Orientation="Horizontal">
+                        <Button
+                            Width="50"
+                            Height="50"
+                            Margin="10,10,0,10"
+                            Command="{Binding SaveWeightCommand}"
+                            IsEnabled="{Binding IsWeightTextBoxEnabled, Mode=TwoWay}">
+                            <FontIcon Glyph="&#xE74E;" />
+                        </Button>
+                        <Button
+                            Width="50"
+                            Height="50"
+                            Margin="10"
+                            Command="{Binding EditWeightCommand}">
+                            <FontIcon Glyph="&#xE70F;" />
+                        </Button>
+                    </StackPanel>
                 </Grid>
 
             </Border>

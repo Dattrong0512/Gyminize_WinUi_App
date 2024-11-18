@@ -29,7 +29,8 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         private set => SetProperty(ref _isWeightTextBoxEnabled, value);
     }
     public ILocalSettingsService localsetting;
-    private int _weight;
+
+   
     private Customer _customer;
     [ObservableProperty]
     private string weightText;
@@ -53,6 +54,10 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
     {
         get;
     }
+    public ICommand SaveWeightCommand
+    {
+        get;
+    }
    
     public HomeViewModel(INavigationService navigationService, IWindowService windowService ,ILocalSettingsService localSettings)
     {
@@ -62,6 +67,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         OpenSleepLinkCommand = new RelayCommand(OpenSleepLink);
         OpenRecipeLinkCommand = new RelayCommand(OpenRecipeLink);
         EditWeightCommand = new RelayCommand(OpenEditWeight);
+        SaveWeightCommand = new RelayCommand(OpenSaveWeight);
         IsWeightTextBoxEnabled = false;
         _customer = new Customer();
         localsetting = localSettings;
@@ -104,6 +110,13 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         IsWeightTextBoxEnabled = true;
     }
 
+
+    private void OpenSaveWeight()
+    {
+        IsWeightTextBoxEnabled = false;
+        int weight = int.Parse(WeightText);
+        //Thực hiện update weight lên csdl
+    }
     public async void OnNavigatedTo(object parameter)
     {
         var customer_id = await localsetting.ReadSettingAsync<string>("customer_id");
