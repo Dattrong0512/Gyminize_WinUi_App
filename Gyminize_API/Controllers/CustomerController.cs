@@ -11,33 +11,17 @@ namespace Gyminize_API.Controllers
     public class CustomerController(CustomerRepository customerRepository) : ControllerBase
     {
         private readonly CustomerRepository _customerRepository = customerRepository;
-        [HttpGet]
-
-        public IActionResult GetAllCustomer()
+        [HttpGet("get/username/{username}")]
+        public IActionResult GetCustomerByUserName(string username)
         {
-            try
-            {
-                var allCustomer = _customerRepository.GetAllCustomer();
-                return Ok(allCustomer);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Lỗi: {ex.Message}");
-                throw;
-            }
-
+            var customer = _customerRepository.GetCustomerByUsername(username);
+            return Ok(customer);
         }
 
         [HttpGet("get/{id:int}")]
         public IActionResult GetCustomerByID(int id)
         {
             var customer = _customerRepository.GetCustomerById(id);
-            return Ok(customer);
-        }
-        [HttpGet("get/username/{username}")]
-        public IActionResult GetCustomerByUserName(string username)
-        {
-            var customer = _customerRepository.GetCustomerByUsername(username);
             return Ok(customer);
         }
 
@@ -52,13 +36,6 @@ namespace Gyminize_API.Controllers
         {
             var updateCustomer = _customerRepository.updateCustomer(username, customer);
             return Ok(updateCustomer);
-        }
-        [HttpDelete("delete/{username}")]
-        public IActionResult DeleteCustomer(string username)
-        {
-            var customer = _customerRepository.GetCustomerByUsername(username);
-            _customerRepository.DeleteCustomer(customer);
-            return Ok();
         }
     }
 }

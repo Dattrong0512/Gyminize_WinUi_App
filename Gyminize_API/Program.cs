@@ -33,6 +33,8 @@ builder.Services.AddScoped<FoodQueries>();
 builder.Services.AddScoped<PlandetailRepository>();
 builder.Services.AddScoped<PlandetailQuery>();
 builder.Services.AddScoped<PlandetailMutation>();
+builder.Services.AddScoped<WorkoutdetailRepository>();
+builder.Services.AddScoped<WorkoutdetailMutation>();
 builder.Services.AddScoped<AppSchema>();
 
 // register graphQL

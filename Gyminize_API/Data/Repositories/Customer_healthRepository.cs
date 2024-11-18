@@ -11,19 +11,6 @@ namespace Gyminize_API.Data.Repositories
             _context = context;
         }
 
-        public List<Customer_health> GetAllCustomerHealth()
-        {
-            try
-            {
-                return _context.CustomerHealthEntity.ToList();
-            }
-            catch (Exception ex)
-            {
-                
-                Console.WriteLine($"Error in GetAllCustomerHealth: {ex.Message}");
-                throw;
-            }
-        }
 
         public Customer_health? GetCustomerHealthByCustomerId(int customerId)
         {
@@ -47,26 +34,19 @@ namespace Gyminize_API.Data.Repositories
 
         }
 
-        public Customer_health UpdateCustomerHealth(Customer_health customerHealth)
+       
+        public Customer_health UpdateWeightCustomer(int weight, int customerID )
         {
-            var check_customerHealth = _context.CustomerHealthEntity.FirstOrDefault(ch => ch.customer_id == customerHealth.customer_id);
+            var check_customerHealth = _context.CustomerHealthEntity.FirstOrDefault(ch => ch.customer_id == customerID);
+            
             if (check_customerHealth != null)
             {
-                _context.CustomerHealthEntity.Update(customerHealth);
+                check_customerHealth.weight = weight;
+                _context.CustomerHealthEntity.Update(check_customerHealth);
             }
             _context.SaveChanges();
             return check_customerHealth;
 
-        }
-
-        public void DeleteCustomerHealth(int customerId)
-        {
-            var customerHealth = _context.CustomerHealthEntity.FirstOrDefault(ch => ch.customer_id == customerId);
-            if (customerHealth != null)
-            {
-                _context.CustomerHealthEntity.Remove(customerHealth);
-                _context.SaveChanges();
-            }
         }
     }
 }

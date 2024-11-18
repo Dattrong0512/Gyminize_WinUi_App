@@ -12,16 +12,23 @@ namespace Gyminize_API.GraphQl.Queries
     {
         public CustomerQuery(CustomerRepository repository)
         {
-            // Truy vấn trả về danh sách khách hàng
-            Field<ListGraphType<CustomerType>>(
-                "customers",
-                description: "Return all customers",
-                resolve: context => repository.GetAllCustomer()
-            );
 
             // Truy vấn trả về một khách hàng dựa trên ID
             Field<CustomerType>(
-                "customer",
+                "customer_username",
+                description: "Return a customer by username",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "username" }
+                ),
+                resolve: context =>
+                {
+                    var username = context.GetArgument<String>("username");
+                    return repository.GetCustomerByUsername(username);
+                }
+            );
+            // Truy vấn trả về một khách hàng dựa trên ID
+            Field<CustomerType>(
+                "customer_id",
                 description: "Return a customer by id",
                 arguments: new QueryArguments(
                     new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "customer_id" }

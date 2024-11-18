@@ -9,20 +9,6 @@ namespace Gyminize_API.Data.Repositories
         {
             _context = context;
         }
-        public List<Customer> GetAllCustomer()
-        {
-            try
-            {
-                return _context.CustomerEntity.ToList();
-            }
-            catch (Exception ex)
-            {
-                // Log chi tiết lỗi
-                Console.WriteLine($"Error in GetAllCustomer: {ex.Message}");
-                throw;
-            }
-            
-        }
 
         public Customer? GetCustomerById(int id)
         {
@@ -57,15 +43,6 @@ namespace Gyminize_API.Data.Repositories
             }
             _context.SaveChanges();
             return check_customer;
-        }
-        public void DeleteCustomer(Customer customer)
-        {
-            var check_customer = _context.CustomerEntity.Where(x => x.username == customer.username).FirstOrDefault();
-            if (check_customer != null)
-            {
-                _context.CustomerEntity.Remove(customer);
-                _context.SaveChanges();
-            }
         }
     }
 }

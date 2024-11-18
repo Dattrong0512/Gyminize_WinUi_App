@@ -10,20 +10,7 @@ namespace Gyminize_API.Controllers
     public class CustomerhealthController(CustomerHealthRepository repository) : ControllerBase
     {
         private readonly CustomerHealthRepository _repository = repository;
-        [HttpGet]
-        public IActionResult GetAllCustomerHealth()
-        {
-            try
-            {
-                var allCustomerHealth = _repository.GetAllCustomerHealth();
-                return Ok(allCustomerHealth);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                throw;
-            }
-        }
+
         [HttpGet("get/{customerId:int}")]
         public IActionResult GetCustomerHealthByCustomerId(int customerId)
         {
@@ -37,26 +24,12 @@ namespace Gyminize_API.Controllers
             var newCustomerHealth = _repository.AddCustomerHealth(customerhealth);
             return Ok(newCustomerHealth);
         }
-        [HttpDelete("delete/{customerId:int}")]
-        public IActionResult DeleteCustomerHealth(int customerId)
+        
+        [HttpPut("update/{customerID:int}/weight/{weight:int}")]
+        public IActionResult UpdateWeightCustomer(int weight, int customerID)
         {
-            var customerHealth = _repository.GetCustomerHealthByCustomerId(customerId);
-            if (customerHealth == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                _repository.DeleteCustomerHealth(customerId);
-            }
-           
-            return Ok();
-        }
-        [HttpPut("update/{customerId:int}")]
-        public IActionResult UpdateCustomerHealth(int customerId, Customer_health customerhealth)
-        {
-            var updateCustomerHealth = _repository.UpdateCustomerHealth(customerhealth);
-            return Ok(updateCustomerHealth);
+            var updateWeightCustomer = _repository.UpdateWeightCustomer(weight, customerID);
+            return Ok(updateWeightCustomer);
         }
     }
 }

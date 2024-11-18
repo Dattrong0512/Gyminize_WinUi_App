@@ -14,21 +14,6 @@ namespace Gyminize_API.GraphQl.Queries
                 description: "Return all foods",
                 resolve: context => repository.GetAllFood()
             );
-            Field<FoodType>(
-                "food",
-                description: "Return a food by id",
-                arguments: new QueryArguments(
-                    new QueryArgument<NonNullGraphType<IntGraphType>>
-                    {
-                        Name = "food_id"
-                    }
-                ),
-                resolve: context =>
-                {
-                    var id = context.GetArgument<int>("food_id");
-                    return repository.GetFoodById(id);
-                }
-                );
         }
 
     }

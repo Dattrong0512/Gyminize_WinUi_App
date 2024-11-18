@@ -29,42 +29,6 @@ namespace Gyminize_API.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-        [HttpGet("get/{food_id:int}")]
-        public IActionResult GetFoodById(int food_id)
-        {
-            var food = _foodRepository.GetFoodById(food_id);
-            if (food == null)
-            {
-                return NotFound();
-            }
-            return Ok(food);
-        }
-        [HttpPost("create")]
-        public IActionResult AddFood(Food food)
-        {
-            var newFood = _foodRepository.addFood(food);
-            return Ok(newFood);
-        }
-        [HttpPut("update/{food_id:int}")]
-        public IActionResult UpdateFood(int food_id, Food food)
-        {
-            var updateFood = _foodRepository.updateFood(food_id, food);
-            return Ok(updateFood);
-        }
-        [HttpDelete("delete/{food_id:int}")]
-        public IActionResult DeleteFood(int food_id)
-        {
-            var food = _foodRepository.GetFoodById(food_id);
-            if (food == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                _foodRepository.DeleteFood(food);
-            }
-            return Ok();
-        }
     }
 }
 

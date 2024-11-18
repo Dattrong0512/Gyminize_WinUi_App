@@ -29,6 +29,31 @@ namespace Gyminize_API.GraphQl.Mutations
                     return null;
                 }
                 );
+            Field<Customer_healthType>
+                (
+                "updateWeightOfCustomer",
+                "IsUsed to update weight of a customer",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<IntGraphType>>
+                    {
+                        Name = "customer_id"
+                    },
+                    new QueryArgument<NonNullGraphType<IntGraphType>>
+                    {
+                        Name = "weight"
+                    }
+                    ),
+                    resolve: context =>
+                    {
+                        var customer_id = context.GetArgument<int>("customer_id");
+                        var weight = context.GetArgument<int>("weight");
+                        if(customer_id != null && weight != null)
+                        {
+                            return repository.UpdateWeightCustomer(customer_id, weight);
+                        }
+                        return null;
+                    }
+                );
         }          
     }
 }

@@ -12,12 +12,6 @@ namespace Gyminize_API.Data.Repositories
         }
 
   
-        public Fooddetail addFooddetail(Fooddetail fooddetail)
-        {
-            _context.FooddetailEntity.Add(fooddetail);
-            _context.SaveChanges();
-            return fooddetail;
-        }
         public Fooddetail AddOrUpdateFooddetail(int dailydiaryId, int mealType, Food food, int food_amount)
         {
             try

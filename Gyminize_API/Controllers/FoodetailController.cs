@@ -13,12 +13,6 @@ namespace Gyminize_API.Controllers
         {
             _foodetailRepository = foodetailRepository;
         }
-        [HttpPost("create")]
-        public IActionResult AddFooddetail(Fooddetail foodetail)
-        {
-            var newFoodetail = _foodetailRepository.addFooddetail(foodetail);
-            return Ok(newFoodetail);
-        }
         [HttpPut("update")]
         public IActionResult UpdateFooddetail([FromBody] Fooddetail fooddetail)
         {

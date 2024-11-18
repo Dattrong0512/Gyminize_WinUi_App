@@ -9,10 +9,6 @@ namespace Gyminize_API.GraphQl.Queries
     {
         public CustomerhealthQuery(CustomerHealthRepository repository)
         {
-            Field<ListGraphType<Customer_healthType>>(
-                "customer_health",
-                resolve: context => repository.GetAllCustomerHealth()
-            );
             Field<Customer_healthType>(
                 "customer_health_id",
                 description: "Return a customer_health by id",
