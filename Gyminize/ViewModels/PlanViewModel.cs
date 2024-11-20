@@ -161,6 +161,13 @@ public partial class PlanViewModel : ObservableRecipient
         set => SetProperty(ref _statusText, value);
     }
 
+    private string _startExerciseText;
+    public string StartExerciseText
+    {
+        get => _startExerciseText;
+        set => SetProperty(ref _startExerciseText, value);
+    }
+
     private string _workoutDetailDescription;
     public string WorkoutDetailDescription
     {
@@ -210,15 +217,12 @@ public partial class PlanViewModel : ObservableRecipient
     public PlanViewModel(INavigationService navigationService, IDialogService dialogService, ILocalSettingsService localSettings)
     {
         _localsetting = localSettings;
-        
-        _isFinished = false;
         _navigationService = navigationService;
         _dialogService = dialogService;
         SelectWorkoutDetailCommand = new RelayCommand<Workoutdetail>(SelectWorkoutDetail);
         ShowSingleExerciseVideoCommand = new RelayCommand<Exercisedetail>(ShowSingleExerciseVideo);
         PlayingWorkoutExercisesCommand = new RelayCommand(PlayingWorkoutExercises);
-        InitializeViewModelAsync();
-        
+        InitializeViewModelAsync(); 
     }
 
     private async void InitializeViewModelAsync()
@@ -244,7 +248,8 @@ public partial class PlanViewModel : ObservableRecipient
         CustomerId = int.Parse(customer_id);
     }
 
-  
+    
+
     public static List<Workoutdetail> GetWeekWorkoutDetails(DateTime startDate, int weekNumber, List<Workoutdetail> workoutDetails)
     {
         // Tính toán ngày bắt đầu của tuần (mỗi tuần cách nhau 7 ngày)
@@ -274,10 +279,7 @@ public partial class PlanViewModel : ObservableRecipient
     }
     private void LoadSampleData()
     {
-        //CustomerId = 1 khao
         var plandetails = ApiServices.Get<Plandetail>($"api/Plandetail/get/plandetail/{CustomerId}");
-        DateTime currentDate = DateTime.Now;
-
         Plandetail currentPlandetail = plandetails;
         _startDate = currentPlandetail.start_date;
         _endDate = currentPlandetail.end_date;
@@ -308,7 +310,16 @@ public partial class PlanViewModel : ObservableRecipient
                 WorkoutButtonVisibility = Visibility.Collapsed;
                 break;
             }
-            StatusText = "Bạn vẫn chưa hoàn thành bài tập hôm nay (" + DateTime.Now.ToString("dd/MM") + ") ";
+            if (WeekDaysItems[i].IsCurrentDay && WeekDaysItems[i].description == "Đã hoàn thành Exercise trong ngày")
+            {
+                StatusText = "Bạn đã hoàn thành bài tập ngày hôm nay (" + DateTime.Now.ToString("dd/MM") + ")";
+                StartExerciseText = "Tập lại";
+            }
+            else if(WeekDaysItems[i].IsCurrentDay && WeekDaysItems[i].description != "Đã hoàn thành Exercise trong ngày")
+            {
+                StatusText = "Bạn vẫn chưa hoàn thành bài tập hôm nay (" + DateTime.Now.ToString("dd/MM") + ") ";
+                StartExerciseText = "Bắt đầu bài tập";
+            }
             WorkoutButtonVisibility = Visibility.Visible;
         }
     }
@@ -340,7 +351,7 @@ public partial class PlanViewModel : ObservableRecipient
             OnPropertyChanged(nameof(ExerciseItems));
             IsBreakDay = false;
             IsWorkoutDay = !IsBreakDay;
-            WorkoutDetailDescription = selectedWorkoutDetail.description;
+            WorkoutDetailDescription = selectedWorkoutDetail.Typeworkout.description;
         }
     }
 
@@ -354,6 +365,10 @@ public partial class PlanViewModel : ObservableRecipient
         if(IsFinished == true)
         {
             StatusText = "Bạn đã hoàn thành bài tập ngày hôm nay (" + DateTime.Now.ToString("dd/MM") + ")";
+            StartExerciseText = "Tập lại";
+            var endpoint = $"api/Workoutdetail/update/{currentDayWorkoutDetail.workoutdetail_id}/decription/Đã hoàn thành Exercise trong ngày";
+            var result = ApiServices.Put<Workoutdetail>(endpoint, null);
+
         }
     }
 

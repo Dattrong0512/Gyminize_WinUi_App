@@ -87,12 +87,9 @@ namespace Gyminize.ViewModels
         {
             try
             {
-                 CustomerId = await LocalSetting.ReadSettingAsync<string>("customer_id");
-                DateTime day = new DateTime(2024, 11, 1, 0, 0, 0, DateTimeKind.Utc);
+                CustomerId = await LocalSetting.ReadSettingAsync<string>("customer_id");
+                var day = DateTime.UtcNow;
                 CurrentDailydiary = ApiServices.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{CustomerId}/day/{day:yyyy-MM-dd HH:mm:ss}");
-
-
-
                 if (CurrentDailydiary != null)
                 {
                     BreakfastItems.Clear();
@@ -120,20 +117,6 @@ namespace Gyminize.ViewModels
                     }
 
                     UpdateTotalCaloriesExpression();
-                }
-                else
-                {
-                    var endpoint = $"api/Customerhealth/get/" + CustomerId;
-                    var _customerHealth = ApiServices.Get<CustomerHealth>(endpoint);
-                    Dailydiary newDailydiary = new Dailydiary();
-                    newDailydiary.customer_id = _customerHealth.customer_id;
-                    newDailydiary.diary_date = day;
-                    newDailydiary.daily_weight = _customerHealth.weight;
-                    newDailydiary.calories_remain = Convert.ToInt32(_customerHealth.tdee);
-                    newDailydiary.total_calories = Convert.ToInt32(_customerHealth.tdee);
-                    newDailydiary.notes = "nothing";
-                    var newDailyDiary = ApiServices.Post<Dailydiary>("api/Dailydiary/create", newDailydiary);
-
                 }
             }
             catch (Exception ex)

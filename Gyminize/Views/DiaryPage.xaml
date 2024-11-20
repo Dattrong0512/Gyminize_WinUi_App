@@ -7,6 +7,35 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style x:Key="BorderStyle" TargetType="Border">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="DarkCyan" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+        <Style x:Key="TextBlockHeaderStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="TextBlockDetailStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="50,10,10,10" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style x:Key="ItemTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="ItemServingUnitTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="Gray" />
+        </Style>
+    </Page.Resources>
+
     <Grid x:Name="ContentArea">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -17,11 +46,14 @@
             Grid.Column="0"
             Width="500"
             Height="400"
-            Margin="10"
+            Margin="10,10,10,60"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
+            CalendarViewDayItemChanging="MyCalendarView_CalendarViewDayItemChanging"
             DisplayMode="Month"
-            FirstDayOfWeek="Monday" />
+            FirstDayOfWeek="Monday"
+            SelectedDatesChanged="MyCalendarView_SelectedDatesChanged"
+            SelectionMode="Single" />
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -29,42 +61,112 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Border
-                Grid.Row="0"
-                Margin="10"
-                Padding="5"
-                Background="White"
-                BorderBrush="DarkCyan"
-                BorderThickness="1"
-                CornerRadius="10">
-                <StackPanel Orientation="Vertical">
+            <Border Grid.Row="0" Style="{StaticResource BorderStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
                     <TextBlock
-                        Margin="10"
-                        HorizontalAlignment="Center"
-                        FontSize="14"
-                        FontWeight="Bold"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontSize="23"
+                        FontWeight="ExtraBlack"
+                        Style="{StaticResource TextBlockHeaderStyle}"
                         Text="Thông tin chi tiết" />
-                    <TextBlock Margin="50,10,10,10">
-                        <Run FontSize="14" Text="Ngày ghi nhật ký:" />
-                        <!--  Binding ngày hiện tại  -->
-                        <Run FontSize="14" Text="10/10/2023" />
-                    </TextBlock>
-                    <TextBlock Margin="50,10,10,10">
-                        <Run FontSize="14" Text="Cân nặng:" />
-                        <!--  Binding cân nặng  -->
-                        <Run FontSize="14" Text="80" />
-                        <Run FontSize="14" Text="Kg" />
-                    </TextBlock>
-                    <TextBlock Margin="50,10,10,10">
-                        <Run FontSize="14" Text="Calories Tiêu thụ: " />
-                        <!--  Binding calories đã tiêu thụ  -->
-                        <Run FontSize="14" Text="2000" />
-                        <Run FontSize="14" Text="/" />
-                        <!--  Binding TDEE  -->
-                        <Run FontSize="14" Text="3000" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource TextBlockDetailStyle}"
+                        Text="{Binding SelectedDayText, Mode=TwoWay}" />
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="ms-appx:///Assets/Icon/weight.svg" />
+                        <TextBlock Margin="10">
+                            <Run
+                                FontSize="25"
+                                FontWeight="Bold"
+                                Text="{Binding WeightText}" />
+                            <Run FontSize="13" Text=" Kg" />
+                        </TextBlock>
+                    </StackPanel>
 
-                    </TextBlock>
-                </StackPanel>
+                    <StackPanel
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="ms-appx:///Assets/Icon/fire.svg" />
+                        <TextBlock Margin="10">
+                            <Run
+                                FontSize="24"
+                                FontWeight="Bold"
+                                Text="{Binding BurnedCalories}" />
+                            <Run FontSize="24" Text="/" />
+                            <Run
+                                FontSize="24"
+                                FontWeight="Bold"
+                                Text="{Binding TotalCalories}" />
+                            <LineBreak />
+                            <Run FontSize="13" Text="Calories tiêu thụ" />
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="ms-appx:///Assets/Icon/gymplan.svg" />
+                        <TextBlock Margin="10">
+                            <Run
+                                FontSize="25"
+                                FontWeight="Bold"
+                                Text="{Binding PlanNameText}" />
+
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="30"
+                            Height="30"
+                            Source="ms-appx:///Assets/Icon/arm.svg" />
+                        <TextBlock
+                            MaxWidth="200"
+                            Margin="10"
+                            TextWrapping="Wrap">
+                            <Run
+                                FontSize="21"
+                                FontWeight="Bold"
+                                Text="{Binding TypeWorkoutText}" />
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
             </Border>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -79,34 +181,46 @@
                 <Border
                     Grid.Row="0"
                     Grid.Column="0"
-                    Margin="5"
-                    Padding="5"
-                    Background="White"
-                    BorderBrush="DarkCyan"
-                    BorderThickness="1"
-                    CornerRadius="10">
+                    Style="{StaticResource BorderStyle}">
                     <StackPanel>
-                        <TextBlock
-                            Margin="10"
-                            HorizontalAlignment="Center"
-                            FontSize="14"
-                            FontWeight="Bold"
-                            Text="Bữa sáng" />
-                        <ScrollViewer Height="50" VerticalScrollBarVisibility="Auto">
+                        <TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Bữa sáng" />
+                        <ScrollViewer Height="70" VerticalScrollBarVisibility="Auto">
                             <Grid>
-                                <ItemsControl x:Name="BreakfastItemsControl">
+                                <ItemsControl x:Name="BreakfastItemsControl" ItemsSource="{Binding BreakfastItems}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                            <Grid Margin="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
                                                 <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemTextBlockStyle}"
+                                                    Text="{Binding Food.food_name}" />
+
                                                 <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
-                                            </StackPanel>
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemServingUnitTextBlockStyle}"
+                                                    Text="{Binding Food.serving_unit}" />
+                                                <TextBlock
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Grid.Column="2"
+                                                    Margin="10"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Center">
+                                                    <Run Text="x" />
+                                                    <Run Text="{Binding food_amount}" />
+                                                </TextBlock>
+                                            </Grid>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
@@ -117,34 +231,45 @@
                 <Border
                     Grid.Row="1"
                     Grid.Column="0"
-                    Margin="5"
-                    Padding="5"
-                    Background="White"
-                    BorderBrush="DarkCyan"
-                    BorderThickness="1"
-                    CornerRadius="10">
+                    Style="{StaticResource BorderStyle}">
                     <StackPanel>
-                        <TextBlock
-                            Margin="10"
-                            HorizontalAlignment="Center"
-                            FontSize="14"
-                            FontWeight="Bold"
-                            Text="Bữa Tối" />
-                        <ScrollViewer Height="50" VerticalScrollBarVisibility="Auto">
+                        <TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Bữa Tối" />
+                        <ScrollViewer Height="70" VerticalScrollBarVisibility="Auto">
                             <Grid>
-                                <ItemsControl x:Name="DinnerItemsControl">
+                                <ItemsControl x:Name="DinnerItemsControl" ItemsSource="{Binding DinnerItems}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                            <Grid Margin="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
                                                 <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemTextBlockStyle}"
+                                                    Text="{Binding Food.food_name}" />
                                                 <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
-                                            </StackPanel>
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemServingUnitTextBlockStyle}"
+                                                    Text="{Binding Food.serving_unit}" />
+                                                <TextBlock
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Grid.Column="2"
+                                                    Margin="10"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Center">
+                                                    <Run Text="x" />
+                                                    <Run Text="{Binding food_amount}" />
+                                                </TextBlock>
+                                            </Grid>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
@@ -155,34 +280,45 @@
                 <Border
                     Grid.Row="0"
                     Grid.Column="1"
-                    Margin="5"
-                    Padding="5"
-                    Background="White"
-                    BorderBrush="DarkCyan"
-                    BorderThickness="1"
-                    CornerRadius="10">
+                    Style="{StaticResource BorderStyle}">
                     <StackPanel>
-                        <TextBlock
-                            Margin="10"
-                            HorizontalAlignment="Center"
-                            FontSize="14"
-                            FontWeight="Bold"
-                            Text="Bữa Trưa" />
-                        <ScrollViewer Height="50" VerticalScrollBarVisibility="Auto">
+                        <TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Bữa Trưa" />
+                        <ScrollViewer Height="70" VerticalScrollBarVisibility="Auto">
                             <Grid>
-                                <ItemsControl x:Name="LunchItemsControl">
+                                <ItemsControl x:Name="LunchItemsControl" ItemsSource="{Binding LunchItems}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                            <Grid Margin="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
                                                 <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemTextBlockStyle}"
+                                                    Text="{Binding Food.food_name}" />
                                                 <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
-                                            </StackPanel>
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemServingUnitTextBlockStyle}"
+                                                    Text="{Binding Food.serving_unit}" />
+                                                <TextBlock
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Grid.Column="2"
+                                                    Margin="10"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Center">
+                                                    <Run Text="x" />
+                                                    <Run Text="{Binding food_amount}" />
+                                                </TextBlock>
+                                            </Grid>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
@@ -193,34 +329,45 @@
                 <Border
                     Grid.Row="1"
                     Grid.Column="1"
-                    Margin="5"
-                    Padding="5"
-                    Background="White"
-                    BorderBrush="DarkCyan"
-                    BorderThickness="1"
-                    CornerRadius="10">
+                    Style="{StaticResource BorderStyle}">
                     <StackPanel>
-                        <TextBlock
-                            Margin="10"
-                            HorizontalAlignment="Center"
-                            FontSize="14"
-                            FontWeight="Bold"
-                            Text="Bữa Xế" />
-                        <ScrollViewer Height="50" VerticalScrollBarVisibility="Auto">
+                        <TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="Bữa Xế" />
+                        <ScrollViewer Height="70" VerticalScrollBarVisibility="Auto">
                             <Grid>
-                                <ItemsControl x:Name="SnackItemsControl">
+                                <ItemsControl x:Name="SnackItemsControl" ItemsSource="{Binding SnackItems}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                            <Grid Margin="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
                                                 <TextBlock
-                                                    FontSize="16"
-                                                    FontWeight="Bold"
-                                                    Text="{Binding Name}" />
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemTextBlockStyle}"
+                                                    Text="{Binding Food.food_name}" />
                                                 <TextBlock
-                                                    FontSize="14"
-                                                    Foreground="Gray"
-                                                    Text="{Binding Amount}" />
-                                            </StackPanel>
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource ItemServingUnitTextBlockStyle}"
+                                                    Text="{Binding Food.serving_unit}" />
+                                                <TextBlock
+                                                    Grid.Row="0"
+                                                    Grid.RowSpan="2"
+                                                    Grid.Column="2"
+                                                    Margin="10"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Center">
+                                                    <Run Text="x" />
+                                                    <Run Text="{Binding food_amount}" />
+                                                </TextBlock>
+                                            </Grid>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>

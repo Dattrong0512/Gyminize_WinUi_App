@@ -471,21 +471,76 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+--Trigger dùng để update lại thông tin calories còn lại trong dailydiary mỗi khi thêm hay xóa thông tin FoodDetail tương ứng 
+CREATE OR REPLACE FUNCTION update_calories_remain()
+RETURNS TRIGGER AS $$
+DECLARE
+    food_calories INT;
+    total_calories_consumed DECIMAL(10, 2);
+BEGIN
+    IF (TG_OP = 'INSERT') THEN
+        SELECT calories INTO food_calories FROM Food WHERE food_id = NEW.food_id;
+        total_calories_consumed := food_calories * NEW.food_amount;
+
+        UPDATE DailyDiary
+        SET calories_remain = calories_remain - total_calories_consumed
+        WHERE dailydiary_id = NEW.dailydiary_id;
+
+    ELSIF (TG_OP = 'DELETE') THEN
+        SELECT calories INTO food_calories FROM Food WHERE food_id = OLD.food_id;
+        total_calories_consumed := food_calories * OLD.food_amount;
+
+        UPDATE DailyDiary
+        SET calories_remain = calories_remain + total_calories_consumed
+        WHERE dailydiary_id = OLD.dailydiary_id;
+
+    END IF;
+
+    RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+
+--Trigger cập nhật lại daily_weight trên DailyDiary khi cập nhật lại thông tin weight  trên customer_health
+CREATE OR REPLACE FUNCTION update_daily_weight()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE DailyDiary
+    SET daily_weight = NEW.weight
+    WHERE customer_id = NEW.customer_id
+      AND diary_date = CURRENT_DATE;
+
+    RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+
 --Kích hoạt trigger
 DROP TRIGGER IF EXISTS trg_generate_workout_details ON PlanDetail;
+DROP TRIGGER IF EXISTS trg_update_calories_remain ON FoodDetail;
+DROP TRIGGER IF EXISTS trg_update_daily_weight ON Customer_Health;
 
 CREATE TRIGGER trg_generate_workout_details
 AFTER INSERT ON PlanDetail
 FOR EACH ROW
 EXECUTE FUNCTION generate_workout_details();
 
+CREATE TRIGGER trg_update_calories_remain
+AFTER INSERT OR DELETE ON FoodDetail
+FOR EACH ROW
+EXECUTE FUNCTION update_calories_remain();
+
+CREATE TRIGGER trg_update_daily_weight
+AFTER UPDATE ON Customer_Health
+FOR EACH ROW
+EXECUTE FUNCTION update_daily_weight();
+
 -- Test trigger
-INSERT INTO PlanDetail (plan_id, customer_id, start_date, end_date)
-VALUES (1, 1, '2024-11-12', '2025-01-07');
+-- INSERT INTO PlanDetail (plan_id, customer_id, start_date, end_date)
+-- VALUES (1, 1, '2024-11-12', '2025-01-07');
 
 select * from PlanDetail;
 SELECT * FROM WorkoutDetail;
 select * from ExerciseDetail;
 select * from exercise;
 select * from TypeWorkout;
-
+select * from FoodDetail;
+select * from DailyDiary;

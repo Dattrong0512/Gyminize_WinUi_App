@@ -34,14 +34,15 @@
                             Height="200"
                             HorizontalAlignment="Center"
                             Background="LightGray"
+                            Foreground="{Binding ProgressForground, Mode=TwoWay}"
                             IsIndeterminate="False"
-                            Value="0" />
+                            Value="{Binding ProgressValue, Mode=TwoWay}" />
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock
                                 HorizontalAlignment="Center"
                                 FontSize="28"
                                 Foreground="Black"
-                                Text="{Binding GoalCalories}" />
+                                Text="{Binding RemainCalories}" />
                             <TextBlock
                                 HorizontalAlignment="Center"
                                 Foreground="Black"
@@ -79,14 +80,14 @@
                             <TextBlock>
                                 <Run FontSize="15" Text="Thức ăn" />
                                 <LineBreak />
-                                <Run FontSize="20" Text="0" />
+                                <Run FontSize="20" Text="{Binding BurnedCalories}" />
                             </TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border
-                Width="340"
+                Width="350"
                 Margin="20"
                 Padding="10"
                 Background="white"
@@ -94,37 +95,35 @@
                 BorderThickness="1"
                 CornerRadius="20">
                 <StackPanel Margin="10" Orientation="Vertical">
-                    <TextBlock Margin="40,0,10,10" Text="Tập luyện" />
+                    <TextBlock
+                        Margin="40,0,10,10"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Text="Tập luyện" />
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                         <Image
                             Width="24"
                             Height="24"
                             Margin="0,0,10,0"
-                            Source="ms-appx:///Assets/Icon/clock.svg" />
+                            Source="{Binding TypeWorkoutIconPath}" />
                         <TextBlock>
-                            <Run
-                                x:Name="exercised_hour"
-                                FontSize="20"
-                                Text="01:30" />
-                            <Run Text="giờ" />
+                            <Run FontSize="20" Text="{Binding TypeWorkoutDate}" />
                         </TextBlock>
                     </StackPanel>
                     <StackPanel
-                        Margin="20,0,0,0"
+                        Margin="10"
                         HorizontalAlignment="Center"
-                        Orientation="Horizontal">
+                        Orientation="Horizontal"
+                        Visibility="{Binding StatusVisibility}">
                         <Image
-                            Width="30"
-                            Height="30"
+                            Width="24"
+                            Height="24"
                             Margin="0,0,10,0"
-                            Source="ms-appx:///Assets/Icon/dumbell.svg" />
-                        <TextBlock>
-                            <Run
-                                x:Name="exercised_remain"
-                                FontSize="20"
-                                Text="6" />
-                            <Run Text="bài tập còn lại" />
-                        </TextBlock>
+                            Source="{Binding StatusIconPath}" />
+                        <TextBlock
+                            FontSize="18"
+                            Text="{Binding ExerciseStatus}"
+                            TextWrapping="Wrap" />
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -147,7 +146,12 @@
                 BorderThickness="1"
                 CornerRadius="10">
                 <Grid>
-                    <TextBlock Margin="10">Cân nặng</TextBlock>
+                    <TextBlock
+                        Margin="10"
+                        FontSize="14"
+                        FontWeight="Bold">
+                        Cân nặng
+                    </TextBlock>
                     <StackPanel
                         Margin="10"
                         HorizontalAlignment="Center"

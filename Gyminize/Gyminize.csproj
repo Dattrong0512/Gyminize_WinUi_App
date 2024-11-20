@@ -42,10 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\google.png" />
+    <None Remove="Assets\Icon\arm.svg" />
+    <None Remove="Assets\Icon\bed.svg" />
     <None Remove="Assets\Icon\clock.svg" />
     <None Remove="Assets\Icon\dumbell.svg" />
+    <None Remove="Assets\Icon\error.svg" />
+    <None Remove="Assets\Icon\fire.svg" />
     <None Remove="Assets\Icon\food.png" />
     <None Remove="Assets\Icon\goal.png" />
+    <None Remove="Assets\Icon\gymplan.svg" />
+    <None Remove="Assets\Icon\ok.svg" />
+    <None Remove="Assets\Icon\weight.svg" />
     <None Remove="Assets\motivation.jpg" />
     <None Remove="Assets\planselection_model\average.png" />
     <None Remove="Assets\planselection_model\beginner.png" />
