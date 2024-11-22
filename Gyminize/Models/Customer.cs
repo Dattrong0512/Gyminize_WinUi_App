@@ -32,7 +32,10 @@ namespace Gyminize.Models
         {
             get; set;
         }
-
+        public string email
+        {
+            get; set;
+        }
         public Customer()
         {
             this.customer_name = "";
@@ -40,9 +43,10 @@ namespace Gyminize.Models
             this.username = "";
             this.customer_password = "";
             this.role_user = 1;
+            this.email = "";
         }
 
-        public Customer(string customername,int auth_type, string username, string password, int role_user)
+        public Customer(string customername,int auth_type, string username, string password, int role_user,string email)
         {
 
             this.customer_name = customername;
@@ -50,6 +54,7 @@ namespace Gyminize.Models
             this.username = username;
             this.customer_password = password;
             this.role_user = role_user;
+            this.email= email;
         }
         // Phương thức static để lấy instance duy nhất của Customer
         

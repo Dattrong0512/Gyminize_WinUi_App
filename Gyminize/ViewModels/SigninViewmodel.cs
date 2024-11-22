@@ -23,6 +23,12 @@ using Windows.ApplicationModel.Background;
 using Gyminize.Services;
 using Windows.Web.AtomPub;
 using Gyminize.Core.Services;
+using Twilio.Rest.Verify.V2.Service;
+using Twilio;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
+using System.Net.Mail;
 namespace Gyminize.ViewModels
 {
     public partial class SigninViewmodel : ObservableObject
@@ -79,6 +85,32 @@ namespace Gyminize.ViewModels
         }
         private async void OnLoginByUser()
         {
+            //Bắt đầu đoạn code gửi mail
+            IEmailSender emailSender = new EmailSender();
+
+                // Cấu hình email cần gửi
+                string recipientEmail = "trongleviet06@gmail.com"; // Địa chỉ email người nhận, có thể thay email bất kì để test cũng được
+                string subject = "Mã xác thực cho Gyminize App";         // Chủ đề email
+                Random random = new Random();
+                string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
+
+            
+                // Nội dung email
+                string body = $"<h1>Mã xác thực của bạn là: {verificationCode}</h1>" +
+                $"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
+
+                // Gửi email
+                try
+                {
+                    await emailSender.SendEmailAsync(recipientEmail, subject, body);
+                    Console.WriteLine("Email sent successfully!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to send email: {ex.Message}");
+                }
+
+            //Kết thúc đoạn code gửi mail
             if (CheckCustomerByGet(Username, Password))
             {
                if(Password!= customer.customer_password)

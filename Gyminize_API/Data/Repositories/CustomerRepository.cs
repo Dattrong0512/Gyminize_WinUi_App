@@ -39,6 +39,8 @@ namespace Gyminize_API.Data.Repositories
                 check_customer.auth_type = customer.auth_type;
                 check_customer.customer_name = customer.customer_name;
                 check_customer.auth_type = customer.auth_type;
+                check_customer.role_user = customer.role_user;
+                check_customer.email = customer.email;
                 return customer;
             }
             _context.SaveChanges();

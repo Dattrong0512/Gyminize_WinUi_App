@@ -34,6 +34,10 @@ namespace Gyminize_API.Data.Models
         {
             get; set;
         }
+        public required string email
+        {
+            get; set;
+        }
         public virtual Customer_health? Customer_health
         {
             get; set;

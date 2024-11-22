@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS Customer (
     username VARCHAR(100), -- thông username/password (có thể null nếu dùng email)         
     customer_password VARCHAR(255),               
     role_user INT,
+	email VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -172,18 +173,18 @@ ALTER SEQUENCE orders_orders_id_seq RESTART WITH 1;
 
 
  -- Chèn dữ liệu vào bảng Customer
-INSERT INTO Customer (customer_name, auth_type, username, customer_password, role_user)
+INSERT INTO Customer (customer_name, auth_type, username, customer_password, role_user, email)
 VALUES 
-('John Doe', 1, 'johndoe', 'password123', 2),
-('Jane Smith', 1, 'janesmith', 'password456', 1),
-('Alice Brown', 1, 'alicebrown', 'password789', 2),
-('Bob Green', 1, 'bobgreen', 'password321', 1),
-('Charlie Blue', 1, 'charlieblue', 'password654', 2),
-('David Black', 1, 'davidblack', 'password987', 1),
-('Emma White', 1, 'emmawhite', 'password111', 2),
-('Fiona Red', 1, 'fionared', 'password222', 1),
-('George Yellow', 1, 'georgeyellow', 'password333', 2),
-('Helen Purple', 1, 'helenpurple', 'password444', 1);
+('John Doe', 1, 'johndoe', 'password123', 2,'gyminize123@gmail.com'),
+('Jane Smith', 1, 'janesmith', 'password456', 1,'gyminize123@gmail.com'),
+('Alice Brown', 1, 'alicebrown', 'password789', 2,'gyminize123@gmail.com'),
+('Bob Green', 1, 'bobgreen', 'password321', 1,'gyminize123@gmail.com'),
+('Charlie Blue', 1, 'charlieblue', 'password654', 2,'gyminize123@gmail.com'),
+('David Black', 1, 'davidblack', 'password987', 1,'gyminize123@gmail.com'),
+('Emma White', 1, 'emmawhite', 'password111', 2,'gyminize123@gmail.com'),
+('Fiona Red', 1, 'fionared', 'password222', 1,'gyminize123@gmail.com'),
+('George Yellow', 1, 'georgeyellow', 'password333', 2,'gyminize123@gmail.com'),
+('Helen Purple', 1, 'helenpurple', 'password444', 1,'gyminize123@gmail.com');
 
 -- Chèn dữ liệu vào bảng Customer_Health
 INSERT INTO Customer_Health (customer_id, gender, height, weight, age, activity_level, body_fat, tdee)
@@ -544,3 +545,4 @@ select * from exercise;
 select * from TypeWorkout;
 select * from FoodDetail;
 select * from DailyDiary;
+select * from Customer;
