@@ -10,6 +10,9 @@ using Gyminize;
 using Microsoft.UI.Xaml.Documents;
 using Microsoft.UI.Text;
 using Gyminize.Models;
+using Microsoft.UI.Xaml.Media;
+using System.Diagnostics;
+using Gyminize.Services;
 
 public class DialogService : IDialogService
 {
@@ -248,5 +251,166 @@ public class DialogService : IDialogService
         {
             await exerciseDialog.ShowAsync();
         });
+    }
+
+    public async Task<bool> ShowVerificationDialogAsync(string email, string code)
+    {
+        // Tạo Grid để sắp xếp nội dung
+        var grid = new Grid();
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Title
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Email
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Description
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // TextBox
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Status
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Resend email
+
+        // Tiêu đề
+        var titleTextBlock = new TextBlock
+        {
+            Text = "Kiểm tra email của bạn",
+            FontSize = 24,
+            FontWeight = FontWeights.Bold,
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        // Email
+        var emailTextBlock = new TextBlock
+        {
+            Text = email,
+            FontSize = 18,
+            FontWeight = FontWeights.SemiBold,
+            Margin = new Thickness(0, 0, 0, 10),
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 128, 128, 128)) // Màu xám
+        };
+
+        // Mô tả
+        var descriptionTextBlock = new TextBlock
+        {
+            Text = "Chúng tôi đã gửi một mã xác nhận đến email của bạn. Vui lòng kiểm tra hộp thư và nhập mã để tiếp tục.",
+            FontSize = 16,
+            TextWrapping = TextWrapping.Wrap,
+            Margin = new Thickness(0, 0, 0, 20),
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 0, 0)) // Màu đen
+        };
+
+        // Tạo TextBox để người dùng nhập mã xác thực
+        var verificationTextBox = new TextBox
+        {
+            PlaceholderText = "Nhập mã xác thực",
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        // Tạo TextBlock cho trạng thái
+        var statusTextBlock = new TextBlock
+        {
+            Text = string.Empty, // Trạng thái ban đầu trống
+            FontSize = 14,
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
+            Visibility = Visibility.Collapsed, // Ẩn ban đầu
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        // Tạo TextBlock cho "Không nhận được? Gửi lại mã"
+        var resendEmailTextBlock = new TextBlock
+        {
+            Text = "Không nhận được? Gửi lại mã",
+            FontSize = 16,
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)), // Màu xanh tùy chỉnh
+            TextDecorations = Windows.UI.Text.TextDecorations.Underline,
+            HorizontalAlignment = HorizontalAlignment.Center
+        };
+
+        // Thêm sự kiện Click cho TextBlock
+        resendEmailTextBlock.Tapped += (sender, e) =>
+        {
+            Random random = new Random();
+            code = random.Next(0, 10000).ToString("D4"); // Tạo mã xác thực random
+            sendVerificationCode(email, code);
+        };
+
+        // Thêm các thành phần vào Grid
+        grid.Children.Add(titleTextBlock);
+        Grid.SetRow(titleTextBlock, 0);
+
+        grid.Children.Add(emailTextBlock);
+        Grid.SetRow(emailTextBlock, 1);
+
+        grid.Children.Add(descriptionTextBlock);
+        Grid.SetRow(descriptionTextBlock, 2);
+
+        grid.Children.Add(verificationTextBox);
+        Grid.SetRow(verificationTextBox, 3);
+
+        grid.Children.Add(statusTextBlock);
+        Grid.SetRow(statusTextBlock, 4);
+
+        grid.Children.Add(resendEmailTextBlock);
+        Grid.SetRow(resendEmailTextBlock, 5);
+
+        // Tạo ContentDialog với các nút Primary và Close
+        var verificationDialog = new ContentDialog
+        {
+            Title = null, // Đặt tiêu đề trong nội dung chính thay vì thuộc tính Title
+            Content = grid,
+            PrimaryButtonText = "Xác nhận",
+            CloseButtonText = "Hủy"
+        };
+
+        // Ngăn ContentDialog tự động đóng khi nhấn "Xác nhận"
+        verificationDialog.Closing += (sender, args) =>
+        {
+            // Chỉ xử lý khi người dùng nhấn nút "Xác nhận"
+            if (verificationDialog.Content != null && args.Result == ContentDialogResult.Primary)
+            {
+                string enteredCode = verificationTextBox.Text;
+
+                // Nếu mã sai, hiển thị trạng thái và ngăn đóng dialog
+                if (enteredCode != code)
+                {
+                    statusTextBlock.Text = "Mã xác thực không hợp lệ. Vui lòng thử lại.";
+                    statusTextBlock.Visibility = Visibility.Visible;
+                    args.Cancel = true; // Giữ dialog mở
+                }
+                else
+                {
+                    statusTextBlock.Visibility = Visibility.Collapsed; // Ẩn thông báo nếu mã đúng
+                }
+            }
+        };
+
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            verificationDialog.XamlRoot = rootElement.XamlRoot;
+        }
+
+        bool isValid = false;
+
+        // Hiển thị dialog và chờ kết quả
+        var result = await verificationDialog.ShowAsync();
+
+        if (result == ContentDialogResult.Primary && statusTextBlock.Visibility == Visibility.Collapsed)
+        {
+            isValid = true; // Mã đúng
+        }
+
+        return isValid;
+    }
+
+    public async void sendVerificationCode(string email, string code)
+    {
+        IEmailSender emailSender = new EmailSender();
+        var subject = "Mã xác thực cho Gyminize App";
+        var body = $"<h1>Mã xác thực của bạn là: {code}</h1>" +
+                   $"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
+
+        try
+        {
+            await emailSender.SendEmailAsync(email, subject, body);
+            Console.WriteLine("Email sent successfully!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to send email: {ex.Message}");
+        }
     }
 }

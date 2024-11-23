@@ -34,8 +34,6 @@ namespace Gyminize.Views
         {
             ViewModel = App.GetService<SignupViewModel>();
             this.InitializeComponent();
-            var navigationService = App.GetService<INavigationService>();
-            ViewModel = new SignupViewModel(navigationService);
             this.DataContext = ViewModel;
         }
     }

@@ -11,6 +11,7 @@ using System.Net;
 using Gyminize.ViewModels;
 using Gyminize.Contracts.Services;
 using Gyminize.Services;
+
 namespace Gyminize.ViewModels
 {
     public partial class SignupViewModel : ObservableObject
@@ -25,20 +26,26 @@ namespace Gyminize.ViewModels
         private string password;
 
         [ObservableProperty]
+        private string email;
+
+        [ObservableProperty]
         private string confirmPassword;
 
         [ObservableProperty]
         private bool isAgree;
 
         private readonly INavigationService _navigationService;
+
+        private readonly IDialogService _dialogService;
         public ICommand SignupCommand
         {
             get;
         }
 
-        public SignupViewModel(INavigationService navigationService)
+        public SignupViewModel(INavigationService navigationService, IDialogService dialogService)
         {
             _navigationService = navigationService;
+            _dialogService = dialogService;
             SignupCommand = new RelayCommand(OnSignUp);
         }
         private bool checkExistCustomer(string username)
@@ -56,7 +63,7 @@ namespace Gyminize.ViewModels
             }
             return false;   
         }
-        private void OnSignUp()
+        private async void OnSignUp()
         {
             try
             {
@@ -65,18 +72,31 @@ namespace Gyminize.ViewModels
                     if(checkExistCustomer(Username))
                     {
                         SignupStatus = "Lỗi đăng ký: Tài khoản đã tồn tại!";
+                    } else if( 1 == 2) // Check email da ton tai o day
+                    {
+                        SignupStatus = "Lỗi đăng ký: Email đã tồn tại";
                     }
                     else
                     {
                         if (IsAgree == true)
                         {
-                            PostCustomer(Username, Password);
-                            var pageKey = typeof(Guide1ViewModel).FullName;
-                            if (pageKey != null)
+                            string recipientEmail = "huaminhquan111@gmail.com";      
+                            Random random = new Random();
+                            string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
+                            sendVerificationCode(recipientEmail, verificationCode);
+                            if (await _dialogService.ShowVerificationDialogAsync(recipientEmail,verificationCode) ==  true)
                             {
-                                _navigationService.NavigateTo(pageKey, Username);
+                                PostCustomer(Username, Password);
+                                var pageKey = typeof(Guide1ViewModel).FullName;
+                                if (pageKey != null)
+                                {
+                                    _navigationService.NavigateTo(pageKey, Username);
+                                }
+                                SignupStatus = $"Đăng ký thành công cho {Username}!";
+                            } else
+                            {
+                                // do nothing
                             }
-                            SignupStatus = $"Đăng ký thành công cho {Username}!";
                         }
                         else
                         {
@@ -138,6 +158,26 @@ namespace Gyminize.ViewModels
         private void output(string message)
         {
             Debug.WriteLine(message);
+        }
+
+        public async void sendVerificationCode(string email, string code)
+        {
+            IEmailSender emailSender = new EmailSender();
+            string subject = "Mã xác thực cho Gyminize App";
+            // Nội dung email
+            string body = $"<h1>Mã xác thực của bạn là: {code}</h1>" +
+            $"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
+
+            // Gửi email
+            try
+            {
+                await emailSender.SendEmailAsync(email, subject, body);
+                Console.WriteLine("Email sent successfully!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to send email: {ex.Message}");
+            }
         }
     }
 }

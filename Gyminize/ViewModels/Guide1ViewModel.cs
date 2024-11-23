@@ -122,13 +122,6 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         set => SetProperty(ref _weightTextBox, value);
     }
 
-    private bool _isValid = false;
-    public bool IsValid
-    {
-        get => _isValid;
-        set => SetProperty(ref _isValid, value);
-    }
-
     private TextBlock _weightErrorTextBlock;
     public TextBlock WeightErrorTextBlock
     {
@@ -163,20 +156,20 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
             {
                 AgeErrorTextBlock.Visibility = Visibility.Visible;
                 AgeErrorTextBlock.Text = "*Ứng dụng chỉ hỗ trợ đối tượng từ 16-70 tuổi";
-                IsValid = false;
+              
             }
             else
             {
                 AgeErrorTextBlock.Visibility = Visibility.Collapsed;
                 AgeErrorTextBlock.Text = "*OK";
-                IsValid = true;
+ 
             }
         }
         else if (string.IsNullOrEmpty(AgeTextBox.Text))
         {
             AgeErrorTextBlock.Visibility = Visibility.Visible;
             AgeErrorTextBlock.Text = "*Vui lòng nhập một độ tuổi hợp lệ";
-            IsValid = false;
+
         }
     }
 
@@ -188,13 +181,11 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
             {
                 HeightErrorTextBlock.Visibility = Visibility.Visible;
                 HeightErrorTextBlock.Text = "*Chiều cao không được hỗ trợ";
-                IsValid = false;
             }
             else
             {
                 HeightErrorTextBlock.Visibility = Visibility.Collapsed;
                 HeightErrorTextBlock.Text = "*OK";
-                IsValid = true;
             }
         }
         else if (string.IsNullOrEmpty(HeightTextBox.Text))
@@ -252,7 +243,7 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
 
     private void NavigateToGuidePage2()
     {
-        if(IsValid == true) {
+        if(isValidData()) {
             var customerInfo = new CustomerInfo
             {
                 username = _username,
@@ -274,7 +265,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
         else
         {
-            //xu li dialog
+            AgeErrorTextBlock.Visibility = Visibility.Visible;
+            HeightErrorTextBlock.Visibility = Visibility.Visible;
+            WeightErrorTextBlock.Visibility = Visibility.Visible;
         }
     }
 
@@ -299,7 +292,6 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
                 AgeTextBox.Text = _customerInfoBack.Age.ToString();
                 SelectedActivityLevel = new ComboBoxItem { Content = GetActivityLevel(_customerInfoBack.ActivityLevel) };
                 customerInfo.BodyFat = _customerInfoBack.BodyFat;
-                IsValid = true;
             }
         } else if(parameter is string user)
         {
@@ -307,8 +299,16 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    private bool isValidData()
+    {
+        bool isAgeValid = AgeErrorTextBlock.Visibility != Visibility.Visible && !string.IsNullOrEmpty(AgeTextBox.Text);
+        bool isHeightValid = HeightErrorTextBlock.Visibility != Visibility.Visible && !string.IsNullOrEmpty(HeightTextBox.Text);
+        bool isWeightValid = WeightErrorTextBlock.Visibility != Visibility.Visible && !string.IsNullOrEmpty(WeightTextBox.Text);
+
+        return isAgeValid && isHeightValid && isWeightValid;
+    }
+
     public void OnNavigatedFrom()
     {
-
     }
 }

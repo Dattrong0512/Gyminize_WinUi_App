@@ -12,4 +12,6 @@ public interface IDialogService
     Task<bool> ShowFullExerciseWorkoutDialogAsync(List<Exercisedetail> workouts);
 
     Task ShowExerciseVideoDialogAsync(Exercise exercise);
+
+    Task<bool> ShowVerificationDialogAsync(string email, string code);
 }

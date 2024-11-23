@@ -88,27 +88,27 @@ namespace Gyminize.ViewModels
             //Bắt đầu đoạn code gửi mail
             IEmailSender emailSender = new EmailSender();
 
-                // Cấu hình email cần gửi
-                string recipientEmail = "trongleviet06@gmail.com"; // Địa chỉ email người nhận, có thể thay email bất kì để test cũng được
-                string subject = "Mã xác thực cho Gyminize App";         // Chủ đề email
-                Random random = new Random();
-                string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
+            // Cấu hình email cần gửi
+            string recipientEmail = "trongleviet06@gmail.com"; // Địa chỉ email người nhận, có thể thay email bất kì để test cũng được
+                     // Chủ đề email
+            Random random = new Random();
+            string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
 
-            
-                // Nội dung email
-                string body = $"<h1>Mã xác thực của bạn là: {verificationCode}</h1>" +
-                $"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
+            string subject = "Mã xác thực cho Gyminize App";
+            // Nội dung email
+            string body = $"<h1>Mã xác thực của bạn là: {verificationCode}</h1>" +
+            $"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
 
-                // Gửi email
-                try
-                {
-                    await emailSender.SendEmailAsync(recipientEmail, subject, body);
-                    Console.WriteLine("Email sent successfully!");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Failed to send email: {ex.Message}");
-                }
+            // Gửi email
+            try
+            {
+                await emailSender.SendEmailAsync(recipientEmail, subject, body);
+                Console.WriteLine("Email sent successfully!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to send email: {ex.Message}");
+            }
 
             //Kết thúc đoạn code gửi mail
             if (CheckCustomerByGet(Username, Password))
@@ -139,10 +139,6 @@ namespace Gyminize.ViewModels
                             _navigationService.NavigateTo(pageKey, Username);
                         }
                     }
-
-
-
-
                     output("Đăng nhập thành công!");
                 }          
             }
