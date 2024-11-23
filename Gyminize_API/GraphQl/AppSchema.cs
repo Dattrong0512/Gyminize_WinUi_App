@@ -25,6 +25,7 @@ namespace Gyminize_API.GraphQL
             // Tạo một ObjectGraphType để gộp các Mutation
             var combinedMutation = new ObjectGraphType { Name = "Mutation" };
             combinedMutation.AddField(customerMutation.Fields.Find("addCustomer")); // Thêm field từ CustomerMutation
+            combinedMutation.AddField(customerMutation.Fields.Find("updatePasswordCustomer")); // Thêm field từ CustomerMutation
             combinedMutation.AddField(customerHealthMutation.Fields.Find("addCustomer_health")); // Thêm field từ CustomerHealthMutation
             combinedMutation.AddField(customerHealthMutation.Fields.Find("updateWeightOfCustomer")); // Thêm field từ CustomerHealthMutation
             combinedMutation.AddField(dailydiaryMutations.Fields.Find("addDailydiary"));

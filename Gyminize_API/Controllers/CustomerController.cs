@@ -37,5 +37,11 @@ namespace Gyminize_API.Controllers
             var updateCustomer = _customerRepository.updateCustomer(username, customer);
             return Ok(updateCustomer);
         }
+        [HttpPut("update/{username}/password/{password}")]
+        public IActionResult UpdatePassword(string username, string password)
+        {
+            var updatePassword = _customerRepository.updatePassworkByUser(username, password);
+            return Ok(updatePassword);
+        }
     }
 }

@@ -25,6 +25,24 @@ namespace Gyminize_API.GraphQl.Mutations
                     }
                     return null;
                 });
+            Field<CustomerType>(
+                "updatePasswordCustomer",
+                "IsUsed to update a password of customer",
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "username" },
+                    new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "password" }
+                ),
+                resolve: context =>
+                {
+                    var customer = context.GetArgument<string>("username");
+                    var password = context.GetArgument<string>("password");
+                    if (customer != null)
+                    {
+                        return repository.updatePassworkByUser(customer,password);
+                    }
+                    return null;
+                });
+
         }
 
     }

@@ -29,6 +29,18 @@ namespace Gyminize_API.Data.Repositories
             _context.SaveChanges();
             return customer;
         }
+        public Customer updatePassworkByUser(string username, string password)
+        {
+            var check_customer = _context.CustomerEntity.Where(x=>x.username == username).FirstOrDefault();
+            if(check_customer != null)
+            {
+                check_customer.customer_password = password;
+                _context.SaveChanges();
+                return check_customer;
+            }
+            return check_customer;
+        }
+
         public Customer updateCustomer(string username, Customer customer)
         {
             var check_customer = _context.CustomerEntity.Where(x => x.username == customer.username).FirstOrDefault();
