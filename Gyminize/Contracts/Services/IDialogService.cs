@@ -14,4 +14,8 @@ public interface IDialogService
     Task ShowExerciseVideoDialogAsync(Exercise exercise);
 
     Task<bool> ShowVerificationDialogAsync(string email, string code);
+
+    Task<(string email, string username)> ShowUsernameInputDialog();
+
+    Task<string> ShowResetPasswordDialogAsync();
 }

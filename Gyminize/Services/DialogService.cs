@@ -13,6 +13,7 @@ using Gyminize.Models;
 using Microsoft.UI.Xaml.Media;
 using System.Diagnostics;
 using Gyminize.Services;
+using Gyminize.Core.Services;
 
 public class DialogService : IDialogService
 {
@@ -90,7 +91,7 @@ public class DialogService : IDialogService
             Title = "Danh sách phát bài tập",
             PrimaryButtonText = "Previous",
             SecondaryButtonText = "Next",
-            
+
         };
         _workoutDialog.Resources["ContentDialogMaxWidth"] = 2000;
         _workoutDialog.Resources["ContentDialogMaxHeight"] = 1500;
@@ -123,7 +124,7 @@ public class DialogService : IDialogService
         grid.Children.Add(_exerciseVideoWebView);
         Grid.SetRow(_exerciseVideoWebView, 2);
 
-        
+
         _workoutDialog.Content = grid;
 
         UpdateExerciseDialog();
@@ -194,7 +195,7 @@ public class DialogService : IDialogService
         var exerciseRepsTextBlock = new TextBlock { FontSize = 18, Text = $"Reps: {exercise.reps}" };
         var exerciseVideoWebView = new WebView2 { Width = 900, Height = 320, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch };
 
-        
+
         exerciseVideoWebView.Source = new Uri(exercise.linkvideo);
 
         // Arrange the elements in a Grid
@@ -347,13 +348,29 @@ public class DialogService : IDialogService
         grid.Children.Add(resendEmailTextBlock);
         Grid.SetRow(resendEmailTextBlock, 5);
 
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
+        primaryButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+
+        var closeButtonStyle = new Style(typeof(Button));
+        closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
+        closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
+        closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
+        closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+
         // Tạo ContentDialog với các nút Primary và Close
         var verificationDialog = new ContentDialog
         {
             Title = null, // Đặt tiêu đề trong nội dung chính thay vì thuộc tính Title
             Content = grid,
             PrimaryButtonText = "Xác nhận",
-            CloseButtonText = "Hủy"
+            CloseButtonText = "Hủy",
+            PrimaryButtonStyle = primaryButtonStyle,
+            CloseButtonStyle = closeButtonStyle
         };
 
         // Ngăn ContentDialog tự động đóng khi nhấn "Xác nhận"
@@ -383,16 +400,18 @@ public class DialogService : IDialogService
             verificationDialog.XamlRoot = rootElement.XamlRoot;
         }
 
-        bool isValid = false;
+        var isValid = false;
 
         // Hiển thị dialog và chờ kết quả
-        var result = await verificationDialog.ShowAsync();
-
-        if (result == ContentDialogResult.Primary && statusTextBlock.Visibility == Visibility.Collapsed)
+        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        await dispatcherQueue.EnqueueAsync(async () =>
         {
-            isValid = true; // Mã đúng
-        }
-
+            var result = await verificationDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary && statusTextBlock.Visibility == Visibility.Collapsed)
+            {
+                isValid = true; // Mã đúng
+            }
+        });
         return isValid;
     }
 
@@ -412,5 +431,246 @@ public class DialogService : IDialogService
         {
             Console.WriteLine($"Failed to send email: {ex.Message}");
         }
+    }
+
+    public async Task<(string email, string username)> ShowUsernameInputDialog()
+    {
+        var grid = new Grid();
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Title
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // TextBox
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Status
+
+        var titleTextBlock = new TextBlock
+        {
+            Text = "Nhập username tài khoản",
+            FontSize = 24,
+            FontWeight = FontWeights.Bold,
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var usernameTextBox = new TextBox
+        {
+            PlaceholderText = "Tên đăng nhập",
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var statusTextBlock = new TextBlock
+        {
+            Text = string.Empty, // Trạng thái ban đầu trống
+            FontSize = 14,
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
+            Visibility = Visibility.Collapsed, // Ẩn ban đầu
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        grid.Children.Add(titleTextBlock);
+        Grid.SetRow(titleTextBlock, 0);
+
+        grid.Children.Add(usernameTextBox);
+        Grid.SetRow(usernameTextBox, 1);
+
+        grid.Children.Add(statusTextBlock);
+        Grid.SetRow(statusTextBlock, 2);
+
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
+        primaryButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+
+        var closeButtonStyle = new Style(typeof(Button));
+        closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
+        closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
+        closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
+        closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+
+        var inputUsernameDialog = new ContentDialog
+        {
+            Title = null, 
+            Content = grid,
+            PrimaryButtonText = "Xác nhận",
+            CloseButtonText = "Hủy",
+            PrimaryButtonStyle = primaryButtonStyle,
+            CloseButtonStyle = closeButtonStyle
+        };
+
+        var validEmail = "";
+        var validUsername = "";
+        inputUsernameDialog.Closing += (sender, args) =>
+        {
+            if (inputUsernameDialog.Content != null && args.Result == ContentDialogResult.Primary)
+            {
+                string enteredUsername = usernameTextBox.Text;
+
+                if (string.IsNullOrWhiteSpace(enteredUsername))
+                {
+                    statusTextBlock.Text = "Tên đăng nhập không được để trống";
+                    statusTextBlock.Visibility = Visibility.Visible;
+                    args.Cancel = true;
+                }
+                else
+                {
+                    var endpoint = $"api/Customer/get/username/" + enteredUsername;
+                    var _customerInfo = ApiServices.Get<Customer>(endpoint);
+                    if (_customerInfo != null)
+                    {
+                        validEmail = _customerInfo.email;
+                        validUsername = enteredUsername;
+                        statusTextBlock.Visibility = Visibility.Collapsed;
+                    } 
+                    else
+                    {
+                        statusTextBlock.Text = "Tên đăng nhập không tồn tại";
+                        statusTextBlock.Visibility = Visibility.Visible;
+                        args.Cancel = true;
+                    }
+                }
+            }
+        };
+
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            inputUsernameDialog.XamlRoot = rootElement.XamlRoot;
+        }
+        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        await dispatcherQueue.EnqueueAsync(async () =>
+        {
+            await inputUsernameDialog.ShowAsync();
+        });
+        return (validEmail, validUsername);
+    }
+
+    public async Task<string> ShowResetPasswordDialogAsync()
+    {
+        var grid = new Grid();
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Title
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // PasswordBox
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // PBoxStatus
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // ConfirmPasswordBox
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // CPBoxStatus
+
+        var titleTextBlock = new TextBlock
+        {
+            Text = "Đổi mật khẩu",
+            FontSize = 24,
+            FontWeight = FontWeights.Bold,
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var passwordBox = new PasswordBox
+        {
+            PlaceholderText = "Mật khẩu mới",
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var passwordStatusTextBlock = new TextBlock
+        {
+            Text = string.Empty, // Trạng thái ban đầu trống
+            FontSize = 14,
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
+            Visibility = Visibility.Collapsed, // Ẩn ban đầu
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var confirmPasswordBox = new PasswordBox
+        {
+            PlaceholderText = "Nhập lại mật khẩu mới",
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var confirmPasswordStatusTextBlock = new TextBlock
+        {
+            Text = string.Empty, // Trạng thái ban đầu trống
+            FontSize = 14,
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
+            Visibility = Visibility.Collapsed, // Ẩn ban đầu
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        grid.Children.Add(titleTextBlock);
+        Grid.SetRow(titleTextBlock, 0);
+
+        grid.Children.Add(passwordBox);
+        Grid.SetRow(passwordBox, 1);
+
+        grid.Children.Add(passwordStatusTextBlock);
+        Grid.SetRow(passwordStatusTextBlock, 2);
+
+        grid.Children.Add(confirmPasswordBox);
+        Grid.SetRow(confirmPasswordBox, 3);
+
+        grid.Children.Add(confirmPasswordStatusTextBlock);
+        Grid.SetRow(confirmPasswordStatusTextBlock, 4);
+
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
+        primaryButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+
+        var closeButtonStyle = new Style(typeof(Button));
+        closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
+        closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
+        closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
+        closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+
+        var resetPasswordDialog = new ContentDialog
+        {
+            Title = null,
+            Content = grid,
+            PrimaryButtonText = "Xác nhận",
+            CloseButtonText = "Hủy",
+            PrimaryButtonStyle = primaryButtonStyle,
+            CloseButtonStyle = closeButtonStyle
+        };
+
+        var validPassword = "";
+
+        resetPasswordDialog.Closing += (sender, args) =>
+        {
+            if (resetPasswordDialog.Content != null && args.Result == ContentDialogResult.Primary)
+            {
+                string enteredPassword = passwordBox.Password;
+                string enteredConfirmPassword = confirmPasswordBox.Password;
+
+                if (string.IsNullOrWhiteSpace(enteredPassword))
+                {
+                    passwordStatusTextBlock.Text = "Mật khẩu không được để trống";
+                    passwordStatusTextBlock.Visibility = Visibility.Visible;
+                    args.Cancel = true;
+                } else if (string.IsNullOrWhiteSpace(enteredConfirmPassword))
+                {
+                    confirmPasswordStatusTextBlock.Text = "Mật khẩu nhập lại không được để trống";
+                    confirmPasswordStatusTextBlock.Visibility = Visibility.Visible;
+                    args.Cancel = true;
+                } else if (enteredPassword != enteredConfirmPassword)
+                {
+                    confirmPasswordStatusTextBlock.Text = "Mật khẩu nhập lại không khớp";
+                    confirmPasswordStatusTextBlock.Visibility = Visibility.Visible;
+                    args.Cancel = true;
+                }
+                else
+                {
+                    validPassword = enteredPassword;
+                    passwordStatusTextBlock.Visibility = Visibility.Collapsed;
+                    confirmPasswordStatusTextBlock.Visibility = Visibility.Collapsed;
+                }
+            }
+        };
+
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            resetPasswordDialog.XamlRoot = rootElement.XamlRoot;
+        }
+        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        await dispatcherQueue.EnqueueAsync(async () =>
+        {
+            await resetPasswordDialog.ShowAsync();
+        });
+        return validPassword;
     }
 }

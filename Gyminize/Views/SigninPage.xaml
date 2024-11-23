@@ -47,7 +47,6 @@
                     Padding="10"
                     Password="{Binding Password, Mode=TwoWay}"
                     PlaceholderText="Mật khẩu" />
-
                 <CheckBox
                     Margin="15,0,0,0"
                     Padding="10"
@@ -59,7 +58,7 @@
                     HorizontalAlignment="Center"
                     FontSize="14"
                     FontStyle="Italic"
-                    Foreground="Red"
+                    Foreground="{Binding StatusColor, Mode=TwoWay}"
                     Text="{Binding LoginStatus}" />
                 <Button
                     Width="300"
@@ -73,8 +72,10 @@
                     Margin="5"
                     HorizontalAlignment="Center"
                     FontSize="14"
-                    FontStyle="Italic">
-                    Hoặc
+                    FontStyle="Italic"
+                    Tapped="ForgotPasswordTextBlock_Tapped"
+                    TextDecorations="Underline">
+                    Quên mật khẩu ?
                 </TextBlock>
                 <Button
                     x:Name="Login"

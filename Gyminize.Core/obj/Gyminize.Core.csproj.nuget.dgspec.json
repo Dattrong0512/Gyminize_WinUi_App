@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hi\\Desktop\\DO_AN_WIN\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {}
+    "J:\\Study\\WindowPrograming\\Clone_10\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hi\\Desktop\\DO_AN_WIN\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {
+    "J:\\Study\\WindowPrograming\\Clone_10\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hi\\Desktop\\DO_AN_WIN\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj",
+        "projectUniqueName": "J:\\Study\\WindowPrograming\\Clone_10\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj",
         "projectName": "Gyminize.Core",
-        "projectPath": "C:\\Users\\Hi\\Desktop\\DO_AN_WIN\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj",
-        "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hi\\Desktop\\DO_AN_WIN\\Gyminize_WinUi_App\\Gyminize.Core\\obj\\",
+        "projectPath": "J:\\Study\\WindowPrograming\\Clone_10\\Gyminize_WinUi_App\\Gyminize.Core\\Gyminize.Core.csproj",
+        "packagesPath": "C:\\Users\\Bach Yen\\.nuget\\packages\\",
+        "outputPath": "J:\\Study\\WindowPrograming\\Clone_10\\Gyminize_WinUi_App\\Gyminize.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bach Yen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,9 +44,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net7.0": {
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

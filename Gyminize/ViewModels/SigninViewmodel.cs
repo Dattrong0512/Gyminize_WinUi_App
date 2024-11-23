@@ -29,6 +29,9 @@ using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 using System.Net.Mail;
+using Microsoft.UI.Xaml.Media;
+using Windows.UI;
+using System.Drawing;
 namespace Gyminize.ViewModels
 {
     public partial class SigninViewmodel : ObservableObject
@@ -41,9 +44,25 @@ namespace Gyminize.ViewModels
         [ObservableProperty]
         private string password;
         private readonly INavigationService _navigationService;
+        private readonly IDialogService _dialogService;
         private Customer customer;
         private UIElement? _shell = null;
         public  ILocalSettingsService _localSettingsService;
+
+        private SolidColorBrush _statusColor;
+        public SolidColorBrush StatusColor
+        {
+            get => _statusColor;
+            set
+            {
+                if (_statusColor != value)
+                {
+                    _statusColor = value;
+                    OnPropertyChanged(nameof(StatusColor));
+                }
+            }
+        }
+
         public ICommand LoginCommandByGoogle
         {
             get;
@@ -57,6 +76,11 @@ namespace Gyminize.ViewModels
             get;
         }
 
+        public ICommand ForgotPasswordProcessingCommand
+        {
+            get;
+        }
+
         // OAuth 2.0 client configuration
         const string clientID = "25264695175-026qgqsmvslrgn5gm2vj9gseu1ugf4ro.apps.googleusercontent.com";
         const string clientSecret = "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"; // Thêm client_secret
@@ -65,12 +89,14 @@ namespace Gyminize.ViewModels
         const string tokenEndpoint = "https://oauth2.googleapis.com/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
         
-        public SigninViewmodel(INavigationService navigationService, ILocalSettingsService localSettings)
+        public SigninViewmodel(INavigationService navigationService, ILocalSettingsService localSettings, IDialogService dialogService)
         {
             _navigationService = navigationService;
+            _dialogService = dialogService;
             LoginCommandByGoogle = new RelayCommand(OnLoginByGoogle);
             LoginCommandByUser = new RelayCommand(OnLoginByUser);
             SignUpNavigateCommand = new RelayCommand(OnSignUpByUserNavigate);
+            ForgotPasswordProcessingCommand = new RelayCommand(OnForgotPasswordProcessing);
             var customer = new Customer();
             _localSettingsService = localSettings;
 
@@ -85,32 +111,32 @@ namespace Gyminize.ViewModels
         }
         private async void OnLoginByUser()
         {
-            //Bắt đầu đoạn code gửi mail
-            IEmailSender emailSender = new EmailSender();
+            ////Bắt đầu đoạn code gửi mail
+            //IEmailSender emailSender = new EmailSender();
 
-            // Cấu hình email cần gửi
-            string recipientEmail = "trongleviet06@gmail.com"; // Địa chỉ email người nhận, có thể thay email bất kì để test cũng được
-                     // Chủ đề email
-            Random random = new Random();
-            string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
+            //// Cấu hình email cần gửi
+            //string recipientEmail = "trongleviet06@gmail.com"; // Địa chỉ email người nhận, có thể thay email bất kì để test cũng được
+            //         // Chủ đề email
+            //Random random = new Random();
+            //string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
 
-            string subject = "Mã xác thực cho Gyminize App";
-            // Nội dung email
-            string body = $"<h1>Mã xác thực của bạn là: {verificationCode}</h1>" +
-            $"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
+            //string subject = "Mã xác thực cho Gyminize App";
+            //// Nội dung email
+            //string body = $"<h1>Mã xác thực của bạn là: {verificationCode}</h1>" +
+            //$"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
 
-            // Gửi email
-            try
-            {
-                await emailSender.SendEmailAsync(recipientEmail, subject, body);
-                Console.WriteLine("Email sent successfully!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Failed to send email: {ex.Message}");
-            }
+            //// Gửi email
+            //try
+            //{
+            //    await emailSender.SendEmailAsync(recipientEmail, subject, body);
+            //    Console.WriteLine("Email sent successfully!");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Failed to send email: {ex.Message}");
+            //}
 
-            //Kết thúc đoạn code gửi mail
+            ////Kết thúc đoạn code gửi mail
             if (CheckCustomerByGet(Username, Password))
             {
                if(Password!= customer.customer_password)
@@ -432,9 +458,68 @@ namespace Gyminize.ViewModels
             return base64;
         }
 
+        private async void OnForgotPasswordProcessing()
+        {
+            var (email, username) = await _dialogService.ShowUsernameInputDialog();
+            if (!string.IsNullOrEmpty(email))
+            {
+                Random random = new Random();
+                string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
+                sendVerificationCode(email, verificationCode);
+                if (await _dialogService.ShowVerificationDialogAsync(email, verificationCode) == true)
+                {// xử lí update
+                    var newPassword = await _dialogService.ShowResetPasswordDialogAsync();
+                    if(!String.IsNullOrEmpty(newPassword))
+                    {
+                        var endpoint = $"api/Customer/update/" + username + "/password/" + newPassword;
+                        var result = ApiServices.Put<Customer>(endpoint, null);
+                        if (result != null)
+                        {
+                            Debug.WriteLine("PUT request successful!");
+                            output("Đổi mật khẩu thành công!");
+                            StatusColor = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 128, 0));
+                        }
+                        else
+                        {
+                            Debug.WriteLine("PUT request failed.");
+                            output("Đổi mật khẩu thất bại!");
+                        }
+                    } else
+                    {
+                        // do nothing
+                    }
+                }
+                else
+                {
+                    // do nothing
+                }
+            }
+        }
+
+        public async void sendVerificationCode(string email, string code)
+        {
+            IEmailSender emailSender = new EmailSender();
+            string subject = "Mã xác thực cho Gyminize App";
+            // Nội dung email
+            string body = $"<h1>Mã xác thực của bạn là: {code}</h1>" +
+            $"<h1>Vui lòng không chia sẻ cho bất kì ai khác</h1>"; // HTML
+
+            // Gửi email
+            try
+            {
+                await emailSender.SendEmailAsync(email, subject, body);
+                Console.WriteLine("Email sent successfully!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to send email: {ex.Message}");
+            }
+        }
+
         public void output(string message)
         {
             LoginStatus = message;
+            StatusColor = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0));
             Debug.WriteLine(message);
         }
     }

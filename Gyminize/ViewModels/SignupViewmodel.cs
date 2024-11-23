@@ -80,13 +80,14 @@ namespace Gyminize.ViewModels
                     {
                         if (IsAgree == true)
                         {
-                            string recipientEmail = "huaminhquan111@gmail.com";      
+                            //string recipientEmail = "huaminhquan111@gmail.com";      
+                            string recipientEmail = email;
                             Random random = new Random();
                             string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
                             sendVerificationCode(recipientEmail, verificationCode);
                             if (await _dialogService.ShowVerificationDialogAsync(recipientEmail,verificationCode) ==  true)
                             {
-                                PostCustomer(Username, Password);
+                                PostCustomer(Username, Password, recipientEmail);
                                 var pageKey = typeof(Guide1ViewModel).FullName;
                                 if (pageKey != null)
                                 {
@@ -118,9 +119,9 @@ namespace Gyminize.ViewModels
                 output(SignupStatus);
             }
         }
-        private void PostCustomer(string username, string password)
+        private void PostCustomer(string username, string password, string email)
         {
-            Customer customer = new Customer(username, 1, username, password, 1,"trongleviet@gmail.com");
+            Customer customer = new Customer(username, 1, username, password, 1, email);
             Console.WriteLine(customer);
 
             var client = new HttpClient();

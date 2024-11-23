@@ -35,10 +35,12 @@ namespace Gyminize.Views
         {
             ViewModel = App.GetService<SigninViewmodel>();
             InitializeComponent();
-            var navigationService = App.GetService<INavigationService>();
-            var setting = App.GetService<ILocalSettingsService>();
-            ViewModel = new SigninViewmodel(navigationService, setting);
             this.DataContext = ViewModel;
+        }
+
+        private void ForgotPasswordTextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            ViewModel.ForgotPasswordProcessingCommand.Execute(null);
         }
     }
 }
