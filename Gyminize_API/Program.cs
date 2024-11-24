@@ -1,12 +1,12 @@
 ﻿using Gyminize_API.Data;
 using Gyminize_API.Data.Repositories;
-using Gyminize_API.GraphQl;
-using Gyminize_API.GraphQl.Queries;
+//using Gyminize_API.GraphQl;
+//using Gyminize_API.GraphQl.Queries;
 using GraphQL.Server;
 using Microsoft.EntityFrameworkCore;
-using Gyminize_API.GraphQL;
+//using Gyminize_API.GraphQL;
 using GraphQL.Server.Transports.AspNetCore.SystemTextJson;
-using Gyminize_API.GraphQl.Mutations;
+//using Gyminize_API.GraphQl.Mutations;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,31 +18,31 @@ builder.Logging.AddDebug();
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<CustomerRepository>();
-builder.Services.AddScoped<CustomerQuery>();
-builder.Services.AddScoped<CustomerMutation>();
+//builder.Services.AddScoped<CustomerQuery>();
+//builder.Services.AddScoped<CustomerMutation>();
 builder.Services.AddScoped<CustomerHealthRepository>();
-builder.Services.AddScoped<CustomerhealthMutations>();
-builder.Services.AddScoped<CustomerhealthQuery>();
+//builder.Services.AddScoped<CustomerhealthMutations>();
+//builder.Services.AddScoped<CustomerhealthQuery>();
 builder.Services.AddScoped<DailydiaryRepository>();
-builder.Services.AddScoped<DailydiaryQuery>();
-builder.Services.AddScoped<DailydiaryMutations>();
+//builder.Services.AddScoped<DailydiaryQuery>();
+//builder.Services.AddScoped<DailydiaryMutations>();
 builder.Services.AddScoped<FooddetailRepository>();
-builder.Services.AddScoped<FooddetailMutations>();
+//builder.Services.AddScoped<FooddetailMutations>();
 builder.Services.AddScoped<FoodRepository>();
-builder.Services.AddScoped<FoodQueries>();
+//builder.Services.AddScoped<FoodQueries>();
 builder.Services.AddScoped<PlandetailRepository>();
-builder.Services.AddScoped<PlandetailQuery>();
-builder.Services.AddScoped<PlandetailMutation>();
+//builder.Services.AddScoped<PlandetailQuery>();
+//builder.Services.AddScoped<PlandetailMutation>();
 builder.Services.AddScoped<WorkoutdetailRepository>();
-builder.Services.AddScoped<WorkoutdetailMutation>();
-builder.Services.AddScoped<AppSchema>();
+//builder.Services.AddScoped<WorkoutdetailMutation>();
+//builder.Services.AddScoped<AppSchema>();
 
 // register graphQL
 builder.Services.AddGraphQL().AddSystemTextJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+//Cấu hình database để sử dụng PostgreSQL, DI sẽ tự động inject EntityDatabaseContext vào Entity
 builder.Services.AddDbContext<EntityDatabaseContext>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("SqlDbCon"),
@@ -71,10 +71,10 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
-app.UseGraphQL<AppSchema>();
-app.UseGraphQLGraphiQL("/ui/graphql");
+//app.UseGraphQL<AppSchema>();// Để ánh xạ GraphQL endpoint
+//app.UseGraphQLGraphiQL("/ui/graphql");
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllers();// Để ánh xạ các REST endpoint
 
 app.Run();

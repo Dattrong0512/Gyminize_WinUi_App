@@ -14,27 +14,27 @@ namespace Gyminize_API.Data.Models
         {
             get; set;
         }
-        public required string? customer_name
+        public string? customer_name
         {
             get; set;
         }
-        public required int auth_type
+        public int auth_type
         {
             get; set;
         }
-        public required string username
+        public string username
         {
             get; set;
         }
-        public required string customer_password
+        public string customer_password
         {
             get; set;
         }
-        public required int role_user
+        public int role_user
         {
             get; set;
         }
-        public required string email
+        public string email
         {
             get; set;
         }
