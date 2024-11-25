@@ -107,7 +107,8 @@ public partial class App : Application
             services.AddTransient<SignupViewModel>();
             services.AddTransient<PlanSelectionPage>();
             services.AddTransient<PlanSelectionViewModel>();
-
+            services.AddTransient<ChatBoxPage>();
+            services.AddTransient<ChatBoxViewModel>();
             services.AddSingleton<Customer>();
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));

@@ -29,6 +29,7 @@ public class PageService : IPageService
         Configure<ShellViewModel, ShellPage>();
         Configure<PlanSelectionViewModel, PlanSelectionPage>();
         Configure<PlanViewModel, PlanPage>();
+        Configure<ChatBoxViewModel, ChatBoxPage>();
     }
 
     // Lấy loại trang dựa trên khóa trang.

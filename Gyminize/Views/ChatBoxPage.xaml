@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="Gyminize.Views.ChatBoxPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Gyminize.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid Padding="20" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ChatMessagesPanel" Spacing="10">
+                <TextBlock
+                    Margin="5"
+                    FontSize="14"
+                    Text="Chatbot: Welcome to the chat!"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+        </ScrollViewer>
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox
+                x:Name="UserInputBox"
+                Margin="0,0,10,0"
+                PlaceholderText="Nhập câu hỏi..." />
+            <Button x:Name="SendButton" Content="Send" />
+        </Grid>
+    </Grid>
+</Page>

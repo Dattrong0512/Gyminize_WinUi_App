@@ -58,6 +58,7 @@
     <None Remove="Assets\planselection_model\beginner.png" />
     <None Remove="Assets\planselection_model\expert.png" />
     <None Remove="Assets\training2.png" />
+    <None Remove="Views\ChatBoxPage.xaml" />
     <None Remove="Views\GuidePage1.xaml" />
     <None Remove="Views\GuidePage2.xaml" />
     <None Remove="Views\GuidePage3.xaml" />
@@ -139,6 +140,9 @@
     <None Update="Assets\training1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\ChatBoxPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\PlanSelectionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
