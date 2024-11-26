@@ -14,6 +14,8 @@ using Microsoft.UI.Xaml.Media;
 using System.Diagnostics;
 using Gyminize.Services;
 using Gyminize.Core.Services;
+using Microsoft.UI.Xaml.Media.Imaging;
+using ColorCode.Compilation.Languages;
 
 public class DialogService : IDialogService
 {
@@ -672,5 +674,52 @@ public class DialogService : IDialogService
             await resetPasswordDialog.ShowAsync();
         });
         return validPassword;
+    }
+
+    public async Task ShowErrorDialogAsync(string errorMessage)
+    {
+        var imagePath = "ms-appx:///Assets/Icon/error.svg";
+
+        var errorImage = new Image
+        {
+            Source = new BitmapImage(new Uri(imagePath)), // Đường dẫn tới hình ảnh
+            Width = 50,
+            Height = 50,
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var errorTextBlock = new TextBlock
+        {
+            Text = errorMessage,
+            FontSize = 16,
+            TextWrapping = TextWrapping.Wrap,
+            TextAlignment = TextAlignment.Center,
+            Margin = new Thickness(0, 10, 0, 0)
+        };
+
+        var stackPanel = new StackPanel
+        {
+            HorizontalAlignment = HorizontalAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        stackPanel.Children.Add(errorImage);
+        stackPanel.Children.Add(errorTextBlock);
+
+        var errorDialog = new ContentDialog
+        {
+            Title = "Error",
+            Content = stackPanel,
+            CloseButtonText = "OK"
+        };
+
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            errorDialog.XamlRoot = rootElement.XamlRoot;
+        }
+        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        await dispatcherQueue.EnqueueAsync(async () =>
+        {
+            await errorDialog.ShowAsync();
+        });
     }
 }

@@ -21,6 +21,7 @@ public partial class PlanViewModel : ObservableRecipient
     private readonly INavigationService _navigationService;
     private readonly IDialogService _dialogService;
     private readonly ILocalSettingsService _localsetting;
+    private readonly IApiServicesClient _apiServicesClient;
     private string _planName;
     public string PlanName
     {
@@ -214,24 +215,24 @@ public partial class PlanViewModel : ObservableRecipient
     }
 
     public List<Workoutdetail> WorkoutDetailsItems { get; set; } = new List<Workoutdetail>();
-    public PlanViewModel(INavigationService navigationService, IDialogService dialogService, ILocalSettingsService localSettings)
+    public PlanViewModel(INavigationService navigationService, IDialogService dialogService, ILocalSettingsService localSettings, IApiServicesClient apiServicesClient)
     {
         _localsetting = localSettings;
         _navigationService = navigationService;
         _dialogService = dialogService;
+        _apiServicesClient = apiServicesClient;
         SelectWorkoutDetailCommand = new RelayCommand<Workoutdetail>(SelectWorkoutDetail);
         ShowSingleExerciseVideoCommand = new RelayCommand<Exercisedetail>(ShowSingleExerciseVideo);
         PlayingWorkoutExercisesCommand = new RelayCommand(PlayingWorkoutExercises);
-        InitializeViewModelAsync(); 
+        InitializeViewModelAsync();
     }
 
     private async void InitializeViewModelAsync()
     {
         await GetCustomerID();
-        LoadSampleData();
+        LoadPlanDetailData();
         LoadCurrentWeekDays(_startDate);
 
-        PlanName = "Kế Hoạch 4 Ngày";
         TotalDay = (_endDate - _startDate).Days;
         DayProgress = ((double)CompleteDay / (double)TotalDay) * 100;
 
@@ -248,42 +249,42 @@ public partial class PlanViewModel : ObservableRecipient
         CustomerId = int.Parse(customer_id);
     }
 
-    
-
     public static List<Workoutdetail> GetWeekWorkoutDetails(DateTime startDate, int weekNumber, List<Workoutdetail> workoutDetails)
     {
-        // Tính toán ngày bắt đầu của tuần (mỗi tuần cách nhau 7 ngày)
         var weekStartDate = startDate.AddDays((weekNumber - 1) * 7);
-
-        // Lấy 7 ngày của tuần đó
         var weekWorkoutDetails = new List<Workoutdetail>();
         for (int i = 0; i < 7; i++)
         {
             var currentDate = weekStartDate.AddDays(i);
             var workoutDetail = workoutDetails.FirstOrDefault(wd => wd.date_workout.Date == currentDate.Date);
-
             if (workoutDetail == null)
             {
-                // Nếu không có thông tin trong danh sách input, tạo ngày lấp vào với TypeworkoutId = 0
                 workoutDetail = new Workoutdetail
                 {
                     typeworkout_id = 0,
                     date_workout = currentDate
                 };
             }
-
             weekWorkoutDetails.Add(workoutDetail);
         }
-
         return weekWorkoutDetails;
     }
-    private void LoadSampleData()
+    private void LoadPlanDetailData()
     {
-        var plandetails = ApiServices.Get<Plandetail>($"api/Plandetail/get/plandetail/{CustomerId}");
-        Plandetail currentPlandetail = plandetails;
-        _startDate = currentPlandetail.start_date;
-        _endDate = currentPlandetail.end_date;
-        WorkoutDetailsItems = currentPlandetail.Workoutdetails.ToList();
+        try
+        {
+            var plandetails = _apiServicesClient.Get<Plandetail>($"api/Plandetail/get/plandetail/{CustomerId}");
+            Plandetail currentPlandetail = plandetails;
+            _startDate = currentPlandetail.start_date;
+            _endDate = currentPlandetail.end_date;
+            PlanName = currentPlandetail.Plan.plan_name;
+            WorkoutDetailsItems = currentPlandetail.Workoutdetails.ToList();
+        }
+        catch (Exception ex)
+        {
+            _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
+            Debug.WriteLine($"Error loading plan details: {ex.Message}");
+        }
     }
     public void LoadCurrentWeekDays(DateTime startDate)
     {
@@ -294,7 +295,6 @@ public partial class PlanViewModel : ObservableRecipient
         WeekNumber = currentWeekNumber;
         var weekWorkoutDetails = GetWeekWorkoutDetails(startDate, currentWeekNumber, WorkoutDetailsItems);
         WeekDaysItems = new ObservableCollection<Workoutdetail>(weekWorkoutDetails);
-
         Day1 = weekWorkoutDetails[0].date_workout.ToString("dd/MM");
         Day2 = weekWorkoutDetails[1].date_workout.ToString("dd/MM");
         Day3 = weekWorkoutDetails[2].date_workout.ToString("dd/MM");
@@ -336,11 +336,9 @@ public partial class PlanViewModel : ObservableRecipient
                 WeekDaysItems[i].IsSelected = false;
             }
         }
-
-        int typeworkout = selectedWorkoutDetail.typeworkout_id;
+        var typeworkout = selectedWorkoutDetail.typeworkout_id;
         if (typeworkout == 0)
         {
-            //do nothing
             IsBreakDay = true;
             IsWorkoutDay = !IsBreakDay;
             WorkoutDetailDescription = "Ngày nghỉ";
@@ -364,11 +362,16 @@ public partial class PlanViewModel : ObservableRecipient
         }
         if(IsFinished == true)
         {
-            StatusText = "Bạn đã hoàn thành bài tập ngày hôm nay (" + DateTime.Now.ToString("dd/MM") + ")";
-            StartExerciseText = "Tập lại";
-            var endpoint = $"api/Workoutdetail/update/{currentDayWorkoutDetail.workoutdetail_id}/decription/Đã hoàn thành Exercise trong ngày";
-            var result = ApiServices.Put<Workoutdetail>(endpoint, null);
-
+            try
+            {
+                StatusText = "Bạn đã hoàn thành bài tập ngày hôm nay (" + DateTime.Now.ToString("dd/MM") + ")";
+                StartExerciseText = "Tập lại";
+                var endpoint = $"api/Workoutdetail/update/{currentDayWorkoutDetail.workoutdetail_id}/decription/Đã hoàn thành Exercise trong ngày";
+                var result = _apiServicesClient.Put<Workoutdetail>(endpoint, null);
+            } catch
+            {
+                await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể cập nhật trạng thái bài tập");
+            }
         }
     }
 
@@ -377,7 +380,5 @@ public partial class PlanViewModel : ObservableRecipient
         var exercise = ex.Exercise;
         _dialogService.ShowExerciseVideoDialogAsync(exercise);
     }
-
-    
 }
 

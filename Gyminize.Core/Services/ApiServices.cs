@@ -137,6 +137,5 @@ namespace Gyminize.Core.Services
                 return false;
             }
         }
-
     }
 }

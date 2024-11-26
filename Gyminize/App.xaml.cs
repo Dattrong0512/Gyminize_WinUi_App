@@ -74,6 +74,8 @@ public partial class App : Application
 
             services.AddSingleton<IDialogService, DialogService>();
 
+            services.AddSingleton<IApiServicesClient,ApiServicesClient>();
+
             // Core Services
             //services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();

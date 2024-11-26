@@ -18,4 +18,6 @@ public interface IDialogService
     Task<(string email, string username)> ShowUsernameInputDialog();
 
     Task<string> ShowResetPasswordDialogAsync();
+
+    Task ShowErrorDialogAsync(string errorMessage);
 }

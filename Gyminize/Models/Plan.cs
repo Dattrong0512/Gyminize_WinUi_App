@@ -25,8 +25,6 @@ namespace Gyminize.Models
         {
             get; set;
         }
-
-
     }
 }
 

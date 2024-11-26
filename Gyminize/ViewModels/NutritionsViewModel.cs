@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Gyminize.Contracts.Services;
-using Gyminize.Core.Services;
+
 using Microsoft.UI.Xaml.Controls;
 using System.Reflection.Metadata;
 using System.Diagnostics;
@@ -22,6 +22,7 @@ namespace Gyminize.ViewModels
         }
         private readonly INavigationService _navigationService;
         private readonly IDialogService _dialogService;
+        private readonly IApiServicesClient _apiServicesClient;
         public Dailydiary CurrentDailydiary
         {
             get; set;
@@ -50,8 +51,9 @@ namespace Gyminize.ViewModels
             get;
         }
 
-        public NutritionsViewModel(INavigationService navigationService,IDialogService dialogService ,ILocalSettingsService localSetting)
+        public NutritionsViewModel(INavigationService navigationService,IDialogService dialogService ,ILocalSettingsService localSetting, IApiServicesClient apiServicesClient)
         {
+            _apiServicesClient = apiServicesClient;
             _navigationService = navigationService;
             LocalSetting = localSetting;
             _dialogService = dialogService;
@@ -63,11 +65,11 @@ namespace Gyminize.ViewModels
             
         }
 
-        private async Task LoadFoodLibraryAsync()
+        public async Task LoadFoodLibraryAsync()
         {
             try
             {
-                var foods = ApiServices.Get<List<Food>>("api/Food");
+                var foods = _apiServicesClient.Get<List<Food>>("api/Food");
                 if (foods != null && foods.Any())
                 {
                     FoodLibraryItems.Clear();
@@ -80,16 +82,17 @@ namespace Gyminize.ViewModels
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error loading food library: {ex.Message}");
+                await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
             }
         }
 
-        private async Task LoadDailyDiary()
+        public async Task LoadDailyDiary()
         {
             try
             {
                 CustomerId = await LocalSetting.ReadSettingAsync<string>("customer_id");
                 var day = DateTime.UtcNow;
-                CurrentDailydiary = ApiServices.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{CustomerId}/day/{day:yyyy-MM-dd HH:mm:ss}");
+                CurrentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{CustomerId}/day/{day:yyyy-MM-dd HH:mm:ss}");
                 if (CurrentDailydiary != null)
                 {
                     BreakfastItems.Clear();
@@ -122,10 +125,11 @@ namespace Gyminize.ViewModels
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error loading daily diary: {ex.Message}");
+                await _dialogService.ShowErrorDialogAsync($"Lỗi hệ thống:  {ex.Message}");
             }
         }
 
-        private void UpdateTotalCaloriesExpression()
+        public void UpdateTotalCaloriesExpression()
         {
             int totalCalories = BreakfastItems.Sum(item => item.TotalCalories) +
                                 LunchItems.Sum(item => item.TotalCalories) +
@@ -137,17 +141,15 @@ namespace Gyminize.ViewModels
 
 
 
-        private async Task AddFoodToMealAsync(Food? selectedFood)
+        public async Task AddFoodToMealAsync(Food? selectedFood)
         {
             if (selectedFood == null)
                 return;
 
-            // Hiển thị dialog để chọn bữa ăn và số lượng
             var (selectedMeal, quantity) = await _dialogService.ShowMealSelectionDialogAsync();
 
             if (!string.IsNullOrEmpty(selectedMeal))
             {
-                // Tạo đối tượng FoodDetail với các thông tin cần thiết
                 var foodDetail = new FoodDetail
                 {
                     dailydiary_id = CurrentDailydiary.dailydiary_id,
@@ -163,24 +165,24 @@ namespace Gyminize.ViewModels
                     Food = selectedFood
                 };
 
-                // Gọi API để thêm hoặc cập nhật FoodDetail
                 try
                 {
-                    var updateResult = ApiServices.Put<FoodDetail>("api/foodetail/update", foodDetail);
+                    var updateResult = _apiServicesClient.Put<FoodDetail>("api/foodetail/update", foodDetail);
 
                     if (updateResult != null)
                     {
-                        System.Diagnostics.Debug.WriteLine("FoodDetail added/updated successfully.");
                         LoadDailyDiary();
                     }
                     else
                     {
                         System.Diagnostics.Debug.WriteLine("Failed to add/update FoodDetail.");
+                        await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể thêm thức ăn");
                     }
                 }
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine($"Error updating FoodDetail: {ex.Message}");
+                    await _dialogService.ShowErrorDialogAsync($"Lỗi hệ thống: {ex.Message}");
                 }
 
                 // Cập nhật biểu thức tổng calo
@@ -190,7 +192,7 @@ namespace Gyminize.ViewModels
 
 
 
-        private async Task DeleteFoodFromMealAsync(FoodDetail foodDetail)
+        public async Task DeleteFoodFromMealAsync(FoodDetail foodDetail)
         {
             if (foodDetail == null)
                 return;
@@ -202,7 +204,7 @@ namespace Gyminize.ViewModels
             try
             {
          
-                var deleteResult = ApiServices.Delete($"api/Foodetail/delete", foodDetail);
+                var deleteResult = _apiServicesClient.Delete($"api/Foodetail/delete", foodDetail);
 
                 if (deleteResult)
                 {
@@ -232,11 +234,13 @@ namespace Gyminize.ViewModels
                 else
                 {
                     System.Diagnostics.Debug.WriteLine("Failed to delete FoodDetail.");
+                    await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể xóa thức ăn");
                 }
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error deleting FoodDetail: {ex.Message}");
+                await _dialogService.ShowErrorDialogAsync($"Lỗi hệ thống: {ex.Message}");
             }
         }
 

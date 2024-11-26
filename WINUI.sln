@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gyminize", "Gyminize\Gymini
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gyminize.Core", "Gyminize.Core\Gyminize.Core.csproj", "{EC956E95-C10A-4D4D-8BBB-7B6651C348DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gyminize_API", "Gyminize_API\Gyminize_API.csproj", "{8FD00726-77A2-481C-B93F-69D2C93C3AD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gyminize_API", "Gyminize_API\Gyminize_API.csproj", "{8FD00726-77A2-481C-B93F-69D2C93C3AD2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gyminize.Tests.MSTest", "Gyminize.Tests.MSTest\Gyminize.Tests.MSTest.csproj", "{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,22 @@ Global
 		{8FD00726-77A2-481C-B93F-69D2C93C3AD2}.Release|x64.Build.0 = Release|Any CPU
 		{8FD00726-77A2-481C-B93F-69D2C93C3AD2}.Release|x86.ActiveCfg = Release|Any CPU
 		{8FD00726-77A2-481C-B93F-69D2C93C3AD2}.Release|x86.Build.0 = Release|Any CPU
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|Any CPU.Build.0 = Debug|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|arm64.ActiveCfg = Debug|arm64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|arm64.Build.0 = Debug|arm64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|x64.ActiveCfg = Debug|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|x64.Build.0 = Debug|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|x86.ActiveCfg = Debug|x86
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Debug|x86.Build.0 = Debug|x86
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|Any CPU.ActiveCfg = Release|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|Any CPU.Build.0 = Release|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|arm64.ActiveCfg = Release|arm64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|arm64.Build.0 = Release|arm64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|x64.ActiveCfg = Release|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|x64.Build.0 = Release|x64
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|x86.ActiveCfg = Release|x86
+		{DDC2A137-75B2-4E74-AB3F-7BD75FC73D85}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
