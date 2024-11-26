@@ -71,11 +71,9 @@ public partial class App : Application
             services.AddSingleton<INavigationService, NavigationService>();
 
             services.AddSingleton<IWindowService, WindowService>();
-
             services.AddSingleton<IDialogService, DialogService>();
-
             services.AddSingleton<IApiServicesClient,ApiServicesClient>();
-
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             // Core Services
             //services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();
