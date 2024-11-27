@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Gyminize.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -22,8 +23,15 @@ namespace Gyminize.Views;
 /// </summary>
 public sealed partial class ChatBoxPage : Page
 {
+
+    public ChatBoxViewModel ViewModel
+    {
+        get;
+    }
     public ChatBoxPage()
     {
-        this.InitializeComponent();
+        ViewModel = App.GetService<ChatBoxViewModel>();
+        InitializeComponent();
+        this.DataContext = ViewModel;
     }
 }
