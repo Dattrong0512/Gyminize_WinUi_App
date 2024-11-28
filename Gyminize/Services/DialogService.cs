@@ -490,7 +490,7 @@ public class DialogService : IDialogService
 
         var inputUsernameDialog = new ContentDialog
         {
-            Title = null, 
+            Title = null,
             Content = grid,
             PrimaryButtonText = "Xác nhận",
             CloseButtonText = "Hủy",
@@ -521,7 +521,7 @@ public class DialogService : IDialogService
                         validEmail = _customerInfo.email;
                         validUsername = enteredUsername;
                         statusTextBlock.Visibility = Visibility.Collapsed;
-                    } 
+                    }
                     else
                     {
                         statusTextBlock.Text = "Tên đăng nhập không tồn tại";
@@ -644,12 +644,14 @@ public class DialogService : IDialogService
                     passwordStatusTextBlock.Text = "Mật khẩu không được để trống";
                     passwordStatusTextBlock.Visibility = Visibility.Visible;
                     args.Cancel = true;
-                } else if (string.IsNullOrWhiteSpace(enteredConfirmPassword))
+                }
+                else if (string.IsNullOrWhiteSpace(enteredConfirmPassword))
                 {
                     confirmPasswordStatusTextBlock.Text = "Mật khẩu nhập lại không được để trống";
                     confirmPasswordStatusTextBlock.Visibility = Visibility.Visible;
                     args.Cancel = true;
-                } else if (enteredPassword != enteredConfirmPassword)
+                }
+                else if (enteredPassword != enteredConfirmPassword)
                 {
                     confirmPasswordStatusTextBlock.Text = "Mật khẩu nhập lại không khớp";
                     confirmPasswordStatusTextBlock.Visibility = Visibility.Visible;
@@ -678,14 +680,12 @@ public class DialogService : IDialogService
 
     public async Task ShowErrorDialogAsync(string errorMessage)
     {
-        var imagePath = "ms-appx:///Assets/Icon/error.svg";
-
-        var errorImage = new Image
+        var errorIcon = new FontIcon
         {
-            Source = new BitmapImage(new Uri(imagePath)), // Đường dẫn tới hình ảnh
-            Width = 50,
-            Height = 50,
-            Margin = new Thickness(0, 0, 0, 10)
+            Glyph = "\uEB90", // Mã Unicode của biểu tượng lỗi
+            FontSize = 50,
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
+            Margin = new Thickness(10, 10, 10 ,10)
         };
 
         var errorTextBlock = new TextBlock
@@ -694,15 +694,16 @@ public class DialogService : IDialogService
             FontSize = 16,
             TextWrapping = TextWrapping.Wrap,
             TextAlignment = TextAlignment.Center,
-            Margin = new Thickness(0, 10, 0, 0)
+            Margin = new Thickness(10, 10, 10, 10)
         };
 
         var stackPanel = new StackPanel
         {
             HorizontalAlignment = HorizontalAlignment.Center,
-            VerticalAlignment = VerticalAlignment.Center
+            VerticalAlignment = VerticalAlignment.Center,
+            Orientation = Orientation.Horizontal
         };
-        stackPanel.Children.Add(errorImage);
+        stackPanel.Children.Add(errorIcon);
         stackPanel.Children.Add(errorTextBlock);
 
         var errorDialog = new ContentDialog

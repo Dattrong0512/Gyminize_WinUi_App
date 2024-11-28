@@ -1,6 +1,7 @@
 ﻿// ViewModel cho trang nhật ký.
 // Kế thừa từ ObservableRecipient để hỗ trợ thông báo thay đổi thuộc tính.
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Input;
@@ -19,6 +20,9 @@ public partial class DiaryViewModel : ObservableRecipient
 {
     // Khởi tạo DiaryViewModel.
     private readonly ILocalSettingsService _localSettingsService;
+    private readonly IDateTimeProvider _dateTimeProvider;
+    private readonly IApiServicesClient _apiServicesClient;
+    private readonly IDialogService _dialogService;
     private string _customer_id;
     private int _weightText;
 
@@ -74,7 +78,7 @@ public partial class DiaryViewModel : ObservableRecipient
         set => SetProperty(ref _totalCalories, value);
     }
 
-    private int _exerciseStatus;
+    public int _exerciseStatus;
 
     public ICommand SelectedDatesChangedCommand
     { 
@@ -90,25 +94,37 @@ public partial class DiaryViewModel : ObservableRecipient
     public ObservableCollection<FoodDetail> DinnerItems { get; set; } = new ObservableCollection<FoodDetail>();
     public ObservableCollection<FoodDetail> SnackItems { get; set; } = new ObservableCollection<FoodDetail>();
 
-    public DiaryViewModel(ILocalSettingsService localSettingsService)
+    public DiaryViewModel(ILocalSettingsService localSettingsService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider, IDialogService dialogService)
     {
         _localSettingsService = localSettingsService;
+        _dialogService = dialogService;
+        _apiServicesClient = apiServicesClient;
+        _dateTimeProvider = dateTimeProvider;
         SelectedDatesChangedCommand = new RelayCommand<DateTime>(SelectedDatesChanged);
         DecorateDayItemCommand = new RelayCommand<CalendarViewDayItem>(DecorateDayItem);
         InitializeAsync();
+        _dialogService = dialogService;
     }
 
     public async void InitializeAsync()
     {
         await GetCustomerId();
-        var daySelected = DateTime.UtcNow;
-        SelectedDayText = DateTime.Now.ToString("dd/MM/yyyy");
-        
-        LoadFullData(daySelected);
+        var daySelected = _dateTimeProvider.UtcNow;
+        SelectedDayText = _dateTimeProvider.Now.ToString("dd/MM/yyyy");
+        await LoadFullData(daySelected);
     }
-    public void LoadFullData(DateTime daySelected)
+    public async Task LoadFullData(DateTime daySelected)
     {
-        LoadDailyDiary(daySelected);
+        try
+        {
+            LoadDailyDiary(daySelected);
+        }
+        catch(Exception ex)
+        {
+            Debug.WriteLine("Lỗi hệ thống: " + ex.Message);
+            await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
+        }
+
         LoadWorkoudetails(daySelected);
     }
     public async Task GetCustomerId()
@@ -119,7 +135,7 @@ public partial class DiaryViewModel : ObservableRecipient
 
     public void LoadDailyDiary(DateTime daySelected)
     {
-        var CurrentDailydiary = ApiServices.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{daySelected:yyyy-MM-dd HH:mm:ss}");
+        var CurrentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{daySelected:yyyy-MM-dd HH:mm:ss}");
 
         BreakfastItems.Clear();
         LunchItems.Clear();
@@ -156,7 +172,7 @@ public partial class DiaryViewModel : ObservableRecipient
 
     public void LoadWorkoudetails(DateTime daySelected)
     {
-        var planDetail = ApiServices.Get<Plandetail>($"api/Plandetail/get/plandetail/{_customer_id}");
+        var planDetail = _apiServicesClient.Get<Plandetail>($"api/Plandetail/get/plandetail/{_customer_id}");
         PlanNameText = "Chưa có kế hoạch";
         TypeWorkoutText = "Chưa có ngày tập";
         _exerciseStatus = 0; // 0: chưa có plan, 1: ngày nghỉ, 2: ngày tập hoàn thành, 3: ngày tập chưa hoàn thành
@@ -193,8 +209,8 @@ public partial class DiaryViewModel : ObservableRecipient
         DateTime date = dayItem.Date.DateTime.ToUniversalTime();
 
         // Kiểm tra nếu ngày nằm trong phạm vi
-        var startDate = DateTime.Now.AddDays(-14);
-        var endDate = DateTime.Now.AddDays(14);
+        var startDate = _dateTimeProvider.Now.AddDays(-14);
+        var endDate = _dateTimeProvider.Now.AddDays(14);
 
         if (date >= startDate && date <= endDate)
         {
@@ -202,15 +218,15 @@ public partial class DiaryViewModel : ObservableRecipient
             switch (_exerciseStatus)
             {
                 case 1: // Ngày nghỉ
-                    AddIconToDay(dayItem, Symbol.Accept, Windows.UI.Color.FromArgb(255, 173, 216, 230)); // LightBlue
+                    AddIconToDay(dayItem, Windows.UI.Color.FromArgb(255, 173, 216, 230)); // LightBlue
                     break;
 
                 case 2: // Đã hoàn thành
-                    AddIconToDay(dayItem, Symbol.AddFriend, Windows.UI.Color.FromArgb(255, 144, 238, 144)); // LightGreen
+                    AddIconToDay(dayItem, Windows.UI.Color.FromArgb(255, 144, 238, 144)); // LightGreen
                     break;
 
                 case 3: // Chưa hoàn thành
-                    AddIconToDay(dayItem, Symbol.Admin, Windows.UI.Color.FromArgb(255, 240, 128, 128)); // LightCoral
+                    AddIconToDay(dayItem, Windows.UI.Color.FromArgb(255, 240, 128, 128)); // LightCoral
                     break;
 
                 default: // Không trạng thái
@@ -219,7 +235,7 @@ public partial class DiaryViewModel : ObservableRecipient
         }
     }
 
-    private void AddIconToDay(CalendarViewDayItem dayItem, Symbol symbol, Windows.UI.Color backgroundColor)
+    private void AddIconToDay(CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)
     {
         if(dayItem.Date > DateTime.Now.Date) { return; }
         dayItem.Background = new SolidColorBrush(backgroundColor);

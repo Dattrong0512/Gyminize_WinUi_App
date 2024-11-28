@@ -19,10 +19,6 @@ public sealed partial class HomePage : Page
     {
         ViewModel = App.GetService<HomeViewModel>();
         InitializeComponent();
-        var windowService = App.GetService<IWindowService>();
-        var navigationService = App.GetService<INavigationService>();
-        var setting = App.GetService<ILocalSettingsService>();
-        ViewModel = new HomeViewModel(navigationService,windowService, setting);
         this.DataContext = ViewModel;
     }
 
