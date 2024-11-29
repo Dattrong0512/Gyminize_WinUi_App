@@ -32,13 +32,23 @@ namespace Gyminize.ViewModels
         {
             get; set;
         }
-
+        public GenerationConfig Generateconfig
+        {
+            get; set;
+        }
         // Constructor
         public ChatBoxViewModel()
         {
             // Khởi tạo khi ViewModel được tạo ra
             GoogleAI = new GoogleAI(apiKey: "AIzaSyCrZDT2AzdOwS8qTnp20T38qDW931uLnqY"); // Thử với API key trực tiếp
-            Model = GoogleAI.GenerativeModel(model: "gemini-1.5-flash-8b");
+            Generateconfig = new GenerationConfig
+            {
+                Temperature = 0.9f,
+                TopP = 1f,
+                TopK = 1,
+                MaxOutputTokens = 10000,
+            };
+            Model = GoogleAI.GenerativeModel(model: "gemini-pro");
             SendRequest = new RelayCommand(SendMessage);
         }
 
@@ -48,14 +58,10 @@ namespace Gyminize.ViewModels
             try
             {
                 ResponseText = string.Empty; // Đặt lại ResponseText để xóa câu trả lời trước đó
-                // Tạo cấu hình cho việc sinh nội dung (có thể thêm tham số mới để làm yêu cầu duy nhất)
-                var generationConfig = new GenerationConfig
-                {
-                    Temperature = 0.7f,
-                    TopP = 0.9f,
-                };
-                var responseStream = Model.GenerateContentStream(InputBox, generationConfig);
-             
+                                             // Tạo cấu hình cho việc sinh nội dung (có thể thêm tham số mới để làm yêu cầu duy nhất)
+
+                var responseStream = Model.GenerateContentStream(InputBox, Generateconfig);
+
 
                 // Kiểm tra nếu responseStream không phải null
                 if (responseStream == null)
