@@ -11,6 +11,19 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Button
+            Width="40"
+            Height="40"
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            Command="{Binding GoBackCommand}">
+            <FontIcon
+                FontSize="20"
+                Foreground="Black"
+                Glyph="&#xE72B;" />
+        </Button>
         <StackPanel
             Margin="0,30,0,0"
             HorizontalAlignment="Center"
@@ -84,6 +97,7 @@
 
                 <!--  TextBlock hiển thị trạng thái đăng ký  -->
                 <TextBlock
+                    Width="280"
                     Margin="5"
                     HorizontalAlignment="Center"
                     FontSize="14"

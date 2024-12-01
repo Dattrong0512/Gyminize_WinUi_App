@@ -7,11 +7,13 @@
     xmlns:local="using:Gyminize.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:Gyminize.ViewModels"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    mc:Ignorable="d">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+        <StackPanel
+            Margin="0,20,0,0"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
             <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                 <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                     <Image

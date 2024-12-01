@@ -34,7 +34,7 @@ namespace Gyminize.ViewModels
         public ObservableCollection<FoodDetail> SnackItems { get; set; } = new ObservableCollection<FoodDetail>();
 
         public ObservableCollection<Food> FoodLibraryItems { get; set; } = new ObservableCollection<Food>();
-
+        public ObservableCollection<Food> FilteredFoodLibraryItems { get; set; } = new ObservableCollection<Food>();
         private string _totalCaloriesExpression;
         public string TotalCaloriesExpression
         {
@@ -50,7 +50,10 @@ namespace Gyminize.ViewModels
         {
             get;
         }
-
+        public ICommand SearchFoodCommand
+        {
+            get;
+        }
         public NutritionsViewModel(INavigationService navigationService,IDialogService dialogService ,ILocalSettingsService localSetting, IApiServicesClient apiServicesClient)
         {
             _apiServicesClient = apiServicesClient;
@@ -59,7 +62,7 @@ namespace Gyminize.ViewModels
             _dialogService = dialogService;
             DeleteFoodFromMealCommand = new AsyncRelayCommand<FoodDetail>(DeleteFoodFromMealAsync);
             AddFoodToMealCommand = new AsyncRelayCommand<Food?>(AddFoodToMealAsync); // Sửa lại dòng này
-
+            SearchFoodCommand = new RelayCommand<string>(SearchFoodLibrary);
             LoadFoodLibraryAsync();
             LoadDailyDiary();
             
@@ -78,11 +81,33 @@ namespace Gyminize.ViewModels
                         FoodLibraryItems.Add(food);
                     }
                 }
+                FilteredFoodLibraryItems = new ObservableCollection<Food>(FoodLibraryItems);
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error loading food library: {ex.Message}");
                 await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
+            }
+        }
+
+        public void SearchFoodLibrary(string searchText)
+        {
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                FilteredFoodLibraryItems.Clear();
+                foreach (var item in FoodLibraryItems)
+                {
+                    FilteredFoodLibraryItems.Add(item);
+                }
+            }
+            else
+            {
+                var filteredItems = FoodLibraryItems.Where(f => f.food_name.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
+                FilteredFoodLibraryItems.Clear();
+                foreach (var item in filteredItems)
+                {
+                    FilteredFoodLibraryItems.Add(item);
+                }
             }
         }
 
@@ -196,10 +221,6 @@ namespace Gyminize.ViewModels
         {
             if (foodDetail == null)
                 return;
-
-            // Tạo đối tượng với thông tin cần thiết để xóa
-            
-
             // Gọi API để xóa FoodDetail
             try
             {
@@ -243,6 +264,5 @@ namespace Gyminize.ViewModels
                 await _dialogService.ShowErrorDialogAsync($"Lỗi hệ thống: {ex.Message}");
             }
         }
-
     }
 }

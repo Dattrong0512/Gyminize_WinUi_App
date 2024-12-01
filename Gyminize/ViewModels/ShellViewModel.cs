@@ -1,7 +1,8 @@
 ﻿// ViewModel cho Shell (khung chính của ứng dụng).
 // Kế thừa từ ObservableRecipient để hỗ trợ thông báo thay đổi thuộc tính.
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
-
+using CommunityToolkit.Mvvm.Input;
 using Gyminize.Contracts.Services;
 using Gyminize.Core.Services;
 using Gyminize.Models;

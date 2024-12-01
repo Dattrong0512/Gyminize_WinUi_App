@@ -23,7 +23,7 @@ public sealed partial class ShellPage : Page
     {
         ViewModel = viewModel;
         InitializeComponent();
-        ViewModel.SetFrame(this.Frame);
+        ViewModel.SetFrame(NavigationFrame);
         ViewModel.NavigationService.Frame = NavigationFrame;
         ViewModel.NavigationViewService.Initialize(NavigationViewControl);
         DataContext = ViewModel;
@@ -33,7 +33,7 @@ public sealed partial class ShellPage : Page
         App.MainWindow.ExtendsContentIntoTitleBar = true;
         App.MainWindow.SetTitleBar(AppTitleBar);
         App.MainWindow.Activated += MainWindow_Activated;
-        AppTitleBarText.Text = "AppDisplayName".GetLocalized();      
+        AppTitleBarText.Text = "AppDisplayName".GetLocalized();
     }
 
     private void OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
@@ -81,5 +81,14 @@ public sealed partial class ShellPage : Page
         var result = navigationService.GoBack();
 
         args.Handled = result;
+    }
+
+    private void LogOutItem_Tapped(object sender, TappedRoutedEventArgs e)
+    {
+        NavigationViewControl.IsPaneVisible = false;
+        this.Margin = new Thickness(0, 0, 0, 0);
+        NavigationViewHeader.DefaultHeader = null;
+        AppTitleBar.Visibility = Visibility.Collapsed;
+        NavigationFrame.Navigate(typeof(SigninPage));
     }
 }

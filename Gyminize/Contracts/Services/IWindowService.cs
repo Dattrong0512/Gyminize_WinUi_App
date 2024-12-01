@@ -12,4 +12,5 @@ public interface IWindowService
     void SetIsResizable(bool isResizable);
     void SetIsMaximizable(bool isMaximizable);
     void SetWindowSize(int width, int height);
+    void SetTitle(string title);
 }

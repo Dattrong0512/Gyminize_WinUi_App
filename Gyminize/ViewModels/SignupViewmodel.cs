@@ -11,7 +11,7 @@ using System.Net;
 using Gyminize.ViewModels;
 using Gyminize.Contracts.Services;
 using Gyminize.Services;
-
+using Gyminize.Helpers;
 namespace Gyminize.ViewModels
 {
     public partial class SignupViewModel : ObservableObject
@@ -37,16 +37,24 @@ namespace Gyminize.ViewModels
         private readonly INavigationService _navigationService;
 
         private readonly IDialogService _dialogService;
+
+        private readonly IApiServicesClient _apiService;
         public ICommand SignupCommand
         {
             get;
         }
+        public ICommand GoBackCommand
+        {
+            get;
+        }
 
-        public SignupViewModel(INavigationService navigationService, IDialogService dialogService)
+        public SignupViewModel(INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient)
         {
             _navigationService = navigationService;
             _dialogService = dialogService;
+            _apiService = apiServicesClient;
             SignupCommand = new RelayCommand(OnSignUp);
+            GoBackCommand = new RelayCommand(OnGoBack);
         }
         private bool checkExistCustomer(string username)
         {
@@ -57,22 +65,32 @@ namespace Gyminize.ViewModels
             {
                 return true;
             }
-            else if(response.StatusCode == HttpStatusCode.NotFound)
+            else if (response.StatusCode == HttpStatusCode.NotFound)
             {
                 return false;
             }
-            return false;   
+            return false;
         }
         private async void OnSignUp()
         {
             try
             {
-                if (!string.IsNullOrEmpty(Username) && Password == ConfirmPassword )
+                var result = _apiService.Get<Customer>("api/Customer/get/email/" + email);
+                if (!string.IsNullOrEmpty(Username) && Password == ConfirmPassword)
                 {
-                    if(checkExistCustomer(Username))
+                    if (checkExistCustomer(Username))
                     {
                         SignupStatus = "Lỗi đăng ký: Tài khoản đã tồn tại!";
-                    } else if( 1 == 2) // Check email da ton tai o day
+                    }
+                    else if (Username.Length < 6 || Password.Length < 6)
+                    {
+                        SignupStatus = "Lỗi đăng ký: Tài khoản và mật khẩu phải có ít nhất 6 ký tự!";
+                    }
+                    else if (!ValidateHelper.IsValidEmail(email))
+                    {
+                        SignupStatus = "Lỗi đăng ký: Email không hợp lệ";
+                    }
+                    else if (result != null) // Check email da ton tai o day
                     {
                         SignupStatus = "Lỗi đăng ký: Email đã tồn tại";
                     }
@@ -85,7 +103,7 @@ namespace Gyminize.ViewModels
                             Random random = new Random();
                             string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
                             sendVerificationCode(recipientEmail, verificationCode);
-                            if (await _dialogService.ShowVerificationDialogAsync(recipientEmail,verificationCode) ==  true)
+                            if (await _dialogService.ShowVerificationDialogAsync(recipientEmail, verificationCode) == true)
                             {
                                 PostCustomer(Username, Password, recipientEmail);
                                 var pageKey = typeof(Guide1ViewModel).FullName;
@@ -94,7 +112,8 @@ namespace Gyminize.ViewModels
                                     _navigationService.NavigateTo(pageKey, Username);
                                 }
                                 SignupStatus = $"Đăng ký thành công cho {Username}!";
-                            } else
+                            }
+                            else
                             {
                                 // do nothing
                             }
@@ -107,7 +126,7 @@ namespace Gyminize.ViewModels
                 }
                 else
                 {
-                    
+
                     SignupStatus = "Lỗi đăng ký: Mật khẩu và xác minh mật khẩu không khớp hoặc thông tin trống!";
                 }
 
@@ -117,6 +136,15 @@ namespace Gyminize.ViewModels
             {
                 SignupStatus = "Đăng ký thất bại: " + ex.Message;
                 output(SignupStatus);
+            }
+        }
+
+        private void OnGoBack()
+        {
+            var pageKey = typeof(SigninViewmodel).FullName;
+            if (pageKey != null)
+            {
+                _navigationService.NavigateTo(pageKey);
             }
         }
         private void PostCustomer(string username, string password, string email)

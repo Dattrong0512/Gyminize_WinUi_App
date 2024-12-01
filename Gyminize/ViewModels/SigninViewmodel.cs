@@ -45,9 +45,10 @@ namespace Gyminize.ViewModels
         private string password;
         private readonly INavigationService _navigationService;
         private readonly IDialogService _dialogService;
+        private readonly IWindowService _windowService;
         private Customer customer;
         private UIElement? _shell = null;
-        public  ILocalSettingsService _localSettingsService;
+        public ILocalSettingsService _localSettingsService;
 
         private SolidColorBrush _statusColor;
         public SolidColorBrush StatusColor
@@ -88,18 +89,21 @@ namespace Gyminize.ViewModels
         const string authorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
         const string tokenEndpoint = "https://oauth2.googleapis.com/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
-        
-        public SigninViewmodel(INavigationService navigationService, ILocalSettingsService localSettings, IDialogService dialogService)
+
+        public SigninViewmodel(INavigationService navigationService, ILocalSettingsService localSettings, IDialogService dialogService, IWindowService windowService)
         {
+            _windowService = windowService;
             _navigationService = navigationService;
             _dialogService = dialogService;
+            _windowService.SetIsResizable(false);
+            _windowService.SetIsMaximizable(false);
+            _windowService.SetTitle("");
             LoginCommandByGoogle = new RelayCommand(OnLoginByGoogle);
             LoginCommandByUser = new RelayCommand(OnLoginByUser);
             SignUpNavigateCommand = new RelayCommand(OnSignUpByUserNavigate);
             ForgotPasswordProcessingCommand = new RelayCommand(OnForgotPasswordProcessing);
             var customer = new Customer();
             _localSettingsService = localSettings;
-
         }
         private void OnSignUpByUserNavigate()
         {
@@ -139,7 +143,7 @@ namespace Gyminize.ViewModels
             ////Kết thúc đoạn code gửi mail
             if (CheckCustomerByGet(Username, Password))
             {
-               if(Password!= customer.customer_password)
+                if (Password != customer.customer_password)
                 {
                     output("Mật khẩu không đúng!");
                 }
@@ -166,9 +170,9 @@ namespace Gyminize.ViewModels
                         }
                     }
                     output("Đăng nhập thành công!");
-                }          
+                }
             }
-            else 
+            else
             {
                 output("Tài khoản chưa tồn tại, vui lòng đăng kí");
             }
@@ -196,8 +200,6 @@ namespace Gyminize.ViewModels
                 codeChallenge,
                 codeChallengeMethod
             );
-
-
             // Open the authorization request URL in the browser
             var success = await Launcher.LaunchUriAsync(new Uri(authorizationRequest));
             if (!success)
@@ -214,7 +216,7 @@ namespace Gyminize.ViewModels
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:8080/"); // Listening on port 8080
             listener.Start();
-        
+
 
             HttpListenerContext context = await listener.GetContextAsync(); // Wait for the request
             HttpListenerRequest request = context.Request;
@@ -344,7 +346,8 @@ namespace Gyminize.ViewModels
                         _navigationService.NavigateTo(pageKey, username);
                     }
                 }
-                else { 
+                else
+                {
                     if (CheckCustomerHealthByUsername(username))
                     {
                         var frame = new Frame();
@@ -374,7 +377,7 @@ namespace Gyminize.ViewModels
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7141/");
             var response = client.GetAsync("api/Customer/get/username/" + username).Result;
-            if (response.StatusCode==HttpStatusCode.OK)
+            if (response.StatusCode == HttpStatusCode.OK)
             {
                 var json = response.Content.ReadAsStringAsync().Result;
                 customer = JsonConvert.DeserializeObject<Customer>(json);
@@ -382,7 +385,7 @@ namespace Gyminize.ViewModels
             }
             else
             {
-                return false;             
+                return false;
             }
         }
 
@@ -419,11 +422,11 @@ namespace Gyminize.ViewModels
 
         private void PostCustomer(string username, string password)
         {
-            if(customer == null)
+            if (customer == null)
             {
-                customer = new Customer();  
+                customer = new Customer();
             }
-            customer.customer_name= username;
+            customer.customer_name = username;
             customer.auth_type = 2;
             customer.username = username;
             customer.customer_password = password;
@@ -435,7 +438,7 @@ namespace Gyminize.ViewModels
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             var response = client.PostAsync("api/Customer/create", content).Result;
-            
+
         }
         // Utility methods for base64 encoding and hashing
         private static string randomDataBase64url(uint length)
@@ -469,7 +472,7 @@ namespace Gyminize.ViewModels
                 if (await _dialogService.ShowVerificationDialogAsync(email, verificationCode) == true)
                 {// xử lí update
                     var newPassword = await _dialogService.ShowResetPasswordDialogAsync();
-                    if(!String.IsNullOrEmpty(newPassword))
+                    if (!String.IsNullOrEmpty(newPassword))
                     {
                         var endpoint = $"api/Customer/update/" + username + "/password/" + newPassword;
                         var result = ApiServices.Put<Customer>(endpoint, null);
@@ -484,7 +487,8 @@ namespace Gyminize.ViewModels
                             Debug.WriteLine("PUT request failed.");
                             output("Đổi mật khẩu thất bại!");
                         }
-                    } else
+                    }
+                    else
                     {
                         // do nothing
                     }

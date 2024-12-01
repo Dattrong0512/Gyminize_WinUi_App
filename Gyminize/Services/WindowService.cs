@@ -55,5 +55,27 @@ namespace Gyminize.Services
                 Console.WriteLine("AppWindow chưa được khởi tạo.");
             }
         }
+
+        public void SetTitle(string title)
+        {
+            if (_appWindow != null)
+            {
+                if (title == "")
+                {
+                    _appWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+                    _appWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
+                    _appWindow.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+                }
+                else
+                {
+                    _appWindow.TitleBar.ExtendsContentIntoTitleBar = false;
+                    _appWindow.Title = title;
+                }
+            }
+            else
+            {
+                Console.WriteLine("AppWindow chưa được khởi tạo.");
+            }
+        }
     }
 }
