@@ -20,12 +20,31 @@ namespace Gyminize_API.Controllers
             return Ok(allOrders); 
         }
         [HttpGet("get/customer_id/{customer_id}")]
-        public IActionResult GetAllOrdersByCustomerId(int customer_id)
+        public IActionResult GetOrdersByCustomerId(int customer_id)
         {
             try
             {
                 var Orders = _ordersRepository.GetOrderByCustomerId(customer_id);
                 return Ok(Orders);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpPost("add")]
+        public IActionResult AddOrder([FromBody] Orders order)
+        {
+            if (order == null)
+            {
+                return BadRequest("Order data is null.");
+            }
+
+            try
+            {
+                var createdOrder = _ordersRepository.AddOrder(order);
+                return Ok(createdOrder);
             }
             catch (Exception ex)
             {

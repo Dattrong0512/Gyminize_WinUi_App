@@ -27,6 +27,20 @@ namespace Gyminize_API.Data.Repositories
             return Orders;
 
         }
+        public Orders AddOrder(Orders order)
+        {
+            try
+            {
+                _context.OrdersEntity.Add(order);
+                _context.SaveChanges();
+                return order;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in AddOrder: {ex.Message}");
+                throw;
+            }
+        }
     }
 }
 
