@@ -24,6 +24,12 @@ namespace Gyminize_API.Controllers
             var customer = _customerRepository.GetCustomerById(id);
             return Ok(customer);
         }
+        [HttpGet("get/email/{email}")]
+        public IActionResult GetCustomerByEmail(string email)
+        {
+            var customer = _customerRepository.GetCustomerByEmail(email);
+            return Ok(customer);
+        }
 
         [HttpPost("create")]
         public IActionResult AddCustomer(Customer customer)

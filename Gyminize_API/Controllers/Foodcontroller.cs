@@ -2,7 +2,7 @@
 using Gyminize_API.Data.Models;
 using Gyminize_API.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc;
+
 
 namespace Gyminize_API.Controllers
 {

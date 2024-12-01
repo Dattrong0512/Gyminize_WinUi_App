@@ -51,6 +51,10 @@ namespace Gyminize_API.Data.Models
         {
             get; set;
         }
+        public virtual ICollection<Orders>? Orders
+        {
+            get; set;
+        }
     }
 
 }

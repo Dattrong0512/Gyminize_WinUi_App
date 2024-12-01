@@ -12,7 +12,6 @@ namespace Gyminize_API.Data
 
         public DbSet<Customer> CustomerEntity { get; set; }
         public DbSet<Customer_health> CustomerHealthEntity { get; set; }
-
         public DbSet<Dailydiary> DailydiaryEntity { get; set; }
 
         public DbSet<Fooddetail> FooddetailEntity { get; set; }
@@ -23,6 +22,27 @@ namespace Gyminize_API.Data
         public DbSet<Workoutdetail> WorkoutDetailEntity { get; set; }
         public DbSet<Exercise> ExerciseEntity { get; set; }
         public DbSet<Exercisedetail> ExerciseDetailEntity { get; set; }
+
+        public DbSet<Orders> OrdersEntity
+        {
+          get; set;
+        }
+        public DbSet<Orderdetail> OrderdetailEntity
+        {
+            get; set;
+        }
+        public DbSet<Product> ProductEntity
+        {
+            get; set;
+        }
+        public DbSet<Category> CategoryEntity
+        {
+            get; set;
+        }
+        public DbSet<Payment> PaymentEntity
+        {
+            get; set;
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>()
@@ -85,6 +105,30 @@ namespace Gyminize_API.Data
                 .HasMany(e => e.Exercisedetails)
                 .WithOne(ed => ed.Exercise)
                 .HasForeignKey(ed => ed.exercise_id);
+
+            modelBuilder.Entity<Orders>()
+                .HasMany(o => o.Orderdetail)
+                .WithOne(od => od.Orders)
+                .HasForeignKey(od => od.orders_id);
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.Orderdetail)
+                .WithOne(od => od.Product)
+                .HasForeignKey(od => od.product_id);
+
+            modelBuilder.Entity<Category>()
+                .HasMany(c => c.Product)
+                .WithOne(p => p.Category)
+                .HasForeignKey(p => p.category_id);
+
+            modelBuilder.Entity<Orders>()
+                .HasOne(o => o.Payment)
+                .WithOne(p => p.Orders);
+
+            modelBuilder.Entity<Orders>()
+                .HasOne(o => o.Payment)
+                .WithOne(p => p.Orders)
+                .HasForeignKey<Payment>(p => p.orders_id);
+         
 
             base.OnModelCreating(modelBuilder);
 

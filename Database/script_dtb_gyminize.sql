@@ -13,7 +13,7 @@
  DROP TABLE IF EXISTS Plan;
  DROP TABLE IF EXISTS Customer_Health;
  DROP TABLE IF EXISTS Customer;
-
+ DROP TABLE IF EXISTS Payment;
 
  
 CREATE TABLE IF NOT EXISTS Customer (
@@ -96,6 +96,16 @@ CREATE TABLE IF NOT EXISTS Orders (
     total_price DECIMAL(10, 2)
 );
 
+CREATE TABLE IF NOT EXISTS Payment (
+    payment_id SERIAL PRIMARY KEY,                       -- Khóa chính tự tăng
+    orders_id INT REFERENCES Orders(orders_id) ON DELETE CASCADE, -- Liên kết với bảng Orders
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    -- Thời gian thanh toán
+    payment_method VARCHAR(50) NOT NULL,                -- Phương thức thanh toán (VD: Cash, Credit Card, Paypal)
+    payment_status VARCHAR(50) CHECK (payment_status IN ('Pending', 'Completed', 'Failed', 'Refunded')), -- Trạng thái thanh toán
+    payment_amount DECIMAL(10, 2) NOT NULL,             -- Số tiền thanh toán
+    transaction_id VARCHAR(100),                        -- Mã giao dịch (nếu có, dùng cho các cổng thanh toán)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP      -- Thời gian tạo bản ghi
+);
 -- Tạo bảng OrderDetail
 CREATE TABLE IF NOT EXISTS OrderDetail (
     orderdetail_id SERIAL PRIMARY KEY,
@@ -103,6 +113,8 @@ CREATE TABLE IF NOT EXISTS OrderDetail (
     orders_id INT REFERENCES Orders(orders_id),
     product_amount INT NOT NULL
 );
+
+
 
 -- Tạo bảng Plan
 CREATE TABLE IF NOT EXISTS Plan (
@@ -170,6 +182,7 @@ ALTER SEQUENCE category_category_id_seq RESTART WITH 1;
 ALTER SEQUENCE product_product_id_seq RESTART WITH 1;
 ALTER SEQUENCE orderdetail_orderdetail_id_seq RESTART WITH 1;
 ALTER SEQUENCE orders_orders_id_seq RESTART WITH 1;
+ALTER SEQUENCE payment_payment_id_seq RESTART WITH 1;
 
 
  -- Chèn dữ liệu vào bảng Customer
@@ -546,3 +559,5 @@ select * from TypeWorkout;
 select * from FoodDetail;
 select * from DailyDiary;
 select * from Customer;
+select * from orders;
+select * from payment;

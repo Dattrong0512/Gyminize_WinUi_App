@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gyminize.Tests.MSTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb4beff8c4d6625639e2cc467f71d8ff38c065ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f06237d21614059aefaf35e30f3addb96fdadb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gyminize.Tests.MSTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gyminize.Tests.MSTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,6 +6,7 @@ using GraphQL.Server;
 using Microsoft.EntityFrameworkCore;
 //using Gyminize_API.GraphQL;
 using GraphQL.Server.Transports.AspNetCore.SystemTextJson;
+using Gyminize_API.Data.Model;
 //using Gyminize_API.GraphQl.Mutations;
 
 
@@ -18,25 +19,15 @@ builder.Logging.AddDebug();
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<CustomerRepository>();
-//builder.Services.AddScoped<CustomerQuery>();
-//builder.Services.AddScoped<CustomerMutation>();
 builder.Services.AddScoped<CustomerHealthRepository>();
-//builder.Services.AddScoped<CustomerhealthMutations>();
-//builder.Services.AddScoped<CustomerhealthQuery>();
 builder.Services.AddScoped<DailydiaryRepository>();
-//builder.Services.AddScoped<DailydiaryQuery>();
-//builder.Services.AddScoped<DailydiaryMutations>();
 builder.Services.AddScoped<FooddetailRepository>();
-//builder.Services.AddScoped<FooddetailMutations>();
 builder.Services.AddScoped<FoodRepository>();
-//builder.Services.AddScoped<FoodQueries>();
 builder.Services.AddScoped<PlandetailRepository>();
-//builder.Services.AddScoped<PlandetailQuery>();
-//builder.Services.AddScoped<PlandetailMutation>();
 builder.Services.AddScoped<WorkoutdetailRepository>();
-//builder.Services.AddScoped<WorkoutdetailMutation>();
-//builder.Services.AddScoped<AppSchema>();
-
+builder.Services.AddScoped<ProductRepository>();
+builder.Services.AddScoped<OrdersRepository>();
+builder.Services.AddScoped<PaymentRepository>();
 // register graphQL
 builder.Services.AddGraphQL().AddSystemTextJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

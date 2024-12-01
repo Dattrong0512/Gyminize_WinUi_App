@@ -18,6 +18,10 @@ namespace Gyminize_API.Data.Repositories
         {
             return _context.CustomerEntity.Where(x => x.username == username).FirstOrDefault();
         }
+        public Customer? GetCustomerByEmail(string email)
+        {
+            return _context.CustomerEntity.Where(x => x.email == email).FirstOrDefault();
+        }
         public Customer addCustomer(Customer customer)
         {
             var existingCustomer = _context.CustomerEntity.Find(customer.customer_id);
