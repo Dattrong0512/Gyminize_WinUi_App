@@ -27,6 +27,14 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
+        public string address
+        {
+            get; set;
+        }
+        public string phone_number
+        {
+            get; set;
+        }
         public ICollection<Orderdetail>? Orderdetail
         {
             get; set;

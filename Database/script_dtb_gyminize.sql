@@ -1,3 +1,4 @@
+ DROP TABLE IF EXISTS Payment;
  DROP TABLE IF EXISTS OrderDetail;
  DROP TABLE IF EXISTS Orders;
  DROP TABLE IF EXISTS Product;
@@ -13,7 +14,7 @@
  DROP TABLE IF EXISTS Plan;
  DROP TABLE IF EXISTS Customer_Health;
  DROP TABLE IF EXISTS Customer;
- DROP TABLE IF EXISTS Payment;
+
 
  
 CREATE TABLE IF NOT EXISTS Customer (
@@ -93,6 +94,8 @@ CREATE TABLE IF NOT EXISTS Orders (
     orders_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES Customer(customer_id),
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	address TEXT,
+	phone_number VARCHAR(10),
     total_price DECIMAL(10, 2)
 );
 
@@ -284,18 +287,18 @@ VALUES
 (10, 'Gym Membership 1 Month', 40.00, 'FitnessHub', 'Thẻ tập gym 1 tháng');
 
 -- Chèn dữ liệu vào bảng Orders
-INSERT INTO Orders (customer_id, total_price)
+INSERT INTO Orders (customer_id, total_price,address,phone_number)
 VALUES 
-(1, 50.00),
-(2, 20.00),
-(3, 30.00),
-(4, 15.00),
-(5, 25.00),
-(6, 10.00),
-(7, 8.00),
-(8, 100.00),
-(9, 35.00),
-(10, 40.00);
+(1, 50.00,'123 Hai ba trung, Ha noi','0123456789'),
+(2, 20.00,'123 Hai ba trung, Ha noi','0123456789'),
+(3, 30.00,'123 Hai ba trung, Ha noi','0123456789'),
+(4, 15.00,'123 Hai ba trung, Ha noi','0123456789'),
+(5, 25.00,'123 Hai ba trung, Ha noi','0123456789'),
+(6, 10.00,'123 Hai ba trung, Ha noi','0123456789'),
+(7, 8.00,'123 Hai ba trung, Ha noi','0123456789'),
+(8, 100.00,'123 Hai ba trung, Ha noi','0123456789'),
+(9, 35.00,'123 Hai ba trung, Ha noi','0123456789'),
+(10, 40.00,'123 Hai ba trung, Ha noi','0123456789');
 
 -- Chèn dữ liệu vào bảng OrderDetail
 INSERT INTO OrderDetail (product_id, orders_id, product_amount)

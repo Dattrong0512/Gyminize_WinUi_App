@@ -25,6 +25,14 @@ public class Orders
     {
         get; set;
     }
+    public string address
+    {
+        get; set;
+    }
+    public string phone_number
+    {
+        get; set;
+    }
     public ICollection<Orderdetail>? Orderdetails
     {
         get; set;
