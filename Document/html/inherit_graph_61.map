@@ -1,0 +1,37 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="14,184,139,211"/>
+<area shape="rect" id="Node000001" href="$class_gyminize_1_1_view_models_1_1_guide1_view_model.html" title=" " alt="" coords="203,5,400,48"/>
+<area shape="poly" id="edge18_Node000000_Node000001" title=" " alt="" coords="92,169,134,113,162,83,194,58,215,46,218,51,197,62,166,87,138,117,96,172"/>
+<area shape="rect" id="Node000004" href="$class_gyminize_1_1_view_models_1_1_guide2_view_model.html" title=" " alt="" coords="203,72,400,115"/>
+<area shape="poly" id="edge19_Node000000_Node000004" title=" " alt="" coords="109,173,149,148,195,124,224,113,226,118,197,129,151,153,111,178"/>
+<area shape="rect" id="Node000005" href="$class_gyminize_1_1_view_models_1_1_guide3_view_model.html" title=" " alt="" coords="203,139,400,181"/>
+<area shape="poly" id="edge20_Node000000_Node000005" title=" " alt="" coords="153,182,202,174,203,179,154,187"/>
+<area shape="rect" id="Node000010" href="$class_gyminize_1_1_view_models_1_1_home_view_model.html" title=" " alt="" coords="206,339,396,381"/>
+<area shape="poly" id="edge21_Node000000_Node000010" title=" " alt="" coords="133,216,150,229,167,254,173,279,180,302,197,325,214,336,211,340,194,329,175,304,168,280,162,257,146,232,130,220"/>
+<area shape="rect" id="Node000006" href="$class_gyminize_1_1_view_models_1_1_plan_selection_view_model.html" title=" " alt="" coords="211,205,392,248"/>
+<area shape="poly" id="edge22_Node000000_Node000006" title=" " alt="" coords="154,205,211,212,210,217,154,210"/>
+<area shape="rect" id="Node000009" href="$class_gyminize_1_1_view_models_1_1_shop_view_model.html" title=" " alt="" coords="209,272,394,315"/>
+<area shape="poly" id="edge23_Node000000_Node000009" title=" " alt="" coords="124,215,149,228,173,244,197,258,225,269,223,274,194,262,170,248,146,233,121,220"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="14,680,139,707"/>
+<area shape="poly" id="edge25_Node000011_Node000010" title=" " alt="" coords="78,664,88,607,109,534,124,495,143,458,166,423,194,391,210,380,213,384,197,395,170,426,147,460,129,498,114,536,94,608,84,665"/>
+<area shape="rect" id="Node000012" href="$class_gyminize_1_1_view_models_1_1_chat_box_view_model.html" title=" " alt="" coords="210,805,393,848"/>
+<area shape="poly" id="edge24_Node000011_Node000012" title=" " alt="" coords="103,716,145,754,197,791,221,802,219,807,194,796,141,759,99,720"/>
+<area shape="rect" id="Node000013" href="$class_gyminize_1_1_view_models_1_1_nutritions_view_model.html" title=" " alt="" coords="196,605,407,648"/>
+<area shape="poly" id="edge26_Node000011_Node000013" title=" " alt="" coords="138,672,226,646,228,651,140,678"/>
+<area shape="rect" id="Node000014" href="$class_gyminize_1_1_view_models_1_1_signin_viewmodel.html" title=" " alt="" coords="206,672,397,715"/>
+<area shape="poly" id="edge27_Node000011_Node000014" title=" " alt="" coords="155,691,205,691,205,696,155,696"/>
+<area shape="rect" id="Node000015" href="$class_gyminize_1_1_view_models_1_1_signup_view_model.html" title=" " alt="" coords="204,739,399,781"/>
+<area shape="poly" id="edge28_Node000011_Node000015" title=" " alt="" coords="140,709,228,735,226,741,138,714"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,243,148,269"/>
+<area shape="poly" id="edge30_Node000002_Node000001" title=" " alt="" coords="132,233,146,221,159,200,166,180,168,140,170,100,178,79,194,58,208,46,212,51,198,62,183,81,175,101,173,140,171,181,164,203,150,224,136,237"/>
+<area shape="poly" id="edge31_Node000002_Node000004" title=" " alt="" coords="130,233,146,221,162,197,168,173,175,149,194,125,211,113,214,117,197,129,180,151,173,174,167,199,150,224,133,237"/>
+<area shape="poly" id="edge32_Node000002_Node000005" title=" " alt="" coords="121,233,146,220,170,205,194,191,223,179,225,184,197,196,173,210,149,225,124,238"/>
+<area shape="poly" id="edge33_Node000002_Node000006" title=" " alt="" coords="163,242,210,236,211,241,164,247"/>
+<area shape="poly" id="edge36_Node000002_Node000009" title=" " alt="" coords="164,268,209,275,208,281,163,273"/>
+<area shape="rect" id="Node000003" href="$class_gyminize_1_1_view_models_1_1_diary_view_model.html" title=" " alt="" coords="208,539,394,581"/>
+<area shape="poly" id="edge29_Node000002_Node000003" title=" " alt="" coords="85,284,97,336,118,400,151,467,172,498,197,525,213,536,210,540,194,529,168,501,146,470,113,402,91,337,80,285"/>
+<area shape="rect" id="Node000007" href="$class_gyminize_1_1_view_models_1_1_plan_view_model.html" title=" " alt="" coords="211,405,392,448"/>
+<area shape="poly" id="edge34_Node000002_Node000007" title=" " alt="" coords="96,281,138,337,166,366,197,391,218,402,215,407,194,396,162,370,134,340,92,284"/>
+<area shape="rect" id="Node000008" href="$class_gyminize_1_1_view_models_1_1_shell_view_model.html" title=" " alt="" coords="209,472,394,515"/>
+<area shape="poly" id="edge35_Node000002_Node000008" title=" " alt="" coords="89,283,104,322,127,369,158,417,197,458,215,469,212,474,194,462,154,420,122,372,99,324,84,285"/>
+</map>
