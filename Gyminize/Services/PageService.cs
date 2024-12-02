@@ -19,7 +19,7 @@ public class PageService : IPageService
         
         Configure<NutritionsViewModel, NutritionsPage>();
         Configure<DiaryViewModel, DiaryPage>();
-        //Configure<ShopViewModel, ShopPage>();
+        Configure<ShopViewModel, ShopPage>();
         //Configure<ShopDetailViewModel, ShopDetailPage>();
         Configure<SigninViewmodel, SigninPage>(); // Thêm dòng này
         Configure<Guide1ViewModel, GuidePage1>();
