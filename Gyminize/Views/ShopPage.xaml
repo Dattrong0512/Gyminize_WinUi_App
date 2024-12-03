@@ -21,11 +21,13 @@
             <TextBox
                 Grid.Column="0"
                 Margin="0,0,10,0"
+                Padding="8"
                 PlaceholderText="Tìm kiếm sản phẩm..." />
             <Button Grid.Column="1" Content="Tìm kiếm" />
             <Button
                 Grid.Column="2"
                 Padding="10"
+                Command="{Binding SelectCartCommand}"
                 Content="Giỏ hàng (0)" />
         </Grid>
 
@@ -76,12 +78,19 @@
         <!--  Products List  -->
         <ScrollViewer Margin="10,110,10,60">
             <ListView ItemsSource="{Binding FilteredProductLibraryItems}" SelectionMode="Single">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <controls:WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Button
                             Width="200"
                             Height="300"
-                            Margin="10">
+                            Margin="10"
+                            Command="{Binding DataContext.SelectProductCommand, ElementName=ContentArea, Mode=TwoWay}"
+                            CommandParameter="{Binding}">
                             <StackPanel>
                                 <Image
                                     Width="150"
@@ -108,18 +117,36 @@
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
-
         <!--  Pagination  -->
         <StackPanel
             Margin="0,0,0,10"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             Orientation="Horizontal">
-            <Button Margin="5" Content="next" />
-            <Button Margin="5" Content="1" />
-            <Button Margin="5" Content="2" />
-            <Button Margin="5" Content="3" />
-            <Button Margin="5" Content="back" />
+            <Button
+                Margin="5"
+                Command="{Binding PreviousPageCommand}"
+                IsEnabled="{Binding CanGoBack}">
+                <FontIcon Glyph="&#xF743;" />
+            </Button>
+            <TextBlock
+                Margin="5"
+                VerticalAlignment="Center"
+                Text="{Binding CurrentPage}" />
+            <TextBlock
+                Margin="5"
+                VerticalAlignment="Center"
+                Text="/" />
+            <TextBlock
+                Margin="5"
+                VerticalAlignment="Center"
+                Text="{Binding TotalPages}" />
+            <Button
+                Margin="5"
+                Command="{Binding NextPageCommand}"
+                IsEnabled="{Binding CanGoNext}">
+                <FontIcon Glyph="&#xF745;" />
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

@@ -17,6 +17,7 @@ using Gyminize.Core.Services;
 using Microsoft.UI.Xaml.Media.Imaging;
 using ColorCode.Compilation.Languages;
 
+
 public class DialogService : IDialogService
 {
     public async Task<(string? selectedMeal, int Quantity)> ShowMealSelectionDialogAsync()
@@ -93,7 +94,6 @@ public class DialogService : IDialogService
             Title = "Danh sách phát bài tập",
             PrimaryButtonText = "Previous",
             SecondaryButtonText = "Next",
-
         };
         _workoutDialog.Resources["ContentDialogMaxWidth"] = 2000;
         _workoutDialog.Resources["ContentDialogMaxHeight"] = 1500;
@@ -722,5 +722,256 @@ public class DialogService : IDialogService
         {
             await errorDialog.ShowAsync();
         });
+    }
+
+    public async Task ShowProductDialogWithSupplierAsync(Product product)
+    {
+        // Hình ảnh sản phẩm
+        var productImage = new Image
+        {
+            Source = new BitmapImage(new Uri("ms-appx:///Assets/planselection_model/expert.png")),
+            Width = 300,
+            Height = 300,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            Stretch = Stretch.Uniform,
+            Margin = new Thickness(10)
+        };
+
+        // Tên sản phẩm
+        var productNameTextBlock = new TextBlock
+        {
+            Text = product.product_name,
+            FontSize = 20,
+            FontWeight = FontWeights.Bold,
+            TextWrapping = TextWrapping.Wrap,
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        // Giá sản phẩm
+        var productPriceTextBlock = new TextBlock
+        {
+            Text = $"{product.product_price} đ",
+            FontSize = 18,
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.Red),
+            FontWeight = FontWeights.Bold,
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        // Đã bán
+        var productSoldTextBlock = new TextBlock
+        {
+            Text = $"Đã bán: 20 (nhớ chỉnh)",
+            FontSize = 16,
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.Gray),
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        // Nhà cung cấp
+        var supplierTextBlock = new TextBlock
+        {
+            Text = $"Nhà cung cấp: {product.product_provider}",
+            FontSize = 16,
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.Black),
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        // Số lượng sản phẩm với NumberBox
+        var quantityLabel = new TextBlock
+        {
+            Text = "Số lượng:",
+            FontSize = 16,
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        var quantityNumberBox = new NumberBox
+        {
+            Minimum = 1,
+            Maximum = 20,
+            Value = 1,
+            Width = 150,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Inline,
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        var descriptionLabel = new TextBlock
+        {
+            Text = "Mô tả:",
+            FontSize = 16,
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        var descriptionTextBlock = new TextBlock
+        {
+            Text = product.description,
+            FontSize = 15,
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+
+        // Lưới bố cục chính
+        var mainGrid = new Grid();
+        mainGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) });
+        mainGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) });
+
+        // Hình ảnh
+        mainGrid.Children.Add(productImage);
+        Grid.SetColumn(productImage, 0);
+
+        // Nội dung bên phải
+        var rightPanel = new StackPanel
+        {
+            Orientation = Orientation.Vertical
+        };
+
+        rightPanel.Children.Add(productNameTextBlock);
+        rightPanel.Children.Add(productPriceTextBlock);
+        rightPanel.Children.Add(productSoldTextBlock);
+        rightPanel.Children.Add(supplierTextBlock); // Thêm mục Nhà cung cấp
+        rightPanel.Children.Add(quantityLabel);
+        rightPanel.Children.Add(quantityNumberBox);
+        rightPanel.Children.Add(descriptionLabel);
+        rightPanel.Children.Add(descriptionTextBlock);
+        
+
+        mainGrid.Children.Add(rightPanel);
+        Grid.SetColumn(rightPanel, 1);
+
+        // Tạo dialog
+        var productDialog = new ContentDialog
+        {
+            Title = "Thông tin sản phẩm",
+            Content = mainGrid,
+            PrimaryButtonText = "Thêm vào giỏ hàng",
+            CloseButtonText = "Hủy",
+        };
+
+        productDialog.Resources["ContentDialogMaxWidth"] = 1200;
+        productDialog.Resources["ContentDialogMaxHeight"] = 600;
+
+        // Xử lý sự kiện thêm vào giỏ hàng
+        productDialog.PrimaryButtonClick += (s, e) =>
+        {
+            
+        };
+
+        // Thiết lập XamlRoot nếu dùng WinUI 3
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            productDialog.XamlRoot = rootElement.XamlRoot;
+        }
+
+        // Hiển thị dialog
+        await productDialog.ShowAsync();
+    }
+
+    public async Task ShowCheckoutDialogAsync(string customerName, string address, decimal totalProductPrice)
+    {
+        var checkoutDialog = new ContentDialog
+        {
+            Title = "Thanh Toán",
+            PrimaryButtonText = "Đặt Hàng",
+            CloseButtonText = "Hủy",
+            DefaultButton = ContentDialogButton.Primary
+        };
+
+        var stackPanel = new StackPanel();
+
+        // Customer Name
+        var nameStackPanel = new StackPanel { Orientation = Orientation.Horizontal };
+        var nameTextBlock = new TextBlock { Text = $"Họ Tên: {customerName}", Margin = new Thickness(0, 0, 10, 0) };
+        var editNameButton = new Button { Content = "Sửa" };
+        nameStackPanel.Children.Add(nameTextBlock);
+        nameStackPanel.Children.Add(editNameButton);
+
+        // Address
+        var addressStackPanel = new StackPanel { Orientation = Orientation.Horizontal };
+        var addressTextBlock = new TextBlock { Text = $"Địa Chỉ: {address}", Margin = new Thickness(0, 0, 10, 0) };
+        var editAddressButton = new Button { Content = "Sửa" };
+        var saveAddressButton = new Button { Content = "Lưu" };
+        addressStackPanel.Children.Add(addressTextBlock);
+        addressStackPanel.Children.Add(editAddressButton);
+        addressStackPanel.Children.Add(saveAddressButton);
+
+        // Shipping Fee
+        decimal shippingFee = totalProductPrice > 200000 ? 0 : 20000;
+        var shippingFeeTextBlock = new TextBlock { Text = $"Phí Vận Chuyển: {shippingFee}₫" };
+
+        // Total Payment
+        decimal totalPayment = totalProductPrice + shippingFee;
+        var totalPaymentTextBlock = new TextBlock { Text = $"Tổng Thanh Toán: {totalPayment}₫" };
+
+        // Payment Methods
+        var paymentMethodsTextBlock = new TextBlock { Text = "Phương Thức Thanh Toán:", Margin = new Thickness(0, 10, 0, 0) };
+        var paymentMethodsComboBox = new ComboBox();
+
+        // Momo
+        var momoItem = new ComboBoxItem { Content = "Momo" };
+        var momoStackPanel = new StackPanel { Orientation = Orientation.Horizontal };
+        var momoImage = new Image
+        {
+            Source = new BitmapImage(new Uri("ms-appx:///Assets/payment/momo.svg")),
+            Width = 24,
+            Height = 24,
+            Margin = new Thickness(0, 0, 10, 0)
+        };
+        momoStackPanel.Children.Add(momoImage);
+        momoStackPanel.Children.Add(new TextBlock { Text = "Momo" });
+        momoItem.Content = momoStackPanel;
+
+        // Bank
+        var bankItem = new ComboBoxItem { Content = "Ngân Hàng" };
+        var bankStackPanel = new StackPanel { Orientation = Orientation.Horizontal };
+        var bankImage = new Image
+        {
+            Source = new BitmapImage(new Uri("ms-appx:///Assets/payment/bank.svg")),
+            Width = 24,
+            Height = 24,
+            Margin = new Thickness(0, 0, 10, 0)
+        };
+        bankStackPanel.Children.Add(bankImage);
+        bankStackPanel.Children.Add(new TextBlock { Text = "Ngân Hàng" });
+        bankItem.Content = bankStackPanel;
+
+        // Cash on Delivery
+        var codItem = new ComboBoxItem { Content = "Thanh Toán Khi Nhận Hàng" };
+        var codStackPanel = new StackPanel { Orientation = Orientation.Horizontal };
+        var codImage = new Image
+        {
+            Source = new BitmapImage(new Uri("ms-appx:///Assets/payment/cod.svg")),
+            Width = 24,
+            Height = 24,
+            Margin = new Thickness(0, 0, 10, 0)
+        };
+        codStackPanel.Children.Add(codImage);
+        codStackPanel.Children.Add(new TextBlock { Text = "Thanh Toán Khi Nhận Hàng" });
+        codItem.Content = codStackPanel;
+
+        paymentMethodsComboBox.Items.Add(momoItem);
+        paymentMethodsComboBox.Items.Add(bankItem);
+        paymentMethodsComboBox.Items.Add(codItem);
+        paymentMethodsComboBox.SelectedIndex = 0;
+
+        // Add elements to stack panel
+        stackPanel.Children.Add(nameStackPanel);
+        stackPanel.Children.Add(addressStackPanel);
+        stackPanel.Children.Add(shippingFeeTextBlock);
+        stackPanel.Children.Add(totalPaymentTextBlock);
+        stackPanel.Children.Add(paymentMethodsTextBlock);
+        stackPanel.Children.Add(paymentMethodsComboBox);
+
+        checkoutDialog.Content = stackPanel;
+
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            checkoutDialog.XamlRoot = rootElement.XamlRoot;
+        }
+
+        // Hiển thị dialog
+        var result = await checkoutDialog.ShowAsync();
+
+        if (result == ContentDialogResult.Primary)
+        {
+            // Handle order placement logic here
+        }
     }
 }

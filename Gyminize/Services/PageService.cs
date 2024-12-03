@@ -30,6 +30,8 @@ public class PageService : IPageService
         Configure<PlanSelectionViewModel, PlanSelectionPage>();
         Configure<PlanViewModel, PlanPage>();
         Configure<ChatBoxViewModel, ChatBoxPage>();
+        Configure<CartViewModel, CartPage>();
+        Configure<PaymentViewModel, PaymentPage>();
     }
 
     // Lấy loại trang dựa trên khóa trang.

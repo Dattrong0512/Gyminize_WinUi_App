@@ -54,14 +54,19 @@
     <None Remove="Assets\Icon\ok.svg" />
     <None Remove="Assets\Icon\weight.svg" />
     <None Remove="Assets\motivation.jpg" />
+    <None Remove="Assets\payment\bank.svg" />
+    <None Remove="Assets\payment\cod.svg" />
+    <None Remove="Assets\payment\momo.svg" />
     <None Remove="Assets\planselection_model\average.png" />
     <None Remove="Assets\planselection_model\beginner.png" />
     <None Remove="Assets\planselection_model\expert.png" />
     <None Remove="Assets\training2.png" />
+    <None Remove="Views\CartPage.xaml" />
     <None Remove="Views\ChatBoxPage.xaml" />
     <None Remove="Views\GuidePage1.xaml" />
     <None Remove="Views\GuidePage2.xaml" />
     <None Remove="Views\GuidePage3.xaml" />
+    <None Remove="Views\PaymentPage.xaml" />
     <None Remove="Views\PlanSelectionPage.xaml" />
     <None Remove="Views\SigninPage.xaml" />
     <None Remove="Views\SignupPage.xaml" />
@@ -141,6 +146,12 @@
     <None Update="Assets\training1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\PaymentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\CartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\ChatBoxPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

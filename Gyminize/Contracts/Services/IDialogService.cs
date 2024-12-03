@@ -20,4 +20,8 @@ public interface IDialogService
     Task<string> ShowResetPasswordDialogAsync();
 
     Task ShowErrorDialogAsync(string errorMessage);
+
+    Task ShowProductDialogWithSupplierAsync(Product product);
+
+    Task ShowCheckoutDialogAsync(string customerName, string address, decimal totalProductPrice);
 }

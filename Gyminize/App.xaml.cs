@@ -109,6 +109,10 @@ public partial class App : Application
             services.AddTransient<PlanSelectionViewModel>();
             services.AddTransient<ChatBoxPage>();
             services.AddTransient<ChatBoxViewModel>();
+            services.AddTransient<CartPage>();
+            services.AddTransient<CartViewModel>();
+            services.AddTransient<PaymentPage>();
+            services.AddTransient<PaymentViewModel>();
             services.AddSingleton<Customer>();
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));

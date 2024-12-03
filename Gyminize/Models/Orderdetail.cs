@@ -25,6 +25,8 @@ public class Orderdetail
     {
         get; set;
     }
+    public decimal detail_price => product_amount * Product.product_price;
+
     public Product? Product
     {
         get; set;
