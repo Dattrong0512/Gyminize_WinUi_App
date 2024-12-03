@@ -33,6 +33,10 @@ public class Orders
     {
         get; set;
     }
+    public string status
+    {
+        get; set;
+    }
     public ICollection<Orderdetail>? Orderdetails
     {
         get; set;

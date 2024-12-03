@@ -35,6 +35,10 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
+        public string status
+        {
+            get; set;
+        }
         public ICollection<Orderdetail>? Orderdetail
         {
             get; set;

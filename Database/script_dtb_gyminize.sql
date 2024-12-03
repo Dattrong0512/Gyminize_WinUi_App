@@ -96,7 +96,8 @@ CREATE TABLE IF NOT EXISTS Orders (
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	address TEXT,
 	phone_number VARCHAR(10),
-    total_price DECIMAL(10, 2)
+    total_price DECIMAL(10, 2),
+	status TEXT
 );
 
 CREATE TABLE IF NOT EXISTS Payment (
@@ -287,18 +288,18 @@ VALUES
 (10, 'Gym Membership 1 Month', 40.00, 'FitnessHub', 'Thẻ tập gym 1 tháng');
 
 -- Chèn dữ liệu vào bảng Orders
-INSERT INTO Orders (customer_id, total_price,address,phone_number)
+INSERT INTO Orders (customer_id, total_price,address,phone_number,status)
 VALUES 
-(1, 50.00,'123 Hai ba trung, Ha noi','0123456789'),
-(2, 20.00,'123 Hai ba trung, Ha noi','0123456789'),
-(3, 30.00,'123 Hai ba trung, Ha noi','0123456789'),
-(4, 15.00,'123 Hai ba trung, Ha noi','0123456789'),
-(5, 25.00,'123 Hai ba trung, Ha noi','0123456789'),
-(6, 10.00,'123 Hai ba trung, Ha noi','0123456789'),
-(7, 8.00,'123 Hai ba trung, Ha noi','0123456789'),
-(8, 100.00,'123 Hai ba trung, Ha noi','0123456789'),
-(9, 35.00,'123 Hai ba trung, Ha noi','0123456789'),
-(10, 40.00,'123 Hai ba trung, Ha noi','0123456789');
+(1, 50.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(2, 20.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(3, 30.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(4, 15.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(5, 25.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(6, 10.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(7, 8.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(8, 100.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(9, 35.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
+(10, 40.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan');
 
 -- Chèn dữ liệu vào bảng OrderDetail
 INSERT INTO OrderDetail (product_id, orders_id, product_amount)

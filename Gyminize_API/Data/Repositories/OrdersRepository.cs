@@ -41,6 +41,27 @@ namespace Gyminize_API.Data.Repositories
                 throw;
             }
         }
+        public bool UpdateStatusOrder(int orders_id, string status)
+        {
+            try
+            {
+                var order = _context.OrdersEntity
+                    .Where(o => o.orders_id == orders_id)
+                    .FirstOrDefault();
+                if (order == null)
+                {
+                    return false;
+                }
+                order.status = status;
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in UpdateStatusOrder: {ex.Message}");
+                throw;
+            }
+        }
     }
 }
 

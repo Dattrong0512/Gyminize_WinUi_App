@@ -28,6 +28,7 @@ builder.Services.AddScoped<WorkoutdetailRepository>();
 builder.Services.AddScoped<ProductRepository>();
 builder.Services.AddScoped<OrdersRepository>();
 builder.Services.AddScoped<PaymentRepository>();
+builder.Services.AddScoped<OrderDetailRepository>();
 // register graphQL
 builder.Services.AddGraphQL().AddSystemTextJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
