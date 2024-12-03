@@ -75,7 +75,7 @@ namespace Gyminize_API.Controllers
         /// \param orders_id ID của đơn hàng.
         /// \param status Trạng thái mới của đơn hàng.
         /// \return Trả về đối tượng đơn hàng đã được cập nhật trạng thái.
-        [HttpPost("update/orders_id/{orders_id:int}/status/{status}")]
+        [HttpPut("update/orders_id/{orders_id:int}/status/{status}")]
         public IActionResult UpdateStatusOrder(int orders_id, string status)
         {
             var UpdateStatus = _ordersRepository.UpdateStatusOrder(orders_id, status);

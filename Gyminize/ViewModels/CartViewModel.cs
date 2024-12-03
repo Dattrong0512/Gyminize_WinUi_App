@@ -52,6 +52,7 @@ public partial class CartViewModel : ObservableRecipient
         _apiServicesClient = apiServicesClient;
         DeleteOrderDetailCommand = new AsyncRelayCommand<Orderdetail>(DeleteOrderDetailAsync);
         BuyingSelectedCommand = new RelayCommand(BuyingSelected);
+        LoadOrderDetailData();
     }
 
     public async Task GetCustomerID()
@@ -62,17 +63,21 @@ public partial class CartViewModel : ObservableRecipient
 
 
 
-    public void LoadOrderDetailData()
+    public async void LoadOrderDetailData()
     {
+        await GetCustomerID();
         try
         {// sửa lại api xóa
-            var order = _apiServicesClient.Get<Orders>($"api/Order/get/customer_id/{CustomerId}");
-            OrderDetailsItems = order.Orderdetails.ToList();
+            var orderlist = _apiServicesClient.Get<List<Orders>>($"api/Order/get/customerId/All/{CustomerId}");
+            var filteredOrder = orderlist.FirstOrDefault(order => string.IsNullOrEmpty(order.status));
+            Orders orders = filteredOrder;
+            OrderDetailsItems = orders.Orderdetails.ToList();
+            
         }
         catch (Exception ex)
         {
             _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
-            Debug.WriteLine($"Error loading plan details: {ex.Message}");
+            Debug.WriteLine($"Error loading order details: {ex.Message}");
         }
     }
 
@@ -84,7 +89,7 @@ public partial class CartViewModel : ObservableRecipient
         try
         {
 
-            var deleteResult = _apiServicesClient.Delete($"api/Foodetail/delete", orderDetail);
+            var deleteResult = _apiServicesClient.Delete($"api/OrderDetail/delete", orderDetail);
 
             if (deleteResult)
             {

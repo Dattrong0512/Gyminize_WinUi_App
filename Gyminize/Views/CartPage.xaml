@@ -108,7 +108,7 @@
                                         Height="80"
                                         Margin="0,5,0,0"
                                         HorizontalAlignment="Left"
-                                        Source="{Binding Product.product_source}" />
+                                        Source="ms-appx:///Assets/planselection_model/expert.png" />
                                 </StackPanel>
                                 <TextBlock
                                     Grid.Column="1"
@@ -170,9 +170,9 @@
                 Padding="10,5"
                 HorizontalAlignment="Right"
                 Background="Orange"
+                Command="{Binding BuyingSelectedCommand}"
                 Content="Mua hàng"
                 FontSize="16"
-                Command="{Binding BuyingSelectedCommand}"
                 Foreground="White" />
         </StackPanel>
     </Grid>

@@ -58,72 +58,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ToggleButton
-                    x:Name="MomoButton"
-                    Grid.Column="0"
-                    Width="150"
-                    Height="100"
-                    Margin="5"
-                    Checked="PaymentMethod_Checked"
-                    Unchecked="PaymentMethod_Unchecked">
-                    <StackPanel
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Orientation="Vertical">
-                        <Image
-                            Width="50"
-                            Height="50"
-                            Source="ms-appx:///Assets/momo.svg" />
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            FontSize="16"
-                            Text="Momo" />
-                    </StackPanel>
-                </ToggleButton>
-                <ToggleButton
-                    x:Name="BankButton"
-                    Grid.Column="1"
-                    Width="150"
-                    Height="100"
-                    Margin="5"
-                    Checked="PaymentMethod_Checked"
-                    Unchecked="PaymentMethod_Unchecked">
-                    <StackPanel
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Orientation="Vertical">
-                        <Image
-                            Width="50"
-                            Height="50"
-                            Source="ms-appx:///Assets/bank.svg" />
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            FontSize="16"
-                            Text="Ngân Hàng" />
-                    </StackPanel>
-                </ToggleButton>
-                <ToggleButton
-                    x:Name="CodButton"
-                    Grid.Column="2"
-                    Width="150"
-                    Height="100"
-                    Margin="5"
-                    Checked="PaymentMethod_Checked"
-                    Unchecked="PaymentMethod_Unchecked">
-                    <StackPanel
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Orientation="Vertical">
-                        <Image
-                            Width="50"
-                            Height="50"
-                            Source="ms-appx:///Assets/cod.svg" />
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            FontSize="16"
-                            Text="Thanh Toán Khi Nhận Hàng" />
-                    </StackPanel>
-                </ToggleButton>
+                
             </Grid>
         </StackPanel>
 

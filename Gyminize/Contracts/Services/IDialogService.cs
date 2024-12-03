@@ -21,7 +21,7 @@ public interface IDialogService
 
     Task ShowErrorDialogAsync(string errorMessage);
 
-    Task ShowProductDialogWithSupplierAsync(Product product);
+    Task <bool> ShowProductDialogWithSupplierAsync(Product product, int orderid);
 
     Task ShowCheckoutDialogAsync(string customerName, string address, decimal totalProductPrice);
 }

@@ -724,8 +724,9 @@ public class DialogService : IDialogService
         });
     }
 
-    public async Task ShowProductDialogWithSupplierAsync(Product product)
+    public async Task<bool> ShowProductDialogWithSupplierAsync(Product product, int orderid)
     {
+        bool addSuccess = true;
         // Hình ảnh sản phẩm
         var productImage = new Image
         {
@@ -851,7 +852,18 @@ public class DialogService : IDialogService
         // Xử lý sự kiện thêm vào giỏ hàng
         productDialog.PrimaryButtonClick += (s, e) =>
         {
-            
+            var orderdetail = new Orderdetail
+            {
+                product_id = product.product_id,
+                Product = product,
+                product_amount = (int)quantityNumberBox.Value,
+                orders_id = orderid
+            };
+            var postResult = ApiServices.Post<Orderdetail>("api/OrderDetail/add", orderdetail);
+            if(postResult == null)
+            {
+                addSuccess = false;
+            }
         };
 
         // Thiết lập XamlRoot nếu dùng WinUI 3
@@ -862,6 +874,7 @@ public class DialogService : IDialogService
 
         // Hiển thị dialog
         await productDialog.ShowAsync();
+        return addSuccess;
     }
 
     public async Task ShowCheckoutDialogAsync(string customerName, string address, decimal totalProductPrice)
@@ -971,7 +984,7 @@ public class DialogService : IDialogService
 
         if (result == ContentDialogResult.Primary)
         {
-            // Handle order placement logic here
+            
         }
     }
 }

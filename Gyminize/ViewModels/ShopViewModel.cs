@@ -10,6 +10,7 @@ using Gyminize.Models;
 using Gyminize.Contracts.Services;
 using Gyminize.Contracts.ViewModels;
 using Gyminize.Core.Contracts.Services;
+using Gyminize.Services;
 
 
 namespace Gyminize.ViewModels;
@@ -22,6 +23,7 @@ public partial class ShopViewModel : ObservableRecipient
     private readonly INavigationService _navigationService;
     private readonly IDialogService _dialogService;
     private readonly IApiServicesClient _apiServicesClient;
+    private readonly ILocalSettingsService _localSettingsService;
     public ObservableCollection<Product> ProductLibraryItems { get; set; } = new ObservableCollection<Product>();
     public ObservableCollection<Product> FilteredProductLibraryItems { get; set; } = new ObservableCollection<Product>();
 
@@ -50,14 +52,22 @@ public partial class ShopViewModel : ObservableRecipient
         get => _canGoBack;
         set => SetProperty(ref _canGoBack, value);
     }
-
+    public int CustomerId
+    {
+        get; set;
+    }
+    public int OrderId
+    {
+        get; set;
+    }
     public ICommand NextPageCommand { get; }
     public ICommand PreviousPageCommand { get; }
     public ICommand SelectProductCommand { get; }
     public ICommand SelectCartCommand { get; }
 
-    public ShopViewModel(INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient)
+    public ShopViewModel(INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient, ILocalSettingsService localSettingsService)
     {
+        _localSettingsService = localSettingsService;
         _navigationService = navigationService;
         _dialogService = dialogService;
         _apiServicesClient = apiServicesClient;
@@ -66,6 +76,8 @@ public partial class ShopViewModel : ObservableRecipient
         PreviousPageCommand = new RelayCommand(PreviousPage);
         SelectCartCommand = new RelayCommand(SelectCart);
         SelectProductCommand = new AsyncRelayCommand<Product?>(SelectProduct);
+
+        CreateOrGetOrderID();
         LoadProductLibraryAsync();
     }
 
@@ -100,16 +112,50 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
+    public async Task GetCustomerID()
+    {
+        var customer_id = await _localSettingsService.ReadSettingAsync<string>("customer_id");
+        CustomerId = int.Parse(customer_id);
+    }
+
+    public async void CreateOrGetOrderID()
+    {
+        await GetCustomerID();
+        var orderlist = _apiServicesClient.Get<List<Orders>>($"api/Order/get/customerID/All/" + CustomerId);
+        var filteredOrder = orderlist.FirstOrDefault(order => string.IsNullOrEmpty(order.status));
+        if (filteredOrder != null)
+        {
+            OrderId = filteredOrder.orders_id;
+        }
+        else
+        {
+            var order = new Orders
+            {
+                customer_id = CustomerId,
+                order_date = DateTime.Now,
+                total_price = 0,
+                address = "",
+                phone_number = "",
+                status = "",
+                Orderdetails = new List<Orderdetail>()
+            };
+            var result = _apiServicesClient.Post<Orders>("api/Order/add", order);
+            if(result == null)
+            {
+                _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể tạo đơn hàng mới");
+            }
+        }
+    }
 
     public async Task LoadProductLibraryAsync()
     {
         try
         {
-            var foods = _apiServicesClient.Get<List<Product>>("api/Product");
-            if (foods != null && foods.Any())
+            var products = _apiServicesClient.Get<List<Product>>("api/Product");
+            if (products != null && products.Any())
             {
                 ProductLibraryItems.Clear();
-                foreach (var food in foods)
+                foreach (var food in products)
                 {
                     ProductLibraryItems.Add(food);
                 }
@@ -134,6 +180,10 @@ public partial class ShopViewModel : ObservableRecipient
 
     public async Task SelectProduct(Product product)
     {
-        await _dialogService.ShowProductDialogWithSupplierAsync(product);
+        var result = await _dialogService.ShowProductDialogWithSupplierAsync(product, OrderId);
+        if(result == false)
+        {
+            await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể thêm sản phẩm vào giỏ hàng");
+        }
     }
 }
