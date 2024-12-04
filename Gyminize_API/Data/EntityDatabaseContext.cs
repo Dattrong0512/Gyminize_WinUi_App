@@ -113,7 +113,9 @@ namespace Gyminize_API.Data
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.Orderdetail)
                 .WithOne(od => od.Product)
-                .HasForeignKey(od => od.product_id);
+                .HasForeignKey(od => od.product_id)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade); // Thiết lập cascade delete
 
             modelBuilder.Entity<Category>()
                 .HasMany(c => c.Product)
@@ -122,13 +124,14 @@ namespace Gyminize_API.Data
 
             modelBuilder.Entity<Orders>()
                 .HasOne(o => o.Payment)
-                .WithOne(p => p.Orders);
-
-            modelBuilder.Entity<Orders>()
-                .HasOne(o => o.Payment)
                 .WithOne(p => p.Orders)
                 .HasForeignKey<Payment>(p => p.orders_id);
-         
+
+            // Cấu hình mối quan hệ 1-n giữa Customer và Orders
+            modelBuilder.Entity<Customer>()
+                .HasMany(c => c.Orders) 
+                .WithOne(d => d.Customer)     
+                .HasForeignKey(d => d.customer_id);  
 
             base.OnModelCreating(modelBuilder);
 

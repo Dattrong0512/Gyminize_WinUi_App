@@ -2,7 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
-using Gyminize_API.Data.Model;
 using Gyminize_API.Data.Models;
 namespace Gyminize_API.Data.Model
 {
@@ -39,17 +38,18 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public ICollection<Orderdetail>? Orderdetail
-        {
-            get; set;
-        }
+
         [JsonIgnore]
         public Customer? Customer
         {
             get; set;
         }
-        [JsonIgnore]
-        public Payment? Payment
+        public ICollection<Orderdetail>? Orderdetail
+        {
+            get; set;
+        }
+
+        public virtual Payment? Payment
         {
             get; set;
         }

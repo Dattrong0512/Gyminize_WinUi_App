@@ -1,4 +1,5 @@
-﻿using Gyminize_API.Data.Model;
+﻿using System.Diagnostics;
+using Gyminize_API.Data.Model;
 using Microsoft.EntityFrameworkCore;
 namespace Gyminize_API.Data.Repositories
 {
@@ -29,18 +30,28 @@ namespace Gyminize_API.Data.Repositories
         }
         public Orders AddOrder(Orders order)
         {
-            try
+            // Kiểm tra xem customer_id có hợp lệ không
+
+            // Nếu đơn hàng có chi tiết, thêm vào Orderdetail
+            if (order.Orderdetail != null && order.Orderdetail.Any())
             {
-                _context.OrdersEntity.Add(order);
-                _context.SaveChanges();
-                return order;
+                foreach (var detail in order.Orderdetail)
+                {
+                    var product = _context.ProductEntity.Find(detail.product_id);
+                    if (product == null)
+                    {
+                        throw new Exception($"Product with ID {detail.product_id} not found.");
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in AddOrder: {ex.Message}");
-                throw;
-            }
+            Debug.WriteLine(order);
+            // Thêm đơn hàng vào database
+            _context.OrdersEntity.Add(order);
+            _context.SaveChanges();
+
+            return order;
         }
+
         public bool UpdateStatusOrder(int orders_id, string status)
         {
             try

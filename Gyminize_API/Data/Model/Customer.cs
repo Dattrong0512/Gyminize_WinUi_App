@@ -9,7 +9,6 @@ namespace Gyminize_API.Data.Models
     public class Customer
     {
         [Key]
-        
         public int customer_id
         {
             get; set;

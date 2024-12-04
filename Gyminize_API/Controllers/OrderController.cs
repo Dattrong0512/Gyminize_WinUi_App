@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Gyminize_API.Data.Repositories;
 using Microsoft.AspNetCore.Http.HttpResults;
+using System.Diagnostics;
 namespace Gyminize_API.Controllers
 {
     /// \class OrderController
@@ -54,6 +55,7 @@ namespace Gyminize_API.Controllers
         [HttpPost("add")]
         public IActionResult AddOrder([FromBody] Orders order)
         {
+            Debug.WriteLine(order);
             if (order == null)
             {
                 return BadRequest("Order data is null.");
@@ -67,9 +69,11 @@ namespace Gyminize_API.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+
 
         /// \brief API để cập nhật trạng thái của một đơn hàng.
         /// \param orders_id ID của đơn hàng.

@@ -36,8 +36,8 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        [JsonIgnore]
-        public Orders? Orders
+
+        public virtual Orders? Orders
         {
             get; set;
         }

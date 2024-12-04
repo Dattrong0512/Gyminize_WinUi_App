@@ -19,7 +19,7 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        [JsonIgnore]
+
         public ICollection<Product>? Product
         {
             get; set;

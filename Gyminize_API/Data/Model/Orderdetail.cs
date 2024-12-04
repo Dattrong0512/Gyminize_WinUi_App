@@ -25,15 +25,16 @@ namespace Gyminize_API.Data.Model
         {
             get; set;
         }
-        public Product? Product
-        {
-            get; set;
-        }
         [JsonIgnore]
         public Orders? Orders
         {
             get; set;
         }
+        public Product? Product
+        {
+            get; set;
+        }
+
 
     }
 
