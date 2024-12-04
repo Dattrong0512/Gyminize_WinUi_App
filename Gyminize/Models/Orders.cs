@@ -37,7 +37,7 @@ public class Orders
     {
         get; set;
     }
-    public ICollection<Orderdetail>? Orderdetails
+    public ICollection<Orderdetail>? Orderdetail
     {
         get; set;
     }

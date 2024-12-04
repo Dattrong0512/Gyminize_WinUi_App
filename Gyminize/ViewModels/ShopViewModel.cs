@@ -132,12 +132,12 @@ public partial class ShopViewModel : ObservableRecipient
             var order = new Orders
             {
                 customer_id = CustomerId,
-                order_date = DateTime.Now,
+                order_date = DateTime.UtcNow,
                 total_price = 0,
                 address = "",
                 phone_number = "",
                 status = "",
-                Orderdetails = new List<Orderdetail>()
+                Orderdetail = new List<Orderdetail>()
             };
             var result = _apiServicesClient.Post<Orders>("api/Order/add", order);
             if(result == null)

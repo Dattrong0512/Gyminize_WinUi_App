@@ -85,7 +85,6 @@
                             BorderThickness="1">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="150" />
                                     <!--  Unit Price  -->
@@ -97,32 +96,53 @@
                                     <!--  Actions  -->
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Column="0">
-                                    <TextBlock
-                                        FontSize="16"
-                                        FontWeight="Bold"
-                                        Text="{Binding Product.product_name}"
-                                        TextWrapping="Wrap" />
+                                <StackPanel Grid.Column="0" Orientation="Horizontal">
                                     <Image
                                         Width="80"
                                         Height="80"
                                         Margin="0,5,0,0"
                                         HorizontalAlignment="Left"
                                         Source="ms-appx:///Assets/planselection_model/expert.png" />
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="{Binding Product.product_name}"
+                                        TextWrapping="Wrap" />
                                 </StackPanel>
                                 <TextBlock
                                     Grid.Column="1"
+                                    VerticalAlignment="Center"
                                     FontSize="14"
                                     Text="{Binding Product.product_price}"
                                     TextAlignment="Center" />
-                                <NumberBox
+                                <StackPanel
                                     Grid.Column="2"
-                                    Width="50"
                                     HorizontalAlignment="Center"
-                                    Minimum="1"
-                                    Value="{Binding product_amount, Mode=TwoWay}" />
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <Button
+                                        Width="32"
+                                        Height="32"
+                                        Command="{Binding DataContext.DecrementCommand, ElementName=ContentArea, Mode=TwoWay}"
+                                        CommandParameter="{Binding}"
+                                        Content="-" />
+                                    <TextBlock
+                                        Width="40"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding product_amount, Mode=TwoWay}"
+                                        TextAlignment="Center" />
+                                    <Button
+                                        Width="32"
+                                        Height="32"
+                                        Command="{Binding DataContext.IncrementCommand, ElementName=ContentArea, Mode=TwoWay}"
+                                        CommandParameter="{Binding}"
+                                        Content="+" />
+                                </StackPanel>
                                 <TextBlock
                                     Grid.Column="3"
+                                    VerticalAlignment="Center"
                                     FontSize="14"
                                     FontWeight="Bold"
                                     Foreground="DarkBlue"
@@ -132,6 +152,7 @@
                                     Grid.Column="4"
                                     Padding="10,5"
                                     HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
                                     Background="Red"
                                     Command="{Binding DataContext.DeleteOrderDetailCommand, ElementName=ContentArea, Mode=TwoWay}"
                                     CommandParameter="{Binding}"
@@ -158,14 +179,19 @@
                 Margin="0,5,20,0"
                 HorizontalAlignment="Right"
                 FontSize="16"
-                FontWeight="Bold"
-                Text="Tổng sản phẩm: 2" />
+                FontWeight="Bold">
+                <Run Text="Tổng sản phẩm: " />
+                <Run Text="{Binding TotalProductCount}" />
+            </TextBlock>
             <TextBlock
                 Margin="0,5,20,0"
                 FontSize="16"
                 FontWeight="Bold"
-                Foreground="DarkGreen"
-                Text="Tổng thanh toán: 235.200₫" />
+                Foreground="DarkGreen">
+                <Run Text="Tổng thanh toán: " />
+                <Run Text="{Binding TotalPayment}" />
+                <Run Text="đ" />
+            </TextBlock>
             <Button
                 Padding="10,5"
                 HorizontalAlignment="Right"

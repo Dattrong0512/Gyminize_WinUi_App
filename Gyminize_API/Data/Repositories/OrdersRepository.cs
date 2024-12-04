@@ -15,7 +15,7 @@ namespace Gyminize_API.Data.Repositories
             var Orders = _context.OrdersEntity
                 .Include(o => o.Orderdetail)
                   .ThenInclude(p=>p.Product)
-            .Where(o => o.customer_id == customer_id) .ToList();
+            .Where(o => o.customer_id == customer_id).ToList();
             return Orders;
 
         }

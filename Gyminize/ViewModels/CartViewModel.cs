@@ -12,6 +12,8 @@ using Gyminize.Contracts.ViewModels;
 using Gyminize.Core.Contracts.Services;
 using Gyminize.Views;
 using System.Diagnostics;
+using Twilio.Rest.Api.V2010.Account;
+using Gyminize.Core.Services;
 
 
 namespace Gyminize.ViewModels;
@@ -24,6 +26,20 @@ public partial class CartViewModel : ObservableRecipient
     private readonly ILocalSettingsService _localSettingsService;
     private readonly IDialogService _dialogService;
     private readonly IApiServicesClient _apiServicesClient;
+
+    private decimal _totalPayment;
+    public decimal TotalPayment
+    {
+        get => _totalPayment;
+        set => SetProperty(ref _totalPayment, value);
+    }
+
+    private int _totalProductCount;
+    public int TotalProductCount
+    {
+        get => _totalProductCount;
+        set => SetProperty(ref _totalProductCount, value);
+    }
 
     private int _customerId;
     public int CustomerId
@@ -43,7 +59,20 @@ public partial class CartViewModel : ObservableRecipient
     {
         get;
     }
-    public List<Orderdetail> OrderDetailsItems { get; set; } = new List<Orderdetail>();
+
+    public ICommand IncrementCommand
+    {
+        get;
+    }
+    public ICommand DecrementCommand
+    {
+        get;
+    }
+
+
+    public ObservableCollection<Orderdetail> OrderDetailsItems { get; set; } = new ObservableCollection<Orderdetail>();
+    
+    public Orders currentOrder = new Orders();
     public CartViewModel(INavigationService navigationService,ILocalSettingsService localSettingsService, IDialogService dialogService, IApiServicesClient apiServicesClient)
     {
         _navigationService = navigationService;
@@ -52,6 +81,9 @@ public partial class CartViewModel : ObservableRecipient
         _apiServicesClient = apiServicesClient;
         DeleteOrderDetailCommand = new AsyncRelayCommand<Orderdetail>(DeleteOrderDetailAsync);
         BuyingSelectedCommand = new RelayCommand(BuyingSelected);
+        IncrementCommand = new RelayCommand<Orderdetail>(Increment);
+        DecrementCommand = new RelayCommand<Orderdetail>(Decrement);
+
         LoadOrderDetailData();
     }
 
@@ -67,17 +99,65 @@ public partial class CartViewModel : ObservableRecipient
     {
         await GetCustomerID();
         try
-        {// sửa lại api xóa
+        {
             var orderlist = _apiServicesClient.Get<List<Orders>>($"api/Order/get/customerId/All/{CustomerId}");
             var filteredOrder = orderlist.FirstOrDefault(order => string.IsNullOrEmpty(order.status));
-            Orders orders = filteredOrder;
-            OrderDetailsItems = orders.Orderdetails.ToList();
-            
+            if (filteredOrder != null)
+            {
+                OrderDetailsItems.Clear();
+                foreach (var orderDetail in filteredOrder.Orderdetail)
+                {
+                    OrderDetailsItems.Add(orderDetail);
+                }
+                UpdateTotals();
+                currentOrder = filteredOrder;
+            }
         }
         catch (Exception ex)
         {
-            _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
+            await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
             Debug.WriteLine($"Error loading order details: {ex.Message}");
+        }
+    }
+
+    private void UpdateTotals()
+    {
+        TotalProductCount = OrderDetailsItems.Count;
+        if (TotalProductCount != 0)
+        {
+            TotalPayment = OrderDetailsItems.Sum(item => item.detail_price);
+        } else { TotalPayment = 0; }
+    }
+
+    private void Increment(Orderdetail orderDetail)
+    {
+        if (orderDetail != null)
+        {
+            orderDetail.product_amount++;
+            var puttResult = ApiServices.Put<Orderdetail>("api/OrderDetail/update/number", orderDetail);
+            if (puttResult != null)
+            {
+                var index = OrderDetailsItems.IndexOf(orderDetail);
+                OrderDetailsItems[index] = orderDetail;
+                OnPropertyChanged(nameof(OrderDetailsItems));
+                UpdateTotals();
+            }
+        }
+    }
+
+    private void Decrement(Orderdetail orderDetail)
+    {
+        if (orderDetail != null && orderDetail.product_amount > 1)
+        {
+            orderDetail.product_amount--;
+            var puttResult = ApiServices.Put<Orderdetail>("api/OrderDetail/update/number", orderDetail);
+            if (puttResult != null)
+            {
+                var index = OrderDetailsItems.IndexOf(orderDetail);
+                OrderDetailsItems[index] = orderDetail;
+                OnPropertyChanged(nameof(OrderDetailsItems));
+                UpdateTotals();
+            }
         }
     }
 
@@ -95,6 +175,7 @@ public partial class CartViewModel : ObservableRecipient
             {
                 OrderDetailsItems.Remove(orderDetail);
                 // Cập nhật tính tổng tiền
+                UpdateTotals();
             }
             else
             {
@@ -109,12 +190,20 @@ public partial class CartViewModel : ObservableRecipient
         }
     }
     
-    public void BuyingSelected()
+    public async void BuyingSelected()
     {
-        var pageKey = typeof(PaymentViewModel).FullName;
-        if (pageKey != null)
+        currentOrder.total_price = TotalPayment;
+        if (TotalPayment != 0)
         {
-            _navigationService.NavigateTo(pageKey);
+            await _localSettingsService.SaveSettingAsync<Orders>("currentOrder", currentOrder);
+            var pageKey = typeof(PaymentViewModel).FullName;
+            if (pageKey != null)
+            {
+                _navigationService.NavigateTo(pageKey);
+            }
+        }else
+        {
+            await _dialogService.ShowErrorDialogAsync("Bạn chưa thêm sản phẩm nào vào giỏ hàng");
         }
     }
 }
