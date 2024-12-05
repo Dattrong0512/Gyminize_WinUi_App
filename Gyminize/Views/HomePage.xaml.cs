@@ -22,6 +22,7 @@ public sealed partial class HomePage : Page
         this.DataContext = ViewModel;
     }
 
+
     private void OnWorkoutBorderTapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
     {
         var viewModel = (HomeViewModel)this.DataContext;

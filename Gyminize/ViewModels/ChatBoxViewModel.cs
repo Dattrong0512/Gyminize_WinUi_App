@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -10,36 +11,30 @@ namespace Gyminize.ViewModels
 {
     public partial class ChatBoxViewModel : ObservableObject
     {
-        // Thuộc tính để binding trong giao diện
-        [ObservableProperty]
-        private string responseText;
+        private ObservableCollection<Message> messages;
+        public ObservableCollection<Message> Messages
+        {
+            get => messages;
+            set => SetProperty(ref messages, value);
+        }
 
-        // Thuộc tính cho InputBox (để binding vào TextBox)
-        [ObservableProperty]
         private string inputBox;
-
-        // Command để gửi yêu cầu từ người dùng
-        public ICommand SendRequest
+        public string InputBox
         {
-            get; set;
+            get => inputBox;
+            set => SetProperty(ref inputBox, value);
         }
 
-        public GoogleAI GoogleAI
-        {
-            get; set;
-        }
-        public GenerativeModel Model
-        {
-            get; set;
-        }
-        public GenerationConfig Generateconfig
-        {
-            get; set;
-        }
+        public ICommand SendRequest { get; set; }
+
+        public GoogleAI GoogleAI { get; set; }
+        public GenerativeModel Model { get; set; }
+        public GenerationConfig Generateconfig { get; set; }
+
         // Constructor
         public ChatBoxViewModel()
         {
-            // Khởi tạo khi ViewModel được tạo ra
+            Messages = new ObservableCollection<Message>();
             GoogleAI = new GoogleAI(apiKey: "AIzaSyCrZDT2AzdOwS8qTnp20T38qDW931uLnqY"); // Thử với API key trực tiếp
             Generateconfig = new GenerationConfig
             {
@@ -57,24 +52,26 @@ namespace Gyminize.ViewModels
         {
             try
             {
-                ResponseText = string.Empty; // Đặt lại ResponseText để xóa câu trả lời trước đó
-                                             // Tạo cấu hình cho việc sinh nội dung (có thể thêm tham số mới để làm yêu cầu duy nhất)
-
-                var responseStream = Model.GenerateContentStream(InputBox, Generateconfig);
-
+                // Thêm tin nhắn của người dùng vào cuộc trò chuyện
+                Messages.Add(new Message { Sender = "User", Content = inputBox });
+                var responseStream = Model.GenerateContentStream(inputBox, Generateconfig);
 
                 // Kiểm tra nếu responseStream không phải null
                 if (responseStream == null)
                 {
-                    ResponseText = "Error: Response stream is null.";
+                    Messages.Add(new Message { Sender = "GymBo", Content = "Error: Response stream is null." });
                     return;
                 }
 
                 // Kiểm tra kiểu trả về từ API (IAsyncEnumerable<GenerateContentResponse>)
-                if (responseStream is IAsyncEnumerable<GenerateContentResponse>)
+                if (responseStream is IAsyncEnumerable<GenerateContentResponse> responseStreamEnum)
                 {
+                    string fullResponse = string.Empty;
+                    var botMessage = new Message { Sender = "GymBo", Content = string.Empty };
+                    Messages.Add(botMessage);
+
                     // Lặp qua dữ liệu trả về stream
-                    await foreach (var response in responseStream)
+                    await foreach (var response in responseStreamEnum)
                     {
                         // Kiểm tra nếu response là null hoặc không có text
                         if (response == null || string.IsNullOrEmpty(response.Text))
@@ -82,30 +79,33 @@ namespace Gyminize.ViewModels
                             continue; // Bỏ qua nếu không có dữ liệu hợp lệ
                         }
 
-                        // Tách văn bản thành các từ và gửi từng từ một
-                        var words = response.Text.Split(new[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-
-                        foreach (var word in words)
-                        {
-                            // Cập nhật responseText mỗi khi nhận được từ
-                            ResponseText = (ResponseText ?? "") + word + " ";  // Kiểm tra null và thêm từ vào
-
-                            // Optional: Bạn có thể thêm một delay nếu muốn để làm cho từng từ xuất hiện từ từ
-                            await Task.Delay(20);  // Delay 100ms (tùy chỉnh để tạo hiệu ứng xuất hiện từ từ)
-                        }
+                        // Cập nhật fullResponse với toàn bộ văn bản nhận được
+                        fullResponse += response.Text;
                     }
+
+                    // Cập nhật nội dung của botMessage với toàn bộ văn bản nhận được
+                    botMessage.Content = fullResponse;
+                    // Notify the UI about the change
+                    Messages[Messages.IndexOf(botMessage)] = botMessage;
                 }
                 else
                 {
                     // Nếu không phải stream, log lỗi hoặc thông báo về dữ liệu trả về
-                    ResponseText = "Error: Response is not a stream.";
+                    Messages.Add(new Message { Sender = "GymBo", Content = "Error: Response is not a stream." });
                 }
             }
             catch (Exception ex)
             {
                 // Xử lý lỗi nếu có
-                ResponseText = "Error in SendMessage: " + ex.Message;
+                Messages.Add(new Message { Sender = "GymBo", Content = "Error in SendMessage: " + ex.Message });
             }
         }
+
+    }
+
+    public class Message
+    {
+        public string Sender { get; set; }
+        public string Content { get; set; }
     }
 }

@@ -34,6 +34,9 @@ public class Product
         get; set;
     }
 
+    [NotMapped]
+    public string product_source => $"ms-appx:///Assets/Product_Img/{product_id}.png";
+
     public Category? Category
     {
         get; set;

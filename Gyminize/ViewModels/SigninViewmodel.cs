@@ -64,6 +64,13 @@ namespace Gyminize.ViewModels
             }
         }
 
+        private bool rememberMe;
+
+        public bool RememberMe
+        {
+            get => rememberMe;
+            set => SetProperty(ref rememberMe, value);
+        }
         public ICommand LoginCommandByGoogle
         {
             get;
@@ -104,6 +111,16 @@ namespace Gyminize.ViewModels
             ForgotPasswordProcessingCommand = new RelayCommand(OnForgotPasswordProcessing);
             var customer = new Customer();
             _localSettingsService = localSettings;
+
+            var settings = ApplicationData.Current.LocalSettings.Values;
+
+            // Kiểm tra nếu giá trị tồn tại trong LocalSettings
+            if (settings.ContainsKey("RememberMe"))
+            {
+                RememberMe = (bool)settings["RememberMe"];
+                Username = (string)settings["Username"];
+                Password = (string)settings["Password"];
+            }
         }
         private void OnSignUpByUserNavigate()
         {
@@ -151,6 +168,22 @@ namespace Gyminize.ViewModels
                 {
                     if (CheckCustomerHealthByUsername(Username))
                     {
+                        if (RememberMe)
+                        {
+                            var settings = ApplicationData.Current.LocalSettings.Values;
+
+                            // Lưu các giá trị vào LocalSettings
+                            settings["RememberMe"] = rememberMe;
+                            settings["Username"] = username;
+                            settings["Password"] = password;
+                        }
+                        else
+                        {
+                            var settings = ApplicationData.Current.LocalSettings.Values;
+                            settings["RememberMe"] = rememberMe;
+                            settings["Username"] = string.Empty;
+                            settings["Password"] = string.Empty;
+                        }
                         if (App.MainWindow.Content != null)
                         {
                             var frame = new Frame();
@@ -163,6 +196,22 @@ namespace Gyminize.ViewModels
                     }
                     else
                     {
+                        if (RememberMe)
+                        {
+                            var settings = ApplicationData.Current.LocalSettings.Values;
+
+                            // Lưu các giá trị vào LocalSettings
+                            settings["RememberMe"] = rememberMe;
+                            settings["Username"] = username;
+                            settings["Password"] = password;
+                        }
+                        else
+                        {
+                            var settings = ApplicationData.Current.LocalSettings.Values;
+                            settings["RememberMe"] = rememberMe;
+                            settings["Username"] = string.Empty;
+                            settings["Password"] = string.Empty;
+                        }
                         var pageKey = typeof(Guide1ViewModel).FullName;
                         if (pageKey != null)
                         {

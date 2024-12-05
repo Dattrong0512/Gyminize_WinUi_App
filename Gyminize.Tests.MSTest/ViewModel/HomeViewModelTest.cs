@@ -37,7 +37,7 @@ public class HomeViewModelTest
             _mockDialogService.Object,
             _mockApiServicesClient.Object,
             _mockDateTimeProvider.Object
-        );
+, SKColors);
     }
 
     [TestMethod] //Test case kiểm tra báo lỗi cân nặng nhập vào không phải là một số

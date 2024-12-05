@@ -17,6 +17,12 @@ using Windows.Storage;
 using System.Net.WebSockets;
 using Microsoft.UI.Xaml.Media;
 using CommunityToolkit.Common;
+using Microsoft.UI.Xaml.Shapes;
+using Microsoft.UI;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using Microsoft.UI.Text;
+
 
 namespace Gyminize.ViewModels;
 
@@ -27,6 +33,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
     private readonly IDialogService _dialogService;
     private readonly IApiServicesClient _apiServicesClient;
     private readonly IDateTimeProvider _dateTimeProvider;
+
     private bool _isWeightTextBoxEnabled;
     public string _customer_id;
     private CustomerHealth _customerHealth;
@@ -133,6 +140,57 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         get;
     }
 
+    public class WeightDataPoint
+    {
+        public DateTime Date
+        {
+            get; set;
+        }
+        public double Weight
+        {
+            get; set;
+        }
+    }
+
+    private ObservableCollection<Line> _chartLines;
+    private ObservableCollection<Line> _axisLines;
+    private ObservableCollection<TextBlock> _axisLabels;
+
+    public ObservableCollection<Line> ChartLines
+    {
+        get => _chartLines;
+        set
+        {
+            _chartLines = value;
+            OnPropertyChanged(nameof(ChartLines));
+        }
+    }
+
+    public ObservableCollection<Line> AxisLines
+    {
+        get => _axisLines;
+        set
+        {
+            _axisLines = value;
+            OnPropertyChanged(nameof(AxisLines));
+        }
+    }
+
+    public ObservableCollection<TextBlock> AxisLabels
+    {
+        get => _axisLabels;
+        set
+        {
+            _axisLabels = value;
+            OnPropertyChanged(nameof(AxisLabels));
+        }
+    }
+
+    public List<WeightDataPoint> DataPoints
+    {
+        get; set;
+    }
+
     public HomeViewModel(INavigationService navigationService, IWindowService windowService, ILocalSettingsService localSettings, IDialogService dialogService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider)
     {
         _dateTimeProvider = dateTimeProvider;
@@ -152,6 +210,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         _windowService.SetWindowSize(1500, 800);
 
 
+        GenerateChartLines();
     }
 
     private void OpenWorkoutLink()
@@ -316,7 +375,6 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         }
 
 
-
         //// API này dùng để tạo một plan mới cho customer, ở đây mặc định sẽ là plan 1, tức là 3 ngày 1 tuần
         //endpoint = "";
         //endpoint = $"api/Plandetail/create/customer_id/" + customer_id+"/plan/1";
@@ -364,6 +422,129 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         //{
         //    Debug.WriteLine("POST request failed.");
         //}
+    }
+
+    
+
+    private async void GenerateChartLines()
+    {
+        ChartLines = new ObservableCollection<Line>();
+        AxisLines = new ObservableCollection<Line>();
+        AxisLabels = new ObservableCollection<TextBlock>();
+
+        // Example data points
+        DataPoints = new List<WeightDataPoint>
+        {
+            new WeightDataPoint { Date = DateTime.Now.AddDays(-7), Weight = 70 },
+            new WeightDataPoint { Date = DateTime.Now.AddDays(-6), Weight = 71 },
+            new WeightDataPoint { Date = DateTime.Now.AddDays(-5), Weight = 69 },
+            new WeightDataPoint { Date = DateTime.Now.AddDays(-4), Weight = 70 },
+            new WeightDataPoint { Date = DateTime.Now.AddDays(-3), Weight = 66 },
+            new WeightDataPoint { Date = DateTime.Now.AddDays(-2), Weight = 67 },
+            new WeightDataPoint { Date = DateTime.Now.AddDays(-1), Weight = 70 },
+
+        };
+
+        _customer_id = await localsetting.ReadSettingAsync<string>("customer_id");
+        var endpoint = $"api/Customerhealth/get/" + _customer_id;
+
+        // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
+        _customerHealth = _apiServicesClient.Get<CustomerHealth>(endpoint);
+
+        DataPoints = new List<WeightDataPoint>();
+        DateTime today = _dateTimeProvider.UtcNow;
+        double currentWeight = _customerHealth.weight; // Assuming _customerHealth contains the current weight
+        double lastKnownWeight = currentWeight;
+
+        for (int i = 7; i > 0; i--)
+        {
+            DateTime day = today.AddDays(-i);
+            Dailydiary currentDailydiary = null;
+
+            // Try to fetch the data for the current day
+            currentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{day:yyyy-MM-dd HH:mm:ss}");
+
+            // If data is missing, use the last known weight
+            if (currentDailydiary == null)
+            {
+                DataPoints.Add(new WeightDataPoint
+                {
+                    Date = day,
+                    Weight = lastKnownWeight
+                });
+            }
+            else
+            {
+                lastKnownWeight = currentDailydiary.daily_weight;
+                DataPoints.Add(new WeightDataPoint
+                {
+                    Date = day,
+                    Weight = currentDailydiary.daily_weight
+                });
+            }
+        }
+
+        double canvasWidth = 300;
+        double canvasHeight = 240;
+        double maxWeight = DataPoints.Max(dp => dp.Weight) + 20;
+        double minWeight = DataPoints.Min(dp => dp.Weight) - 20;
+        double weightRange = maxWeight - minWeight;
+        double xInterval = canvasWidth / (DataPoints.Count - 1);
+        double marginLeft = 40; // Adjust this value to move the chart to the right
+        double marginTop = 20; // Adjust this value to move the chart down
+
+        // Add chart title
+        AxisLabels.Add(new TextBlock
+        {
+            Text = "Biểu đồ cân nặng trong 7 ngày qua",
+            Foreground = new SolidColorBrush(Colors.Black),
+            FontSize = 16,
+            FontWeight = FontWeights.Bold,
+            Margin = new Thickness(marginLeft + canvasWidth / 2 - 120, 0, 0, 0) // Adjust the position of the title
+        });
+
+        for (int i = 0; i < DataPoints.Count - 1; i++)
+        {
+            double y1 = marginTop + canvasHeight - ((DataPoints[i].Weight - minWeight) / weightRange * canvasHeight);
+            double y2 = marginTop + canvasHeight - ((DataPoints[i + 1].Weight - minWeight) / weightRange * canvasHeight);
+
+            var line = new Line
+            {
+                X1 = marginLeft + i * xInterval,
+                Y1 = y1,
+                X2 = marginLeft + (i + 1) * xInterval,
+                Y2 = y2,
+                Stroke = new SolidColorBrush(Colors.Blue),
+                StrokeThickness = 2
+            };
+            ChartLines.Add(line);
+        }
+
+        // Add X-axis line
+        AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop + canvasHeight, X2 = marginLeft + canvasWidth, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 1 });
+
+        // Add Y-axis line
+        AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop, X2 = marginLeft, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 1 });
+
+        // Add X-axis labels
+        for (int i = 0; i < DataPoints.Count; i++)
+        {
+            AxisLabels.Add(new TextBlock { Text = DataPoints[i].Date.ToString("dd"), Foreground = new SolidColorBrush(Colors.Black), Margin = new Thickness(marginLeft + i * xInterval - 15, marginTop + canvasHeight + 5, 0, 0) });
+        }
+
+        // Add Y-axis labels with data values
+        for (int i = 0; i < DataPoints.Count; i++)
+        {
+            double yPosition = marginTop + canvasHeight - ((DataPoints[i].Weight - minWeight) / weightRange * canvasHeight);
+            AxisLabels.Add(new TextBlock { Text = DataPoints[i].Weight.ToString("F1"), Foreground = new SolidColorBrush(Colors.Black), Margin = new Thickness(marginLeft - 30, yPosition - 10, 0, 0) });
+        }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
     public void OnNavigatedFrom()

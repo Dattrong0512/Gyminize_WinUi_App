@@ -140,7 +140,60 @@
                 BorderBrush="DarkCyan"
                 BorderThickness="1"
                 CornerRadius="10">
-                <Image Source="ms-appx:///Assets/motivation.jpg" Stretch="Fill" />
+                <Canvas Name="ChartCanvas" Background="White">
+                    <ItemsControl ItemsSource="{Binding ChartLines}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Line
+                                    Stroke="{Binding Stroke}"
+                                    StrokeThickness="{Binding StrokeThickness}"
+                                    X1="{Binding X1}"
+                                    X2="{Binding X2}"
+                                    Y1="{Binding Y1}"
+                                    Y2="{Binding Y2}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding AxisLines}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Line
+                                    Stroke="Black"
+                                    StrokeThickness="1"
+                                    X1="{Binding X1}"
+                                    X2="{Binding X2}"
+                                    Y1="{Binding Y1}"
+                                    Y2="{Binding Y2}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding AxisLabels}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Canvas.Left="{Binding X}"
+                                    Canvas.Top="{Binding Y}"
+                                    Foreground="Black"
+                                    Text="{Binding Text}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Canvas>
             </Border>
             <Border
                 Margin="10"

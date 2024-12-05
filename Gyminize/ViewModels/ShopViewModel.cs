@@ -11,6 +11,7 @@ using Gyminize.Contracts.Services;
 using Gyminize.Contracts.ViewModels;
 using Gyminize.Core.Contracts.Services;
 using Gyminize.Services;
+using System.ComponentModel;
 
 
 namespace Gyminize.ViewModels;
@@ -27,18 +28,58 @@ public partial class ShopViewModel : ObservableRecipient
     public ObservableCollection<Product> ProductLibraryItems { get; set; } = new ObservableCollection<Product>();
     public ObservableCollection<Product> FilteredProductLibraryItems { get; set; } = new ObservableCollection<Product>();
 
+    private List<Product> _allProducts;
+
     public int CurrentPage
     {
         get => _currentPage;
         set
         {
             SetProperty(ref _currentPage, value);
-            UpdateFilteredProducts();
+            UpdateFilteredAndSortedProducts();
         }
     }
 
-    public int TotalPages => (int)Math.Ceiling((double)ProductLibraryItems.Count / ItemsPerPage);
+    private string _searchText = string.Empty;
+    public string SearchText
+    {
+        get => _searchText;
+        set
+        {
+            SetProperty(ref _searchText, value); 
+            UpdateFilteredAndSortedProducts();
+        }
+    }
 
+    private string _selectedCategoryName;
+    public string SelectedCategoryName
+    {
+        get => _selectedCategoryName;
+        set
+        {
+            SetProperty(ref _selectedCategoryName, value);
+            UpdateFilteredAndSortedProducts();
+        }
+    }
+
+    private string _selectedSortOrder;
+    public string SelectedSortOrder
+    {
+        get => _selectedSortOrder;
+        set
+        {
+            SetProperty(ref _selectedSortOrder, value); 
+            UpdateFilteredAndSortedProducts();
+        }
+    }
+
+    //public int TotalPages => (int)Math.Ceiling((double)ProductLibraryItems.Count / ItemsPerPage);
+    private int _totalPages;
+    public int TotalPages
+    {
+        get => _totalPages;
+        set => SetProperty(ref _totalPages, value);
+    }
     private bool _canGoNext = true;
     public bool CanGoNext
     {
@@ -65,6 +106,9 @@ public partial class ShopViewModel : ObservableRecipient
     public ICommand SelectProductCommand { get; }
     public ICommand SelectCartCommand { get; }
 
+    public ICommand SearchProductCommand { get; }
+    
+
     public ShopViewModel(INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient, ILocalSettingsService localSettingsService)
     {
         _localSettingsService = localSettingsService;
@@ -76,9 +120,11 @@ public partial class ShopViewModel : ObservableRecipient
         PreviousPageCommand = new RelayCommand(PreviousPage);
         SelectCartCommand = new RelayCommand(SelectCart);
         SelectProductCommand = new AsyncRelayCommand<Product?>(SelectProduct);
-
+        SearchProductCommand = new RelayCommand(SearchProduct);
         CreateOrGetOrderID();
         LoadProductLibraryAsync();
+        SelectedCategoryName = "Tất cả";
+        SelectedSortOrder = "Gần đây";  
     }
 
     private void UpdateFilteredProducts()
@@ -89,6 +135,69 @@ public partial class ShopViewModel : ObservableRecipient
         {
             FilteredProductLibraryItems.Add(item);
         }
+    }
+
+    
+    public void SearchProduct()
+    {
+        UpdateFilteredAndSortedProducts();
+    }
+
+    private void UpdateFilteredAndSortedProducts()
+    {
+        IEnumerable<Product> filteredProducts = _allProducts;
+
+        // Filter products based on the search text
+        if (!string.IsNullOrWhiteSpace(SearchText))
+        {
+            filteredProducts = filteredProducts.Where(p => p.product_name.Contains(SearchText, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Filter products based on the selected category
+        if (!string.IsNullOrEmpty(SelectedCategoryName) && SelectedCategoryName != "Tất cả")
+        {
+            filteredProducts = filteredProducts.Where(p => p.Category.category_name == SelectedCategoryName);
+        }
+
+        // Sort products based on the selected sort order
+        switch (SelectedSortOrder)
+        {
+            case "Giá tăng dần":
+                filteredProducts = filteredProducts.OrderBy(p => p.product_price);
+                break;
+            case "Giá giảm dần":
+                filteredProducts = filteredProducts.OrderByDescending(p => p.product_price);
+                break;
+            case "Gần đây":
+                filteredProducts = filteredProducts.OrderBy(p => p.product_id); // Assuming product_id indicates recency
+                break;
+        }
+
+        // Update the total pages based on the filtered products count
+        int totalFilteredProducts = filteredProducts.Count();
+        TotalPages = (int)Math.Ceiling((double)totalFilteredProducts / ItemsPerPage);
+
+        // Ensure the current page is within the valid range
+        if (CurrentPage > TotalPages)
+        {
+            CurrentPage = TotalPages;
+        }
+        else if (CurrentPage < 1)
+        {
+            CurrentPage = 1;
+        }
+
+        // Update the FilteredProductLibraryItems collection based on the current page
+        FilteredProductLibraryItems.Clear();
+        var pagedProducts = filteredProducts.Skip((CurrentPage - 1) * ItemsPerPage).Take(ItemsPerPage);
+        foreach (var product in pagedProducts)
+        {
+            FilteredProductLibraryItems.Add(product);
+        }
+
+        // Update navigation properties
+        CanGoNext = CurrentPage < TotalPages;
+        CanGoBack = CurrentPage > 1;
     }
 
     private void NextPage()
@@ -142,7 +251,7 @@ public partial class ShopViewModel : ObservableRecipient
             var result = _apiServicesClient.Post<Orders>("api/Order/add", order);
             if(result == null)
             {
-                _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể tạo đơn hàng mới");
+                await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể tạo đơn hàng mới");
             }
         }
     }
@@ -154,13 +263,14 @@ public partial class ShopViewModel : ObservableRecipient
             var products = _apiServicesClient.Get<List<Product>>("api/Product");
             if (products != null && products.Any())
             {
+                _allProducts = products;
                 ProductLibraryItems.Clear();
                 foreach (var food in products)
                 {
                     ProductLibraryItems.Add(food);
                 }
             }
-            UpdateFilteredProducts();
+            UpdateFilteredAndSortedProducts();
         }
         catch (Exception ex)
         {
@@ -168,6 +278,7 @@ public partial class ShopViewModel : ObservableRecipient
             await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
         }
     }
+
 
     public void SelectCart()
     {

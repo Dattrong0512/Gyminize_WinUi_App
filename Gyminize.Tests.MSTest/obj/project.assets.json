@@ -273,6 +273,15 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        }
+      },
       "Microsoft.AspNet.Mvc/5.2.9": {
         "type": "package",
         "dependencies": {
@@ -3144,6 +3153,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -3452,6 +3462,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -6564,6 +6583,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -6872,6 +6892,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -9937,6 +9966,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -10245,6 +10275,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -13366,6 +13405,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -13674,6 +13714,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -16751,6 +16800,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -17059,6 +17109,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -20180,6 +20239,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -20488,6 +20548,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -23562,6 +23631,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -23870,6 +23940,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -26991,6 +27070,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -27299,6 +27379,15 @@
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Markdown.Xaml/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Markdown.Xaml.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Markdown.Xaml.dll": {}
         }
       },
       "Microsoft.AspNet.Mvc/5.2.9": {
@@ -30373,6 +30462,7 @@
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
+          "Markdown.Xaml": "1.0.0",
           "Microsoft.Extensions.Hosting": "6.0.1",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.1.2",
           "Microsoft.WindowsAppSDK": "1.6.240923002",
@@ -30803,6 +30893,18 @@
         "coverlet-icon.png",
         "coverlet.collector.3.1.2.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "Markdown.Xaml/1.0.0": {
+      "sha512": "TgDok7ZwYJ419hMB432zQXI6effszN2h36eQ+MAN1zR6WEvnuY3rBnM0MDh3t55JTFdK1T5VZZmwBdJukhMr5Q==",
+      "type": "package",
+      "path": "markdown.xaml/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Markdown.Xaml.dll",
+        "markdown.xaml.1.0.0.nupkg.sha512",
+        "markdown.xaml.nuspec"
       ]
     },
     "Microsoft.AspNet.Mvc/5.2.9": {
@@ -38699,6 +38801,16 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Markdown.Xaml 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0-windows10.0.19041'. This package may not be fully compatible with your project.",
+      "libraryId": "Markdown.Xaml",
+      "targetGraphs": [
+        "net7.0-windows10.0.19041"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

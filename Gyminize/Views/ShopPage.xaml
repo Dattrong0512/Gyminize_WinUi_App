@@ -4,9 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:animations="using:CommunityToolkit.WinUI.UI.Animations"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:converters="using:Gyminize.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <converters:PriceConverter x:Key="PriceConverter" />
+    </Page.Resources>
 
     <Grid x:Name="ContentArea">
         <Grid
@@ -22,8 +27,12 @@
                 Grid.Column="0"
                 Margin="0,0,10,0"
                 Padding="8"
-                PlaceholderText="Tìm kiếm sản phẩm..." />
-            <Button Grid.Column="1" Content="Tìm kiếm" />
+                PlaceholderText="Tìm kiếm sản phẩm..."
+                Text="{Binding SearchText, Mode=TwoWay}" />
+            <Button
+                Grid.Column="1"
+                Command="{Binding SearchProductCommand}"
+                Content="Tìm kiếm" />
             <Button
                 Grid.Column="2"
                 Padding="10"
@@ -50,10 +59,18 @@
                     Margin="0,0,10,0"
                     VerticalAlignment="Center"
                     Text="Bộ lọc:" />
-                <ComboBox Width="150" Margin="0,0,10,0">
-                    <ComboBoxItem Content="Tất cả" IsSelected="True" />
-                    <ComboBoxItem Content="Thực phẩm chức năng" />
-                    <ComboBoxItem Content="Dụng cụ luyện tập" />
+                <ComboBox
+                    Width="150"
+                    Margin="0,0,10,0"
+                    SelectedItem="{Binding SelectedCategoryName, Mode=TwoWay}">
+                    <ComboBoxItem Content="Tất cả" />
+                    <ComboBoxItem Content="Whey Protein" />
+                    <ComboBoxItem Content="Pre-Workout" />
+                    <ComboBoxItem Content="Creatine" />
+                    <ComboBoxItem Content="Vitamin" />
+                    <ComboBoxItem Content="Khoáng chất" />
+                    <ComboBoxItem Content="Gia vị" />
+                    <ComboBoxItem Content="Phụ kiện thể thao" />
                 </ComboBox>
             </StackPanel>
 
@@ -65,10 +82,8 @@
                     Margin="0,0,10,0"
                     VerticalAlignment="Center"
                     Text="Sắp xếp:" />
-                <ComboBox Width="150">
-                    <ComboBoxItem Content="Liên quan" IsSelected="True" />
-                    <ComboBoxItem Content="Mới nhất" />
-                    <ComboBoxItem Content="Bán chạy" />
+                <ComboBox Width="150" SelectedItem="{Binding SelectedSortOrder, Mode=TwoWay}">
+                    <ComboBoxItem Content="Gần đây" />
                     <ComboBoxItem Content="Giá tăng dần" />
                     <ComboBoxItem Content="Giá giảm dần" />
                 </ComboBox>
@@ -77,7 +92,7 @@
 
         <!--  Products List  -->
         <ScrollViewer Margin="10,110,10,60">
-            <ListView ItemsSource="{Binding FilteredProductLibraryItems}" SelectionMode="Single">
+            <ListView ItemsSource="{Binding FilteredProductLibraryItems}" SelectionMode="None">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <controls:WrapPanel Orientation="Horizontal" />
@@ -96,16 +111,17 @@
                                     Width="150"
                                     Height="200"
                                     Margin="0,0,0,10"
-                                    Source="ms-appx:///Assets/planselection_model/expert.png" />
+                                    Source="{Binding product_source}" />
                                 <TextBlock
+                                    MaxHeight="50"
                                     Margin="5"
                                     FontWeight="Bold"
                                     Text="{Binding product_name}"
                                     TextWrapping="Wrap" />
-                                <TextBlock
-                                    Margin="5,0,5,0"
-                                    Foreground="Red"
-                                    Text="{Binding product_price}" />
+                                <TextBlock Margin="5,0,5,0" Foreground="Red">
+                                    <Run Text="{Binding product_price, Converter={StaticResource PriceConverter}}" />
+                                    <Run Text="đ" />
+                                </TextBlock>
                                 <TextBlock
                                     Margin="5,0,5,0"
                                     FontSize="12"

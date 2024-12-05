@@ -16,6 +16,10 @@ using Gyminize.Services;
 using Gyminize.Core.Services;
 using Microsoft.UI.Xaml.Media.Imaging;
 using ColorCode.Compilation.Languages;
+using Microsoft.AspNetCore.Mvc;
+using Gyminize.Converters;
+using Microsoft.UI.Xaml.Data;
+using Windows.UI.Text;
 
 
 public class DialogService : IDialogService
@@ -727,10 +731,11 @@ public class DialogService : IDialogService
     public async Task<bool> ShowProductDialogWithSupplierAsync(Product product, int orderid)
     {
         bool addSuccess = true;
+
         // Hình ảnh sản phẩm
         var productImage = new Image
         {
-            Source = new BitmapImage(new Uri("ms-appx:///Assets/planselection_model/expert.png")),
+            Source = new BitmapImage(new Uri(product.product_source)),
             Width = 300,
             Height = 300,
             HorizontalAlignment = HorizontalAlignment.Left,
@@ -751,21 +756,16 @@ public class DialogService : IDialogService
         // Giá sản phẩm
         var productPriceTextBlock = new TextBlock
         {
-            Text = $"{product.product_price} đ",
             FontSize = 18,
             Foreground = new SolidColorBrush(Microsoft.UI.Colors.Red),
             FontWeight = FontWeights.Bold,
             Margin = new Thickness(10, 10, 10, 10)
         };
-
-        // Đã bán
-        var productSoldTextBlock = new TextBlock
+        productPriceTextBlock.SetBinding(TextBlock.TextProperty, new Binding
         {
-            Text = $"Đã bán: 20 (nhớ chỉnh)",
-            FontSize = 16,
-            Foreground = new SolidColorBrush(Microsoft.UI.Colors.Gray),
-            Margin = new Thickness(10, 10, 10, 10)
-        };
+            Source = product.product_price,
+            Converter = new PriceConverter()
+        });
 
         // Nhà cung cấp
         var supplierTextBlock = new TextBlock
@@ -781,7 +781,7 @@ public class DialogService : IDialogService
         {
             Text = "Số lượng:",
             FontSize = 16,
-            Margin = new Thickness(10, 10, 10, 10)
+            Margin = new Thickness(10, 20, 10, 10)
         };
 
         var quantityNumberBox = new NumberBox
@@ -795,6 +795,14 @@ public class DialogService : IDialogService
             Margin = new Thickness(10, 10, 10, 10)
         };
 
+        var quantityPanel = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            Margin = new Thickness(10, 10, 10, 10)
+        };
+        quantityPanel.Children.Add(quantityLabel);
+        quantityPanel.Children.Add(quantityNumberBox);
+
         var descriptionLabel = new TextBlock
         {
             Text = "Mô tả:",
@@ -805,7 +813,10 @@ public class DialogService : IDialogService
         var descriptionTextBlock = new TextBlock
         {
             Text = product.description,
-            FontSize = 15,
+            FontSize = 13,
+            FontStyle = FontStyle.Italic,
+            Width = 500,
+            TextWrapping = TextWrapping.Wrap,
             Margin = new Thickness(10, 10, 10, 10)
         };
 
@@ -826,13 +837,10 @@ public class DialogService : IDialogService
 
         rightPanel.Children.Add(productNameTextBlock);
         rightPanel.Children.Add(productPriceTextBlock);
-        rightPanel.Children.Add(productSoldTextBlock);
         rightPanel.Children.Add(supplierTextBlock); // Thêm mục Nhà cung cấp
-        rightPanel.Children.Add(quantityLabel);
-        rightPanel.Children.Add(quantityNumberBox);
+        rightPanel.Children.Add(quantityPanel);
         rightPanel.Children.Add(descriptionLabel);
         rightPanel.Children.Add(descriptionTextBlock);
-        
 
         mainGrid.Children.Add(rightPanel);
         Grid.SetColumn(rightPanel, 1);
@@ -844,6 +852,31 @@ public class DialogService : IDialogService
             Content = mainGrid,
             PrimaryButtonText = "Thêm vào giỏ hàng",
             CloseButtonText = "Hủy",
+        };
+
+        // Customize buttons
+        productDialog.PrimaryButtonStyle = new Style(typeof(Button))
+        {
+            Setters =
+        {
+            new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.Red)),
+            new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)),
+            new Setter(Button.CornerRadiusProperty, new CornerRadius(20)),
+            new Setter(Button.FontSizeProperty, 16),
+            new Setter(Button.PaddingProperty, new Thickness(20, 10, 20, 10))
+        }
+        };
+
+        productDialog.CloseButtonStyle = new Style(typeof(Button))
+        {
+            Setters =
+        {
+            new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.Red)),
+            new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)),
+            new Setter(Button.CornerRadiusProperty, new CornerRadius(20)),
+            new Setter(Button.FontSizeProperty, 16),
+            new Setter(Button.PaddingProperty, new Thickness(20, 10, 20, 10))
+        }
         };
 
         productDialog.Resources["ContentDialogMaxWidth"] = 1200;
@@ -860,7 +893,7 @@ public class DialogService : IDialogService
                 orders_id = orderid
             };
             var postResult = ApiServices.Post<Orderdetail>("api/OrderDetail/add", orderdetail);
-            if(postResult == null)
+            if (postResult == null)
             {
                 addSuccess = false;
             }

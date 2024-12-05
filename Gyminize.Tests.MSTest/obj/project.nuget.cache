@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8i6mT5Vqmxo=",
+  "dgSpecHash": "q8BzUQ0CKxU=",
   "success": true,
   "projectFilePath": "J:\\Study\\WindowPrograming\\Clone_17\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\Gyminize.Tests.MSTest.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.winui.ui.controls.media\\7.1.2\\communitytoolkit.winui.ui.controls.media.7.1.2.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.winui.ui.controls.primitives\\7.1.2\\communitytoolkit.winui.ui.controls.primitives.7.1.2.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\Bach Yen\\.nuget\\packages\\markdown.xaml\\1.0.0\\markdown.xaml.1.0.0.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.9\\microsoft.aspnet.mvc.5.2.9.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.9\\microsoft.aspnet.razor.3.2.9.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.9\\microsoft.aspnet.webpages.3.2.9.nupkg.sha512",
@@ -233,6 +234,16 @@
     "C:\\Users\\Bach Yen\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\7.0.20\\microsoft.windowsdesktop.app.runtime.win-x86.7.0.20.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Markdown.Xaml 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0-windows10.0.19041'. This package may not be fully compatible with your project.",
+      "libraryId": "Markdown.Xaml",
+      "targetGraphs": [
+        "net7.0-windows10.0.19041"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",
