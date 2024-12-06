@@ -233,7 +233,6 @@ public partial class PaymentViewModel : ObservableRecipient
         {
             IsNameInvalid = false;
             IsNameEnabled = false;
-            // Lưu name vào dtb
         }
         CheckCanProceedToPayment();
     }

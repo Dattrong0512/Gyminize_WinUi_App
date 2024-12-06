@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Mvc;
 using Gyminize.Converters;
 using Microsoft.UI.Xaml.Data;
 using Windows.UI.Text;
+using Microsoft.UI.Xaml.Controls.Primitives;
 
 
 public class DialogService : IDialogService
@@ -854,7 +855,6 @@ public class DialogService : IDialogService
             CloseButtonText = "Hủy",
         };
 
-        // Customize buttons
         productDialog.PrimaryButtonStyle = new Style(typeof(Button))
         {
             Setters =
@@ -882,7 +882,6 @@ public class DialogService : IDialogService
         productDialog.Resources["ContentDialogMaxWidth"] = 1200;
         productDialog.Resources["ContentDialogMaxHeight"] = 600;
 
-        // Xử lý sự kiện thêm vào giỏ hàng
         productDialog.PrimaryButtonClick += (s, e) =>
         {
             var orderdetail = new Orderdetail
@@ -899,14 +898,58 @@ public class DialogService : IDialogService
             }
         };
 
-        // Thiết lập XamlRoot nếu dùng WinUI 3
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             productDialog.XamlRoot = rootElement.XamlRoot;
         }
 
-        // Hiển thị dialog
         await productDialog.ShowAsync();
         return addSuccess;
+    }
+
+    public async Task ShowSuccessMessageAsync(string message)
+    {
+        var textBlock = new TextBlock
+        {
+            Text = message,
+            Padding = new Thickness(20),
+            FontSize = 16,
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.DarkGreen)
+        };
+
+        var border = new Border
+        {
+            Background = new SolidColorBrush(Microsoft.UI.Colors.PaleGreen), // Nền trong suốt
+            Child = textBlock,
+            CornerRadius = new CornerRadius(10),
+            Margin = new Thickness(0, 20, 0, 0)
+        };
+
+        var popup = new Popup
+        {
+            Child = border,
+            IsLightDismissEnabled = true
+        };
+
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            popup.XamlRoot = rootElement.XamlRoot;
+        }
+
+        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        await dispatcherQueue.EnqueueAsync(() =>
+        {
+            var windowBounds = App.MainWindow.Bounds;
+            var popupWidth = border.ActualWidth;
+            var popupHeight = border.ActualHeight;
+
+            popup.HorizontalOffset = ((windowBounds.Width - popupWidth) / 2) - 80;
+            popup.VerticalOffset = 20;
+            popup.IsOpen = true;
+        });
+
+        await Task.Delay(2000);
+
+        popup.IsOpen = false;
     }
 }

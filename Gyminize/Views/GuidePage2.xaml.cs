@@ -32,9 +32,6 @@ namespace Gyminize.Views
         {
             ViewModel = App.GetService<Guide2ViewModel>();
             InitializeComponent();
-            var windowService = App.GetService<IWindowService>();
-            var navigationService = App.GetService<INavigationService>();
-            ViewModel = new Guide2ViewModel(navigationService, windowService);
             this.DataContext = ViewModel;
         }
 

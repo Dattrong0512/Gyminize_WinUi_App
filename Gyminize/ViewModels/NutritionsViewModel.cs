@@ -197,6 +197,7 @@ namespace Gyminize.ViewModels
                     if (updateResult != null)
                     {
                         LoadDailyDiary();
+                        await _dialogService.ShowSuccessMessageAsync("Thêm thức ăn thành công");
                     }
                     else
                     {
@@ -224,14 +225,12 @@ namespace Gyminize.ViewModels
             // Gọi API để xóa FoodDetail
             try
             {
-         
                 var deleteResult = _apiServicesClient.Delete($"api/Foodetail/delete", foodDetail);
 
                 if (deleteResult)
                 {
                     System.Diagnostics.Debug.WriteLine("FoodDetail deleted successfully.");
                     
-                    // Xóa khỏi ObservableCollection trong ViewModel
                     if (BreakfastItems.Contains(foodDetail))
                     {
                         BreakfastItems.Remove(foodDetail);
@@ -249,8 +248,8 @@ namespace Gyminize.ViewModels
                         SnackItems.Remove(foodDetail);
                     }
 
-                    // Cập nhật biểu thức tổng calo
                     UpdateTotalCaloriesExpression();
+                    await _dialogService.ShowSuccessMessageAsync("Xóa thức ăn thành công");
                 }
                 else
                 {

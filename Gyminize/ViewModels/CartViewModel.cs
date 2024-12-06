@@ -174,8 +174,8 @@ public partial class CartViewModel : ObservableRecipient
             if (deleteResult)
             {
                 OrderDetailsItems.Remove(orderDetail);
-                // Cập nhật tính tổng tiền
                 UpdateTotals();
+                await _dialogService.ShowSuccessMessageAsync("Xóa sản phẩm thành công");
             }
             else
             {

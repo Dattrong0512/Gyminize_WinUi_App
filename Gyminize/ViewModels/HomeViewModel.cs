@@ -264,12 +264,11 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
             {
                 throw new ArgumentOutOfRangeException("Ứng dụng chỉ hỗ trợ cân nặng từ 30kg đến 200kg.");
             }
-
-            // Thực hiện update weight lên csdl
             var endpoint = $"api/Customerhealth/update/" + _customer_id + "/weight/" + weight;
             var result = _apiServicesClient.Put<CustomerHealth>(endpoint, null);
             weightTemp = weight.ToString();
             IsWeightTextBoxEnabled = false;
+            await _dialogService.ShowSuccessMessageAsync("Cập nhật cân nặng thành công");
         }
         catch (ArgumentOutOfRangeException ex)
         {
@@ -298,7 +297,6 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         _customer_id = await localsetting.ReadSettingAsync<string>("customer_id");
         var endpoint = $"api/Customerhealth/get/" + _customer_id;
 
-        // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
         _customerHealth = _apiServicesClient.Get<CustomerHealth>(endpoint);
         var day = _dateTimeProvider.UtcNow;
         var CurrentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{day:yyyy-MM-dd HH:mm:ss}");
@@ -432,28 +430,27 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         AxisLines = new ObservableCollection<Line>();
         AxisLabels = new ObservableCollection<TextBlock>();
 
-        // Example data points
-        DataPoints = new List<WeightDataPoint>
-        {
-            new WeightDataPoint { Date = DateTime.Now.AddDays(-7), Weight = 70 },
-            new WeightDataPoint { Date = DateTime.Now.AddDays(-6), Weight = 71 },
-            new WeightDataPoint { Date = DateTime.Now.AddDays(-5), Weight = 69 },
-            new WeightDataPoint { Date = DateTime.Now.AddDays(-4), Weight = 70 },
-            new WeightDataPoint { Date = DateTime.Now.AddDays(-3), Weight = 66 },
-            new WeightDataPoint { Date = DateTime.Now.AddDays(-2), Weight = 67 },
-            new WeightDataPoint { Date = DateTime.Now.AddDays(-1), Weight = 70 },
+        //// Example data points
+        //DataPoints = new List<WeightDataPoint>
+        //{
+        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-7), Weight = 70 },
+        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-6), Weight = 71 },
+        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-5), Weight = 69 },
+        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-4), Weight = 70 },
+        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-3), Weight = 66 },
+        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-2), Weight = 67 },
+        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-1), Weight = 70 },
 
-        };
+        //};
 
         _customer_id = await localsetting.ReadSettingAsync<string>("customer_id");
         var endpoint = $"api/Customerhealth/get/" + _customer_id;
 
-        // Sử dụng hàm Get<T> từ ApiServices để lấy dữ liệu
         _customerHealth = _apiServicesClient.Get<CustomerHealth>(endpoint);
 
         DataPoints = new List<WeightDataPoint>();
         DateTime today = _dateTimeProvider.UtcNow;
-        double currentWeight = _customerHealth.weight; // Assuming _customerHealth contains the current weight
+        double currentWeight = _customerHealth.weight; 
         double lastKnownWeight = currentWeight;
 
         for (int i = 7; i > 0; i--)
@@ -461,10 +458,8 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
             DateTime day = today.AddDays(-i);
             Dailydiary currentDailydiary = null;
 
-            // Try to fetch the data for the current day
             currentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{day:yyyy-MM-dd HH:mm:ss}");
 
-            // If data is missing, use the last known weight
             if (currentDailydiary == null)
             {
                 DataPoints.Add(new WeightDataPoint
@@ -490,17 +485,16 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         double minWeight = DataPoints.Min(dp => dp.Weight) - 20;
         double weightRange = maxWeight - minWeight;
         double xInterval = canvasWidth / (DataPoints.Count - 1);
-        double marginLeft = 40; // Adjust this value to move the chart to the right
-        double marginTop = 20; // Adjust this value to move the chart down
+        double marginLeft = 40; 
+        double marginTop = 20; 
 
-        // Add chart title
         AxisLabels.Add(new TextBlock
         {
             Text = "Biểu đồ cân nặng trong 7 ngày qua",
             Foreground = new SolidColorBrush(Colors.Black),
             FontSize = 16,
             FontWeight = FontWeights.Bold,
-            Margin = new Thickness(marginLeft + canvasWidth / 2 - 120, 0, 0, 0) // Adjust the position of the title
+            Margin = new Thickness(marginLeft + canvasWidth / 2 - 120, 0, 0, 0)
         });
 
         for (int i = 0; i < DataPoints.Count - 1; i++)
@@ -520,19 +514,15 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
             ChartLines.Add(line);
         }
 
-        // Add X-axis line
         AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop + canvasHeight, X2 = marginLeft + canvasWidth, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 1 });
 
-        // Add Y-axis line
         AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop, X2 = marginLeft, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 1 });
 
-        // Add X-axis labels
         for (int i = 0; i < DataPoints.Count; i++)
         {
             AxisLabels.Add(new TextBlock { Text = DataPoints[i].Date.ToString("dd"), Foreground = new SolidColorBrush(Colors.Black), Margin = new Thickness(marginLeft + i * xInterval - 15, marginTop + canvasHeight + 5, 0, 0) });
         }
 
-        // Add Y-axis labels with data values
         for (int i = 0; i < DataPoints.Count; i++)
         {
             double yPosition = marginTop + canvasHeight - ((DataPoints[i].Weight - minWeight) / weightRange * canvasHeight);

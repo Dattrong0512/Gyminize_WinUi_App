@@ -12,6 +12,8 @@ using Gyminize.Contracts.ViewModels;
 using Gyminize.Core.Contracts.Services;
 using Gyminize.Services;
 using System.ComponentModel;
+using Microsoft.UI.Xaml.Controls;
+using System.Diagnostics;
 
 
 namespace Gyminize.ViewModels;
@@ -27,6 +29,8 @@ public partial class ShopViewModel : ObservableRecipient
     private readonly ILocalSettingsService _localSettingsService;
     public ObservableCollection<Product> ProductLibraryItems { get; set; } = new ObservableCollection<Product>();
     public ObservableCollection<Product> FilteredProductLibraryItems { get; set; } = new ObservableCollection<Product>();
+
+    public ObservableCollection<Orderdetail> OrderDetailsItems { get; set; } = new ObservableCollection<Orderdetail>();
 
     private List<Product> _allProducts;
 
@@ -51,8 +55,8 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
-    private string _selectedCategoryName;
-    public string SelectedCategoryName
+    private ComboBoxItem _selectedCategoryName = new() { Content = "Tất cả"};
+    public ComboBoxItem SelectedCategoryName
     {
         get => _selectedCategoryName;
         set
@@ -62,8 +66,8 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
-    private string _selectedSortOrder;
-    public string SelectedSortOrder
+    private ComboBoxItem _selectedSortOrder = new() { Content = "Gần đây"};
+    public ComboBoxItem SelectedSortOrder
     {
         get => _selectedSortOrder;
         set
@@ -107,6 +111,14 @@ public partial class ShopViewModel : ObservableRecipient
     public ICommand SelectCartCommand { get; }
 
     public ICommand SearchProductCommand { get; }
+
+
+    private int _cartItemCount;
+    public int CartItemCount
+    {
+        get => _cartItemCount;
+        set => SetProperty(ref _cartItemCount, value);
+    }
     
 
     public ShopViewModel(INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient, ILocalSettingsService localSettingsService)
@@ -115,16 +127,15 @@ public partial class ShopViewModel : ObservableRecipient
         _navigationService = navigationService;
         _dialogService = dialogService;
         _apiServicesClient = apiServicesClient;
-
         NextPageCommand = new RelayCommand(NextPage);
         PreviousPageCommand = new RelayCommand(PreviousPage);
         SelectCartCommand = new RelayCommand(SelectCart);
         SelectProductCommand = new AsyncRelayCommand<Product?>(SelectProduct);
         SearchProductCommand = new RelayCommand(SearchProduct);
+        
         CreateOrGetOrderID();
         LoadProductLibraryAsync();
-        SelectedCategoryName = "Tất cả";
-        SelectedSortOrder = "Gần đây";  
+        LoadOrderDetailData();
     }
 
     private void UpdateFilteredProducts()
@@ -147,30 +158,37 @@ public partial class ShopViewModel : ObservableRecipient
     {
         IEnumerable<Product> filteredProducts = _allProducts;
 
+        // Filter products based on the selected category
+        if (SelectedCategoryName != null)
+        {
+            if (SelectedCategoryName.Content.ToString() != "Tất cả")
+            {
+                var categoryProducts = _apiServicesClient.Get<List<Product>>($"api/Product/get/category_name/" + SelectedCategoryName.Content.ToString());
+                filteredProducts = (IEnumerable<Product>)categoryProducts;
+            }
+        }
+
+        // Sort products based on the selected sort order
+        if (SelectedSortOrder != null)
+        {
+            switch (SelectedSortOrder.Content)
+            {
+                case "Giá tăng dần":
+                    filteredProducts = filteredProducts.OrderBy(p => p.product_price);
+                    break;
+                case "Giá giảm dần":
+                    filteredProducts = filteredProducts.OrderByDescending(p => p.product_price);
+                    break;
+                case "Gần đây":
+                    filteredProducts = filteredProducts.OrderBy(p => p.product_id); // Assuming product_id indicates recency
+                    break;
+            }
+        }
+
         // Filter products based on the search text
         if (!string.IsNullOrWhiteSpace(SearchText))
         {
             filteredProducts = filteredProducts.Where(p => p.product_name.Contains(SearchText, StringComparison.OrdinalIgnoreCase));
-        }
-
-        // Filter products based on the selected category
-        if (!string.IsNullOrEmpty(SelectedCategoryName) && SelectedCategoryName != "Tất cả")
-        {
-            filteredProducts = filteredProducts.Where(p => p.Category.category_name == SelectedCategoryName);
-        }
-
-        // Sort products based on the selected sort order
-        switch (SelectedSortOrder)
-        {
-            case "Giá tăng dần":
-                filteredProducts = filteredProducts.OrderBy(p => p.product_price);
-                break;
-            case "Giá giảm dần":
-                filteredProducts = filteredProducts.OrderByDescending(p => p.product_price);
-                break;
-            case "Gần đây":
-                filteredProducts = filteredProducts.OrderBy(p => p.product_id); // Assuming product_id indicates recency
-                break;
         }
 
         // Update the total pages based on the filtered products count
@@ -292,9 +310,39 @@ public partial class ShopViewModel : ObservableRecipient
     public async Task SelectProduct(Product product)
     {
         var result = await _dialogService.ShowProductDialogWithSupplierAsync(product, OrderId);
-        if(result == false)
+        if (result == false)
         {
             await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể thêm sản phẩm vào giỏ hàng");
         }
+        else
+        {
+            await _dialogService.ShowSuccessMessageAsync("Thêm sản phẩm vào giỏ hàng thành công");
+            LoadOrderDetailData();
+        }
+
+    }
+
+    public async void LoadOrderDetailData()
+    {
+        await GetCustomerID();
+        try
+        {
+            var orderlist = _apiServicesClient.Get<List<Orders>>($"api/Order/get/customerId/All/{CustomerId}");
+            var filteredOrder = orderlist.FirstOrDefault(order => string.IsNullOrEmpty(order.status));
+            if (filteredOrder != null)
+            {
+                OrderDetailsItems.Clear();
+                foreach (var orderDetail in filteredOrder.Orderdetail)
+                {
+                    OrderDetailsItems.Add(orderDetail);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: " + ex.Message);
+            Debug.WriteLine($"Error loading order details: {ex.Message}");
+        }
+        CartItemCount = OrderDetailsItems.Count;
     }
 }

@@ -36,8 +36,14 @@
             <Button
                 Grid.Column="2"
                 Padding="10"
-                Command="{Binding SelectCartCommand}"
-                Content="Giỏ hàng (0)" />
+                Command="{Binding SelectCartCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon Glyph="&#xE719;" />
+                    <TextBlock Foreground="Red" Text="(" />
+                    <TextBlock Foreground="Red" Text="{Binding CartItemCount}" />
+                    <TextBlock Foreground="Red" Text=")" />
+                </StackPanel>
+            </Button>
         </Grid>
 
         <!--  Filter and Sort bar  -->
@@ -63,7 +69,7 @@
                     Width="150"
                     Margin="0,0,10,0"
                     SelectedItem="{Binding SelectedCategoryName, Mode=TwoWay}">
-                    <ComboBoxItem Content="Tất cả" />
+                    <ComboBoxItem Content="Tất cả" IsSelected="True" />
                     <ComboBoxItem Content="Whey Protein" />
                     <ComboBoxItem Content="Pre-Workout" />
                     <ComboBoxItem Content="Creatine" />
@@ -83,7 +89,7 @@
                     VerticalAlignment="Center"
                     Text="Sắp xếp:" />
                 <ComboBox Width="150" SelectedItem="{Binding SelectedSortOrder, Mode=TwoWay}">
-                    <ComboBoxItem Content="Gần đây" />
+                    <ComboBoxItem Content="Gần đây" IsSelected="True" />
                     <ComboBoxItem Content="Giá tăng dần" />
                     <ComboBoxItem Content="Giá giảm dần" />
                 </ComboBox>

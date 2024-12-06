@@ -53,6 +53,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
     }
     private readonly INavigationService _navigationService;
     private readonly IWindowService _windowService;
+    private readonly IDialogService _dialogService;
     public string ImageSource1
     {
         get => _imageSource1;
@@ -156,10 +157,11 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
     }
     
 
-    public Guide2ViewModel(INavigationService navigationService, IWindowService windowService)
+    public Guide2ViewModel(INavigationService navigationService, IWindowService windowService, IDialogService dialogService)
     {
         _navigationService = navigationService;
         _windowService = windowService;
+        _dialogService = dialogService;
         PointerEnteredCommand = new RelayCommand<Border?>(OnPointerEntered);
         PointerExitedCommand = new RelayCommand<Border?>(OnPointerExited);
         PointerPressedCommand = new RelayCommand<Border?>(OnPointerPressed);
@@ -200,7 +202,6 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
                 _selectedBorder.Background = new SolidColorBrush(Colors.Transparent);
             }
 
-            // Set the new selected border
             _selectedBorder = border;
             border.BorderBrush = new SolidColorBrush(Colors.DarkBlue);
             border.Background = new SolidColorBrush(ColorHelper.FromArgb(255, 61, 73, 189));
@@ -312,8 +313,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         {
             
             _customerInfo = customerInfo;
-            // Set image sources based on gender
-            if (_customerInfo.sex == 1) // Male
+            if (_customerInfo.sex == 1)
             {
                 ImageSource1 = "ms-appx:///Assets/BodyFat/m_5.png";
                 ImageSource2 = "ms-appx:///Assets/BodyFat/m_4.png";
@@ -321,7 +321,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
                 ImageSource4 = "ms-appx:///Assets/BodyFat/m_2.png";
                 ImageSource5 = "ms-appx:///Assets/BodyFat/m_1.png";
             }
-            else // Female
+            else
             {
                 ImageSource1 = "ms-appx:///Assets/BodyFat/f_5.png";
                 ImageSource2 = "ms-appx:///Assets/BodyFat/f_4.png";
@@ -340,7 +340,6 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
 
     public void OnNavigatedFrom()
     {
-        // Perform any necessary actions when navigating away from the page
     }
 
     private void NavigateBack()
@@ -351,7 +350,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
             _navigationService.NavigateTo(pageKey, _customerInfo);
         }
     }
-    private void NavigateNext()
+    private async void NavigateNext()
     {
         if (IsValid == true)
         {
@@ -363,7 +362,7 @@ public class Guide2ViewModel : ObservableRecipient, INavigationAware
         }
         else
         {
-            //xu li dialog
+            await _dialogService.ShowErrorDialogAsync("Vui lòng chọn thông tin BodyFat");
         }
     }
 }
