@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delete_0',['Delete',['../class_api_services_client.html#a4e93dbe90d718b2fb884f959c98ebcbe',1,'ApiServicesClient']]]
+  ['deleteorderdetail_0',['DeleteOrderDetail',['../class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller.html#a2593330451441bc0846043bab404595e',1,'Gyminize_API::Controllers::OrderDetailController']]]
 ];

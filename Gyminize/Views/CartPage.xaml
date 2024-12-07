@@ -81,7 +81,7 @@
 
         <!--  Scrollable List of Items  -->
         <ScrollViewer Grid.Row="1">
-            <ListView ItemsSource="{Binding OrderDetailsItems}" SelectionMode="Single">
+            <ListView ItemsSource="{Binding OrderDetailsItems}" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border
@@ -159,7 +159,7 @@
                                     Padding="10,5"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    Background="Red"
+                                    Background="#003366"
                                     Command="{Binding DataContext.DeleteOrderDetailCommand, ElementName=ContentArea, Mode=TwoWay}"
                                     CommandParameter="{Binding}"
                                     Content="Xóa"
@@ -195,8 +195,8 @@
                 FontWeight="Bold"
                 Foreground="DarkGreen">
                 <Run Text="Tổng thanh toán: " />
-                <Run Text="{Binding TotalPayment, Converter={StaticResource PriceConverter}}" />
-                <Run Text="đ" />
+                <Run Foreground="red" Text="{Binding TotalPayment, Converter={StaticResource PriceConverter}}" />
+                <Run Foreground="Red" Text="đ" />
             </TextBlock>
             <Button
                 Padding="10,5"

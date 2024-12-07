@@ -1,0 +1,97 @@
+\doxysection{Gyminize.\+View\+Models.\+Shop\+View\+Model Class Reference}
+\hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model}{}\label{class_gyminize_1_1_view_models_1_1_shop_view_model}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+Inheritance diagram for Gyminize.\+View\+Models.\+Shop\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gyminize_1_1_view_models_1_1_shop_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a5f26c3a2ff05904757d4e66216cf1f7c}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a5f26c3a2ff05904757d4e66216cf1f7c} 
+{\bfseries Shop\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a74d7e18b2020b266e69cbc4dc2e60adc}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a74d7e18b2020b266e69cbc4dc2e60adc} 
+void {\bfseries Search\+Product} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_ad019e2f02b5d19d269e4ee0534fb1067}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_ad019e2f02b5d19d269e4ee0534fb1067} 
+async Task {\bfseries Get\+Customer\+ID} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a3c7ecf00bbfdf7071bc6b00369112f85}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a3c7ecf00bbfdf7071bc6b00369112f85} 
+async void {\bfseries Create\+Or\+Get\+Order\+ID} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a393092cf60d856d71f4cd3ecefecb75e}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a393092cf60d856d71f4cd3ecefecb75e} 
+async Task {\bfseries Load\+Product\+Library\+Async} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a4d0355d74a4d28e0c7d854d8af8c1d4c}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a4d0355d74a4d28e0c7d854d8af8c1d4c} 
+void {\bfseries Select\+Cart} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a6d226846946cde793ece58294e716391}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a6d226846946cde793ece58294e716391} 
+async Task {\bfseries Select\+Product} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} product)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a93615aaf51d02a745a7d312eb5903bb8}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a93615aaf51d02a745a7d312eb5903bb8} 
+async void {\bfseries Load\+Order\+Detail\+Data} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a06610b55757f20f2187b7f0ae5d7d94b}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a06610b55757f20f2187b7f0ae5d7d94b} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_aed66241175447a07bdc54f9dc8edda6c}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_aed66241175447a07bdc54f9dc8edda6c} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Filtered\+Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_acf2d160aaf9958fba184d6790e00e2f1}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_acf2d160aaf9958fba184d6790e00e2f1} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}} $>$ {\bfseries Order\+Details\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a1267ee788e5e148f48412097e6b698b2}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a1267ee788e5e148f48412097e6b698b2} 
+int {\bfseries Current\+Page}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a1b30778ba616b12ac7a41f7c95fb4b93}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a1b30778ba616b12ac7a41f7c95fb4b93} 
+string {\bfseries Search\+Text}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a5da0c399ee9987ea23b899ef791dd300}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a5da0c399ee9987ea23b899ef791dd300} 
+Combo\+Box\+Item {\bfseries Selected\+Category\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a4cf3199ccd0e0409f57d63fffc608026}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a4cf3199ccd0e0409f57d63fffc608026} 
+Combo\+Box\+Item {\bfseries Selected\+Sort\+Order}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a608294f827dacaa666dee3f784d84441}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a608294f827dacaa666dee3f784d84441} 
+int {\bfseries Total\+Pages}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a36ee01f00372042390a54b6f83a9ee02}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a36ee01f00372042390a54b6f83a9ee02} 
+bool {\bfseries Can\+Go\+Next}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_accd9deb240f718cc5bddd3ee567754be}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_accd9deb240f718cc5bddd3ee567754be} 
+bool {\bfseries Can\+Go\+Back}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a5d1b439789b221d6d2e34845f522ce91}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a5d1b439789b221d6d2e34845f522ce91} 
+int {\bfseries Customer\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_aa8d2fa2b318cf50b7077c78396085717}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_aa8d2fa2b318cf50b7077c78396085717} 
+int {\bfseries Order\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a2e3015cc7889ca0292b2f49d36737d0a}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a2e3015cc7889ca0292b2f49d36737d0a} 
+ICommand {\bfseries Next\+Page\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a014ccdab808524cf29a7b1372ec9702f}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a014ccdab808524cf29a7b1372ec9702f} 
+ICommand {\bfseries Previous\+Page\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a1c9de842dbdb3dd33640d8691b804977}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a1c9de842dbdb3dd33640d8691b804977} 
+ICommand {\bfseries Select\+Product\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a6b253312e21ab2736f5124080bb72e19}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a6b253312e21ab2736f5124080bb72e19} 
+ICommand {\bfseries Select\+Cart\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_afbf4e5a07c1a72759528d4f5efcff3f5}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_afbf4e5a07c1a72759528d4f5efcff3f5} 
+ICommand {\bfseries Search\+Product\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a1026e1a1c239c453c82b2a350e9e8e0b}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a1026e1a1c239c453c82b2a350e9e8e0b} 
+int {\bfseries Cart\+Item\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize/\+View\+Models/Shop\+View\+Model.\+cs\end{DoxyCompactItemize}

@@ -80,6 +80,30 @@ public partial class DiaryViewModel : ObservableRecipient
 
     public int _exerciseStatus;
 
+    private bool _isLunchEmpty;
+    public bool IsLunchEmpty
+    {
+        get => _isLunchEmpty;
+        set => SetProperty(ref _isLunchEmpty, value);
+    }
+    private bool _isBreakfastEmpty;
+    public bool IsBreakfastEmpty
+    {
+        get => _isBreakfastEmpty;
+        set => SetProperty(ref _isBreakfastEmpty, value);
+    }
+    private bool _isSnackEmpty;
+    public bool IsSnackEmpty
+    {
+        get => _isSnackEmpty;
+        set => SetProperty(ref _isSnackEmpty, value);
+    }
+    private bool _isDinnerEmpty;
+    public bool IsDinnerEmpty
+    {
+        get => _isDinnerEmpty;
+        set => SetProperty(ref _isDinnerEmpty, value);
+    }
     public ICommand SelectedDatesChangedCommand
     { 
         get;
@@ -165,6 +189,11 @@ public partial class DiaryViewModel : ObservableRecipient
             WeightText = CurrentDailydiary.daily_weight;
             BurnedCalories = (int)(CurrentDailydiary.total_calories - CurrentDailydiary.calories_remain);
             TotalCalories = (int)CurrentDailydiary.total_calories;
+
+            IsBreakfastEmpty = BreakfastItems.Count() == 0 ? true : false;
+            IsLunchEmpty = LunchItems.Count() == 0 ? true : false;
+            IsSnackEmpty = SnackItems.Count() == 0 ? true : false;
+            IsDinnerEmpty = DinnerItems.Count() == 0 ? true : false;
         }
     }
 
@@ -173,9 +202,7 @@ public partial class DiaryViewModel : ObservableRecipient
     public void LoadWorkoudetails(DateTime daySelected)
     {
         var planDetail = _apiServicesClient.Get<Plandetail>($"api/Plandetail/get/plandetail/{_customer_id}");
-        PlanNameText = "Chưa có kế hoạch";
-        TypeWorkoutText = "Chưa có ngày tập";
-        _exerciseStatus = 0; // 0: chưa có plan, 1: ngày nghỉ, 2: ngày tập hoàn thành, 3: ngày tập chưa hoàn thành
+        // exercise_status =  0: chưa có plan, 1: ngày nghỉ, 2: ngày tập hoàn thành, 3: ngày tập chưa hoàn thành
         if (planDetail != null)
         {
             var workoutDetailsList = planDetail?.Workoutdetails.ToList();
@@ -191,6 +218,12 @@ public partial class DiaryViewModel : ObservableRecipient
                 PlanNameText = planDetail.Plan.plan_name;
                 TypeWorkoutText = "Ngày nghỉ";
                 _exerciseStatus = 1;
+            } 
+            else
+            {
+                PlanNameText = "Chưa có kế hoạch";
+                TypeWorkoutText = "Chưa có ngày tập";
+                _exerciseStatus = 0; 
             }
         }
     }
@@ -233,6 +266,7 @@ public partial class DiaryViewModel : ObservableRecipient
                     break;
             }
         }
+        LoadWorkoudetails(_dateTimeProvider.UtcNow);
     }
 
     private void AddIconToDay(CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)

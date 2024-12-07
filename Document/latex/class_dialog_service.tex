@@ -1,0 +1,131 @@
+\doxysection{Dialog\+Service Class Reference}
+\hypertarget{class_dialog_service}{}\label{class_dialog_service}\index{DialogService@{DialogService}}
+Inheritance diagram for Dialog\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dialog_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$(string? selected\+Meal, int Quantity)$>$ \mbox{\hyperlink{class_dialog_service_ae1c4c5333a3ac09047c1fff40c730b23}{Show\+Meal\+Selection\+Dialog\+Async}} ()
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_dialog_service_a678547f41523d9abecf0d626a503b017}{Show\+Full\+Exercise\+Workout\+Dialog\+Async}} (List$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_exercisedetail}{Exercisedetail}} $>$ workouts)
+\item 
+async Task \mbox{\hyperlink{class_dialog_service_a4998b9ff26db4e621da88db270c6f445}{Show\+Exercise\+Video\+Dialog\+Async}} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_exercise}{Exercise}} exercise)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_dialog_service_adc3a529df1bccf6c866774883f218aa8}{Show\+Verification\+Dialog\+Async}} (string email, string code)
+\item 
+\Hypertarget{class_dialog_service_a250b6200c34af08b64ef75ae8fc94523}\label{class_dialog_service_a250b6200c34af08b64ef75ae8fc94523} 
+async void {\bfseries send\+Verification\+Code} (string email, string code)
+\item 
+async Task$<$(string email, string username)$>$ \mbox{\hyperlink{class_dialog_service_a6c1398d630d5853f73256c7fe0b0ba42}{Show\+Username\+Input\+Dialog}} ()
+\item 
+async Task$<$ string $>$ \mbox{\hyperlink{class_dialog_service_a2708fc3669420659b8013b9ecc6db341}{Show\+Reset\+Password\+Dialog\+Async}} ()
+\item 
+async Task \mbox{\hyperlink{class_dialog_service_a8fe2685604b03a4fb69b5ae4a6bdbfbd}{Show\+Error\+Dialog\+Async}} (string error\+Message)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_dialog_service_abfc4fbc099e653f25f8cb09e3d8ef0a1}{Show\+Product\+Dialog\+With\+Supplier\+Async}} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} product, int orderid)
+\item 
+async Task \mbox{\hyperlink{class_dialog_service_a9ac83faf1d628fa0742e4814159f5709}{Show\+Success\+Message\+Async}} (string message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dialog_service_a8fe2685604b03a4fb69b5ae4a6bdbfbd}\index{DialogService@{DialogService}!ShowErrorDialogAsync@{ShowErrorDialogAsync}}
+\index{ShowErrorDialogAsync@{ShowErrorDialogAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowErrorDialogAsync()}{ShowErrorDialogAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_a8fe2685604b03a4fb69b5ae4a6bdbfbd} 
+async Task Dialog\+Service.\+Show\+Error\+Dialog\+Async (\begin{DoxyParamCaption}\item[{string}]{error\+Message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_a4998b9ff26db4e621da88db270c6f445}\index{DialogService@{DialogService}!ShowExerciseVideoDialogAsync@{ShowExerciseVideoDialogAsync}}
+\index{ShowExerciseVideoDialogAsync@{ShowExerciseVideoDialogAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowExerciseVideoDialogAsync()}{ShowExerciseVideoDialogAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_a4998b9ff26db4e621da88db270c6f445} 
+async Task Dialog\+Service.\+Show\+Exercise\+Video\+Dialog\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize_1_1_models_1_1_exercise}{Exercise}}}]{exercise}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_a678547f41523d9abecf0d626a503b017}\index{DialogService@{DialogService}!ShowFullExerciseWorkoutDialogAsync@{ShowFullExerciseWorkoutDialogAsync}}
+\index{ShowFullExerciseWorkoutDialogAsync@{ShowFullExerciseWorkoutDialogAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowFullExerciseWorkoutDialogAsync()}{ShowFullExerciseWorkoutDialogAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_a678547f41523d9abecf0d626a503b017} 
+async Task$<$ bool $>$ Dialog\+Service.\+Show\+Full\+Exercise\+Workout\+Dialog\+Async (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_exercisedetail}{Exercisedetail}} $>$}]{workouts}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_ae1c4c5333a3ac09047c1fff40c730b23}\index{DialogService@{DialogService}!ShowMealSelectionDialogAsync@{ShowMealSelectionDialogAsync}}
+\index{ShowMealSelectionDialogAsync@{ShowMealSelectionDialogAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowMealSelectionDialogAsync()}{ShowMealSelectionDialogAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_ae1c4c5333a3ac09047c1fff40c730b23} 
+async Task$<$(string? selected\+Meal, int Quantity)$>$ Dialog\+Service.\+Show\+Meal\+Selection\+Dialog\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_abfc4fbc099e653f25f8cb09e3d8ef0a1}\index{DialogService@{DialogService}!ShowProductDialogWithSupplierAsync@{ShowProductDialogWithSupplierAsync}}
+\index{ShowProductDialogWithSupplierAsync@{ShowProductDialogWithSupplierAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowProductDialogWithSupplierAsync()}{ShowProductDialogWithSupplierAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_abfc4fbc099e653f25f8cb09e3d8ef0a1} 
+async Task$<$ bool $>$ Dialog\+Service.\+Show\+Product\+Dialog\+With\+Supplier\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}}]{product}{, }\item[{int}]{orderid}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_a2708fc3669420659b8013b9ecc6db341}\index{DialogService@{DialogService}!ShowResetPasswordDialogAsync@{ShowResetPasswordDialogAsync}}
+\index{ShowResetPasswordDialogAsync@{ShowResetPasswordDialogAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowResetPasswordDialogAsync()}{ShowResetPasswordDialogAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_a2708fc3669420659b8013b9ecc6db341} 
+async Task$<$ string $>$ Dialog\+Service.\+Show\+Reset\+Password\+Dialog\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_a9ac83faf1d628fa0742e4814159f5709}\index{DialogService@{DialogService}!ShowSuccessMessageAsync@{ShowSuccessMessageAsync}}
+\index{ShowSuccessMessageAsync@{ShowSuccessMessageAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowSuccessMessageAsync()}{ShowSuccessMessageAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_a9ac83faf1d628fa0742e4814159f5709} 
+async Task Dialog\+Service.\+Show\+Success\+Message\+Async (\begin{DoxyParamCaption}\item[{string}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_a6c1398d630d5853f73256c7fe0b0ba42}\index{DialogService@{DialogService}!ShowUsernameInputDialog@{ShowUsernameInputDialog}}
+\index{ShowUsernameInputDialog@{ShowUsernameInputDialog}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowUsernameInputDialog()}{ShowUsernameInputDialog()}}
+{\footnotesize\ttfamily \label{class_dialog_service_a6c1398d630d5853f73256c7fe0b0ba42} 
+async Task$<$(string email, string username)$>$ Dialog\+Service.\+Show\+Username\+Input\+Dialog (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+\Hypertarget{class_dialog_service_adc3a529df1bccf6c866774883f218aa8}\index{DialogService@{DialogService}!ShowVerificationDialogAsync@{ShowVerificationDialogAsync}}
+\index{ShowVerificationDialogAsync@{ShowVerificationDialogAsync}!DialogService@{DialogService}}
+\doxysubsubsection{\texorpdfstring{ShowVerificationDialogAsync()}{ShowVerificationDialogAsync()}}
+{\footnotesize\ttfamily \label{class_dialog_service_adc3a529df1bccf6c866774883f218aa8} 
+async Task$<$ bool $>$ Dialog\+Service.\+Show\+Verification\+Dialog\+Async (\begin{DoxyParamCaption}\item[{string}]{email}{, }\item[{string}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{Gyminize.\+Contracts.\+Services.\+IDialog\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize/\+Services/Dialog\+Service.\+cs\end{DoxyCompactItemize}

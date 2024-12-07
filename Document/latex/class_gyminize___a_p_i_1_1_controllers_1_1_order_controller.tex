@@ -1,0 +1,131 @@
+\doxysection{Gyminize\+\_\+\+API.\+Controllers.\+Order\+Controller Class Reference}
+\hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller}{}\label{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller}\index{Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}}
+
+
+Lớp điều khiển cho các API đơn hàng.  
+
+
+Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Order\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a5d6f806f3896baab170923376c620978}{Order\+Controller}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository}{Orders\+Repository}} orders\+Repository)
+\begin{DoxyCompactList}\small\item\em Khởi tạo một đối tượng \doxylink{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller}{Order\+Controller}. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_ad3abb0531ffb8b6aa0b070c3e5a1a2f6}{Get\+All\+Orders\+By\+Customer\+ID}} (int customer\+ID)
+\begin{DoxyCompactList}\small\item\em API để lấy tất cả các đơn hàng của một khách hàng theo ID. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a69334376ca95129160abf86d6353226b}{Get\+Orders\+By\+Customer\+Id}} (int customer\+\_\+id)
+\begin{DoxyCompactList}\small\item\em API để lấy đơn hàng của một khách hàng theo ID. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a42633fb46bbfba0f44410090cfb085de}{Add\+Order}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} order)
+\begin{DoxyCompactList}\small\item\em API để thêm một đơn hàng mới. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a8e46b33f3f24139273220e787d357928}{Update\+Status\+Order}} (int orders\+\_\+id, string status)
+\begin{DoxyCompactList}\small\item\em API để cập nhật trạng thái của một đơn hàng. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lớp điều khiển cho các API đơn hàng. 
+
+Lớp này cung cấp các API để lấy, thêm, và cập nhật đơn hàng. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a5d6f806f3896baab170923376c620978}\index{Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}!OrderController@{OrderController}}
+\index{OrderController@{OrderController}!Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{OrderController()}{OrderController()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a5d6f806f3896baab170923376c620978} 
+Gyminize\+\_\+\+API.\+Controllers.\+Order\+Controller.\+Order\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository}{Orders\+Repository}}}]{orders\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo một đối tượng \doxylink{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller}{Order\+Controller}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orders\+Repository} & Đối tượng repository để quản lý đơn hàng. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a42633fb46bbfba0f44410090cfb085de}\index{Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}!AddOrder@{AddOrder}}
+\index{AddOrder@{AddOrder}!Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{AddOrder()}{AddOrder()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a42633fb46bbfba0f44410090cfb085de} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Order\+Controller.\+Add\+Order (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}}}]{order}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+API để thêm một đơn hàng mới. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & Đối tượng đơn hàng cần thêm. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về đối tượng đơn hàng đã được thêm. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_ad3abb0531ffb8b6aa0b070c3e5a1a2f6}\index{Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}!GetAllOrdersByCustomerID@{GetAllOrdersByCustomerID}}
+\index{GetAllOrdersByCustomerID@{GetAllOrdersByCustomerID}!Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{GetAllOrdersByCustomerID()}{GetAllOrdersByCustomerID()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_ad3abb0531ffb8b6aa0b070c3e5a1a2f6} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Order\+Controller.\+Get\+All\+Orders\+By\+Customer\+ID (\begin{DoxyParamCaption}\item[{int}]{customer\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+API để lấy tất cả các đơn hàng của một khách hàng theo ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+ID} & ID của khách hàng. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về danh sách tất cả các đơn hàng của khách hàng. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a69334376ca95129160abf86d6353226b}\index{Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}!GetOrdersByCustomerId@{GetOrdersByCustomerId}}
+\index{GetOrdersByCustomerId@{GetOrdersByCustomerId}!Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{GetOrdersByCustomerId()}{GetOrdersByCustomerId()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a69334376ca95129160abf86d6353226b} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Order\+Controller.\+Get\+Orders\+By\+Customer\+Id (\begin{DoxyParamCaption}\item[{int}]{customer\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+API để lấy đơn hàng của một khách hàng theo ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+\_\+id} & ID của khách hàng. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về đơn hàng của khách hàng. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a8e46b33f3f24139273220e787d357928}\index{Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}!UpdateStatusOrder@{UpdateStatusOrder}}
+\index{UpdateStatusOrder@{UpdateStatusOrder}!Gyminize\_API.Controllers.OrderController@{Gyminize\_API.Controllers.OrderController}}
+\doxysubsubsection{\texorpdfstring{UpdateStatusOrder()}{UpdateStatusOrder()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_controller_a8e46b33f3f24139273220e787d357928} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Order\+Controller.\+Update\+Status\+Order (\begin{DoxyParamCaption}\item[{int}]{orders\+\_\+id}{, }\item[{string}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+API để cập nhật trạng thái của một đơn hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orders\+\_\+id} & ID của đơn hàng. \\
+\hline
+{\em status} & Trạng thái mới của đơn hàng. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về đối tượng đơn hàng đã được cập nhật trạng thái. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize\+\_\+\+API/\+Controllers/Order\+Controller.\+cs\end{DoxyCompactItemize}

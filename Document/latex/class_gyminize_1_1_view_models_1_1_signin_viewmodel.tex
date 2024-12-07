@@ -1,0 +1,61 @@
+\doxysection{Gyminize.\+View\+Models.\+Signin\+Viewmodel Class Reference}
+\hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel}{}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+Inheritance diagram for Gyminize.\+View\+Models.\+Signin\+Viewmodel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gyminize_1_1_view_models_1_1_signin_viewmodel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac367fdec382a5cd62e853654a312cf46}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac367fdec382a5cd62e853654a312cf46} 
+{\bfseries Signin\+Viewmodel} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{IWindow\+Service}} window\+Service)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a533e224e19af78ccaf4f925ccf2e87bd}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a533e224e19af78ccaf4f925ccf2e87bd} 
+async Task {\bfseries Exchange\+Code\+For\+Tokens\+Async} (string code, string code\+Verifier)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5ef1f4536d01032713d9d432a0e8a48f}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5ef1f4536d01032713d9d432a0e8a48f} 
+async void {\bfseries send\+Verification\+Code} (string email, string code)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af0261de619e7fbaabd154bbabd8c9368}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af0261de619e7fbaabd154bbabd8c9368} 
+void {\bfseries output} (string message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8de7ddddb03e02d82883fbbbe3c88b2}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8de7ddddb03e02d82883fbbbe3c88b2} 
+static string {\bfseries base64urlencode\+No\+Padding} (IBuffer buffer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af83c592eaf5d3bd13890a8c5f1213648}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af83c592eaf5d3bd13890a8c5f1213648} 
+\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} {\bfseries \+\_\+local\+Settings\+Service}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aef953940280a610cabb03baf3ff942b5}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aef953940280a610cabb03baf3ff942b5} 
+Solid\+Color\+Brush {\bfseries Status\+Color}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af263a972bd0d7aa29f137fdb511fac8f}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af263a972bd0d7aa29f137fdb511fac8f} 
+bool {\bfseries Remember\+Me}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae11c1c79cde29b99f81e527d5f84308a}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae11c1c79cde29b99f81e527d5f84308a} 
+ICommand {\bfseries Login\+Command\+By\+Google}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acdc3463f0e8e8a8e38c5119f416fe7ae}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acdc3463f0e8e8a8e38c5119f416fe7ae} 
+ICommand {\bfseries Login\+Command\+By\+User}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a276773e55e7d9552d4da0af819e84661}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a276773e55e7d9552d4da0af819e84661} 
+ICommand {\bfseries Sign\+Up\+Navigate\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5661b8029587f002fb59569d3ef3b3da}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5661b8029587f002fb59569d3ef3b3da} 
+ICommand {\bfseries Forgot\+Password\+Processing\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize/\+View\+Models/Signin\+Viewmodel.\+cs\end{DoxyCompactItemize}

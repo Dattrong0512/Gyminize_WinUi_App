@@ -62,6 +62,9 @@ public partial class ShopViewModel : ObservableRecipient
         set
         {
             SetProperty(ref _selectedCategoryName, value);
+            CurrentPage = 1;
+            CanGoBack = false;
+            CanGoNext = true;
             UpdateFilteredAndSortedProducts();
         }
     }
@@ -72,7 +75,10 @@ public partial class ShopViewModel : ObservableRecipient
         get => _selectedSortOrder;
         set
         {
-            SetProperty(ref _selectedSortOrder, value); 
+            SetProperty(ref _selectedSortOrder, value);
+            CurrentPage = 1;
+            CanGoBack = false;
+            CanGoNext = true;
             UpdateFilteredAndSortedProducts();
         }
     }
@@ -152,6 +158,9 @@ public partial class ShopViewModel : ObservableRecipient
     public void SearchProduct()
     {
         UpdateFilteredAndSortedProducts();
+        CurrentPage = 1;
+        CanGoBack = false;
+        CanGoNext = true;
     }
 
     private void UpdateFilteredAndSortedProducts()
@@ -310,16 +319,15 @@ public partial class ShopViewModel : ObservableRecipient
     public async Task SelectProduct(Product product)
     {
         var result = await _dialogService.ShowProductDialogWithSupplierAsync(product, OrderId);
-        if (result == false)
+        if (result == 0)
         {
             await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể thêm sản phẩm vào giỏ hàng");
         }
-        else
+        else if (result == 1)
         {
             await _dialogService.ShowSuccessMessageAsync("Thêm sản phẩm vào giỏ hàng thành công");
             LoadOrderDetailData();
         }
-
     }
 
     public async void LoadOrderDetailData()

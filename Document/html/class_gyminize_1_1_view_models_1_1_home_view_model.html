@@ -28,7 +28,7 @@
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về các hàm và lớp trong project này</div>
+   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
   </td>
  </tr>
  </tbody>
@@ -91,9 +91,12 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="class_gyminize_1_1_view_models_1_1_home_view_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.ViewModels.HomeViewModel Class Reference</div></div>
 </div><!--header-->
@@ -101,132 +104,122 @@ $(function(){ initResizable(false); });
 <div class="dynheader">
 Inheritance diagram for Gyminize.ViewModels.HomeViewModel:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_gyminize_1_1_view_models_1_1_home_view_model__inherit__graph.png" border="0" usemap="#a_gyminize_8_view_models_8_home_view_model_inherit__map" alt="Inheritance graph"/></div>
-<map name="a_gyminize_8_view_models_8_home_view_model_inherit__map" id="a_gyminize_8_view_models_8_home_view_model_inherit__map">
-<area shape="rect" title=" " alt="" coords="48,80,238,123"/>
-<area shape="rect" title=" " alt="" coords="5,5,131,32"/>
-<area shape="poly" title=" " alt="" coords="92,42,126,78,122,82,88,45"/>
-<area shape="rect" title=" " alt="" coords="155,5,280,32"/>
-<area shape="poly" title=" " alt="" coords="197,45,163,82,160,78,193,42"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Gyminize.ViewModels.HomeViewModel:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_gyminize_1_1_view_models_1_1_home_view_model__coll__graph.png" border="0" usemap="#a_gyminize_8_view_models_8_home_view_model_coll__map" alt="Collaboration graph"/></div>
-<map name="a_gyminize_8_view_models_8_home_view_model_coll__map" id="a_gyminize_8_view_models_8_home_view_model_coll__map">
-<area shape="rect" title=" " alt="" coords="48,80,238,123"/>
-<area shape="rect" title=" " alt="" coords="5,5,131,32"/>
-<area shape="poly" title=" " alt="" coords="92,42,126,78,122,82,88,45"/>
-<area shape="rect" title=" " alt="" coords="155,5,280,32"/>
-<area shape="poly" title=" " alt="" coords="197,45,163,82,160,78,193,42"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+ <div class="center">
+  <img src="class_gyminize_1_1_view_models_1_1_home_view_model.png" usemap="#Gyminize.ViewModels.HomeViewModel_map" alt=""/>
+  <map id="Gyminize.ViewModels.HomeViewModel_map" name="Gyminize.ViewModels.HomeViewModel_map">
+<area href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html" alt="Gyminize.Contracts.ViewModels.INavigationAware" shape="rect" coords="308,0,606,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gyminize_1_1_view_models_1_1_home_view_model_1_1_weight_data_point.html">WeightDataPoint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab9e8e4755ac9c4aa27ebbc2805281f06" id="r_ab9e8e4755ac9c4aa27ebbc2805281f06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9e8e4755ac9c4aa27ebbc2805281f06">HomeViewModel</a> (INavigationService navigationService, IWindowService windowService, ILocalSettingsService localSettings, IDialogService dialogService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider)</td></tr>
+<tr class="memitem:ab9e8e4755ac9c4aa27ebbc2805281f06" id="r_ab9e8e4755ac9c4aa27ebbc2805281f06"><td class="memItemLeft" align="right" valign="top"><a id="ab9e8e4755ac9c4aa27ebbc2805281f06" name="ab9e8e4755ac9c4aa27ebbc2805281f06"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>HomeViewModel</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">INavigationService</a> navigationService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service.html">IWindowService</a> windowService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSettings, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service.html">IDialogService</a> dialogService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client.html">IApiServicesClient</a> apiServicesClient, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_date_time_provider.html">IDateTimeProvider</a> dateTimeProvider)</td></tr>
 <tr class="separator:ab9e8e4755ac9c4aa27ebbc2805281f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7515e1ce6886cfb7c1d61a7164d8149d" id="r_a7515e1ce6886cfb7c1d61a7164d8149d"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7515e1ce6886cfb7c1d61a7164d8149d">OpenSaveWeight</a> ()</td></tr>
+<tr class="memitem:a7515e1ce6886cfb7c1d61a7164d8149d" id="r_a7515e1ce6886cfb7c1d61a7164d8149d"><td class="memItemLeft" align="right" valign="top"><a id="a7515e1ce6886cfb7c1d61a7164d8149d" name="a7515e1ce6886cfb7c1d61a7164d8149d"></a>
+async void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenSaveWeight</b> ()</td></tr>
 <tr class="separator:a7515e1ce6886cfb7c1d61a7164d8149d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bf9f1cc4d910ffed654bfa4ec59d25a" id="r_a2bf9f1cc4d910ffed654bfa4ec59d25a"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf9f1cc4d910ffed654bfa4ec59d25a">OnNavigatedTo</a> (object parameter)</td></tr>
 <tr class="separator:a2bf9f1cc4d910ffed654bfa4ec59d25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f8250a190bd30d1b922c2870aaf2886" id="r_a2f8250a190bd30d1b922c2870aaf2886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8250a190bd30d1b922c2870aaf2886">OnNavigatedFrom</a> ()</td></tr>
 <tr class="separator:a2f8250a190bd30d1b922c2870aaf2886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html">Gyminize.Contracts.ViewModels.INavigationAware</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7fbfb8a0831c686fd9b377cdbdda4c1b" id="r_a7fbfb8a0831c686fd9b377cdbdda4c1b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fbfb8a0831c686fd9b377cdbdda4c1b">_customer_id</a></td></tr>
+<tr class="memitem:a7fbfb8a0831c686fd9b377cdbdda4c1b" id="r_a7fbfb8a0831c686fd9b377cdbdda4c1b"><td class="memItemLeft" align="right" valign="top"><a id="a7fbfb8a0831c686fd9b377cdbdda4c1b" name="a7fbfb8a0831c686fd9b377cdbdda4c1b"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_customer_id</b></td></tr>
 <tr class="separator:a7fbfb8a0831c686fd9b377cdbdda4c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4a5e83498365e8ea40c39bfcb20c9d8" id="r_ab4a5e83498365e8ea40c39bfcb20c9d8"><td class="memItemLeft" align="right" valign="top">ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4a5e83498365e8ea40c39bfcb20c9d8">localsetting</a></td></tr>
+<tr class="memitem:ab4a5e83498365e8ea40c39bfcb20c9d8" id="r_ab4a5e83498365e8ea40c39bfcb20c9d8"><td class="memItemLeft" align="right" valign="top"><a id="ab4a5e83498365e8ea40c39bfcb20c9d8" name="ab4a5e83498365e8ea40c39bfcb20c9d8"></a>
+<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a>&#160;</td><td class="memItemRight" valign="bottom"><b>localsetting</b></td></tr>
 <tr class="separator:ab4a5e83498365e8ea40c39bfcb20c9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a3d25256f4370150f77c266ab6c79d65c" id="r_a3d25256f4370150f77c266ab6c79d65c"><td class="memItemLeft" align="right" valign="top"><a id="a3d25256f4370150f77c266ab6c79d65c" name="a3d25256f4370150f77c266ab6c79d65c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnPropertyChanged</b> (string propertyName)</td></tr>
+<tr class="separator:a3d25256f4370150f77c266ab6c79d65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a16a668103dc6cb4b83a603df51260023" id="r_a16a668103dc6cb4b83a603df51260023"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16a668103dc6cb4b83a603df51260023">IsWeightTextBoxEnabled</a><code> [get]</code></td></tr>
+<tr class="memitem:a16a668103dc6cb4b83a603df51260023" id="r_a16a668103dc6cb4b83a603df51260023"><td class="memItemLeft" align="right" valign="top"><a id="a16a668103dc6cb4b83a603df51260023" name="a16a668103dc6cb4b83a603df51260023"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsWeightTextBoxEnabled</b><code> [get]</code></td></tr>
 <tr class="separator:a16a668103dc6cb4b83a603df51260023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca26a20f31e3a35a0d2769beeef31812" id="r_aca26a20f31e3a35a0d2769beeef31812"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca26a20f31e3a35a0d2769beeef31812">RemainCalories</a><code> [get, set]</code></td></tr>
+<tr class="memitem:aca26a20f31e3a35a0d2769beeef31812" id="r_aca26a20f31e3a35a0d2769beeef31812"><td class="memItemLeft" align="right" valign="top"><a id="aca26a20f31e3a35a0d2769beeef31812" name="aca26a20f31e3a35a0d2769beeef31812"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>RemainCalories</b><code> [get, set]</code></td></tr>
 <tr class="separator:aca26a20f31e3a35a0d2769beeef31812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea2609227f2ba929abf6853aab2b546c" id="r_aea2609227f2ba929abf6853aab2b546c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea2609227f2ba929abf6853aab2b546c">BurnedCalories</a><code> [get, set]</code></td></tr>
+<tr class="memitem:aea2609227f2ba929abf6853aab2b546c" id="r_aea2609227f2ba929abf6853aab2b546c"><td class="memItemLeft" align="right" valign="top"><a id="aea2609227f2ba929abf6853aab2b546c" name="aea2609227f2ba929abf6853aab2b546c"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>BurnedCalories</b><code> [get, set]</code></td></tr>
 <tr class="separator:aea2609227f2ba929abf6853aab2b546c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03bf07f514f82e5b1ec3130e8321deb1" id="r_a03bf07f514f82e5b1ec3130e8321deb1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03bf07f514f82e5b1ec3130e8321deb1">ProgressValue</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a03bf07f514f82e5b1ec3130e8321deb1" id="r_a03bf07f514f82e5b1ec3130e8321deb1"><td class="memItemLeft" align="right" valign="top"><a id="a03bf07f514f82e5b1ec3130e8321deb1" name="a03bf07f514f82e5b1ec3130e8321deb1"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>ProgressValue</b><code> [get, set]</code></td></tr>
 <tr class="separator:a03bf07f514f82e5b1ec3130e8321deb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af412707026041ec627d4d8d9fd816db1" id="r_af412707026041ec627d4d8d9fd816db1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af412707026041ec627d4d8d9fd816db1">TypeWorkoutDate</a><code> [get, set]</code></td></tr>
+<tr class="memitem:af412707026041ec627d4d8d9fd816db1" id="r_af412707026041ec627d4d8d9fd816db1"><td class="memItemLeft" align="right" valign="top"><a id="af412707026041ec627d4d8d9fd816db1" name="af412707026041ec627d4d8d9fd816db1"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>TypeWorkoutDate</b><code> [get, set]</code></td></tr>
 <tr class="separator:af412707026041ec627d4d8d9fd816db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a076265ebd977bf38a4c4fd9089e2781c" id="r_a076265ebd977bf38a4c4fd9089e2781c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a076265ebd977bf38a4c4fd9089e2781c">StatusIconPath</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a076265ebd977bf38a4c4fd9089e2781c" id="r_a076265ebd977bf38a4c4fd9089e2781c"><td class="memItemLeft" align="right" valign="top"><a id="a076265ebd977bf38a4c4fd9089e2781c" name="a076265ebd977bf38a4c4fd9089e2781c"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>StatusIconPath</b><code> [get, set]</code></td></tr>
 <tr class="separator:a076265ebd977bf38a4c4fd9089e2781c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e54bb9f813e2ee0e04385b114b0c5e6" id="r_a6e54bb9f813e2ee0e04385b114b0c5e6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e54bb9f813e2ee0e04385b114b0c5e6">TypeWorkoutIconPath</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a6e54bb9f813e2ee0e04385b114b0c5e6" id="r_a6e54bb9f813e2ee0e04385b114b0c5e6"><td class="memItemLeft" align="right" valign="top"><a id="a6e54bb9f813e2ee0e04385b114b0c5e6" name="a6e54bb9f813e2ee0e04385b114b0c5e6"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>TypeWorkoutIconPath</b><code> [get, set]</code></td></tr>
 <tr class="separator:a6e54bb9f813e2ee0e04385b114b0c5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81e95927d34e757d3ebf68f72b73042" id="r_ab81e95927d34e757d3ebf68f72b73042"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab81e95927d34e757d3ebf68f72b73042">ExerciseStatus</a><code> [get, set]</code></td></tr>
+<tr class="memitem:ab81e95927d34e757d3ebf68f72b73042" id="r_ab81e95927d34e757d3ebf68f72b73042"><td class="memItemLeft" align="right" valign="top"><a id="ab81e95927d34e757d3ebf68f72b73042" name="ab81e95927d34e757d3ebf68f72b73042"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>ExerciseStatus</b><code> [get, set]</code></td></tr>
 <tr class="separator:ab81e95927d34e757d3ebf68f72b73042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b583e10edc29c8a6ddbd0619fd43736" id="r_a5b583e10edc29c8a6ddbd0619fd43736"><td class="memItemLeft" align="right" valign="top">Visibility&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b583e10edc29c8a6ddbd0619fd43736">StatusVisibility</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a5b583e10edc29c8a6ddbd0619fd43736" id="r_a5b583e10edc29c8a6ddbd0619fd43736"><td class="memItemLeft" align="right" valign="top"><a id="a5b583e10edc29c8a6ddbd0619fd43736" name="a5b583e10edc29c8a6ddbd0619fd43736"></a>
+Visibility&#160;</td><td class="memItemRight" valign="bottom"><b>StatusVisibility</b><code> [get, set]</code></td></tr>
 <tr class="separator:a5b583e10edc29c8a6ddbd0619fd43736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2af18ffbe840482dafd63d93d4032bcd" id="r_a2af18ffbe840482dafd63d93d4032bcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2af18ffbe840482dafd63d93d4032bcd">IsOverGoalCalories</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a2af18ffbe840482dafd63d93d4032bcd" id="r_a2af18ffbe840482dafd63d93d4032bcd"><td class="memItemLeft" align="right" valign="top"><a id="a2af18ffbe840482dafd63d93d4032bcd" name="a2af18ffbe840482dafd63d93d4032bcd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsOverGoalCalories</b><code> [get, set]</code></td></tr>
 <tr class="separator:a2af18ffbe840482dafd63d93d4032bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accac65a7b951f1b2a1a1f4590fe98a75" id="r_accac65a7b951f1b2a1a1f4590fe98a75"><td class="memItemLeft" align="right" valign="top">RelayCommand&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accac65a7b951f1b2a1a1f4590fe98a75">OpenWorkoutLinkCommand</a><code> [get]</code></td></tr>
+<tr class="memitem:accac65a7b951f1b2a1a1f4590fe98a75" id="r_accac65a7b951f1b2a1a1f4590fe98a75"><td class="memItemLeft" align="right" valign="top"><a id="accac65a7b951f1b2a1a1f4590fe98a75" name="accac65a7b951f1b2a1a1f4590fe98a75"></a>
+RelayCommand&#160;</td><td class="memItemRight" valign="bottom"><b>OpenWorkoutLinkCommand</b><code> [get]</code></td></tr>
 <tr class="separator:accac65a7b951f1b2a1a1f4590fe98a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f1305186d3fb66cfb652a63524e25e5" id="r_a4f1305186d3fb66cfb652a63524e25e5"><td class="memItemLeft" align="right" valign="top">RelayCommand&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f1305186d3fb66cfb652a63524e25e5">OpenSleepLinkCommand</a><code> [get]</code></td></tr>
+<tr class="memitem:a4f1305186d3fb66cfb652a63524e25e5" id="r_a4f1305186d3fb66cfb652a63524e25e5"><td class="memItemLeft" align="right" valign="top"><a id="a4f1305186d3fb66cfb652a63524e25e5" name="a4f1305186d3fb66cfb652a63524e25e5"></a>
+RelayCommand&#160;</td><td class="memItemRight" valign="bottom"><b>OpenSleepLinkCommand</b><code> [get]</code></td></tr>
 <tr class="separator:a4f1305186d3fb66cfb652a63524e25e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79ead7349344ce1cb43a8d2ed26fac76" id="r_a79ead7349344ce1cb43a8d2ed26fac76"><td class="memItemLeft" align="right" valign="top">RelayCommand&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79ead7349344ce1cb43a8d2ed26fac76">OpenRecipeLinkCommand</a><code> [get]</code></td></tr>
+<tr class="memitem:a79ead7349344ce1cb43a8d2ed26fac76" id="r_a79ead7349344ce1cb43a8d2ed26fac76"><td class="memItemLeft" align="right" valign="top"><a id="a79ead7349344ce1cb43a8d2ed26fac76" name="a79ead7349344ce1cb43a8d2ed26fac76"></a>
+RelayCommand&#160;</td><td class="memItemRight" valign="bottom"><b>OpenRecipeLinkCommand</b><code> [get]</code></td></tr>
 <tr class="separator:a79ead7349344ce1cb43a8d2ed26fac76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a5389d7e66da34c8ecf87ae10e0cc31" id="r_a6a5389d7e66da34c8ecf87ae10e0cc31"><td class="memItemLeft" align="right" valign="top">ICommand&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a5389d7e66da34c8ecf87ae10e0cc31">EditWeightCommand</a><code> [get]</code></td></tr>
+<tr class="memitem:a6a5389d7e66da34c8ecf87ae10e0cc31" id="r_a6a5389d7e66da34c8ecf87ae10e0cc31"><td class="memItemLeft" align="right" valign="top"><a id="a6a5389d7e66da34c8ecf87ae10e0cc31" name="a6a5389d7e66da34c8ecf87ae10e0cc31"></a>
+ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>EditWeightCommand</b><code> [get]</code></td></tr>
 <tr class="separator:a6a5389d7e66da34c8ecf87ae10e0cc31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a805509b677ca4fa8915b7b0dd0ec9575" id="r_a805509b677ca4fa8915b7b0dd0ec9575"><td class="memItemLeft" align="right" valign="top">ICommand&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a805509b677ca4fa8915b7b0dd0ec9575">SaveWeightCommand</a><code> [get]</code></td></tr>
+<tr class="memitem:a805509b677ca4fa8915b7b0dd0ec9575" id="r_a805509b677ca4fa8915b7b0dd0ec9575"><td class="memItemLeft" align="right" valign="top"><a id="a805509b677ca4fa8915b7b0dd0ec9575" name="a805509b677ca4fa8915b7b0dd0ec9575"></a>
+ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>SaveWeightCommand</b><code> [get]</code></td></tr>
 <tr class="separator:a805509b677ca4fa8915b7b0dd0ec9575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d84f2f9d3ce2779b637818cf7669b8" id="r_a76d84f2f9d3ce2779b637818cf7669b8"><td class="memItemLeft" align="right" valign="top"><a id="a76d84f2f9d3ce2779b637818cf7669b8" name="a76d84f2f9d3ce2779b637818cf7669b8"></a>
+ObservableCollection&lt; Line &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ChartLines</b><code> [get, set]</code></td></tr>
+<tr class="separator:a76d84f2f9d3ce2779b637818cf7669b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a068d4b88e96fddda293e66397c9692ba" id="r_a068d4b88e96fddda293e66397c9692ba"><td class="memItemLeft" align="right" valign="top"><a id="a068d4b88e96fddda293e66397c9692ba" name="a068d4b88e96fddda293e66397c9692ba"></a>
+ObservableCollection&lt; Line &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>AxisLines</b><code> [get, set]</code></td></tr>
+<tr class="separator:a068d4b88e96fddda293e66397c9692ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6d5e0bdd2cfeb4e180c25f2ec6ceae" id="r_a7b6d5e0bdd2cfeb4e180c25f2ec6ceae"><td class="memItemLeft" align="right" valign="top"><a id="a7b6d5e0bdd2cfeb4e180c25f2ec6ceae" name="a7b6d5e0bdd2cfeb4e180c25f2ec6ceae"></a>
+ObservableCollection&lt; TextBlock &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>AxisLabels</b><code> [get, set]</code></td></tr>
+<tr class="separator:a7b6d5e0bdd2cfeb4e180c25f2ec6ceae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1478a643f0186d6629cac18df0f905d" id="r_ac1478a643f0186d6629cac18df0f905d"><td class="memItemLeft" align="right" valign="top"><a id="ac1478a643f0186d6629cac18df0f905d" name="ac1478a643f0186d6629cac18df0f905d"></a>
+List&lt; <a class="el" href="class_gyminize_1_1_view_models_1_1_home_view_model_1_1_weight_data_point.html">WeightDataPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DataPoints</b><code> [get, set]</code></td></tr>
+<tr class="separator:ac1478a643f0186d6629cac18df0f905d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a035a31d472ea87c54155d329bdb364b9" id="r_a035a31d472ea87c54155d329bdb364b9"><td class="memItemLeft" align="right" valign="top"><a id="a035a31d472ea87c54155d329bdb364b9" name="a035a31d472ea87c54155d329bdb364b9"></a>
+PropertyChangedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><b>PropertyChanged</b></td></tr>
+<tr class="separator:a035a31d472ea87c54155d329bdb364b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00023">23</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab9e8e4755ac9c4aa27ebbc2805281f06" name="ab9e8e4755ac9c4aa27ebbc2805281f06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9e8e4755ac9c4aa27ebbc2805281f06">&#9670;&#160;</a></span>HomeViewModel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Gyminize.ViewModels.HomeViewModel.HomeViewModel </td>
-          <td>(</td>
-          <td class="paramtype">INavigationService</td>          <td class="paramname"><span class="paramname"><em>navigationService</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IWindowService</td>          <td class="paramname"><span class="paramname"><em>windowService</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ILocalSettingsService</td>          <td class="paramname"><span class="paramname"><em>localSettings</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IDialogService</td>          <td class="paramname"><span class="paramname"><em>dialogService</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IApiServicesClient</td>          <td class="paramname"><span class="paramname"><em>apiServicesClient</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IDateTimeProvider</td>          <td class="paramname"><span class="paramname"><em>dateTimeProvider</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00136">136</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2f8250a190bd30d1b922c2870aaf2886" name="a2f8250a190bd30d1b922c2870aaf2886"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f8250a190bd30d1b922c2870aaf2886">&#9670;&#160;</a></span>OnNavigatedFrom()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Gyminize.ViewModels.HomeViewModel.OnNavigatedFrom </td>
@@ -235,9 +228,14 @@ Properties</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00369">369</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
+<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html">Gyminize.Contracts.ViewModels.INavigationAware</a>.</p>
 
 </div>
 </div>
@@ -246,6 +244,9 @@ Properties</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">async void Gyminize.ViewModels.HomeViewModel.OnNavigatedTo </td>
@@ -254,427 +255,19 @@ Properties</h2></td></tr>
           <td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00237">237</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a7515e1ce6886cfb7c1d61a7164d8149d" name="a7515e1ce6886cfb7c1d61a7164d8149d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7515e1ce6886cfb7c1d61a7164d8149d">&#9670;&#160;</a></span>OpenSaveWeight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async void Gyminize.ViewModels.HomeViewModel.OpenSaveWeight </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00193">193</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7fbfb8a0831c686fd9b377cdbdda4c1b" name="a7fbfb8a0831c686fd9b377cdbdda4c1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fbfb8a0831c686fd9b377cdbdda4c1b">&#9670;&#160;</a></span>_customer_id</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Gyminize.ViewModels.HomeViewModel._customer_id</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00031">31</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="ab4a5e83498365e8ea40c39bfcb20c9d8" name="ab4a5e83498365e8ea40c39bfcb20c9d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4a5e83498365e8ea40c39bfcb20c9d8">&#9670;&#160;</a></span>localsetting</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ILocalSettingsService Gyminize.ViewModels.HomeViewModel.localsetting</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00038">38</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="aea2609227f2ba929abf6853aab2b546c" name="aea2609227f2ba929abf6853aab2b546c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea2609227f2ba929abf6853aab2b546c">&#9670;&#160;</a></span>BurnedCalories</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Gyminize.ViewModels.HomeViewModel.BurnedCalories</td>
-        </tr>
-      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00056">56</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a6a5389d7e66da34c8ecf87ae10e0cc31" name="a6a5389d7e66da34c8ecf87ae10e0cc31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a5389d7e66da34c8ecf87ae10e0cc31">&#9670;&#160;</a></span>EditWeightCommand</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ICommand Gyminize.ViewModels.HomeViewModel.EditWeightCommand</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00127">127</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="ab81e95927d34e757d3ebf68f72b73042" name="ab81e95927d34e757d3ebf68f72b73042"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab81e95927d34e757d3ebf68f72b73042">&#9670;&#160;</a></span>ExerciseStatus</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Gyminize.ViewModels.HomeViewModel.ExerciseStatus</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00094">94</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a2af18ffbe840482dafd63d93d4032bcd" name="a2af18ffbe840482dafd63d93d4032bcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2af18ffbe840482dafd63d93d4032bcd">&#9670;&#160;</a></span>IsOverGoalCalories</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Gyminize.ViewModels.HomeViewModel.IsOverGoalCalories</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00110">110</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a16a668103dc6cb4b83a603df51260023" name="a16a668103dc6cb4b83a603df51260023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16a668103dc6cb4b83a603df51260023">&#9670;&#160;</a></span>IsWeightTextBoxEnabled</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Gyminize.ViewModels.HomeViewModel.IsWeightTextBoxEnabled</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00033">33</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a79ead7349344ce1cb43a8d2ed26fac76" name="a79ead7349344ce1cb43a8d2ed26fac76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79ead7349344ce1cb43a8d2ed26fac76">&#9670;&#160;</a></span>OpenRecipeLinkCommand</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RelayCommand Gyminize.ViewModels.HomeViewModel.OpenRecipeLinkCommand</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00123">123</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a4f1305186d3fb66cfb652a63524e25e5" name="a4f1305186d3fb66cfb652a63524e25e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f1305186d3fb66cfb652a63524e25e5">&#9670;&#160;</a></span>OpenSleepLinkCommand</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RelayCommand Gyminize.ViewModels.HomeViewModel.OpenSleepLinkCommand</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00119">119</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="accac65a7b951f1b2a1a1f4590fe98a75" name="accac65a7b951f1b2a1a1f4590fe98a75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accac65a7b951f1b2a1a1f4590fe98a75">&#9670;&#160;</a></span>OpenWorkoutLinkCommand</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">RelayCommand Gyminize.ViewModels.HomeViewModel.OpenWorkoutLinkCommand</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00115">115</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a03bf07f514f82e5b1ec3130e8321deb1" name="a03bf07f514f82e5b1ec3130e8321deb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03bf07f514f82e5b1ec3130e8321deb1">&#9670;&#160;</a></span>ProgressValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Gyminize.ViewModels.HomeViewModel.ProgressValue</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00064">64</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="aca26a20f31e3a35a0d2769beeef31812" name="aca26a20f31e3a35a0d2769beeef31812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca26a20f31e3a35a0d2769beeef31812">&#9670;&#160;</a></span>RemainCalories</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Gyminize.ViewModels.HomeViewModel.RemainCalories</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00049">49</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a805509b677ca4fa8915b7b0dd0ec9575" name="a805509b677ca4fa8915b7b0dd0ec9575"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a805509b677ca4fa8915b7b0dd0ec9575">&#9670;&#160;</a></span>SaveWeightCommand</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ICommand Gyminize.ViewModels.HomeViewModel.SaveWeightCommand</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00131">131</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a076265ebd977bf38a4c4fd9089e2781c" name="a076265ebd977bf38a4c4fd9089e2781c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a076265ebd977bf38a4c4fd9089e2781c">&#9670;&#160;</a></span>StatusIconPath</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Gyminize.ViewModels.HomeViewModel.StatusIconPath</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00079">79</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a5b583e10edc29c8a6ddbd0619fd43736" name="a5b583e10edc29c8a6ddbd0619fd43736"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b583e10edc29c8a6ddbd0619fd43736">&#9670;&#160;</a></span>StatusVisibility</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Visibility Gyminize.ViewModels.HomeViewModel.StatusVisibility</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00102">102</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="af412707026041ec627d4d8d9fd816db1" name="af412707026041ec627d4d8d9fd816db1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af412707026041ec627d4d8d9fd816db1">&#9670;&#160;</a></span>TypeWorkoutDate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Gyminize.ViewModels.HomeViewModel.TypeWorkoutDate</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00072">72</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
-
-</div>
-</div>
-<a id="a6e54bb9f813e2ee0e04385b114b0c5e6" name="a6e54bb9f813e2ee0e04385b114b0c5e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e54bb9f813e2ee0e04385b114b0c5e6">&#9670;&#160;</a></span>TypeWorkoutIconPath</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Gyminize.ViewModels.HomeViewModel.TypeWorkoutIconPath</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_home_view_model_8cs_source.html#l00086">86</a> of file <a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a>.</p>
+<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html">Gyminize.Contracts.ViewModels.INavigationAware</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Hi/Desktop/DO_AN_WIN/Gyminize_WinUi_App/Gyminize/ViewModels/<a class="el" href="_home_view_model_8cs_source.html">HomeViewModel.cs</a></li>
+<li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/ViewModels/<b>HomeViewModel.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

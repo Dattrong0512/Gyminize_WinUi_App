@@ -1,0 +1,137 @@
+\doxysection{Api\+Services\+Client Class Reference}
+\hypertarget{class_api_services_client}{}\label{class_api_services_client}\index{ApiServicesClient@{ApiServicesClient}}
+Inheritance diagram for Api\+Services\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api_services_client}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{class_api_services_client_a4b88eee82f4fe31b2ba8878f79e861cd}{Get$<$ T $>$}} (string endpoint)
+\begin{DoxyCompactList}\small\item\em Gọi API GET và trả về kết quả dạng T. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_api_services_client_a919fbb808912757e96eb986c2fe1caac}{Post$<$ T $>$}} (string endpoint, object data)
+\begin{DoxyCompactList}\small\item\em Gửi dữ liệu dạng POST tới API và trả về kết quả dạng T. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_api_services_client_a124e5f59cfd0a5bba14efd455b688808}{Put$<$ T $>$}} (string endpoint, object data)
+\begin{DoxyCompactList}\small\item\em Cập nhật dữ liệu bằng phương thức PUT và trả về kết quả dạng T. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_api_services_client_a4e93dbe90d718b2fb884f959c98ebcbe}{Delete}} (string endpoint, object data)
+\begin{DoxyCompactList}\small\item\em Gửi yêu cầu DELETE tới API và trả về trạng thái thành công hay không. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{Gyminize.\+Contracts.\+Services.\+IApi\+Services\+Client}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_api_services_client_a4e93dbe90d718b2fb884f959c98ebcbe}\index{ApiServicesClient@{ApiServicesClient}!Delete@{Delete}}
+\index{Delete@{Delete}!ApiServicesClient@{ApiServicesClient}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_api_services_client_a4e93dbe90d718b2fb884f959c98ebcbe} 
+bool Api\+Services\+Client.\+Delete (\begin{DoxyParamCaption}\item[{string}]{endpoint}{, }\item[{object}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gửi yêu cầu DELETE tới API và trả về trạng thái thành công hay không. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & Endpoint của API.\\
+\hline
+{\em data} & Dữ liệu gửi đi (nếu có).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True nếu thành công, False nếu thất bại.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{Gyminize.\+Contracts.\+Services.\+IApi\+Services\+Client}}.
+
+\Hypertarget{class_api_services_client_a4b88eee82f4fe31b2ba8878f79e861cd}\index{ApiServicesClient@{ApiServicesClient}!Get$<$ T $>$@{Get$<$ T $>$}}
+\index{Get$<$ T $>$@{Get$<$ T $>$}!ApiServicesClient@{ApiServicesClient}}
+\doxysubsubsection{\texorpdfstring{Get$<$ T $>$()}{Get< T >()}}
+{\footnotesize\ttfamily \label{class_api_services_client_a4b88eee82f4fe31b2ba8878f79e861cd} 
+T Api\+Services\+Client.\+Get$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{endpoint}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gọi API GET và trả về kết quả dạng T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Kiểu dữ liệu trả về.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & Endpoint của API.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Kết quả từ API.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{Gyminize.\+Contracts.\+Services.\+IApi\+Services\+Client}}.
+
+\Hypertarget{class_api_services_client_a919fbb808912757e96eb986c2fe1caac}\index{ApiServicesClient@{ApiServicesClient}!Post$<$ T $>$@{Post$<$ T $>$}}
+\index{Post$<$ T $>$@{Post$<$ T $>$}!ApiServicesClient@{ApiServicesClient}}
+\doxysubsubsection{\texorpdfstring{Post$<$ T $>$()}{Post< T >()}}
+{\footnotesize\ttfamily \label{class_api_services_client_a919fbb808912757e96eb986c2fe1caac} 
+T Api\+Services\+Client.\+Post$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{endpoint}{, }\item[{object}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gửi dữ liệu dạng POST tới API và trả về kết quả dạng T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Kiểu dữ liệu trả về.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & Endpoint của API.\\
+\hline
+{\em data} & Dữ liệu gửi đi.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Kết quả từ API.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{Gyminize.\+Contracts.\+Services.\+IApi\+Services\+Client}}.
+
+\Hypertarget{class_api_services_client_a124e5f59cfd0a5bba14efd455b688808}\index{ApiServicesClient@{ApiServicesClient}!Put$<$ T $>$@{Put$<$ T $>$}}
+\index{Put$<$ T $>$@{Put$<$ T $>$}!ApiServicesClient@{ApiServicesClient}}
+\doxysubsubsection{\texorpdfstring{Put$<$ T $>$()}{Put< T >()}}
+{\footnotesize\ttfamily \label{class_api_services_client_a124e5f59cfd0a5bba14efd455b688808} 
+T Api\+Services\+Client.\+Put$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{endpoint}{, }\item[{object}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cập nhật dữ liệu bằng phương thức PUT và trả về kết quả dạng T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Kiểu dữ liệu trả về.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & Endpoint của API.\\
+\hline
+{\em data} & Dữ liệu gửi đi.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Kết quả từ API.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{Gyminize.\+Contracts.\+Services.\+IApi\+Services\+Client}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize/\+Services/Api\+Services\+Client.\+cs\end{DoxyCompactItemize}

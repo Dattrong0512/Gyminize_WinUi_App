@@ -73,19 +73,16 @@ namespace Gyminize.ViewModels
                     // Lặp qua dữ liệu trả về stream
                     await foreach (var response in responseStreamEnum)
                     {
-                        // Kiểm tra nếu response là null hoặc không có text
                         if (response == null || string.IsNullOrEmpty(response.Text))
                         {
-                            continue; // Bỏ qua nếu không có dữ liệu hợp lệ
+                            continue; 
                         }
-
-                        // Cập nhật fullResponse với toàn bộ văn bản nhận được
                         fullResponse += response.Text;
                     }
 
-                    // Cập nhật nội dung của botMessage với toàn bộ văn bản nhận được
+                    await Task.Delay(20);
+
                     botMessage.Content = fullResponse;
-                    // Notify the UI about the change
                     Messages[Messages.IndexOf(botMessage)] = botMessage;
                 }
                 else

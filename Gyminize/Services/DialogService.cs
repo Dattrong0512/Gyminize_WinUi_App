@@ -27,30 +27,30 @@ public class DialogService : IDialogService
 {
     public async Task<(string? selectedMeal, int Quantity)> ShowMealSelectionDialogAsync()
     {
-        // Tạo ComboBox để chọn bữa ăn
         var comboBox = new ComboBox
         {
             Items = { "Bữa Sáng", "Bữa Trưa", "Bữa Tối", "Bữa Xế" },
             SelectedIndex = 0,
+            BorderThickness = new Thickness(1),
+            BorderBrush = new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue),
             Margin = new Thickness(0, 0, 0, 10)
         };
 
-        // Tạo NumberBox để nhập số lượng
         var numberBox = new NumberBox
         {
             Minimum = 1,
             Maximum = 20,
+            BorderThickness = new Thickness(1),
+            BorderBrush = new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue),
             Value = 1,
             Header = "Số Lượng",
             SpinButtonPlacementMode = NumberBoxSpinButtonPlacementMode.Inline
         };
 
-        // Tạo StackPanel để chứa ComboBox và NumberBox
         var stackPanel = new StackPanel();
         stackPanel.Children.Add(comboBox);
         stackPanel.Children.Add(numberBox);
 
-        // Tạo ContentDialog với StackPanel là nội dung
         var mealDialog = new ContentDialog
         {
             Title = "Chọn Bữa Ăn và Số Lượng",
@@ -58,17 +58,25 @@ public class DialogService : IDialogService
             PrimaryButtonText = "Thêm",
             CloseButtonText = "Hủy"
         };
-
-        // Thiết lập XamlRoot nếu dùng WinUI 3
+        
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             mealDialog.XamlRoot = rootElement.XamlRoot;
         }
 
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.FontSizeProperty, 16.0));
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(10)));
+
+        mealDialog.PrimaryButtonStyle = primaryButtonStyle;
+        mealDialog.CloseButtonStyle = primaryButtonStyle;
+
         string? selectedMeal = null;
         var quantity = 1;
 
-        // Đảm bảo gọi trên UI Thread
         var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
         await dispatcherQueue.EnqueueAsync(async () =>
         {
@@ -131,8 +139,17 @@ public class DialogService : IDialogService
         grid.Children.Add(_exerciseVideoWebView);
         Grid.SetRow(_exerciseVideoWebView, 2);
 
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.FontSizeProperty, 16.0));
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(10)));
 
         _workoutDialog.Content = grid;
+
+        _workoutDialog.PrimaryButtonStyle = primaryButtonStyle;
+        _workoutDialog.SecondaryButtonStyle = primaryButtonStyle;
 
         UpdateExerciseDialog();
 
@@ -202,6 +219,13 @@ public class DialogService : IDialogService
         var exerciseRepsTextBlock = new TextBlock { FontSize = 18, Text = $"Reps: {exercise.reps}" };
         var exerciseVideoWebView = new WebView2 { Width = 900, Height = 320, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch };
 
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.FontSizeProperty, 16.0));
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(10)));
+
 
         exerciseVideoWebView.Source = new Uri(exercise.linkvideo);
 
@@ -227,6 +251,7 @@ public class DialogService : IDialogService
         {
             Text = "Bài Tập",
             FontSize = 24,
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue),
             FontWeight = FontWeights.Bold,
             HorizontalAlignment = HorizontalAlignment.Center,
             Margin = new Thickness(0, 0, 0, 10)
@@ -238,13 +263,7 @@ public class DialogService : IDialogService
             CloseButtonText = "OK"
         };
 
-        exerciseDialog.CloseButtonStyle = new Style(typeof(Button))
-        {
-            Setters =
-        {
-            new Setter(Button.HorizontalAlignmentProperty, HorizontalAlignment.Center)
-        }
-        };
+        exerciseDialog.CloseButtonStyle = primaryButtonStyle;
         exerciseDialog.Resources["ContentDialogMaxWidth"] = 2000;
         exerciseDialog.Resources["ContentDialogMaxHeight"] = 1500;
         // Set XamlRoot if using WinUI 3
@@ -449,7 +468,7 @@ public class DialogService : IDialogService
 
         var titleTextBlock = new TextBlock
         {
-            Text = "Nhập username tài khoản",
+            Text = "Nhập tên tài khoản",
             FontSize = 24,
             FontWeight = FontWeights.Bold,
             Margin = new Thickness(0, 0, 0, 10)
@@ -729,9 +748,9 @@ public class DialogService : IDialogService
         });
     }
 
-    public async Task<bool> ShowProductDialogWithSupplierAsync(Product product, int orderid)
+    public async Task<int> ShowProductDialogWithSupplierAsync(Product product, int orderid)
     {
-        bool addSuccess = true;
+        int addSuccess = 2;
 
         // Hình ảnh sản phẩm
         var productImage = new Image
@@ -771,9 +790,10 @@ public class DialogService : IDialogService
         // Nhà cung cấp
         var supplierTextBlock = new TextBlock
         {
-            Text = $"Nhà cung cấp: {product.product_provider}",
+            Text = product.product_provider,
             FontSize = 16,
-            Foreground = new SolidColorBrush(Microsoft.UI.Colors.Black),
+            FontWeight = FontWeights.Bold,
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.DarkGray),
             Margin = new Thickness(10, 10, 10, 10)
         };
 
@@ -781,12 +801,15 @@ public class DialogService : IDialogService
         var quantityLabel = new TextBlock
         {
             Text = "Số lượng:",
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue),
             FontSize = 16,
             Margin = new Thickness(10, 20, 10, 10)
         };
 
         var quantityNumberBox = new NumberBox
         {
+            BorderBrush = new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue),
+            BorderThickness = new Thickness(1),
             Minimum = 1,
             Maximum = 20,
             Value = 1,
@@ -808,6 +831,7 @@ public class DialogService : IDialogService
         {
             Text = "Mô tả:",
             FontSize = 16,
+            Foreground = new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue),
             Margin = new Thickness(10, 10, 10, 10)
         };
 
@@ -855,29 +879,15 @@ public class DialogService : IDialogService
             CloseButtonText = "Hủy",
         };
 
-        productDialog.PrimaryButtonStyle = new Style(typeof(Button))
-        {
-            Setters =
-        {
-            new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.Red)),
-            new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)),
-            new Setter(Button.CornerRadiusProperty, new CornerRadius(20)),
-            new Setter(Button.FontSizeProperty, 16),
-            new Setter(Button.PaddingProperty, new Thickness(20, 10, 20, 10))
-        }
-        };
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.FontSizeProperty, 16.0));
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(10)));
 
-        productDialog.CloseButtonStyle = new Style(typeof(Button))
-        {
-            Setters =
-        {
-            new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.Red)),
-            new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)),
-            new Setter(Button.CornerRadiusProperty, new CornerRadius(20)),
-            new Setter(Button.FontSizeProperty, 16),
-            new Setter(Button.PaddingProperty, new Thickness(20, 10, 20, 10))
-        }
-        };
+        productDialog.PrimaryButtonStyle = primaryButtonStyle;
+        productDialog.CloseButtonStyle = primaryButtonStyle;
 
         productDialog.Resources["ContentDialogMaxWidth"] = 1200;
         productDialog.Resources["ContentDialogMaxHeight"] = 600;
@@ -894,7 +904,10 @@ public class DialogService : IDialogService
             var postResult = ApiServices.Post<Orderdetail>("api/OrderDetail/add", orderdetail);
             if (postResult == null)
             {
-                addSuccess = false;
+                addSuccess = 0;
+            } else
+            {
+                addSuccess = 1;
             }
         };
 

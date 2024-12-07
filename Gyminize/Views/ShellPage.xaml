@@ -35,6 +35,7 @@
         </Grid>
         <NavigationView
             x:Name="NavigationViewControl"
+            Background="AliceBlue"
             Canvas.ZIndex="0"
             DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
             ExpandedModeThresholdWidth="1280"

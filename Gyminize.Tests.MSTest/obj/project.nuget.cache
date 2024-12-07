@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "q8BzUQ0CKxU=",
+  "dgSpecHash": "DUF2aq7hr0g=",
   "success": true,
   "projectFilePath": "J:\\Study\\WindowPrograming\\Clone_17\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\Gyminize.Tests.MSTest.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.common\\7.1.2\\communitytoolkit.common.7.1.2.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.2\\communitytoolkit.mvvm.8.3.2.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.winui\\7.1.2\\communitytoolkit.winui.7.1.2.nupkg.sha512",
+    "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.winui.animations\\8.1.240916\\communitytoolkit.winui.animations.8.1.240916.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.winui.ui\\7.1.2\\communitytoolkit.winui.ui.7.1.2.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.winui.ui.animations\\7.1.2\\communitytoolkit.winui.ui.animations.7.1.2.nupkg.sha512",
     "C:\\Users\\Bach Yen\\.nuget\\packages\\communitytoolkit.winui.ui.controls\\7.1.2\\communitytoolkit.winui.ui.controls.7.1.2.nupkg.sha512",

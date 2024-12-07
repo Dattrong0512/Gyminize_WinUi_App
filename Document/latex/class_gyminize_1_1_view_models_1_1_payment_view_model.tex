@@ -1,0 +1,106 @@
+\doxysection{Gyminize.\+View\+Models.\+Payment\+View\+Model Class Reference}
+\hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model}{}\label{class_gyminize_1_1_view_models_1_1_payment_view_model}\index{Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}}
+Inheritance diagram for Gyminize.\+View\+Models.\+Payment\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gyminize_1_1_view_models_1_1_payment_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a851a69bf7d19d35bd01d7cca20fd8e82}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a851a69bf7d19d35bd01d7cca20fd8e82} 
+{\bfseries Payment\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a9903fb191db937100f2a6cfee5e9f13c}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a9903fb191db937100f2a6cfee5e9f13c} 
+async void {\bfseries Load\+Order\+Detail\+Data} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a8408f6fb09eb9620cf726483a7ec2800}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a8408f6fb09eb9620cf726483a7ec2800} 
+async Task {\bfseries get\+Current\+Order} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_af039184de505b6cd9d3e387cfb4ed1ac}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_af039184de505b6cd9d3e387cfb4ed1ac} 
+\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orders}{Orders}} {\bfseries current\+Order} = new()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a2335e5f040120d58bab077900cc12eed}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a2335e5f040120d58bab077900cc12eed} 
+decimal {\bfseries Total\+Price}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a76c9c721d368e91a473f5e05613fae84}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a76c9c721d368e91a473f5e05613fae84} 
+bool {\bfseries Can\+Proceed\+To\+Payment}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a8272d003b1addfef59010fc966ecc2b0}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a8272d003b1addfef59010fc966ecc2b0} 
+decimal {\bfseries Shipping\+Fee}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ac1157d345e70c65699ec983ef49d2ba9}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ac1157d345e70c65699ec983ef49d2ba9} 
+decimal {\bfseries Product\+Price}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_abfac2ba2106233a515c57b4e84de6bea}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_abfac2ba2106233a515c57b4e84de6bea} 
+bool {\bfseries Is\+Momo\+Selected}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a5910fa84962d24d9eb7c3b25983ca9bc}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a5910fa84962d24d9eb7c3b25983ca9bc} 
+bool {\bfseries Is\+Bank\+Selected}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_afdc1569894e8cce1319384ee9bbbce4b}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_afdc1569894e8cce1319384ee9bbbce4b} 
+bool {\bfseries Is\+Cod\+Selected}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a49078d826290025c274726c6be5bacf6}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a49078d826290025c274726c6be5bacf6} 
+string {\bfseries Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a2abbf1785075849b82dc82c368e2af56}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a2abbf1785075849b82dc82c368e2af56} 
+string {\bfseries Phone\+Number}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a6735ee45601e1cfbd5581239de617269}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a6735ee45601e1cfbd5581239de617269} 
+string {\bfseries Address}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a79db1b0cdaf4f942a300ae1acb9806f5}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a79db1b0cdaf4f942a300ae1acb9806f5} 
+bool {\bfseries Is\+Name\+Invalid}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a9efb1c968d3a43147c83f15e11385b55}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a9efb1c968d3a43147c83f15e11385b55} 
+bool {\bfseries Is\+Phone\+Number\+Invalid}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_afae1d073e4dde729578d9fb92ca37906}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_afae1d073e4dde729578d9fb92ca37906} 
+bool {\bfseries Is\+Address\+Invalid}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_af4696893bfd4344f1a1b2b5442a880a7}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_af4696893bfd4344f1a1b2b5442a880a7} 
+bool {\bfseries Is\+Name\+Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ad5d92be3a31ffaa7747ff6491241d008}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ad5d92be3a31ffaa7747ff6491241d008} 
+bool {\bfseries Is\+Phone\+Number\+Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a548ed46834d6172712e45caede490b56}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a548ed46834d6172712e45caede490b56} 
+bool {\bfseries Is\+Address\+Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ad8ff35d914a27212abbfab299b60f074}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ad8ff35d914a27212abbfab299b60f074} 
+ICommand {\bfseries Toggle\+Payment\+Method}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ab9fc393f0be8478e49f46fe8db68726a}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ab9fc393f0be8478e49f46fe8db68726a} 
+ICommand {\bfseries Edit\+Name\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ab72bd261a613dabf8ba820bd6b837827}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ab72bd261a613dabf8ba820bd6b837827} 
+ICommand {\bfseries Save\+Name\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_aeea2be0f4beddcbc35d01edc979db88f}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_aeea2be0f4beddcbc35d01edc979db88f} 
+ICommand {\bfseries Edit\+Phone\+Number\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a0ee1b11f8437deab9339a205dc966ac2}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a0ee1b11f8437deab9339a205dc966ac2} 
+ICommand {\bfseries Save\+Phone\+Number\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ac060c7c0e5f62830d66e2e73bc03360c}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ac060c7c0e5f62830d66e2e73bc03360c} 
+ICommand {\bfseries Edit\+Address\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_aaca1bebe666844834c367ce8c830194e}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_aaca1bebe666844834c367ce8c830194e} 
+ICommand {\bfseries Save\+Address\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a8f9ceca12c533db8baea68bc9aae4959}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a8f9ceca12c533db8baea68bc9aae4959} 
+ICommand {\bfseries Payment\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize/\+View\+Models/Payment\+View\+Model.\+cs\end{DoxyCompactItemize}

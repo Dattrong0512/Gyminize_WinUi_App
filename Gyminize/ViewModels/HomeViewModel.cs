@@ -491,7 +491,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         AxisLabels.Add(new TextBlock
         {
             Text = "Biểu đồ cân nặng trong 7 ngày qua",
-            Foreground = new SolidColorBrush(Colors.Black),
+            Foreground = new SolidColorBrush(Colors.RoyalBlue),
             FontSize = 16,
             FontWeight = FontWeights.Bold,
             Margin = new Thickness(marginLeft + canvasWidth / 2 - 120, 0, 0, 0)
@@ -508,7 +508,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
                 Y1 = y1,
                 X2 = marginLeft + (i + 1) * xInterval,
                 Y2 = y2,
-                Stroke = new SolidColorBrush(Colors.Blue),
+                Stroke = new SolidColorBrush(Colors.OrangeRed),
                 StrokeThickness = 2
             };
             ChartLines.Add(line);

@@ -1,0 +1,109 @@
+\doxysection{Gyminize\+\_\+\+API.\+Controllers.\+Order\+Detail\+Controller Class Reference}
+\hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller}{}\label{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller}\index{Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}}
+
+
+Lớp điều khiển cho các API chi tiết đơn hàng.  
+
+
+Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Order\+Detail\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_ac957e6719c466b72e3c0053ecb53fb37}{Order\+Detail\+Controller}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_order_detail_repository}{Order\+Detail\+Repository}} order\+Detail\+Repository)
+\begin{DoxyCompactList}\small\item\em Khởi tạo một đối tượng \doxylink{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller}{Order\+Detail\+Controller}. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a17db323f12efac94a50a8838acdb0123}{Update\+Or\+Add\+Order\+Detail}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orderdetail}{Orderdetail}} orderdetail)
+\begin{DoxyCompactList}\small\item\em API để thêm hoặc cập nhật chi tiết đơn hàng. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a7a2690c3c0729db6d8640568acb85c9f}{Update\+Number\+Order\+Detail}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orderdetail}{Orderdetail}} orderdetail)
+\begin{DoxyCompactList}\small\item\em API để cập nhật số lượng sản phẩm trong chi tiết đơn hàng. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a2593330451441bc0846043bab404595e}{Delete\+Order\+Detail}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orderdetail}{Orderdetail}} orderdetail)
+\begin{DoxyCompactList}\small\item\em API để xóa chi tiết đơn hàng. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lớp điều khiển cho các API chi tiết đơn hàng. 
+
+Lớp này cung cấp các API để thêm, cập nhật và xóa chi tiết đơn hàng. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_ac957e6719c466b72e3c0053ecb53fb37}\index{Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}!OrderDetailController@{OrderDetailController}}
+\index{OrderDetailController@{OrderDetailController}!Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}}
+\doxysubsubsection{\texorpdfstring{OrderDetailController()}{OrderDetailController()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_ac957e6719c466b72e3c0053ecb53fb37} 
+Gyminize\+\_\+\+API.\+Controllers.\+Order\+Detail\+Controller.\+Order\+Detail\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_order_detail_repository}{Order\+Detail\+Repository}}}]{order\+Detail\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo một đối tượng \doxylink{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller}{Order\+Detail\+Controller}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Detail\+Repository} & Đối tượng repository để quản lý chi tiết đơn hàng. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a2593330451441bc0846043bab404595e}\index{Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}!DeleteOrderDetail@{DeleteOrderDetail}}
+\index{DeleteOrderDetail@{DeleteOrderDetail}!Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}}
+\doxysubsubsection{\texorpdfstring{DeleteOrderDetail()}{DeleteOrderDetail()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a2593330451441bc0846043bab404595e} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Order\+Detail\+Controller.\+Delete\+Order\+Detail (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orderdetail}{Orderdetail}}}]{orderdetail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+API để xóa chi tiết đơn hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orderdetail} & Đối tượng chi tiết đơn hàng cần xóa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về true nếu xóa thành công, ngược lại trả về false. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a7a2690c3c0729db6d8640568acb85c9f}\index{Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}!UpdateNumberOrderDetail@{UpdateNumberOrderDetail}}
+\index{UpdateNumberOrderDetail@{UpdateNumberOrderDetail}!Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}}
+\doxysubsubsection{\texorpdfstring{UpdateNumberOrderDetail()}{UpdateNumberOrderDetail()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a7a2690c3c0729db6d8640568acb85c9f} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Order\+Detail\+Controller.\+Update\+Number\+Order\+Detail (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orderdetail}{Orderdetail}}}]{orderdetail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+API để cập nhật số lượng sản phẩm trong chi tiết đơn hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orderdetail} & Đối tượng chi tiết đơn hàng cần cập nhật. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về đối tượng chi tiết đơn hàng đã được cập nhật. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a17db323f12efac94a50a8838acdb0123}\index{Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}!UpdateOrAddOrderDetail@{UpdateOrAddOrderDetail}}
+\index{UpdateOrAddOrderDetail@{UpdateOrAddOrderDetail}!Gyminize\_API.Controllers.OrderDetailController@{Gyminize\_API.Controllers.OrderDetailController}}
+\doxysubsubsection{\texorpdfstring{UpdateOrAddOrderDetail()}{UpdateOrAddOrderDetail()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller_a17db323f12efac94a50a8838acdb0123} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Order\+Detail\+Controller.\+Update\+Or\+Add\+Order\+Detail (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orderdetail}{Orderdetail}}}]{orderdetail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+API để thêm hoặc cập nhật chi tiết đơn hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orderdetail} & Đối tượng chi tiết đơn hàng cần thêm hoặc cập nhật. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về đối tượng chi tiết đơn hàng đã được thêm hoặc cập nhật. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize\+\_\+\+API/\+Controllers/Order\+Detail\+Controller.\+cs\end{DoxyCompactItemize}

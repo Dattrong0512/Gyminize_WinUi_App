@@ -97,6 +97,15 @@
           }
         }
       },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        }
+      },
       "CommunityToolkit.WinUI.UI/7.1.2": {
         "type": "package",
         "dependencies": {
@@ -3150,6 +3159,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -3286,6 +3296,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -6580,6 +6599,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -6716,6 +6736,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -9963,6 +9992,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -10099,6 +10129,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -13402,6 +13441,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -13538,6 +13578,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -16797,6 +16846,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -16933,6 +16983,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -20236,6 +20295,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -20372,6 +20432,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -23628,6 +23697,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -23764,6 +23834,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -27067,6 +27146,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -27203,6 +27283,15 @@
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
             "related": ".pdb;.pri;.xml"
           }
+        }
+      },
+      "CommunityToolkit.WinUI.Animations/8.1.240916": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows10.0.18362/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.18362/_._": {}
         }
       },
       "CommunityToolkit.WinUI.UI/7.1.2": {
@@ -30459,6 +30548,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.3.2",
+          "CommunityToolkit.WinUI.Animations": "8.1.240916",
           "CommunityToolkit.WinUI.UI.Animations": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls": "7.1.2",
           "Gyminize.Core": "1.0.0",
@@ -30637,6 +30727,41 @@
         "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.pdb",
         "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.pri",
         "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.xml"
+      ]
+    },
+    "CommunityToolkit.WinUI.Animations/8.1.240916": {
+      "sha512": "jHYltimsKSSrYAij1TJC4VXzWZ6RaKCOWzkdDPenkjAcvE6lhSdX68eH6nNRIwZZC9lMpDy2Fba4uAJ1vMt9Ew==",
+      "type": "package",
+      "path": "communitytoolkit.winui.animations/8.1.240916",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "ReadMe.md",
+        "communitytoolkit.winui.animations.8.1.240916.nupkg.sha512",
+        "communitytoolkit.winui.animations.nuspec",
+        "icon.png",
+        "lib/net6.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.dll",
+        "lib/net6.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.pdb",
+        "lib/net6.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.pri",
+        "lib/net7.0-windows10.0.18362/_._",
+        "lib/net7.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.dll",
+        "lib/net7.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.pdb",
+        "lib/net7.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.pri",
+        "lib/net8.0-android34.0/CommunityToolkit.WinUI.Animations.aar",
+        "lib/net8.0-android34.0/CommunityToolkit.WinUI.Animations.dll",
+        "lib/net8.0-android34.0/CommunityToolkit.WinUI.Animations.pdb",
+        "lib/net8.0-android34.0/CommunityToolkit.WinUI.Animations.xml",
+        "lib/net8.0-ios17.5/CommunityToolkit.WinUI.Animations.dll",
+        "lib/net8.0-ios17.5/CommunityToolkit.WinUI.Animations.pdb",
+        "lib/net8.0-maccatalyst17.5/CommunityToolkit.WinUI.Animations.dll",
+        "lib/net8.0-maccatalyst17.5/CommunityToolkit.WinUI.Animations.pdb",
+        "lib/net8.0-windows10.0.18362/_._",
+        "lib/net8.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.dll",
+        "lib/net8.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.pdb",
+        "lib/net8.0-windows10.0.22621/CommunityToolkit.WinUI.Animations.pri",
+        "lib/net8.0/CommunityToolkit.WinUI.Animations.dll",
+        "lib/net8.0/CommunityToolkit.WinUI.Animations.pdb"
       ]
     },
     "CommunityToolkit.WinUI.UI/7.1.2": {

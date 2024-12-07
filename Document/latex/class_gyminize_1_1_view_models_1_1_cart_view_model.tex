@@ -1,0 +1,70 @@
+\doxysection{Gyminize.\+View\+Models.\+Cart\+View\+Model Class Reference}
+\hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model}{}\label{class_gyminize_1_1_view_models_1_1_cart_view_model}\index{Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}}
+Inheritance diagram for Gyminize.\+View\+Models.\+Cart\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gyminize_1_1_view_models_1_1_cart_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ae801cfeb443fe36f3b7316ae7e77f15f}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ae801cfeb443fe36f3b7316ae7e77f15f} 
+{\bfseries Cart\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ab97170a672a6fa43e65be4a1d9e9f5a4}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ab97170a672a6fa43e65be4a1d9e9f5a4} 
+async Task {\bfseries Get\+Customer\+ID} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_add23aa7672670c11ff76892c9aa01de8}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_add23aa7672670c11ff76892c9aa01de8} 
+async void {\bfseries Load\+Order\+Detail\+Data} ()
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ab35b67052e62feeab0c07865a653013d}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ab35b67052e62feeab0c07865a653013d} 
+async Task {\bfseries Delete\+Order\+Detail\+Async} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}} order\+Detail)
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_aae047e65cab4bed4045fe4bc90ad3814}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_aae047e65cab4bed4045fe4bc90ad3814} 
+async void {\bfseries Buying\+Selected} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_acd091fa4e12536b6931b0e408919d4d1}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_acd091fa4e12536b6931b0e408919d4d1} 
+\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orders}{Orders}} {\bfseries current\+Order} = new \mbox{\hyperlink{class_gyminize_1_1_models_1_1_orders}{Orders}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a9bd825bb9be867d3c9b88d29a235d657}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a9bd825bb9be867d3c9b88d29a235d657} 
+decimal {\bfseries Total\+Payment}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a6fa10b315e5f0e38f85fd9b0264c0c5b}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a6fa10b315e5f0e38f85fd9b0264c0c5b} 
+int {\bfseries Total\+Product\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a2ebbfd1352966c325a9d7e515edd7024}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a2ebbfd1352966c325a9d7e515edd7024} 
+int {\bfseries Customer\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a705bd5429b3bde7a2ab10211fbcc32fc}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a705bd5429b3bde7a2ab10211fbcc32fc} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a42f344c51fb45cd2913da5bd8b05b115}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a42f344c51fb45cd2913da5bd8b05b115} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Filtered\+Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ad27e296607bb362604dc1b57f58a7a8d}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ad27e296607bb362604dc1b57f58a7a8d} 
+ICommand {\bfseries Delete\+Order\+Detail\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a197f487cadf350f6140f2092347eff55}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a197f487cadf350f6140f2092347eff55} 
+ICommand {\bfseries Buying\+Selected\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_af37ca548531684f96bfb609dea712662}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_af37ca548531684f96bfb609dea712662} 
+ICommand {\bfseries Increment\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ae998849547563ba02af74b099725b4a3}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ae998849547563ba02af74b099725b4a3} 
+ICommand {\bfseries Decrement\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a9208edb666638c080d3e3dd4d98078e3}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a9208edb666638c080d3e3dd4d98078e3} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}} $>$ {\bfseries Order\+Details\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+J\+:/\+Study/\+Window\+Programing/\+Clone\+\_\+17/\+Gyminize\+\_\+\+Win\+Ui\+\_\+\+App/\+Gyminize/\+View\+Models/Cart\+View\+Model.\+cs\end{DoxyCompactItemize}

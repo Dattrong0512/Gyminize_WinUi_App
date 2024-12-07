@@ -6,14 +6,44 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <!--  Style cho TextBlock  -->
+        <Style x:Key="CustomTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="#003366" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <!--  Style cho Border  -->
+        <Style x:Key="CustomBorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="DarkCyan" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="15" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+
+        <!--  Style cho Button  -->
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightSkyBlue" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="CornerRadius" Value="20" />
+        </Style>
+    </Page.Resources>
+
     <Grid
         x:Name="ContentArea"
         Padding="20"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        Background="White"
+        CornerRadius="30">
         <Grid.ColumnDefinitions>
-            <!--  Cột trái để hiển thị các bữa ăn  -->
             <ColumnDefinition Width="*" />
-            <!--  Cột phải để hiển thị thư viện thực phẩm  -->
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -28,56 +58,55 @@
             <TextBlock
                 Grid.Row="0"
                 Margin="0,0,10,10"
-                FontSize="24"
-                FontWeight="Bold"
-                Text="{Binding TotalCaloriesExpression}" />
+                HorizontalAlignment="Left"
+                FontSize="25"
+                Foreground="DarkCyan"
+                Style="{StaticResource CustomTextBlockStyle}"
+                Text="{Binding TotalCaloriesExpression}"
+                TextWrapping="Wrap" />
 
-            <!--  Danh sách các bữa ăn (Bữa Sáng, Bữa Trưa, Bữa Tối, Bữa Xế)  -->
+            <!--  Danh sách các bữa ăn  -->
             <ScrollViewer
                 Grid.Row="1"
                 Margin="0,0,10,0"
                 VerticalScrollBarVisibility="Auto">
                 <StackPanel Spacing="20">
-
                     <!--  Bữa Sáng  -->
                     <StackPanel>
                         <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource CustomTextBlockStyle}"
                             Text="Bữa Sáng" />
                         <ItemsControl ItemsSource="{Binding BreakfastItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border
-                                        Margin="5"
-                                        Padding="10"
-                                        Background="White"
-                                        BorderBrush="Black"
-                                        BorderThickness="1"
-                                        CornerRadius="5">
+                                    <Border Style="{StaticResource CustomBorderStyle}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-
-                                            <!--  Tên thực phẩm và số lượng  -->
+                                            <!--  Các thành phần bên trong Border  -->
                                             <StackPanel Grid.Column="0" VerticalAlignment="Center">
                                                 <TextBlock
                                                     FontSize="16"
                                                     FontWeight="Bold"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.food_name}" />
                                                 <TextBlock
+                                                    HorizontalAlignment="Left"
                                                     FontSize="14"
                                                     Foreground="Gray"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.serving_unit}" />
                                             </StackPanel>
                                             <TextBlock
                                                 Grid.Column="1"
-                                                Margin="10"
+                                                Margin="40,10,10,10"
                                                 HorizontalAlignment="Left"
-                                                VerticalAlignment="Center">
+                                                VerticalAlignment="Center"
+                                                FontSize="16">
                                                 <Run Text="x" />
                                                 <Run Text="{Binding food_amount}" />
                                             </TextBlock>
@@ -92,10 +121,9 @@
                                                     FontSize="16"
                                                     Text="{Binding TotalCalories}" />
                                                 <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
                                                     Command="{Binding DataContext.DeleteFoodFromMealCommand, ElementName=ContentArea, Mode=TwoWay}"
-                                                    CommandParameter="{Binding}">
+                                                    CommandParameter="{Binding}"
+                                                    Style="{StaticResource CustomButtonStyle}">
                                                     <FontIcon Glyph="&#xE74D;" />
                                                 </Button>
                                             </StackPanel>
@@ -105,48 +133,42 @@
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </StackPanel>
-
-                    <!--  Các bữa ăn khác: Bữa Trưa, Bữa Tối, Bữa Xế  -->
-                    <!--  Tương tự như Bữa Sáng  -->
-
+                    <!--  Bữa Trưa  -->
                     <StackPanel>
                         <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource CustomTextBlockStyle}"
                             Text="Bữa Trưa" />
                         <ItemsControl ItemsSource="{Binding LunchItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border
-                                        Margin="5"
-                                        Padding="10"
-                                        Background="White"
-                                        BorderBrush="Black"
-                                        BorderThickness="1"
-                                        CornerRadius="5">
+                                    <Border Style="{StaticResource CustomBorderStyle}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-
-                                            <!--  Tên thực phẩm và số lượng  -->
+                                            <!--  Các thành phần bên trong Border  -->
                                             <StackPanel Grid.Column="0" VerticalAlignment="Center">
                                                 <TextBlock
                                                     FontSize="16"
                                                     FontWeight="Bold"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.food_name}" />
                                                 <TextBlock
+                                                    HorizontalAlignment="Left"
                                                     FontSize="14"
                                                     Foreground="Gray"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.serving_unit}" />
                                             </StackPanel>
                                             <TextBlock
                                                 Grid.Column="1"
-                                                Margin="10"
+                                                Margin="40,10,10,10"
                                                 HorizontalAlignment="Left"
-                                                VerticalAlignment="Center">
+                                                VerticalAlignment="Center"
+                                                FontSize="16">
                                                 <Run Text="x" />
                                                 <Run Text="{Binding food_amount}" />
                                             </TextBlock>
@@ -161,10 +183,9 @@
                                                     FontSize="16"
                                                     Text="{Binding TotalCalories}" />
                                                 <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
                                                     Command="{Binding DataContext.DeleteFoodFromMealCommand, ElementName=ContentArea, Mode=TwoWay}"
-                                                    CommandParameter="{Binding}">
+                                                    CommandParameter="{Binding}"
+                                                    Style="{StaticResource CustomButtonStyle}">
                                                     <FontIcon Glyph="&#xE74D;" />
                                                 </Button>
                                             </StackPanel>
@@ -174,46 +195,42 @@
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </StackPanel>
-
-                    <!--  Bữa Tối và Bữa Xế sẽ tương tự  -->
+                    <!--  Bữa Tối  -->
                     <StackPanel>
                         <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
-                            Text="Bữa Tối" />
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource CustomTextBlockStyle}"
+                            Text="Bữa tối" />
                         <ItemsControl ItemsSource="{Binding DinnerItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border
-                                        Margin="5"
-                                        Padding="10"
-                                        Background="White"
-                                        BorderBrush="Black"
-                                        BorderThickness="1"
-                                        CornerRadius="5">
+                                    <Border Style="{StaticResource CustomBorderStyle}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-
-                                            <!--  Tên thực phẩm và số lượng  -->
+                                            <!--  Các thành phần bên trong Border  -->
                                             <StackPanel Grid.Column="0" VerticalAlignment="Center">
                                                 <TextBlock
                                                     FontSize="16"
                                                     FontWeight="Bold"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.food_name}" />
                                                 <TextBlock
+                                                    HorizontalAlignment="Left"
                                                     FontSize="14"
                                                     Foreground="Gray"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.serving_unit}" />
                                             </StackPanel>
                                             <TextBlock
                                                 Grid.Column="1"
-                                                Margin="10"
+                                                Margin="40,10,10,10"
                                                 HorizontalAlignment="Left"
-                                                VerticalAlignment="Center">
+                                                VerticalAlignment="Center"
+                                                FontSize="16">
                                                 <Run Text="x" />
                                                 <Run Text="{Binding food_amount}" />
                                             </TextBlock>
@@ -228,10 +245,9 @@
                                                     FontSize="16"
                                                     Text="{Binding TotalCalories}" />
                                                 <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
                                                     Command="{Binding DataContext.DeleteFoodFromMealCommand, ElementName=ContentArea, Mode=TwoWay}"
-                                                    CommandParameter="{Binding}">
+                                                    CommandParameter="{Binding}"
+                                                    Style="{StaticResource CustomButtonStyle}">
                                                     <FontIcon Glyph="&#xE74D;" />
                                                 </Button>
                                             </StackPanel>
@@ -241,45 +257,42 @@
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </StackPanel>
-
+                    <!--  Bữa xế  -->
                     <StackPanel>
                         <TextBlock
-                            FontSize="20"
-                            FontWeight="SemiBold"
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource CustomTextBlockStyle}"
                             Text="Bữa Xế" />
                         <ItemsControl ItemsSource="{Binding SnackItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border
-                                        Margin="5"
-                                        Padding="10"
-                                        Background="White"
-                                        BorderBrush="Black"
-                                        BorderThickness="1"
-                                        CornerRadius="5">
+                                    <Border Style="{StaticResource CustomBorderStyle}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-
-                                            <!--  Tên thực phẩm và số lượng  -->
+                                            <!--  Các thành phần bên trong Border  -->
                                             <StackPanel Grid.Column="0" VerticalAlignment="Center">
                                                 <TextBlock
                                                     FontSize="16"
                                                     FontWeight="Bold"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.food_name}" />
                                                 <TextBlock
+                                                    HorizontalAlignment="Left"
                                                     FontSize="14"
                                                     Foreground="Gray"
+                                                    Style="{StaticResource CustomTextBlockStyle}"
                                                     Text="{Binding Food.serving_unit}" />
                                             </StackPanel>
                                             <TextBlock
                                                 Grid.Column="1"
-                                                Margin="10"
+                                                Margin="40,10,10,10"
                                                 HorizontalAlignment="Left"
-                                                VerticalAlignment="Center">
+                                                VerticalAlignment="Center"
+                                                FontSize="16">
                                                 <Run Text="x" />
                                                 <Run Text="{Binding food_amount}" />
                                             </TextBlock>
@@ -294,10 +307,9 @@
                                                     FontSize="16"
                                                     Text="{Binding TotalCalories}" />
                                                 <Button
-                                                    Padding="2,2"
-                                                    VerticalAlignment="Center"
                                                     Command="{Binding DataContext.DeleteFoodFromMealCommand, ElementName=ContentArea, Mode=TwoWay}"
-                                                    CommandParameter="{Binding}">
+                                                    CommandParameter="{Binding}"
+                                                    Style="{StaticResource CustomButtonStyle}">
                                                     <FontIcon Glyph="&#xE74D;" />
                                                 </Button>
                                             </StackPanel>
@@ -309,9 +321,8 @@
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
-        </Grid>
 
-        <!--  Phần bên phải: Thư viện thực phẩm  -->
+        </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -325,17 +336,35 @@
                 Margin="10"
                 FontSize="24"
                 FontWeight="Bold"
+                Style="{StaticResource CustomTextBlockStyle}"
                 Text="Kho thực phẩm" />
 
-            <!--  Thanh tìm kiếm Thực Phẩm  -->
-            <TextBox
-                Grid.Row="1"
-                Height="40"
-                Margin="10"
-                Padding="8"
-                FontSize="14"
-                PlaceholderText="Tìm kiếm thức ăn..."
-                TextChanged="TextBox_TextChanged" />
+            <Grid Grid.Row="1" Margin="10">
+
+                <TextBox
+                    x:Name="SearchTextBox"
+                    Grid.Column="0"
+                    Height="40"
+                    Margin="20,0,0,0"
+                    Padding="8"
+                    Background="White"
+                    BorderBrush="#003366"
+                    BorderThickness="2"
+                    CornerRadius="20"
+                    FontSize="16"
+                    Foreground="Black"
+                    PlaceholderText="Tìm kiếm thức ăn..."
+                    TextChanged="TextBox_TextChanged" />
+
+                <FontIcon
+                    Grid.Column="1"
+                    Margin="0,0,20,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Foreground="#003366"
+                    Glyph="&#xF78B;" />
+            </Grid>
+
 
             <!--  Danh sách thực phẩm từ thư viện  -->
             <ScrollViewer
@@ -343,16 +372,10 @@
                 Margin="10,0,0,0"
                 VerticalScrollBarVisibility="Auto">
                 <StackPanel Spacing="10">
-                    <ListView ItemsSource="{Binding FilteredFoodLibraryItems}" SelectionMode="Single">
+                    <ListView ItemsSource="{Binding FilteredFoodLibraryItems}" SelectionMode="None">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Border
-                                    Margin="5"
-                                    Padding="10"
-                                    Background="White"
-                                    BorderBrush="Black"
-                                    BorderThickness="1"
-                                    CornerRadius="5">
+                                <Border Style="{StaticResource CustomBorderStyle}">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="2*" />
@@ -362,12 +385,16 @@
                                         <!--  Tên thực phẩm và lượng calo  -->
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center">
                                             <TextBlock
+                                                HorizontalAlignment="Left"
                                                 FontSize="16"
                                                 FontWeight="Bold"
+                                                Style="{StaticResource CustomTextBlockStyle}"
                                                 Text="{Binding food_name}" />
                                             <TextBlock
+                                                HorizontalAlignment="Left"
                                                 FontSize="14"
                                                 Foreground="Gray"
+                                                Style="{StaticResource CustomTextBlockStyle}"
                                                 Text="{Binding calories}" />
                                         </StackPanel>
 
@@ -378,9 +405,9 @@
                                             Orientation="Horizontal"
                                             Spacing="10">
                                             <Button
-                                                Padding="2,2"
                                                 Command="{Binding DataContext.AddFoodToMealCommand, ElementName=ContentArea, Mode=TwoWay}"
-                                                CommandParameter="{Binding}">
+                                                CommandParameter="{Binding}"
+                                                Style="{StaticResource CustomButtonStyle}">
                                                 <FontIcon Glyph="&#xE710;" />
                                             </Button>
                                         </StackPanel>

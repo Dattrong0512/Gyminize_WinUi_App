@@ -13,11 +13,11 @@
         <converters:PriceConverter x:Key="PriceConverter" />
     </Page.Resources>
 
-    <Grid x:Name="ContentArea">
-        <Grid
-            Padding="10"
-            VerticalAlignment="Top"
-            Background="#FFFAFAFA">
+    <Grid
+        x:Name="ContentArea"
+        Background="Ivory"
+        CornerRadius="20">
+        <Grid Padding="10" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="2*" />
@@ -25,20 +25,33 @@
             </Grid.ColumnDefinitions>
             <TextBox
                 Grid.Column="0"
-                Margin="0,0,10,0"
-                Padding="8"
+                Margin="0,0,0,0"
+                Padding="10"
+                BorderBrush="#003366"
+                BorderThickness="1"
+                CornerRadius="20"
                 PlaceholderText="Tìm kiếm sản phẩm..."
                 Text="{Binding SearchText, Mode=TwoWay}" />
             <Button
                 Grid.Column="1"
+                Width="44"
+                Height="44"
+                Margin="10,0,0,0"
+                BorderBrush="#003366"
+                BorderThickness="1"
                 Command="{Binding SearchProductCommand}"
-                Content="Tìm kiếm" />
+                CornerRadius="30">
+                <FontIcon FontSize="12" Glyph="&#xF78B;" />
+            </Button>
             <Button
                 Grid.Column="2"
                 Padding="10"
+                Background="White"
+                BorderBrush="#003366"
+                BorderThickness="1"
                 Command="{Binding SelectCartCommand}">
                 <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xE719;" />
+                    <FontIcon Foreground="#003366" Glyph="&#xE719;" />
                     <TextBlock Foreground="Red" Text="(" />
                     <TextBlock Foreground="Red" Text="{Binding CartItemCount}" />
                     <TextBlock Foreground="Red" Text=")" />
@@ -48,10 +61,9 @@
 
         <!--  Filter and Sort bar  -->
         <Grid
-            Margin="0,50,0,0"
+            Margin="0,60,0,0"
             Padding="10"
-            VerticalAlignment="Top"
-            Background="#FFF5F5F5">
+            VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="2*" />
@@ -64,10 +76,13 @@
                 <TextBlock
                     Margin="0,0,10,0"
                     VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Foreground="#003366"
                     Text="Bộ lọc:" />
                 <ComboBox
                     Width="150"
                     Margin="0,0,10,0"
+                    Background="white"
                     SelectedItem="{Binding SelectedCategoryName, Mode=TwoWay}">
                     <ComboBoxItem Content="Tất cả" IsSelected="True" />
                     <ComboBoxItem Content="Whey Protein" />
@@ -87,8 +102,13 @@
                 <TextBlock
                     Margin="0,0,10,0"
                     VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Foreground="#003366"
                     Text="Sắp xếp:" />
-                <ComboBox Width="150" SelectedItem="{Binding SelectedSortOrder, Mode=TwoWay}">
+                <ComboBox
+                    Width="150"
+                    Background="White"
+                    SelectedItem="{Binding SelectedSortOrder, Mode=TwoWay}">
                     <ComboBoxItem Content="Gần đây" IsSelected="True" />
                     <ComboBoxItem Content="Giá tăng dần" />
                     <ComboBoxItem Content="Giá giảm dần" />
@@ -110,17 +130,21 @@
                             Width="200"
                             Height="300"
                             Margin="10"
+                            Background="White"
+                            BorderBrush="#003366"
+                            BorderThickness="2"
                             Command="{Binding DataContext.SelectProductCommand, ElementName=ContentArea, Mode=TwoWay}"
-                            CommandParameter="{Binding}">
+                            CommandParameter="{Binding}"
+                            CornerRadius="10">
                             <StackPanel>
                                 <Image
                                     Width="150"
                                     Height="200"
-                                    Margin="0,0,0,10"
+                                    Margin="0,-10,0,10"
                                     Source="{Binding product_source}" />
                                 <TextBlock
-                                    MaxHeight="50"
-                                    Margin="5"
+                                    MaxHeight="80"
+                                    Margin="5,-10,5,0"
                                     FontWeight="Bold"
                                     Text="{Binding product_name}"
                                     TextWrapping="Wrap" />
@@ -147,7 +171,9 @@
             Orientation="Horizontal">
             <Button
                 Margin="5"
+                Background="White"
                 Command="{Binding PreviousPageCommand}"
+                Foreground="#003366"
                 IsEnabled="{Binding CanGoBack}">
                 <FontIcon Glyph="&#xF743;" />
             </Button>
@@ -165,6 +191,7 @@
                 Text="{Binding TotalPages}" />
             <Button
                 Margin="5"
+                Background="White"
                 Command="{Binding NextPageCommand}"
                 IsEnabled="{Binding CanGoNext}">
                 <FontIcon Glyph="&#xF745;" />

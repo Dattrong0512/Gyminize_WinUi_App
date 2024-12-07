@@ -318,6 +318,10 @@
               "target": "Package",
               "version": "[8.3.2, )"
             },
+            "CommunityToolkit.WinUI.Animations": {
+              "target": "Package",
+              "version": "[8.1.240916, )"
+            },
             "CommunityToolkit.WinUI.UI.Animations": {
               "target": "Package",
               "version": "[7.1.2, )"

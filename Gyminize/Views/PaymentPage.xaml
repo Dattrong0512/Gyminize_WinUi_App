@@ -12,9 +12,13 @@
 
     <Page.Resources>
         <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
+        <converters:PriceConverter x:Key="PriceConverter" />
     </Page.Resources>
 
-    <Grid x:Name="ContentArea" Padding="20">
+    <Grid
+        x:Name="ContentArea"
+        Padding="20"
+        CornerRadius="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -185,7 +189,7 @@
                 StrokeThickness="1" />
             <TextBlock FontSize="20">
                 <Run Text="Tổng tiền thanh toán:" />
-                <Run Foreground="Red" Text="{Binding TotalPrice}" />
+                <Run Foreground="Red" Text="{Binding TotalPrice, Converter={StaticResource PriceConverter}}" />
                 <Run Text="đ" />
             </TextBlock>
             <Button
@@ -193,12 +197,12 @@
                 Height="50"
                 Margin="20"
                 Background="Red"
+                Command="{Binding PaymentCommand}"
                 Content="Đặt hàng"
                 CornerRadius="20"
-                Command="{Binding PaymentCommand}"
-                IsEnabled="{Binding CanProceedToPayment}"
                 FontSize="20"
-                Foreground="White" />
+                Foreground="White"
+                IsEnabled="{Binding CanProceedToPayment, Converter={StaticResource PriceConverter}}" />
         </StackPanel>
     </Grid>
 </Page>
