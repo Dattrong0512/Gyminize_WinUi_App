@@ -692,3 +692,41 @@ select * from DailyDiary;
 select * from Customer;
 select * from orders;
 select * from payment;
+
+INSERT INTO Customer (customer_name, auth_type, username, customer_password, role_user, email)
+VALUES 
+('Tran Van Test', 1, 'test', 'test', 2,'hminhquan111@gmail.com');
+
+INSERT INTO Customer_Health (customer_id, gender, height, weight, age, activity_level, body_fat, tdee)
+VALUES 
+(11, 1, 180, 90, 21, 1.55, 20.5, 2984);
+
+INSERT INTO DailyDiary (customer_id, diary_date,calories_remain, daily_weight, total_calories, notes)
+VALUES 
+(1, '2024-11-30', 0, 88, 2984, 'Feeling great today'),
+(1, '2024-12-01', 0, 89, 2984, 'Feeling great today'),
+(1, '2024-12-02', 0, 89, 2984, 'Feeling great today'),
+(1, '2024-12-03', 0, 87, 2984, 'Feeling great today'),
+(1, '2024-12-04', 0, 88, 2984, 'Feeling great today'),
+(1, '2024-12-05', 0, 89, 2984, 'Feeling great today'),
+(1, '2024-12-06', 0, 91, 2984, 'Feeling great today'),
+(1, '2024-12-07', 0, 90, 2984, 'Feeling great today');
+
+--30/11
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount)
+VALUES
+(11, 1, 1, 2),  -- Chicken Breast (2 servings) - Bữa sáng
+(11, 2, 1, 3),  -- Rice (3 servings) - Bữa sáng
+(11, 6, 1, 2),  -- Eggs (2 quả) - Bữa sáng
+(11, 9, 1, 2),  -- Milk (200ml) - Bữa sáng
+(11, 5, 2, 1),  -- Salmon (1 serving) - Bữa trưa
+(11, 7, 2, 5),  -- Oatmeal (100g) - Bữa trưa
+(11, 3, 2, 1),  -- Broccoli (100g) - Bữa trưa
+(11, 4, 3, 1),  -- Apple (1 quả) - Bữa tối
+(11, 10, 3, 1), -- Pasta (1 serving) - Bữa tối
+(11, 8, 3, 3),  -- Almonds (100g) - Bữa tối
+(11, 2, 4, 1),  -- Rice (1 serving) - Bữa xế
+(11, 6, 4, 1),  -- Eggs (1 quả) - Bữa xế
+(11, 3, 4, 1);  -- Broccoli (100g) - Bữa xế
+
+select * from dailydiary
