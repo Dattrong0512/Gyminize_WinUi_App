@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Document cho project Gyminize</div>
+   <div id="projectbrief">Document cho các class chính của project</div>
   </td>
  </tr>
  </tbody>
@@ -109,12 +109,12 @@ Inheritance diagram for Gyminize_API.Controllers.CustomerhealthController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a940460eaa1ab5cd81eba569c6b75683b" id="r_a940460eaa1ab5cd81eba569c6b75683b"><td class="memItemLeft" align="right" valign="top"><a id="a940460eaa1ab5cd81eba569c6b75683b" name="a940460eaa1ab5cd81eba569c6b75683b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CustomerhealthController</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_customer_health_repository.html">CustomerHealthRepository</a> repository)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>CustomerhealthController</b> (CustomerHealthRepository repository)</td></tr>
 <tr class="separator:a940460eaa1ab5cd81eba569c6b75683b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90aac26eca2cdf190f73c3a2290d09e7" id="r_a90aac26eca2cdf190f73c3a2290d09e7"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90aac26eca2cdf190f73c3a2290d09e7">GetCustomerHealthByCustomerId</a> (int customerId)</td></tr>
 <tr class="memdesc:a90aac26eca2cdf190f73c3a2290d09e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy dữ liệu sức khỏe của khách hàng theo ID.  <br /></td></tr>
 <tr class="separator:a90aac26eca2cdf190f73c3a2290d09e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dddc7df0d4c7a574b7831dd603492cd" id="r_a8dddc7df0d4c7a574b7831dd603492cd"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dddc7df0d4c7a574b7831dd603492cd">AddCustomerHealth</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_customer__health.html">Customer_health</a> customerhealth)</td></tr>
+<tr class="memitem:a8dddc7df0d4c7a574b7831dd603492cd" id="r_a8dddc7df0d4c7a574b7831dd603492cd"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dddc7df0d4c7a574b7831dd603492cd">AddCustomerHealth</a> (Customer_health customerhealth)</td></tr>
 <tr class="memdesc:a8dddc7df0d4c7a574b7831dd603492cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thêm dữ liệu sức khỏe mới cho khách hàng.  <br /></td></tr>
 <tr class="separator:a8dddc7df0d4c7a574b7831dd603492cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5f085adc3fa2c47bdd9e0112bb50b17" id="r_aa5f085adc3fa2c47bdd9e0112bb50b17"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5f085adc3fa2c47bdd9e0112bb50b17">UpdateWeightCustomer</a> (int weight, int customerID)</td></tr>
@@ -124,7 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7ff9bbb036f8e11444f39abc5dab20e9" id="r_a7ff9bbb036f8e11444f39abc5dab20e9"><td class="memItemLeft" align="right" valign="top"><a id="a7ff9bbb036f8e11444f39abc5dab20e9" name="a7ff9bbb036f8e11444f39abc5dab20e9"></a>
-readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_customer_health_repository.html">CustomerHealthRepository</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_repository</b></td></tr>
+readonly CustomerHealthRepository&#160;</td><td class="memItemRight" valign="bottom"><b>_repository</b></td></tr>
 <tr class="separator:a7ff9bbb036f8e11444f39abc5dab20e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -142,7 +142,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_
         <tr>
           <td class="memname">IActionResult Gyminize_API.Controllers.CustomerhealthController.AddCustomerHealth </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_customer__health.html">Customer_health</a></td>          <td class="paramname"><span class="paramname"><em>customerhealth</em></span></td><td>)</td>
+          <td class="paramtype">Customer_health</td>          <td class="paramname"><span class="paramname"><em>customerhealth</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -238,7 +238,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Controllers/<b>Customer_healthController.cs</b></li>
+<li>J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize_API/Controllers/<b>Customer_healthController.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

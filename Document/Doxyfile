@@ -54,7 +54,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Document cho project Gyminize"
+PROJECT_BRIEF          = "Document cho các class chính của project"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -74,7 +74,7 @@ PROJECT_ICON           =
 # entered, it will be relative to the location where Doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Document
+OUTPUT_DIRECTORY       = J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Document
 
 # If the CREATE_SUBDIRS tag is set to YES then Doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
@@ -965,12 +965,11 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/ViewModels \
-                         J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/Services \
-                         J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/Helpers \
-                         J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize.Tests.MSTest/ViewModel \
-                         J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API \
-                         J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize.Core/Services
+INPUT                  = J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize/ViewModels \
+                         J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize/Services \
+                         J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize.Tests.MSTest/ViewModel \
+                         J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize_API/Controllers \
+                         J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize_API/Data
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1066,7 +1065,7 @@ FILE_PATTERNS          = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
-RECURSIVE              = YES
+RECURSIVE              = NO
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a

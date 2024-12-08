@@ -9,7 +9,10 @@ using Gyminize.Models;
 
 namespace Gyminize.Tests.MSTest.ViewModel
 {
-    [TestClass] // Đánh dấu class này là Test Class
+    /// <summary>
+    /// Lớp kiểm thử dành cho ViewModel quản lý dinh dưỡng (NutritionsViewModel).
+    /// </summary>
+    [TestClass] 
     public class NutritionViewModelTest
     {
         private Mock<ILocalSettingsService>? _mockLocalSettingsService;
@@ -18,7 +21,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
         private Mock<IApiServicesClient>? _mockApiServicesClient;
         private NutritionsViewModel? _viewModel;
 
-        [TestInitialize] // Thiết lập trước mỗi bài kiểm thử
+        /// <summary>
+        /// Thiết lập môi trường kiểm thử trước mỗi phương thức test case.
+        /// </summary>
+        [TestInitialize]
         public void Setup()
         {
             _mockLocalSettingsService = new Mock<ILocalSettingsService>();
@@ -34,7 +40,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
             );
         }
 
-        [TestMethod] //Test case kiểm tra khi load danh sách thức ăn đã ăn thành công
+        /// <summary>
+        /// Kiểm tra việc tải danh sách thức ăn từ nhật ký dinh dưỡng (daily diary) khi API trả về dữ liệu hợp lệ.
+        /// </summary>
+        [TestMethod] 
         public async Task LoadDailyDiary_ShouldPopulateItems_WhenApiReturnsData()
         {
             // Arrange
@@ -65,7 +74,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
             Assert.AreEqual("2000 - 400 = 1600", _viewModel.TotalCaloriesExpression);
         }
 
-        [TestMethod] //Test case kiểm tra khi load danh sách thức ăn đã ăn thất bại
+        /// <summary>
+        /// Kiểm tra việc hiển thị thông báo lỗi khi tải danh sách thức ăn từ nhật ký dinh dưỡng (daily diary) gặp lỗi API.
+        /// </summary>
+        [TestMethod]
         public async Task LoadDailyDiary_ShouldShowErrorDialog_WhenApiThrowsException()
         {
             // Arrange
@@ -91,7 +103,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
             );
         }
 
-        [TestMethod] //Test case kiểm tra load thư viện thức ăn thành công
+        /// <summary>
+        /// Kiểm tra việc tải thư viện thức ăn khi API trả về dữ liệu hợp lệ.
+        /// </summary>
+        [TestMethod]
         public async Task LoadFoodLibrary_ShouldPopulateItems_WhenApiReturnsData()
         {
             // Arrange
@@ -111,7 +126,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
             Assert.AreEqual("Apple", _viewModel.FoodLibraryItems[0].food_name);
         }
 
-        [TestMethod] //Test case kiểm tra khi thêm thức ăn vào bữa ăn thành công
+        /// <summary>
+        /// Kiểm tra việc thêm thức ăn vào bữa ăn khi API trả về dữ liệu hợp lệ.
+        /// </summary>
+        [TestMethod] 
         public async Task AddFoodToMeal_ShouldCallApiAndUpdateData_WhenValidMealIsSelected()
         {
             // Arrange
@@ -142,7 +160,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
                 client.Get<Dailydiary>(It.IsAny<string>()), Times.Exactly(2));
         }
 
-        [TestMethod] //Test case kiểm tra khi thêm thức ăn vào bữa ăn thất bại
+        /// <summary>
+        /// Kiểm tra việc hiển thị thông báo lỗi khi thêm thức ăn vào bữa ăn và API gặp lỗi.
+        /// </summary>
+        [TestMethod] 
         public async Task AddFoodToMeal_ShouldShowErrorDialog_WhenApiPutThrowsException()
         {
             // Arrange
@@ -174,7 +195,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
                 client.Put<FoodDetail>(It.IsAny<string>(), It.IsAny<FoodDetail>()), Times.Once);
         }
 
-        [TestMethod] //Test case kiểm tra khi xóa thức ăn khỏi buổi ăn thành công
+        /// <summary>
+        /// Kiểm tra việc xóa thức ăn khỏi bữa ăn khi API thành công.
+        /// </summary>
+        [TestMethod]
         public async Task DeleteFoodFromMeal_ShouldRemoveItemFromList_WhenApiCallSucceeds()
         {
             // Arrange
@@ -192,7 +216,10 @@ namespace Gyminize.Tests.MSTest.ViewModel
             Assert.AreEqual(0, _viewModel.BreakfastItems.Count);
         }
 
-        [TestMethod] //Test case kiểm tra khi xóa thức ăn khỏi bữa ăn thất bại
+        /// <summary>
+        /// Kiểm tra việc hiển thị thông báo lỗi khi xóa thức ăn khỏi bữa ăn và API gặp lỗi.
+        /// </summary>
+        [TestMethod] 
         public async Task DeleteFoodFromMeal_ShouldShowErrorDialog_WhenApiDeleteThrowsException()
         {
             // Arrange

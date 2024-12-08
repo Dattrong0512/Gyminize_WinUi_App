@@ -9,6 +9,10 @@ using Microsoft.UI.Xaml;
 
 
 namespace Gyminize.Tests.MSTest.ViewModel;
+/// <summary>
+/// Lớp kiểm thử dành cho ViewModel HomeViewModel.
+/// </summary>
+
 [TestClass]
 public class HomeViewModelTest
 {
@@ -20,6 +24,9 @@ public class HomeViewModelTest
     private Mock<IDateTimeProvider> _mockDateTimeProvider;
     private HomeViewModel? _viewModel;
 
+    /// <summary>
+    /// Phương thức thiết lập môi trường kiểm thử trước khi thực thi từng test case.
+    /// </summary>
     [TestInitialize]
     public void Setup()
     {
@@ -40,7 +47,10 @@ public class HomeViewModelTest
             );
     }
 
-    [TestMethod] //Test case kiểm tra báo lỗi cân nặng nhập vào không phải là một số
+    /// <summary>
+    /// Kiểm tra báo lỗi khi nhập cân nặng không phải là số.
+    /// </summary>
+    [TestMethod]
     public async Task OpenSaveWeight_ShouldShowErrorDialog_WhenWeightIsNotNumeric()
     {
         // Arrange
@@ -53,7 +63,10 @@ public class HomeViewModelTest
         _mockDialogService.Verify(ds => ds.ShowErrorDialogAsync("Lỗi: Cân nặng phải là một số"), Times.Once);
     }
 
-    [TestMethod] //Test case kiểm tra báo lỗi khi cân nặng nhập vào vượt miền giá trị cho phép
+    /// <summary>
+    /// Kiểm tra báo lỗi khi cân nặng vượt miền giá trị cho phép.
+    /// </summary>
+    [TestMethod] 
     public async Task OpenSaveWeight_ShouldShowErrorDialog_WhenWeightIsOutOfRange()
     {
         // Arrange
@@ -66,7 +79,10 @@ public class HomeViewModelTest
         _mockDialogService.Verify(ds => ds.ShowErrorDialogAsync("Lỗi: Ứng dụng chỉ hỗ trợ cân nặng từ 30kg đến 200kg"), Times.Once);
     }
 
-    [TestMethod] //Test case kiểm tra khi cân nặng nhập vào hợp lệ
+    /// <summary>
+    /// Kiểm tra trường hợp cập nhật cân nặng hợp lệ.
+    /// </summary>
+    [TestMethod] 
     public async Task OpenSaveWeight_ShouldUpdateWeight_WhenWeightIsValid()
     {
         // Arrange
@@ -83,7 +99,10 @@ public class HomeViewModelTest
         Assert.IsFalse(_viewModel.IsWeightTextBoxEnabled);
     }
 
-    [TestMethod]//Test case kiểm tra báo lỗi khi cân nặng nhập vào hợp lệ nhưng bị lỗi api
+    /// <summary>
+    /// Kiểm tra báo lỗi khi API gặp lỗi trong lúc cập nhật cân nặng.
+    /// </summary>
+    [TestMethod]
     public async Task OpenSaveWeight_ShouldShowErrorDialog_WhenApiThrowsException()
     {
         // Arrange
@@ -98,7 +117,10 @@ public class HomeViewModelTest
         _mockDialogService.Verify(ds => ds.ShowErrorDialogAsync("Lỗi hệ thống: API error"), Times.Once);
     }
 
-    [TestMethod]// Test case kiểm tra dữ liệu tiến độ calo tiêu thụ trong ngày hiển thị khi có dữ liệu diary hiện hành và không vượt mức
+    /// <summary>
+    /// Kiểm tra tiến độ calo tiêu thụ khi dữ liệu dailydiary không vượt mức.
+    /// </summary>
+    [TestMethod]
     public async Task OnNavigatedTo_CurrentDailydiaryNotNull_ProgressValueLessThanOrEqualTo100()
     {
         // Arrange
@@ -126,7 +148,10 @@ public class HomeViewModelTest
         Assert.AreEqual(false, _viewModel.IsOverGoalCalories);
     }
 
-    [TestMethod]// Test case kiểm tra dữ liệu tiến độ calo tiêu thụ trong ngày hiển thị khi có dữ liệu diary hiện hành và vượt mức
+    /// <summary>
+    /// Kiểm tra tiến độ calo tiêu thụ khi dữ liệu dailydiary vượt mức.
+    /// </summary>
+    [TestMethod]
     public async Task OnNavigatedTo_CurrentDailydiaryNotNull_ProgressValueGreaterThan100()
     {
         // Arrange
@@ -154,7 +179,10 @@ public class HomeViewModelTest
         Assert.AreEqual(true, _viewModel.IsOverGoalCalories);
     }
 
-    [TestMethod] // Test case kiểm tra trường hợp chưa có dữ liệu dailydiary hiện hành cần tạo mới một dailydiary
+    /// <summary>
+    /// Kiểm tra tạo mới dailydiary khi không có dữ liệu hiện hành.
+    /// </summary>
+    [TestMethod]
     public async Task OnNavigatedTo_CurrentDailydiaryNull_NewDailydiaryCreated()
     {
         // Arrange
@@ -177,7 +205,10 @@ public class HomeViewModelTest
         Assert.AreEqual(0, _viewModel.ProgressValue);
     }
 
-    [TestMethod] // Test case kiểm tra báo lỗi khi gọi đến api để thêm daily diary thất bại
+    /// <summary>
+    /// Kiểm tra lỗi hiển thị khi API gặp vấn đề trong việc thêm mới nhật ký dinh dưỡng (daily diary).
+    /// </summary>
+    [TestMethod]
     public async Task OnNavigatedTo_ShouldShowErrorDialog_WhenApiPostFails()
     {
         // Arrange
@@ -204,7 +235,10 @@ public class HomeViewModelTest
         _mockDialogService.Verify(dialog => dialog.ShowErrorDialogAsync(It.Is<string>(s => s.Contains("API POST failed"))), Times.Once);
     }
 
-    [TestMethod] // Test case kiểm tra có dữ liệu từ plandetail và là ngày tập 
+    /// <summary>
+    /// Kiểm tra trường hợp có dữ liệu từ kế hoạch (plandetail) và là ngày tập.
+    /// </summary>
+    [TestMethod] 
     public async Task OnNavigatedTo_PlandetailsNotNull_CurrentDayWorkoutDetailFound()
     {
         // Arrange
@@ -239,7 +273,10 @@ public class HomeViewModelTest
         Assert.AreEqual("ms-appx:///Assets/Icon/arm.svg", _viewModel.TypeWorkoutIconPath);
     }
 
-    [TestMethod] // Test case kiểm tra có dữ liệu từ plandetail và là ngày nghỉ
+    /// <summary>
+    /// Kiểm tra trường hợp có dữ liệu từ kế hoạch (plandetail) nhưng là ngày nghỉ.
+    /// </summary>
+    [TestMethod] 
     public async Task OnNavigatedTo_PlandetailsNotNull_CurrentDayWorkoutDetailNotFound()
     {
         // Arrange
@@ -263,7 +300,10 @@ public class HomeViewModelTest
         Assert.AreEqual(Visibility.Collapsed, _viewModel.StatusVisibility);
     }
 
-    [TestMethod] // Test case kiểm tra không có dữ liệu từ plandetail trả ra trường hợp chưa đăng ký kế hoạch
+    /// <summary>
+    /// Kiểm tra trường hợp không có dữ liệu từ kế hoạch (plandetail) và cần hiển thị trạng thái chưa đăng ký.
+    /// </summary>
+    [TestMethod]
     public async Task OnNavigatedTo_PlandetailsNull()
     {
         // Arrange

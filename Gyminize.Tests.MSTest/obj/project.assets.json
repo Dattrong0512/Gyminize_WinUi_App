@@ -38757,11 +38757,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\Gyminize.Tests.MSTest.csproj",
+      "projectUniqueName": "J:\\Study\\WindowPrograming\\Clone_20\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\Gyminize.Tests.MSTest.csproj",
       "projectName": "Gyminize.Tests.MSTest",
-      "projectPath": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\Gyminize.Tests.MSTest.csproj",
+      "projectPath": "J:\\Study\\WindowPrograming\\Clone_20\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\Gyminize.Tests.MSTest.csproj",
       "packagesPath": "C:\\Users\\Bach Yen\\.nuget\\packages\\",
-      "outputPath": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\obj\\",
+      "outputPath": "J:\\Study\\WindowPrograming\\Clone_20\\Gyminize_WinUi_App\\Gyminize.Tests.MSTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -38784,8 +38784,8 @@
         "net7.0-windows10.0.19041": {
           "targetAlias": "net7.0-windows10.0.19041.0",
           "projectReferences": {
-            "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj": {
-              "projectPath": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj"
+            "J:\\Study\\WindowPrograming\\Clone_20\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj": {
+              "projectPath": "J:\\Study\\WindowPrograming\\Clone_20\\Gyminize_WinUi_App\\Gyminize\\Gyminize.csproj"
             }
           }
         }

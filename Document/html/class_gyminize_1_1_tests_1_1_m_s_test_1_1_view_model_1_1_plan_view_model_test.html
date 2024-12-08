@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Document cho project Gyminize</div>
+   <div id="projectbrief">Document cho các class chính của project</div>
   </td>
  </tr>
  </tbody>
@@ -96,41 +96,55 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Gyminize.Tests.MSTest.ViewModel.PlanViewModelTest Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Lớp kiểm thử dành cho PlanViewModel/&gt;.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2b3bc6e1d99bedd206e84d137554dc5" id="r_ad2b3bc6e1d99bedd206e84d137554dc5"><td class="memItemLeft" align="right" valign="top"><a id="ad2b3bc6e1d99bedd206e84d137554dc5" name="ad2b3bc6e1d99bedd206e84d137554dc5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Setup</b> ()</td></tr>
+<tr class="memdesc:ad2b3bc6e1d99bedd206e84d137554dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thiết lập môi trường kiểm thử trước mỗi phương thức test case. <br /></td></tr>
 <tr class="separator:ad2b3bc6e1d99bedd206e84d137554dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7da1cd1250b878727fa9a8a589cb43f5" id="r_a7da1cd1250b878727fa9a8a589cb43f5"><td class="memItemLeft" align="right" valign="top"><a id="a7da1cd1250b878727fa9a8a589cb43f5" name="a7da1cd1250b878727fa9a8a589cb43f5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadPlanDetailData_ShouldSetCorrectProperties_WhenApiReturnsValidData</b> ()</td></tr>
+<tr class="memdesc:a7da1cd1250b878727fa9a8a589cb43f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra khi tải thông tin kế hoạch thành công, các thuộc tính trong <a class="el" href="namespace_gyminize_1_1_tests_1_1_m_s_test_1_1_view_model.html">ViewModel</a> được thiết lập chính xác. <br /></td></tr>
 <tr class="separator:a7da1cd1250b878727fa9a8a589cb43f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925709c6fef8f80449a172ffa9b133d5" id="r_a925709c6fef8f80449a172ffa9b133d5"><td class="memItemLeft" align="right" valign="top"><a id="a925709c6fef8f80449a172ffa9b133d5" name="a925709c6fef8f80449a172ffa9b133d5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadPlanDetailData_ShouldHandleEmptyWorkoutDetails</b> ()</td></tr>
+<tr class="memdesc:a925709c6fef8f80449a172ffa9b133d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra xử lý trường hợp danh sách ngày tập trong kế hoạch trống. <br /></td></tr>
 <tr class="separator:a925709c6fef8f80449a172ffa9b133d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaba5bb834aba7758db3ba777f7b6710" id="r_acaba5bb834aba7758db3ba777f7b6710"><td class="memItemLeft" align="right" valign="top"><a id="acaba5bb834aba7758db3ba777f7b6710" name="acaba5bb834aba7758db3ba777f7b6710"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadPlanDetailData_ShouldShowErrorDialog_WhenApiThrowsException</b> ()</td></tr>
+<tr class="memdesc:acaba5bb834aba7758db3ba777f7b6710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra khi load thông tin kế hoạch thất bại do lỗi API, đảm bảo thông báo lỗi hiển thị đúng. <br /></td></tr>
 <tr class="separator:acaba5bb834aba7758db3ba777f7b6710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe48a52c0f390bd18eb77457fc31fc18" id="r_afe48a52c0f390bd18eb77457fc31fc18"><td class="memItemLeft" align="right" valign="top"><a id="afe48a52c0f390bd18eb77457fc31fc18" name="afe48a52c0f390bd18eb77457fc31fc18"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadCurrentWeekDays_ShouldSetCorrectWeekNumberAndDaysHaveCompletedExercise</b> ()</td></tr>
+<tr class="memdesc:afe48a52c0f390bd18eb77457fc31fc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra logic tính toán thông tin ngày tập khi ngày hiện tại có bài tập và đã hoàn thành. <br /></td></tr>
 <tr class="separator:afe48a52c0f390bd18eb77457fc31fc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0163a7d63642ed6faaeaac7ba90aa0b" id="r_ae0163a7d63642ed6faaeaac7ba90aa0b"><td class="memItemLeft" align="right" valign="top"><a id="ae0163a7d63642ed6faaeaac7ba90aa0b" name="ae0163a7d63642ed6faaeaac7ba90aa0b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadCurrentWeekDays_ShouldSetCorrectWeekNumberAndDaysHaveUncompletedExercise</b> ()</td></tr>
+<tr class="memdesc:ae0163a7d63642ed6faaeaac7ba90aa0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra logic tính toán thông tin ngày tập khi ngày hiện tại có bài tập nhưng chưa hoàn thành. <br /></td></tr>
 <tr class="separator:ae0163a7d63642ed6faaeaac7ba90aa0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e241aeab1a5faa362bdf56b6dd214cd" id="r_a7e241aeab1a5faa362bdf56b6dd214cd"><td class="memItemLeft" align="right" valign="top"><a id="a7e241aeab1a5faa362bdf56b6dd214cd" name="a7e241aeab1a5faa362bdf56b6dd214cd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadCurrentWeekDays_ShouldSetCorrectWeekNumberAndDaysHaveNoExercise</b> ()</td></tr>
+<tr class="memdesc:a7e241aeab1a5faa362bdf56b6dd214cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra logic tính toán thông tin ngày tập, trường hợp ngày không có bài tập (ngày nghỉ). <br /></td></tr>
 <tr class="separator:a7e241aeab1a5faa362bdf56b6dd214cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34e8fbfd9e1880b28ee8ecf6a5b6850b" id="r_a34e8fbfd9e1880b28ee8ecf6a5b6850b"><td class="memItemLeft" align="right" valign="top"><a id="a34e8fbfd9e1880b28ee8ecf6a5b6850b" name="a34e8fbfd9e1880b28ee8ecf6a5b6850b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadCurrentWeekDays_ShouldHandleEmptyWorkoutDetails</b> ()</td></tr>
+<tr class="memdesc:a34e8fbfd9e1880b28ee8ecf6a5b6850b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra trường hợp dữ liệu ngày tập bị trống (do trigger lỗi), đảm bảo tuần vẫn được khởi tạo. <br /></td></tr>
 <tr class="separator:a34e8fbfd9e1880b28ee8ecf6a5b6850b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c4663beb8bf3f1d72d47f7a04768f67" id="r_a9c4663beb8bf3f1d72d47f7a04768f67"><td class="memItemLeft" align="right" valign="top"><a id="a9c4663beb8bf3f1d72d47f7a04768f67" name="a9c4663beb8bf3f1d72d47f7a04768f67"></a>
 async Task&#160;</td><td class="memItemRight" valign="bottom"><b>PlayingWorkoutExercises_ShouldCallApiAndUpdateStatus_WhenExerciseIsFinished</b> ()</td></tr>
+<tr class="memdesc:a9c4663beb8bf3f1d72d47f7a04768f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra logic người dùng chọn thực hiện bài tập, xem hết và hoàn thành bài tập. <br /></td></tr>
 <tr class="separator:a9c4663beb8bf3f1d72d47f7a04768f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba96111053ec572e64cdcd7abe2b754" id="r_a7ba96111053ec572e64cdcd7abe2b754"><td class="memItemLeft" align="right" valign="top"><a id="a7ba96111053ec572e64cdcd7abe2b754" name="a7ba96111053ec572e64cdcd7abe2b754"></a>
 async Task&#160;</td><td class="memItemRight" valign="bottom"><b>PlayingWorkoutExercises_ShouldNotCallApi_WhenExerciseIsNotFinished</b> ()</td></tr>
+<tr class="memdesc:a7ba96111053ec572e64cdcd7abe2b754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra trường hợp người dùng chọn thực hiện bài tập, nhưng hủy giữa chừng. <br /></td></tr>
 <tr class="separator:a7ba96111053ec572e64cdcd7abe2b754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0535d0e24a94d362b780a3c69a95314" id="r_ae0535d0e24a94d362b780a3c69a95314"><td class="memItemLeft" align="right" valign="top"><a id="ae0535d0e24a94d362b780a3c69a95314" name="ae0535d0e24a94d362b780a3c69a95314"></a>
 async Task&#160;</td><td class="memItemRight" valign="bottom"><b>PlayingWorkoutExercises_ShouldShowErrorDialog_WhenApiPutFails</b> ()</td></tr>
+<tr class="memdesc:ae0535d0e24a94d362b780a3c69a95314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra trường hợp người dùng hoàn thành bài tập nhưng gọi API cập nhật thất bại. <br /></td></tr>
 <tr class="separator:ae0535d0e24a94d362b780a3c69a95314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -154,8 +168,10 @@ Mock&lt; IDateTimeProvider &gt;?&#160;</td><td class="memItemRight" valign="bott
 <a class="el" href="class_gyminize_1_1_view_models_1_1_plan_view_model.html">PlanViewModel</a>?&#160;</td><td class="memItemRight" valign="bottom"><b>_viewModel</b></td></tr>
 <tr class="separator:af8973ad84f80bba491523da8f98e5703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize.Tests.MSTest/ViewModel/<b>PlanViewModelTest.cs</b></li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Lớp kiểm thử dành cho PlanViewModel/&gt;. </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize.Tests.MSTest/ViewModel/<b>PlanViewModelTest.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

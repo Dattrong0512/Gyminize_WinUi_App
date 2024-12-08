@@ -11,6 +11,10 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 
 namespace Gyminize.Tests.MSTest.ViewModel;
+
+/// <summary>
+/// Lớp kiểm thử cho ViewModel của Nhật ký (DiaryViewModel).
+/// </summary>
 [TestClass]
 public class DiaryViewModelTest
 {
@@ -20,6 +24,9 @@ public class DiaryViewModelTest
     private Mock<IDialogService> _mockDialogService;
     private DiaryViewModel _viewModel;
 
+    /// <summary>
+    /// Thiết lập môi trường kiểm thử trước khi thực thi các phương thức kiểm thử.
+    /// </summary>
     [TestInitialize]
     public void Setup()
     {
@@ -30,10 +37,13 @@ public class DiaryViewModelTest
         _viewModel = new DiaryViewModel(_mockLocalSettingsService.Object, _mockApiServicesClient.Object, _mockDateTimeProvider.Object, _mockDialogService.Object);
     }
 
-    [TestMethod]// Test case kiểm tra dữ liệu nhật ký ăn uống từ daily diary là hợp lệ
+    /// <summary>
+    /// Kiểm tra xem phương thức <see cref="DiaryViewModel.LoadDailyDiary"/> có điền đúng thông tin vào các bộ sưu tập khi nhận dữ liệu hợp lệ.
+    /// </summary>
+    [TestMethod]
     public void LoadDailyDiary_WithValidData_ShouldPopulateCollections()
     {
-        // Arrange
+        // Arrange: Thiết lập dữ liệu đầu vào
         var date = DateTime.Now;
         var dailyDiary = new Dailydiary
         {
@@ -50,10 +60,10 @@ public class DiaryViewModelTest
         };
         _mockApiServicesClient.Setup(m => m.Get<Dailydiary>(It.IsAny<string>())).Returns(dailyDiary);
 
-        // Act
+        // Act: Thực thi phương thức kiểm tra
         _viewModel.LoadDailyDiary(date);
 
-        // Assert
+        // Assert: Kiểm tra kết quả đầu ra
         Assert.AreEqual(1, _viewModel.BreakfastItems.Count);
         Assert.AreEqual(1, _viewModel.LunchItems.Count);
         Assert.AreEqual(1, _viewModel.DinnerItems.Count);
@@ -63,26 +73,31 @@ public class DiaryViewModelTest
         Assert.AreEqual(2000, _viewModel.TotalCalories);
     }
 
-
-    [TestMethod] // Test case kiểm tra trường hợp nhật ký dinh dưỡng  gặp lỗi api
+    /// <summary>
+    /// Kiểm tra trường hợp phương thức <see cref="DiaryViewModel.LoadFullData"/> gặp lỗi khi gọi API và hiển thị thông báo lỗi.
+    /// </summary>
+    [TestMethod]
     public async Task LoadFullData_ShouldShowErrorDialog_WhenLoadDailyDiaryFails()
     {
-        // Arrange
+        // Arrange: Thiết lập lỗi trong API
         var daySelected = DateTime.Now;
         _mockApiServicesClient.Setup(client => client.Get<Dailydiary>(It.IsAny<string>()))
             .Throws(new Exception("Daily diary API error"));
 
-        // Act
+        // Act: Thực thi phương thức kiểm tra
         await _viewModel.LoadFullData(daySelected);
 
-        // Assert
+        // Assert: Kiểm tra xem phương thức hiển thị thông báo lỗi được gọi đúng
         _mockDialogService.Verify(dialog => dialog.ShowErrorDialogAsync(It.Is<string>(s => s.Contains("Daily diary API error"))), Times.Once);
     }
 
-    [TestMethod] // Test case kiểm tra trường hợp trả về dữ liệu là ngày tập luyện
+    /// <summary>
+    /// Kiểm tra xem phương thức <see cref="DiaryViewModel.LoadWorkoudetails"/> có điền đúng thông tin khi nhận dữ liệu kế hoạch tập luyện hợp lệ.
+    /// </summary>
+    [TestMethod]
     public void LoadWorkoudetails_WithValidPlanDetails_ShouldSetWorkoutDayProperties()
     {
-        // Arrange
+        // Arrange: Thiết lập dữ liệu kế hoạch tập luyện hợp lệ
         var date = DateTime.Now;
         var planDetail = new Plandetail
         {
@@ -94,35 +109,41 @@ public class DiaryViewModelTest
         };
         _mockApiServicesClient.Setup(m => m.Get<Plandetail>(It.IsAny<string>())).Returns(planDetail);
 
-        // Act
+        // Act: Thực thi phương thức kiểm tra
         _viewModel.LoadWorkoudetails(date);
 
-        // Assert
+        // Assert: Kiểm tra các thuộc tính đã được thiết lập đúng
         Assert.AreEqual("Test Plan", _viewModel.PlanNameText);
         Assert.AreEqual("Test Workout", _viewModel.TypeWorkoutText);
         Assert.AreEqual(2, _viewModel._exerciseStatus);
     }
 
-    [TestMethod] // Test case kiểm tra trường hợp dữ liệu trả về chưa đăng kí kế hoạch (mặc định)
+    /// <summary>
+    /// Kiểm tra trường hợp không có kế hoạch tập luyện (dữ liệu trả về là null).
+    /// </summary>
+    [TestMethod]
     public void LoadWorkoudetails_NoPlanDetail_ShouldSetDefaultProperties()
     {
-        // Arrange
+        // Arrange: Thiết lập dữ liệu không có kế hoạch tập luyện
         var date = DateTime.Now;
         _mockApiServicesClient.Setup(m => m.Get<Plandetail>(It.IsAny<string>())).Returns((Plandetail)null);
 
-        // Act
+        // Act: Thực thi phương thức kiểm tra
         _viewModel.LoadWorkoudetails(date);
 
-        // Assert
+        // Assert: Kiểm tra các thuộc tính mặc định đã được thiết lập đúng
         Assert.AreEqual("Chưa có kế hoạch", _viewModel.PlanNameText);
         Assert.AreEqual("Chưa có ngày tập", _viewModel.TypeWorkoutText);
         Assert.AreEqual(0, _viewModel._exerciseStatus);
     }
 
-    [TestMethod] // Test case kiểm tra trường hợp dữ liệu trả về là ngày nghỉ (vẫn nằm trong kế hoạch)
+    /// <summary>
+    /// Kiểm tra trường hợp ngày được trả về là ngày nghỉ (mặc dù vẫn nằm trong kế hoạch tập luyện).
+    /// </summary>
+    [TestMethod]
     public void LoadWorkoudetails_RestDay_ShouldSetRestDayProperties()
     {
-        // Arrange
+        // Arrange: Thiết lập dữ liệu ngày nghỉ
         var date = DateTime.Now;
         var planDetail = new Plandetail
         {
@@ -133,10 +154,10 @@ public class DiaryViewModelTest
         };
         _mockApiServicesClient.Setup(m => m.Get<Plandetail>(It.IsAny<string>())).Returns(planDetail);
 
-        // Act
+        // Act: Thực thi phương thức kiểm tra
         _viewModel.LoadWorkoudetails(date);
 
-        // Assert
+        // Assert: Kiểm tra các thuộc tính của ngày nghỉ đã được thiết lập đúng
         Assert.AreEqual("Test Plan", _viewModel.PlanNameText);
         Assert.AreEqual("Ngày nghỉ", _viewModel.TypeWorkoutText);
         Assert.AreEqual(1, _viewModel._exerciseStatus);
