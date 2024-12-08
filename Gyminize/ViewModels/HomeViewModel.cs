@@ -495,7 +495,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         for (int i = 0; i < DataPoints.Count; i++)
         {
             double yPosition = marginTop + canvasHeight - ((DataPoints[i].Weight - minWeight) / weightRange * canvasHeight);
-            AxisLabels.Add(new TextBlock { Text = DataPoints[i].Weight.ToString("F1"), Foreground = new SolidColorBrush(Colors.Black), Margin = new Thickness(marginLeft - 30, yPosition - 10, 0, 0) });
+            AxisLabels.Add(new TextBlock { FontSize = 9, Text = DataPoints[i].Weight.ToString("F1"), Foreground = new SolidColorBrush(Colors.Black), Margin = new Thickness(marginLeft - 30, yPosition - 10, 0, 0) });
         }
     }
 

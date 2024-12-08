@@ -703,30 +703,143 @@ VALUES
 
 INSERT INTO DailyDiary (customer_id, diary_date,calories_remain, daily_weight, total_calories, notes)
 VALUES 
-(1, '2024-11-30', 0, 88, 2984, 'Feeling great today'),
-(1, '2024-12-01', 0, 89, 2984, 'Feeling great today'),
-(1, '2024-12-02', 0, 89, 2984, 'Feeling great today'),
-(1, '2024-12-03', 0, 87, 2984, 'Feeling great today'),
-(1, '2024-12-04', 0, 88, 2984, 'Feeling great today'),
-(1, '2024-12-05', 0, 89, 2984, 'Feeling great today'),
-(1, '2024-12-06', 0, 91, 2984, 'Feeling great today'),
-(1, '2024-12-07', 0, 90, 2984, 'Feeling great today');
+(1, '2024-11-30', 2984, 88, 2984, 'Feeling great today'),
+(1, '2024-12-01', 2984, 89, 2984, 'Feeling great today'),
+(1, '2024-12-02', 2984, 89, 2984, 'Feeling great today'),
+(1, '2024-12-03', 2984, 87, 2984, 'Feeling great today'),
+(1, '2024-12-04', 2984, 88, 2984, 'Feeling great today'),
+(1, '2024-12-05', 2984, 89, 2984, 'Feeling great today'),
+(1, '2024-12-06', 2984, 91, 2984, 'Feeling great today'),
+(1, '2024-12-07', 2984, 90, 2984, 'Feeling great today');
 
 --30/11
-INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount)
-VALUES
-(11, 1, 1, 2),  -- Chicken Breast (2 servings) - Bữa sáng
-(11, 2, 1, 3),  -- Rice (3 servings) - Bữa sáng
-(11, 6, 1, 2),  -- Eggs (2 quả) - Bữa sáng
-(11, 9, 1, 2),  -- Milk (200ml) - Bữa sáng
-(11, 5, 2, 1),  -- Salmon (1 serving) - Bữa trưa
-(11, 7, 2, 5),  -- Oatmeal (100g) - Bữa trưa
-(11, 3, 2, 1),  -- Broccoli (100g) - Bữa trưa
-(11, 4, 3, 1),  -- Apple (1 quả) - Bữa tối
-(11, 10, 3, 1), -- Pasta (1 serving) - Bữa tối
-(11, 8, 3, 3),  -- Almonds (100g) - Bữa tối
-(11, 2, 4, 1),  -- Rice (1 serving) - Bữa xế
-(11, 6, 4, 1),  -- Eggs (1 quả) - Bữa xế
-(11, 3, 4, 1);  -- Broccoli (100g) - Bữa xế
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(11, 1, 1, 1),  -- Chicken Breast, 1 serving = 165 calories
+(11, 2, 1, 2),  -- Rice, 2 servings = 260 calories
+(11, 6, 1, 2),  -- Eggs, 2 servings = 310 calories
+(11, 9, 1, 2),  -- Milk, 200ml = 84 calories
+(11, 5, 2, 1),  -- Salmon, 1 serving = 208 calories
+(11, 7, 2, 2),  -- Oatmeal, 2 servings = 778 calories
+(11, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(11, 4, 3, 1),  -- Apple, 1 quả = 52 calories
+(11, 10, 3, 1), -- Pasta, 1 serving = 131 calories
+(11, 8, 3, 2),  -- Almonds, 2 servings = 1,158 calories
+(11, 2, 4, 1),  -- Rice, 1 serving = 130 calories
+(11, 6, 4, 1),  -- Eggs, 1 serving = 155 calories
+(11, 3, 4, 1);  -- Broccoli, 100g = 55 calories
 
 select * from dailydiary
+
+-- Dữ liệu cho DailyDiary ID = 12 (Tổng calories = khoảng 2850)
+
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(12, 1, 1, 2),  -- Chicken Breast, 2 servings = 330 calories
+(12, 2, 1, 2),  -- Rice, 2 servings = 260 calories
+(12, 6, 1, 2),  -- Eggs, 2 servings = 310 calories
+(12, 9, 1, 2),  -- Milk, 200ml = 84 calories
+(12, 5, 2, 1),  -- Salmon, 1 serving = 208 calories
+(12, 7, 2, 2),  -- Oatmeal, 2 servings = 778 calories
+(12, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(12, 4, 3, 1),  -- Apple, 1 quả = 52 calories
+(12, 10, 3, 1), -- Pasta, 1 serving = 131 calories
+(12, 8, 3, 1),  -- Almonds, 1 serving = 579 calories
+(12, 2, 4, 1),  -- Rice, 1 serving = 130 calories
+(12, 6, 4, 1),  -- Eggs, 1 serving = 155 calories
+(12, 3, 4, 1);  -- Broccoli, 100g = 55 calories
+
+-- Dữ liệu cho DailyDiary ID = 13 (Tổng calories = khoảng 2800)
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(13, 1, 1, 3),  -- Chicken Breast, 3 servings = 495 calories
+(13, 2, 1, 2),  -- Rice, 2 servings = 260 calories
+(13, 6, 1, 2),  -- Eggs, 2 servings = 310 calories
+(13, 9, 1, 2),  -- Milk, 200ml = 84 calories
+(13, 5, 2, 1),  -- Salmon, 1 serving = 208 calories
+(13, 7, 2, 2),  -- Oatmeal, 2 servings = 778 calories
+(13, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(13, 4, 3, 1),  -- Apple, 1 quả = 52 calories
+(13, 10, 3, 1), -- Pasta, 1 serving = 131 calories
+(13, 8, 3, 1),  -- Almonds, 1 serving = 579 calories
+(13, 2, 4, 1),  -- Rice, 1 serving = 130 calories
+(13, 6, 4, 1),  -- Eggs, 1 serving = 155 calories
+(13, 3, 4, 1);  -- Broccoli, 100g = 55 calories
+
+-- Dữ liệu cho DailyDiary ID = 14 (Tổng calories ~ 2500)
+
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(14, 1, 1, 2),  -- Chicken Breast, 2 servings = 330 calories
+(14, 2, 1, 2),  -- Rice, 2 servings = 260 calories
+(14, 9, 1, 2),  -- Milk, 200ml = 84 calories
+(14, 5, 2, 1),  -- Salmon, 1 serving = 208 calories
+(14, 6, 2, 1),  -- Eggs, 1 serving = 155 calories
+(14, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(14, 7, 3, 3),  -- Oatmeal, 3 servings = 1167 calories
+(14, 4, 4, 1);  -- Apple, 1 quả = 52 calories
+
+-- Dữ liệu cho DailyDiary ID = 14 (Tổng calories ~ 2500)
+
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(15, 1, 1, 3),  -- Chicken Breast, 3 servings = 495 calories
+(15, 2, 1, 2),  -- Rice, 2 servings = 260 calories
+(15, 5, 2, 1),  -- Salmon, 1 serving = 208 calories
+(15, 6, 2, 2),  -- Eggs, 2 servings = 310 calories
+(15, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(15, 7, 3, 2),  -- Oatmeal, 2 servings = 778 calories
+(15, 4, 4, 1);  -- Apple, 1 quả = 52 calories
+
+-- Dữ liệu cho DailyDiary ID = 14 (Tổng calories ~ 2500)
+
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(16, 1, 1, 2),  -- Chicken Breast, 2 servings = 330 calories
+(16, 2, 1, 2),  -- Rice, 2 servings = 260 calories
+(16, 9, 1, 1),  -- Milk, 100ml = 42 calories
+(16, 5, 2, 2),  -- Salmon, 2 servings = 416 calories
+(16, 6, 2, 1),  -- Eggs, 1 serving = 155 calories
+(16, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(16, 7, 3, 2),  -- Oatmeal, 2 servings = 778 calories
+(16, 10, 4, 1);  -- Pasta, 1 serving = 131 calories
+
+-- Dữ liệu cho DailyDiary ID = 14 (Tổng calories ~ 2500)
+
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(17, 1, 1, 3),  -- Chicken Breast, 3 servings = 495 calories
+(17, 2, 1, 1),  -- Rice, 1 serving = 130 calories
+(17, 9, 1, 1),  -- Milk, 100ml = 42 calories
+(17, 6, 2, 2),  -- Eggs, 2 servings = 310 calories
+(17, 5, 2, 1),  -- Salmon, 1 serving = 208 calories
+(17, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(17, 7, 3, 2),  -- Oatmeal, 2 servings = 778 calories
+(17, 4, 4, 1);  -- Apple, 1 quả = 52 calories
+
+-- Dữ liệu cho DailyDiary ID = 18 (Tổng calories ~ 2500)
+
+INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount) VALUES
+(18, 1, 1, 2),  -- Chicken Breast, 2 servings = 330 calories
+(18, 2, 1, 2),  -- Rice, 2 servings = 260 calories
+(18, 9, 1, 1),  -- Milk, 100ml = 42 calories
+(18, 5, 2, 1),  -- Salmon, 1 serving = 208 calories
+(18, 6, 2, 2),  -- Eggs, 2 servings = 310 calories
+(18, 3, 2, 1),  -- Broccoli, 100g = 55 calories
+(18, 7, 3, 2),  -- Oatmeal, 2 servings = 778 calories
+(18, 4, 4, 1);  -- Apple, 1 quả = 52 calories
+
+INSERT INTO PlanDetail (plan_id, customer_id, start_date, end_date)
+VALUES (2, 11, '2024-11-30', '2025-01-25');
+
+UPDATE WorkoutDetail
+SET description = 'Đã hoàn thành Exercise trong ngày'
+WHERE workoutdetail_id = 1;
+
+UPDATE WorkoutDetail
+SET description = 'Đã hoàn thành Exercise trong ngày'
+WHERE workoutdetail_id = 2;
+
+UPDATE WorkoutDetail
+SET description = 'Đã hoàn thành Exercise trong ngày'
+WHERE workoutdetail_id = 3;
+
+UPDATE WorkoutDetail
+SET description = ''
+WHERE workoutdetail_id = 4;
+
+select * from workoutdetail
+

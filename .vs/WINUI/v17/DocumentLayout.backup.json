@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_19\\gyminize_winui_app\\gyminize\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_19\\gyminize_winui_app\\gyminize\\viewmodels\\nutritionsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\nutritionsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_19\\gyminize_winui_app\\gyminize\\viewmodels\\diaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\diaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|j:\\study\\windowprograming\\clone_19\\gyminize_winui_app\\gyminize\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48901BE2-BAD0-46DE-9E7B-761A51816C60}|Gyminize\\Gyminize.csproj|solutionrelative:gyminize\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8FD00726-77A2-481C-B93F-69D2C93C3AD2}|Gyminize_API\\Gyminize_API.csproj|j:\\study\\windowprograming\\clone_19\\gyminize_winui_app\\gyminize_api\\data\\repositories\\dailydiaryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -254,7 +254,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 52,
+          "SelectedChildIndex": 51,
           "Children": [
             {
               "$type": "Bookmark",
@@ -263,14 +263,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
@@ -670,7 +662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NavigationViewService.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\Services\\NavigationViewService.cs",
               "RelativeDocumentMoniker": "Gyminize\\Services\\NavigationViewService.cs",
@@ -682,7 +674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "NavigationService.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\Services\\NavigationService.cs",
               "RelativeDocumentMoniker": "Gyminize\\Services\\NavigationService.cs",
@@ -850,28 +842,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "NutritionsViewModel.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "RelativeDocumentMoniker": "Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "ToolTip": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\NutritionsViewModel.cs",
               "RelativeToolTip": "Gyminize\\ViewModels\\NutritionsViewModel.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAASwJ0AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAwJ0AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-07T13:53:36.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "HomeViewModel.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\HomeViewModel.cs",
               "RelativeDocumentMoniker": "Gyminize\\ViewModels\\HomeViewModel.cs",
               "ToolTip": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\HomeViewModel.cs",
               "RelativeToolTip": "Gyminize\\ViewModels\\HomeViewModel.cs",
-              "ViewState": "AgIAADgBAAAAAAAAAAAYwEoBAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAMEBAAAAAAAAAAAnwPEBAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T13:34:37.114Z"
+              "WhenOpened": "2024-12-07T13:34:37.114Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -971,7 +964,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DiaryViewModel.cs",
               "DocumentMoniker": "J:\\Study\\WindowPrograming\\Clone_19\\Gyminize_WinUi_App\\Gyminize\\ViewModels\\DiaryViewModel.cs",
               "RelativeDocumentMoniker": "Gyminize\\ViewModels\\DiaryViewModel.cs",
@@ -1004,6 +997,14 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-12-07T07:51:27.419Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         },
