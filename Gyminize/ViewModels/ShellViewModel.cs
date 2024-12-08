@@ -13,44 +13,42 @@ using Microsoft.UI.Xaml.Navigation;
 
 namespace Gyminize.ViewModels;
 
+/// \brief ViewModel cho Shell (khung chính của ứng dụng).
+/// \details Kế thừa từ ObservableRecipient để hỗ trợ thông báo thay đổi thuộc tính.
 public partial class ShellViewModel : ObservableRecipient
 {
     // Thuộc tính kiểm tra xem có thể quay lại trang trước hay không.
+
+    /// \brief Thuộc tính kiểm tra xem có thể quay lại trang trước hay không.
     [ObservableProperty]
     private bool isBackEnabled;
 
-    // Thuộc tính lưu trữ mục được chọn trong NavigationView.
+    /// \brief Thuộc tính lưu trữ mục được chọn trong NavigationView.
     [ObservableProperty]
     private object? selected;
 
-    // Dịch vụ điều hướng.
-    public INavigationService NavigationService
-    {
-        get;
-    }
-    private ILocalSettingsService _localsettings;
-    // Dịch vụ NavigationView.
-    public INavigationViewService NavigationViewService
-    {
-        get;
-    }
-    private Frame _frame;
-
-    // Phương thức này sẽ được gọi từ ShellPage để gán Frame cho ViewModel
-    public void SetFrame(Frame frame)
-    {
-        _frame = frame;
-    }
-
+    /// \brief Thuộc tính kiểm tra hiển thị page plan hay planselection.
     private bool _isSelectionNeeded;
+
     public bool IsSelectionNeeded
     {
         get => _isSelectionNeeded;
         set => SetProperty(ref _isSelectionNeeded, value);
     }
 
+    /// \brief Dịch vụ điều hướng.
+    public INavigationService NavigationService { get; }
 
-    // Khởi tạo ShellViewModel với INavigationService và INavigationViewService.
+    /// \brief Dịch vụ NavigationView.
+    public INavigationViewService NavigationViewService { get; }
+
+    private readonly ILocalSettingsService _localsettings;
+    private Frame _frame;
+
+    /// \brief Hàm khởi tạo ShellViewModel.
+    /// \param navigationService Dịch vụ điều hướng.
+    /// \param navigationViewService Dịch vụ điều hướng NavigationView.
+    /// \param localSettingsService Dịch vụ lưu trữ cài đặt cục bộ.
     public ShellViewModel(INavigationService navigationService, INavigationViewService navigationViewService, ILocalSettingsService localSettingsService)
     {
         _localsettings = localSettingsService;
@@ -58,9 +56,10 @@ public partial class ShellViewModel : ObservableRecipient
         CheckPlanSelectionNeeded();
         NavigationService.Navigated += OnNavigated;
         NavigationViewService = navigationViewService;
-        //IsSelectionNeeded = false;
     }
 
+    /// \brief Kiểm tra xem người dùng có cần chọn kế hoạch hay không.
+    /// \details Dựa trên thông tin trong cài đặt và API, xác định trạng thái `IsSelectionNeeded`.
     public async void CheckPlanSelectionNeeded()
     {
         var customer_id = await _localsettings.ReadSettingAsync<string>("customer_id");
@@ -78,7 +77,16 @@ public partial class ShellViewModel : ObservableRecipient
         }
     }
 
-    // Xử lý sự kiện điều hướng.
+    /// \brief Gán đối tượng Frame từ ShellPage vào ViewModel.
+    /// \param frame Đối tượng Frame của ứng dụng.
+    public void SetFrame(Frame frame)
+    {
+        _frame = frame;
+    }
+
+    /// \brief Xử lý sự kiện điều hướng.
+    /// \param sender Đối tượng phát sinh sự kiện.
+    /// \param e Thông tin sự kiện điều hướng.
     private void OnNavigated(object sender, NavigationEventArgs e)
     {
         IsBackEnabled = NavigationService.CanGoBack;

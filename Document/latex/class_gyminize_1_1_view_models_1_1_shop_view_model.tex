@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+View\+Models.\+Shop\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model}{}\label{class_gyminize_1_1_view_models_1_1_shop_view_model}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+
+
+View\+Model cho trang cửa hàng.  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Shop\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,41 +14,35 @@ Inheritance diagram for Gyminize.\+View\+Models.\+Shop\+View\+Model\+:\begin{fig
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a5f26c3a2ff05904757d4e66216cf1f7c}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a5f26c3a2ff05904757d4e66216cf1f7c} 
-{\bfseries Shop\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service)
-\item 
+\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shop_view_model_a5f26c3a2ff05904757d4e66216cf1f7c}{Shop\+View\+Model}} (INavigation\+Service navigation\+Service, IDialog\+Service dialog\+Service, IApi\+Services\+Client api\+Services\+Client, ILocal\+Settings\+Service local\+Settings\+Service)
+\begin{DoxyCompactList}\small\item\em View\+Model cho trang cửa hàng, quản lý các sản phẩm, giỏ hàng và các thao tác liên quan. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a74d7e18b2020b266e69cbc4dc2e60adc}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a74d7e18b2020b266e69cbc4dc2e60adc} 
 void {\bfseries Search\+Product} ()
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_ad019e2f02b5d19d269e4ee0534fb1067}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_ad019e2f02b5d19d269e4ee0534fb1067} 
-async Task {\bfseries Get\+Customer\+ID} ()
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a3c7ecf00bbfdf7071bc6b00369112f85}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a3c7ecf00bbfdf7071bc6b00369112f85} 
-async void {\bfseries Create\+Or\+Get\+Order\+ID} ()
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a393092cf60d856d71f4cd3ecefecb75e}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a393092cf60d856d71f4cd3ecefecb75e} 
-async Task {\bfseries Load\+Product\+Library\+Async} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Thực hiện tìm kiếm sản phẩm. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shop_view_model_ad019e2f02b5d19d269e4ee0534fb1067}{Get\+Customer\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Lấy ID của khách hàng từ cài đặt địa phương. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shop_view_model_a3c7ecf00bbfdf7071bc6b00369112f85}{Create\+Or\+Get\+Order\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Tạo hoặc lấy ID đơn hàng của khách hàng. Nếu không có đơn hàng nào, tạo một đơn hàng mới. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shop_view_model_a393092cf60d856d71f4cd3ecefecb75e}{Load\+Product\+Library\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Tải thư viện sản phẩm từ API và cập nhật danh sách sản phẩm. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a4d0355d74a4d28e0c7d854d8af8c1d4c}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a4d0355d74a4d28e0c7d854d8af8c1d4c} 
 void {\bfseries Select\+Cart} ()
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a6d226846946cde793ece58294e716391}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a6d226846946cde793ece58294e716391} 
-async Task {\bfseries Select\+Product} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} product)
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a93615aaf51d02a745a7d312eb5903bb8}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a93615aaf51d02a745a7d312eb5903bb8} 
-async void {\bfseries Load\+Order\+Detail\+Data} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Điều hướng đến trang giỏ hàng. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shop_view_model_a6d226846946cde793ece58294e716391}{Select\+Product}} (Product product)
+\begin{DoxyCompactList}\small\item\em Chọn một sản phẩm và hiển thị hộp thoại sản phẩm với nhà cung cấp. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shop_view_model_a93615aaf51d02a745a7d312eb5903bb8}{Load\+Order\+Detail\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Tải dữ liệu chi tiết đơn hàng của khách hàng. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a06610b55757f20f2187b7f0ae5d7d94b}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a06610b55757f20f2187b7f0ae5d7d94b} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Product $>$ {\bfseries Product\+Library\+Items} = new Observable\+Collection$<$Product$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_aed66241175447a07bdc54f9dc8edda6c}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_aed66241175447a07bdc54f9dc8edda6c} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Filtered\+Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Product $>$ {\bfseries Filtered\+Product\+Library\+Items} = new Observable\+Collection$<$Product$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_acf2d160aaf9958fba184d6790e00e2f1}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_acf2d160aaf9958fba184d6790e00e2f1} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}} $>$ {\bfseries Order\+Details\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Orderdetail $>$ {\bfseries Order\+Details\+Items} = new Observable\+Collection$<$Orderdetail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a1267ee788e5e148f48412097e6b698b2}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a1267ee788e5e148f48412097e6b698b2} 
 int {\bfseries Current\+Page}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
@@ -90,6 +89,158 @@ ICommand {\bfseries Search\+Product\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}g
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a1026e1a1c239c453c82b2a350e9e8e0b}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a1026e1a1c239c453c82b2a350e9e8e0b} 
 int {\bfseries Cart\+Item\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a8448f75250bca4c1f910ec74213c722e}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a8448f75250bca4c1f910ec74213c722e} 
+void {\bfseries Update\+Filtered\+Products} ()
+\begin{DoxyCompactList}\small\item\em Cập nhật các sản phẩm đã được lọc và phân trang. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_ac8dcf92fc1d3349bb4785dd48b5052c2}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_ac8dcf92fc1d3349bb4785dd48b5052c2} 
+void {\bfseries Update\+Filtered\+And\+Sorted\+Products} ()
+\begin{DoxyCompactList}\small\item\em Cập nhật các sản phẩm đã được lọc, phân trang và sắp xếp. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_ada39dc0be91c1482869060020cc85cd4}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_ada39dc0be91c1482869060020cc85cd4} 
+void {\bfseries Next\+Page} ()
+\begin{DoxyCompactList}\small\item\em Điều hướng đến trang tiếp theo nếu có thể. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_abff375d281b03c62297e1e93d5dd4f9b}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_abff375d281b03c62297e1e93d5dd4f9b} 
+void {\bfseries Previous\+Page} ()
+\begin{DoxyCompactList}\small\item\em Điều hướng đến trang trước đó nếu có thể. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a891c3e0392aef2a872f3778ab4a56f26}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a891c3e0392aef2a872f3778ab4a56f26} 
+int {\bfseries \+\_\+current\+Page} = 1
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a500b05775eadaeb32efb54a0c04ef26d}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a500b05775eadaeb32efb54a0c04ef26d} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a24ab2ef83fd097dca5ce073583a1730b}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a24ab2ef83fd097dca5ce073583a1730b} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_aa5fc818eadaf8a5e4b86ed6cc5e7499e}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_aa5fc818eadaf8a5e4b86ed6cc5e7499e} 
+readonly IApi\+Services\+Client {\bfseries \+\_\+api\+Services\+Client}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a9ab64e7cb834010d9771912ed3ee3374}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a9ab64e7cb834010d9771912ed3ee3374} 
+readonly ILocal\+Settings\+Service {\bfseries \+\_\+local\+Settings\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a787efc8fbf0948835709c171128da348}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a787efc8fbf0948835709c171128da348} 
+List$<$ Product $>$ {\bfseries \+\_\+all\+Products}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a14a2004336895e61657051e84ab46fd0}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a14a2004336895e61657051e84ab46fd0} 
+string {\bfseries \+\_\+search\+Text} = string.\+Empty
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a998cff27cab31a353211285a6716e861}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a998cff27cab31a353211285a6716e861} 
+Combo\+Box\+Item {\bfseries \+\_\+selected\+Category\+Name} = new() \{ Content = "{}Tất cả"{}\}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_ae1855ecd9eee03a8440169733eeb047f}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_ae1855ecd9eee03a8440169733eeb047f} 
+Combo\+Box\+Item {\bfseries \+\_\+selected\+Sort\+Order} = new() \{ Content = "{}Gần đây"{}\}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_ab786393c088d0730ca7b37c20e98f407}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_ab786393c088d0730ca7b37c20e98f407} 
+int {\bfseries \+\_\+total\+Pages}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a9e6eda6d2dd9e53c4ea3f98141ee6f81}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a9e6eda6d2dd9e53c4ea3f98141ee6f81} 
+bool {\bfseries \+\_\+can\+Go\+Next} = true
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a70be5ec593e3d5b42d52205045aed83d}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a70be5ec593e3d5b42d52205045aed83d} 
+bool {\bfseries \+\_\+can\+Go\+Back} = false
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a3b534960f7fd38110c1b19415a2650c1}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a3b534960f7fd38110c1b19415a2650c1} 
+int {\bfseries \+\_\+cart\+Item\+Count}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a23f624ebdf692757cb615f1739af49ae}\label{class_gyminize_1_1_view_models_1_1_shop_view_model_a23f624ebdf692757cb615f1739af49ae} 
+const int {\bfseries Items\+Per\+Page} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model cho trang cửa hàng. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a5f26c3a2ff05904757d4e66216cf1f7c}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}!ShopViewModel@{ShopViewModel}}
+\index{ShopViewModel@{ShopViewModel}!Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+\doxysubsubsection{\texorpdfstring{ShopViewModel()}{ShopViewModel()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shop_view_model_a5f26c3a2ff05904757d4e66216cf1f7c} 
+Gyminize.\+View\+Models.\+Shop\+View\+Model.\+Shop\+View\+Model (\begin{DoxyParamCaption}\item[{INavigation\+Service}]{navigation\+Service}{, }\item[{IDialog\+Service}]{dialog\+Service}{, }\item[{IApi\+Services\+Client}]{api\+Services\+Client}{, }\item[{ILocal\+Settings\+Service}]{local\+Settings\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+View\+Model cho trang cửa hàng, quản lý các sản phẩm, giỏ hàng và các thao tác liên quan. 
+
+Lớp này thực hiện các chức năng như tìm kiếm sản phẩm, phân trang, lọc sản phẩm theo danh mục và sắp xếp theo giá hoặc thời gian. Nó cũng quản lý việc thêm sản phẩm vào giỏ hàng và hiển thị thông tin đơn hàng. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a3c7ecf00bbfdf7071bc6b00369112f85}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}!CreateOrGetOrderID@{CreateOrGetOrderID}}
+\index{CreateOrGetOrderID@{CreateOrGetOrderID}!Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+\doxysubsubsection{\texorpdfstring{CreateOrGetOrderID()}{CreateOrGetOrderID()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shop_view_model_a3c7ecf00bbfdf7071bc6b00369112f85} 
+async void Gyminize.\+View\+Models.\+Shop\+View\+Model.\+Create\+Or\+Get\+Order\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tạo hoặc lấy ID đơn hàng của khách hàng. Nếu không có đơn hàng nào, tạo một đơn hàng mới. 
+
+\begin{DoxyReturn}{Returns}
+Task đại diện cho thao tác bất đồng bộ.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_ad019e2f02b5d19d269e4ee0534fb1067}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}!GetCustomerID@{GetCustomerID}}
+\index{GetCustomerID@{GetCustomerID}!Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+\doxysubsubsection{\texorpdfstring{GetCustomerID()}{GetCustomerID()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shop_view_model_ad019e2f02b5d19d269e4ee0534fb1067} 
+async Task Gyminize.\+View\+Models.\+Shop\+View\+Model.\+Get\+Customer\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy ID của khách hàng từ cài đặt địa phương. 
+
+\begin{DoxyReturn}{Returns}
+Task đại diện cho thao tác bất đồng bộ.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a93615aaf51d02a745a7d312eb5903bb8}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}!LoadOrderDetailData@{LoadOrderDetailData}}
+\index{LoadOrderDetailData@{LoadOrderDetailData}!Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+\doxysubsubsection{\texorpdfstring{LoadOrderDetailData()}{LoadOrderDetailData()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shop_view_model_a93615aaf51d02a745a7d312eb5903bb8} 
+async void Gyminize.\+View\+Models.\+Shop\+View\+Model.\+Load\+Order\+Detail\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tải dữ liệu chi tiết đơn hàng của khách hàng. 
+
+\begin{DoxyReturn}{Returns}
+Task đại diện cho thao tác bất đồng bộ.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a393092cf60d856d71f4cd3ecefecb75e}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}!LoadProductLibraryAsync@{LoadProductLibraryAsync}}
+\index{LoadProductLibraryAsync@{LoadProductLibraryAsync}!Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+\doxysubsubsection{\texorpdfstring{LoadProductLibraryAsync()}{LoadProductLibraryAsync()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shop_view_model_a393092cf60d856d71f4cd3ecefecb75e} 
+async Task Gyminize.\+View\+Models.\+Shop\+View\+Model.\+Load\+Product\+Library\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tải thư viện sản phẩm từ API và cập nhật danh sách sản phẩm. 
+
+\begin{DoxyReturn}{Returns}
+Task đại diện cho thao tác bất đồng bộ.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shop_view_model_a6d226846946cde793ece58294e716391}\index{Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}!SelectProduct@{SelectProduct}}
+\index{SelectProduct@{SelectProduct}!Gyminize.ViewModels.ShopViewModel@{Gyminize.ViewModels.ShopViewModel}}
+\doxysubsubsection{\texorpdfstring{SelectProduct()}{SelectProduct()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shop_view_model_a6d226846946cde793ece58294e716391} 
+async Task Gyminize.\+View\+Models.\+Shop\+View\+Model.\+Select\+Product (\begin{DoxyParamCaption}\item[{Product}]{product}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Chọn một sản phẩm và hiển thị hộp thoại sản phẩm với nhà cung cấp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product} & Sản phẩm được chọn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Task đại diện cho thao tác bất đồng bộ.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

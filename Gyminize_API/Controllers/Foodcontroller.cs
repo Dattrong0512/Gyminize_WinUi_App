@@ -3,33 +3,43 @@ using Gyminize_API.Data.Models;
 using Gyminize_API.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
+namespace Gyminize_API.Controllers;
 
-namespace Gyminize_API.Controllers
+/// <summary>
+/// Controller để quản lý các hoạt động liên quan đến thực phẩm (Food).
+/// Các hành động trong controller này cho phép truy cập và lấy thông tin các loại thực phẩm.
+/// </summary>
+[Route("api/[controller]")]
+[ApiController]
+public class Foodcontroller : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class Foodcontroller : ControllerBase
+    private readonly FoodRepository _foodRepository;
+
+    /// <summary>
+    /// Khởi tạo controller với repository để quản lý các loại thực phẩm.
+    /// </summary>
+    /// <param name="foodRepository">Repository chứa các phương thức thao tác với dữ liệu thực phẩm</param>
+    public Foodcontroller(FoodRepository foodRepository)
     {
-        private readonly FoodRepository _foodRepository;
-        public Foodcontroller(FoodRepository foodRepository)
+        _foodRepository = foodRepository;
+    }
+
+    /// <summary>
+    /// Lấy tất cả các loại thực phẩm từ cơ sở dữ liệu.
+    /// </summary>
+    /// <returns>Danh sách tất cả các loại thực phẩm</returns>
+    [HttpGet]
+    public IActionResult GetAllFood()
+    {
+        try
         {
-            _foodRepository = foodRepository;
+            var allFood = _foodRepository.GetAllFood(); // Lấy tất cả các loại thực phẩm từ repository
+            return Ok(allFood); // Trả về danh sách thực phẩm
         }
-        [HttpGet]
-        public IActionResult GetAllFood()
+        catch (Exception ex)
         {
-            try
-            {
-                var allFood = _foodRepository.GetAllFood();
-                return Ok(allFood);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return StatusCode(500, "Internal server error");
-            }
+            Console.WriteLine($"Error: {ex.Message}"); // Log lỗi nếu có
+            return StatusCode(500, "Internal server error"); // Trả về lỗi 500 nếu có sự cố
         }
     }
 }
-
-

@@ -21,6 +21,12 @@ using Gyminize.Services;
 
 
 namespace Gyminize.ViewModels;
+
+/// \class Guide3ViewModel
+/// \brief ViewModel cho màn hình hướng dẫn cuối cùng trong ứng dụng.
+/// 
+/// ViewModel này chịu trách nhiệm quản lý logic giao diện và dữ liệu người dùng cho màn hình Guide1.
+/// Nó cung cấp các lệnh và thuộc tính được liên kết với UI.
 public class Guide3ViewModel : ObservableRecipient, INavigationAware
 {
     private CustomerInfo _customerInfo;
@@ -124,6 +130,13 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     {
         get;
     }
+
+    /// <summary>
+    /// Khởi tạo một phiên bản mới của Guide3ViewModel, thiết lập dịch vụ điều hướng, cửa sổ và cài đặt.
+    /// </summary>
+    /// <param name="navigationService">Dịch vụ điều hướng để điều hướng giữa các trang.</param>
+    /// <param name="windowService">Dịch vụ cửa sổ để thiết lập các thuộc tính của cửa sổ ứng dụng.</param>
+    /// <param name="localsetting">Dịch vụ cài đặt địa phương để lưu trữ các thông tin của khách hàng.</param>
     public Guide3ViewModel(INavigationService navigationService, IWindowService windowService, ILocalSettingsService localsetting)
     {
         _windowService = windowService;
@@ -138,18 +151,21 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
     }
 
 
+    /// <summary>
+    /// Phương thức được gọi khi trang được điều hướng đến, nhận tham số là thông tin khách hàng.
+    /// </summary>
+    /// <param name="parameter">Thông tin khách hàng (CustomerInfo) được truyền vào.</param>
     public async void OnNavigatedTo(object parameter)
     {
-        
         if (parameter is CustomerInfo customerInfo)
         {
             customerId = GetCustomerIdByUsername(customerInfo.username);
             await SaveLocalSettings(customerId);
             _customerInfo = customerInfo;
-            TDEEStat = Math.Round(HealthCalculator.CalculateTDEE(_customerInfo.Weight, _customerInfo.BodyFat, _customerInfo.ActivityLevel),0);
-            BMIStat = Math.Round(HealthCalculator.CalculateBMI(_customerInfo.Weight, _customerInfo.Height),1);
+            TDEEStat = Math.Round(HealthCalculator.CalculateTDEE(_customerInfo.Weight, _customerInfo.BodyFat, _customerInfo.ActivityLevel), 0);
+            BMIStat = Math.Round(HealthCalculator.CalculateBMI(_customerInfo.Weight, _customerInfo.Height), 1);
             _customerInfo.Tdee = (int)TDEEStat;
-            MaintenanceProteins = Math.Round(HealthCalculator.CalculateNutritionGram("proteins","m",30,_tdde), 0);
+            MaintenanceProteins = Math.Round(HealthCalculator.CalculateNutritionGram("proteins", "m", 30, _tdde), 0);
             MaintenanceCarbs = Math.Round(HealthCalculator.CalculateNutritionGram("carbs", "m", 35, _tdde), 0);
             MaintenanceFats = Math.Round(HealthCalculator.CalculateNutritionGram("fats", "m", 35, _tdde), 0);
             BulkingProteins = Math.Round(HealthCalculator.CalculateNutritionGram("proteins", "b", 30, _tdde), 0);
@@ -162,6 +178,19 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Phương thức được gọi khi điều hướng từ trang này.
+    /// </summary>
+    public void OnNavigatedFrom()
+    {
+        // Không thực hiện gì ở đây
+    }
+
+    /// <summary>
+    /// Phương thức nhận mã khách hàng từ tên người dùng.
+    /// </summary>
+    /// <param name="username">Tên người dùng của khách hàng.</param>
+    /// <returns>Trả về mã khách hàng nếu tìm thấy, -1 nếu không tìm thấy khách hàng.</returns>
     private int GetCustomerIdByUsername(string username)
     {
         var client = new HttpClient();
@@ -175,10 +204,16 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         }
         else
         {
-            return -1; // Customer not found
+            return -1;
         }
     }
 
+    /// <summary>
+    /// Thêm thông tin sức khỏe của khách hàng vào cơ sở dữ liệu.
+    /// </summary>
+    /// <param name="customerInfo">Thông tin khách hàng.</param>
+    /// <param name="customerId">Mã khách hàng.</param>
+    /// <returns>Trả về true nếu thành công, false nếu thất bại.</returns>
     private bool InsertCustomerHealth(CustomerInfo customerInfo, int customerId)
     {
         var client = new HttpClient();
@@ -189,23 +224,19 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
             customerHealth.customer_id = customerId;
             customerHealth.gender = customerInfo.sex;
             customerHealth.height = customerInfo.Height;
-            customerHealth.weight = customerInfo.Weight;  // Ensure this is an integer
+            customerHealth.weight = customerInfo.Weight;  
             customerHealth.age = customerInfo.Age;
             customerHealth.activity_level = customerInfo.ActivityLevel;
             customerHealth.body_fat = (decimal)customerInfo.BodyFat;
             customerHealth.tdee = (decimal)customerInfo.Tdee;
-            
 
-            // Serialize the object to JSON
             var json = JsonConvert.SerializeObject(customerHealth);
             Debug.WriteLine($"Request JSON: {json}");
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            // Send the request and wait for the response
             var response = client.PostAsync("api/Customerhealth/create", content).Result;
 
-            // Read the error content if the request failed
             if (!response.IsSuccessStatusCode)
             {
                 var errorContent = response.Content.ReadAsStringAsync().Result;
@@ -221,15 +252,16 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
             return false;
         }
     }
-     
 
+    /// <summary>
+    /// Thêm thông tin sức khỏe của khách hàng bằng tên người dùng.
+    /// </summary>
+    /// <param name="customerInfo">Thông tin khách hàng.</param>
+    /// <returns>Trả về true nếu thành công, false nếu thất bại.</returns>
     public bool AddCustomerHealthByUsername(CustomerInfo customerInfo)
     {
-        
-    
         if (customerId != -1)
         {
-            
             return InsertCustomerHealth(customerInfo, customerId);
         }
         else
@@ -238,22 +270,21 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
-    // Chuyển đổi hàm này thành Task thay vì void
+    /// <summary>
+    /// Lưu mã khách hàng vào cài đặt địa phương.
+    /// </summary>
+    /// <param name="customerId">Mã khách hàng.</param>
+    /// <returns>Trả về một tác vụ bất đồng bộ khi lưu xong.</returns>
     private async Task SaveLocalSettings(int customerId)
     {
-        await _localsetting.SaveSettingAsync("customer_id", customerId.ToString()); 
-        // Đọc lại giá trị để kiểm tra
+        await _localsetting.SaveSettingAsync("customer_id", customerId.ToString());
         var testValue = await _localsetting.ReadSettingAsync<string>("customer_id");
         Console.WriteLine("Giá trị vừa lưu là: " + testValue);
-       
     }
 
-
-    public void OnNavigatedFrom()
-    {
-        
-    }
-
+    /// <summary>
+    /// Phương thức điều hướng về trang trước (Guide2ViewModel).
+    /// </summary>
     private void NavigateBack()
     {
         var pageKey = typeof(Guide2ViewModel).FullName;
@@ -263,6 +294,9 @@ public class Guide3ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Phương thức điều hướng tới trang tiếp theo (HomeViewModel).
+    /// </summary>
     private void NavigateNext()
     {
         _ = AddCustomerHealthByUsername(_customerInfo);

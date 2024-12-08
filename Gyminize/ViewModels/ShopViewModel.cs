@@ -18,6 +18,7 @@ using System.Diagnostics;
 
 namespace Gyminize.ViewModels;
 
+/// \brief ViewModel cho trang cửa hàng.
 public partial class ShopViewModel : ObservableRecipient
 {
     private const int ItemsPerPage = 4;
@@ -83,7 +84,6 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
-    //public int TotalPages => (int)Math.Ceiling((double)ProductLibraryItems.Count / ItemsPerPage);
     private int _totalPages;
     public int TotalPages
     {
@@ -125,8 +125,14 @@ public partial class ShopViewModel : ObservableRecipient
         get => _cartItemCount;
         set => SetProperty(ref _cartItemCount, value);
     }
-    
 
+    /// <summary>
+    /// ViewModel cho trang cửa hàng, quản lý các sản phẩm, giỏ hàng và các thao tác liên quan.
+    /// </summary>
+    /// <remarks>
+    /// Lớp này thực hiện các chức năng như tìm kiếm sản phẩm, phân trang, lọc sản phẩm theo danh mục và sắp xếp theo giá hoặc thời gian.
+    /// Nó cũng quản lý việc thêm sản phẩm vào giỏ hàng và hiển thị thông tin đơn hàng.
+    /// </remarks>
     public ShopViewModel(INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient, ILocalSettingsService localSettingsService)
     {
         _localSettingsService = localSettingsService;
@@ -144,6 +150,9 @@ public partial class ShopViewModel : ObservableRecipient
         LoadOrderDetailData();
     }
 
+    /// <summary>
+    /// Cập nhật các sản phẩm đã được lọc và phân trang.
+    /// </summary>
     private void UpdateFilteredProducts()
     {
         FilteredProductLibraryItems.Clear();
@@ -154,7 +163,9 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
-    
+    /// <summary>
+    /// Thực hiện tìm kiếm sản phẩm.
+    /// </summary>
     public void SearchProduct()
     {
         UpdateFilteredAndSortedProducts();
@@ -163,6 +174,9 @@ public partial class ShopViewModel : ObservableRecipient
         CanGoNext = true;
     }
 
+    /// <summary>
+    /// Cập nhật các sản phẩm đã được lọc, phân trang và sắp xếp.
+    /// </summary>
     private void UpdateFilteredAndSortedProducts()
     {
         IEnumerable<Product> filteredProducts = _allProducts;
@@ -227,6 +241,9 @@ public partial class ShopViewModel : ObservableRecipient
         CanGoBack = CurrentPage > 1;
     }
 
+    /// <summary>
+    /// Điều hướng đến trang tiếp theo nếu có thể.
+    /// </summary>
     private void NextPage()
     {
         if (CanGoNext)
@@ -237,7 +254,9 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
-
+    /// <summary>
+    /// Điều hướng đến trang trước đó nếu có thể.
+    /// </summary>
     private void PreviousPage()
     {
         if (CanGoBack)
@@ -248,12 +267,20 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Lấy ID của khách hàng từ cài đặt địa phương.
+    /// </summary>
+    /// <returns>Task đại diện cho thao tác bất đồng bộ.</returns>
     public async Task GetCustomerID()
     {
         var customer_id = await _localSettingsService.ReadSettingAsync<string>("customer_id");
         CustomerId = int.Parse(customer_id);
     }
 
+    /// <summary>
+    /// Tạo hoặc lấy ID đơn hàng của khách hàng. Nếu không có đơn hàng nào, tạo một đơn hàng mới.
+    /// </summary>
+    /// <returns>Task đại diện cho thao tác bất đồng bộ.</returns>
     public async void CreateOrGetOrderID()
     {
         await GetCustomerID();
@@ -276,13 +303,17 @@ public partial class ShopViewModel : ObservableRecipient
                 Orderdetail = new List<Orderdetail>()
             };
             var result = _apiServicesClient.Post<Orders>("api/Order/add", order);
-            if(result == null)
+            if (result == null)
             {
                 await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể tạo đơn hàng mới");
             }
         }
     }
 
+    /// <summary>
+    /// Tải thư viện sản phẩm từ API và cập nhật danh sách sản phẩm.
+    /// </summary>
+    /// <returns>Task đại diện cho thao tác bất đồng bộ.</returns>
     public async Task LoadProductLibraryAsync()
     {
         try
@@ -306,7 +337,9 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
-
+    /// <summary>
+    /// Điều hướng đến trang giỏ hàng.
+    /// </summary>
     public void SelectCart()
     {
         var pageKey = typeof(CartViewModel).FullName;
@@ -316,6 +349,11 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Chọn một sản phẩm và hiển thị hộp thoại sản phẩm với nhà cung cấp.
+    /// </summary>
+    /// <param name="product">Sản phẩm được chọn.</param>
+    /// <returns>Task đại diện cho thao tác bất đồng bộ.</returns>
     public async Task SelectProduct(Product product)
     {
         var result = await _dialogService.ShowProductDialogWithSupplierAsync(product, OrderId);
@@ -330,6 +368,10 @@ public partial class ShopViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Tải dữ liệu chi tiết đơn hàng của khách hàng.
+    /// </summary>
+    /// <returns>Task đại diện cho thao tác bất đồng bộ.</returns>
     public async void LoadOrderDetailData()
     {
         await GetCustomerID();

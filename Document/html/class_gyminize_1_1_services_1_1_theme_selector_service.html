@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -93,6 +92,9 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_services_1_1_theme_selector_service-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.Services.ThemeSelectorService Class Reference</div></div>
 </div><!--header-->
@@ -101,138 +103,51 @@ $(function(){ initResizable(false); });
 Inheritance diagram for Gyminize.Services.ThemeSelectorService:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_gyminize_1_1_services_1_1_theme_selector_service.png" usemap="#Gyminize.Services.ThemeSelectorService_map" alt=""/>
-  <map id="Gyminize.Services.ThemeSelectorService_map" name="Gyminize.Services.ThemeSelectorService_map">
-<area href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html" alt="Gyminize.Contracts.Services.IThemeSelectorService" shape="rect" coords="0,0,310,24"/>
-  </map>
-</div></div>
+  <img src="class_gyminize_1_1_services_1_1_theme_selector_service.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abb0428827b25d29862756bf4792f95c8" id="r_abb0428827b25d29862756bf4792f95c8"><td class="memItemLeft" align="right" valign="top"><a id="abb0428827b25d29862756bf4792f95c8" name="abb0428827b25d29862756bf4792f95c8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ThemeSelectorService</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSettingsService)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ThemeSelectorService</b> (ILocalSettingsService localSettingsService)</td></tr>
 <tr class="separator:abb0428827b25d29862756bf4792f95c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a036a39397368e30a7faa473fb605f9" id="r_a6a036a39397368e30a7faa473fb605f9"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a036a39397368e30a7faa473fb605f9">InitializeAsync</a> ()</td></tr>
+<tr class="memitem:a6a036a39397368e30a7faa473fb605f9" id="r_a6a036a39397368e30a7faa473fb605f9"><td class="memItemLeft" align="right" valign="top"><a id="a6a036a39397368e30a7faa473fb605f9" name="a6a036a39397368e30a7faa473fb605f9"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeAsync</b> ()</td></tr>
 <tr class="separator:a6a036a39397368e30a7faa473fb605f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55eb0567d3fdd894942591cd194caab2" id="r_a55eb0567d3fdd894942591cd194caab2"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55eb0567d3fdd894942591cd194caab2">SetThemeAsync</a> (ElementTheme theme)</td></tr>
+<tr class="memitem:a55eb0567d3fdd894942591cd194caab2" id="r_a55eb0567d3fdd894942591cd194caab2"><td class="memItemLeft" align="right" valign="top"><a id="a55eb0567d3fdd894942591cd194caab2" name="a55eb0567d3fdd894942591cd194caab2"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>SetThemeAsync</b> (ElementTheme theme)</td></tr>
 <tr class="separator:a55eb0567d3fdd894942591cd194caab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d5bd8ea6fcaea22eb7e8a40a3fefb50" id="r_a8d5bd8ea6fcaea22eb7e8a40a3fefb50"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d5bd8ea6fcaea22eb7e8a40a3fefb50">SetRequestedThemeAsync</a> ()</td></tr>
+<tr class="memitem:a8d5bd8ea6fcaea22eb7e8a40a3fefb50" id="r_a8d5bd8ea6fcaea22eb7e8a40a3fefb50"><td class="memItemLeft" align="right" valign="top"><a id="a8d5bd8ea6fcaea22eb7e8a40a3fefb50" name="a8d5bd8ea6fcaea22eb7e8a40a3fefb50"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>SetRequestedThemeAsync</b> ()</td></tr>
 <tr class="separator:a8d5bd8ea6fcaea22eb7e8a40a3fefb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html">Gyminize.Contracts.Services.IThemeSelectorService</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:abfbff3695633cf1dd5debc60cbdb78fd" id="r_abfbff3695633cf1dd5debc60cbdb78fd"><td class="memItemLeft" align="right" valign="top">ElementTheme&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfbff3695633cf1dd5debc60cbdb78fd">Theme</a> = ElementTheme.Default<code> [get, set]</code></td></tr>
+<tr class="memitem:abfbff3695633cf1dd5debc60cbdb78fd" id="r_abfbff3695633cf1dd5debc60cbdb78fd"><td class="memItemLeft" align="right" valign="top"><a id="abfbff3695633cf1dd5debc60cbdb78fd" name="abfbff3695633cf1dd5debc60cbdb78fd"></a>
+ElementTheme&#160;</td><td class="memItemRight" valign="bottom"><b>Theme</b> = ElementTheme.Default<code> [get, set]</code></td></tr>
 <tr class="separator:abfbff3695633cf1dd5debc60cbdb78fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html">Gyminize.Contracts.Services.IThemeSelectorService</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa8e74afd4908f6c7957104a62cc242af" id="r_aa8e74afd4908f6c7957104a62cc242af"><td class="memItemLeft" align="right" valign="top"><a id="aa8e74afd4908f6c7957104a62cc242af" name="aa8e74afd4908f6c7957104a62cc242af"></a>
+async Task&lt; ElementTheme &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LoadThemeFromSettingsAsync</b> ()</td></tr>
+<tr class="separator:aa8e74afd4908f6c7957104a62cc242af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d1a040a69173bb4a719bc5a3aec6f3" id="r_a88d1a040a69173bb4a719bc5a3aec6f3"><td class="memItemLeft" align="right" valign="top"><a id="a88d1a040a69173bb4a719bc5a3aec6f3" name="a88d1a040a69173bb4a719bc5a3aec6f3"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>SaveThemeInSettingsAsync</b> (ElementTheme theme)</td></tr>
+<tr class="separator:a88d1a040a69173bb4a719bc5a3aec6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab15c473e9aeab1ba34f2744579cac8c3" id="r_ab15c473e9aeab1ba34f2744579cac8c3"><td class="memItemLeft" align="right" valign="top"><a id="ab15c473e9aeab1ba34f2744579cac8c3" name="ab15c473e9aeab1ba34f2744579cac8c3"></a>
+readonly ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><b>_localSettingsService</b></td></tr>
+<tr class="separator:ab15c473e9aeab1ba34f2744579cac8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a011f7063272f43a275eaf2bb6dcd24b2" id="r_a011f7063272f43a275eaf2bb6dcd24b2"><td class="memItemLeft" align="right" valign="top"><a id="a011f7063272f43a275eaf2bb6dcd24b2" name="a011f7063272f43a275eaf2bb6dcd24b2"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>SettingsKey</b> = &quot;AppBackgroundRequestedTheme&quot;</td></tr>
+<tr class="separator:a011f7063272f43a275eaf2bb6dcd24b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6a036a39397368e30a7faa473fb605f9" name="a6a036a39397368e30a7faa473fb605f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a036a39397368e30a7faa473fb605f9">&#9670;&#160;</a></span>InitializeAsync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Services.ThemeSelectorService.InitializeAsync </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html">Gyminize.Contracts.Services.IThemeSelectorService</a>.</p>
-
-</div>
-</div>
-<a id="a8d5bd8ea6fcaea22eb7e8a40a3fefb50" name="a8d5bd8ea6fcaea22eb7e8a40a3fefb50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d5bd8ea6fcaea22eb7e8a40a3fefb50">&#9670;&#160;</a></span>SetRequestedThemeAsync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Services.ThemeSelectorService.SetRequestedThemeAsync </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html">Gyminize.Contracts.Services.IThemeSelectorService</a>.</p>
-
-</div>
-</div>
-<a id="a55eb0567d3fdd894942591cd194caab2" name="a55eb0567d3fdd894942591cd194caab2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55eb0567d3fdd894942591cd194caab2">&#9670;&#160;</a></span>SetThemeAsync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Services.ThemeSelectorService.SetThemeAsync </td>
-          <td>(</td>
-          <td class="paramtype">ElementTheme</td>          <td class="paramname"><span class="paramname"><em>theme</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html">Gyminize.Contracts.Services.IThemeSelectorService</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="abfbff3695633cf1dd5debc60cbdb78fd" name="abfbff3695633cf1dd5debc60cbdb78fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfbff3695633cf1dd5debc60cbdb78fd">&#9670;&#160;</a></span>Theme</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ElementTheme Gyminize.Services.ThemeSelectorService.Theme = ElementTheme.Default</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html">Gyminize.Contracts.Services.IThemeSelectorService</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/Services/<b>ThemeSelectorService.cs</b></li>
 </ul>

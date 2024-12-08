@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +94,8 @@ $(function(){ initResizable(false); });
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_view_models_1_1_diary_view_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.ViewModels.DiaryViewModel Class Reference</div></div>
 </div><!--header-->
@@ -114,7 +115,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1bbcc1508e24ee74bb92912c4830e35" id="r_ad1bbcc1508e24ee74bb92912c4830e35"><td class="memItemLeft" align="right" valign="top"><a id="ad1bbcc1508e24ee74bb92912c4830e35" name="ad1bbcc1508e24ee74bb92912c4830e35"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DiaryViewModel</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSettingsService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client.html">IApiServicesClient</a> apiServicesClient, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_date_time_provider.html">IDateTimeProvider</a> dateTimeProvider, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service.html">IDialogService</a> dialogService)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DiaryViewModel</b> (ILocalSettingsService localSettingsService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider, IDialogService dialogService)</td></tr>
 <tr class="separator:ad1bbcc1508e24ee74bb92912c4830e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5677c73619c53a01f28586bb2d0af848" id="r_a5677c73619c53a01f28586bb2d0af848"><td class="memItemLeft" align="right" valign="top"><a id="a5677c73619c53a01f28586bb2d0af848" name="a5677c73619c53a01f28586bb2d0af848"></a>
 async void&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeAsync</b> ()</td></tr>
@@ -147,7 +148,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>_exerciseStatus</b></t
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a805cf052d95ed8fbbbdce02f7285d5d9" id="r_a805cf052d95ed8fbbbdce02f7285d5d9"><td class="memItemLeft" align="right" valign="top"><a id="a805cf052d95ed8fbbbdce02f7285d5d9" name="a805cf052d95ed8fbbbdce02f7285d5d9"></a>
-List&lt; <a class="el" href="class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status.html">DayStatus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DayStatuses</b> = new List&lt;<a class="el" href="class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status.html">DayStatus</a>&gt;()<code> [get]</code></td></tr>
+List&lt; <a class="el" href="class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status.html">DayStatus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DayStatuses</b> = new List&lt;<a class="el" href="class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status.html">DayStatus</a>&gt;()<code> [get, private set]</code></td></tr>
 <tr class="separator:a805cf052d95ed8fbbbdce02f7285d5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac79c7dffd1a13f26f0ab31d77ea81a4e" id="r_ac79c7dffd1a13f26f0ab31d77ea81a4e"><td class="memItemLeft" align="right" valign="top"><a id="ac79c7dffd1a13f26f0ab31d77ea81a4e" name="ac79c7dffd1a13f26f0ab31d77ea81a4e"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>SelectedDayText</b><code> [get, set]</code></td></tr>
@@ -167,6 +168,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>BurnedCalories</b><cod
 <tr class="memitem:ab9d67dc3bf8c7d55fa1b676670b43648" id="r_ab9d67dc3bf8c7d55fa1b676670b43648"><td class="memItemLeft" align="right" valign="top"><a id="ab9d67dc3bf8c7d55fa1b676670b43648" name="ab9d67dc3bf8c7d55fa1b676670b43648"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>TotalCalories</b><code> [get, set]</code></td></tr>
 <tr class="separator:ab9d67dc3bf8c7d55fa1b676670b43648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb79d90b0d9e93533cdfbd5914321f13" id="r_abb79d90b0d9e93533cdfbd5914321f13"><td class="memItemLeft" align="right" valign="top"><a id="abb79d90b0d9e93533cdfbd5914321f13" name="abb79d90b0d9e93533cdfbd5914321f13"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsLunchEmpty</b><code> [get, set]</code></td></tr>
+<tr class="separator:abb79d90b0d9e93533cdfbd5914321f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa70a334129a1941a17cbb0409a13bdff" id="r_aa70a334129a1941a17cbb0409a13bdff"><td class="memItemLeft" align="right" valign="top"><a id="aa70a334129a1941a17cbb0409a13bdff" name="aa70a334129a1941a17cbb0409a13bdff"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsBreakfastEmpty</b><code> [get, set]</code></td></tr>
+<tr class="separator:aa70a334129a1941a17cbb0409a13bdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0afe891b343d9eb055496013d73703d4" id="r_a0afe891b343d9eb055496013d73703d4"><td class="memItemLeft" align="right" valign="top"><a id="a0afe891b343d9eb055496013d73703d4" name="a0afe891b343d9eb055496013d73703d4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsSnackEmpty</b><code> [get, set]</code></td></tr>
+<tr class="separator:a0afe891b343d9eb055496013d73703d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8002fe9f2e2e540fbf7b67864f07c779" id="r_a8002fe9f2e2e540fbf7b67864f07c779"><td class="memItemLeft" align="right" valign="top"><a id="a8002fe9f2e2e540fbf7b67864f07c779" name="a8002fe9f2e2e540fbf7b67864f07c779"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsDinnerEmpty</b><code> [get, set]</code></td></tr>
+<tr class="separator:a8002fe9f2e2e540fbf7b67864f07c779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeefa716e344c039934354660d5299e52" id="r_aeefa716e344c039934354660d5299e52"><td class="memItemLeft" align="right" valign="top"><a id="aeefa716e344c039934354660d5299e52" name="aeefa716e344c039934354660d5299e52"></a>
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>SelectedDatesChangedCommand</b><code> [get]</code></td></tr>
 <tr class="separator:aeefa716e344c039934354660d5299e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,17 +187,71 @@ ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>SelectedDatesChan
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>DecorateDayItemCommand</b><code> [get]</code></td></tr>
 <tr class="separator:a9e02fb310fc6e348f1affe294d912777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a596064151c5f5dfd2f36e76acf0ace94" id="r_a596064151c5f5dfd2f36e76acf0ace94"><td class="memItemLeft" align="right" valign="top"><a id="a596064151c5f5dfd2f36e76acf0ace94" name="a596064151c5f5dfd2f36e76acf0ace94"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>BreakfastItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>BreakfastItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a596064151c5f5dfd2f36e76acf0ace94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae43b844c4fd03889365a16b038937fa8" id="r_ae43b844c4fd03889365a16b038937fa8"><td class="memItemLeft" align="right" valign="top"><a id="ae43b844c4fd03889365a16b038937fa8" name="ae43b844c4fd03889365a16b038937fa8"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LunchItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LunchItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:ae43b844c4fd03889365a16b038937fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a016526a204307e6aa46bc75fdb28611f" id="r_a016526a204307e6aa46bc75fdb28611f"><td class="memItemLeft" align="right" valign="top"><a id="a016526a204307e6aa46bc75fdb28611f" name="a016526a204307e6aa46bc75fdb28611f"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DinnerItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DinnerItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a016526a204307e6aa46bc75fdb28611f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c04fec9cddef14906797d1b5e5e6325" id="r_a9c04fec9cddef14906797d1b5e5e6325"><td class="memItemLeft" align="right" valign="top"><a id="a9c04fec9cddef14906797d1b5e5e6325" name="a9c04fec9cddef14906797d1b5e5e6325"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SnackItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SnackItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a9c04fec9cddef14906797d1b5e5e6325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aea350104824e8dd751a28da44388e7f3" id="r_aea350104824e8dd751a28da44388e7f3"><td class="memItemLeft" align="right" valign="top"><a id="aea350104824e8dd751a28da44388e7f3" name="aea350104824e8dd751a28da44388e7f3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AddIconToDay</b> (CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)</td></tr>
+<tr class="separator:aea350104824e8dd751a28da44388e7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a90620cbb0021461ef9e1dc70734d2588" id="r_a90620cbb0021461ef9e1dc70734d2588"><td class="memItemLeft" align="right" valign="top"><a id="a90620cbb0021461ef9e1dc70734d2588" name="a90620cbb0021461ef9e1dc70734d2588"></a>
+readonly ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><b>_localSettingsService</b></td></tr>
+<tr class="separator:a90620cbb0021461ef9e1dc70734d2588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ba056b57de8c26ddcecdfb3664919d" id="r_aa2ba056b57de8c26ddcecdfb3664919d"><td class="memItemLeft" align="right" valign="top"><a id="aa2ba056b57de8c26ddcecdfb3664919d" name="aa2ba056b57de8c26ddcecdfb3664919d"></a>
+readonly IDateTimeProvider&#160;</td><td class="memItemRight" valign="bottom"><b>_dateTimeProvider</b></td></tr>
+<tr class="separator:aa2ba056b57de8c26ddcecdfb3664919d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51368ed95f6adf42ec4ac293c7e98f7" id="r_ac51368ed95f6adf42ec4ac293c7e98f7"><td class="memItemLeft" align="right" valign="top"><a id="ac51368ed95f6adf42ec4ac293c7e98f7" name="ac51368ed95f6adf42ec4ac293c7e98f7"></a>
+readonly IApiServicesClient&#160;</td><td class="memItemRight" valign="bottom"><b>_apiServicesClient</b></td></tr>
+<tr class="separator:ac51368ed95f6adf42ec4ac293c7e98f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadb19e27d60aec5ed598903aef479a29" id="r_aadb19e27d60aec5ed598903aef479a29"><td class="memItemLeft" align="right" valign="top"><a id="aadb19e27d60aec5ed598903aef479a29" name="aadb19e27d60aec5ed598903aef479a29"></a>
+readonly IDialogService&#160;</td><td class="memItemRight" valign="bottom"><b>_dialogService</b></td></tr>
+<tr class="separator:aadb19e27d60aec5ed598903aef479a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34688f1d979139805d4025e26a5b4251" id="r_a34688f1d979139805d4025e26a5b4251"><td class="memItemLeft" align="right" valign="top"><a id="a34688f1d979139805d4025e26a5b4251" name="a34688f1d979139805d4025e26a5b4251"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_customer_id</b></td></tr>
+<tr class="separator:a34688f1d979139805d4025e26a5b4251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a012f24a5d35c787a24a999ab461ed22d" id="r_a012f24a5d35c787a24a999ab461ed22d"><td class="memItemLeft" align="right" valign="top"><a id="a012f24a5d35c787a24a999ab461ed22d" name="a012f24a5d35c787a24a999ab461ed22d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_weightText</b></td></tr>
+<tr class="separator:a012f24a5d35c787a24a999ab461ed22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae1466f31a7ab574e0abbaed2f0a991" id="r_a5ae1466f31a7ab574e0abbaed2f0a991"><td class="memItemLeft" align="right" valign="top"><a id="a5ae1466f31a7ab574e0abbaed2f0a991" name="a5ae1466f31a7ab574e0abbaed2f0a991"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_selectedDayText</b></td></tr>
+<tr class="separator:a5ae1466f31a7ab574e0abbaed2f0a991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef64d588e7bc5c27341deae966dc610" id="r_a2ef64d588e7bc5c27341deae966dc610"><td class="memItemLeft" align="right" valign="top"><a id="a2ef64d588e7bc5c27341deae966dc610" name="a2ef64d588e7bc5c27341deae966dc610"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_planNameText</b></td></tr>
+<tr class="separator:a2ef64d588e7bc5c27341deae966dc610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc180f205a7acd40bd9ea0d0bdc380a4" id="r_abc180f205a7acd40bd9ea0d0bdc380a4"><td class="memItemLeft" align="right" valign="top"><a id="abc180f205a7acd40bd9ea0d0bdc380a4" name="abc180f205a7acd40bd9ea0d0bdc380a4"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_typeWorkoutText</b></td></tr>
+<tr class="separator:abc180f205a7acd40bd9ea0d0bdc380a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad260774553a96ef095e22905f80f786" id="r_aad260774553a96ef095e22905f80f786"><td class="memItemLeft" align="right" valign="top"><a id="aad260774553a96ef095e22905f80f786" name="aad260774553a96ef095e22905f80f786"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_burnedCalories</b></td></tr>
+<tr class="separator:aad260774553a96ef095e22905f80f786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a539c5c6b19f2eae9ea81bafc3788b931" id="r_a539c5c6b19f2eae9ea81bafc3788b931"><td class="memItemLeft" align="right" valign="top"><a id="a539c5c6b19f2eae9ea81bafc3788b931" name="a539c5c6b19f2eae9ea81bafc3788b931"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_totalCalories</b></td></tr>
+<tr class="separator:a539c5c6b19f2eae9ea81bafc3788b931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60c4de1d4911db92927ca2523682b0f5" id="r_a60c4de1d4911db92927ca2523682b0f5"><td class="memItemLeft" align="right" valign="top"><a id="a60c4de1d4911db92927ca2523682b0f5" name="a60c4de1d4911db92927ca2523682b0f5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isLunchEmpty</b></td></tr>
+<tr class="separator:a60c4de1d4911db92927ca2523682b0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83dab9efb4bd223d3b5f294d8e7f8389" id="r_a83dab9efb4bd223d3b5f294d8e7f8389"><td class="memItemLeft" align="right" valign="top"><a id="a83dab9efb4bd223d3b5f294d8e7f8389" name="a83dab9efb4bd223d3b5f294d8e7f8389"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBreakfastEmpty</b></td></tr>
+<tr class="separator:a83dab9efb4bd223d3b5f294d8e7f8389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac02956fc466d7a0c351e4f112efaa311" id="r_ac02956fc466d7a0c351e4f112efaa311"><td class="memItemLeft" align="right" valign="top"><a id="ac02956fc466d7a0c351e4f112efaa311" name="ac02956fc466d7a0c351e4f112efaa311"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isSnackEmpty</b></td></tr>
+<tr class="separator:ac02956fc466d7a0c351e4f112efaa311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53894edccc31736402ef4533e1ccc4a2" id="r_a53894edccc31736402ef4533e1ccc4a2"><td class="memItemLeft" align="right" valign="top"><a id="a53894edccc31736402ef4533e1ccc4a2" name="a53894edccc31736402ef4533e1ccc4a2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isDinnerEmpty</b></td></tr>
+<tr class="separator:a53894edccc31736402ef4533e1ccc4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/ViewModels/<b>DiaryViewModel.cs</b></li>

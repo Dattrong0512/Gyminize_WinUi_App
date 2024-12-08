@@ -1,9 +1,19 @@
 var searchData=
 [
-  ['food_0',['Food',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_food.html',1,'Gyminize_API::Data::Model']]],
-  ['foodcontroller_1',['Foodcontroller',['../class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller.html',1,'Gyminize_API::Controllers']]],
-  ['fooddetail_2',['Fooddetail',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail.html',1,'Gyminize_API::Data::Model']]],
-  ['fooddetailrepository_3',['FooddetailRepository',['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository.html',1,'Gyminize_API::Data::Repositories']]],
-  ['foodetailcontroller_4',['FoodetailController',['../class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller.html',1,'Gyminize_API::Controllers']]],
-  ['foodrepository_5',['FoodRepository',['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_food_repository.html',1,'Gyminize_API::Data::Repositories']]]
+  ['dailydiary_0',['Dailydiary',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary.html',1,'Gyminize_API::Data::Model']]],
+  ['dailydiarycontroller_1',['DailydiaryController',['../class_gyminize___a_p_i_1_1_controllers_1_1_dailydiary_controller.html',1,'Gyminize_API.Controllers.DailydiaryController'],['../class_gyminize___a_p_i_1_1_controllers_1_1_dailydiary_controller.html#a49c98040092b0cf14dec60b193d5e643',1,'Gyminize_API.Controllers.DailydiaryController.DailydiaryController()']]],
+  ['dailydiaryrepository_2',['DailydiaryRepository',['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository.html',1,'Gyminize_API.Data.Repositories.DailydiaryRepository'],['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository.html#ac0981b03e6542b879f89cf9a5942ae56',1,'Gyminize_API.Data.Repositories.DailydiaryRepository.DailydiaryRepository()']]],
+  ['datetimeprovider_3',['DateTimeProvider',['../class_gyminize_1_1_services_1_1_date_time_provider.html',1,'Gyminize::Services']]],
+  ['daystatus_4',['DayStatus',['../class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status.html',1,'Gyminize::ViewModels::DiaryViewModel']]],
+  ['decrement_5',['Decrement',['../class_gyminize_1_1_view_models_1_1_cart_view_model.html#a85621de2bccd51a7b07272a67093abe3',1,'Gyminize::ViewModels::CartViewModel']]],
+  ['delete_6',['Delete',['../class_api_services_client.html#a4e93dbe90d718b2fb884f959c98ebcbe',1,'ApiServicesClient']]],
+  ['deletefooddetail_7',['DeleteFooddetail',['../class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller.html#a5ac3cfe27e0e5e947cdd13666755df02',1,'Gyminize_API::Controllers::FoodetailController']]],
+  ['deletefoodfromfooddetail_8',['DeleteFoodFromFooddetail',['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository.html#a7d2f01736815c633cedccd16ac448106',1,'Gyminize_API::Data::Repositories::FooddetailRepository']]],
+  ['deletefoodfrommealasync_9',['DeleteFoodFromMealAsync',['../class_gyminize_1_1_view_models_1_1_nutritions_view_model.html#a8c22bdfdb291542d5bb24e5e1caf589b',1,'Gyminize::ViewModels::NutritionsViewModel']]],
+  ['deletefromorderdetail_10',['DeleteFromOrderDetail',['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_order_detail_repository.html#aad45f01a547882b68171b4394fba3aee',1,'Gyminize_API::Data::Repositories::OrderDetailRepository']]],
+  ['deleteorderdetail_11',['DeleteOrderDetail',['../class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller.html#a2593330451441bc0846043bab404595e',1,'Gyminize_API::Controllers::OrderDetailController']]],
+  ['deleteorderdetailasync_12',['DeleteOrderDetailAsync',['../class_gyminize_1_1_view_models_1_1_cart_view_model.html#ab35b67052e62feeab0c07865a653013d',1,'Gyminize::ViewModels::CartViewModel']]],
+  ['dialogservice_13',['DialogService',['../class_dialog_service.html',1,'']]],
+  ['diaryviewmodel_14',['DiaryViewModel',['../class_gyminize_1_1_view_models_1_1_diary_view_model.html',1,'Gyminize::ViewModels']]],
+  ['diaryviewmodeltest_15',['DiaryViewModelTest',['../class_gyminize_1_1_tests_1_1_m_s_test_1_1_view_model_1_1_diary_view_model_test.html',1,'Gyminize::Tests::MSTest::ViewModel']]]
 ];

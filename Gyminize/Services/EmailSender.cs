@@ -8,14 +8,22 @@ using System.Net.Mail;
 namespace Gyminize.Services;
 
 
-
+/// <summary>
+/// Lớp này chịu trách nhiệm gửi email thông qua dịch vụ SMTP.
+/// </summary>
 public class EmailSender : IEmailSender
 {
+    /// <summary>
+    /// Gửi email bất đồng bộ đến địa chỉ email chỉ định với tiêu đề và nội dung.
+    /// </summary>
+    /// <param name="email">Địa chỉ email người nhận.</param>
+    /// <param name="subject">Tiêu đề của email.</param>
+    /// <param name="message">Nội dung của email, có thể là HTML.</param>
+    /// <returns>Trả về một tác vụ bất đồng bộ.</returns>
     public async Task SendEmailAsync(string email, string subject, string message)
     {
         try
         {
-            // Cấu hình SMTP Client
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587, // TLS
@@ -24,23 +32,20 @@ public class EmailSender : IEmailSender
                 
             };
 
-            // Cấu hình MailMessage
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("gyminizeapp@gmail.com"), // Email gửi
+                From = new MailAddress("gyminizeapp@gmail.com"),
                 Subject = subject,
                 Body = message,
-                IsBodyHtml = true // Nếu nội dung email là HTML
+                IsBodyHtml = true 
             };
 
-            mailMessage.To.Add(email); // Email nhận
+            mailMessage.To.Add(email); 
 
-            // Gửi email
             await smtpClient.SendMailAsync(mailMessage);
         }
         catch (Exception ex)
         {
-            // Xử lý lỗi
             Console.WriteLine($"Error sending email: {ex.Message}");
         }
     }

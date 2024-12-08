@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+Services.\+Local\+Settings\+Service Class Reference}
 \hypertarget{class_gyminize_1_1_services_1_1_local_settings_service}{}\label{class_gyminize_1_1_services_1_1_local_settings_service}\index{Gyminize.Services.LocalSettingsService@{Gyminize.Services.LocalSettingsService}}
+
+
+Lớp này quản lý cài đặt cục bộ của ứng dụng, cho phép lưu trữ và đọc cài đặt từ các tệp cục bộ hoặc Local\+Settings khi ứng dụng chạy dưới MSIX.  
+
+
 Inheritance diagram for Gyminize.\+Services.\+Local\+Settings\+Service\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,14 +14,74 @@ Inheritance diagram for Gyminize.\+Services.\+Local\+Settings\+Service\+:\begin{
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a9d2edb94c0c9304f96b4028ad5a518a6}\label{class_gyminize_1_1_services_1_1_local_settings_service_a9d2edb94c0c9304f96b4028ad5a518a6} 
-{\bfseries Local\+Settings\+Service} (IFile\+Service file\+Service, IOptions$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_local_settings_options}{Local\+Settings\+Options}} $>$ options)
-\item 
+\mbox{\hyperlink{class_gyminize_1_1_services_1_1_local_settings_service_a9d2edb94c0c9304f96b4028ad5a518a6}{Local\+Settings\+Service}} (IFile\+Service file\+Service, IOptions$<$ Local\+Settings\+Options $>$ options)
+\begin{DoxyCompactList}\small\item\em Khởi tạo dịch vụ cài đặt cục bộ. \end{DoxyCompactList}\item 
 async Task$<$ T?$>$ \mbox{\hyperlink{class_gyminize_1_1_services_1_1_local_settings_service_a7be87b977edc98ed456e3838d05172b4}{Read\+Setting\+Async$<$ T $>$}} (string key)
-\item 
+\begin{DoxyCompactList}\small\item\em Đọc cài đặt từ Local\+Settings hoặc tệp cài đặt cục bộ. \end{DoxyCompactList}\item 
 async Task \mbox{\hyperlink{class_gyminize_1_1_services_1_1_local_settings_service_ad6d374a959031c07d59c077cd2882637}{Save\+Setting\+Async$<$ T $>$}} (string key, T value)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{Gyminize.\+Contracts.\+Services.\+ILocal\+Settings\+Service}}}
+\begin{DoxyCompactList}\small\item\em Lưu cài đặt vào Local\+Settings hoặc tệp cài đặt cục bộ. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_af3026fd2044ac16273098cf021b3affb}\label{class_gyminize_1_1_services_1_1_local_settings_service_af3026fd2044ac16273098cf021b3affb} 
+async Task {\bfseries Initialize\+Async} ()
+\begin{DoxyCompactList}\small\item\em Khởi tạo dịch vụ cài đặt cục bộ, đọc cài đặt từ tệp nếu chưa được khởi tạo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a8cc9181ff179ffc863f9e8d6bae862d0}\label{class_gyminize_1_1_services_1_1_local_settings_service_a8cc9181ff179ffc863f9e8d6bae862d0} 
+readonly IFile\+Service {\bfseries \+\_\+file\+Service}
+\begin{DoxyCompactList}\small\item\em Dịch vụ xử lý tệp. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a6681407747b1337a38a7949db23c8c82}\label{class_gyminize_1_1_services_1_1_local_settings_service_a6681407747b1337a38a7949db23c8c82} 
+readonly Local\+Settings\+Options {\bfseries \+\_\+options}
+\begin{DoxyCompactList}\small\item\em Các tùy chọn cấu hình cho cài đặt cục bộ. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a25a8ceeba3d4f9f24c575ed0d47d0131}\label{class_gyminize_1_1_services_1_1_local_settings_service_a25a8ceeba3d4f9f24c575ed0d47d0131} 
+readonly string {\bfseries \+\_\+local\+Application\+Data} = Environment.\+Get\+Folder\+Path(Environment.\+Special\+Folder.\+Local\+Application\+Data)
+\begin{DoxyCompactList}\small\item\em Đường dẫn thư mục Local\+Application\+Data. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a2dd9805a0a5058d959a273f125a2ddaf}\label{class_gyminize_1_1_services_1_1_local_settings_service_a2dd9805a0a5058d959a273f125a2ddaf} 
+readonly string {\bfseries \+\_\+application\+Data\+Folder}
+\begin{DoxyCompactList}\small\item\em Đường dẫn thư mục dữ liệu ứng dụng. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a0ef186cb338f4aacda1152ee46b588b4}\label{class_gyminize_1_1_services_1_1_local_settings_service_a0ef186cb338f4aacda1152ee46b588b4} 
+readonly string {\bfseries \+\_\+localsettings\+File}
+\begin{DoxyCompactList}\small\item\em Đường dẫn tệp cài đặt cục bộ. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a828066ef781c485e5cd958029b036d9b}\label{class_gyminize_1_1_services_1_1_local_settings_service_a828066ef781c485e5cd958029b036d9b} 
+IDictionary$<$ string, object $>$ {\bfseries \+\_\+settings}
+\begin{DoxyCompactList}\small\item\em Từ điển chứa các cài đặt. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_aeb2a94a9cee8cf13dfd7a9de9d498650}\label{class_gyminize_1_1_services_1_1_local_settings_service_aeb2a94a9cee8cf13dfd7a9de9d498650} 
+bool {\bfseries \+\_\+is\+Initialized}
+\begin{DoxyCompactList}\small\item\em Cờ xác định xem dịch vụ đã được khởi tạo hay chưa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a6b1db86aa770bf26b202f9f5005aa874}\label{class_gyminize_1_1_services_1_1_local_settings_service_a6b1db86aa770bf26b202f9f5005aa874} 
+const string {\bfseries \+\_\+default\+Application\+Data\+Folder} = "{}Gyminize/Application\+Data"{}
+\begin{DoxyCompactList}\small\item\em Tên thư mục mặc định cho dữ liệu ứng dụng. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_af373b52dba05ef85ca97f0e3859d9a12}\label{class_gyminize_1_1_services_1_1_local_settings_service_af373b52dba05ef85ca97f0e3859d9a12} 
+const string {\bfseries \+\_\+default\+Local\+Settings\+File} = "{}Local\+Settings.\+json"{}
+\begin{DoxyCompactList}\small\item\em Tên tệp cài đặt mặc định. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lớp này quản lý cài đặt cục bộ của ứng dụng, cho phép lưu trữ và đọc cài đặt từ các tệp cục bộ hoặc Local\+Settings khi ứng dụng chạy dưới MSIX. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_a9d2edb94c0c9304f96b4028ad5a518a6}\index{Gyminize.Services.LocalSettingsService@{Gyminize.Services.LocalSettingsService}!LocalSettingsService@{LocalSettingsService}}
+\index{LocalSettingsService@{LocalSettingsService}!Gyminize.Services.LocalSettingsService@{Gyminize.Services.LocalSettingsService}}
+\doxysubsubsection{\texorpdfstring{LocalSettingsService()}{LocalSettingsService()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_services_1_1_local_settings_service_a9d2edb94c0c9304f96b4028ad5a518a6} 
+Gyminize.\+Services.\+Local\+Settings\+Service.\+Local\+Settings\+Service (\begin{DoxyParamCaption}\item[{IFile\+Service}]{file\+Service}{, }\item[{IOptions$<$ Local\+Settings\+Options $>$}]{options}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo dịch vụ cài đặt cục bộ. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Service} & Dịch vụ tệp để đọc và lưu tệp cài đặt.\\
+\hline
+{\em options} & Cấu hình tùy chọn cài đặt cục bộ từ tệp cấu hình.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -28,8 +93,21 @@ async Task$<$ T?$>$ Gyminize.\+Services.\+Local\+Settings\+Service.\+Read\+Setti
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{Gyminize.\+Contracts.\+Services.\+ILocal\+Settings\+Service}}.
+Đọc cài đặt từ Local\+Settings hoặc tệp cài đặt cục bộ. 
 
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Loại dữ liệu cài đặt cần đọc.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Tên khóa của cài đặt cần đọc.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về cài đặt đã được giải mã từ JSON, hoặc null nếu không tìm thấy.
+\end{DoxyReturn}
 \Hypertarget{class_gyminize_1_1_services_1_1_local_settings_service_ad6d374a959031c07d59c077cd2882637}\index{Gyminize.Services.LocalSettingsService@{Gyminize.Services.LocalSettingsService}!SaveSettingAsync$<$ T $>$@{SaveSettingAsync$<$ T $>$}}
 \index{SaveSettingAsync$<$ T $>$@{SaveSettingAsync$<$ T $>$}!Gyminize.Services.LocalSettingsService@{Gyminize.Services.LocalSettingsService}}
 \doxysubsubsection{\texorpdfstring{SaveSettingAsync$<$ T $>$()}{SaveSettingAsync< T >()}}
@@ -38,8 +116,23 @@ async Task Gyminize.\+Services.\+Local\+Settings\+Service.\+Save\+Setting\+Async
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{Gyminize.\+Contracts.\+Services.\+ILocal\+Settings\+Service}}.
+Lưu cài đặt vào Local\+Settings hoặc tệp cài đặt cục bộ. 
 
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Loại dữ liệu cài đặt cần lưu.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Tên khóa cài đặt cần lưu.\\
+\hline
+{\em value} & Giá trị cài đặt cần lưu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về một tác vụ bất đồng bộ.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

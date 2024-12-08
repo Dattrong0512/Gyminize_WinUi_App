@@ -10,24 +10,38 @@ Inheritance diagram for Gyminize.\+Services.\+Activation\+Service\+:\begin{figur
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_services_1_1_activation_service_a4db975289539c8d806fd9a9b1b611904}\label{class_gyminize_1_1_services_1_1_activation_service_a4db975289539c8d806fd9a9b1b611904} 
-{\bfseries Activation\+Service} (\mbox{\hyperlink{class_gyminize_1_1_activation_1_1_activation_handler}{Activation\+Handler}}$<$ Launch\+Activated\+Event\+Args $>$ default\+Handler, IEnumerable$<$ \mbox{\hyperlink{interface_gyminize_1_1_activation_1_1_i_activation_handler}{IActivation\+Handler}} $>$ activation\+Handlers, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service}{ITheme\+Selector\+Service}} theme\+Selector\+Service)
+{\bfseries Activation\+Service} (Activation\+Handler$<$ Launch\+Activated\+Event\+Args $>$ default\+Handler, IEnumerable$<$ IActivation\+Handler $>$ activation\+Handlers, ITheme\+Selector\+Service theme\+Selector\+Service)
 \item 
-async Task \mbox{\hyperlink{class_gyminize_1_1_services_1_1_activation_service_ac8f6654901c52c3c7beae10d0745e205}{Activate\+Async}} (object activation\+Args)
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_ac8f6654901c52c3c7beae10d0745e205}\label{class_gyminize_1_1_services_1_1_activation_service_ac8f6654901c52c3c7beae10d0745e205} 
+async Task {\bfseries Activate\+Async} (object activation\+Args)
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_activation_service}{Gyminize.\+Contracts.\+Services.\+IActivation\+Service}}}
-
-
-\doxysubsection{Member Function Documentation}
-\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_ac8f6654901c52c3c7beae10d0745e205}\index{Gyminize.Services.ActivationService@{Gyminize.Services.ActivationService}!ActivateAsync@{ActivateAsync}}
-\index{ActivateAsync@{ActivateAsync}!Gyminize.Services.ActivationService@{Gyminize.Services.ActivationService}}
-\doxysubsubsection{\texorpdfstring{ActivateAsync()}{ActivateAsync()}}
-{\footnotesize\ttfamily \label{class_gyminize_1_1_services_1_1_activation_service_ac8f6654901c52c3c7beae10d0745e205} 
-async Task Gyminize.\+Services.\+Activation\+Service.\+Activate\+Async (\begin{DoxyParamCaption}\item[{object}]{activation\+Args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_activation_service}{Gyminize.\+Contracts.\+Services.\+IActivation\+Service}}.
-
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_a79a38a10f2a9f379f13c1a38a85ec342}\label{class_gyminize_1_1_services_1_1_activation_service_a79a38a10f2a9f379f13c1a38a85ec342} 
+async Task {\bfseries Handle\+Activation\+Async} (object activation\+Args)
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_a425122988495beac02761f5408073961}\label{class_gyminize_1_1_services_1_1_activation_service_a425122988495beac02761f5408073961} 
+async Task {\bfseries Initialize\+Async} ()
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_ae35e5e39c5261c3ac5ae391f306abb0f}\label{class_gyminize_1_1_services_1_1_activation_service_ae35e5e39c5261c3ac5ae391f306abb0f} 
+async Task {\bfseries Startup\+Async} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_a0bc7af1d3833c4628933b9d6ef3c1a7a}\label{class_gyminize_1_1_services_1_1_activation_service_a0bc7af1d3833c4628933b9d6ef3c1a7a} 
+readonly Activation\+Handler$<$ Launch\+Activated\+Event\+Args $>$ {\bfseries \+\_\+default\+Handler}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_a3746066c91a1c5ee1c7ebff2df16cbad}\label{class_gyminize_1_1_services_1_1_activation_service_a3746066c91a1c5ee1c7ebff2df16cbad} 
+readonly IEnumerable$<$ IActivation\+Handler $>$ {\bfseries \+\_\+activation\+Handlers}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_ac06b8c9d767d2e025e1492b670438dc8}\label{class_gyminize_1_1_services_1_1_activation_service_ac06b8c9d767d2e025e1492b670438dc8} 
+readonly ITheme\+Selector\+Service {\bfseries \+\_\+theme\+Selector\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_activation_service_a0626a1244d05e9b17b326e5fb3a34f63}\label{class_gyminize_1_1_services_1_1_activation_service_a0626a1244d05e9b17b326e5fb3a34f63} 
+UIElement? {\bfseries \+\_\+shell} = null
+\end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

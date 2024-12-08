@@ -1,23 +1,127 @@
 \doxysection{Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Orders\+Repository Class Reference}
 \hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository}{}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository}\index{Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}}
+
+
+Lớp Repository để quản lý các thao tác dữ liệu đơn hàng trong cơ sở dữ liệu.  
+
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a82533d416c37a9926c5ff37dc0621bca}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a82533d416c37a9926c5ff37dc0621bca} 
-{\bfseries Orders\+Repository} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} context)
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a82533d416c37a9926c5ff37dc0621bca}{Orders\+Repository}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} context)
+\begin{DoxyCompactList}\small\item\em Khởi tạo một instance mới của lớp \doxylink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository}{Orders\+Repository} với context cơ sở dữ liệu. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} $>$? \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a31cc534809391f24d65fafff0821ee58}{Get\+All\+Order\+By\+Customer\+Id}} (int customer\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Lấy tất cả đơn hàng của một khách hàng dựa trên customer\+\_\+id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}}? \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a6d9cd449567fa8930d4bc30aa604022c}{Get\+Order\+By\+Customer\+Id}} (int customer\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Lấy đơn hàng đầu tiên của một khách hàng dựa trên customer\+\_\+id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a96191517bd3d23840588d0a194ac6727}{Add\+Order}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} order)
+\begin{DoxyCompactList}\small\item\em Thêm một đơn hàng mới vào cơ sở dữ liệu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a020ae3ed5a1520fe184d9a2a026ac88b}{Update\+Status\+Order}} (int orders\+\_\+id, string status)
+\begin{DoxyCompactList}\small\item\em Cập nhật trạng thái đơn hàng. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a31cc534809391f24d65fafff0821ee58}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a31cc534809391f24d65fafff0821ee58} 
-List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} $>$? {\bfseries Get\+All\+Order\+By\+Customer\+Id} (int customer\+\_\+id)
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a6d9cd449567fa8930d4bc30aa604022c}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a6d9cd449567fa8930d4bc30aa604022c} 
-\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}}? {\bfseries Get\+Order\+By\+Customer\+Id} (int customer\+\_\+id)
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a96191517bd3d23840588d0a194ac6727}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a96191517bd3d23840588d0a194ac6727} 
-\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} {\bfseries Add\+Order} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} order)
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a020ae3ed5a1520fe184d9a2a026ac88b}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a020ae3ed5a1520fe184d9a2a026ac88b} 
-bool {\bfseries Update\+Status\+Order} (int orders\+\_\+id, string status)
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a790b63e5cfa61cca79a11b2685cb8c45}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a790b63e5cfa61cca79a11b2685cb8c45} 
+readonly \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} {\bfseries \+\_\+context}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lớp Repository để quản lý các thao tác dữ liệu đơn hàng trong cơ sở dữ liệu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a82533d416c37a9926c5ff37dc0621bca}\index{Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}!OrdersRepository@{OrdersRepository}}
+\index{OrdersRepository@{OrdersRepository}!Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}}
+\doxysubsubsection{\texorpdfstring{OrdersRepository()}{OrdersRepository()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a82533d416c37a9926c5ff37dc0621bca} 
+Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Orders\+Repository.\+Orders\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}}}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo một instance mới của lớp \doxylink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository}{Orders\+Repository} với context cơ sở dữ liệu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Context cơ sở dữ liệu để tương tác với dữ liệu đơn hàng.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a96191517bd3d23840588d0a194ac6727}\index{Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}!AddOrder@{AddOrder}}
+\index{AddOrder@{AddOrder}!Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}}
+\doxysubsubsection{\texorpdfstring{AddOrder()}{AddOrder()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a96191517bd3d23840588d0a194ac6727} 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Orders\+Repository.\+Add\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}}}]{order}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Thêm một đơn hàng mới vào cơ sở dữ liệu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & Đơn hàng cần thêm.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Đơn hàng đã được thêm vào cơ sở dữ liệu.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a31cc534809391f24d65fafff0821ee58}\index{Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}!GetAllOrderByCustomerId@{GetAllOrderByCustomerId}}
+\index{GetAllOrderByCustomerId@{GetAllOrderByCustomerId}!Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}}
+\doxysubsubsection{\texorpdfstring{GetAllOrderByCustomerId()}{GetAllOrderByCustomerId()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a31cc534809391f24d65fafff0821ee58} 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}} $>$? Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Orders\+Repository.\+Get\+All\+Order\+By\+Customer\+Id (\begin{DoxyParamCaption}\item[{int}]{customer\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy tất cả đơn hàng của một khách hàng dựa trên customer\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+\_\+id} & ID của khách hàng.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Danh sách đơn hàng của khách hàng.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a6d9cd449567fa8930d4bc30aa604022c}\index{Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}!GetOrderByCustomerId@{GetOrderByCustomerId}}
+\index{GetOrderByCustomerId@{GetOrderByCustomerId}!Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}}
+\doxysubsubsection{\texorpdfstring{GetOrderByCustomerId()}{GetOrderByCustomerId()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a6d9cd449567fa8930d4bc30aa604022c} 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders}{Orders}}? Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Orders\+Repository.\+Get\+Order\+By\+Customer\+Id (\begin{DoxyParamCaption}\item[{int}]{customer\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy đơn hàng đầu tiên của một khách hàng dựa trên customer\+\_\+id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+\_\+id} & ID của khách hàng.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Đơn hàng đầu tiên của khách hàng nếu có.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a020ae3ed5a1520fe184d9a2a026ac88b}\index{Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}!UpdateStatusOrder@{UpdateStatusOrder}}
+\index{UpdateStatusOrder@{UpdateStatusOrder}!Gyminize\_API.Data.Repositories.OrdersRepository@{Gyminize\_API.Data.Repositories.OrdersRepository}}
+\doxysubsubsection{\texorpdfstring{UpdateStatusOrder()}{UpdateStatusOrder()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository_a020ae3ed5a1520fe184d9a2a026ac88b} 
+bool Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Orders\+Repository.\+Update\+Status\+Order (\begin{DoxyParamCaption}\item[{int}]{orders\+\_\+id}{, }\item[{string}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cập nhật trạng thái đơn hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orders\+\_\+id} & ID của đơn hàng cần cập nhật trạng thái.\\
+\hline
+{\em status} & Trạng thái mới của đơn hàng.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True nếu cập nhật thành công, False nếu không tìm thấy đơn hàng.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

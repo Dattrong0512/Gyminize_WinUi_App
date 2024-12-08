@@ -11,11 +11,17 @@ using Windows.Graphics;
 
 namespace Gyminize.Services
 {
+    /// <summary>
+    /// Dịch vụ quản lý cửa sổ ứng dụng, bao gồm các thao tác thay đổi kích thước, tiêu đề và các tính năng của cửa sổ.
+    /// </summary>
     class WindowService : IWindowService
     {
-        private readonly AppWindow _appWindow;
-        private readonly OverlappedPresenter _presenter;
+        private readonly AppWindow _appWindow; ///< Cửa sổ ứng dụng chính.
+        private readonly OverlappedPresenter _presenter; ///< Trình bày cửa sổ.
 
+        /// <summary>
+        /// Khởi tạo dịch vụ cửa sổ, lấy đối tượng AppWindow và OverlappedPresenter từ cửa sổ ứng dụng chính.
+        /// </summary>
         public WindowService()
         {
             // Lấy AppWindow từ MainWindow
@@ -27,6 +33,10 @@ namespace Gyminize.Services
             _presenter = _appWindow.Presenter as OverlappedPresenter;
         }
 
+        /// <summary>
+        /// Đặt tính năng thay đổi kích thước của cửa sổ.
+        /// </summary>
+        /// <param name="isResizable">Xác định xem cửa sổ có thể thay đổi kích thước hay không.</param>
         public void SetIsResizable(bool isResizable)
         {
             if (_presenter != null)
@@ -35,6 +45,10 @@ namespace Gyminize.Services
             }
         }
 
+        /// <summary>
+        /// Đặt tính năng tối đa hóa của cửa sổ.
+        /// </summary>
+        /// <param name="isMaximizable">Xác định xem cửa sổ có thể tối đa hóa hay không.</param>
         public void SetIsMaximizable(bool isMaximizable)
         {
             if (_presenter != null)
@@ -43,6 +57,11 @@ namespace Gyminize.Services
             }
         }
 
+        /// <summary>
+        /// Thay đổi kích thước cửa sổ.
+        /// </summary>
+        /// <param name="width">Chiều rộng mới của cửa sổ.</param>
+        /// <param name="height">Chiều cao mới của cửa sổ.</param>
         public void SetWindowSize(int width, int height)
         {
             if (_appWindow != null)
@@ -56,6 +75,10 @@ namespace Gyminize.Services
             }
         }
 
+        /// <summary>
+        /// Đặt tiêu đề cho cửa sổ. Nếu tiêu đề là chuỗi rỗng, tiêu đề sẽ được ẩn.
+        /// </summary>
+        /// <param name="title">Tiêu đề mới của cửa sổ.</param>
         public void SetTitle(string title)
         {
             if (_appWindow != null)

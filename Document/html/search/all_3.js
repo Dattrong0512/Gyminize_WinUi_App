@@ -1,6 +1,26 @@
 var searchData=
 [
-  ['entitydatabasecontext_0',['EntityDatabaseContext',['../class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html',1,'Gyminize_API::Data']]],
-  ['exercise_1',['Exercise',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_exercise.html',1,'Gyminize_API::Data::Model']]],
-  ['exercisedetail_2',['Exercisedetail',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_exercisedetail.html',1,'Gyminize_API::Data::Model']]]
+  ['calculatebmi_0',['CalculateBMI',['../class_gyminize_1_1_helpers_1_1_health_calculator.html#a6ebb0a7c3e639fc15f72cabadfc5dd10',1,'Gyminize::Helpers::HealthCalculator']]],
+  ['calculatebmr_1',['CalculateBMR',['../class_gyminize_1_1_helpers_1_1_health_calculator.html#ae501ce9dbf7146d3f5027ef0061a685a',1,'Gyminize::Helpers::HealthCalculator']]],
+  ['calculatelbm_2',['CalculateLBM',['../class_gyminize_1_1_helpers_1_1_health_calculator.html#aacf7fa9ff694226a0d9296a4697022ac',1,'Gyminize::Helpers::HealthCalculator']]],
+  ['calculatenutritiongram_3',['CalculateNutritionGram',['../class_gyminize_1_1_helpers_1_1_health_calculator.html#ad2d3d907aff3eb445acba1eedd3f4e59',1,'Gyminize::Helpers::HealthCalculator']]],
+  ['calculatetdee_4',['CalculateTDEE',['../class_gyminize_1_1_helpers_1_1_health_calculator.html#a72327a56d46d48f156f5f8874eb84a8f',1,'Gyminize::Helpers::HealthCalculator']]],
+  ['cartviewmodel_5',['CartViewModel',['../class_gyminize_1_1_view_models_1_1_cart_view_model.html',1,'Gyminize.ViewModels.CartViewModel'],['../class_gyminize_1_1_view_models_1_1_cart_view_model.html#ae801cfeb443fe36f3b7316ae7e77f15f',1,'Gyminize.ViewModels.CartViewModel.CartViewModel()']]],
+  ['category_6',['Category',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_category.html',1,'Gyminize_API::Data::Model']]],
+  ['chatboxviewmodel_7',['ChatBoxViewModel',['../class_gyminize_1_1_view_models_1_1_chat_box_view_model.html',1,'Gyminize.ViewModels.ChatBoxViewModel'],['../class_gyminize_1_1_view_models_1_1_chat_box_view_model.html#accd1fa37d973468ed3a2cf1587ef0b34',1,'Gyminize.ViewModels.ChatBoxViewModel.ChatBoxViewModel()']]],
+  ['checkcanproceedtopayment_8',['CheckCanProceedToPayment',['../class_gyminize_1_1_view_models_1_1_payment_view_model.html#a0d2a4f90d6912fcc2d6301806521814d',1,'Gyminize::ViewModels::PaymentViewModel']]],
+  ['checkcustomerbyget_9',['CheckCustomerByGet',['../class_gyminize_1_1_view_models_1_1_signin_viewmodel.html#a9e118f83f1cf6954e41f3ce8835447e2',1,'Gyminize::ViewModels::SigninViewmodel']]],
+  ['checkcustomerhealthbyusername_10',['CheckCustomerHealthByUsername',['../class_gyminize_1_1_view_models_1_1_signin_viewmodel.html#a92850fb424e7763c4dc523cdbe1b93f1',1,'Gyminize::ViewModels::SigninViewmodel']]],
+  ['checkexistcustomer_11',['checkExistCustomer',['../class_gyminize_1_1_view_models_1_1_signup_view_model.html#a258f9de2adb404859d435990d17df77b',1,'Gyminize::ViewModels::SignupViewModel']]],
+  ['checkplanselectionneeded_12',['CheckPlanSelectionNeeded',['../class_gyminize_1_1_view_models_1_1_shell_view_model.html#a9d667b0ab79ef8a3c9a3c1f02e3f0c68',1,'Gyminize::ViewModels::ShellViewModel']]],
+  ['containsspecialcharacters_13',['ContainsSpecialCharacters',['../class_gyminize_1_1_view_models_1_1_payment_view_model.html#ac0a0125e0c4b14486443e7820266868d',1,'Gyminize::ViewModels::PaymentViewModel']]],
+  ['content_14',['Content',['../class_gyminize_1_1_view_models_1_1_message.html#ae11075d9d6e696596f479abc1a63dfea',1,'Gyminize::ViewModels::Message']]],
+  ['createorgetorderid_15',['CreateOrGetOrderID',['../class_gyminize_1_1_view_models_1_1_shop_view_model.html#a3c7ecf00bbfdf7071bc6b00369112f85',1,'Gyminize::ViewModels::ShopViewModel']]],
+  ['customer_16',['Customer',['../class_gyminize___a_p_i_1_1_data_1_1_models_1_1_customer.html',1,'Gyminize_API::Data::Models']]],
+  ['customer_5fhealth_17',['Customer_health',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_customer__health.html',1,'Gyminize_API::Data::Model']]],
+  ['customer_5fid_18',['customer_id',['../class_gyminize_1_1_view_models_1_1_plan_selection_view_model.html#aa36e5f9c400f7e1ee1a5e071832d5ef0',1,'Gyminize::ViewModels::PlanSelectionViewModel']]],
+  ['customercontroller_19',['CustomerController',['../class_gyminize___a_p_i_1_1_controllers_1_1_customer_controller.html',1,'Gyminize_API.Controllers.CustomerController'],['../class_gyminize___a_p_i_1_1_controllers_1_1_customer_controller.html#ae3cfc27a24459253e2b87a7e6fe5cb05',1,'Gyminize_API.Controllers.CustomerController.CustomerController()']]],
+  ['customerhealthcontroller_20',['CustomerhealthController',['../class_gyminize___a_p_i_1_1_controllers_1_1_customerhealth_controller.html',1,'Gyminize_API::Controllers']]],
+  ['customerhealthrepository_21',['CustomerHealthRepository',['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_customer_health_repository.html',1,'Gyminize_API.Data.Repositories.CustomerHealthRepository'],['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_customer_health_repository.html#aeb3ceff9bd6e8278069c1d47e3e87eb6',1,'Gyminize_API.Data.Repositories.CustomerHealthRepository.CustomerHealthRepository()']]],
+  ['customerrepository_22',['CustomerRepository',['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_customer_repository.html',1,'Gyminize_API.Data.Repositories.CustomerRepository'],['../class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_customer_repository.html#a70abf74bb71e65bf5665945eb1ccfded',1,'Gyminize_API.Data.Repositories.CustomerRepository.CustomerRepository()']]]
 ];

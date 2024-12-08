@@ -9,8 +9,14 @@ using Mscc.GenerativeAI;
 
 namespace Gyminize.ViewModels
 {
+    /// <summary>
+    /// ViewModel cho hộp thoại chat, quản lý tin nhắn và tương tác với mô hình AI.
+    /// </summary>
     public partial class ChatBoxViewModel : ObservableObject
     {
+        /// <summary>
+        /// Danh sách các tin nhắn trong cuộc trò chuyện.
+        /// </summary>
         private ObservableCollection<Message> messages;
         public ObservableCollection<Message> Messages
         {
@@ -19,19 +25,37 @@ namespace Gyminize.ViewModels
         }
 
         private string inputBox;
+        /// <summary>
+        /// Nội dung của hộp văn bản nhập liệu.
+        /// </summary>
         public string InputBox
         {
             get => inputBox;
             set => SetProperty(ref inputBox, value);
         }
 
+        /// <summary>
+        /// Lệnh gửi yêu cầu từ người dùng.
+        /// </summary>
         public ICommand SendRequest { get; set; }
 
+        /// <summary>
+        /// Đối tượng GoogleAI để sử dụng API.
+        /// </summary>
         public GoogleAI GoogleAI { get; set; }
+
+        /// <summary>
+        /// Mô hình generative AI để tạo nội dung.
+        /// </summary>
         public GenerativeModel Model { get; set; }
+        /// <summary>
+        /// Cấu hình cho việc sinh nội dung.
+        /// </summary>
         public GenerationConfig Generateconfig { get; set; }
 
-        // Constructor
+        /// <summary>
+        /// Constructor khởi tạo ChatBoxViewModel với cấu hình ban đầu.
+        /// </summary>
         public ChatBoxViewModel()
         {
             Messages = new ObservableCollection<Message>();
@@ -47,7 +71,9 @@ namespace Gyminize.ViewModels
             SendRequest = new RelayCommand(SendMessage);
         }
 
-        // Command thực hiện gửi yêu cầu từ người dùng
+        /// <summary>
+        /// Lệnh gửi tin nhắn từ người dùng và nhận phản hồi từ mô hình AI.
+        /// </summary>
         private async void SendMessage()
         {
             try
@@ -100,9 +126,25 @@ namespace Gyminize.ViewModels
 
     }
 
+    /// <summary>
+    /// Lớp đại diện cho một tin nhắn trong cuộc trò chuyện.
+    /// </summary>
     public class Message
     {
-        public string Sender { get; set; }
-        public string Content { get; set; }
+        /// <summary>
+        /// Người gửi tin nhắn (User hoặc GymBo).
+        /// </summary>
+        public string Sender
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// Nội dung tin nhắn.
+        /// </summary>
+        public string Content
+        {
+            get; set;
+        }
     }
 }

@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+View\+Models.\+Cart\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model}{}\label{class_gyminize_1_1_view_models_1_1_cart_view_model}\index{Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}}
+
+
+View\+Model quản lý giỏ hàng, bao gồm các thao tác như thêm, bớt, xóa sản phẩm và thanh toán.  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Cart\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,25 +15,24 @@ Inheritance diagram for Gyminize.\+View\+Models.\+Cart\+View\+Model\+:\begin{fig
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ae801cfeb443fe36f3b7316ae7e77f15f}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ae801cfeb443fe36f3b7316ae7e77f15f} 
-{\bfseries Cart\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client)
-\item 
+{\bfseries Cart\+View\+Model} (INavigation\+Service navigation\+Service, ILocal\+Settings\+Service local\+Settings\+Service, IDialog\+Service dialog\+Service, IApi\+Services\+Client api\+Services\+Client)
+\begin{DoxyCompactList}\small\item\em Constructor khởi tạo các lệnh và gọi phương thức tải dữ liệu giỏ hàng. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ab97170a672a6fa43e65be4a1d9e9f5a4}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ab97170a672a6fa43e65be4a1d9e9f5a4} 
 async Task {\bfseries Get\+Customer\+ID} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Lấy thông tin ID khách hàng từ dịch vụ cài đặt địa phương. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_add23aa7672670c11ff76892c9aa01de8}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_add23aa7672670c11ff76892c9aa01de8} 
 async void {\bfseries Load\+Order\+Detail\+Data} ()
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ab35b67052e62feeab0c07865a653013d}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ab35b67052e62feeab0c07865a653013d} 
-async Task {\bfseries Delete\+Order\+Detail\+Async} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}} order\+Detail)
-\item 
+\begin{DoxyCompactList}\small\item\em Tải dữ liệu chi tiết đơn hàng từ API và cập nhật danh sách sản phẩm trong giỏ hàng. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_cart_view_model_ab35b67052e62feeab0c07865a653013d}{Delete\+Order\+Detail\+Async}} (Orderdetail order\+Detail)
+\begin{DoxyCompactList}\small\item\em Xóa một chi tiết đơn hàng và cập nhật lại giỏ hàng. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_aae047e65cab4bed4045fe4bc90ad3814}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_aae047e65cab4bed4045fe4bc90ad3814} 
 async void {\bfseries Buying\+Selected} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Thực hiện thanh toán cho các sản phẩm trong giỏ hàng. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_acd091fa4e12536b6931b0e408919d4d1}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_acd091fa4e12536b6931b0e408919d4d1} 
-\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orders}{Orders}} {\bfseries current\+Order} = new \mbox{\hyperlink{class_gyminize_1_1_models_1_1_orders}{Orders}}()
+Orders {\bfseries current\+Order} = new Orders()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -43,10 +47,10 @@ int {\bfseries Total\+Product\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\
 int {\bfseries Customer\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a705bd5429b3bde7a2ab10211fbcc32fc}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a705bd5429b3bde7a2ab10211fbcc32fc} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Product $>$ {\bfseries Product\+Library\+Items} = new Observable\+Collection$<$Product$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a42f344c51fb45cd2913da5bd8b05b115}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a42f344c51fb45cd2913da5bd8b05b115} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}} $>$ {\bfseries Filtered\+Product\+Library\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_product}{Product}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Product $>$ {\bfseries Filtered\+Product\+Library\+Items} = new Observable\+Collection$<$Product$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ad27e296607bb362604dc1b57f58a7a8d}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ad27e296607bb362604dc1b57f58a7a8d} 
 ICommand {\bfseries Delete\+Order\+Detail\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
@@ -61,8 +65,93 @@ ICommand {\bfseries Increment\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbo
 ICommand {\bfseries Decrement\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a9208edb666638c080d3e3dd4d98078e3}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a9208edb666638c080d3e3dd4d98078e3} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}} $>$ {\bfseries Order\+Details\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orderdetail}{Orderdetail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Orderdetail $>$ {\bfseries Order\+Details\+Items} = new Observable\+Collection$<$Orderdetail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a34b6648b40893928b4457462e95e0bb4}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a34b6648b40893928b4457462e95e0bb4} 
+void {\bfseries Update\+Totals} ()
+\begin{DoxyCompactList}\small\item\em Cập nhật tổng số lượng sản phẩm và tổng giá trị đơn hàng. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_cart_view_model_a156f8d5d319150748e9991bba07748ec}{Increment}} (Orderdetail order\+Detail)
+\begin{DoxyCompactList}\small\item\em Tăng số lượng sản phẩm trong giỏ hàng và cập nhật lại. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_cart_view_model_a85621de2bccd51a7b07272a67093abe3}{Decrement}} (Orderdetail order\+Detail)
+\begin{DoxyCompactList}\small\item\em Giảm số lượng sản phẩm trong giỏ hàng và cập nhật lại. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_af45ebf5ebed0c8b5c4ac974be492f9c4}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_af45ebf5ebed0c8b5c4ac974be492f9c4} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a13d6cb0ab5e5d7f5882e0672360c3038}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a13d6cb0ab5e5d7f5882e0672360c3038} 
+readonly ILocal\+Settings\+Service {\bfseries \+\_\+local\+Settings\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a4fee80878bac721b8fec1a36f422268e}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a4fee80878bac721b8fec1a36f422268e} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a2ea2378062dc0a465e353b35caa3b45d}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a2ea2378062dc0a465e353b35caa3b45d} 
+readonly IApi\+Services\+Client {\bfseries \+\_\+api\+Services\+Client}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a7ec977bf2e2e0156baf0b5ad167b8be9}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a7ec977bf2e2e0156baf0b5ad167b8be9} 
+decimal {\bfseries \+\_\+total\+Payment}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a34bb8bb49a4c1f17b2b847374dac8fd6}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_a34bb8bb49a4c1f17b2b847374dac8fd6} 
+int {\bfseries \+\_\+total\+Product\+Count}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ac94d7a45c10e275b6aac69a99f084ba9}\label{class_gyminize_1_1_view_models_1_1_cart_view_model_ac94d7a45c10e275b6aac69a99f084ba9} 
+int {\bfseries \+\_\+customer\+Id}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model quản lý giỏ hàng, bao gồm các thao tác như thêm, bớt, xóa sản phẩm và thanh toán. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a85621de2bccd51a7b07272a67093abe3}\index{Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}!Decrement@{Decrement}}
+\index{Decrement@{Decrement}!Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}}
+\doxysubsubsection{\texorpdfstring{Decrement()}{Decrement()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_cart_view_model_a85621de2bccd51a7b07272a67093abe3} 
+void Gyminize.\+View\+Models.\+Cart\+View\+Model.\+Decrement (\begin{DoxyParamCaption}\item[{Orderdetail}]{order\+Detail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Giảm số lượng sản phẩm trong giỏ hàng và cập nhật lại. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Detail} & Chi tiết đơn hàng cần giảm số lượng.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_ab35b67052e62feeab0c07865a653013d}\index{Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}!DeleteOrderDetailAsync@{DeleteOrderDetailAsync}}
+\index{DeleteOrderDetailAsync@{DeleteOrderDetailAsync}!Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}}
+\doxysubsubsection{\texorpdfstring{DeleteOrderDetailAsync()}{DeleteOrderDetailAsync()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_cart_view_model_ab35b67052e62feeab0c07865a653013d} 
+async Task Gyminize.\+View\+Models.\+Cart\+View\+Model.\+Delete\+Order\+Detail\+Async (\begin{DoxyParamCaption}\item[{Orderdetail}]{order\+Detail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Xóa một chi tiết đơn hàng và cập nhật lại giỏ hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Detail} & Chi tiết đơn hàng cần xóa.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_cart_view_model_a156f8d5d319150748e9991bba07748ec}\index{Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}!Increment@{Increment}}
+\index{Increment@{Increment}!Gyminize.ViewModels.CartViewModel@{Gyminize.ViewModels.CartViewModel}}
+\doxysubsubsection{\texorpdfstring{Increment()}{Increment()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_cart_view_model_a156f8d5d319150748e9991bba07748ec} 
+void Gyminize.\+View\+Models.\+Cart\+View\+Model.\+Increment (\begin{DoxyParamCaption}\item[{Orderdetail}]{order\+Detail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Tăng số lượng sản phẩm trong giỏ hàng và cập nhật lại. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Detail} & Chi tiết đơn hàng cần tăng số lượng.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

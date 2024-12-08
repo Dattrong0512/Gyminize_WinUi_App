@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['ordercontroller_0',['OrderController',['../class_gyminize___a_p_i_1_1_controllers_1_1_order_controller.html#a5d6f806f3896baab170923376c620978',1,'Gyminize_API::Controllers::OrderController']]],
-  ['orderdetailcontroller_1',['OrderDetailController',['../class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller.html#ac957e6719c466b72e3c0053ecb53fb37',1,'Gyminize_API::Controllers::OrderDetailController']]]
+  ['editaddress_0',['EditAddress',['../class_gyminize_1_1_view_models_1_1_payment_view_model.html#aa385e04e8f10ab2b44d1e69914153b7e',1,'Gyminize::ViewModels::PaymentViewModel']]],
+  ['editname_1',['EditName',['../class_gyminize_1_1_view_models_1_1_payment_view_model.html#a75efe42c4334fcbb7c88aaa097ed4b06',1,'Gyminize::ViewModels::PaymentViewModel']]],
+  ['editphonenumber_2',['EditPhoneNumber',['../class_gyminize_1_1_view_models_1_1_payment_view_model.html#a35486eadd0269cdc606b5b31d1aef48c',1,'Gyminize::ViewModels::PaymentViewModel']]],
+  ['exchangecodefortokensasync_3',['ExchangeCodeForTokensAsync',['../class_gyminize_1_1_view_models_1_1_signin_viewmodel.html#a533e224e19af78ccaf4f925ccf2e87bd',1,'Gyminize::ViewModels::SigninViewmodel']]]
 ];

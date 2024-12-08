@@ -1,5 +1,10 @@
 \doxysection{Gyminize\+\_\+\+API.\+Controllers.\+Foodcontroller Class Reference}
 \hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller}{}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller}\index{Gyminize\_API.Controllers.Foodcontroller@{Gyminize\_API.Controllers.Foodcontroller}}
+
+
+Controller để quản lý các hoạt động liên quan đến thực phẩm (Food). Các hành động trong controller này cho phép truy cập và lấy thông tin các loại thực phẩm.  
+
+
 Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Foodcontroller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,12 +14,53 @@ Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Foodcontroller\+:\be
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_ac240ed6f16b42cc4df86e22834050cbf}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_ac240ed6f16b42cc4df86e22834050cbf} 
-{\bfseries Foodcontroller} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_food_repository}{Food\+Repository}} food\+Repository)
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_ac240ed6f16b42cc4df86e22834050cbf}{Foodcontroller}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_food_repository}{Food\+Repository}} food\+Repository)
+\begin{DoxyCompactList}\small\item\em Khởi tạo controller với repository để quản lý các loại thực phẩm. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_a40005868c40a6f850f235012bc21bc44}{Get\+All\+Food}} ()
+\begin{DoxyCompactList}\small\item\em Lấy tất cả các loại thực phẩm từ cơ sở dữ liệu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_a40005868c40a6f850f235012bc21bc44}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_a40005868c40a6f850f235012bc21bc44} 
-IAction\+Result {\bfseries Get\+All\+Food} ()
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_a6f59672916d9adda374efbe83e390ed0}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_a6f59672916d9adda374efbe83e390ed0} 
+readonly \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_food_repository}{Food\+Repository}} {\bfseries \+\_\+food\+Repository}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller để quản lý các hoạt động liên quan đến thực phẩm (Food). Các hành động trong controller này cho phép truy cập và lấy thông tin các loại thực phẩm. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_ac240ed6f16b42cc4df86e22834050cbf}\index{Gyminize\_API.Controllers.Foodcontroller@{Gyminize\_API.Controllers.Foodcontroller}!Foodcontroller@{Foodcontroller}}
+\index{Foodcontroller@{Foodcontroller}!Gyminize\_API.Controllers.Foodcontroller@{Gyminize\_API.Controllers.Foodcontroller}}
+\doxysubsubsection{\texorpdfstring{Foodcontroller()}{Foodcontroller()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_ac240ed6f16b42cc4df86e22834050cbf} 
+Gyminize\+\_\+\+API.\+Controllers.\+Foodcontroller.\+Foodcontroller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_food_repository}{Food\+Repository}}}]{food\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo controller với repository để quản lý các loại thực phẩm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em food\+Repository} & Repository chứa các phương thức thao tác với dữ liệu thực phẩm\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_a40005868c40a6f850f235012bc21bc44}\index{Gyminize\_API.Controllers.Foodcontroller@{Gyminize\_API.Controllers.Foodcontroller}!GetAllFood@{GetAllFood}}
+\index{GetAllFood@{GetAllFood}!Gyminize\_API.Controllers.Foodcontroller@{Gyminize\_API.Controllers.Foodcontroller}}
+\doxysubsubsection{\texorpdfstring{GetAllFood()}{GetAllFood()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_foodcontroller_a40005868c40a6f850f235012bc21bc44} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Foodcontroller.\+Get\+All\+Food (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy tất cả các loại thực phẩm từ cơ sở dữ liệu. 
+
+\begin{DoxyReturn}{Returns}
+Danh sách tất cả các loại thực phẩm
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

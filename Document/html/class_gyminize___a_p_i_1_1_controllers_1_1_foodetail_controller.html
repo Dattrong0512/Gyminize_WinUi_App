@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -92,10 +91,14 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize_API.Controllers.FoodetailController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Controller để quản lý các hoạt động liên quan đến chi tiết thực phẩm trong nhật ký hàng ngày. Các hành động trong controller này cho phép cập nhật và xóa thông tin thực phẩm trong nhật ký.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize_API.Controllers.FoodetailController:</div>
 <div class="dyncontent">
@@ -105,16 +108,127 @@ Inheritance diagram for Gyminize_API.Controllers.FoodetailController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e7c82f83633dcdaa540608b8693dc90" id="r_a2e7c82f83633dcdaa540608b8693dc90"><td class="memItemLeft" align="right" valign="top"><a id="a2e7c82f83633dcdaa540608b8693dc90" name="a2e7c82f83633dcdaa540608b8693dc90"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FoodetailController</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository.html">FooddetailRepository</a> foodetailRepository)</td></tr>
+<tr class="memitem:a2e7c82f83633dcdaa540608b8693dc90" id="r_a2e7c82f83633dcdaa540608b8693dc90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e7c82f83633dcdaa540608b8693dc90">FoodetailController</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository.html">FooddetailRepository</a> foodetailRepository)</td></tr>
+<tr class="memdesc:a2e7c82f83633dcdaa540608b8693dc90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo controller với repository để quản lý các chi tiết thực phẩm.  <br /></td></tr>
 <tr class="separator:a2e7c82f83633dcdaa540608b8693dc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b1558ef64bf1367faf0878f6e8d1cca" id="r_a2b1558ef64bf1367faf0878f6e8d1cca"><td class="memItemLeft" align="right" valign="top"><a id="a2b1558ef64bf1367faf0878f6e8d1cca" name="a2b1558ef64bf1367faf0878f6e8d1cca"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateFooddetail</b> ([FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail.html">Fooddetail</a> fooddetail)</td></tr>
+<tr class="memitem:a2b1558ef64bf1367faf0878f6e8d1cca" id="r_a2b1558ef64bf1367faf0878f6e8d1cca"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b1558ef64bf1367faf0878f6e8d1cca">UpdateFooddetail</a> ([FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail.html">Fooddetail</a> fooddetail)</td></tr>
+<tr class="memdesc:a2b1558ef64bf1367faf0878f6e8d1cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cập nhật hoặc thêm chi tiết thực phẩm vào nhật ký hàng ngày.  <br /></td></tr>
 <tr class="separator:a2b1558ef64bf1367faf0878f6e8d1cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ac3cfe27e0e5e947cdd13666755df02" id="r_a5ac3cfe27e0e5e947cdd13666755df02"><td class="memItemLeft" align="right" valign="top"><a id="a5ac3cfe27e0e5e947cdd13666755df02" name="a5ac3cfe27e0e5e947cdd13666755df02"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>DeleteFooddetail</b> ([FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail.html">Fooddetail</a> fooddetail)</td></tr>
+<tr class="memitem:a5ac3cfe27e0e5e947cdd13666755df02" id="r_a5ac3cfe27e0e5e947cdd13666755df02"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac3cfe27e0e5e947cdd13666755df02">DeleteFooddetail</a> ([FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail.html">Fooddetail</a> fooddetail)</td></tr>
+<tr class="memdesc:a5ac3cfe27e0e5e947cdd13666755df02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Xóa chi tiết thực phẩm khỏi nhật ký hàng ngày.  <br /></td></tr>
 <tr class="separator:a5ac3cfe27e0e5e947cdd13666755df02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3efa6dfdab43dd81857fdbdf8400b67a" id="r_a3efa6dfdab43dd81857fdbdf8400b67a"><td class="memItemLeft" align="right" valign="top"><a id="a3efa6dfdab43dd81857fdbdf8400b67a" name="a3efa6dfdab43dd81857fdbdf8400b67a"></a>
+readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository.html">FooddetailRepository</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_foodetailRepository</b></td></tr>
+<tr class="separator:a3efa6dfdab43dd81857fdbdf8400b67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Controller để quản lý các hoạt động liên quan đến chi tiết thực phẩm trong nhật ký hàng ngày. Các hành động trong controller này cho phép cập nhật và xóa thông tin thực phẩm trong nhật ký. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2e7c82f83633dcdaa540608b8693dc90" name="a2e7c82f83633dcdaa540608b8693dc90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e7c82f83633dcdaa540608b8693dc90">&#9670;&#160;</a></span>FoodetailController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize_API.Controllers.FoodetailController.FoodetailController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository.html">FooddetailRepository</a></td>          <td class="paramname"><span class="paramname"><em>foodetailRepository</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Khởi tạo controller với repository để quản lý các chi tiết thực phẩm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">foodetailRepository</td><td>Repository chứa các phương thức thao tác với dữ liệu chi tiết thực phẩm</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5ac3cfe27e0e5e947cdd13666755df02" name="a5ac3cfe27e0e5e947cdd13666755df02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac3cfe27e0e5e947cdd13666755df02">&#9670;&#160;</a></span>DeleteFooddetail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.FoodetailController.DeleteFooddetail </td>
+          <td>(</td>
+          <td class="paramtype">[FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail.html">Fooddetail</a></td>          <td class="paramname"><span class="paramname"><em>fooddetail</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Xóa chi tiết thực phẩm khỏi nhật ký hàng ngày. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fooddetail</td><td>Thông tin chi tiết thực phẩm cần xóa</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về trạng thái thành công sau khi xóa</dd></dl>
+
+</div>
+</div>
+<a id="a2b1558ef64bf1367faf0878f6e8d1cca" name="a2b1558ef64bf1367faf0878f6e8d1cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1558ef64bf1367faf0878f6e8d1cca">&#9670;&#160;</a></span>UpdateFooddetail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.FoodetailController.UpdateFooddetail </td>
+          <td>(</td>
+          <td class="paramtype">[FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail.html">Fooddetail</a></td>          <td class="paramname"><span class="paramname"><em>fooddetail</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cập nhật hoặc thêm chi tiết thực phẩm vào nhật ký hàng ngày. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fooddetail</td><td>Thông tin chi tiết thực phẩm cần cập nhật</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về đối tượng chi tiết thực phẩm đã được cập nhật hoặc thêm mới</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Controllers/<b>FoodetailController.cs</b></li>
 </ul>

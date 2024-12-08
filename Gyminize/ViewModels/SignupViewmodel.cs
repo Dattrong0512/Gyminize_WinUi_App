@@ -14,6 +14,8 @@ using Gyminize.Services;
 using Gyminize.Helpers;
 namespace Gyminize.ViewModels
 {
+
+    /// \brief ViewModel xử lý các hoạt động đăng ký người dùng.
     public partial class SignupViewModel : ObservableObject
     {
         [ObservableProperty]
@@ -35,19 +37,17 @@ namespace Gyminize.ViewModels
         private bool isAgree;
 
         private readonly INavigationService _navigationService;
-
         private readonly IDialogService _dialogService;
-
         private readonly IApiServicesClient _apiService;
-        public ICommand SignupCommand
-        {
-            get;
-        }
-        public ICommand GoBackCommand
-        {
-            get;
-        }
 
+         public ICommand SignupCommand { get; }
+        public ICommand GoBackCommand { get; }
+
+
+        /// \brief Hàm khởi tạo cho SignupViewModel.
+        /// \param navigationService Dịch vụ điều hướng.
+        /// \param dialogService Dịch vụ hiển thị hộp thoại.
+        /// \param apiServicesClient Dịch vụ kết nối API.
         public SignupViewModel(INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient)
         {
             _navigationService = navigationService;
@@ -56,6 +56,10 @@ namespace Gyminize.ViewModels
             SignupCommand = new RelayCommand(OnSignUp);
             GoBackCommand = new RelayCommand(OnGoBack);
         }
+
+        /// \brief Kiểm tra sự tồn tại của tài khoản người dùng.
+        /// \param username Tên tài khoản cần kiểm tra.
+        /// \return `true` nếu tài khoản tồn tại, ngược lại `false`.
         private bool checkExistCustomer(string username)
         {
             var client = new HttpClient();
@@ -71,6 +75,8 @@ namespace Gyminize.ViewModels
             }
             return false;
         }
+
+        /// \brief Xử lý sự kiện khi nhấn nút Đăng ký.
         private async void OnSignUp()
         {
             try
@@ -97,8 +103,7 @@ namespace Gyminize.ViewModels
                     else
                     {
                         if (IsAgree == true)
-                        {
-                            //string recipientEmail = "huaminhquan111@gmail.com";      
+                        {   
                             string recipientEmail = email;
                             Random random = new Random();
                             string verificationCode = random.Next(0, 10000).ToString("D4");//Tạo mã xác thực random
@@ -139,6 +144,7 @@ namespace Gyminize.ViewModels
             }
         }
 
+        /// \brief Điều hướng quay lại trang đăng nhập.
         private void OnGoBack()
         {
             var pageKey = typeof(SigninViewmodel).FullName;
@@ -147,6 +153,11 @@ namespace Gyminize.ViewModels
                 _navigationService.NavigateTo(pageKey);
             }
         }
+
+        /// \brief Thêm thông tin người dùng mới vào hệ thống.
+        /// \param username Tên tài khoản.
+        /// \param password Mật khẩu.
+        /// \param email Email đăng ký.
         private void PostCustomer(string username, string password, string email)
         {
             Customer customer = new Customer(username, 1, username, password, 1, email);
@@ -184,11 +195,16 @@ namespace Gyminize.ViewModels
             }
         }
 
+        /// \brief Ghi log hoặc hiển thị thông báo.
+        /// \param message Nội dung thông báo.
         private void output(string message)
         {
             Debug.WriteLine(message);
         }
 
+        /// \brief Gửi mã xác thực qua email.
+        /// \param email Email người nhận.
+        /// \param code Mã xác thực
         public async void sendVerificationCode(string email, string code)
         {
             IEmailSender emailSender = new EmailSender();

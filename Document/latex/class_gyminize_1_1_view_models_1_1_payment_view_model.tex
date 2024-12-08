@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+View\+Models.\+Payment\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model}{}\label{class_gyminize_1_1_view_models_1_1_payment_view_model}\index{Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}}
+
+
+View\+Model cho màn hình thanh toán của ứng dụng.  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Payment\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,20 +14,19 @@ Inheritance diagram for Gyminize.\+View\+Models.\+Payment\+View\+Model\+:\begin{
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a851a69bf7d19d35bd01d7cca20fd8e82}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a851a69bf7d19d35bd01d7cca20fd8e82} 
-{\bfseries Payment\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client)
-\item 
+\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_payment_view_model_a851a69bf7d19d35bd01d7cca20fd8e82}{Payment\+View\+Model}} (INavigation\+Service navigation\+Service, ILocal\+Settings\+Service local\+Settings\+Service, IDialog\+Service dialog\+Service, IApi\+Services\+Client api\+Services\+Client)
+\begin{DoxyCompactList}\small\item\em Khởi tạo View\+Model cho màn hình thanh toán. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a9903fb191db937100f2a6cfee5e9f13c}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a9903fb191db937100f2a6cfee5e9f13c} 
 async void {\bfseries Load\+Order\+Detail\+Data} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Tải chi tiết đơn hàng của khách hàng. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a8408f6fb09eb9620cf726483a7ec2800}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a8408f6fb09eb9620cf726483a7ec2800} 
 async Task {\bfseries get\+Current\+Order} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lấy thông tin đơn hàng hiện tại từ cài đặt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_af039184de505b6cd9d3e387cfb4ed1ac}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_af039184de505b6cd9d3e387cfb4ed1ac} 
-\mbox{\hyperlink{class_gyminize_1_1_models_1_1_orders}{Orders}} {\bfseries current\+Order} = new()
+Orders {\bfseries current\+Order} = new()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -99,6 +103,162 @@ ICommand {\bfseries Save\+Address\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get
 \Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a8f9ceca12c533db8baea68bc9aae4959}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a8f9ceca12c533db8baea68bc9aae4959} 
 ICommand {\bfseries Payment\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a0d2a4f90d6912fcc2d6301806521814d}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a0d2a4f90d6912fcc2d6301806521814d} 
+void {\bfseries Check\+Can\+Proceed\+To\+Payment} ()
+\begin{DoxyCompactList}\small\item\em Kiểm tra xem có thể tiếp tục thanh toán hay không. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_payment_view_model_aec00686d32f43a5c5a246fff2660bbf8}{Toggle\+Payment\+Method\+Execute}} (string method)
+\begin{DoxyCompactList}\small\item\em Thực hiện thao tác khi người dùng chọn phương thức thanh toán. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_payment_view_model_ac0a0125e0c4b14486443e7820266868d}{Contains\+Special\+Characters}} (string input)
+\begin{DoxyCompactList}\small\item\em Kiểm tra chuỗi có chứa ký tự đặc biệt hay không. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a75efe42c4334fcbb7c88aaa097ed4b06}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a75efe42c4334fcbb7c88aaa097ed4b06} 
+void {\bfseries Edit\+Name} ()
+\begin{DoxyCompactList}\small\item\em Cho phép người dùng chỉnh sửa tên. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a3d7c1fd0bcf77d5e303303ae1bd1a124}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a3d7c1fd0bcf77d5e303303ae1bd1a124} 
+void {\bfseries Save\+Name} ()
+\begin{DoxyCompactList}\small\item\em Lưu tên người dùng sau khi chỉnh sửa. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a35486eadd0269cdc606b5b31d1aef48c}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a35486eadd0269cdc606b5b31d1aef48c} 
+void {\bfseries Edit\+Phone\+Number} ()
+\begin{DoxyCompactList}\small\item\em Cho phép người dùng chỉnh sửa số điện thoại. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a50d719449c9d718932329f0a8a393ea1}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a50d719449c9d718932329f0a8a393ea1} 
+void {\bfseries Save\+Phone\+Number} ()
+\begin{DoxyCompactList}\small\item\em Lưu số điện thoại người dùng sau khi chỉnh sửa. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_aa385e04e8f10ab2b44d1e69914153b7e}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_aa385e04e8f10ab2b44d1e69914153b7e} 
+void {\bfseries Edit\+Address} ()
+\begin{DoxyCompactList}\small\item\em Cho phép người dùng chỉnh sửa địa chỉ. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a8762c9b601fd2fbc12c1bb76bac9df6f}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a8762c9b601fd2fbc12c1bb76bac9df6f} 
+void {\bfseries Save\+Address} ()
+\begin{DoxyCompactList}\small\item\em Lưu địa chỉ người dùng sau khi chỉnh sửa. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ae2a54c12d2f4336058b9b92aaac47e11}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ae2a54c12d2f4336058b9b92aaac47e11} 
+void {\bfseries Payment\+Process} ()
+\begin{DoxyCompactList}\small\item\em Xử lý quá trình thanh toán. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_af4bac0fc9d9a2c6f369df75b9178c380}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_af4bac0fc9d9a2c6f369df75b9178c380} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a5b72309236a6c0e0a556c84fca77888d}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a5b72309236a6c0e0a556c84fca77888d} 
+readonly ILocal\+Settings\+Service {\bfseries \+\_\+local\+Settings\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ac7abde9a1039e99b1c9020836babc951}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ac7abde9a1039e99b1c9020836babc951} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a2692b341e64f6337b0d7ceb75aa91088}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a2692b341e64f6337b0d7ceb75aa91088} 
+readonly IApi\+Services\+Client {\bfseries \+\_\+api\+Services\+Client}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a80934b105089122b1219108b918d504b}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a80934b105089122b1219108b918d504b} 
+decimal {\bfseries \+\_\+total\+Price}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a34263ea0638d4f997f2876245ff00d45}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a34263ea0638d4f997f2876245ff00d45} 
+decimal {\bfseries \+\_\+shipping\+Fee}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_abd4c091d44650b7f3df9771803f7a87f}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_abd4c091d44650b7f3df9771803f7a87f} 
+decimal {\bfseries \+\_\+product\+Price}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_aeb44c617fd7b9f50a3113bc5f43d2ae2}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_aeb44c617fd7b9f50a3113bc5f43d2ae2} 
+bool {\bfseries \+\_\+is\+Momo\+Selected}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a86778e3a539bc40f3151bb7d63389ab7}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a86778e3a539bc40f3151bb7d63389ab7} 
+bool {\bfseries \+\_\+is\+Bank\+Selected}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a1304303934a8af44b1de2caae56a4013}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a1304303934a8af44b1de2caae56a4013} 
+bool {\bfseries \+\_\+is\+Cod\+Selected}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a28aa2c590662a9ef8e9d7c67bd017ee5}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a28aa2c590662a9ef8e9d7c67bd017ee5} 
+string {\bfseries \+\_\+name}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ab50f23a0b89873709f2b04f91b4c0aa0}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ab50f23a0b89873709f2b04f91b4c0aa0} 
+string {\bfseries \+\_\+phone\+Number}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_acdd50c64448c8e445a7f2910bbe53f02}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_acdd50c64448c8e445a7f2910bbe53f02} 
+string {\bfseries \+\_\+address}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a3d5fc64d4ce11ab37b0faf03d9fc3abc}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_a3d5fc64d4ce11ab37b0faf03d9fc3abc} 
+bool {\bfseries \+\_\+is\+Name\+Invalid}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ac0b6f652603347384457a9c2a7aef333}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ac0b6f652603347384457a9c2a7aef333} 
+bool {\bfseries \+\_\+is\+Phone\+Number\+Invalid}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ae9bd6186a49c49e9e81410ffa8d03358}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ae9bd6186a49c49e9e81410ffa8d03358} 
+bool {\bfseries \+\_\+is\+Address\+Invalid}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ac619b378cbcd67fa57b76fa61f05ef9f}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_ac619b378cbcd67fa57b76fa61f05ef9f} 
+bool {\bfseries \+\_\+is\+Name\+Enabled}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_acf833011d9f72ed29e4387b80d49f3f4}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_acf833011d9f72ed29e4387b80d49f3f4} 
+bool {\bfseries \+\_\+is\+Phone\+Number\+Enabled}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_aa6efa7c03c0648cca7926689579c0111}\label{class_gyminize_1_1_view_models_1_1_payment_view_model_aa6efa7c03c0648cca7926689579c0111} 
+bool {\bfseries \+\_\+is\+Address\+Enabled}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model cho màn hình thanh toán của ứng dụng. 
+
+Lớp này chịu trách nhiệm quản lý các thao tác liên quan đến thanh toán, bao gồm việc chỉnh sửa thông tin người dùng (tên, số điện thoại, địa chỉ), chọn phương thức thanh toán, và xử lý quá trình thanh toán. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_a851a69bf7d19d35bd01d7cca20fd8e82}\index{Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}!PaymentViewModel@{PaymentViewModel}}
+\index{PaymentViewModel@{PaymentViewModel}!Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}}
+\doxysubsubsection{\texorpdfstring{PaymentViewModel()}{PaymentViewModel()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_payment_view_model_a851a69bf7d19d35bd01d7cca20fd8e82} 
+Gyminize.\+View\+Models.\+Payment\+View\+Model.\+Payment\+View\+Model (\begin{DoxyParamCaption}\item[{INavigation\+Service}]{navigation\+Service}{, }\item[{ILocal\+Settings\+Service}]{local\+Settings\+Service}{, }\item[{IDialog\+Service}]{dialog\+Service}{, }\item[{IApi\+Services\+Client}]{api\+Services\+Client}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo View\+Model cho màn hình thanh toán. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation\+Service} & Dịch vụ điều hướng giữa các trang.\\
+\hline
+{\em local\+Settings\+Service} & Dịch vụ lưu trữ cài đặt người dùng.\\
+\hline
+{\em dialog\+Service} & Dịch vụ hiển thị hộp thoại.\\
+\hline
+{\em api\+Services\+Client} & Dịch vụ kết nối API.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_ac0a0125e0c4b14486443e7820266868d}\index{Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}!ContainsSpecialCharacters@{ContainsSpecialCharacters}}
+\index{ContainsSpecialCharacters@{ContainsSpecialCharacters}!Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}}
+\doxysubsubsection{\texorpdfstring{ContainsSpecialCharacters()}{ContainsSpecialCharacters()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_payment_view_model_ac0a0125e0c4b14486443e7820266868d} 
+bool Gyminize.\+View\+Models.\+Payment\+View\+Model.\+Contains\+Special\+Characters (\begin{DoxyParamCaption}\item[{string}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Kiểm tra chuỗi có chứa ký tự đặc biệt hay không. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chuỗi cần kiểm tra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True nếu có ký tự đặc biệt, False nếu không.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_payment_view_model_aec00686d32f43a5c5a246fff2660bbf8}\index{Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}!TogglePaymentMethodExecute@{TogglePaymentMethodExecute}}
+\index{TogglePaymentMethodExecute@{TogglePaymentMethodExecute}!Gyminize.ViewModels.PaymentViewModel@{Gyminize.ViewModels.PaymentViewModel}}
+\doxysubsubsection{\texorpdfstring{TogglePaymentMethodExecute()}{TogglePaymentMethodExecute()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_payment_view_model_aec00686d32f43a5c5a246fff2660bbf8} 
+void Gyminize.\+View\+Models.\+Payment\+View\+Model.\+Toggle\+Payment\+Method\+Execute (\begin{DoxyParamCaption}\item[{string}]{method}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Thực hiện thao tác khi người dùng chọn phương thức thanh toán. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & Phương thức thanh toán (Momo, Ngân hàng, COD).\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+Services.\+Email\+Sender Class Reference}
 \hypertarget{class_gyminize_1_1_services_1_1_email_sender}{}\label{class_gyminize_1_1_services_1_1_email_sender}\index{Gyminize.Services.EmailSender@{Gyminize.Services.EmailSender}}
+
+
+Lớp này chịu trách nhiệm gửi email thông qua dịch vụ SMTP.  
+
+
 Inheritance diagram for Gyminize.\+Services.\+Email\+Sender\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,9 +15,12 @@ Inheritance diagram for Gyminize.\+Services.\+Email\+Sender\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 async Task \mbox{\hyperlink{class_gyminize_1_1_services_1_1_email_sender_a1cbf9559a714c0aff2f2114c25645bbf}{Send\+Email\+Async}} (string email, string subject, string message)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gửi email bất đồng bộ đến địa chỉ email chỉ định với tiêu đề và nội dung. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_services_1_1_i_email_sender}{Gyminize.\+Services.\+IEmail\+Sender}}}
 
+
+\doxysubsection{Detailed Description}
+Lớp này chịu trách nhiệm gửi email thông qua dịch vụ SMTP. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_gyminize_1_1_services_1_1_email_sender_a1cbf9559a714c0aff2f2114c25645bbf}\index{Gyminize.Services.EmailSender@{Gyminize.Services.EmailSender}!SendEmailAsync@{SendEmailAsync}}
@@ -21,6 +29,22 @@ async Task \mbox{\hyperlink{class_gyminize_1_1_services_1_1_email_sender_a1cbf95
 {\footnotesize\ttfamily \label{class_gyminize_1_1_services_1_1_email_sender_a1cbf9559a714c0aff2f2114c25645bbf} 
 async Task Gyminize.\+Services.\+Email\+Sender.\+Send\+Email\+Async (\begin{DoxyParamCaption}\item[{string}]{email}{, }\item[{string}]{subject}{, }\item[{string}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Gửi email bất đồng bộ đến địa chỉ email chỉ định với tiêu đề và nội dung. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Địa chỉ email người nhận.\\
+\hline
+{\em subject} & Tiêu đề của email.\\
+\hline
+{\em message} & Nội dung của email, có thể là HTML.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về một tác vụ bất đồng bộ.
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_gyminize_1_1_services_1_1_i_email_sender}{Gyminize.\+Services.\+IEmail\+Sender}}.

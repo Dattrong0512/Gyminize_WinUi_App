@@ -1,62 +1,93 @@
 \doxysection{Gyminize.\+View\+Models.\+Plan\+Selection\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model}{}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model}\index{Gyminize.ViewModels.PlanSelectionViewModel@{Gyminize.ViewModels.PlanSelectionViewModel}}
+
+
+View\+Model cho màn hình chọn kế hoạch (Plan Selection).  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Plan\+Selection\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.830065cm]{class_gyminize_1_1_view_models_1_1_plan_selection_view_model}
+\includegraphics[height=1.944445cm]{class_gyminize_1_1_view_models_1_1_plan_selection_view_model}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a3cc4ae6d62986e297ddc812415d72a8a}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a3cc4ae6d62986e297ddc812415d72a8a} 
-{\bfseries Plan\+Selection\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service)
-\item 
+\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a3cc4ae6d62986e297ddc812415d72a8a}{Plan\+Selection\+View\+Model}} (INavigation\+Service navigation\+Service, ILocal\+Settings\+Service local\+Settings\+Service)
+\begin{DoxyCompactList}\small\item\em Khởi tạo View\+Model cho việc chọn kế hoạch. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_aa40d36bb955e09c9bf409c0e12e41771}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_aa40d36bb955e09c9bf409c0e12e41771} 
 void {\bfseries Plan1\+Selection} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Thực thi lệnh khi người dùng chọn kế hoạch 1. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a51e4e6d2d2613edeaa1114cb2875c3b1}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a51e4e6d2d2613edeaa1114cb2875c3b1} 
 void {\bfseries Plan2\+Selection} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Thực thi lệnh khi người dùng chọn kế hoạch 2. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_ae5a8ef5b1a1acc94faf092248c12a8e5}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_ae5a8ef5b1a1acc94faf092248c12a8e5} 
 void {\bfseries Plan3\+Selection} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Thực thi lệnh khi người dùng chọn kế hoạch 3. \end{DoxyCompactList}\item 
 async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a839f6650ccfabe30d13a4e85a9abc825}{On\+Navigated\+To}} (object parameter)
-\item 
-void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_af389122e71cb087ec0bb9c113c454d00}{On\+Navigated\+From}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}}
+\begin{DoxyCompactList}\small\item\em Được gọi khi View\+Model được điều hướng đến. Lấy customer\+\_\+id từ cài đặt và lưu vào biến {\ttfamily customer\+\_\+id}. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_af389122e71cb087ec0bb9c113c454d00}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_af389122e71cb087ec0bb9c113c454d00} 
+void {\bfseries On\+Navigated\+From} ()
+\begin{DoxyCompactList}\small\item\em Được gọi khi View\+Model được điều hướng đi. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_aa36e5f9c400f7e1ee1a5e071832d5ef0}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_aa36e5f9c400f7e1ee1a5e071832d5ef0} 
 string {\bfseries customer\+\_\+id}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ID của khách hàng (customer\+\_\+id). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a1c44b935ec5b24b3ea951086e60d8ee3}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a1c44b935ec5b24b3ea951086e60d8ee3} 
 ICommand {\bfseries Plan1\+Selected\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lệnh được gọi khi người dùng chọn kế hoạch 1. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a52a2138e99938ec1881778a3cba5c5d5}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a52a2138e99938ec1881778a3cba5c5d5} 
 ICommand {\bfseries Plan2\+Selected\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lệnh được gọi khi người dùng chọn kế hoạch 2. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a76a60025654d2c6723c0bb6ed08963bf}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a76a60025654d2c6723c0bb6ed08963bf} 
 ICommand {\bfseries Plan3\+Selected\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Lệnh được gọi khi người dùng chọn kế hoạch 3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a5f19d8bd2783115f8ac11d745af18389}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a5f19d8bd2783115f8ac11d745af18389} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a9d14ef4d7bb748a7565267d8ca237a20}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a9d14ef4d7bb748a7565267d8ca237a20} 
+readonly ILocal\+Settings\+Service {\bfseries \+\_\+local\+Settings\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a9c19d9f7b7396fd87d60f4e8311e9720}\label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a9c19d9f7b7396fd87d60f4e8311e9720} 
+UIElement? {\bfseries \+\_\+shell} = null
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+View\+Model cho màn hình chọn kế hoạch (Plan Selection). 
+
+Lớp này chịu trách nhiệm quản lý các lệnh và dữ liệu cho việc chọn kế hoạch của người dùng. Nó cung cấp các lệnh để người dùng lựa chọn các kế hoạch khác nhau (Plan1, Plan2, Plan3), và thực hiện các thao tác như gửi yêu cầu API để tạo các chi tiết kế hoạch cho người dùng. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a3cc4ae6d62986e297ddc812415d72a8a}\index{Gyminize.ViewModels.PlanSelectionViewModel@{Gyminize.ViewModels.PlanSelectionViewModel}!PlanSelectionViewModel@{PlanSelectionViewModel}}
+\index{PlanSelectionViewModel@{PlanSelectionViewModel}!Gyminize.ViewModels.PlanSelectionViewModel@{Gyminize.ViewModels.PlanSelectionViewModel}}
+\doxysubsubsection{\texorpdfstring{PlanSelectionViewModel()}{PlanSelectionViewModel()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a3cc4ae6d62986e297ddc812415d72a8a} 
+Gyminize.\+View\+Models.\+Plan\+Selection\+View\+Model.\+Plan\+Selection\+View\+Model (\begin{DoxyParamCaption}\item[{INavigation\+Service}]{navigation\+Service}{, }\item[{ILocal\+Settings\+Service}]{local\+Settings\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo View\+Model cho việc chọn kế hoạch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation\+Service} & Dịch vụ điều hướng để chuyển trang.\\
+\hline
+{\em local\+Settings\+Service} & Dịch vụ lưu trữ cài đặt người dùng.\\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_af389122e71cb087ec0bb9c113c454d00}\index{Gyminize.ViewModels.PlanSelectionViewModel@{Gyminize.ViewModels.PlanSelectionViewModel}!OnNavigatedFrom@{OnNavigatedFrom}}
-\index{OnNavigatedFrom@{OnNavigatedFrom}!Gyminize.ViewModels.PlanSelectionViewModel@{Gyminize.ViewModels.PlanSelectionViewModel}}
-\doxysubsubsection{\texorpdfstring{OnNavigatedFrom()}{OnNavigatedFrom()}}
-{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_af389122e71cb087ec0bb9c113c454d00} 
-void Gyminize.\+View\+Models.\+Plan\+Selection\+View\+Model.\+On\+Navigated\+From (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}.
-
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_selection_view_model_a839f6650ccfabe30d13a4e85a9abc825}\index{Gyminize.ViewModels.PlanSelectionViewModel@{Gyminize.ViewModels.PlanSelectionViewModel}!OnNavigatedTo@{OnNavigatedTo}}
 \index{OnNavigatedTo@{OnNavigatedTo}!Gyminize.ViewModels.PlanSelectionViewModel@{Gyminize.ViewModels.PlanSelectionViewModel}}
 \doxysubsubsection{\texorpdfstring{OnNavigatedTo()}{OnNavigatedTo()}}
@@ -65,8 +96,13 @@ async void Gyminize.\+View\+Models.\+Plan\+Selection\+View\+Model.\+On\+Navigate
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}.
+Được gọi khi View\+Model được điều hướng đến. Lấy customer\+\_\+id từ cài đặt và lưu vào biến {\ttfamily customer\+\_\+id}. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Tham số được truyền từ màn hình trước.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

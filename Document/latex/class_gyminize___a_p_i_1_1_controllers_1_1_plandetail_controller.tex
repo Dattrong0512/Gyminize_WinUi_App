@@ -1,5 +1,10 @@
 \doxysection{Gyminize\+\_\+\+API.\+Controllers.\+Plandetail\+Controller Class Reference}
 \hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller}{}\label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller}\index{Gyminize\_API.Controllers.PlandetailController@{Gyminize\_API.Controllers.PlandetailController}}
+
+
+Controller quản lý các hoạt động liên quan đến chi tiết kế hoạch của khách hàng, bao gồm việc lấy thông tin chi tiết kế hoạch và thêm chi tiết kế hoạch mới cho khách hàng.  
+
+
 Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Plandetail\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +14,80 @@ Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Plandetail\+Controll
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a9d45e38d9e0095f25a44a910fe668c51}\label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a9d45e38d9e0095f25a44a910fe668c51} 
-{\bfseries Plandetail\+Controller} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository}{Plandetail\+Repository}} plandetail\+Repository)
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a9d45e38d9e0095f25a44a910fe668c51}{Plandetail\+Controller}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository}{Plandetail\+Repository}} plandetail\+Repository)
+\begin{DoxyCompactList}\small\item\em Khởi tạo controller với repository để quản lý các hoạt động chi tiết kế hoạch. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a657cad571770ac58d7e37b35fc0532c3}{Get\+Plandetail\+By\+Customer\+Id}} (int customer\+Id)
+\begin{DoxyCompactList}\small\item\em Lấy thông tin chi tiết kế hoạch của khách hàng dựa trên ID khách hàng. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_adeca603f6ae71b598ee2d2ee3b9768ba}{Add\+Plandetail}} (int customer\+Id, int plan)
+\begin{DoxyCompactList}\small\item\em Thêm một chi tiết kế hoạch mới cho khách hàng. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a657cad571770ac58d7e37b35fc0532c3}\label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a657cad571770ac58d7e37b35fc0532c3} 
-IAction\+Result {\bfseries Get\+Plandetail\+By\+Customer\+Id} (int customer\+Id)
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_adeca603f6ae71b598ee2d2ee3b9768ba}\label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_adeca603f6ae71b598ee2d2ee3b9768ba} 
-IAction\+Result {\bfseries Add\+Plandetail} (int customer\+Id, int plan)
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_aae9a096933e023f748355ae8fe4ab44f}\label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_aae9a096933e023f748355ae8fe4ab44f} 
+readonly \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository}{Plandetail\+Repository}} {\bfseries \+\_\+plandetail\+Repository}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller quản lý các hoạt động liên quan đến chi tiết kế hoạch của khách hàng, bao gồm việc lấy thông tin chi tiết kế hoạch và thêm chi tiết kế hoạch mới cho khách hàng. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a9d45e38d9e0095f25a44a910fe668c51}\index{Gyminize\_API.Controllers.PlandetailController@{Gyminize\_API.Controllers.PlandetailController}!PlandetailController@{PlandetailController}}
+\index{PlandetailController@{PlandetailController}!Gyminize\_API.Controllers.PlandetailController@{Gyminize\_API.Controllers.PlandetailController}}
+\doxysubsubsection{\texorpdfstring{PlandetailController()}{PlandetailController()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a9d45e38d9e0095f25a44a910fe668c51} 
+Gyminize\+\_\+\+API.\+Controllers.\+Plandetail\+Controller.\+Plandetail\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository}{Plandetail\+Repository}}}]{plandetail\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo controller với repository để quản lý các hoạt động chi tiết kế hoạch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plandetail\+Repository} & Repository chứa các phương thức thao tác với dữ liệu chi tiết kế hoạch\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_adeca603f6ae71b598ee2d2ee3b9768ba}\index{Gyminize\_API.Controllers.PlandetailController@{Gyminize\_API.Controllers.PlandetailController}!AddPlandetail@{AddPlandetail}}
+\index{AddPlandetail@{AddPlandetail}!Gyminize\_API.Controllers.PlandetailController@{Gyminize\_API.Controllers.PlandetailController}}
+\doxysubsubsection{\texorpdfstring{AddPlandetail()}{AddPlandetail()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_adeca603f6ae71b598ee2d2ee3b9768ba} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Plandetail\+Controller.\+Add\+Plandetail (\begin{DoxyParamCaption}\item[{int}]{customer\+Id}{, }\item[{int}]{plan}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Thêm một chi tiết kế hoạch mới cho khách hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & ID khách hàng cần thêm chi tiết kế hoạch\\
+\hline
+{\em plan} & ID kế hoạch cần thêm cho khách hàng\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về thông tin chi tiết kế hoạch đã thêm vào hệ thống
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a657cad571770ac58d7e37b35fc0532c3}\index{Gyminize\_API.Controllers.PlandetailController@{Gyminize\_API.Controllers.PlandetailController}!GetPlandetailByCustomerId@{GetPlandetailByCustomerId}}
+\index{GetPlandetailByCustomerId@{GetPlandetailByCustomerId}!Gyminize\_API.Controllers.PlandetailController@{Gyminize\_API.Controllers.PlandetailController}}
+\doxysubsubsection{\texorpdfstring{GetPlandetailByCustomerId()}{GetPlandetailByCustomerId()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller_a657cad571770ac58d7e37b35fc0532c3} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Plandetail\+Controller.\+Get\+Plandetail\+By\+Customer\+Id (\begin{DoxyParamCaption}\item[{int}]{customer\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy thông tin chi tiết kế hoạch của khách hàng dựa trên ID khách hàng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & ID khách hàng cần lấy thông tin chi tiết kế hoạch\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về chi tiết kế hoạch nếu tìm thấy, hoặc trả về lỗi 404 nếu không tìm thấy
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

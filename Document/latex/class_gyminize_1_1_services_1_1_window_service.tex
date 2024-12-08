@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+Services.\+Window\+Service Class Reference}
 \hypertarget{class_gyminize_1_1_services_1_1_window_service}{}\label{class_gyminize_1_1_services_1_1_window_service}\index{Gyminize.Services.WindowService@{Gyminize.Services.WindowService}}
+
+
+Dịch vụ quản lý cửa sổ ứng dụng, bao gồm các thao tác thay đổi kích thước, tiêu đề và các tính năng của cửa sổ.  
+
+
 Inheritance diagram for Gyminize.\+Services.\+Window\+Service\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,16 +14,30 @@ Inheritance diagram for Gyminize.\+Services.\+Window\+Service\+:\begin{figure}[H
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{class_gyminize_1_1_services_1_1_window_service_a06a1a71f57f387beed10d11ca41ef8b4}\label{class_gyminize_1_1_services_1_1_window_service_a06a1a71f57f387beed10d11ca41ef8b4} 
+{\bfseries Window\+Service} ()
+\begin{DoxyCompactList}\small\item\em Khởi tạo dịch vụ cửa sổ, lấy đối tượng App\+Window và Overlapped\+Presenter từ cửa sổ ứng dụng chính. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_gyminize_1_1_services_1_1_window_service_a392499da0f94e25370bc518d560879c5}{Set\+Is\+Resizable}} (bool is\+Resizable)
-\item 
+\begin{DoxyCompactList}\small\item\em Đặt tính năng thay đổi kích thước của cửa sổ. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_gyminize_1_1_services_1_1_window_service_a4f6e3ee56ce9c8944f4ab27b609b056a}{Set\+Is\+Maximizable}} (bool is\+Maximizable)
-\item 
+\begin{DoxyCompactList}\small\item\em Đặt tính năng tối đa hóa của cửa sổ. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_gyminize_1_1_services_1_1_window_service_a26873044c819811e90ece0b0c6034413}{Set\+Window\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em Thay đổi kích thước cửa sổ. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_gyminize_1_1_services_1_1_window_service_ad70325198b28c7f34560da01b39c2f27}{Set\+Title}} (string title)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{Gyminize.\+Contracts.\+Services.\+IWindow\+Service}}}
+\begin{DoxyCompactList}\small\item\em Đặt tiêu đề cho cửa sổ. Nếu tiêu đề là chuỗi rỗng, tiêu đề sẽ được ẩn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_window_service_aaf7d156bb5616b5a44659df2db6b7527}\label{class_gyminize_1_1_services_1_1_window_service_aaf7d156bb5616b5a44659df2db6b7527} 
+readonly App\+Window {\bfseries \+\_\+app\+Window}
+\begin{DoxyCompactList}\small\item\em Cửa sổ ứng dụng chính. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_services_1_1_window_service_a02fdfb466c27dea5e741098893fe1f35}\label{class_gyminize_1_1_services_1_1_window_service_a02fdfb466c27dea5e741098893fe1f35} 
+readonly Overlapped\+Presenter {\bfseries \+\_\+presenter}
+\begin{DoxyCompactList}\small\item\em Trình bày cửa sổ. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Dịch vụ quản lý cửa sổ ứng dụng, bao gồm các thao tác thay đổi kích thước, tiêu đề và các tính năng của cửa sổ. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_gyminize_1_1_services_1_1_window_service_a4f6e3ee56ce9c8944f4ab27b609b056a}\index{Gyminize.Services.WindowService@{Gyminize.Services.WindowService}!SetIsMaximizable@{SetIsMaximizable}}
@@ -29,8 +48,13 @@ void Gyminize.\+Services.\+Window\+Service.\+Set\+Is\+Maximizable (\begin{DoxyPa
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{Gyminize.\+Contracts.\+Services.\+IWindow\+Service}}.
+Đặt tính năng tối đa hóa của cửa sổ. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Maximizable} & Xác định xem cửa sổ có thể tối đa hóa hay không.\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_gyminize_1_1_services_1_1_window_service_a392499da0f94e25370bc518d560879c5}\index{Gyminize.Services.WindowService@{Gyminize.Services.WindowService}!SetIsResizable@{SetIsResizable}}
 \index{SetIsResizable@{SetIsResizable}!Gyminize.Services.WindowService@{Gyminize.Services.WindowService}}
 \doxysubsubsection{\texorpdfstring{SetIsResizable()}{SetIsResizable()}}
@@ -39,8 +63,13 @@ void Gyminize.\+Services.\+Window\+Service.\+Set\+Is\+Resizable (\begin{DoxyPara
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{Gyminize.\+Contracts.\+Services.\+IWindow\+Service}}.
+Đặt tính năng thay đổi kích thước của cửa sổ. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Resizable} & Xác định xem cửa sổ có thể thay đổi kích thước hay không.\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_gyminize_1_1_services_1_1_window_service_ad70325198b28c7f34560da01b39c2f27}\index{Gyminize.Services.WindowService@{Gyminize.Services.WindowService}!SetTitle@{SetTitle}}
 \index{SetTitle@{SetTitle}!Gyminize.Services.WindowService@{Gyminize.Services.WindowService}}
 \doxysubsubsection{\texorpdfstring{SetTitle()}{SetTitle()}}
@@ -49,8 +78,13 @@ void Gyminize.\+Services.\+Window\+Service.\+Set\+Title (\begin{DoxyParamCaption
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{Gyminize.\+Contracts.\+Services.\+IWindow\+Service}}.
+Đặt tiêu đề cho cửa sổ. Nếu tiêu đề là chuỗi rỗng, tiêu đề sẽ được ẩn. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Tiêu đề mới của cửa sổ.\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_gyminize_1_1_services_1_1_window_service_a26873044c819811e90ece0b0c6034413}\index{Gyminize.Services.WindowService@{Gyminize.Services.WindowService}!SetWindowSize@{SetWindowSize}}
 \index{SetWindowSize@{SetWindowSize}!Gyminize.Services.WindowService@{Gyminize.Services.WindowService}}
 \doxysubsubsection{\texorpdfstring{SetWindowSize()}{SetWindowSize()}}
@@ -59,8 +93,15 @@ void Gyminize.\+Services.\+Window\+Service.\+Set\+Window\+Size (\begin{DoxyParam
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{Gyminize.\+Contracts.\+Services.\+IWindow\+Service}}.
+Thay đổi kích thước cửa sổ. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Chiều rộng mới của cửa sổ.\\
+\hline
+{\em height} & Chiều cao mới của cửa sổ.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

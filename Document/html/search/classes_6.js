@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['typeworkout_0',['Typeworkout',['../class_gyminize___a_p_i_1_1_data_1_1_model_1_1_typeworkout.html',1,'Gyminize_API::Data::Model']]]
+  ['healthcalculator_0',['HealthCalculator',['../class_gyminize_1_1_helpers_1_1_health_calculator.html',1,'Gyminize::Helpers']]],
+  ['homeviewmodel_1',['HomeViewModel',['../class_gyminize_1_1_view_models_1_1_home_view_model.html',1,'Gyminize::ViewModels']]],
+  ['homeviewmodeltest_2',['HomeViewModelTest',['../class_gyminize_1_1_tests_1_1_m_s_test_1_1_view_model_1_1_home_view_model_test.html',1,'Gyminize::Tests::MSTest::ViewModel']]]
 ];

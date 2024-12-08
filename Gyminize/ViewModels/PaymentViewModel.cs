@@ -16,7 +16,14 @@ using System.Diagnostics;
 
 namespace Gyminize.ViewModels;
 
-
+/// <summary>
+/// ViewModel cho màn hình thanh toán của ứng dụng.
+/// </summary>
+/// <remarks>
+/// Lớp này chịu trách nhiệm quản lý các thao tác liên quan đến thanh toán, 
+/// bao gồm việc chỉnh sửa thông tin người dùng (tên, số điện thoại, địa chỉ), 
+/// chọn phương thức thanh toán, và xử lý quá trình thanh toán.
+/// </remarks>
 public partial class PaymentViewModel : ObservableRecipient
 {
     private readonly INavigationService _navigationService;
@@ -149,12 +156,20 @@ public partial class PaymentViewModel : ObservableRecipient
     get;
     }
 
+    /// <summary>
+    /// Khởi tạo ViewModel cho màn hình thanh toán.
+    /// </summary>
+    /// <param name="navigationService">Dịch vụ điều hướng giữa các trang.</param>
+    /// <param name="localSettingsService">Dịch vụ lưu trữ cài đặt người dùng.</param>
+    /// <param name="dialogService">Dịch vụ hiển thị hộp thoại.</param>
+    /// <param name="apiServicesClient">Dịch vụ kết nối API.</param>
     public PaymentViewModel(INavigationService navigationService, ILocalSettingsService localSettingsService, IDialogService dialogService, IApiServicesClient apiServicesClient)
     {
         _navigationService = navigationService;
         _localSettingsService = localSettingsService;
         _dialogService = dialogService;
         _apiServicesClient = apiServicesClient;
+
         TogglePaymentMethod = new RelayCommand<string>(TogglePaymentMethodExecute);
         EditNameCommand = new RelayCommand(EditName);
         SaveNameCommand = new RelayCommand(SaveName);
@@ -163,13 +178,22 @@ public partial class PaymentViewModel : ObservableRecipient
         EditAddressCommand = new RelayCommand(EditAddress);
         SaveAddressCommand = new RelayCommand(SaveAddress);
         PaymentCommand = new RelayCommand(PaymentProcess);
+
         LoadOrderDetailData();
     }
 
+    /// <summary>
+    /// Kiểm tra xem có thể tiếp tục thanh toán hay không.
+    /// </summary>
     private void CheckCanProceedToPayment()
     {
         OnPropertyChanged(nameof(CanProceedToPayment));
     }
+
+    /// <summary>
+    /// Thực hiện thao tác khi người dùng chọn phương thức thanh toán.
+    /// </summary>
+    /// <param name="method">Phương thức thanh toán (Momo, Ngân hàng, COD).</param>
     private void TogglePaymentMethodExecute(string method)
     {
         switch (method)
@@ -193,36 +217,48 @@ public partial class PaymentViewModel : ObservableRecipient
         CheckCanProceedToPayment();
     }
 
+    /// <summary>
+    /// Tải chi tiết đơn hàng của khách hàng.
+    /// </summary>
     public async void LoadOrderDetailData()
     {
         await getCurrentOrder();
         var endpoint = $"api/Customer/get/" + currentOrder.customer_id;
         var customer = _apiServicesClient.Get<Customer>(endpoint);
-        if(customer.customer_name == null)
-        {
-            Name = "";
-        } else
-        {
-            Name = customer.customer_name;
-        }
+
+        Name = customer.customer_name ?? "";
+
         PhoneNumber = currentOrder.phone_number;
         Address = currentOrder.address;
+
         _productPrice = currentOrder.total_price;
         _shippingFee = 20;
+
         _totalPrice = _productPrice + _shippingFee;
     }
 
+    /// <summary>
+    /// Kiểm tra chuỗi có chứa ký tự đặc biệt hay không.
+    /// </summary>
+    /// <param name="input">Chuỗi cần kiểm tra.</param>
+    /// <returns>True nếu có ký tự đặc biệt, False nếu không.</returns>
     private bool ContainsSpecialCharacters(string input)
     {
         string pattern = @"[^a-zA-Z0-9\sÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]";
         return System.Text.RegularExpressions.Regex.IsMatch(input, pattern);
     }
 
+    /// <summary>
+    /// Cho phép người dùng chỉnh sửa tên.
+    /// </summary>
     private void EditName()
     {
         IsNameEnabled = true;
     }
 
+    /// <summary>
+    /// Lưu tên người dùng sau khi chỉnh sửa.
+    /// </summary>
     private void SaveName()
     {
         if (string.IsNullOrEmpty(Name))
@@ -237,11 +273,17 @@ public partial class PaymentViewModel : ObservableRecipient
         CheckCanProceedToPayment();
     }
 
+    /// <summary>
+    /// Cho phép người dùng chỉnh sửa số điện thoại.
+    /// </summary>
     private void EditPhoneNumber()
     {
         IsPhoneNumberEnabled = true;
     }
 
+    /// <summary>
+    /// Lưu số điện thoại người dùng sau khi chỉnh sửa.
+    /// </summary>
     private void SavePhoneNumber()
     {
         if (string.IsNullOrEmpty(PhoneNumber) || PhoneNumber.Length != 11 || !PhoneNumber.All(char.IsDigit))
@@ -252,16 +294,21 @@ public partial class PaymentViewModel : ObservableRecipient
         {
             IsPhoneNumberInvalid = false;
             IsPhoneNumberEnabled = false;
-            // Lưu phone vào dtb
         }
         CheckCanProceedToPayment();
     }
 
+    /// <summary>
+    /// Cho phép người dùng chỉnh sửa địa chỉ.
+    /// </summary>
     private void EditAddress()
     {
         IsAddressEnabled = true;
     }
 
+    /// <summary>
+    /// Lưu địa chỉ người dùng sau khi chỉnh sửa.
+    /// </summary>
     private void SaveAddress()
     {
         if (string.IsNullOrEmpty(Address))
@@ -272,29 +319,42 @@ public partial class PaymentViewModel : ObservableRecipient
         {
             IsAddressInvalid = false;
             IsAddressEnabled = false;
-            //lưu address vào dtb
         }
         CheckCanProceedToPayment();
     }
 
+    /// <summary>
+    /// Lấy thông tin đơn hàng hiện tại từ cài đặt.
+    /// </summary>
     public async Task getCurrentOrder()
     {
         currentOrder = await _localSettingsService.ReadSettingAsync<Orders>("currentOrder");
     }
 
+    /// <summary>
+    /// Xử lý quá trình thanh toán.
+    /// </summary>
     private void PaymentProcess()
     {
-        if(IsMomoSelected == true) 
-        { 
-            //Xử lí thanh toán MOMO
-        }
-        else if (IsBankSelected == true)
+        if (IsMomoSelected)
         {
-            //Xử lí thanh toán Ngân hàng (hoặc vnpay)
+            // Xử lý thanh toán qua Momo
         }
-        else if(IsCodSelected == true)
+        else if (IsBankSelected)
         {
-            //Xử lí thanh toán nhận hàng
+            // Xử lý thanh toán qua Ngân hàng (hoặc VNPAY)
+        }
+        else if (IsCodSelected)
+        {
+            // Xử lý thanh toán khi nhận hàng (COD)
         }
     }
 }
+
+
+
+
+
+
+
+

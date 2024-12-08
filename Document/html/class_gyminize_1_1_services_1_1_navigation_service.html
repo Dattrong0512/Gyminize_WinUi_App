@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -94,6 +93,8 @@ $(function(){ initResizable(false); });
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#events">Events</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_services_1_1_navigation_service-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.Services.NavigationService Class Reference</div></div>
 </div><!--header-->
@@ -102,175 +103,63 @@ $(function(){ initResizable(false); });
 Inheritance diagram for Gyminize.Services.NavigationService:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_gyminize_1_1_services_1_1_navigation_service.png" usemap="#Gyminize.Services.NavigationService_map" alt=""/>
-  <map id="Gyminize.Services.NavigationService_map" name="Gyminize.Services.NavigationService_map">
-<area href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html" alt="Gyminize.Contracts.Services.INavigationService" shape="rect" coords="0,0,286,24"/>
-  </map>
-</div></div>
+  <img src="class_gyminize_1_1_services_1_1_navigation_service.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a447407a9fa847d037bbbbb3b70cbb3e8" id="r_a447407a9fa847d037bbbbb3b70cbb3e8"><td class="memItemLeft" align="right" valign="top"><a id="a447407a9fa847d037bbbbb3b70cbb3e8" name="a447407a9fa847d037bbbbb3b70cbb3e8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NavigationService</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_page_service.html">IPageService</a> pageService)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>NavigationService</b> (IPageService pageService)</td></tr>
 <tr class="separator:a447407a9fa847d037bbbbb3b70cbb3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a490f790b9450488c091bf64845b9cee4" id="r_a490f790b9450488c091bf64845b9cee4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a490f790b9450488c091bf64845b9cee4">GoBack</a> ()</td></tr>
+<tr class="memitem:a490f790b9450488c091bf64845b9cee4" id="r_a490f790b9450488c091bf64845b9cee4"><td class="memItemLeft" align="right" valign="top"><a id="a490f790b9450488c091bf64845b9cee4" name="a490f790b9450488c091bf64845b9cee4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>GoBack</b> ()</td></tr>
 <tr class="separator:a490f790b9450488c091bf64845b9cee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4870702f680746ab0a897ec644259cd" id="r_ab4870702f680746ab0a897ec644259cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4870702f680746ab0a897ec644259cd">NavigateTo</a> (string pageKey, object? parameter=null, bool clearNavigation=false)</td></tr>
+<tr class="memitem:ab4870702f680746ab0a897ec644259cd" id="r_ab4870702f680746ab0a897ec644259cd"><td class="memItemLeft" align="right" valign="top"><a id="ab4870702f680746ab0a897ec644259cd" name="ab4870702f680746ab0a897ec644259cd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>NavigateTo</b> (string pageKey, object? parameter=null, bool clearNavigation=false)</td></tr>
 <tr class="separator:ab4870702f680746ab0a897ec644259cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7e82b46fd37354323070f65ebf8a0d7" id="r_ab7e82b46fd37354323070f65ebf8a0d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7e82b46fd37354323070f65ebf8a0d7">SetListDataItemForNextConnectedAnimation</a> (object item)</td></tr>
+<tr class="memitem:ab7e82b46fd37354323070f65ebf8a0d7" id="r_ab7e82b46fd37354323070f65ebf8a0d7"><td class="memItemLeft" align="right" valign="top"><a id="ab7e82b46fd37354323070f65ebf8a0d7" name="ab7e82b46fd37354323070f65ebf8a0d7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetListDataItemForNextConnectedAnimation</b> (object item)</td></tr>
 <tr class="separator:ab7e82b46fd37354323070f65ebf8a0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a684bd593258e257c55c955634a70294c" id="r_a684bd593258e257c55c955634a70294c"><td class="memItemLeft" align="right" valign="top">Frame?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a684bd593258e257c55c955634a70294c">Frame</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a684bd593258e257c55c955634a70294c" id="r_a684bd593258e257c55c955634a70294c"><td class="memItemLeft" align="right" valign="top"><a id="a684bd593258e257c55c955634a70294c" name="a684bd593258e257c55c955634a70294c"></a>
+Frame?&#160;</td><td class="memItemRight" valign="bottom"><b>Frame</b><code> [get, set]</code></td></tr>
 <tr class="separator:a684bd593258e257c55c955634a70294c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564c6a71adbc5792bebb33a7bac9a9f2" id="r_a564c6a71adbc5792bebb33a7bac9a9f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a564c6a71adbc5792bebb33a7bac9a9f2">CanGoBack</a><code> [get]</code></td></tr>
+<tr class="memitem:a564c6a71adbc5792bebb33a7bac9a9f2" id="r_a564c6a71adbc5792bebb33a7bac9a9f2"><td class="memItemLeft" align="right" valign="top"><a id="a564c6a71adbc5792bebb33a7bac9a9f2" name="a564c6a71adbc5792bebb33a7bac9a9f2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>CanGoBack</b><code> [get]</code></td></tr>
 <tr class="separator:a564c6a71adbc5792bebb33a7bac9a9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
 <tr class="memitem:ab4c1eb8ec31b4c10aa52750f3bdb326f" id="r_ab4c1eb8ec31b4c10aa52750f3bdb326f"><td class="memItemLeft" align="right" valign="top"><a id="ab4c1eb8ec31b4c10aa52750f3bdb326f" name="ab4c1eb8ec31b4c10aa52750f3bdb326f"></a>
 NavigatedEventHandler?&#160;</td><td class="memItemRight" valign="bottom"><b>Navigated</b></td></tr>
 <tr class="separator:ab4c1eb8ec31b4c10aa52750f3bdb326f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header events_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service"><td colspan="2" onclick="javascript:dynsection.toggleInherit('events_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service')"><img src="closed.png" alt="-"/>&#160;Events inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a></td></tr>
-<tr class="memitem:a5293427e917feccbc44a21865233c6ea inherit events_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service" id="r_a5293427e917feccbc44a21865233c6ea"><td class="memItemLeft" align="right" valign="top">
-NavigatedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Navigated</b></td></tr>
-<tr class="separator:a5293427e917feccbc44a21865233c6ea inherit events_interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a256db245f8b95cd9b2a88fcd3bb13ae6" id="r_a256db245f8b95cd9b2a88fcd3bb13ae6"><td class="memItemLeft" align="right" valign="top"><a id="a256db245f8b95cd9b2a88fcd3bb13ae6" name="a256db245f8b95cd9b2a88fcd3bb13ae6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterFrameEvents</b> ()</td></tr>
+<tr class="separator:a256db245f8b95cd9b2a88fcd3bb13ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bef706f7f06b886eb399ee45d62773f" id="r_a8bef706f7f06b886eb399ee45d62773f"><td class="memItemLeft" align="right" valign="top"><a id="a8bef706f7f06b886eb399ee45d62773f" name="a8bef706f7f06b886eb399ee45d62773f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>UnregisterFrameEvents</b> ()</td></tr>
+<tr class="separator:a8bef706f7f06b886eb399ee45d62773f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad643be1c0f8b3a93bc62b60ec1c94944" id="r_ad643be1c0f8b3a93bc62b60ec1c94944"><td class="memItemLeft" align="right" valign="top"><a id="ad643be1c0f8b3a93bc62b60ec1c94944" name="ad643be1c0f8b3a93bc62b60ec1c94944"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnNavigated</b> (object sender, NavigationEventArgs e)</td></tr>
+<tr class="separator:ad643be1c0f8b3a93bc62b60ec1c94944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5ea2f6cb67479386d83e50487e5eeb47" id="r_a5ea2f6cb67479386d83e50487e5eeb47"><td class="memItemLeft" align="right" valign="top"><a id="a5ea2f6cb67479386d83e50487e5eeb47" name="a5ea2f6cb67479386d83e50487e5eeb47"></a>
+readonly IPageService&#160;</td><td class="memItemRight" valign="bottom"><b>_pageService</b></td></tr>
+<tr class="separator:a5ea2f6cb67479386d83e50487e5eeb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a40bf62b0f074354ad5b6cd887aaca" id="r_a97a40bf62b0f074354ad5b6cd887aaca"><td class="memItemLeft" align="right" valign="top"><a id="a97a40bf62b0f074354ad5b6cd887aaca" name="a97a40bf62b0f074354ad5b6cd887aaca"></a>
+object?&#160;</td><td class="memItemRight" valign="bottom"><b>_lastParameterUsed</b></td></tr>
+<tr class="separator:a97a40bf62b0f074354ad5b6cd887aaca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a587499cda0fb8289b7127a768c586120" id="r_a587499cda0fb8289b7127a768c586120"><td class="memItemLeft" align="right" valign="top"><a id="a587499cda0fb8289b7127a768c586120" name="a587499cda0fb8289b7127a768c586120"></a>
+Frame?&#160;</td><td class="memItemRight" valign="bottom"><b>_frame</b></td></tr>
+<tr class="separator:a587499cda0fb8289b7127a768c586120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a490f790b9450488c091bf64845b9cee4" name="a490f790b9450488c091bf64845b9cee4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a490f790b9450488c091bf64845b9cee4">&#9670;&#160;</a></span>GoBack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Gyminize.Services.NavigationService.GoBack </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a>.</p>
-
-</div>
-</div>
-<a id="ab4870702f680746ab0a897ec644259cd" name="ab4870702f680746ab0a897ec644259cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4870702f680746ab0a897ec644259cd">&#9670;&#160;</a></span>NavigateTo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Gyminize.Services.NavigationService.NavigateTo </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>pageKey</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">object?</td>          <td class="paramname"><span class="paramname"><em>parameter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>clearNavigation</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a>.</p>
-
-</div>
-</div>
-<a id="ab7e82b46fd37354323070f65ebf8a0d7" name="ab7e82b46fd37354323070f65ebf8a0d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7e82b46fd37354323070f65ebf8a0d7">&#9670;&#160;</a></span>SetListDataItemForNextConnectedAnimation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Gyminize.Services.NavigationService.SetListDataItemForNextConnectedAnimation </td>
-          <td>(</td>
-          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="a564c6a71adbc5792bebb33a7bac9a9f2" name="a564c6a71adbc5792bebb33a7bac9a9f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a564c6a71adbc5792bebb33a7bac9a9f2">&#9670;&#160;</a></span>CanGoBack</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Gyminize.Services.NavigationService.CanGoBack</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a>.</p>
-
-</div>
-</div>
-<a id="a684bd593258e257c55c955634a70294c" name="a684bd593258e257c55c955634a70294c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a684bd593258e257c55c955634a70294c">&#9670;&#160;</a></span>Frame</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Frame? Gyminize.Services.NavigationService.Frame</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">Gyminize.Contracts.Services.INavigationService</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/Services/<b>NavigationService.cs</b></li>
 </ul>

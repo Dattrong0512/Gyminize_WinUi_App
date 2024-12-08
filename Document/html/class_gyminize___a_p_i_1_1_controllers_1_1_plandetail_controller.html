@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -92,10 +91,14 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize___a_p_i_1_1_controllers_1_1_plandetail_controller-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize_API.Controllers.PlandetailController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Controller quản lý các hoạt động liên quan đến chi tiết kế hoạch của khách hàng, bao gồm việc lấy thông tin chi tiết kế hoạch và thêm chi tiết kế hoạch mới cho khách hàng.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize_API.Controllers.PlandetailController:</div>
 <div class="dyncontent">
@@ -105,16 +108,132 @@ Inheritance diagram for Gyminize_API.Controllers.PlandetailController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d45e38d9e0095f25a44a910fe668c51" id="r_a9d45e38d9e0095f25a44a910fe668c51"><td class="memItemLeft" align="right" valign="top"><a id="a9d45e38d9e0095f25a44a910fe668c51" name="a9d45e38d9e0095f25a44a910fe668c51"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PlandetailController</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository.html">PlandetailRepository</a> plandetailRepository)</td></tr>
+<tr class="memitem:a9d45e38d9e0095f25a44a910fe668c51" id="r_a9d45e38d9e0095f25a44a910fe668c51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d45e38d9e0095f25a44a910fe668c51">PlandetailController</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository.html">PlandetailRepository</a> plandetailRepository)</td></tr>
+<tr class="memdesc:a9d45e38d9e0095f25a44a910fe668c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo controller với repository để quản lý các hoạt động chi tiết kế hoạch.  <br /></td></tr>
 <tr class="separator:a9d45e38d9e0095f25a44a910fe668c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a657cad571770ac58d7e37b35fc0532c3" id="r_a657cad571770ac58d7e37b35fc0532c3"><td class="memItemLeft" align="right" valign="top"><a id="a657cad571770ac58d7e37b35fc0532c3" name="a657cad571770ac58d7e37b35fc0532c3"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>GetPlandetailByCustomerId</b> (int customerId)</td></tr>
+<tr class="memitem:a657cad571770ac58d7e37b35fc0532c3" id="r_a657cad571770ac58d7e37b35fc0532c3"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a657cad571770ac58d7e37b35fc0532c3">GetPlandetailByCustomerId</a> (int customerId)</td></tr>
+<tr class="memdesc:a657cad571770ac58d7e37b35fc0532c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy thông tin chi tiết kế hoạch của khách hàng dựa trên ID khách hàng.  <br /></td></tr>
 <tr class="separator:a657cad571770ac58d7e37b35fc0532c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeca603f6ae71b598ee2d2ee3b9768ba" id="r_adeca603f6ae71b598ee2d2ee3b9768ba"><td class="memItemLeft" align="right" valign="top"><a id="adeca603f6ae71b598ee2d2ee3b9768ba" name="adeca603f6ae71b598ee2d2ee3b9768ba"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>AddPlandetail</b> (int customerId, int plan)</td></tr>
+<tr class="memitem:adeca603f6ae71b598ee2d2ee3b9768ba" id="r_adeca603f6ae71b598ee2d2ee3b9768ba"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adeca603f6ae71b598ee2d2ee3b9768ba">AddPlandetail</a> (int customerId, int plan)</td></tr>
+<tr class="memdesc:adeca603f6ae71b598ee2d2ee3b9768ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thêm một chi tiết kế hoạch mới cho khách hàng.  <br /></td></tr>
 <tr class="separator:adeca603f6ae71b598ee2d2ee3b9768ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aae9a096933e023f748355ae8fe4ab44f" id="r_aae9a096933e023f748355ae8fe4ab44f"><td class="memItemLeft" align="right" valign="top"><a id="aae9a096933e023f748355ae8fe4ab44f" name="aae9a096933e023f748355ae8fe4ab44f"></a>
+readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository.html">PlandetailRepository</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_plandetailRepository</b></td></tr>
+<tr class="separator:aae9a096933e023f748355ae8fe4ab44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Controller quản lý các hoạt động liên quan đến chi tiết kế hoạch của khách hàng, bao gồm việc lấy thông tin chi tiết kế hoạch và thêm chi tiết kế hoạch mới cho khách hàng. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9d45e38d9e0095f25a44a910fe668c51" name="a9d45e38d9e0095f25a44a910fe668c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d45e38d9e0095f25a44a910fe668c51">&#9670;&#160;</a></span>PlandetailController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize_API.Controllers.PlandetailController.PlandetailController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository.html">PlandetailRepository</a></td>          <td class="paramname"><span class="paramname"><em>plandetailRepository</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Khởi tạo controller với repository để quản lý các hoạt động chi tiết kế hoạch. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plandetailRepository</td><td>Repository chứa các phương thức thao tác với dữ liệu chi tiết kế hoạch</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="adeca603f6ae71b598ee2d2ee3b9768ba" name="adeca603f6ae71b598ee2d2ee3b9768ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeca603f6ae71b598ee2d2ee3b9768ba">&#9670;&#160;</a></span>AddPlandetail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.PlandetailController.AddPlandetail </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customerId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>plan</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thêm một chi tiết kế hoạch mới cho khách hàng. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customerId</td><td>ID khách hàng cần thêm chi tiết kế hoạch</td></tr>
+    <tr><td class="paramname">plan</td><td>ID kế hoạch cần thêm cho khách hàng</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về thông tin chi tiết kế hoạch đã thêm vào hệ thống</dd></dl>
+
+</div>
+</div>
+<a id="a657cad571770ac58d7e37b35fc0532c3" name="a657cad571770ac58d7e37b35fc0532c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a657cad571770ac58d7e37b35fc0532c3">&#9670;&#160;</a></span>GetPlandetailByCustomerId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.PlandetailController.GetPlandetailByCustomerId </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customerId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lấy thông tin chi tiết kế hoạch của khách hàng dựa trên ID khách hàng. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customerId</td><td>ID khách hàng cần lấy thông tin chi tiết kế hoạch</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về chi tiết kế hoạch nếu tìm thấy, hoặc trả về lỗi 404 nếu không tìm thấy</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Controllers/<b>PlandetailController.cs</b></li>
 </ul>

@@ -18,7 +18,9 @@ using Gyminize.Core.Services;
 
 namespace Gyminize.ViewModels;
 
-
+/// <summary>
+/// ViewModel quản lý giỏ hàng, bao gồm các thao tác như thêm, bớt, xóa sản phẩm và thanh toán.
+/// </summary>
 public partial class CartViewModel : ObservableRecipient
 {
 
@@ -73,6 +75,10 @@ public partial class CartViewModel : ObservableRecipient
     public ObservableCollection<Orderdetail> OrderDetailsItems { get; set; } = new ObservableCollection<Orderdetail>();
     
     public Orders currentOrder = new Orders();
+
+    /// <summary>
+    /// Constructor khởi tạo các lệnh và gọi phương thức tải dữ liệu giỏ hàng.
+    /// </summary>
     public CartViewModel(INavigationService navigationService,ILocalSettingsService localSettingsService, IDialogService dialogService, IApiServicesClient apiServicesClient)
     {
         _navigationService = navigationService;
@@ -87,6 +93,9 @@ public partial class CartViewModel : ObservableRecipient
         LoadOrderDetailData();
     }
 
+    /// <summary>
+    /// Lấy thông tin ID khách hàng từ dịch vụ cài đặt địa phương.
+    /// </summary>
     public async Task GetCustomerID()
     {
         var customer_id = await _localSettingsService.ReadSettingAsync<string>("customer_id");
@@ -94,7 +103,9 @@ public partial class CartViewModel : ObservableRecipient
     }
 
 
-
+    /// <summary>
+    /// Tải dữ liệu chi tiết đơn hàng từ API và cập nhật danh sách sản phẩm trong giỏ hàng.
+    /// </summary>
     public async void LoadOrderDetailData()
     {
         await GetCustomerID();
@@ -120,6 +131,9 @@ public partial class CartViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Cập nhật tổng số lượng sản phẩm và tổng giá trị đơn hàng.
+    /// </summary>
     private void UpdateTotals()
     {
         TotalProductCount = OrderDetailsItems.Count;
@@ -129,6 +143,10 @@ public partial class CartViewModel : ObservableRecipient
         } else { TotalPayment = 0; }
     }
 
+    /// <summary>
+    /// Tăng số lượng sản phẩm trong giỏ hàng và cập nhật lại.
+    /// </summary>
+    /// <param name="orderDetail">Chi tiết đơn hàng cần tăng số lượng.</param>
     private void Increment(Orderdetail orderDetail)
     {
         if (orderDetail != null)
@@ -145,6 +163,10 @@ public partial class CartViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Giảm số lượng sản phẩm trong giỏ hàng và cập nhật lại.
+    /// </summary>
+    /// <param name="orderDetail">Chi tiết đơn hàng cần giảm số lượng.</param>
     private void Decrement(Orderdetail orderDetail)
     {
         if (orderDetail != null && orderDetail.product_amount > 1)
@@ -161,6 +183,10 @@ public partial class CartViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Xóa một chi tiết đơn hàng và cập nhật lại giỏ hàng.
+    /// </summary>
+    /// <param name="orderDetail">Chi tiết đơn hàng cần xóa.</param>
     public async Task DeleteOrderDetailAsync(Orderdetail orderDetail)
     {
         if (orderDetail == null)
@@ -189,7 +215,10 @@ public partial class CartViewModel : ObservableRecipient
             await _dialogService.ShowErrorDialogAsync($"Lỗi hệ thống: {ex.Message}");
         }
     }
-    
+
+    /// <summary>
+    /// Thực hiện thanh toán cho các sản phẩm trong giỏ hàng.
+    /// </summary>
     public async void BuyingSelected()
     {
         currentOrder.total_price = TotalPayment;

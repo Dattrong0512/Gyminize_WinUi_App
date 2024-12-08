@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -92,6 +91,8 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_services_1_1_activation_service-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.Services.ActivationService Class Reference</div></div>
 </div><!--header-->
@@ -100,49 +101,45 @@ $(function(){ initResizable(false); });
 Inheritance diagram for Gyminize.Services.ActivationService:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_gyminize_1_1_services_1_1_activation_service.png" usemap="#Gyminize.Services.ActivationService_map" alt=""/>
-  <map id="Gyminize.Services.ActivationService_map" name="Gyminize.Services.ActivationService_map">
-<area href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_activation_service.html" alt="Gyminize.Contracts.Services.IActivationService" shape="rect" coords="0,0,282,24"/>
-  </map>
-</div></div>
+  <img src="class_gyminize_1_1_services_1_1_activation_service.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4db975289539c8d806fd9a9b1b611904" id="r_a4db975289539c8d806fd9a9b1b611904"><td class="memItemLeft" align="right" valign="top"><a id="a4db975289539c8d806fd9a9b1b611904" name="a4db975289539c8d806fd9a9b1b611904"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ActivationService</b> (<a class="el" href="class_gyminize_1_1_activation_1_1_activation_handler.html">ActivationHandler</a>&lt; LaunchActivatedEventArgs &gt; defaultHandler, IEnumerable&lt; <a class="el" href="interface_gyminize_1_1_activation_1_1_i_activation_handler.html">IActivationHandler</a> &gt; activationHandlers, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_theme_selector_service.html">IThemeSelectorService</a> themeSelectorService)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ActivationService</b> (ActivationHandler&lt; LaunchActivatedEventArgs &gt; defaultHandler, IEnumerable&lt; IActivationHandler &gt; activationHandlers, IThemeSelectorService themeSelectorService)</td></tr>
 <tr class="separator:a4db975289539c8d806fd9a9b1b611904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8f6654901c52c3c7beae10d0745e205" id="r_ac8f6654901c52c3c7beae10d0745e205"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8f6654901c52c3c7beae10d0745e205">ActivateAsync</a> (object activationArgs)</td></tr>
+<tr class="memitem:ac8f6654901c52c3c7beae10d0745e205" id="r_ac8f6654901c52c3c7beae10d0745e205"><td class="memItemLeft" align="right" valign="top"><a id="ac8f6654901c52c3c7beae10d0745e205" name="ac8f6654901c52c3c7beae10d0745e205"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>ActivateAsync</b> (object activationArgs)</td></tr>
 <tr class="separator:ac8f6654901c52c3c7beae10d0745e205"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_interface_gyminize_1_1_contracts_1_1_services_1_1_i_activation_service"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_gyminize_1_1_contracts_1_1_services_1_1_i_activation_service')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_activation_service.html">Gyminize.Contracts.Services.IActivationService</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a79a38a10f2a9f379f13c1a38a85ec342" id="r_a79a38a10f2a9f379f13c1a38a85ec342"><td class="memItemLeft" align="right" valign="top"><a id="a79a38a10f2a9f379f13c1a38a85ec342" name="a79a38a10f2a9f379f13c1a38a85ec342"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>HandleActivationAsync</b> (object activationArgs)</td></tr>
+<tr class="separator:a79a38a10f2a9f379f13c1a38a85ec342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425122988495beac02761f5408073961" id="r_a425122988495beac02761f5408073961"><td class="memItemLeft" align="right" valign="top"><a id="a425122988495beac02761f5408073961" name="a425122988495beac02761f5408073961"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeAsync</b> ()</td></tr>
+<tr class="separator:a425122988495beac02761f5408073961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35e5e39c5261c3ac5ae391f306abb0f" id="r_ae35e5e39c5261c3ac5ae391f306abb0f"><td class="memItemLeft" align="right" valign="top"><a id="ae35e5e39c5261c3ac5ae391f306abb0f" name="ae35e5e39c5261c3ac5ae391f306abb0f"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>StartupAsync</b> ()</td></tr>
+<tr class="separator:ae35e5e39c5261c3ac5ae391f306abb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0bc7af1d3833c4628933b9d6ef3c1a7a" id="r_a0bc7af1d3833c4628933b9d6ef3c1a7a"><td class="memItemLeft" align="right" valign="top"><a id="a0bc7af1d3833c4628933b9d6ef3c1a7a" name="a0bc7af1d3833c4628933b9d6ef3c1a7a"></a>
+readonly ActivationHandler&lt; LaunchActivatedEventArgs &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_defaultHandler</b></td></tr>
+<tr class="separator:a0bc7af1d3833c4628933b9d6ef3c1a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3746066c91a1c5ee1c7ebff2df16cbad" id="r_a3746066c91a1c5ee1c7ebff2df16cbad"><td class="memItemLeft" align="right" valign="top"><a id="a3746066c91a1c5ee1c7ebff2df16cbad" name="a3746066c91a1c5ee1c7ebff2df16cbad"></a>
+readonly IEnumerable&lt; IActivationHandler &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_activationHandlers</b></td></tr>
+<tr class="separator:a3746066c91a1c5ee1c7ebff2df16cbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06b8c9d767d2e025e1492b670438dc8" id="r_ac06b8c9d767d2e025e1492b670438dc8"><td class="memItemLeft" align="right" valign="top"><a id="ac06b8c9d767d2e025e1492b670438dc8" name="ac06b8c9d767d2e025e1492b670438dc8"></a>
+readonly IThemeSelectorService&#160;</td><td class="memItemRight" valign="bottom"><b>_themeSelectorService</b></td></tr>
+<tr class="separator:ac06b8c9d767d2e025e1492b670438dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0626a1244d05e9b17b326e5fb3a34f63" id="r_a0626a1244d05e9b17b326e5fb3a34f63"><td class="memItemLeft" align="right" valign="top"><a id="a0626a1244d05e9b17b326e5fb3a34f63" name="a0626a1244d05e9b17b326e5fb3a34f63"></a>
+UIElement?&#160;</td><td class="memItemRight" valign="bottom"><b>_shell</b> = null</td></tr>
+<tr class="separator:a0626a1244d05e9b17b326e5fb3a34f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac8f6654901c52c3c7beae10d0745e205" name="ac8f6654901c52c3c7beae10d0745e205"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8f6654901c52c3c7beae10d0745e205">&#9670;&#160;</a></span>ActivateAsync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Services.ActivationService.ActivateAsync </td>
-          <td>(</td>
-          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>activationArgs</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_activation_service.html">Gyminize.Contracts.Services.IActivationService</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/Services/<b>ActivationService.cs</b></li>
 </ul>

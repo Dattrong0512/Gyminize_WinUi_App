@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -92,29 +91,217 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize_API.Data.Repositories.OrdersRepository Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Lớp Repository để quản lý các thao tác dữ liệu đơn hàng trong cơ sở dữ liệu.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a82533d416c37a9926c5ff37dc0621bca" id="r_a82533d416c37a9926c5ff37dc0621bca"><td class="memItemLeft" align="right" valign="top"><a id="a82533d416c37a9926c5ff37dc0621bca" name="a82533d416c37a9926c5ff37dc0621bca"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>OrdersRepository</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a> context)</td></tr>
+<tr class="memitem:a82533d416c37a9926c5ff37dc0621bca" id="r_a82533d416c37a9926c5ff37dc0621bca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82533d416c37a9926c5ff37dc0621bca">OrdersRepository</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a> context)</td></tr>
+<tr class="memdesc:a82533d416c37a9926c5ff37dc0621bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo một instance mới của lớp <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository.html" title="Lớp Repository để quản lý các thao tác dữ liệu đơn hàng trong cơ sở dữ liệu.">OrdersRepository</a> với context cơ sở dữ liệu.  <br /></td></tr>
 <tr class="separator:a82533d416c37a9926c5ff37dc0621bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31cc534809391f24d65fafff0821ee58" id="r_a31cc534809391f24d65fafff0821ee58"><td class="memItemLeft" align="right" valign="top"><a id="a31cc534809391f24d65fafff0821ee58" name="a31cc534809391f24d65fafff0821ee58"></a>
-List&lt; <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllOrderByCustomerId</b> (int customer_id)</td></tr>
+<tr class="memitem:a31cc534809391f24d65fafff0821ee58" id="r_a31cc534809391f24d65fafff0821ee58"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31cc534809391f24d65fafff0821ee58">GetAllOrderByCustomerId</a> (int customer_id)</td></tr>
+<tr class="memdesc:a31cc534809391f24d65fafff0821ee58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy tất cả đơn hàng của một khách hàng dựa trên customer_id.  <br /></td></tr>
 <tr class="separator:a31cc534809391f24d65fafff0821ee58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d9cd449567fa8930d4bc30aa604022c" id="r_a6d9cd449567fa8930d4bc30aa604022c"><td class="memItemLeft" align="right" valign="top"><a id="a6d9cd449567fa8930d4bc30aa604022c" name="a6d9cd449567fa8930d4bc30aa604022c"></a>
-<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a>?&#160;</td><td class="memItemRight" valign="bottom"><b>GetOrderByCustomerId</b> (int customer_id)</td></tr>
+<tr class="memitem:a6d9cd449567fa8930d4bc30aa604022c" id="r_a6d9cd449567fa8930d4bc30aa604022c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9cd449567fa8930d4bc30aa604022c">GetOrderByCustomerId</a> (int customer_id)</td></tr>
+<tr class="memdesc:a6d9cd449567fa8930d4bc30aa604022c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy đơn hàng đầu tiên của một khách hàng dựa trên customer_id.  <br /></td></tr>
 <tr class="separator:a6d9cd449567fa8930d4bc30aa604022c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96191517bd3d23840588d0a194ac6727" id="r_a96191517bd3d23840588d0a194ac6727"><td class="memItemLeft" align="right" valign="top"><a id="a96191517bd3d23840588d0a194ac6727" name="a96191517bd3d23840588d0a194ac6727"></a>
-<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AddOrder</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a> order)</td></tr>
+<tr class="memitem:a96191517bd3d23840588d0a194ac6727" id="r_a96191517bd3d23840588d0a194ac6727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96191517bd3d23840588d0a194ac6727">AddOrder</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a> order)</td></tr>
+<tr class="memdesc:a96191517bd3d23840588d0a194ac6727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thêm một đơn hàng mới vào cơ sở dữ liệu.  <br /></td></tr>
 <tr class="separator:a96191517bd3d23840588d0a194ac6727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a020ae3ed5a1520fe184d9a2a026ac88b" id="r_a020ae3ed5a1520fe184d9a2a026ac88b"><td class="memItemLeft" align="right" valign="top"><a id="a020ae3ed5a1520fe184d9a2a026ac88b" name="a020ae3ed5a1520fe184d9a2a026ac88b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateStatusOrder</b> (int orders_id, string status)</td></tr>
+<tr class="memitem:a020ae3ed5a1520fe184d9a2a026ac88b" id="r_a020ae3ed5a1520fe184d9a2a026ac88b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a020ae3ed5a1520fe184d9a2a026ac88b">UpdateStatusOrder</a> (int orders_id, string status)</td></tr>
+<tr class="memdesc:a020ae3ed5a1520fe184d9a2a026ac88b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cập nhật trạng thái đơn hàng.  <br /></td></tr>
 <tr class="separator:a020ae3ed5a1520fe184d9a2a026ac88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a790b63e5cfa61cca79a11b2685cb8c45" id="r_a790b63e5cfa61cca79a11b2685cb8c45"><td class="memItemLeft" align="right" valign="top"><a id="a790b63e5cfa61cca79a11b2685cb8c45" name="a790b63e5cfa61cca79a11b2685cb8c45"></a>
+readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_context</b></td></tr>
+<tr class="separator:a790b63e5cfa61cca79a11b2685cb8c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Lớp Repository để quản lý các thao tác dữ liệu đơn hàng trong cơ sở dữ liệu. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a82533d416c37a9926c5ff37dc0621bca" name="a82533d416c37a9926c5ff37dc0621bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82533d416c37a9926c5ff37dc0621bca">&#9670;&#160;</a></span>OrdersRepository()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize_API.Data.Repositories.OrdersRepository.OrdersRepository </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a></td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Khởi tạo một instance mới của lớp <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_orders_repository.html" title="Lớp Repository để quản lý các thao tác dữ liệu đơn hàng trong cơ sở dữ liệu.">OrdersRepository</a> với context cơ sở dữ liệu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">context</td><td>Context cơ sở dữ liệu để tương tác với dữ liệu đơn hàng.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a96191517bd3d23840588d0a194ac6727" name="a96191517bd3d23840588d0a194ac6727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96191517bd3d23840588d0a194ac6727">&#9670;&#160;</a></span>AddOrder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a> Gyminize_API.Data.Repositories.OrdersRepository.AddOrder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a></td>          <td class="paramname"><span class="paramname"><em>order</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thêm một đơn hàng mới vào cơ sở dữ liệu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">order</td><td>Đơn hàng cần thêm.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Đơn hàng đã được thêm vào cơ sở dữ liệu.</dd></dl>
+
+</div>
+</div>
+<a id="a31cc534809391f24d65fafff0821ee58" name="a31cc534809391f24d65fafff0821ee58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31cc534809391f24d65fafff0821ee58">&#9670;&#160;</a></span>GetAllOrderByCustomerId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a> &gt;? Gyminize_API.Data.Repositories.OrdersRepository.GetAllOrderByCustomerId </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customer_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lấy tất cả đơn hàng của một khách hàng dựa trên customer_id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customer_id</td><td>ID của khách hàng.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Danh sách đơn hàng của khách hàng.</dd></dl>
+
+</div>
+</div>
+<a id="a6d9cd449567fa8930d4bc30aa604022c" name="a6d9cd449567fa8930d4bc30aa604022c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9cd449567fa8930d4bc30aa604022c">&#9670;&#160;</a></span>GetOrderByCustomerId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_orders.html">Orders</a>? Gyminize_API.Data.Repositories.OrdersRepository.GetOrderByCustomerId </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customer_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lấy đơn hàng đầu tiên của một khách hàng dựa trên customer_id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customer_id</td><td>ID của khách hàng.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Đơn hàng đầu tiên của khách hàng nếu có.</dd></dl>
+
+</div>
+</div>
+<a id="a020ae3ed5a1520fe184d9a2a026ac88b" name="a020ae3ed5a1520fe184d9a2a026ac88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020ae3ed5a1520fe184d9a2a026ac88b">&#9670;&#160;</a></span>UpdateStatusOrder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Gyminize_API.Data.Repositories.OrdersRepository.UpdateStatusOrder </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>orders_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cập nhật trạng thái đơn hàng. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">orders_id</td><td>ID của đơn hàng cần cập nhật trạng thái.</td></tr>
+    <tr><td class="paramname">status</td><td>Trạng thái mới của đơn hàng.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True nếu cập nhật thành công, False nếu không tìm thấy đơn hàng.</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Data/Repositories/<b>OrdersRepository.cs</b></li>
 </ul>

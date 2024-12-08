@@ -1,5 +1,10 @@
 \doxysection{Gyminize\+\_\+\+API.\+Controllers.\+Foodetail\+Controller Class Reference}
 \hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller}{}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller}\index{Gyminize\_API.Controllers.FoodetailController@{Gyminize\_API.Controllers.FoodetailController}}
+
+
+Controller để quản lý các hoạt động liên quan đến chi tiết thực phẩm trong nhật ký hàng ngày. Các hành động trong controller này cho phép cập nhật và xóa thông tin thực phẩm trong nhật ký.  
+
+
 Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Foodetail\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +14,78 @@ Inheritance diagram for Gyminize\+\_\+\+API.\+Controllers.\+Foodetail\+Controlle
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2e7c82f83633dcdaa540608b8693dc90}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2e7c82f83633dcdaa540608b8693dc90} 
-{\bfseries Foodetail\+Controller} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository}{Fooddetail\+Repository}} foodetail\+Repository)
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2e7c82f83633dcdaa540608b8693dc90}{Foodetail\+Controller}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository}{Fooddetail\+Repository}} foodetail\+Repository)
+\begin{DoxyCompactList}\small\item\em Khởi tạo controller với repository để quản lý các chi tiết thực phẩm. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2b1558ef64bf1367faf0878f6e8d1cca}{Update\+Fooddetail}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail}{Fooddetail}} fooddetail)
+\begin{DoxyCompactList}\small\item\em Cập nhật hoặc thêm chi tiết thực phẩm vào nhật ký hàng ngày. \end{DoxyCompactList}\item 
+IAction\+Result \mbox{\hyperlink{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a5ac3cfe27e0e5e947cdd13666755df02}{Delete\+Fooddetail}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail}{Fooddetail}} fooddetail)
+\begin{DoxyCompactList}\small\item\em Xóa chi tiết thực phẩm khỏi nhật ký hàng ngày. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2b1558ef64bf1367faf0878f6e8d1cca}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2b1558ef64bf1367faf0878f6e8d1cca} 
-IAction\+Result {\bfseries Update\+Fooddetail} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail}{Fooddetail}} fooddetail)
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a5ac3cfe27e0e5e947cdd13666755df02}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a5ac3cfe27e0e5e947cdd13666755df02} 
-IAction\+Result {\bfseries Delete\+Fooddetail} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail}{Fooddetail}} fooddetail)
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a3efa6dfdab43dd81857fdbdf8400b67a}\label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a3efa6dfdab43dd81857fdbdf8400b67a} 
+readonly \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository}{Fooddetail\+Repository}} {\bfseries \+\_\+foodetail\+Repository}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller để quản lý các hoạt động liên quan đến chi tiết thực phẩm trong nhật ký hàng ngày. Các hành động trong controller này cho phép cập nhật và xóa thông tin thực phẩm trong nhật ký. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2e7c82f83633dcdaa540608b8693dc90}\index{Gyminize\_API.Controllers.FoodetailController@{Gyminize\_API.Controllers.FoodetailController}!FoodetailController@{FoodetailController}}
+\index{FoodetailController@{FoodetailController}!Gyminize\_API.Controllers.FoodetailController@{Gyminize\_API.Controllers.FoodetailController}}
+\doxysubsubsection{\texorpdfstring{FoodetailController()}{FoodetailController()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2e7c82f83633dcdaa540608b8693dc90} 
+Gyminize\+\_\+\+API.\+Controllers.\+Foodetail\+Controller.\+Foodetail\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_fooddetail_repository}{Fooddetail\+Repository}}}]{foodetail\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo controller với repository để quản lý các chi tiết thực phẩm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em foodetail\+Repository} & Repository chứa các phương thức thao tác với dữ liệu chi tiết thực phẩm\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a5ac3cfe27e0e5e947cdd13666755df02}\index{Gyminize\_API.Controllers.FoodetailController@{Gyminize\_API.Controllers.FoodetailController}!DeleteFooddetail@{DeleteFooddetail}}
+\index{DeleteFooddetail@{DeleteFooddetail}!Gyminize\_API.Controllers.FoodetailController@{Gyminize\_API.Controllers.FoodetailController}}
+\doxysubsubsection{\texorpdfstring{DeleteFooddetail()}{DeleteFooddetail()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a5ac3cfe27e0e5e947cdd13666755df02} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Foodetail\+Controller.\+Delete\+Fooddetail (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail}{Fooddetail}}}]{fooddetail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Xóa chi tiết thực phẩm khỏi nhật ký hàng ngày. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fooddetail} & Thông tin chi tiết thực phẩm cần xóa\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về trạng thái thành công sau khi xóa
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2b1558ef64bf1367faf0878f6e8d1cca}\index{Gyminize\_API.Controllers.FoodetailController@{Gyminize\_API.Controllers.FoodetailController}!UpdateFooddetail@{UpdateFooddetail}}
+\index{UpdateFooddetail@{UpdateFooddetail}!Gyminize\_API.Controllers.FoodetailController@{Gyminize\_API.Controllers.FoodetailController}}
+\doxysubsubsection{\texorpdfstring{UpdateFooddetail()}{UpdateFooddetail()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_controllers_1_1_foodetail_controller_a2b1558ef64bf1367faf0878f6e8d1cca} 
+IAction\+Result Gyminize\+\_\+\+API.\+Controllers.\+Foodetail\+Controller.\+Update\+Fooddetail (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_fooddetail}{Fooddetail}}}]{fooddetail}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cập nhật hoặc thêm chi tiết thực phẩm vào nhật ký hàng ngày. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fooddetail} & Thông tin chi tiết thực phẩm cần cập nhật\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về đối tượng chi tiết thực phẩm đã được cập nhật hoặc thêm mới
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

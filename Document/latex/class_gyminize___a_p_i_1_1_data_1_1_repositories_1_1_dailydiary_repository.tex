@@ -1,20 +1,102 @@
 \doxysection{Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Dailydiary\+Repository Class Reference}
 \hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository}{}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository}\index{Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}}
+
+
+Lớp Repository để quản lý các thao tác dữ liệu nhật ký hàng ngày của khách hàng trong cơ sở dữ liệu.  
+
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_ac0981b03e6542b879f89cf9a5942ae56}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_ac0981b03e6542b879f89cf9a5942ae56} 
-{\bfseries Dailydiary\+Repository} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} context)
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_ac0981b03e6542b879f89cf9a5942ae56}{Dailydiary\+Repository}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} context)
+\begin{DoxyCompactList}\small\item\em Khởi tạo một instance mới của lớp \doxylink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository}{Dailydiary\+Repository}. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} $>$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a8932e464a9b4139b237e3d41f6ef0660}{Get\+All\+Dailydiary}} ()
+\begin{DoxyCompactList}\small\item\em Lấy tất cả các bản ghi nhật ký hàng ngày từ cơ sở dữ liệu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}}? \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a843643640e98f01a99d5de352b90077b}{Get\+Dailydiary\+By\+Id\+Customer}} (int customer\+Id, Date\+Time day)
+\begin{DoxyCompactList}\small\item\em Lấy nhật ký hàng ngày của một khách hàng theo ID khách hàng và ngày. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a369748c1dfa3d95859333ab0a22f24b9}{Add\+Dailydiary}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} dailydiary)
+\begin{DoxyCompactList}\small\item\em Thêm một bản ghi nhật ký hàng ngày mới vào cơ sở dữ liệu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a8932e464a9b4139b237e3d41f6ef0660}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a8932e464a9b4139b237e3d41f6ef0660} 
-List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} $>$ {\bfseries Get\+All\+Dailydiary} ()
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a843643640e98f01a99d5de352b90077b}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a843643640e98f01a99d5de352b90077b} 
-\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}}? {\bfseries Get\+Dailydiary\+By\+Id\+Customer} (int customer\+Id, Date\+Time day)
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a7f3e82d55cea03919a9a8e3f67b194c0}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a7f3e82d55cea03919a9a8e3f67b194c0} 
-\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} {\bfseries add\+Dailydiary} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} dailydiary)
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a9c5390300e3e3d6a9a83c28b1edecb41}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a9c5390300e3e3d6a9a83c28b1edecb41} 
+readonly \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} {\bfseries \+\_\+context}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lớp Repository để quản lý các thao tác dữ liệu nhật ký hàng ngày của khách hàng trong cơ sở dữ liệu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_ac0981b03e6542b879f89cf9a5942ae56}\index{Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}!DailydiaryRepository@{DailydiaryRepository}}
+\index{DailydiaryRepository@{DailydiaryRepository}!Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}}
+\doxysubsubsection{\texorpdfstring{DailydiaryRepository()}{DailydiaryRepository()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_ac0981b03e6542b879f89cf9a5942ae56} 
+Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Dailydiary\+Repository.\+Dailydiary\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}}}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo một instance mới của lớp \doxylink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository}{Dailydiary\+Repository}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Context cơ sở dữ liệu để tương tác với dữ liệu nhật ký hàng ngày.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a369748c1dfa3d95859333ab0a22f24b9}\index{Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}!AddDailydiary@{AddDailydiary}}
+\index{AddDailydiary@{AddDailydiary}!Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}}
+\doxysubsubsection{\texorpdfstring{AddDailydiary()}{AddDailydiary()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a369748c1dfa3d95859333ab0a22f24b9} 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Dailydiary\+Repository.\+Add\+Dailydiary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}}}]{dailydiary}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Thêm một bản ghi nhật ký hàng ngày mới vào cơ sở dữ liệu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dailydiary} & Dữ liệu nhật ký hàng ngày cần thêm.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dữ liệu nhật ký hàng ngày đã được thêm vào cơ sở dữ liệu.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a8932e464a9b4139b237e3d41f6ef0660}\index{Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}!GetAllDailydiary@{GetAllDailydiary}}
+\index{GetAllDailydiary@{GetAllDailydiary}!Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}}
+\doxysubsubsection{\texorpdfstring{GetAllDailydiary()}{GetAllDailydiary()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a8932e464a9b4139b237e3d41f6ef0660} 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}} $>$ Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Dailydiary\+Repository.\+Get\+All\+Dailydiary (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy tất cả các bản ghi nhật ký hàng ngày từ cơ sở dữ liệu. 
+
+\begin{DoxyReturn}{Returns}
+Danh sách tất cả các bản ghi nhật ký hàng ngày.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a843643640e98f01a99d5de352b90077b}\index{Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}!GetDailydiaryByIdCustomer@{GetDailydiaryByIdCustomer}}
+\index{GetDailydiaryByIdCustomer@{GetDailydiaryByIdCustomer}!Gyminize\_API.Data.Repositories.DailydiaryRepository@{Gyminize\_API.Data.Repositories.DailydiaryRepository}}
+\doxysubsubsection{\texorpdfstring{GetDailydiaryByIdCustomer()}{GetDailydiaryByIdCustomer()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository_a843643640e98f01a99d5de352b90077b} 
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary}{Dailydiary}}? Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Dailydiary\+Repository.\+Get\+Dailydiary\+By\+Id\+Customer (\begin{DoxyParamCaption}\item[{int}]{customer\+Id}{, }\item[{Date\+Time}]{day}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy nhật ký hàng ngày của một khách hàng theo ID khách hàng và ngày. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & Mã ID khách hàng.\\
+\hline
+{\em day} & Ngày của nhật ký cần lấy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nhật ký hàng ngày của khách hàng nếu tìm thấy, nếu không trả về null.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

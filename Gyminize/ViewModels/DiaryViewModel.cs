@@ -133,7 +133,10 @@ public partial class DiaryViewModel : ObservableRecipient
     public async void InitializeAsync()
     {
         await GetCustomerId();
-        var daySelected = _dateTimeProvider.UtcNow;
+        var utcNow = _dateTimeProvider.UtcNow;
+        var localTimeZone = TimeZoneInfo.Local;
+        var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, localTimeZone);
+        var daySelected = localDateTime; // Lấy ngày theo múi giờ địa phương hiện tại
         SelectedDayText = _dateTimeProvider.Now.ToString("dd/MM/yyyy");
         await LoadFullData(daySelected);
     }
@@ -195,6 +198,16 @@ public partial class DiaryViewModel : ObservableRecipient
             IsSnackEmpty = SnackItems.Count() == 0 ? true : false;
             IsDinnerEmpty = DinnerItems.Count() == 0 ? true : false;
         }
+        else
+        {
+            WeightText = 0;
+            BurnedCalories = 0;
+            TotalCalories = 0;
+            IsBreakfastEmpty = true;
+            IsLunchEmpty = true;
+            IsSnackEmpty = true;
+            IsDinnerEmpty = true;
+        }
     }
 
     
@@ -202,6 +215,10 @@ public partial class DiaryViewModel : ObservableRecipient
     public void LoadWorkoudetails(DateTime daySelected)
     {
         var planDetail = _apiServicesClient.Get<Plandetail>($"api/Plandetail/get/plandetail/{_customer_id}");
+
+        PlanNameText = "Chưa có kế hoạch";
+        TypeWorkoutText = "Chưa có ngày tập";
+        _exerciseStatus = 0;
         // exercise_status =  0: chưa có plan, 1: ngày nghỉ, 2: ngày tập hoàn thành, 3: ngày tập chưa hoàn thành
         if (planDetail != null)
         {
@@ -218,12 +235,6 @@ public partial class DiaryViewModel : ObservableRecipient
                 PlanNameText = planDetail.Plan.plan_name;
                 TypeWorkoutText = "Ngày nghỉ";
                 _exerciseStatus = 1;
-            } 
-            else
-            {
-                PlanNameText = "Chưa có kế hoạch";
-                TypeWorkoutText = "Chưa có ngày tập";
-                _exerciseStatus = 0; 
             }
         }
     }
@@ -266,7 +277,11 @@ public partial class DiaryViewModel : ObservableRecipient
                     break;
             }
         }
-        LoadWorkoudetails(_dateTimeProvider.UtcNow);
+        var utcNow = _dateTimeProvider.UtcNow;
+        var localTimeZone = TimeZoneInfo.Local;
+        var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, localTimeZone);
+        var daySelected = localDateTime; // Lấy ngày theo múi giờ địa phương hiện tại
+        LoadWorkoudetails(daySelected);
     }
 
     private void AddIconToDay(CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)

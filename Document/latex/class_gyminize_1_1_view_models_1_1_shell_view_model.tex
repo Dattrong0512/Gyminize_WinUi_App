@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+View\+Models.\+Shell\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model}{}\label{class_gyminize_1_1_view_models_1_1_shell_view_model}\index{Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}}
+
+
+View\+Model cho Shell (khung chính của ứng dụng).  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Shell\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,27 +14,119 @@ Inheritance diagram for Gyminize.\+View\+Models.\+Shell\+View\+Model\+:\begin{fi
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_aa4093bc25595ae33b8eab0e9939be90f}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_aa4093bc25595ae33b8eab0e9939be90f} 
-void {\bfseries Set\+Frame} (Frame frame)
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a22d84f404e2e0c6c7a0e8bb226ab8fba}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a22d84f404e2e0c6c7a0e8bb226ab8fba} 
-{\bfseries Shell\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_view_service}{INavigation\+View\+Service}} navigation\+View\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service)
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a9d667b0ab79ef8a3c9a3c1f02e3f0c68}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a9d667b0ab79ef8a3c9a3c1f02e3f0c68} 
-async void {\bfseries Check\+Plan\+Selection\+Needed} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shell_view_model_a22d84f404e2e0c6c7a0e8bb226ab8fba}{Shell\+View\+Model}} (INavigation\+Service navigation\+Service, INavigation\+View\+Service navigation\+View\+Service, ILocal\+Settings\+Service local\+Settings\+Service)
+\begin{DoxyCompactList}\small\item\em Hàm khởi tạo \doxylink{class_gyminize_1_1_view_models_1_1_shell_view_model}{Shell\+View\+Model}. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shell_view_model_a9d667b0ab79ef8a3c9a3c1f02e3f0c68}{Check\+Plan\+Selection\+Needed}} ()
+\begin{DoxyCompactList}\small\item\em Kiểm tra xem người dùng có cần chọn kế hoạch hay không. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shell_view_model_aa4093bc25595ae33b8eab0e9939be90f}{Set\+Frame}} (Frame frame)
+\begin{DoxyCompactList}\small\item\em Gán đối tượng Frame từ Shell\+Page vào View\+Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a2e792aeec09994f1bba5f4dd69de2436}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a2e792aeec09994f1bba5f4dd69de2436} 
-\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} {\bfseries Navigation\+Service}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_adca94ee7c69c3614c647b26394f22818}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_adca94ee7c69c3614c647b26394f22818} 
-\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_view_service}{INavigation\+View\+Service}} {\bfseries Navigation\+View\+Service}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_ab88489214e1a04b955a5c568b0ece53a}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_ab88489214e1a04b955a5c568b0ece53a} 
 bool {\bfseries Is\+Selection\+Needed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a2e792aeec09994f1bba5f4dd69de2436}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a2e792aeec09994f1bba5f4dd69de2436} 
+INavigation\+Service {\bfseries Navigation\+Service}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dịch vụ điều hướng. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_adca94ee7c69c3614c647b26394f22818}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_adca94ee7c69c3614c647b26394f22818} 
+INavigation\+View\+Service {\bfseries Navigation\+View\+Service}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dịch vụ Navigation\+View. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_shell_view_model_ab48a00e1142998901672396578d218e8}{On\+Navigated}} (object sender, Navigation\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Xử lý sự kiện điều hướng. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a3dd48a696d358c6c2afdf14aed68cde1}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a3dd48a696d358c6c2afdf14aed68cde1} 
+bool {\bfseries is\+Back\+Enabled}
+\begin{DoxyCompactList}\small\item\em Thuộc tính kiểm tra xem có thể quay lại trang trước hay không. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a136e352d76a65f7b543c856fea8e284a}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a136e352d76a65f7b543c856fea8e284a} 
+object? {\bfseries selected}
+\begin{DoxyCompactList}\small\item\em Thuộc tính lưu trữ mục được chọn trong Navigation\+View. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_af1b67599da97087543ce1a36f5cf8ecf}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_af1b67599da97087543ce1a36f5cf8ecf} 
+bool {\bfseries \+\_\+is\+Selection\+Needed}
+\begin{DoxyCompactList}\small\item\em Thuộc tính kiểm tra hiển thị page plan hay planselection. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a194055171a2274a028e05f2d27568657}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a194055171a2274a028e05f2d27568657} 
+readonly ILocal\+Settings\+Service {\bfseries \+\_\+localsettings}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a1282987e5ef96e1d4f3f65f6b67713ff}\label{class_gyminize_1_1_view_models_1_1_shell_view_model_a1282987e5ef96e1d4f3f65f6b67713ff} 
+Frame {\bfseries \+\_\+frame}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model cho Shell (khung chính của ứng dụng). 
+
+Kế thừa từ Observable\+Recipient để hỗ trợ thông báo thay đổi thuộc tính. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a22d84f404e2e0c6c7a0e8bb226ab8fba}\index{Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}!ShellViewModel@{ShellViewModel}}
+\index{ShellViewModel@{ShellViewModel}!Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}}
+\doxysubsubsection{\texorpdfstring{ShellViewModel()}{ShellViewModel()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shell_view_model_a22d84f404e2e0c6c7a0e8bb226ab8fba} 
+Gyminize.\+View\+Models.\+Shell\+View\+Model.\+Shell\+View\+Model (\begin{DoxyParamCaption}\item[{INavigation\+Service}]{navigation\+Service}{, }\item[{INavigation\+View\+Service}]{navigation\+View\+Service}{, }\item[{ILocal\+Settings\+Service}]{local\+Settings\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Hàm khởi tạo \doxylink{class_gyminize_1_1_view_models_1_1_shell_view_model}{Shell\+View\+Model}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation\+Service} & Dịch vụ điều hướng. \\
+\hline
+{\em navigation\+View\+Service} & Dịch vụ điều hướng Navigation\+View. \\
+\hline
+{\em local\+Settings\+Service} & Dịch vụ lưu trữ cài đặt cục bộ. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_a9d667b0ab79ef8a3c9a3c1f02e3f0c68}\index{Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}!CheckPlanSelectionNeeded@{CheckPlanSelectionNeeded}}
+\index{CheckPlanSelectionNeeded@{CheckPlanSelectionNeeded}!Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}}
+\doxysubsubsection{\texorpdfstring{CheckPlanSelectionNeeded()}{CheckPlanSelectionNeeded()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shell_view_model_a9d667b0ab79ef8a3c9a3c1f02e3f0c68} 
+async void Gyminize.\+View\+Models.\+Shell\+View\+Model.\+Check\+Plan\+Selection\+Needed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Kiểm tra xem người dùng có cần chọn kế hoạch hay không. 
+
+Dựa trên thông tin trong cài đặt và API, xác định trạng thái {\ttfamily Is\+Selection\+Needed}. \Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_ab48a00e1142998901672396578d218e8}\index{Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}!OnNavigated@{OnNavigated}}
+\index{OnNavigated@{OnNavigated}!Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}}
+\doxysubsubsection{\texorpdfstring{OnNavigated()}{OnNavigated()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shell_view_model_ab48a00e1142998901672396578d218e8} 
+void Gyminize.\+View\+Models.\+Shell\+View\+Model.\+On\+Navigated (\begin{DoxyParamCaption}\item[{object}]{sender}{, }\item[{Navigation\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Xử lý sự kiện điều hướng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Đối tượng phát sinh sự kiện. \\
+\hline
+{\em e} & Thông tin sự kiện điều hướng. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_shell_view_model_aa4093bc25595ae33b8eab0e9939be90f}\index{Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}!SetFrame@{SetFrame}}
+\index{SetFrame@{SetFrame}!Gyminize.ViewModels.ShellViewModel@{Gyminize.ViewModels.ShellViewModel}}
+\doxysubsubsection{\texorpdfstring{SetFrame()}{SetFrame()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_shell_view_model_aa4093bc25595ae33b8eab0e9939be90f} 
+void Gyminize.\+View\+Models.\+Shell\+View\+Model.\+Set\+Frame (\begin{DoxyParamCaption}\item[{Frame}]{frame}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gán đối tượng Frame từ Shell\+Page vào View\+Model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Đối tượng Frame của ứng dụng. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

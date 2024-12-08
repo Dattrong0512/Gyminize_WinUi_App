@@ -15,6 +15,10 @@ using Windows.ApplicationModel.VoiceCommands;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 namespace Gyminize.ViewModels;
 
+/// <summary>
+/// ViewModel cho trang kế hoạch, hỗ trợ tương tác với UI, quản lý các hành động và trạng thái của kế hoạch.
+/// Kế thừa từ <see cref="ObservableRecipient"/> để hỗ trợ thông báo thay đổi thuộc tính.
+/// </summary>
 public partial class PlanViewModel : ObservableRecipient
 {
     // Khởi tạo PlanViewModel.
@@ -122,12 +126,6 @@ public partial class PlanViewModel : ObservableRecipient
         set => SetProperty(ref _isCurrentDay, value);
     }
 
-    //private bool _isSelected;
-    //public bool IsSelected
-    //{
-    //    get => _isSelected;
-    //    set => SetProperty(ref _isSelected, value);
-    //}
     private DateTime _startDate;
     public DateTime StartDate
     {
@@ -216,6 +214,17 @@ public partial class PlanViewModel : ObservableRecipient
     }
 
     public List<Workoutdetail> WorkoutDetailsItems { get; set; } = new List<Workoutdetail>();
+
+    
+    /// <summary>
+    /// Khởi tạo một instance mới của <see cref="PlanViewModel"/>.
+    /// </summary>
+    /// <param name="navigationService">Dịch vụ điều hướng.</param>
+    /// <param name="dialogService">Dịch vụ hiển thị hộp thoại.</param>
+    /// <param name="localSettings">Dịch vụ lưu trữ cài đặt cục bộ.</param>
+    /// <param name="apiServicesClient">Dịch vụ API client.</param>
+    /// <param name="dateTimeProvider">Dịch vụ cung cấp thời gian hiện tại.</param>
+
     public PlanViewModel(INavigationService navigationService, IDialogService dialogService, ILocalSettingsService localSettings, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider)
     {
         _dateTimeProvider = dateTimeProvider;
@@ -229,6 +238,9 @@ public partial class PlanViewModel : ObservableRecipient
         InitializeViewModelAsync();
     }
 
+    /// <summary>
+    /// Hàm khởi tạo bất đồng bộ của ViewModel, tải dữ liệu ban đầu.
+    /// </summary>
     private async void InitializeViewModelAsync()
     {
         await GetCustomerID();
@@ -244,13 +256,25 @@ public partial class PlanViewModel : ObservableRecipient
             SelectWorkoutDetail(currentDayWorkoutDetail);
         }
     }
-    
+
+    /// <summary>
+    /// Lấy ID khách hàng từ cài đặt cục bộ.
+    /// </summary>
+    /// <returns>Task đại diện cho công việc bất đồng bộ.</returns>
     public async Task GetCustomerID()
     {
         var customer_id = await _localsetting.ReadSettingAsync<string>("customer_id");
         CustomerId = int.Parse(customer_id);
     }
 
+    /// <summary>
+    /// Lấy danh sách chi tiết bài tập cho một tuần cụ thể, bắt đầu từ ngày được cung cấp.
+    /// Nếu không có chi tiết bài tập cho một ngày, một chi tiết bài tập mặc định (không có bài tập) sẽ được tạo ra.
+    /// </summary>
+    /// <param name="startDate">Ngày bắt đầu tính tuần.</param>
+    /// <param name="weekNumber">Số tuần cần lấy chi tiết bài tập.</param>
+    /// <param name="workoutDetails">Danh sách tất cả các chi tiết bài tập có sẵn.</param>
+    /// <returns>Danh sách các <see cref="Workoutdetail"/> cho tuần được chỉ định. Mỗi phần tử đại diện cho chi tiết bài tập cho một ngày trong tuần.</returns>
     public static List<Workoutdetail> GetWeekWorkoutDetails(DateTime startDate, int weekNumber, List<Workoutdetail> workoutDetails)
     {
         var weekStartDate = startDate.AddDays((weekNumber - 1) * 7);
@@ -271,6 +295,10 @@ public partial class PlanViewModel : ObservableRecipient
         }
         return weekWorkoutDetails;
     }
+
+    /// <summary>
+    /// Tải chi tiết kế hoạch từ API.
+    /// </summary>
     public void LoadPlanDetailData()
     {
         try
@@ -288,6 +316,11 @@ public partial class PlanViewModel : ObservableRecipient
             Debug.WriteLine($"Error loading plan details: {ex.Message}");
         }
     }
+
+    /// <summary>
+    /// Tải các ngày trong tuần hiện tại dựa trên ngày bắt đầu kế hoạch.
+    /// </summary>
+    /// <param name="startDate">Ngày bắt đầu kế hoạch.</param>
     public void LoadCurrentWeekDays(DateTime startDate)
     {
         var currentDate = _dateTimeProvider.Now;
@@ -325,6 +358,11 @@ public partial class PlanViewModel : ObservableRecipient
             WorkoutButtonVisibility = Visibility.Visible;
         }
     }
+
+    /// <summary>
+    /// xử lí khi chọn chi tiết bài tập cho một ngày cụ thể.
+    /// </summary>
+    /// <param name="selectedWorkoutDetail">Chi tiết bài tập được chọn.</param>
     public void SelectWorkoutDetail(Workoutdetail selectedWorkoutDetail)
     {
         for (var i = 0; i < WeekDaysItems.Count(); i++)
@@ -355,6 +393,10 @@ public partial class PlanViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Bắt đầu phát các bài tập cho ngày hiện tại.
+    /// </summary>
+    /// <returns>Task đại diện cho công việc bất đồng bộ.</returns>
     public async Task PlayingWorkoutExercises()
     {
         var currentDayWorkoutDetail = WeekDaysItems.FirstOrDefault(item => item.date_workout.Date == _dateTimeProvider.Now.Date);
@@ -377,6 +419,10 @@ public partial class PlanViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Hiển thị video cho một bài tập khi được chọn.
+    /// </summary>
+    /// <param name="ex">Đối tượng <see cref="Exercisedetail"/> đại diện cho bài tập cần hiển thị video.</param>
     public void ShowSingleExerciseVideo(Exercisedetail ex)
     {
         var exercise = ex.Exercise;

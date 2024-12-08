@@ -10,7 +10,7 @@ Inheritance diagram for Gyminize.\+View\+Models.\+Plan\+View\+Model\+:\begin{fig
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a06640ee8aa935caab98b5aa8b4630964}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a06640ee8aa935caab98b5aa8b4630964} 
-{\bfseries Plan\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_date_time_provider}{IDate\+Time\+Provider}} date\+Time\+Provider)
+{\bfseries Plan\+View\+Model} (INavigation\+Service navigation\+Service, IDialog\+Service dialog\+Service, ILocal\+Settings\+Service local\+Settings, IApi\+Services\+Client api\+Services\+Client, IDate\+Time\+Provider date\+Time\+Provider)
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a2baae2d46a206a6a7085b00a36bf4ad3}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a2baae2d46a206a6a7085b00a36bf4ad3} 
 async Task {\bfseries Get\+Customer\+ID} ()
@@ -22,19 +22,19 @@ void {\bfseries Load\+Plan\+Detail\+Data} ()
 void {\bfseries Load\+Current\+Week\+Days} (Date\+Time start\+Date)
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_aed1161539c1de943dbe0df02d2bedc25}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_aed1161539c1de943dbe0df02d2bedc25} 
-void {\bfseries Select\+Workout\+Detail} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_workoutdetail}{Workoutdetail}} selected\+Workout\+Detail)
+void {\bfseries Select\+Workout\+Detail} (Workoutdetail selected\+Workout\+Detail)
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a210aab9a14daa070362ac943565ca5b1}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a210aab9a14daa070362ac943565ca5b1} 
 async Task {\bfseries Playing\+Workout\+Exercises} ()
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a9759b8037c37f4b9bfd8197bb0a5db39}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a9759b8037c37f4b9bfd8197bb0a5db39} 
-void {\bfseries Show\+Single\+Exercise\+Video} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_exercisedetail}{Exercisedetail}} ex)
+void {\bfseries Show\+Single\+Exercise\+Video} (Exercisedetail ex)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a84efbb48b908d326b209478103659872}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a84efbb48b908d326b209478103659872} 
-static List$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_workoutdetail}{Workoutdetail}} $>$ {\bfseries Get\+Week\+Workout\+Details} (Date\+Time start\+Date, int week\+Number, List$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_workoutdetail}{Workoutdetail}} $>$ workout\+Details)
+static List$<$ Workoutdetail $>$ {\bfseries Get\+Week\+Workout\+Details} (Date\+Time start\+Date, int week\+Number, List$<$ Workoutdetail $>$ workout\+Details)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -118,13 +118,109 @@ ICommand {\bfseries Playing\+Workout\+Exercises\+Command}\hspace{0.3cm}{\ttfamil
 ICommand {\bfseries Show\+Single\+Exercise\+Video\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a4273b1a6432b73edc62fe3b484016798}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a4273b1a6432b73edc62fe3b484016798} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_exercisedetail}{Exercisedetail}} $>$ {\bfseries Exercise\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_exercisedetail}{Exercisedetail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Exercisedetail $>$ {\bfseries Exercise\+Items} = new Observable\+Collection$<$Exercisedetail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_aab3bb8e8dfca82a43fadc3fb39bbd436}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_aab3bb8e8dfca82a43fadc3fb39bbd436} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_workoutdetail}{Workoutdetail}} $>$ {\bfseries Week\+Days\+Items}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Workoutdetail $>$ {\bfseries Week\+Days\+Items}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a209410ee4348e5542cb4ec7131d8a1c4}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a209410ee4348e5542cb4ec7131d8a1c4} 
-List$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_workoutdetail}{Workoutdetail}} $>$ {\bfseries Workout\+Details\+Items} = new List$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_workoutdetail}{Workoutdetail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+List$<$ Workoutdetail $>$ {\bfseries Workout\+Details\+Items} = new List$<$Workoutdetail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a2435124836ae282e304ceab644a6583e}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a2435124836ae282e304ceab644a6583e} 
+async void {\bfseries Initialize\+View\+Model\+Async} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a26c6967cdc8ae2df4c9c63c884f33a77}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a26c6967cdc8ae2df4c9c63c884f33a77} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a71d50a506bca0ee0d05a31e8b3003182}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a71d50a506bca0ee0d05a31e8b3003182} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ad2839d437bb6c1dad26aabef465b6ef8}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ad2839d437bb6c1dad26aabef465b6ef8} 
+readonly ILocal\+Settings\+Service {\bfseries \+\_\+localsetting}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a0a535449c54df61cdc6cf4daab698eee}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a0a535449c54df61cdc6cf4daab698eee} 
+readonly IApi\+Services\+Client {\bfseries \+\_\+api\+Services\+Client}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a3fb406c15e15f5650b9a80921212c73d}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a3fb406c15e15f5650b9a80921212c73d} 
+readonly IDate\+Time\+Provider {\bfseries \+\_\+date\+Time\+Provider}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ab473d05fffe7ebfd2f0715383d8c533b}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ab473d05fffe7ebfd2f0715383d8c533b} 
+string {\bfseries \+\_\+plan\+Name}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a32c3e65d1c0bf658eea4b739a27b43db}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a32c3e65d1c0bf658eea4b739a27b43db} 
+int {\bfseries \+\_\+week\+Number}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a0b970cca09bc4357b067d5d3634a1006}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a0b970cca09bc4357b067d5d3634a1006} 
+int {\bfseries \+\_\+customer\+Id}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a486f7ea1e087d43b68b8d122cbf7b6dc}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a486f7ea1e087d43b68b8d122cbf7b6dc} 
+int {\bfseries \+\_\+complete\+Day}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ad7932fb6d5e7ac6f496e4d804566ee74}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ad7932fb6d5e7ac6f496e4d804566ee74} 
+int {\bfseries \+\_\+total\+Day}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a7c50ab3b6e1ca0450de0fa5fb12d091e}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a7c50ab3b6e1ca0450de0fa5fb12d091e} 
+double {\bfseries \+\_\+day\+Progress}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ae44f5100f64758d417a64580d38f18ce}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ae44f5100f64758d417a64580d38f18ce} 
+String {\bfseries \+\_\+day1}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_aa969a3deb28957661d9b2a9039d9ccf8}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_aa969a3deb28957661d9b2a9039d9ccf8} 
+string {\bfseries \+\_\+day2}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ab08aa2acf3012e6bb13102d67297e81f}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ab08aa2acf3012e6bb13102d67297e81f} 
+string {\bfseries \+\_\+day3}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ae6b5b531af0eef9b573bcee004b9405e}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ae6b5b531af0eef9b573bcee004b9405e} 
+string {\bfseries \+\_\+day4}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a5991608f99450405b93c6ddc0956e319}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a5991608f99450405b93c6ddc0956e319} 
+string {\bfseries \+\_\+day5}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a2417b952dc0c804b5badb539c7430d35}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a2417b952dc0c804b5badb539c7430d35} 
+string {\bfseries \+\_\+day6}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a76fd4e32a8b2c282ce4223d07ec8fd6a}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a76fd4e32a8b2c282ce4223d07ec8fd6a} 
+string {\bfseries \+\_\+day7}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ad76b1e3905a02f36a48e85c1cdcd4e19}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ad76b1e3905a02f36a48e85c1cdcd4e19} 
+bool {\bfseries \+\_\+is\+Current\+Day}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a171a64c203291dfc5d6b5b24ac665dd3}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a171a64c203291dfc5d6b5b24ac665dd3} 
+Date\+Time {\bfseries \+\_\+start\+Date}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a2e72fce5e3d80f132be0676e56f72dbb}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a2e72fce5e3d80f132be0676e56f72dbb} 
+Date\+Time {\bfseries \+\_\+end\+Date}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a948a41b5716c8779bdd00966ec53b6c6}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a948a41b5716c8779bdd00966ec53b6c6} 
+bool {\bfseries \+\_\+is\+Break\+Day}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a4882209ff4f83da84bd867d611ae35fa}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a4882209ff4f83da84bd867d611ae35fa} 
+bool {\bfseries \+\_\+is\+Workout\+Day}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a4546a4a8ab399dfaa1ade8c0bbab74bd}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a4546a4a8ab399dfaa1ade8c0bbab74bd} 
+string {\bfseries \+\_\+status\+Text}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a95f8a89b3ad3de60e959ca41a1e21c31}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a95f8a89b3ad3de60e959ca41a1e21c31} 
+string {\bfseries \+\_\+start\+Exercise\+Text}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a8b1c13f693a1bf94dc8c1618adb846c8}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a8b1c13f693a1bf94dc8c1618adb846c8} 
+string {\bfseries \+\_\+workout\+Detail\+Description}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_acd9b2b43e4b5b829647172c7327636b4}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_acd9b2b43e4b5b829647172c7327636b4} 
+bool {\bfseries \+\_\+is\+Finished}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_ace86ebbb14edd180dfc816b5ec85447f}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_ace86ebbb14edd180dfc816b5ec85447f} 
+Visibility {\bfseries \+\_\+workout\+Button\+Visibility}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_plan_view_model_a554efc1fb1c3498e8e7be23230771573}\label{class_gyminize_1_1_view_models_1_1_plan_view_model_a554efc1fb1c3498e8e7be23230771573} 
+Observable\+Collection$<$ Workoutdetail $>$ {\bfseries \+\_\+week\+Days\+Items} = new Observable\+Collection$<$Workoutdetail$>$()
 \end{DoxyCompactItemize}
 
 

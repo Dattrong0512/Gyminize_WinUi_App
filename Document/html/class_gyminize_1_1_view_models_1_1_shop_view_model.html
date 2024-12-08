@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -93,10 +92,16 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_view_models_1_1_shop_view_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.ViewModels.ShopViewModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel cho trang cửa hàng.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize.ViewModels.ShopViewModel:</div>
 <div class="dyncontent">
@@ -106,41 +111,43 @@ Inheritance diagram for Gyminize.ViewModels.ShopViewModel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f26c3a2ff05904757d4e66216cf1f7c" id="r_a5f26c3a2ff05904757d4e66216cf1f7c"><td class="memItemLeft" align="right" valign="top"><a id="a5f26c3a2ff05904757d4e66216cf1f7c" name="a5f26c3a2ff05904757d4e66216cf1f7c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ShopViewModel</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">INavigationService</a> navigationService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service.html">IDialogService</a> dialogService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client.html">IApiServicesClient</a> apiServicesClient, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSettingsService)</td></tr>
+<tr class="memitem:a5f26c3a2ff05904757d4e66216cf1f7c" id="r_a5f26c3a2ff05904757d4e66216cf1f7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f26c3a2ff05904757d4e66216cf1f7c">ShopViewModel</a> (INavigationService navigationService, IDialogService dialogService, IApiServicesClient apiServicesClient, ILocalSettingsService localSettingsService)</td></tr>
+<tr class="memdesc:a5f26c3a2ff05904757d4e66216cf1f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ViewModel cho trang cửa hàng, quản lý các sản phẩm, giỏ hàng và các thao tác liên quan.  <br /></td></tr>
 <tr class="separator:a5f26c3a2ff05904757d4e66216cf1f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74d7e18b2020b266e69cbc4dc2e60adc" id="r_a74d7e18b2020b266e69cbc4dc2e60adc"><td class="memItemLeft" align="right" valign="top"><a id="a74d7e18b2020b266e69cbc4dc2e60adc" name="a74d7e18b2020b266e69cbc4dc2e60adc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SearchProduct</b> ()</td></tr>
+<tr class="memdesc:a74d7e18b2020b266e69cbc4dc2e60adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thực hiện tìm kiếm sản phẩm. <br /></td></tr>
 <tr class="separator:a74d7e18b2020b266e69cbc4dc2e60adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad019e2f02b5d19d269e4ee0534fb1067" id="r_ad019e2f02b5d19d269e4ee0534fb1067"><td class="memItemLeft" align="right" valign="top"><a id="ad019e2f02b5d19d269e4ee0534fb1067" name="ad019e2f02b5d19d269e4ee0534fb1067"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>GetCustomerID</b> ()</td></tr>
+<tr class="memitem:ad019e2f02b5d19d269e4ee0534fb1067" id="r_ad019e2f02b5d19d269e4ee0534fb1067"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad019e2f02b5d19d269e4ee0534fb1067">GetCustomerID</a> ()</td></tr>
+<tr class="memdesc:ad019e2f02b5d19d269e4ee0534fb1067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy ID của khách hàng từ cài đặt địa phương.  <br /></td></tr>
 <tr class="separator:ad019e2f02b5d19d269e4ee0534fb1067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c7ecf00bbfdf7071bc6b00369112f85" id="r_a3c7ecf00bbfdf7071bc6b00369112f85"><td class="memItemLeft" align="right" valign="top"><a id="a3c7ecf00bbfdf7071bc6b00369112f85" name="a3c7ecf00bbfdf7071bc6b00369112f85"></a>
-async void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateOrGetOrderID</b> ()</td></tr>
+<tr class="memitem:a3c7ecf00bbfdf7071bc6b00369112f85" id="r_a3c7ecf00bbfdf7071bc6b00369112f85"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c7ecf00bbfdf7071bc6b00369112f85">CreateOrGetOrderID</a> ()</td></tr>
+<tr class="memdesc:a3c7ecf00bbfdf7071bc6b00369112f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tạo hoặc lấy ID đơn hàng của khách hàng. Nếu không có đơn hàng nào, tạo một đơn hàng mới.  <br /></td></tr>
 <tr class="separator:a3c7ecf00bbfdf7071bc6b00369112f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a393092cf60d856d71f4cd3ecefecb75e" id="r_a393092cf60d856d71f4cd3ecefecb75e"><td class="memItemLeft" align="right" valign="top"><a id="a393092cf60d856d71f4cd3ecefecb75e" name="a393092cf60d856d71f4cd3ecefecb75e"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>LoadProductLibraryAsync</b> ()</td></tr>
+<tr class="memitem:a393092cf60d856d71f4cd3ecefecb75e" id="r_a393092cf60d856d71f4cd3ecefecb75e"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a393092cf60d856d71f4cd3ecefecb75e">LoadProductLibraryAsync</a> ()</td></tr>
+<tr class="memdesc:a393092cf60d856d71f4cd3ecefecb75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải thư viện sản phẩm từ API và cập nhật danh sách sản phẩm.  <br /></td></tr>
 <tr class="separator:a393092cf60d856d71f4cd3ecefecb75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d0355d74a4d28e0c7d854d8af8c1d4c" id="r_a4d0355d74a4d28e0c7d854d8af8c1d4c"><td class="memItemLeft" align="right" valign="top"><a id="a4d0355d74a4d28e0c7d854d8af8c1d4c" name="a4d0355d74a4d28e0c7d854d8af8c1d4c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SelectCart</b> ()</td></tr>
+<tr class="memdesc:a4d0355d74a4d28e0c7d854d8af8c1d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Điều hướng đến trang giỏ hàng. <br /></td></tr>
 <tr class="separator:a4d0355d74a4d28e0c7d854d8af8c1d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d226846946cde793ece58294e716391" id="r_a6d226846946cde793ece58294e716391"><td class="memItemLeft" align="right" valign="top"><a id="a6d226846946cde793ece58294e716391" name="a6d226846946cde793ece58294e716391"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>SelectProduct</b> (<a class="el" href="class_gyminize_1_1_models_1_1_product.html">Product</a> product)</td></tr>
+<tr class="memitem:a6d226846946cde793ece58294e716391" id="r_a6d226846946cde793ece58294e716391"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d226846946cde793ece58294e716391">SelectProduct</a> (Product product)</td></tr>
+<tr class="memdesc:a6d226846946cde793ece58294e716391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chọn một sản phẩm và hiển thị hộp thoại sản phẩm với nhà cung cấp.  <br /></td></tr>
 <tr class="separator:a6d226846946cde793ece58294e716391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93615aaf51d02a745a7d312eb5903bb8" id="r_a93615aaf51d02a745a7d312eb5903bb8"><td class="memItemLeft" align="right" valign="top"><a id="a93615aaf51d02a745a7d312eb5903bb8" name="a93615aaf51d02a745a7d312eb5903bb8"></a>
-async void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadOrderDetailData</b> ()</td></tr>
+<tr class="memitem:a93615aaf51d02a745a7d312eb5903bb8" id="r_a93615aaf51d02a745a7d312eb5903bb8"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93615aaf51d02a745a7d312eb5903bb8">LoadOrderDetailData</a> ()</td></tr>
+<tr class="memdesc:a93615aaf51d02a745a7d312eb5903bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải dữ liệu chi tiết đơn hàng của khách hàng.  <br /></td></tr>
 <tr class="separator:a93615aaf51d02a745a7d312eb5903bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a06610b55757f20f2187b7f0ae5d7d94b" id="r_a06610b55757f20f2187b7f0ae5d7d94b"><td class="memItemLeft" align="right" valign="top"><a id="a06610b55757f20f2187b7f0ae5d7d94b" name="a06610b55757f20f2187b7f0ae5d7d94b"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_product.html">Product</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ProductLibraryItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_product.html">Product</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; Product &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ProductLibraryItems</b> = new ObservableCollection&lt;Product&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a06610b55757f20f2187b7f0ae5d7d94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed66241175447a07bdc54f9dc8edda6c" id="r_aed66241175447a07bdc54f9dc8edda6c"><td class="memItemLeft" align="right" valign="top"><a id="aed66241175447a07bdc54f9dc8edda6c" name="aed66241175447a07bdc54f9dc8edda6c"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_product.html">Product</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FilteredProductLibraryItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_product.html">Product</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; Product &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FilteredProductLibraryItems</b> = new ObservableCollection&lt;Product&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:aed66241175447a07bdc54f9dc8edda6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf2d160aaf9958fba184d6790e00e2f1" id="r_acf2d160aaf9958fba184d6790e00e2f1"><td class="memItemLeft" align="right" valign="top"><a id="acf2d160aaf9958fba184d6790e00e2f1" name="acf2d160aaf9958fba184d6790e00e2f1"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_orderdetail.html">Orderdetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>OrderDetailsItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_orderdetail.html">Orderdetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; Orderdetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>OrderDetailsItems</b> = new ObservableCollection&lt;Orderdetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:acf2d160aaf9958fba184d6790e00e2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1267ee788e5e148f48412097e6b698b2" id="r_a1267ee788e5e148f48412097e6b698b2"><td class="memItemLeft" align="right" valign="top"><a id="a1267ee788e5e148f48412097e6b698b2" name="a1267ee788e5e148f48412097e6b698b2"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentPage</b><code> [get, set]</code></td></tr>
@@ -187,7 +194,266 @@ ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>SearchProductComm
 <tr class="memitem:a1026e1a1c239c453c82b2a350e9e8e0b" id="r_a1026e1a1c239c453c82b2a350e9e8e0b"><td class="memItemLeft" align="right" valign="top"><a id="a1026e1a1c239c453c82b2a350e9e8e0b" name="a1026e1a1c239c453c82b2a350e9e8e0b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>CartItemCount</b><code> [get, set]</code></td></tr>
 <tr class="separator:a1026e1a1c239c453c82b2a350e9e8e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8448f75250bca4c1f910ec74213c722e" id="r_a8448f75250bca4c1f910ec74213c722e"><td class="memItemLeft" align="right" valign="top"><a id="a8448f75250bca4c1f910ec74213c722e" name="a8448f75250bca4c1f910ec74213c722e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateFilteredProducts</b> ()</td></tr>
+<tr class="memdesc:a8448f75250bca4c1f910ec74213c722e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cập nhật các sản phẩm đã được lọc và phân trang. <br /></td></tr>
+<tr class="separator:a8448f75250bca4c1f910ec74213c722e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8dcf92fc1d3349bb4785dd48b5052c2" id="r_ac8dcf92fc1d3349bb4785dd48b5052c2"><td class="memItemLeft" align="right" valign="top"><a id="ac8dcf92fc1d3349bb4785dd48b5052c2" name="ac8dcf92fc1d3349bb4785dd48b5052c2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateFilteredAndSortedProducts</b> ()</td></tr>
+<tr class="memdesc:ac8dcf92fc1d3349bb4785dd48b5052c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cập nhật các sản phẩm đã được lọc, phân trang và sắp xếp. <br /></td></tr>
+<tr class="separator:ac8dcf92fc1d3349bb4785dd48b5052c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada39dc0be91c1482869060020cc85cd4" id="r_ada39dc0be91c1482869060020cc85cd4"><td class="memItemLeft" align="right" valign="top"><a id="ada39dc0be91c1482869060020cc85cd4" name="ada39dc0be91c1482869060020cc85cd4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>NextPage</b> ()</td></tr>
+<tr class="memdesc:ada39dc0be91c1482869060020cc85cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Điều hướng đến trang tiếp theo nếu có thể. <br /></td></tr>
+<tr class="separator:ada39dc0be91c1482869060020cc85cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff375d281b03c62297e1e93d5dd4f9b" id="r_abff375d281b03c62297e1e93d5dd4f9b"><td class="memItemLeft" align="right" valign="top"><a id="abff375d281b03c62297e1e93d5dd4f9b" name="abff375d281b03c62297e1e93d5dd4f9b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PreviousPage</b> ()</td></tr>
+<tr class="memdesc:abff375d281b03c62297e1e93d5dd4f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Điều hướng đến trang trước đó nếu có thể. <br /></td></tr>
+<tr class="separator:abff375d281b03c62297e1e93d5dd4f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a891c3e0392aef2a872f3778ab4a56f26" id="r_a891c3e0392aef2a872f3778ab4a56f26"><td class="memItemLeft" align="right" valign="top"><a id="a891c3e0392aef2a872f3778ab4a56f26" name="a891c3e0392aef2a872f3778ab4a56f26"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_currentPage</b> = 1</td></tr>
+<tr class="separator:a891c3e0392aef2a872f3778ab4a56f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500b05775eadaeb32efb54a0c04ef26d" id="r_a500b05775eadaeb32efb54a0c04ef26d"><td class="memItemLeft" align="right" valign="top"><a id="a500b05775eadaeb32efb54a0c04ef26d" name="a500b05775eadaeb32efb54a0c04ef26d"></a>
+readonly INavigationService&#160;</td><td class="memItemRight" valign="bottom"><b>_navigationService</b></td></tr>
+<tr class="separator:a500b05775eadaeb32efb54a0c04ef26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ab2ef83fd097dca5ce073583a1730b" id="r_a24ab2ef83fd097dca5ce073583a1730b"><td class="memItemLeft" align="right" valign="top"><a id="a24ab2ef83fd097dca5ce073583a1730b" name="a24ab2ef83fd097dca5ce073583a1730b"></a>
+readonly IDialogService&#160;</td><td class="memItemRight" valign="bottom"><b>_dialogService</b></td></tr>
+<tr class="separator:a24ab2ef83fd097dca5ce073583a1730b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5fc818eadaf8a5e4b86ed6cc5e7499e" id="r_aa5fc818eadaf8a5e4b86ed6cc5e7499e"><td class="memItemLeft" align="right" valign="top"><a id="aa5fc818eadaf8a5e4b86ed6cc5e7499e" name="aa5fc818eadaf8a5e4b86ed6cc5e7499e"></a>
+readonly IApiServicesClient&#160;</td><td class="memItemRight" valign="bottom"><b>_apiServicesClient</b></td></tr>
+<tr class="separator:aa5fc818eadaf8a5e4b86ed6cc5e7499e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab64e7cb834010d9771912ed3ee3374" id="r_a9ab64e7cb834010d9771912ed3ee3374"><td class="memItemLeft" align="right" valign="top"><a id="a9ab64e7cb834010d9771912ed3ee3374" name="a9ab64e7cb834010d9771912ed3ee3374"></a>
+readonly ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><b>_localSettingsService</b></td></tr>
+<tr class="separator:a9ab64e7cb834010d9771912ed3ee3374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787efc8fbf0948835709c171128da348" id="r_a787efc8fbf0948835709c171128da348"><td class="memItemLeft" align="right" valign="top"><a id="a787efc8fbf0948835709c171128da348" name="a787efc8fbf0948835709c171128da348"></a>
+List&lt; Product &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_allProducts</b></td></tr>
+<tr class="separator:a787efc8fbf0948835709c171128da348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a2004336895e61657051e84ab46fd0" id="r_a14a2004336895e61657051e84ab46fd0"><td class="memItemLeft" align="right" valign="top"><a id="a14a2004336895e61657051e84ab46fd0" name="a14a2004336895e61657051e84ab46fd0"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_searchText</b> = string.Empty</td></tr>
+<tr class="separator:a14a2004336895e61657051e84ab46fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998cff27cab31a353211285a6716e861" id="r_a998cff27cab31a353211285a6716e861"><td class="memItemLeft" align="right" valign="top"><a id="a998cff27cab31a353211285a6716e861" name="a998cff27cab31a353211285a6716e861"></a>
+ComboBoxItem&#160;</td><td class="memItemRight" valign="bottom"><b>_selectedCategoryName</b> = new() { Content = &quot;Tất cả&quot;}</td></tr>
+<tr class="separator:a998cff27cab31a353211285a6716e861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1855ecd9eee03a8440169733eeb047f" id="r_ae1855ecd9eee03a8440169733eeb047f"><td class="memItemLeft" align="right" valign="top"><a id="ae1855ecd9eee03a8440169733eeb047f" name="ae1855ecd9eee03a8440169733eeb047f"></a>
+ComboBoxItem&#160;</td><td class="memItemRight" valign="bottom"><b>_selectedSortOrder</b> = new() { Content = &quot;Gần đây&quot;}</td></tr>
+<tr class="separator:ae1855ecd9eee03a8440169733eeb047f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab786393c088d0730ca7b37c20e98f407" id="r_ab786393c088d0730ca7b37c20e98f407"><td class="memItemLeft" align="right" valign="top"><a id="ab786393c088d0730ca7b37c20e98f407" name="ab786393c088d0730ca7b37c20e98f407"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_totalPages</b></td></tr>
+<tr class="separator:ab786393c088d0730ca7b37c20e98f407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6eda6d2dd9e53c4ea3f98141ee6f81" id="r_a9e6eda6d2dd9e53c4ea3f98141ee6f81"><td class="memItemLeft" align="right" valign="top"><a id="a9e6eda6d2dd9e53c4ea3f98141ee6f81" name="a9e6eda6d2dd9e53c4ea3f98141ee6f81"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_canGoNext</b> = true</td></tr>
+<tr class="separator:a9e6eda6d2dd9e53c4ea3f98141ee6f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70be5ec593e3d5b42d52205045aed83d" id="r_a70be5ec593e3d5b42d52205045aed83d"><td class="memItemLeft" align="right" valign="top"><a id="a70be5ec593e3d5b42d52205045aed83d" name="a70be5ec593e3d5b42d52205045aed83d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_canGoBack</b> = false</td></tr>
+<tr class="separator:a70be5ec593e3d5b42d52205045aed83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b534960f7fd38110c1b19415a2650c1" id="r_a3b534960f7fd38110c1b19415a2650c1"><td class="memItemLeft" align="right" valign="top"><a id="a3b534960f7fd38110c1b19415a2650c1" name="a3b534960f7fd38110c1b19415a2650c1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_cartItemCount</b></td></tr>
+<tr class="separator:a3b534960f7fd38110c1b19415a2650c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a23f624ebdf692757cb615f1739af49ae" id="r_a23f624ebdf692757cb615f1739af49ae"><td class="memItemLeft" align="right" valign="top"><a id="a23f624ebdf692757cb615f1739af49ae" name="a23f624ebdf692757cb615f1739af49ae"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>ItemsPerPage</b> = 4</td></tr>
+<tr class="separator:a23f624ebdf692757cb615f1739af49ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ViewModel cho trang cửa hàng. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5f26c3a2ff05904757d4e66216cf1f7c" name="a5f26c3a2ff05904757d4e66216cf1f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f26c3a2ff05904757d4e66216cf1f7c">&#9670;&#160;</a></span>ShopViewModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize.ViewModels.ShopViewModel.ShopViewModel </td>
+          <td>(</td>
+          <td class="paramtype">INavigationService</td>          <td class="paramname"><span class="paramname"><em>navigationService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDialogService</td>          <td class="paramname"><span class="paramname"><em>dialogService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IApiServicesClient</td>          <td class="paramname"><span class="paramname"><em>apiServicesClient</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ILocalSettingsService</td>          <td class="paramname"><span class="paramname"><em>localSettingsService</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ViewModel cho trang cửa hàng, quản lý các sản phẩm, giỏ hàng và các thao tác liên quan. </p>
+<p>Lớp này thực hiện các chức năng như tìm kiếm sản phẩm, phân trang, lọc sản phẩm theo danh mục và sắp xếp theo giá hoặc thời gian. Nó cũng quản lý việc thêm sản phẩm vào giỏ hàng và hiển thị thông tin đơn hàng. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3c7ecf00bbfdf7071bc6b00369112f85" name="a3c7ecf00bbfdf7071bc6b00369112f85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c7ecf00bbfdf7071bc6b00369112f85">&#9670;&#160;</a></span>CreateOrGetOrderID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void Gyminize.ViewModels.ShopViewModel.CreateOrGetOrderID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tạo hoặc lấy ID đơn hàng của khách hàng. Nếu không có đơn hàng nào, tạo một đơn hàng mới. </p>
+<dl class="section return"><dt>Returns</dt><dd>Task đại diện cho thao tác bất đồng bộ.</dd></dl>
+
+</div>
+</div>
+<a id="ad019e2f02b5d19d269e4ee0534fb1067" name="ad019e2f02b5d19d269e4ee0534fb1067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad019e2f02b5d19d269e4ee0534fb1067">&#9670;&#160;</a></span>GetCustomerID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.ShopViewModel.GetCustomerID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lấy ID của khách hàng từ cài đặt địa phương. </p>
+<dl class="section return"><dt>Returns</dt><dd>Task đại diện cho thao tác bất đồng bộ.</dd></dl>
+
+</div>
+</div>
+<a id="a93615aaf51d02a745a7d312eb5903bb8" name="a93615aaf51d02a745a7d312eb5903bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93615aaf51d02a745a7d312eb5903bb8">&#9670;&#160;</a></span>LoadOrderDetailData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void Gyminize.ViewModels.ShopViewModel.LoadOrderDetailData </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tải dữ liệu chi tiết đơn hàng của khách hàng. </p>
+<dl class="section return"><dt>Returns</dt><dd>Task đại diện cho thao tác bất đồng bộ.</dd></dl>
+
+</div>
+</div>
+<a id="a393092cf60d856d71f4cd3ecefecb75e" name="a393092cf60d856d71f4cd3ecefecb75e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393092cf60d856d71f4cd3ecefecb75e">&#9670;&#160;</a></span>LoadProductLibraryAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.ShopViewModel.LoadProductLibraryAsync </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tải thư viện sản phẩm từ API và cập nhật danh sách sản phẩm. </p>
+<dl class="section return"><dt>Returns</dt><dd>Task đại diện cho thao tác bất đồng bộ.</dd></dl>
+
+</div>
+</div>
+<a id="a6d226846946cde793ece58294e716391" name="a6d226846946cde793ece58294e716391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d226846946cde793ece58294e716391">&#9670;&#160;</a></span>SelectProduct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.ShopViewModel.SelectProduct </td>
+          <td>(</td>
+          <td class="paramtype">Product</td>          <td class="paramname"><span class="paramname"><em>product</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Chọn một sản phẩm và hiển thị hộp thoại sản phẩm với nhà cung cấp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">product</td><td>Sản phẩm được chọn.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Task đại diện cho thao tác bất đồng bộ.</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/ViewModels/<b>ShopViewModel.cs</b></li>
 </ul>

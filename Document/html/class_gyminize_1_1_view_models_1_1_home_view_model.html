@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -97,19 +96,21 @@ $(function(){ initResizable(false); });
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#events">Events</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_view_models_1_1_home_view_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.ViewModels.HomeViewModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel trang chủ .  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize.ViewModels.HomeViewModel:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_gyminize_1_1_view_models_1_1_home_view_model.png" usemap="#Gyminize.ViewModels.HomeViewModel_map" alt=""/>
-  <map id="Gyminize.ViewModels.HomeViewModel_map" name="Gyminize.ViewModels.HomeViewModel_map">
-<area href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html" alt="Gyminize.Contracts.ViewModels.INavigationAware" shape="rect" coords="308,0,606,24"/>
-  </map>
-</div></div>
+  <img src="class_gyminize_1_1_view_models_1_1_home_view_model.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -118,17 +119,19 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab9e8e4755ac9c4aa27ebbc2805281f06" id="r_ab9e8e4755ac9c4aa27ebbc2805281f06"><td class="memItemLeft" align="right" valign="top"><a id="ab9e8e4755ac9c4aa27ebbc2805281f06" name="ab9e8e4755ac9c4aa27ebbc2805281f06"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HomeViewModel</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">INavigationService</a> navigationService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service.html">IWindowService</a> windowService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSettings, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service.html">IDialogService</a> dialogService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client.html">IApiServicesClient</a> apiServicesClient, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_date_time_provider.html">IDateTimeProvider</a> dateTimeProvider)</td></tr>
+<tr class="memitem:ab9e8e4755ac9c4aa27ebbc2805281f06" id="r_ab9e8e4755ac9c4aa27ebbc2805281f06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9e8e4755ac9c4aa27ebbc2805281f06">HomeViewModel</a> (INavigationService navigationService, IWindowService windowService, ILocalSettingsService localSettings, IDialogService dialogService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider)</td></tr>
+<tr class="memdesc:ab9e8e4755ac9c4aa27ebbc2805281f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo <a class="el" href="class_gyminize_1_1_view_models_1_1_home_view_model.html" title="ViewModel trang chủ .">HomeViewModel</a>, thiết lập các dịch vụ và lệnh.  <br /></td></tr>
 <tr class="separator:ab9e8e4755ac9c4aa27ebbc2805281f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7515e1ce6886cfb7c1d61a7164d8149d" id="r_a7515e1ce6886cfb7c1d61a7164d8149d"><td class="memItemLeft" align="right" valign="top"><a id="a7515e1ce6886cfb7c1d61a7164d8149d" name="a7515e1ce6886cfb7c1d61a7164d8149d"></a>
 async void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenSaveWeight</b> ()</td></tr>
+<tr class="memdesc:a7515e1ce6886cfb7c1d61a7164d8149d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lưu cân nặng mới và cập nhật lên hệ thống. <br /></td></tr>
 <tr class="separator:a7515e1ce6886cfb7c1d61a7164d8149d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bf9f1cc4d910ffed654bfa4ec59d25a" id="r_a2bf9f1cc4d910ffed654bfa4ec59d25a"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf9f1cc4d910ffed654bfa4ec59d25a">OnNavigatedTo</a> (object parameter)</td></tr>
+<tr class="memdesc:a2bf9f1cc4d910ffed654bfa4ec59d25a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khi người dùng điều hướng đến trang, lấy thông tin cân nặng, calo và kế hoạch tập luyện.  <br /></td></tr>
 <tr class="separator:a2bf9f1cc4d910ffed654bfa4ec59d25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f8250a190bd30d1b922c2870aaf2886" id="r_a2f8250a190bd30d1b922c2870aaf2886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8250a190bd30d1b922c2870aaf2886">OnNavigatedFrom</a> ()</td></tr>
+<tr class="memitem:a2f8250a190bd30d1b922c2870aaf2886" id="r_a2f8250a190bd30d1b922c2870aaf2886"><td class="memItemLeft" align="right" valign="top"><a id="a2f8250a190bd30d1b922c2870aaf2886" name="a2f8250a190bd30d1b922c2870aaf2886"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnNavigatedFrom</b> ()</td></tr>
 <tr class="separator:a2f8250a190bd30d1b922c2870aaf2886"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html">Gyminize.Contracts.ViewModels.INavigationAware</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -136,7 +139,7 @@ Public Attributes</h2></td></tr>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>_customer_id</b></td></tr>
 <tr class="separator:a7fbfb8a0831c686fd9b377cdbdda4c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4a5e83498365e8ea40c39bfcb20c9d8" id="r_ab4a5e83498365e8ea40c39bfcb20c9d8"><td class="memItemLeft" align="right" valign="top"><a id="ab4a5e83498365e8ea40c39bfcb20c9d8" name="ab4a5e83498365e8ea40c39bfcb20c9d8"></a>
-<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a>&#160;</td><td class="memItemRight" valign="bottom"><b>localsetting</b></td></tr>
+ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><b>localsetting</b></td></tr>
 <tr class="separator:ab4a5e83498365e8ea40c39bfcb20c9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -148,7 +151,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnPropertyCha
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a16a668103dc6cb4b83a603df51260023" id="r_a16a668103dc6cb4b83a603df51260023"><td class="memItemLeft" align="right" valign="top"><a id="a16a668103dc6cb4b83a603df51260023" name="a16a668103dc6cb4b83a603df51260023"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsWeightTextBoxEnabled</b><code> [get]</code></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsWeightTextBoxEnabled</b><code> [get, private set]</code></td></tr>
 <tr class="separator:a16a668103dc6cb4b83a603df51260023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca26a20f31e3a35a0d2769beeef31812" id="r_aca26a20f31e3a35a0d2769beeef31812"><td class="memItemLeft" align="right" valign="top"><a id="aca26a20f31e3a35a0d2769beeef31812" name="aca26a20f31e3a35a0d2769beeef31812"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>RemainCalories</b><code> [get, set]</code></td></tr>
@@ -210,10 +213,111 @@ Events</h2></td></tr>
 <tr class="memitem:a035a31d472ea87c54155d329bdb364b9" id="r_a035a31d472ea87c54155d329bdb364b9"><td class="memItemLeft" align="right" valign="top"><a id="a035a31d472ea87c54155d329bdb364b9" name="a035a31d472ea87c54155d329bdb364b9"></a>
 PropertyChangedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><b>PropertyChanged</b></td></tr>
 <tr class="separator:a035a31d472ea87c54155d329bdb364b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adf22b50b0855ebcfea11694af29295c0" id="r_adf22b50b0855ebcfea11694af29295c0"><td class="memItemLeft" align="right" valign="top"><a id="adf22b50b0855ebcfea11694af29295c0" name="adf22b50b0855ebcfea11694af29295c0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenWorkoutLink</b> ()</td></tr>
+<tr class="memdesc:adf22b50b0855ebcfea11694af29295c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mở liên kết đến trang web hướng dẫn tập luyện. <br /></td></tr>
+<tr class="separator:adf22b50b0855ebcfea11694af29295c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bddfcf5087977760b54233b3981e1cf" id="r_a8bddfcf5087977760b54233b3981e1cf"><td class="memItemLeft" align="right" valign="top"><a id="a8bddfcf5087977760b54233b3981e1cf" name="a8bddfcf5087977760b54233b3981e1cf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenRecipeLink</b> ()</td></tr>
+<tr class="memdesc:a8bddfcf5087977760b54233b3981e1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mở liên kết đến trang web công thức nấu ăn. <br /></td></tr>
+<tr class="separator:a8bddfcf5087977760b54233b3981e1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07941091ac330b8172ff5dc1a12c95e1" id="r_a07941091ac330b8172ff5dc1a12c95e1"><td class="memItemLeft" align="right" valign="top"><a id="a07941091ac330b8172ff5dc1a12c95e1" name="a07941091ac330b8172ff5dc1a12c95e1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenSleepLink</b> ()</td></tr>
+<tr class="memdesc:a07941091ac330b8172ff5dc1a12c95e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mở liên kết đến trang web hướng dẫn giấc ngủ. <br /></td></tr>
+<tr class="separator:a07941091ac330b8172ff5dc1a12c95e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13eefba097466d0392e399c12bba95a4" id="r_a13eefba097466d0392e399c12bba95a4"><td class="memItemLeft" align="right" valign="top"><a id="a13eefba097466d0392e399c12bba95a4" name="a13eefba097466d0392e399c12bba95a4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenEditWeight</b> ()</td></tr>
+<tr class="memdesc:a13eefba097466d0392e399c12bba95a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kích hoạt chỉnh sửa cân nặng, cho phép nhập liệu. <br /></td></tr>
+<tr class="separator:a13eefba097466d0392e399c12bba95a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5844a6948ca9a62ebe8c199014c396f7" id="r_a5844a6948ca9a62ebe8c199014c396f7"><td class="memItemLeft" align="right" valign="top"><a id="a5844a6948ca9a62ebe8c199014c396f7" name="a5844a6948ca9a62ebe8c199014c396f7"></a>
+async void&#160;</td><td class="memItemRight" valign="bottom"><b>GenerateChartLines</b> ()</td></tr>
+<tr class="memdesc:a5844a6948ca9a62ebe8c199014c396f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tạo các đường biểu đồ cho cân nặng trong 7 ngày qua. <br /></td></tr>
+<tr class="separator:a5844a6948ca9a62ebe8c199014c396f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a54a88abb071fae7ca8c7cadfaa56eff9" id="r_a54a88abb071fae7ca8c7cadfaa56eff9"><td class="memItemLeft" align="right" valign="top"><a id="a54a88abb071fae7ca8c7cadfaa56eff9" name="a54a88abb071fae7ca8c7cadfaa56eff9"></a>
+readonly INavigationService&#160;</td><td class="memItemRight" valign="bottom"><b>_navigationService</b></td></tr>
+<tr class="separator:a54a88abb071fae7ca8c7cadfaa56eff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec8c14c212bdb3d6d7c84d4961e31f0" id="r_aaec8c14c212bdb3d6d7c84d4961e31f0"><td class="memItemLeft" align="right" valign="top"><a id="aaec8c14c212bdb3d6d7c84d4961e31f0" name="aaec8c14c212bdb3d6d7c84d4961e31f0"></a>
+readonly IWindowService&#160;</td><td class="memItemRight" valign="bottom"><b>_windowService</b></td></tr>
+<tr class="separator:aaec8c14c212bdb3d6d7c84d4961e31f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82696e6d2367684b61eb6c9748b69ae1" id="r_a82696e6d2367684b61eb6c9748b69ae1"><td class="memItemLeft" align="right" valign="top"><a id="a82696e6d2367684b61eb6c9748b69ae1" name="a82696e6d2367684b61eb6c9748b69ae1"></a>
+readonly IDialogService&#160;</td><td class="memItemRight" valign="bottom"><b>_dialogService</b></td></tr>
+<tr class="separator:a82696e6d2367684b61eb6c9748b69ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5794ec00312d5f0842c9cf4c943c94" id="r_a7b5794ec00312d5f0842c9cf4c943c94"><td class="memItemLeft" align="right" valign="top"><a id="a7b5794ec00312d5f0842c9cf4c943c94" name="a7b5794ec00312d5f0842c9cf4c943c94"></a>
+readonly IApiServicesClient&#160;</td><td class="memItemRight" valign="bottom"><b>_apiServicesClient</b></td></tr>
+<tr class="separator:a7b5794ec00312d5f0842c9cf4c943c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a0c698a35468691f3d882f4a0ee67e" id="r_aa8a0c698a35468691f3d882f4a0ee67e"><td class="memItemLeft" align="right" valign="top"><a id="aa8a0c698a35468691f3d882f4a0ee67e" name="aa8a0c698a35468691f3d882f4a0ee67e"></a>
+readonly IDateTimeProvider&#160;</td><td class="memItemRight" valign="bottom"><b>_dateTimeProvider</b></td></tr>
+<tr class="separator:aa8a0c698a35468691f3d882f4a0ee67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018444b527392b6f99cc7a5fc9e8ef7f" id="r_a018444b527392b6f99cc7a5fc9e8ef7f"><td class="memItemLeft" align="right" valign="top"><a id="a018444b527392b6f99cc7a5fc9e8ef7f" name="a018444b527392b6f99cc7a5fc9e8ef7f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isWeightTextBoxEnabled</b></td></tr>
+<tr class="separator:a018444b527392b6f99cc7a5fc9e8ef7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a39f136344215a3bbb98c27515fe6c8" id="r_a8a39f136344215a3bbb98c27515fe6c8"><td class="memItemLeft" align="right" valign="top"><a id="a8a39f136344215a3bbb98c27515fe6c8" name="a8a39f136344215a3bbb98c27515fe6c8"></a>
+CustomerHealth&#160;</td><td class="memItemRight" valign="bottom"><b>_customerHealth</b></td></tr>
+<tr class="separator:a8a39f136344215a3bbb98c27515fe6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5656e919c3711662bd1dbda93bd97f11" id="r_a5656e919c3711662bd1dbda93bd97f11"><td class="memItemLeft" align="right" valign="top"><a id="a5656e919c3711662bd1dbda93bd97f11" name="a5656e919c3711662bd1dbda93bd97f11"></a>
+Customer&#160;</td><td class="memItemRight" valign="bottom"><b>_customer</b></td></tr>
+<tr class="separator:a5656e919c3711662bd1dbda93bd97f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacca0ff66d03b88216459e5e7f74d2c8" id="r_aacca0ff66d03b88216459e5e7f74d2c8"><td class="memItemLeft" align="right" valign="top"><a id="aacca0ff66d03b88216459e5e7f74d2c8" name="aacca0ff66d03b88216459e5e7f74d2c8"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>weightText</b></td></tr>
+<tr class="separator:aacca0ff66d03b88216459e5e7f74d2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b71e4f283a28da9c763e7e5362a6594" id="r_a1b71e4f283a28da9c763e7e5362a6594"><td class="memItemLeft" align="right" valign="top"><a id="a1b71e4f283a28da9c763e7e5362a6594" name="a1b71e4f283a28da9c763e7e5362a6594"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>goalCalories</b></td></tr>
+<tr class="separator:a1b71e4f283a28da9c763e7e5362a6594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49727f8763896f41946a8b006ead8d00" id="r_a49727f8763896f41946a8b006ead8d00"><td class="memItemLeft" align="right" valign="top"><a id="a49727f8763896f41946a8b006ead8d00" name="a49727f8763896f41946a8b006ead8d00"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>weightTemp</b></td></tr>
+<tr class="separator:a49727f8763896f41946a8b006ead8d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7674bdc62589f0b0b0e0bb24f616ef" id="r_a3f7674bdc62589f0b0b0e0bb24f616ef"><td class="memItemLeft" align="right" valign="top"><a id="a3f7674bdc62589f0b0b0e0bb24f616ef" name="a3f7674bdc62589f0b0b0e0bb24f616ef"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_remainCalories</b></td></tr>
+<tr class="separator:a3f7674bdc62589f0b0b0e0bb24f616ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f482f73754d631947d00b5d0beb5e7c" id="r_a7f482f73754d631947d00b5d0beb5e7c"><td class="memItemLeft" align="right" valign="top"><a id="a7f482f73754d631947d00b5d0beb5e7c" name="a7f482f73754d631947d00b5d0beb5e7c"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_burnedCalories</b></td></tr>
+<tr class="separator:a7f482f73754d631947d00b5d0beb5e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9795c6e352257ebce702928d09abf2b9" id="r_a9795c6e352257ebce702928d09abf2b9"><td class="memItemLeft" align="right" valign="top"><a id="a9795c6e352257ebce702928d09abf2b9" name="a9795c6e352257ebce702928d09abf2b9"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>username</b></td></tr>
+<tr class="separator:a9795c6e352257ebce702928d09abf2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d4577329d12ce1a2f8937f66a006a6" id="r_a51d4577329d12ce1a2f8937f66a006a6"><td class="memItemLeft" align="right" valign="top"><a id="a51d4577329d12ce1a2f8937f66a006a6" name="a51d4577329d12ce1a2f8937f66a006a6"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_progressValue</b></td></tr>
+<tr class="separator:a51d4577329d12ce1a2f8937f66a006a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e9bc003f4f8176d8c10358289ae644d" id="r_a2e9bc003f4f8176d8c10358289ae644d"><td class="memItemLeft" align="right" valign="top"><a id="a2e9bc003f4f8176d8c10358289ae644d" name="a2e9bc003f4f8176d8c10358289ae644d"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_typeWorkoutDate</b></td></tr>
+<tr class="separator:a2e9bc003f4f8176d8c10358289ae644d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ccfd7a003613bc44d0035fe4d3c7979" id="r_a0ccfd7a003613bc44d0035fe4d3c7979"><td class="memItemLeft" align="right" valign="top"><a id="a0ccfd7a003613bc44d0035fe4d3c7979" name="a0ccfd7a003613bc44d0035fe4d3c7979"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_statusIconPath</b></td></tr>
+<tr class="separator:a0ccfd7a003613bc44d0035fe4d3c7979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5941dac1d6857e7944830d3382341769" id="r_a5941dac1d6857e7944830d3382341769"><td class="memItemLeft" align="right" valign="top"><a id="a5941dac1d6857e7944830d3382341769" name="a5941dac1d6857e7944830d3382341769"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_typeWorkoutIconPath</b></td></tr>
+<tr class="separator:a5941dac1d6857e7944830d3382341769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d9a78c3ef1aad97c22b84d67fe81c80" id="r_a8d9a78c3ef1aad97c22b84d67fe81c80"><td class="memItemLeft" align="right" valign="top"><a id="a8d9a78c3ef1aad97c22b84d67fe81c80" name="a8d9a78c3ef1aad97c22b84d67fe81c80"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_exerciseStatus</b></td></tr>
+<tr class="separator:a8d9a78c3ef1aad97c22b84d67fe81c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8581c08f9bb04f5bc21a776986784a9b" id="r_a8581c08f9bb04f5bc21a776986784a9b"><td class="memItemLeft" align="right" valign="top"><a id="a8581c08f9bb04f5bc21a776986784a9b" name="a8581c08f9bb04f5bc21a776986784a9b"></a>
+Visibility&#160;</td><td class="memItemRight" valign="bottom"><b>_statusVisibility</b></td></tr>
+<tr class="separator:a8581c08f9bb04f5bc21a776986784a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf90ec8d170e7b3a6057ce521472ebe8" id="r_adf90ec8d170e7b3a6057ce521472ebe8"><td class="memItemLeft" align="right" valign="top"><a id="adf90ec8d170e7b3a6057ce521472ebe8" name="adf90ec8d170e7b3a6057ce521472ebe8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isOverGoalCalories</b></td></tr>
+<tr class="separator:adf90ec8d170e7b3a6057ce521472ebe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620db872b365a541346201065cc2cf95" id="r_a620db872b365a541346201065cc2cf95"><td class="memItemLeft" align="right" valign="top"><a id="a620db872b365a541346201065cc2cf95" name="a620db872b365a541346201065cc2cf95"></a>
+ObservableCollection&lt; Line &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_chartLines</b></td></tr>
+<tr class="separator:a620db872b365a541346201065cc2cf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2b59f01d5d61ad106f0b67ff58bd1b" id="r_aea2b59f01d5d61ad106f0b67ff58bd1b"><td class="memItemLeft" align="right" valign="top"><a id="aea2b59f01d5d61ad106f0b67ff58bd1b" name="aea2b59f01d5d61ad106f0b67ff58bd1b"></a>
+ObservableCollection&lt; Line &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_axisLines</b></td></tr>
+<tr class="separator:aea2b59f01d5d61ad106f0b67ff58bd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c80c42457f33b48e998ad3bbe3a4d3a" id="r_a6c80c42457f33b48e998ad3bbe3a4d3a"><td class="memItemLeft" align="right" valign="top"><a id="a6c80c42457f33b48e998ad3bbe3a4d3a" name="a6c80c42457f33b48e998ad3bbe3a4d3a"></a>
+ObservableCollection&lt; TextBlock &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_axisLabels</b></td></tr>
+<tr class="separator:a6c80c42457f33b48e998ad3bbe3a4d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2f8250a190bd30d1b922c2870aaf2886" name="a2f8250a190bd30d1b922c2870aaf2886"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f8250a190bd30d1b922c2870aaf2886">&#9670;&#160;</a></span>OnNavigatedFrom()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ViewModel trang chủ . </p>
+<p>ViewModel này chịu trách nhiệm quản lý logic giao diện và dữ liệu người dùng cho màn hình. Nó cung cấp các lệnh và thuộc tính được liên kết với UI. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab9e8e4755ac9c4aa27ebbc2805281f06" name="ab9e8e4755ac9c4aa27ebbc2805281f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9e8e4755ac9c4aa27ebbc2805281f06">&#9670;&#160;</a></span>HomeViewModel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,10 +326,34 @@ PropertyChangedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Gyminize.ViewModels.HomeViewModel.OnNavigatedFrom </td>
+          <td class="memname">Gyminize.ViewModels.HomeViewModel.HomeViewModel </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">INavigationService</td>          <td class="paramname"><span class="paramname"><em>navigationService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">IWindowService</td>          <td class="paramname"><span class="paramname"><em>windowService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ILocalSettingsService</td>          <td class="paramname"><span class="paramname"><em>localSettings</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDialogService</td>          <td class="paramname"><span class="paramname"><em>dialogService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IApiServicesClient</td>          <td class="paramname"><span class="paramname"><em>apiServicesClient</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDateTimeProvider</td>          <td class="paramname"><span class="paramname"><em>dateTimeProvider</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -235,10 +363,22 @@ PropertyChangedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html">Gyminize.Contracts.ViewModels.INavigationAware</a>.</p>
+<p>Khởi tạo <a class="el" href="class_gyminize_1_1_view_models_1_1_home_view_model.html" title="ViewModel trang chủ .">HomeViewModel</a>, thiết lập các dịch vụ và lệnh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">navigationService</td><td>Dịch vụ điều hướng.</td></tr>
+    <tr><td class="paramname">windowService</td><td>Dịch vụ cửa sổ.</td></tr>
+    <tr><td class="paramname">localSettings</td><td>Dịch vụ lưu trữ cài đặt cục bộ.</td></tr>
+    <tr><td class="paramname">dialogService</td><td>Dịch vụ hiển thị hộp thoại.</td></tr>
+    <tr><td class="paramname">apiServicesClient</td><td>Dịch vụ API.</td></tr>
+    <tr><td class="paramname">dateTimeProvider</td><td>Dịch vụ thời gian.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2bf9f1cc4d910ffed654bfa4ec59d25a" name="a2bf9f1cc4d910ffed654bfa4ec59d25a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bf9f1cc4d910ffed654bfa4ec59d25a">&#9670;&#160;</a></span>OnNavigatedTo()</h2>
 
@@ -262,7 +402,13 @@ PropertyChangedEventHandler&#160;</td><td class="memItemRight" valign="bottom"><
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware.html">Gyminize.Contracts.ViewModels.INavigationAware</a>.</p>
+<p>Khi người dùng điều hướng đến trang, lấy thông tin cân nặng, calo và kế hoạch tập luyện. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parameter</td><td>Tham số đầu vào khi điều hướng.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

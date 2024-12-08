@@ -25,6 +25,12 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 
 public class DialogService : IDialogService
 {
+    /// <summary>
+    /// Hiển thị hộp thoại lựa chọn bữa ăn và số lượng sản phẩm.
+    /// </summary>
+    /// <returns>
+    /// Trả về một tuple gồm tên bữa ăn được chọn và số lượng được người dùng nhập.
+    /// </returns>
     public async Task<(string? selectedMeal, int Quantity)> ShowMealSelectionDialogAsync()
     {
         var comboBox = new ComboBox
@@ -96,6 +102,11 @@ public class DialogService : IDialogService
     private TextBlock _exerciseRepsTextBlock;
     private WebView2 _exerciseVideoWebView;
     private ContentDialog _workoutDialog;
+    /// <summary>
+    /// Hiển thị hộp thoại bài tập đầy đủ, cho phép người dùng duyệt qua các bài tập và xem video hướng dẫn.
+    /// </summary>
+    /// <param name="workouts">Danh sách các bài tập chi tiết cần hiển thị trong hộp thoại.</param>
+    /// <returns>Trả về giá trị boolean, true nếu người dùng đã hoàn thành các bài tập, false nếu chưa.</returns>
     public async Task<bool> ShowFullExerciseWorkoutDialogAsync(List<Exercisedetail> workouts)
     {
         _workouts = workouts;
@@ -110,21 +121,18 @@ public class DialogService : IDialogService
         };
         _workoutDialog.Resources["ContentDialogMaxWidth"] = 2000;
         _workoutDialog.Resources["ContentDialogMaxHeight"] = 1500;
-        // Thiết lập XamlRoot nếu dùng WinUI 3
+
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             _workoutDialog.XamlRoot = rootElement.XamlRoot;
         }
 
-        // Tạo UI cho bài tập hiện tại
         _exerciseNameTextBlock = new TextBlock { FontSize = 24, FontWeight = FontWeights.Bold };
         _exerciseRepsTextBlock = new TextBlock { FontSize = 18 };
         _exerciseVideoWebView = new WebView2 { Width = 900, Height = 320 };
         _exerciseVideoWebView.HorizontalAlignment = HorizontalAlignment.Stretch;
         _exerciseVideoWebView.VerticalAlignment = VerticalAlignment.Stretch;
 
-
-        // Sắp xếp các thành phần trong StackPanel
         var grid = new Grid();
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
@@ -153,7 +161,6 @@ public class DialogService : IDialogService
 
         UpdateExerciseDialog();
 
-        // Đảm bảo gọi trên UI Thread
         var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
         await dispatcherQueue.EnqueueAsync(async () =>
         {
@@ -182,6 +189,9 @@ public class DialogService : IDialogService
         return isFinished;
     }
 
+    /// <summary>
+    /// Cập nhật thông tin trong hộp thoại bài tập, bao gồm tên bài tập, số lần tập và video hướng dẫn.
+    /// </summary>
     private void UpdateExerciseDialog()
     {
         var currentExercise = _workouts[_currentExerciseIndex];
@@ -193,6 +203,9 @@ public class DialogService : IDialogService
         _workoutDialog.IsPrimaryButtonEnabled = _currentExerciseIndex > 0;
     }
 
+    /// <summary>
+    /// Chuyển sang bài tập tiếp theo trong danh sách bài tập.
+    /// </summary>
     private void NextExercise()
     {
         if (_currentExerciseIndex < _workouts.Count - 1)
@@ -202,6 +215,9 @@ public class DialogService : IDialogService
         }
     }
 
+    /// <summary>
+    /// Quay lại bài tập trước đó trong danh sách bài tập.
+    /// </summary>
     private void PreviousExercise()
     {
         if (_currentExerciseIndex > 0)
@@ -212,9 +228,12 @@ public class DialogService : IDialogService
     }
 
 
+    /// <summary>
+    /// Hiển thị hộp thoại bài tập với tên bài tập, số lần tập, và video hướng dẫn.
+    /// </summary>
+    /// <param name="exercise">Đối tượng bài tập chứa thông tin bài tập và video.</param>
     public async Task ShowExerciseVideoDialogAsync(Exercise exercise)
     {
-        // Create UI elements for the exercise
         var exerciseNameTextBlock = new TextBlock { FontSize = 24, FontWeight = FontWeights.Bold, Text = exercise.exercise_name };
         var exerciseRepsTextBlock = new TextBlock { FontSize = 18, Text = $"Reps: {exercise.reps}" };
         var exerciseVideoWebView = new WebView2 { Width = 900, Height = 320, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch };
@@ -226,10 +245,8 @@ public class DialogService : IDialogService
         primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
         primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(10)));
 
-
         exerciseVideoWebView.Source = new Uri(exercise.linkvideo);
 
-        // Arrange the elements in a Grid
         var grid = new Grid();
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
@@ -245,7 +262,6 @@ public class DialogService : IDialogService
         Grid.SetRow(exerciseVideoWebView, 2);
         exerciseVideoWebView.HorizontalAlignment = HorizontalAlignment.Stretch;
         exerciseVideoWebView.VerticalAlignment = VerticalAlignment.Stretch;
-        // Create the ContentDialog
 
         var titleTextBlock = new TextBlock
         {
@@ -256,6 +272,7 @@ public class DialogService : IDialogService
             HorizontalAlignment = HorizontalAlignment.Center,
             Margin = new Thickness(0, 0, 0, 10)
         };
+
         var exerciseDialog = new ContentDialog
         {
             Title = titleTextBlock,
@@ -266,13 +283,12 @@ public class DialogService : IDialogService
         exerciseDialog.CloseButtonStyle = primaryButtonStyle;
         exerciseDialog.Resources["ContentDialogMaxWidth"] = 2000;
         exerciseDialog.Resources["ContentDialogMaxHeight"] = 1500;
-        // Set XamlRoot if using WinUI 3
+
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             exerciseDialog.XamlRoot = rootElement.XamlRoot;
         }
 
-        // Ensure the dialog is shown on the UI thread
         var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
         await dispatcherQueue.EnqueueAsync(async () =>
         {
@@ -280,16 +296,23 @@ public class DialogService : IDialogService
         });
     }
 
+
+    /// <summary>
+    /// Hiển thị hộp thoại xác nhận mã qua email và kiểm tra mã nhập vào.
+    /// </summary>
+    /// <param name="email">Địa chỉ email người dùng.</param>
+    /// <param name="code">Mã xác nhận được gửi đến email của người dùng.</param>
+    /// <returns>Trả về <c>true</c> nếu mã xác nhận đúng, <c>false</c> nếu không.</returns>
     public async Task<bool> ShowVerificationDialogAsync(string email, string code)
     {
         // Tạo Grid để sắp xếp nội dung
         var grid = new Grid();
-        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Title
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Tiêu đề
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Email
-        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Description
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Mô tả
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // TextBox
-        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Status
-        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Resend email
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Trạng thái
+        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Gửi lại mã
 
         // Tiêu đề
         var titleTextBlock = new TextBlock
@@ -374,6 +397,7 @@ public class DialogService : IDialogService
         grid.Children.Add(resendEmailTextBlock);
         Grid.SetRow(resendEmailTextBlock, 5);
 
+        // Định kiểu cho nút xác nhận
         var primaryButtonStyle = new Style(typeof(Button));
         primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
         primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
@@ -381,6 +405,7 @@ public class DialogService : IDialogService
         primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
         primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
 
+        // Định kiểu cho nút đóng
         var closeButtonStyle = new Style(typeof(Button));
         closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
         closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
@@ -421,6 +446,7 @@ public class DialogService : IDialogService
             }
         };
 
+        // Đảm bảo rằng dialog được hiển thị trên UI thread
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             verificationDialog.XamlRoot = rootElement.XamlRoot;
@@ -441,6 +467,11 @@ public class DialogService : IDialogService
         return isValid;
     }
 
+    /// <summary>
+    /// Gửi mã xác thực đến email người dùng.
+    /// </summary>
+    /// <param name="email">Địa chỉ email người nhận.</param>
+    /// <param name="code">Mã xác thực cần gửi đến người dùng.</param>
     public async void sendVerificationCode(string email, string code)
     {
         IEmailSender emailSender = new EmailSender();
@@ -451,7 +482,7 @@ public class DialogService : IDialogService
         try
         {
             await emailSender.SendEmailAsync(email, subject, body);
-            Console.WriteLine("Email sent successfully!");
+            Console.WriteLine("Email sent successfully!"); 
         }
         catch (Exception ex)
         {
@@ -459,6 +490,10 @@ public class DialogService : IDialogService
         }
     }
 
+    /// <summary>
+    /// Hiển thị một hộp thoại yêu cầu người dùng nhập tên tài khoản.
+    /// </summary>
+    /// <returns>Trả về một tuple chứa email và tên tài khoản hợp lệ của người dùng nếu xác nhận thành công, ngược lại là chuỗi trống.</returns>
     public async Task<(string email, string username)> ShowUsernameInputDialog()
     {
         var grid = new Grid();
@@ -466,6 +501,7 @@ public class DialogService : IDialogService
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // TextBox
         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }); // Status
 
+        // Tạo TextBlock cho tiêu đề
         var titleTextBlock = new TextBlock
         {
             Text = "Nhập tên tài khoản",
@@ -474,12 +510,14 @@ public class DialogService : IDialogService
             Margin = new Thickness(0, 0, 0, 10)
         };
 
+        // Tạo TextBox cho người dùng nhập tên tài khoản
         var usernameTextBox = new TextBox
         {
             PlaceholderText = "Tên đăng nhập",
             Margin = new Thickness(0, 0, 0, 10)
         };
 
+        // Tạo TextBlock để hiển thị trạng thái lỗi nếu có
         var statusTextBlock = new TextBlock
         {
             Text = string.Empty, // Trạng thái ban đầu trống
@@ -489,6 +527,7 @@ public class DialogService : IDialogService
             Margin = new Thickness(0, 0, 0, 10)
         };
 
+        // Thêm các thành phần vào Grid
         grid.Children.Add(titleTextBlock);
         Grid.SetRow(titleTextBlock, 0);
 
@@ -498,20 +537,22 @@ public class DialogService : IDialogService
         grid.Children.Add(statusTextBlock);
         Grid.SetRow(statusTextBlock, 2);
 
+        // Định kiểu cho các nút trong ContentDialog
         var primaryButtonStyle = new Style(typeof(Button));
-        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh
         primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
         primaryButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
         primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
         primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
 
         var closeButtonStyle = new Style(typeof(Button));
-        closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
+        closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh
         closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
         closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
         closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
         closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
 
+        // Tạo ContentDialog cho việc nhập tên tài khoản
         var inputUsernameDialog = new ContentDialog
         {
             Title = null,
@@ -524,6 +565,7 @@ public class DialogService : IDialogService
 
         var validEmail = "";
         var validUsername = "";
+
         inputUsernameDialog.Closing += (sender, args) =>
         {
             if (inputUsernameDialog.Content != null && args.Result == ContentDialogResult.Primary)
@@ -534,7 +576,7 @@ public class DialogService : IDialogService
                 {
                     statusTextBlock.Text = "Tên đăng nhập không được để trống";
                     statusTextBlock.Visibility = Visibility.Visible;
-                    args.Cancel = true;
+                    args.Cancel = true; 
                 }
                 else
                 {
@@ -542,7 +584,7 @@ public class DialogService : IDialogService
                     var _customerInfo = ApiServices.Get<Customer>(endpoint);
                     if (_customerInfo != null)
                     {
-                        validEmail = _customerInfo.email;
+                        validEmail = _customerInfo.email; 
                         validUsername = enteredUsername;
                         statusTextBlock.Visibility = Visibility.Collapsed;
                     }
@@ -550,7 +592,7 @@ public class DialogService : IDialogService
                     {
                         statusTextBlock.Text = "Tên đăng nhập không tồn tại";
                         statusTextBlock.Visibility = Visibility.Visible;
-                        args.Cancel = true;
+                        args.Cancel = true; 
                     }
                 }
             }
@@ -560,14 +602,21 @@ public class DialogService : IDialogService
         {
             inputUsernameDialog.XamlRoot = rootElement.XamlRoot;
         }
+
         var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
         await dispatcherQueue.EnqueueAsync(async () =>
         {
             await inputUsernameDialog.ShowAsync();
         });
+
         return (validEmail, validUsername);
     }
 
+
+    /// <summary>
+    /// Hiển thị hộp thoại yêu cầu người dùng nhập mật khẩu mới và xác nhận lại mật khẩu.
+    /// </summary>
+    /// <returns>Trả về mật khẩu hợp lệ nếu người dùng nhập đúng, nếu không trả về chuỗi rỗng.</returns>
     public async Task<string> ShowResetPasswordDialogAsync()
     {
         var grid = new Grid();
@@ -593,10 +642,10 @@ public class DialogService : IDialogService
 
         var passwordStatusTextBlock = new TextBlock
         {
-            Text = string.Empty, // Trạng thái ban đầu trống
+            Text = string.Empty,
             FontSize = 14,
-            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
-            Visibility = Visibility.Collapsed, // Ẩn ban đầu
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)),
+            Visibility = Visibility.Collapsed,
             Margin = new Thickness(0, 0, 0, 10)
         };
 
@@ -608,10 +657,10 @@ public class DialogService : IDialogService
 
         var confirmPasswordStatusTextBlock = new TextBlock
         {
-            Text = string.Empty, // Trạng thái ban đầu trống
+            Text = string.Empty,
             FontSize = 14,
-            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
-            Visibility = Visibility.Collapsed, // Ẩn ban đầu
+            Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)),
+            Visibility = Visibility.Collapsed,
             Margin = new Thickness(0, 0, 0, 10)
         };
 
@@ -631,18 +680,18 @@ public class DialogService : IDialogService
         Grid.SetRow(confirmPasswordStatusTextBlock, 4);
 
         var primaryButtonStyle = new Style(typeof(Button));
-        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
-        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
-        primaryButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
-        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
-        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204))));
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255))));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
 
         var closeButtonStyle = new Style(typeof(Button));
-        closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204)))); // Nền xanh (RGB: 0, 102, 204)
-        closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255)))); // Chữ trắng
-        closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0))); // Không viền
-        closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5))); // Bo góc
-        closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5))); // Căn chỉnh Padding
+        closeButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 102, 204))));
+        closeButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255))));
+        closeButtonStyle.Setters.Add(new Setter(Button.BorderThicknessProperty, new Thickness(0)));
+        closeButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(5)));
+        closeButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
 
         var resetPasswordDialog = new ContentDialog
         {
@@ -702,6 +751,10 @@ public class DialogService : IDialogService
         return validPassword;
     }
 
+    /// <summary>
+    /// Hiển thị hộp thoại lỗi với thông báo lỗi và biểu tượng.
+    /// </summary>
+    /// <param name="errorMessage">Thông báo lỗi cần hiển thị trong hộp thoại.</param>
     public async Task ShowErrorDialogAsync(string errorMessage)
     {
         var errorIcon = new FontIcon
@@ -709,7 +762,7 @@ public class DialogService : IDialogService
             Glyph = "\uEB90", // Mã Unicode của biểu tượng lỗi
             FontSize = 50,
             Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0)), // Màu đỏ
-            Margin = new Thickness(10, 10, 10 ,10)
+            Margin = new Thickness(10, 10, 10, 10)
         };
 
         var errorTextBlock = new TextBlock
@@ -748,6 +801,13 @@ public class DialogService : IDialogService
         });
     }
 
+    /// <summary>
+    /// Hiển thị hộp thoại thông tin sản phẩm, bao gồm hình ảnh, tên, giá, nhà cung cấp, số lượng và mô tả.
+    /// Cho phép người dùng chọn số lượng và thêm sản phẩm vào giỏ hàng.
+    /// </summary>
+    /// <param name="product">Sản phẩm cần hiển thị thông tin.</param>
+    /// <param name="orderid">ID đơn hàng hiện tại.</param>
+    /// <returns>Trả về giá trị tương ứng với kết quả thêm sản phẩm vào giỏ hàng (1: thành công, 0: thất bại, 2: chưa thêm).</returns>
     public async Task<int> ShowProductDialogWithSupplierAsync(Product product, int orderid)
     {
         int addSuccess = 2;
@@ -892,6 +952,7 @@ public class DialogService : IDialogService
         productDialog.Resources["ContentDialogMaxWidth"] = 1200;
         productDialog.Resources["ContentDialogMaxHeight"] = 600;
 
+        // Xử lý khi người dùng nhấn "Thêm vào giỏ hàng"
         productDialog.PrimaryButtonClick += (s, e) =>
         {
             var orderdetail = new Orderdetail
@@ -904,10 +965,11 @@ public class DialogService : IDialogService
             var postResult = ApiServices.Post<Orderdetail>("api/OrderDetail/add", orderdetail);
             if (postResult == null)
             {
-                addSuccess = 0;
-            } else
+                addSuccess = 0; // Không thành công
+            }
+            else
             {
-                addSuccess = 1;
+                addSuccess = 1; // Thành công
             }
         };
 
@@ -920,8 +982,14 @@ public class DialogService : IDialogService
         return addSuccess;
     }
 
+    /// <summary>
+    /// Hiển thị thông báo thành công trong một cửa sổ pop-up ở giữa màn hình.
+    /// Thông báo sẽ được hiển thị trong 2 giây và tự động đóng lại.
+    /// </summary>
+    /// <param name="message">Thông điệp thành công cần hiển thị.</param>
     public async Task ShowSuccessMessageAsync(string message)
     {
+        // Tạo TextBlock hiển thị thông báo
         var textBlock = new TextBlock
         {
             Text = message,
@@ -930,25 +998,29 @@ public class DialogService : IDialogService
             Foreground = new SolidColorBrush(Microsoft.UI.Colors.DarkGreen)
         };
 
+        // Tạo Border bao quanh TextBlock
         var border = new Border
         {
-            Background = new SolidColorBrush(Microsoft.UI.Colors.PaleGreen), // Nền trong suốt
+            Background = new SolidColorBrush(Microsoft.UI.Colors.PaleGreen), // Nền màu xanh nhạt
             Child = textBlock,
-            CornerRadius = new CornerRadius(10),
+            CornerRadius = new CornerRadius(10), // Bo tròn góc của border
             Margin = new Thickness(0, 20, 0, 0)
         };
 
+        // Tạo Popup để hiển thị thông báo
         var popup = new Popup
         {
             Child = border,
-            IsLightDismissEnabled = true
+            IsLightDismissEnabled = true // Cho phép đóng popup khi người dùng nhấn ra ngoài
         };
 
+        // Gán XamlRoot của popup cho cửa sổ chính
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             popup.XamlRoot = rootElement.XamlRoot;
         }
 
+        // Thực hiện hiển thị popup với các offset tùy chỉnh
         var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
         await dispatcherQueue.EnqueueAsync(() =>
         {
@@ -956,13 +1028,17 @@ public class DialogService : IDialogService
             var popupWidth = border.ActualWidth;
             var popupHeight = border.ActualHeight;
 
+            // Đặt vị trí của popup để hiển thị ở giữa màn hình
             popup.HorizontalOffset = ((windowBounds.Width - popupWidth) / 2) - 80;
             popup.VerticalOffset = 20;
-            popup.IsOpen = true;
+            popup.IsOpen = true; // Mở popup
         });
 
+        // Đợi 2 giây rồi đóng popup
         await Task.Delay(2000);
 
+        // Đóng popup
         popup.IsOpen = false;
     }
+
 }

@@ -1,33 +1,39 @@
 \doxysection{Gyminize.\+View\+Models.\+Guide3\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model}{}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
+
+
+View\+Model cho màn hình hướng dẫn cuối cùng trong ứng dụng.  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Guide3\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.830065cm]{class_gyminize_1_1_view_models_1_1_guide3_view_model}
+\includegraphics[height=2.000000cm]{class_gyminize_1_1_view_models_1_1_guide3_view_model}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a8bfdfb8b62a51d56aa3b099301a23075}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a8bfdfb8b62a51d56aa3b099301a23075} 
-{\bfseries Guide3\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{IWindow\+Service}} window\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} localsetting)
-\item 
+\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_guide3_view_model_a8bfdfb8b62a51d56aa3b099301a23075}{Guide3\+View\+Model}} (INavigation\+Service navigation\+Service, IWindow\+Service window\+Service, ILocal\+Settings\+Service localsetting)
+\begin{DoxyCompactList}\small\item\em Khởi tạo một phiên bản mới của \doxylink{class_gyminize_1_1_view_models_1_1_guide3_view_model}{Guide3\+View\+Model}, thiết lập dịch vụ điều hướng, cửa sổ và cài đặt. \end{DoxyCompactList}\item 
 async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_guide3_view_model_a9e105a8f51c354e559912dc670470893}{On\+Navigated\+To}} (object parameter)
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a99fdd3d49e644a24d255280523a8eb36}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a99fdd3d49e644a24d255280523a8eb36} 
-bool {\bfseries Add\+Customer\+Health\+By\+Username} (\mbox{\hyperlink{class_gyminize_1_1_models_1_1_customer_info}{Customer\+Info}} customer\+Info)
-\item 
-void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_guide3_view_model_ae6fd235e9eb0c986108c236620678dae}{On\+Navigated\+From}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}}
+\begin{DoxyCompactList}\small\item\em Phương thức được gọi khi trang được điều hướng đến, nhận tham số là thông tin khách hàng. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_ae6fd235e9eb0c986108c236620678dae}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_ae6fd235e9eb0c986108c236620678dae} 
+void {\bfseries On\+Navigated\+From} ()
+\begin{DoxyCompactList}\small\item\em Phương thức được gọi khi điều hướng từ trang này. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_guide3_view_model_a99fdd3d49e644a24d255280523a8eb36}{Add\+Customer\+Health\+By\+Username}} (Customer\+Info customer\+Info)
+\begin{DoxyCompactList}\small\item\em Thêm thông tin sức khỏe của khách hàng bằng tên người dùng. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a58ce644fe5b66e6e7fe47f3456ffbe78}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a58ce644fe5b66e6e7fe47f3456ffbe78} 
-\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} {\bfseries \+\_\+localsetting}
+ILocal\+Settings\+Service {\bfseries \+\_\+localsetting}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_ac58bf89c9917acf189a8c1e63421d65e}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_ac58bf89c9917acf189a8c1e63421d65e} 
+Customer\+Health {\bfseries customer\+Health}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_acafb1512fcfaec82ccb9e599c4d630d2}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_acafb1512fcfaec82ccb9e599c4d630d2} 
 double {\bfseries BMIStat}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
@@ -71,19 +77,161 @@ ICommand {\bfseries Navigate\+Next\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}ge
 \Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_aa0af61f404389846154a6c552c01c19d}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_aa0af61f404389846154a6c552c01c19d} 
 ICommand {\bfseries Navigate\+Back\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_guide3_view_model_a82106b57d15ba2cd71982254bb907fdf}{Get\+Customer\+Id\+By\+Username}} (string username)
+\begin{DoxyCompactList}\small\item\em Phương thức nhận mã khách hàng từ tên người dùng. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_guide3_view_model_acd0d42d268f0d1cac8bc80d9a351ebb0}{Insert\+Customer\+Health}} (Customer\+Info customer\+Info, int customer\+Id)
+\begin{DoxyCompactList}\small\item\em Thêm thông tin sức khỏe của khách hàng vào cơ sở dữ liệu. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_guide3_view_model_a67568ee493359f873ae31ffd59ef0fa0}{Save\+Local\+Settings}} (int customer\+Id)
+\begin{DoxyCompactList}\small\item\em Lưu mã khách hàng vào cài đặt địa phương. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_aab627c7fb0123b91fc109253af695876}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_aab627c7fb0123b91fc109253af695876} 
+void {\bfseries Navigate\+Back} ()
+\begin{DoxyCompactList}\small\item\em Phương thức điều hướng về trang trước (\doxylink{class_gyminize_1_1_view_models_1_1_guide2_view_model}{Guide2\+View\+Model}). \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a0c9dcbc853d7ecad0de8d2eafd2c44a5}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a0c9dcbc853d7ecad0de8d2eafd2c44a5} 
+void {\bfseries Navigate\+Next} ()
+\begin{DoxyCompactList}\small\item\em Phương thức điều hướng tới trang tiếp theo (\doxylink{class_gyminize_1_1_view_models_1_1_home_view_model}{Home\+View\+Model}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_adc83dbf05155772ed0db44654137ff91}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_adc83dbf05155772ed0db44654137ff91} 
+Customer\+Info {\bfseries \+\_\+customer\+Info}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_af5588fcb73485b95c1bf3bf1673488a8}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_af5588fcb73485b95c1bf3bf1673488a8} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a0f01f56be03bae200c9e2b9190d8f086}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a0f01f56be03bae200c9e2b9190d8f086} 
+readonly IWindow\+Service {\bfseries \+\_\+window\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a0a7f796a2300234f34a966d0b019c0f4}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a0a7f796a2300234f34a966d0b019c0f4} 
+double {\bfseries \+\_\+bmi}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a027037e94127be3e2f61b85a034c1767}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a027037e94127be3e2f61b85a034c1767} 
+UIElement? {\bfseries \+\_\+shell} = null
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_ae6561ac5e5333cbf23fed4923c1761e5}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_ae6561ac5e5333cbf23fed4923c1761e5} 
+int {\bfseries customer\+Id}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a75e908837bfaa1319fdf46b47a7f43ff}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a75e908837bfaa1319fdf46b47a7f43ff} 
+double {\bfseries \+\_\+tdde}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_aa590c9e2252589e28459089b89414262}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_aa590c9e2252589e28459089b89414262} 
+double {\bfseries \+\_\+cutting\+Proteins}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a383a0ceb229bfcae21fae0ac429cf122}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a383a0ceb229bfcae21fae0ac429cf122} 
+double {\bfseries \+\_\+cutting\+Carbs}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a4bf4ab01b969a1ab3425eb4f9e9b1602}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a4bf4ab01b969a1ab3425eb4f9e9b1602} 
+double {\bfseries \+\_\+cutting\+Fats}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a7eba4d990461a227d7f614ba32ae6622}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a7eba4d990461a227d7f614ba32ae6622} 
+double {\bfseries \+\_\+maintenance\+Proteins}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a53fc811ecb3a27da62600a72e9067338}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a53fc811ecb3a27da62600a72e9067338} 
+double {\bfseries \+\_\+maintenance\+Carbs}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a866ef19008fe557322d0e9de80ede52d}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a866ef19008fe557322d0e9de80ede52d} 
+double {\bfseries \+\_\+maintenance\+Fats}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a4e4e35b26c8629a7eff48143ec13505b}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a4e4e35b26c8629a7eff48143ec13505b} 
+double {\bfseries \+\_\+bulking\+Proteins}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_ab3555217f11429193af427c1f48ed318}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_ab3555217f11429193af427c1f48ed318} 
+double {\bfseries \+\_\+bulking\+Carbs}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_ab29c22f461a06f0d132ef1aa4fdb7a0b}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_ab29c22f461a06f0d132ef1aa4fdb7a0b} 
+double {\bfseries \+\_\+bulking\+Fats}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a4d67994ffcd13086a96afac3eef98d04}\label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a4d67994ffcd13086a96afac3eef98d04} 
+string {\bfseries \+\_\+health\+Status}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model cho màn hình hướng dẫn cuối cùng trong ứng dụng. 
+
+View\+Model này chịu trách nhiệm quản lý logic giao diện và dữ liệu người dùng cho màn hình Guide1. Nó cung cấp các lệnh và thuộc tính được liên kết với UI. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a8bfdfb8b62a51d56aa3b099301a23075}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}!Guide3ViewModel@{Guide3ViewModel}}
+\index{Guide3ViewModel@{Guide3ViewModel}!Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
+\doxysubsubsection{\texorpdfstring{Guide3ViewModel()}{Guide3ViewModel()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a8bfdfb8b62a51d56aa3b099301a23075} 
+Gyminize.\+View\+Models.\+Guide3\+View\+Model.\+Guide3\+View\+Model (\begin{DoxyParamCaption}\item[{INavigation\+Service}]{navigation\+Service}{, }\item[{IWindow\+Service}]{window\+Service}{, }\item[{ILocal\+Settings\+Service}]{localsetting}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo một phiên bản mới của \doxylink{class_gyminize_1_1_view_models_1_1_guide3_view_model}{Guide3\+View\+Model}, thiết lập dịch vụ điều hướng, cửa sổ và cài đặt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation\+Service} & Dịch vụ điều hướng để điều hướng giữa các trang.\\
+\hline
+{\em window\+Service} & Dịch vụ cửa sổ để thiết lập các thuộc tính của cửa sổ ứng dụng.\\
+\hline
+{\em localsetting} & Dịch vụ cài đặt địa phương để lưu trữ các thông tin của khách hàng.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_ae6fd235e9eb0c986108c236620678dae}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}!OnNavigatedFrom@{OnNavigatedFrom}}
-\index{OnNavigatedFrom@{OnNavigatedFrom}!Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
-\doxysubsubsection{\texorpdfstring{OnNavigatedFrom()}{OnNavigatedFrom()}}
-{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_guide3_view_model_ae6fd235e9eb0c986108c236620678dae} 
-void Gyminize.\+View\+Models.\+Guide3\+View\+Model.\+On\+Navigated\+From (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a99fdd3d49e644a24d255280523a8eb36}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}!AddCustomerHealthByUsername@{AddCustomerHealthByUsername}}
+\index{AddCustomerHealthByUsername@{AddCustomerHealthByUsername}!Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
+\doxysubsubsection{\texorpdfstring{AddCustomerHealthByUsername()}{AddCustomerHealthByUsername()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a99fdd3d49e644a24d255280523a8eb36} 
+bool Gyminize.\+View\+Models.\+Guide3\+View\+Model.\+Add\+Customer\+Health\+By\+Username (\begin{DoxyParamCaption}\item[{Customer\+Info}]{customer\+Info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}.
+Thêm thông tin sức khỏe của khách hàng bằng tên người dùng. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Info} & Thông tin khách hàng.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về true nếu thành công, false nếu thất bại.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a82106b57d15ba2cd71982254bb907fdf}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}!GetCustomerIdByUsername@{GetCustomerIdByUsername}}
+\index{GetCustomerIdByUsername@{GetCustomerIdByUsername}!Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
+\doxysubsubsection{\texorpdfstring{GetCustomerIdByUsername()}{GetCustomerIdByUsername()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a82106b57d15ba2cd71982254bb907fdf} 
+int Gyminize.\+View\+Models.\+Guide3\+View\+Model.\+Get\+Customer\+Id\+By\+Username (\begin{DoxyParamCaption}\item[{string}]{username}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Phương thức nhận mã khách hàng từ tên người dùng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Tên người dùng của khách hàng.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về mã khách hàng nếu tìm thấy, -\/1 nếu không tìm thấy khách hàng.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_acd0d42d268f0d1cac8bc80d9a351ebb0}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}!InsertCustomerHealth@{InsertCustomerHealth}}
+\index{InsertCustomerHealth@{InsertCustomerHealth}!Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
+\doxysubsubsection{\texorpdfstring{InsertCustomerHealth()}{InsertCustomerHealth()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_guide3_view_model_acd0d42d268f0d1cac8bc80d9a351ebb0} 
+bool Gyminize.\+View\+Models.\+Guide3\+View\+Model.\+Insert\+Customer\+Health (\begin{DoxyParamCaption}\item[{Customer\+Info}]{customer\+Info}{, }\item[{int}]{customer\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Thêm thông tin sức khỏe của khách hàng vào cơ sở dữ liệu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Info} & Thông tin khách hàng.\\
+\hline
+{\em customer\+Id} & Mã khách hàng.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về true nếu thành công, false nếu thất bại.
+\end{DoxyReturn}
 \Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a9e105a8f51c354e559912dc670470893}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}!OnNavigatedTo@{OnNavigatedTo}}
 \index{OnNavigatedTo@{OnNavigatedTo}!Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
 \doxysubsubsection{\texorpdfstring{OnNavigatedTo()}{OnNavigatedTo()}}
@@ -92,8 +240,31 @@ async void Gyminize.\+View\+Models.\+Guide3\+View\+Model.\+On\+Navigated\+To (\b
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}.
+Phương thức được gọi khi trang được điều hướng đến, nhận tham số là thông tin khách hàng. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Thông tin khách hàng (Customer\+Info) được truyền vào.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_guide3_view_model_a67568ee493359f873ae31ffd59ef0fa0}\index{Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}!SaveLocalSettings@{SaveLocalSettings}}
+\index{SaveLocalSettings@{SaveLocalSettings}!Gyminize.ViewModels.Guide3ViewModel@{Gyminize.ViewModels.Guide3ViewModel}}
+\doxysubsubsection{\texorpdfstring{SaveLocalSettings()}{SaveLocalSettings()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_guide3_view_model_a67568ee493359f873ae31ffd59ef0fa0} 
+async Task Gyminize.\+View\+Models.\+Guide3\+View\+Model.\+Save\+Local\+Settings (\begin{DoxyParamCaption}\item[{int}]{customer\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Lưu mã khách hàng vào cài đặt địa phương. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Id} & Mã khách hàng.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Trả về một tác vụ bất đồng bộ khi lưu xong.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

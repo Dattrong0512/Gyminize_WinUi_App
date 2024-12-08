@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+View\+Models.\+Signup\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model}{}\label{class_gyminize_1_1_view_models_1_1_signup_view_model}\index{Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}}
+
+
+View\+Model xử lý các hoạt động đăng ký người dùng.  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Signup\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,12 +14,10 @@ Inheritance diagram for Gyminize.\+View\+Models.\+Signup\+View\+Model\+:\begin{f
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a8d2c933a6127a05cb2d554af725be65f}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_a8d2c933a6127a05cb2d554af725be65f} 
-{\bfseries Signup\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client)
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_aa683712b3fcb2fe0102217788b30d2b4}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_aa683712b3fcb2fe0102217788b30d2b4} 
-async void {\bfseries send\+Verification\+Code} (string email, string code)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signup_view_model_a8d2c933a6127a05cb2d554af725be65f}{Signup\+View\+Model}} (INavigation\+Service navigation\+Service, IDialog\+Service dialog\+Service, IApi\+Services\+Client api\+Services\+Client)
+\begin{DoxyCompactList}\small\item\em Hàm khởi tạo cho \doxylink{class_gyminize_1_1_view_models_1_1_signup_view_model}{Signup\+View\+Model}. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signup_view_model_aa683712b3fcb2fe0102217788b30d2b4}{send\+Verification\+Code}} (string email, string code)
+\begin{DoxyCompactList}\small\item\em Gửi mã xác thực qua email. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,6 +27,148 @@ ICommand {\bfseries Signup\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_abe5c611004f8f98e5e4629758a0348be}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_abe5c611004f8f98e5e4629758a0348be} 
 ICommand {\bfseries Go\+Back\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signup_view_model_a258f9de2adb404859d435990d17df77b}{check\+Exist\+Customer}} (string username)
+\begin{DoxyCompactList}\small\item\em Kiểm tra sự tồn tại của tài khoản người dùng. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_ac366a66655aded6e69e3a148869b785f}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_ac366a66655aded6e69e3a148869b785f} 
+async void {\bfseries On\+Sign\+Up} ()
+\begin{DoxyCompactList}\small\item\em Xử lý sự kiện khi nhấn nút Đăng ký. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a4ba5939e0bb8e45d61f59fa7514f15f4}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_a4ba5939e0bb8e45d61f59fa7514f15f4} 
+void {\bfseries On\+Go\+Back} ()
+\begin{DoxyCompactList}\small\item\em Điều hướng quay lại trang đăng nhập. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signup_view_model_aa169ab8a8d17090c392497762f987b96}{Post\+Customer}} (string username, string password, string email)
+\begin{DoxyCompactList}\small\item\em Thêm thông tin người dùng mới vào hệ thống. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signup_view_model_afa7dee113708c6404ed6aaf84224096b}{output}} (string message)
+\begin{DoxyCompactList}\small\item\em Ghi log hoặc hiển thị thông báo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a2cf88038f5ce6f638a6a3709d37143fd}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_a2cf88038f5ce6f638a6a3709d37143fd} 
+string {\bfseries signup\+Status}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_ace539362eed8b6822964dcfb0c71fca6}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_ace539362eed8b6822964dcfb0c71fca6} 
+string {\bfseries username}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_aa36e89eb742f382f2e571c6bf5c557ab}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_aa36e89eb742f382f2e571c6bf5c557ab} 
+string {\bfseries password}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a2a42ba0cdd8815b8c095384405ec5c1f}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_a2a42ba0cdd8815b8c095384405ec5c1f} 
+string {\bfseries email}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a1d1e49e9dedfa2eb18fe6660a3631187}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_a1d1e49e9dedfa2eb18fe6660a3631187} 
+string {\bfseries confirm\+Password}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_ad75d355d0afb24365308e9b7f19b1bfe}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_ad75d355d0afb24365308e9b7f19b1bfe} 
+bool {\bfseries is\+Agree}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a81ab4f6125cc9a00ae178b3b62d1a459}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_a81ab4f6125cc9a00ae178b3b62d1a459} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a82104d6b3d2e0d2c5a0cd6b521741d42}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_a82104d6b3d2e0d2c5a0cd6b521741d42} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_abfbb3b81025ea50aae6da9292f0d953f}\label{class_gyminize_1_1_view_models_1_1_signup_view_model_abfbb3b81025ea50aae6da9292f0d953f} 
+readonly IApi\+Services\+Client {\bfseries \+\_\+api\+Service}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model xử lý các hoạt động đăng ký người dùng. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a8d2c933a6127a05cb2d554af725be65f}\index{Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}!SignupViewModel@{SignupViewModel}}
+\index{SignupViewModel@{SignupViewModel}!Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}}
+\doxysubsubsection{\texorpdfstring{SignupViewModel()}{SignupViewModel()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signup_view_model_a8d2c933a6127a05cb2d554af725be65f} 
+Gyminize.\+View\+Models.\+Signup\+View\+Model.\+Signup\+View\+Model (\begin{DoxyParamCaption}\item[{INavigation\+Service}]{navigation\+Service}{, }\item[{IDialog\+Service}]{dialog\+Service}{, }\item[{IApi\+Services\+Client}]{api\+Services\+Client}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Hàm khởi tạo cho \doxylink{class_gyminize_1_1_view_models_1_1_signup_view_model}{Signup\+View\+Model}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation\+Service} & Dịch vụ điều hướng. \\
+\hline
+{\em dialog\+Service} & Dịch vụ hiển thị hộp thoại. \\
+\hline
+{\em api\+Services\+Client} & Dịch vụ kết nối API. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_a258f9de2adb404859d435990d17df77b}\index{Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}!checkExistCustomer@{checkExistCustomer}}
+\index{checkExistCustomer@{checkExistCustomer}!Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}}
+\doxysubsubsection{\texorpdfstring{checkExistCustomer()}{checkExistCustomer()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signup_view_model_a258f9de2adb404859d435990d17df77b} 
+bool Gyminize.\+View\+Models.\+Signup\+View\+Model.\+check\+Exist\+Customer (\begin{DoxyParamCaption}\item[{string}]{username}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Kiểm tra sự tồn tại của tài khoản người dùng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Tên tài khoản cần kiểm tra. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} nếu tài khoản tồn tại, ngược lại {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_afa7dee113708c6404ed6aaf84224096b}\index{Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}!output@{output}}
+\index{output@{output}!Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signup_view_model_afa7dee113708c6404ed6aaf84224096b} 
+void Gyminize.\+View\+Models.\+Signup\+View\+Model.\+output (\begin{DoxyParamCaption}\item[{string}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Ghi log hoặc hiển thị thông báo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Nội dung thông báo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_aa169ab8a8d17090c392497762f987b96}\index{Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}!PostCustomer@{PostCustomer}}
+\index{PostCustomer@{PostCustomer}!Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}}
+\doxysubsubsection{\texorpdfstring{PostCustomer()}{PostCustomer()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signup_view_model_aa169ab8a8d17090c392497762f987b96} 
+void Gyminize.\+View\+Models.\+Signup\+View\+Model.\+Post\+Customer (\begin{DoxyParamCaption}\item[{string}]{username}{, }\item[{string}]{password}{, }\item[{string}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Thêm thông tin người dùng mới vào hệ thống. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Tên tài khoản. \\
+\hline
+{\em password} & Mật khẩu. \\
+\hline
+{\em email} & Email đăng ký. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signup_view_model_aa683712b3fcb2fe0102217788b30d2b4}\index{Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}!sendVerificationCode@{sendVerificationCode}}
+\index{sendVerificationCode@{sendVerificationCode}!Gyminize.ViewModels.SignupViewModel@{Gyminize.ViewModels.SignupViewModel}}
+\doxysubsubsection{\texorpdfstring{sendVerificationCode()}{sendVerificationCode()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signup_view_model_aa683712b3fcb2fe0102217788b30d2b4} 
+async void Gyminize.\+View\+Models.\+Signup\+View\+Model.\+send\+Verification\+Code (\begin{DoxyParamCaption}\item[{string}]{email}{, }\item[{string}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gửi mã xác thực qua email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email người nhận. \\
+\hline
+{\em code} & Mã xác thực \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

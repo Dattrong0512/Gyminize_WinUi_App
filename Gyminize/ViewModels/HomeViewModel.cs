@@ -25,7 +25,11 @@ using Microsoft.UI.Text;
 
 
 namespace Gyminize.ViewModels;
-
+/// \class HomeViewModel
+/// \brief ViewModel trang chủ .
+/// 
+/// ViewModel này chịu trách nhiệm quản lý logic giao diện và dữ liệu người dùng cho màn hình.
+/// Nó cung cấp các lệnh và thuộc tính được liên kết với UI.
 public partial class HomeViewModel : ObservableObject, INavigationAware
 {
     private readonly INavigationService _navigationService;
@@ -43,8 +47,6 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         private set => SetProperty(ref _isWeightTextBoxEnabled, value);
     }
     public ILocalSettingsService localsetting;
-
-
 
     private Customer _customer;
     [ObservableProperty]
@@ -191,6 +193,15 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         get; set;
     }
 
+    /// <summary>
+    /// Khởi tạo HomeViewModel, thiết lập các dịch vụ và lệnh.
+    /// </summary>
+    /// <param name="navigationService">Dịch vụ điều hướng.</param>
+    /// <param name="windowService">Dịch vụ cửa sổ.</param>
+    /// <param name="localSettings">Dịch vụ lưu trữ cài đặt cục bộ.</param>
+    /// <param name="dialogService">Dịch vụ hiển thị hộp thoại.</param>
+    /// <param name="apiServicesClient">Dịch vụ API.</param>
+    /// <param name="dateTimeProvider">Dịch vụ thời gian.</param>
     public HomeViewModel(INavigationService navigationService, IWindowService windowService, ILocalSettingsService localSettings, IDialogService dialogService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider)
     {
         _dateTimeProvider = dateTimeProvider;
@@ -213,6 +224,9 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         GenerateChartLines();
     }
 
+    /// <summary>
+    /// Mở liên kết đến trang web hướng dẫn tập luyện.
+    /// </summary>
     private void OpenWorkoutLink()
     {
         var uri = new Uri("https://darebee.com/workouts.html");
@@ -223,6 +237,9 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         });
     }
 
+    /// <summary>
+    /// Mở liên kết đến trang web công thức nấu ăn.
+    /// </summary>
     private void OpenRecipeLink()
     {
         var uri = new Uri("https://www.allrecipes.com/recipes/");
@@ -233,6 +250,9 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         });
     }
 
+    /// <summary>
+    /// Mở liên kết đến trang web hướng dẫn giấc ngủ.
+    /// </summary>
     private void OpenSleepLink()
     {
         var uri = new Uri("https://sleepdoctor.com/");
@@ -243,12 +263,17 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         });
     }
 
+    /// <summary>
+    /// Kích hoạt chỉnh sửa cân nặng, cho phép nhập liệu.
+    /// </summary>
     private void OpenEditWeight()
     {
         IsWeightTextBoxEnabled = true;
     }
 
-
+    /// <summary>
+    /// Lưu cân nặng mới và cập nhật lên hệ thống.
+    /// </summary>
     public async void OpenSaveWeight()
     {
         try
@@ -292,13 +317,21 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
             IsWeightTextBoxEnabled = false;
         }
     }
+
+    /// <summary>
+    /// Khi người dùng điều hướng đến trang, lấy thông tin cân nặng, calo và kế hoạch tập luyện.
+    /// </summary>
+    /// <param name="parameter">Tham số đầu vào khi điều hướng.</param>
     public async void OnNavigatedTo(object parameter)
     {
         _customer_id = await localsetting.ReadSettingAsync<string>("customer_id");
         var endpoint = $"api/Customerhealth/get/" + _customer_id;
 
         _customerHealth = _apiServicesClient.Get<CustomerHealth>(endpoint);
-        var day = _dateTimeProvider.UtcNow;
+        var utcNow = _dateTimeProvider.UtcNow;
+        var localTimeZone = TimeZoneInfo.Local;
+        var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, localTimeZone);
+        var day = localDateTime; // Lấy ngày theo múi giờ địa phương hiện tại
         var CurrentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{day:yyyy-MM-dd HH:mm:ss}");
         if (CurrentDailydiary != null)
         {
@@ -341,7 +374,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         {
             Plandetail currentPlandetail = plandetails;
             var WorkoutDetailsItems = currentPlandetail.Workoutdetails.ToList();
-            var currentDayWorkoutDetail = WorkoutDetailsItems.FirstOrDefault(item => item.date_workout == _dateTimeProvider.Now);
+            var currentDayWorkoutDetail = WorkoutDetailsItems.FirstOrDefault(item => item.date_workout.Date == _dateTimeProvider.Now.Date);
             if (currentDayWorkoutDetail != null)
             {
                 TypeWorkoutIconPath = "ms-appx:///Assets/Icon/arm.svg";
@@ -371,77 +404,16 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
             TypeWorkoutDate = "Chưa có kế hoạch";
             StatusVisibility = Visibility.Collapsed;
         }
-
-
-        //// API này dùng để tạo một plan mới cho customer, ở đây mặc định sẽ là plan 1, tức là 3 ngày 1 tuần
-        //endpoint = "";
-        //endpoint = $"api/Plandetail/create/customer_id/" + customer_id+"/plan/1";
-        //var result = _apiServicesClient.Post<Plandetail>(endpoint,null);
-        //// Kiểm tra kết quả
-        //if (result != null)
-        //{
-        //    Debug.WriteLine("POST request successful!");
-        //}
-        //else
-        //{
-        //    Debug.WriteLine("POST request failed.");
-        //}
-        //// API này dùng để kiểm tra xem nó trả về đúng cái đối tượng plandetail không, các đối tượng này đã được cấu hình ở model để link với nhau
-        //endpoint = "";
-        //endpoint = $"api/Plandetail/get/plandetail/" + customer_id;
-        //Plandetail plandetail =  _apiServicesClient.Get<Plandetail>(endpoint);
-        //// Kiểm tra kết quả
-        //if (plandetail != null)
-        //{
-        //    Debug.WriteLine("Get request successful!");
-        //    Debug.WriteLine(plandetail);
-        //    Debug.WriteLine(plandetail.Plan);
-        //    Debug.WriteLine(plandetail.Workoutdetails);
-        //    if (plandetail.Workoutdetails != null)
-        //    {
-        //        foreach (var workout in plandetail.Workoutdetails)
-        //        {
-
-        //            if (workout.Typeworkout?.Exercisedetails != null)
-        //            {
-        //                Debug.WriteLine(workout.Typeworkout);
-        //                Debug.WriteLine(workout.Typeworkout.description);
-        //                foreach (var exerciseDetail in workout.Typeworkout.Exercisedetails)
-        //                {
-        //                    Debug.WriteLine(exerciseDetail);
-        //                    Debug.WriteLine(exerciseDetail.Exercise.exercise_name);
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //}
-        //else
-        //{
-        //    Debug.WriteLine("POST request failed.");
-        //}
     }
 
-    
-
+    /// <summary>
+    /// Tạo các đường biểu đồ cho cân nặng trong 7 ngày qua.
+    /// </summary>
     private async void GenerateChartLines()
     {
         ChartLines = new ObservableCollection<Line>();
         AxisLines = new ObservableCollection<Line>();
         AxisLabels = new ObservableCollection<TextBlock>();
-
-        //// Example data points
-        //DataPoints = new List<WeightDataPoint>
-        //{
-        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-7), Weight = 70 },
-        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-6), Weight = 71 },
-        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-5), Weight = 69 },
-        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-4), Weight = 70 },
-        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-3), Weight = 66 },
-        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-2), Weight = 67 },
-        //    new WeightDataPoint { Date = DateTime.Now.AddDays(-1), Weight = 70 },
-
-        //};
 
         _customer_id = await localsetting.ReadSettingAsync<string>("customer_id");
         var endpoint = $"api/Customerhealth/get/" + _customer_id;

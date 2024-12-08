@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -94,10 +93,15 @@ $(function(){ initResizable(false); });
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_view_models_1_1_payment_view_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.ViewModels.PaymentViewModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel cho màn hình thanh toán của ứng dụng.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize.ViewModels.PaymentViewModel:</div>
 <div class="dyncontent">
@@ -107,20 +111,22 @@ Inheritance diagram for Gyminize.ViewModels.PaymentViewModel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a851a69bf7d19d35bd01d7cca20fd8e82" id="r_a851a69bf7d19d35bd01d7cca20fd8e82"><td class="memItemLeft" align="right" valign="top"><a id="a851a69bf7d19d35bd01d7cca20fd8e82" name="a851a69bf7d19d35bd01d7cca20fd8e82"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PaymentViewModel</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">INavigationService</a> navigationService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSettingsService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service.html">IDialogService</a> dialogService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client.html">IApiServicesClient</a> apiServicesClient)</td></tr>
+<tr class="memitem:a851a69bf7d19d35bd01d7cca20fd8e82" id="r_a851a69bf7d19d35bd01d7cca20fd8e82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851a69bf7d19d35bd01d7cca20fd8e82">PaymentViewModel</a> (INavigationService navigationService, ILocalSettingsService localSettingsService, IDialogService dialogService, IApiServicesClient apiServicesClient)</td></tr>
+<tr class="memdesc:a851a69bf7d19d35bd01d7cca20fd8e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo ViewModel cho màn hình thanh toán.  <br /></td></tr>
 <tr class="separator:a851a69bf7d19d35bd01d7cca20fd8e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9903fb191db937100f2a6cfee5e9f13c" id="r_a9903fb191db937100f2a6cfee5e9f13c"><td class="memItemLeft" align="right" valign="top"><a id="a9903fb191db937100f2a6cfee5e9f13c" name="a9903fb191db937100f2a6cfee5e9f13c"></a>
 async void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadOrderDetailData</b> ()</td></tr>
+<tr class="memdesc:a9903fb191db937100f2a6cfee5e9f13c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải chi tiết đơn hàng của khách hàng. <br /></td></tr>
 <tr class="separator:a9903fb191db937100f2a6cfee5e9f13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8408f6fb09eb9620cf726483a7ec2800" id="r_a8408f6fb09eb9620cf726483a7ec2800"><td class="memItemLeft" align="right" valign="top"><a id="a8408f6fb09eb9620cf726483a7ec2800" name="a8408f6fb09eb9620cf726483a7ec2800"></a>
 async Task&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentOrder</b> ()</td></tr>
+<tr class="memdesc:a8408f6fb09eb9620cf726483a7ec2800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy thông tin đơn hàng hiện tại từ cài đặt. <br /></td></tr>
 <tr class="separator:a8408f6fb09eb9620cf726483a7ec2800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af039184de505b6cd9d3e387cfb4ed1ac" id="r_af039184de505b6cd9d3e387cfb4ed1ac"><td class="memItemLeft" align="right" valign="top"><a id="af039184de505b6cd9d3e387cfb4ed1ac" name="af039184de505b6cd9d3e387cfb4ed1ac"></a>
-<a class="el" href="class_gyminize_1_1_models_1_1_orders.html">Orders</a>&#160;</td><td class="memItemRight" valign="bottom"><b>currentOrder</b> = new()</td></tr>
+Orders&#160;</td><td class="memItemRight" valign="bottom"><b>currentOrder</b> = new()</td></tr>
 <tr class="separator:af039184de505b6cd9d3e387cfb4ed1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -197,7 +203,230 @@ ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>SaveAddressComman
 <tr class="memitem:a8f9ceca12c533db8baea68bc9aae4959" id="r_a8f9ceca12c533db8baea68bc9aae4959"><td class="memItemLeft" align="right" valign="top"><a id="a8f9ceca12c533db8baea68bc9aae4959" name="a8f9ceca12c533db8baea68bc9aae4959"></a>
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>PaymentCommand</b><code> [get]</code></td></tr>
 <tr class="separator:a8f9ceca12c533db8baea68bc9aae4959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0d2a4f90d6912fcc2d6301806521814d" id="r_a0d2a4f90d6912fcc2d6301806521814d"><td class="memItemLeft" align="right" valign="top"><a id="a0d2a4f90d6912fcc2d6301806521814d" name="a0d2a4f90d6912fcc2d6301806521814d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CheckCanProceedToPayment</b> ()</td></tr>
+<tr class="memdesc:a0d2a4f90d6912fcc2d6301806521814d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra xem có thể tiếp tục thanh toán hay không. <br /></td></tr>
+<tr class="separator:a0d2a4f90d6912fcc2d6301806521814d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec00686d32f43a5c5a246fff2660bbf8" id="r_aec00686d32f43a5c5a246fff2660bbf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec00686d32f43a5c5a246fff2660bbf8">TogglePaymentMethodExecute</a> (string method)</td></tr>
+<tr class="memdesc:aec00686d32f43a5c5a246fff2660bbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thực hiện thao tác khi người dùng chọn phương thức thanh toán.  <br /></td></tr>
+<tr class="separator:aec00686d32f43a5c5a246fff2660bbf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a0125e0c4b14486443e7820266868d" id="r_ac0a0125e0c4b14486443e7820266868d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0a0125e0c4b14486443e7820266868d">ContainsSpecialCharacters</a> (string input)</td></tr>
+<tr class="memdesc:ac0a0125e0c4b14486443e7820266868d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra chuỗi có chứa ký tự đặc biệt hay không.  <br /></td></tr>
+<tr class="separator:ac0a0125e0c4b14486443e7820266868d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75efe42c4334fcbb7c88aaa097ed4b06" id="r_a75efe42c4334fcbb7c88aaa097ed4b06"><td class="memItemLeft" align="right" valign="top"><a id="a75efe42c4334fcbb7c88aaa097ed4b06" name="a75efe42c4334fcbb7c88aaa097ed4b06"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EditName</b> ()</td></tr>
+<tr class="memdesc:a75efe42c4334fcbb7c88aaa097ed4b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cho phép người dùng chỉnh sửa tên. <br /></td></tr>
+<tr class="separator:a75efe42c4334fcbb7c88aaa097ed4b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7c1fd0bcf77d5e303303ae1bd1a124" id="r_a3d7c1fd0bcf77d5e303303ae1bd1a124"><td class="memItemLeft" align="right" valign="top"><a id="a3d7c1fd0bcf77d5e303303ae1bd1a124" name="a3d7c1fd0bcf77d5e303303ae1bd1a124"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveName</b> ()</td></tr>
+<tr class="memdesc:a3d7c1fd0bcf77d5e303303ae1bd1a124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lưu tên người dùng sau khi chỉnh sửa. <br /></td></tr>
+<tr class="separator:a3d7c1fd0bcf77d5e303303ae1bd1a124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35486eadd0269cdc606b5b31d1aef48c" id="r_a35486eadd0269cdc606b5b31d1aef48c"><td class="memItemLeft" align="right" valign="top"><a id="a35486eadd0269cdc606b5b31d1aef48c" name="a35486eadd0269cdc606b5b31d1aef48c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EditPhoneNumber</b> ()</td></tr>
+<tr class="memdesc:a35486eadd0269cdc606b5b31d1aef48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cho phép người dùng chỉnh sửa số điện thoại. <br /></td></tr>
+<tr class="separator:a35486eadd0269cdc606b5b31d1aef48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50d719449c9d718932329f0a8a393ea1" id="r_a50d719449c9d718932329f0a8a393ea1"><td class="memItemLeft" align="right" valign="top"><a id="a50d719449c9d718932329f0a8a393ea1" name="a50d719449c9d718932329f0a8a393ea1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SavePhoneNumber</b> ()</td></tr>
+<tr class="memdesc:a50d719449c9d718932329f0a8a393ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lưu số điện thoại người dùng sau khi chỉnh sửa. <br /></td></tr>
+<tr class="separator:a50d719449c9d718932329f0a8a393ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa385e04e8f10ab2b44d1e69914153b7e" id="r_aa385e04e8f10ab2b44d1e69914153b7e"><td class="memItemLeft" align="right" valign="top"><a id="aa385e04e8f10ab2b44d1e69914153b7e" name="aa385e04e8f10ab2b44d1e69914153b7e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EditAddress</b> ()</td></tr>
+<tr class="memdesc:aa385e04e8f10ab2b44d1e69914153b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cho phép người dùng chỉnh sửa địa chỉ. <br /></td></tr>
+<tr class="separator:aa385e04e8f10ab2b44d1e69914153b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8762c9b601fd2fbc12c1bb76bac9df6f" id="r_a8762c9b601fd2fbc12c1bb76bac9df6f"><td class="memItemLeft" align="right" valign="top"><a id="a8762c9b601fd2fbc12c1bb76bac9df6f" name="a8762c9b601fd2fbc12c1bb76bac9df6f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveAddress</b> ()</td></tr>
+<tr class="memdesc:a8762c9b601fd2fbc12c1bb76bac9df6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lưu địa chỉ người dùng sau khi chỉnh sửa. <br /></td></tr>
+<tr class="separator:a8762c9b601fd2fbc12c1bb76bac9df6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2a54c12d2f4336058b9b92aaac47e11" id="r_ae2a54c12d2f4336058b9b92aaac47e11"><td class="memItemLeft" align="right" valign="top"><a id="ae2a54c12d2f4336058b9b92aaac47e11" name="ae2a54c12d2f4336058b9b92aaac47e11"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PaymentProcess</b> ()</td></tr>
+<tr class="memdesc:ae2a54c12d2f4336058b9b92aaac47e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Xử lý quá trình thanh toán. <br /></td></tr>
+<tr class="separator:ae2a54c12d2f4336058b9b92aaac47e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af4bac0fc9d9a2c6f369df75b9178c380" id="r_af4bac0fc9d9a2c6f369df75b9178c380"><td class="memItemLeft" align="right" valign="top"><a id="af4bac0fc9d9a2c6f369df75b9178c380" name="af4bac0fc9d9a2c6f369df75b9178c380"></a>
+readonly INavigationService&#160;</td><td class="memItemRight" valign="bottom"><b>_navigationService</b></td></tr>
+<tr class="separator:af4bac0fc9d9a2c6f369df75b9178c380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b72309236a6c0e0a556c84fca77888d" id="r_a5b72309236a6c0e0a556c84fca77888d"><td class="memItemLeft" align="right" valign="top"><a id="a5b72309236a6c0e0a556c84fca77888d" name="a5b72309236a6c0e0a556c84fca77888d"></a>
+readonly ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><b>_localSettingsService</b></td></tr>
+<tr class="separator:a5b72309236a6c0e0a556c84fca77888d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7abde9a1039e99b1c9020836babc951" id="r_ac7abde9a1039e99b1c9020836babc951"><td class="memItemLeft" align="right" valign="top"><a id="ac7abde9a1039e99b1c9020836babc951" name="ac7abde9a1039e99b1c9020836babc951"></a>
+readonly IDialogService&#160;</td><td class="memItemRight" valign="bottom"><b>_dialogService</b></td></tr>
+<tr class="separator:ac7abde9a1039e99b1c9020836babc951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2692b341e64f6337b0d7ceb75aa91088" id="r_a2692b341e64f6337b0d7ceb75aa91088"><td class="memItemLeft" align="right" valign="top"><a id="a2692b341e64f6337b0d7ceb75aa91088" name="a2692b341e64f6337b0d7ceb75aa91088"></a>
+readonly IApiServicesClient&#160;</td><td class="memItemRight" valign="bottom"><b>_apiServicesClient</b></td></tr>
+<tr class="separator:a2692b341e64f6337b0d7ceb75aa91088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80934b105089122b1219108b918d504b" id="r_a80934b105089122b1219108b918d504b"><td class="memItemLeft" align="right" valign="top"><a id="a80934b105089122b1219108b918d504b" name="a80934b105089122b1219108b918d504b"></a>
+decimal&#160;</td><td class="memItemRight" valign="bottom"><b>_totalPrice</b></td></tr>
+<tr class="separator:a80934b105089122b1219108b918d504b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34263ea0638d4f997f2876245ff00d45" id="r_a34263ea0638d4f997f2876245ff00d45"><td class="memItemLeft" align="right" valign="top"><a id="a34263ea0638d4f997f2876245ff00d45" name="a34263ea0638d4f997f2876245ff00d45"></a>
+decimal&#160;</td><td class="memItemRight" valign="bottom"><b>_shippingFee</b></td></tr>
+<tr class="separator:a34263ea0638d4f997f2876245ff00d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4c091d44650b7f3df9771803f7a87f" id="r_abd4c091d44650b7f3df9771803f7a87f"><td class="memItemLeft" align="right" valign="top"><a id="abd4c091d44650b7f3df9771803f7a87f" name="abd4c091d44650b7f3df9771803f7a87f"></a>
+decimal&#160;</td><td class="memItemRight" valign="bottom"><b>_productPrice</b></td></tr>
+<tr class="separator:abd4c091d44650b7f3df9771803f7a87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb44c617fd7b9f50a3113bc5f43d2ae2" id="r_aeb44c617fd7b9f50a3113bc5f43d2ae2"><td class="memItemLeft" align="right" valign="top"><a id="aeb44c617fd7b9f50a3113bc5f43d2ae2" name="aeb44c617fd7b9f50a3113bc5f43d2ae2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isMomoSelected</b></td></tr>
+<tr class="separator:aeb44c617fd7b9f50a3113bc5f43d2ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86778e3a539bc40f3151bb7d63389ab7" id="r_a86778e3a539bc40f3151bb7d63389ab7"><td class="memItemLeft" align="right" valign="top"><a id="a86778e3a539bc40f3151bb7d63389ab7" name="a86778e3a539bc40f3151bb7d63389ab7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isBankSelected</b></td></tr>
+<tr class="separator:a86778e3a539bc40f3151bb7d63389ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1304303934a8af44b1de2caae56a4013" id="r_a1304303934a8af44b1de2caae56a4013"><td class="memItemLeft" align="right" valign="top"><a id="a1304303934a8af44b1de2caae56a4013" name="a1304303934a8af44b1de2caae56a4013"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isCodSelected</b></td></tr>
+<tr class="separator:a1304303934a8af44b1de2caae56a4013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28aa2c590662a9ef8e9d7c67bd017ee5" id="r_a28aa2c590662a9ef8e9d7c67bd017ee5"><td class="memItemLeft" align="right" valign="top"><a id="a28aa2c590662a9ef8e9d7c67bd017ee5" name="a28aa2c590662a9ef8e9d7c67bd017ee5"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td></tr>
+<tr class="separator:a28aa2c590662a9ef8e9d7c67bd017ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50f23a0b89873709f2b04f91b4c0aa0" id="r_ab50f23a0b89873709f2b04f91b4c0aa0"><td class="memItemLeft" align="right" valign="top"><a id="ab50f23a0b89873709f2b04f91b4c0aa0" name="ab50f23a0b89873709f2b04f91b4c0aa0"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_phoneNumber</b></td></tr>
+<tr class="separator:ab50f23a0b89873709f2b04f91b4c0aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd50c64448c8e445a7f2910bbe53f02" id="r_acdd50c64448c8e445a7f2910bbe53f02"><td class="memItemLeft" align="right" valign="top"><a id="acdd50c64448c8e445a7f2910bbe53f02" name="acdd50c64448c8e445a7f2910bbe53f02"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_address</b></td></tr>
+<tr class="separator:acdd50c64448c8e445a7f2910bbe53f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5fc64d4ce11ab37b0faf03d9fc3abc" id="r_a3d5fc64d4ce11ab37b0faf03d9fc3abc"><td class="memItemLeft" align="right" valign="top"><a id="a3d5fc64d4ce11ab37b0faf03d9fc3abc" name="a3d5fc64d4ce11ab37b0faf03d9fc3abc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isNameInvalid</b></td></tr>
+<tr class="separator:a3d5fc64d4ce11ab37b0faf03d9fc3abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b6f652603347384457a9c2a7aef333" id="r_ac0b6f652603347384457a9c2a7aef333"><td class="memItemLeft" align="right" valign="top"><a id="ac0b6f652603347384457a9c2a7aef333" name="ac0b6f652603347384457a9c2a7aef333"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isPhoneNumberInvalid</b></td></tr>
+<tr class="separator:ac0b6f652603347384457a9c2a7aef333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bd6186a49c49e9e81410ffa8d03358" id="r_ae9bd6186a49c49e9e81410ffa8d03358"><td class="memItemLeft" align="right" valign="top"><a id="ae9bd6186a49c49e9e81410ffa8d03358" name="ae9bd6186a49c49e9e81410ffa8d03358"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAddressInvalid</b></td></tr>
+<tr class="separator:ae9bd6186a49c49e9e81410ffa8d03358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac619b378cbcd67fa57b76fa61f05ef9f" id="r_ac619b378cbcd67fa57b76fa61f05ef9f"><td class="memItemLeft" align="right" valign="top"><a id="ac619b378cbcd67fa57b76fa61f05ef9f" name="ac619b378cbcd67fa57b76fa61f05ef9f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isNameEnabled</b></td></tr>
+<tr class="separator:ac619b378cbcd67fa57b76fa61f05ef9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf833011d9f72ed29e4387b80d49f3f4" id="r_acf833011d9f72ed29e4387b80d49f3f4"><td class="memItemLeft" align="right" valign="top"><a id="acf833011d9f72ed29e4387b80d49f3f4" name="acf833011d9f72ed29e4387b80d49f3f4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isPhoneNumberEnabled</b></td></tr>
+<tr class="separator:acf833011d9f72ed29e4387b80d49f3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6efa7c03c0648cca7926689579c0111" id="r_aa6efa7c03c0648cca7926689579c0111"><td class="memItemLeft" align="right" valign="top"><a id="aa6efa7c03c0648cca7926689579c0111" name="aa6efa7c03c0648cca7926689579c0111"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAddressEnabled</b></td></tr>
+<tr class="separator:aa6efa7c03c0648cca7926689579c0111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ViewModel cho màn hình thanh toán của ứng dụng. </p>
+<p>Lớp này chịu trách nhiệm quản lý các thao tác liên quan đến thanh toán, bao gồm việc chỉnh sửa thông tin người dùng (tên, số điện thoại, địa chỉ), chọn phương thức thanh toán, và xử lý quá trình thanh toán. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a851a69bf7d19d35bd01d7cca20fd8e82" name="a851a69bf7d19d35bd01d7cca20fd8e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851a69bf7d19d35bd01d7cca20fd8e82">&#9670;&#160;</a></span>PaymentViewModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize.ViewModels.PaymentViewModel.PaymentViewModel </td>
+          <td>(</td>
+          <td class="paramtype">INavigationService</td>          <td class="paramname"><span class="paramname"><em>navigationService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ILocalSettingsService</td>          <td class="paramname"><span class="paramname"><em>localSettingsService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDialogService</td>          <td class="paramname"><span class="paramname"><em>dialogService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IApiServicesClient</td>          <td class="paramname"><span class="paramname"><em>apiServicesClient</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Khởi tạo ViewModel cho màn hình thanh toán. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">navigationService</td><td>Dịch vụ điều hướng giữa các trang.</td></tr>
+    <tr><td class="paramname">localSettingsService</td><td>Dịch vụ lưu trữ cài đặt người dùng.</td></tr>
+    <tr><td class="paramname">dialogService</td><td>Dịch vụ hiển thị hộp thoại.</td></tr>
+    <tr><td class="paramname">apiServicesClient</td><td>Dịch vụ kết nối API.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac0a0125e0c4b14486443e7820266868d" name="ac0a0125e0c4b14486443e7820266868d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a0125e0c4b14486443e7820266868d">&#9670;&#160;</a></span>ContainsSpecialCharacters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Gyminize.ViewModels.PaymentViewModel.ContainsSpecialCharacters </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kiểm tra chuỗi có chứa ký tự đặc biệt hay không. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Chuỗi cần kiểm tra.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True nếu có ký tự đặc biệt, False nếu không.</dd></dl>
+
+</div>
+</div>
+<a id="aec00686d32f43a5c5a246fff2660bbf8" name="aec00686d32f43a5c5a246fff2660bbf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec00686d32f43a5c5a246fff2660bbf8">&#9670;&#160;</a></span>TogglePaymentMethodExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.PaymentViewModel.TogglePaymentMethodExecute </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>method</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thực hiện thao tác khi người dùng chọn phương thức thanh toán. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>Phương thức thanh toán (Momo, Ngân hàng, COD).</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/ViewModels/<b>PaymentViewModel.cs</b></li>
 </ul>

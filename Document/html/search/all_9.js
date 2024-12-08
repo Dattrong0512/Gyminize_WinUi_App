@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['updatecustomer_0',['UpdateCustomer',['../class_gyminize___a_p_i_1_1_controllers_1_1_customer_controller.html#ae21cfa1c6bdffb4235553618614af732',1,'Gyminize_API::Controllers::CustomerController']]],
-  ['updatenumberorderdetail_1',['UpdateNumberOrderDetail',['../class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller.html#a7a2690c3c0729db6d8640568acb85c9f',1,'Gyminize_API::Controllers::OrderDetailController']]],
-  ['updateoraddorderdetail_2',['UpdateOrAddOrderDetail',['../class_gyminize___a_p_i_1_1_controllers_1_1_order_detail_controller.html#a17db323f12efac94a50a8838acdb0123',1,'Gyminize_API::Controllers::OrderDetailController']]],
-  ['updatepassword_3',['UpdatePassword',['../class_gyminize___a_p_i_1_1_controllers_1_1_customer_controller.html#af5c7ab7cbad2abe58a1f27d86112a592',1,'Gyminize_API::Controllers::CustomerController']]],
-  ['updatestatusorder_4',['UpdateStatusOrder',['../class_gyminize___a_p_i_1_1_controllers_1_1_order_controller.html#a8e46b33f3f24139273220e787d357928',1,'Gyminize_API::Controllers::OrderController']]],
-  ['updateweightcustomer_5',['UpdateWeightCustomer',['../class_gyminize___a_p_i_1_1_controllers_1_1_customerhealth_controller.html#aa5f085adc3fa2c47bdd9e0112bb50b17',1,'Gyminize_API::Controllers::CustomerhealthController']]]
+  ['iemailsender_0',['IEmailSender',['../interface_gyminize_1_1_services_1_1_i_email_sender.html',1,'Gyminize::Services']]],
+  ['increment_1',['Increment',['../class_gyminize_1_1_view_models_1_1_cart_view_model.html#a156f8d5d319150748e9991bba07748ec',1,'Gyminize::ViewModels::CartViewModel']]],
+  ['initializeasync_2',['InitializeAsync',['../class_gyminize_1_1_services_1_1_local_settings_service.html#af3026fd2044ac16273098cf021b3affb',1,'Gyminize::Services::LocalSettingsService']]],
+  ['inputbox_3',['InputBox',['../class_gyminize_1_1_view_models_1_1_chat_box_view_model.html#a18f7328dae4d11250323662c1c468252',1,'Gyminize::ViewModels::ChatBoxViewModel']]],
+  ['insertcustomerhealth_4',['InsertCustomerHealth',['../class_gyminize_1_1_view_models_1_1_guide3_view_model.html#acd0d42d268f0d1cac8bc80d9a351ebb0',1,'Gyminize::ViewModels::Guide3ViewModel']]],
+  ['isbackenabled_5',['isBackEnabled',['../class_gyminize_1_1_view_models_1_1_shell_view_model.html#a3dd48a696d358c6c2afdf14aed68cde1',1,'Gyminize::ViewModels::ShellViewModel']]],
+  ['isvaliddata_6',['isValidData',['../class_gyminize_1_1_view_models_1_1_guide1_view_model.html#a3c5c23d8521d0167b2e57a9a5bae084c',1,'Gyminize::ViewModels::Guide1ViewModel']]]
 ];

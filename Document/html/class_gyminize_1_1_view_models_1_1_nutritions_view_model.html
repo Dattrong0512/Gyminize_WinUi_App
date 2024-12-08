@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -94,10 +93,14 @@ $(function(){ initResizable(false); });
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_view_models_1_1_nutritions_view_model-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.ViewModels.NutritionsViewModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel cho màn hình dinh dưỡng (Nutritions).  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize.ViewModels.NutritionsViewModel:</div>
 <div class="dyncontent">
@@ -107,26 +110,26 @@ Inheritance diagram for Gyminize.ViewModels.NutritionsViewModel:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a229d85a5419e89b9fd72a25deaf8869c" id="r_a229d85a5419e89b9fd72a25deaf8869c"><td class="memItemLeft" align="right" valign="top"><a id="a229d85a5419e89b9fd72a25deaf8869c" name="a229d85a5419e89b9fd72a25deaf8869c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NutritionsViewModel</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">INavigationService</a> navigationService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service.html">IDialogService</a> dialogService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSetting, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client.html">IApiServicesClient</a> apiServicesClient)</td></tr>
+<tr class="memitem:a229d85a5419e89b9fd72a25deaf8869c" id="r_a229d85a5419e89b9fd72a25deaf8869c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a229d85a5419e89b9fd72a25deaf8869c">NutritionsViewModel</a> (INavigationService navigationService, IDialogService dialogService, ILocalSettingsService localSetting, IApiServicesClient apiServicesClient)</td></tr>
+<tr class="memdesc:a229d85a5419e89b9fd72a25deaf8869c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hàm khởi tạo cho ViewModel dinh dưỡng.  <br /></td></tr>
 <tr class="separator:a229d85a5419e89b9fd72a25deaf8869c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36783f217cfc64f8113470d03c3c225a" id="r_a36783f217cfc64f8113470d03c3c225a"><td class="memItemLeft" align="right" valign="top"><a id="a36783f217cfc64f8113470d03c3c225a" name="a36783f217cfc64f8113470d03c3c225a"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFoodLibraryAsync</b> ()</td></tr>
+<tr class="memitem:a36783f217cfc64f8113470d03c3c225a" id="r_a36783f217cfc64f8113470d03c3c225a"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36783f217cfc64f8113470d03c3c225a">LoadFoodLibraryAsync</a> ()</td></tr>
+<tr class="memdesc:a36783f217cfc64f8113470d03c3c225a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải thư viện thực phẩm từ API và cập nhật danh sách thực phẩm trong ViewModel.  <br /></td></tr>
 <tr class="separator:a36783f217cfc64f8113470d03c3c225a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ad8dc2e3c61ae39c76e83ee0c8a83f6" id="r_a4ad8dc2e3c61ae39c76e83ee0c8a83f6"><td class="memItemLeft" align="right" valign="top"><a id="a4ad8dc2e3c61ae39c76e83ee0c8a83f6" name="a4ad8dc2e3c61ae39c76e83ee0c8a83f6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SearchFoodLibrary</b> (string searchText)</td></tr>
+<tr class="memitem:a4ad8dc2e3c61ae39c76e83ee0c8a83f6" id="r_a4ad8dc2e3c61ae39c76e83ee0c8a83f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ad8dc2e3c61ae39c76e83ee0c8a83f6">SearchFoodLibrary</a> (string searchText)</td></tr>
+<tr class="memdesc:a4ad8dc2e3c61ae39c76e83ee0c8a83f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tìm kiếm thực phẩm trong thư viện thực phẩm theo từ khóa.  <br /></td></tr>
 <tr class="separator:a4ad8dc2e3c61ae39c76e83ee0c8a83f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f03788ca81f7dddfef8c03b026b87cd" id="r_a8f03788ca81f7dddfef8c03b026b87cd"><td class="memItemLeft" align="right" valign="top"><a id="a8f03788ca81f7dddfef8c03b026b87cd" name="a8f03788ca81f7dddfef8c03b026b87cd"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>LoadDailyDiary</b> ()</td></tr>
+<tr class="memitem:a8f03788ca81f7dddfef8c03b026b87cd" id="r_a8f03788ca81f7dddfef8c03b026b87cd"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f03788ca81f7dddfef8c03b026b87cd">LoadDailyDiary</a> ()</td></tr>
+<tr class="memdesc:a8f03788ca81f7dddfef8c03b026b87cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải nhật ký hàng ngày của người dùng từ API và cập nhật các bữa ăn.  <br /></td></tr>
 <tr class="separator:a8f03788ca81f7dddfef8c03b026b87cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af848025b814446e77bbef9787865fbac" id="r_af848025b814446e77bbef9787865fbac"><td class="memItemLeft" align="right" valign="top"><a id="af848025b814446e77bbef9787865fbac" name="af848025b814446e77bbef9787865fbac"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateTotalCaloriesExpression</b> ()</td></tr>
+<tr class="memitem:af848025b814446e77bbef9787865fbac" id="r_af848025b814446e77bbef9787865fbac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af848025b814446e77bbef9787865fbac">UpdateTotalCaloriesExpression</a> ()</td></tr>
+<tr class="memdesc:af848025b814446e77bbef9787865fbac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cập nhật biểu thức tính tổng số calo tiêu thụ từ các bữa ăn.  <br /></td></tr>
 <tr class="separator:af848025b814446e77bbef9787865fbac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a453b271c8e55613fbfe17c0d9c6b7ff5" id="r_a453b271c8e55613fbfe17c0d9c6b7ff5"><td class="memItemLeft" align="right" valign="top"><a id="a453b271c8e55613fbfe17c0d9c6b7ff5" name="a453b271c8e55613fbfe17c0d9c6b7ff5"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>AddFoodToMealAsync</b> (<a class="el" href="class_gyminize_1_1_models_1_1_food.html">Food</a>? selectedFood)</td></tr>
+<tr class="memitem:a453b271c8e55613fbfe17c0d9c6b7ff5" id="r_a453b271c8e55613fbfe17c0d9c6b7ff5"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a453b271c8e55613fbfe17c0d9c6b7ff5">AddFoodToMealAsync</a> (Food? selectedFood)</td></tr>
+<tr class="memdesc:a453b271c8e55613fbfe17c0d9c6b7ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thêm thực phẩm vào bữa ăn trong nhật ký hàng ngày.  <br /></td></tr>
 <tr class="separator:a453b271c8e55613fbfe17c0d9c6b7ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c22bdfdb291542d5bb24e5e1caf589b" id="r_a8c22bdfdb291542d5bb24e5e1caf589b"><td class="memItemLeft" align="right" valign="top"><a id="a8c22bdfdb291542d5bb24e5e1caf589b" name="a8c22bdfdb291542d5bb24e5e1caf589b"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>DeleteFoodFromMealAsync</b> (<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> foodDetail)</td></tr>
+<tr class="memitem:a8c22bdfdb291542d5bb24e5e1caf589b" id="r_a8c22bdfdb291542d5bb24e5e1caf589b"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c22bdfdb291542d5bb24e5e1caf589b">DeleteFoodFromMealAsync</a> (FoodDetail foodDetail)</td></tr>
+<tr class="memdesc:a8c22bdfdb291542d5bb24e5e1caf589b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Xóa thực phẩm khỏi bữa ăn trong nhật ký hàng ngày.  <br /></td></tr>
 <tr class="separator:a8c22bdfdb291542d5bb24e5e1caf589b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -138,28 +141,28 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>CustomerId</b></td>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a21583ce320a71f2e2841bae20e82ff87" id="r_a21583ce320a71f2e2841bae20e82ff87"><td class="memItemLeft" align="right" valign="top"><a id="a21583ce320a71f2e2841bae20e82ff87" name="a21583ce320a71f2e2841bae20e82ff87"></a>
-<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LocalSetting</b><code> [get]</code></td></tr>
+ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><b>LocalSetting</b><code> [get]</code></td></tr>
 <tr class="separator:a21583ce320a71f2e2841bae20e82ff87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22b051559b910fd24d94ef174abcb9f6" id="r_a22b051559b910fd24d94ef174abcb9f6"><td class="memItemLeft" align="right" valign="top"><a id="a22b051559b910fd24d94ef174abcb9f6" name="a22b051559b910fd24d94ef174abcb9f6"></a>
-<a class="el" href="class_gyminize_1_1_models_1_1_dailydiary.html">Dailydiary</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentDailydiary</b><code> [get, set]</code></td></tr>
+Dailydiary&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentDailydiary</b><code> [get, set]</code></td></tr>
 <tr class="separator:a22b051559b910fd24d94ef174abcb9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cf65573c26123a7f422f61a84696dde" id="r_a6cf65573c26123a7f422f61a84696dde"><td class="memItemLeft" align="right" valign="top"><a id="a6cf65573c26123a7f422f61a84696dde" name="a6cf65573c26123a7f422f61a84696dde"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>BreakfastItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>BreakfastItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a6cf65573c26123a7f422f61a84696dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a669317d71b9296c5fba37a019a699176" id="r_a669317d71b9296c5fba37a019a699176"><td class="memItemLeft" align="right" valign="top"><a id="a669317d71b9296c5fba37a019a699176" name="a669317d71b9296c5fba37a019a699176"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LunchItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LunchItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a669317d71b9296c5fba37a019a699176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab93f08a7cdd2d4fa2dad0a2f717a1821" id="r_ab93f08a7cdd2d4fa2dad0a2f717a1821"><td class="memItemLeft" align="right" valign="top"><a id="ab93f08a7cdd2d4fa2dad0a2f717a1821" name="ab93f08a7cdd2d4fa2dad0a2f717a1821"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DinnerItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DinnerItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:ab93f08a7cdd2d4fa2dad0a2f717a1821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37b5414db97ef956e39a59e6a7e0f6a6" id="r_a37b5414db97ef956e39a59e6a7e0f6a6"><td class="memItemLeft" align="right" valign="top"><a id="a37b5414db97ef956e39a59e6a7e0f6a6" name="a37b5414db97ef956e39a59e6a7e0f6a6"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SnackItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food_detail.html">FoodDetail</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SnackItems</b> = new ObservableCollection&lt;FoodDetail&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a37b5414db97ef956e39a59e6a7e0f6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02557bd8615581205d673357f488bbb4" id="r_a02557bd8615581205d673357f488bbb4"><td class="memItemLeft" align="right" valign="top"><a id="a02557bd8615581205d673357f488bbb4" name="a02557bd8615581205d673357f488bbb4"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food.html">Food</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FoodLibraryItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food.html">Food</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; Food &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FoodLibraryItems</b> = new ObservableCollection&lt;Food&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:a02557bd8615581205d673357f488bbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afda0b26d82597000d1fe9c59a1390f0c" id="r_afda0b26d82597000d1fe9c59a1390f0c"><td class="memItemLeft" align="right" valign="top"><a id="afda0b26d82597000d1fe9c59a1390f0c" name="afda0b26d82597000d1fe9c59a1390f0c"></a>
-ObservableCollection&lt; <a class="el" href="class_gyminize_1_1_models_1_1_food.html">Food</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FilteredFoodLibraryItems</b> = new ObservableCollection&lt;<a class="el" href="class_gyminize_1_1_models_1_1_food.html">Food</a>&gt;()<code> [get, set]</code></td></tr>
+ObservableCollection&lt; Food &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FilteredFoodLibraryItems</b> = new ObservableCollection&lt;Food&gt;()<code> [get, set]</code></td></tr>
 <tr class="separator:afda0b26d82597000d1fe9c59a1390f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d1cab21a9ce64766985fe507fdbe8bd" id="r_a8d1cab21a9ce64766985fe507fdbe8bd"><td class="memItemLeft" align="right" valign="top"><a id="a8d1cab21a9ce64766985fe507fdbe8bd" name="a8d1cab21a9ce64766985fe507fdbe8bd"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>TotalCaloriesExpression</b><code> [get, set]</code></td></tr>
@@ -173,7 +176,264 @@ ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>AddFoodToMealComm
 <tr class="memitem:a77ebd6839a66c8a4129d79a004fefbf9" id="r_a77ebd6839a66c8a4129d79a004fefbf9"><td class="memItemLeft" align="right" valign="top"><a id="a77ebd6839a66c8a4129d79a004fefbf9" name="a77ebd6839a66c8a4129d79a004fefbf9"></a>
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>SearchFoodCommand</b><code> [get]</code></td></tr>
 <tr class="separator:a77ebd6839a66c8a4129d79a004fefbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa8913c997e7929e16eb277570678f992" id="r_aa8913c997e7929e16eb277570678f992"><td class="memItemLeft" align="right" valign="top"><a id="aa8913c997e7929e16eb277570678f992" name="aa8913c997e7929e16eb277570678f992"></a>
+readonly INavigationService&#160;</td><td class="memItemRight" valign="bottom"><b>_navigationService</b></td></tr>
+<tr class="separator:aa8913c997e7929e16eb277570678f992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add623cb6566ec3b30ff2c049cb9600ed" id="r_add623cb6566ec3b30ff2c049cb9600ed"><td class="memItemLeft" align="right" valign="top"><a id="add623cb6566ec3b30ff2c049cb9600ed" name="add623cb6566ec3b30ff2c049cb9600ed"></a>
+readonly IDialogService&#160;</td><td class="memItemRight" valign="bottom"><b>_dialogService</b></td></tr>
+<tr class="separator:add623cb6566ec3b30ff2c049cb9600ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4b5eadcac734b7c9a05677aa4ada76" id="r_a9a4b5eadcac734b7c9a05677aa4ada76"><td class="memItemLeft" align="right" valign="top"><a id="a9a4b5eadcac734b7c9a05677aa4ada76" name="a9a4b5eadcac734b7c9a05677aa4ada76"></a>
+readonly IApiServicesClient&#160;</td><td class="memItemRight" valign="bottom"><b>_apiServicesClient</b></td></tr>
+<tr class="separator:a9a4b5eadcac734b7c9a05677aa4ada76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68ce7d75afc3728b983f4d904f46310" id="r_ae68ce7d75afc3728b983f4d904f46310"><td class="memItemLeft" align="right" valign="top"><a id="ae68ce7d75afc3728b983f4d904f46310" name="ae68ce7d75afc3728b983f4d904f46310"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_totalCaloriesExpression</b></td></tr>
+<tr class="separator:ae68ce7d75afc3728b983f4d904f46310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ViewModel cho màn hình dinh dưỡng (Nutritions). </p>
+<p>Lớp này chịu trách nhiệm quản lý các dữ liệu và logic liên quan đến dinh dưỡng của người dùng, bao gồm việc quản lý các món ăn trong nhật ký hàng ngày và thư viện thực phẩm. Nó cũng cung cấp các lệnh (command) để thao tác với dữ liệu, chẳng hạn như thêm, xóa món ăn, và tìm kiếm thực phẩm trong thư viện. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a229d85a5419e89b9fd72a25deaf8869c" name="a229d85a5419e89b9fd72a25deaf8869c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229d85a5419e89b9fd72a25deaf8869c">&#9670;&#160;</a></span>NutritionsViewModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize.ViewModels.NutritionsViewModel.NutritionsViewModel </td>
+          <td>(</td>
+          <td class="paramtype">INavigationService</td>          <td class="paramname"><span class="paramname"><em>navigationService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDialogService</td>          <td class="paramname"><span class="paramname"><em>dialogService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ILocalSettingsService</td>          <td class="paramname"><span class="paramname"><em>localSetting</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IApiServicesClient</td>          <td class="paramname"><span class="paramname"><em>apiServicesClient</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hàm khởi tạo cho ViewModel dinh dưỡng. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">navigationService</td><td>Dịch vụ điều hướng để chuyển màn hình.</td></tr>
+    <tr><td class="paramname">dialogService</td><td>Dịch vụ quản lý hộp thoại.</td></tr>
+    <tr><td class="paramname">localSetting</td><td>Dịch vụ lưu trữ cài đặt cục bộ của ứng dụng.</td></tr>
+    <tr><td class="paramname">apiServicesClient</td><td>Dịch vụ kết nối API để lấy và gửi dữ liệu từ/đến máy chủ.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Hàm khởi tạo này thiết lập các dịch vụ cần thiết cho ViewModel, bao gồm điều hướng, hộp thoại và các dịch vụ API. Nó cũng khởi tạo các lệnh (commands) cho các chức năng như thêm thực phẩm vào bữa ăn, xóa thực phẩm và tìm kiếm thực phẩm. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a453b271c8e55613fbfe17c0d9c6b7ff5" name="a453b271c8e55613fbfe17c0d9c6b7ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453b271c8e55613fbfe17c0d9c6b7ff5">&#9670;&#160;</a></span>AddFoodToMealAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.NutritionsViewModel.AddFoodToMealAsync </td>
+          <td>(</td>
+          <td class="paramtype">Food?</td>          <td class="paramname"><span class="paramname"><em>selectedFood</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thêm thực phẩm vào bữa ăn trong nhật ký hàng ngày. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">selectedFood</td><td>Thực phẩm được chọn để thêm vào bữa ăn.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Hàm này hiển thị hộp thoại để chọn bữa ăn và số lượng thực phẩm, sau đó gọi API để cập nhật thông tin thực phẩm vào bữa ăn tương ứng. </p>
+
+</div>
+</div>
+<a id="a8c22bdfdb291542d5bb24e5e1caf589b" name="a8c22bdfdb291542d5bb24e5e1caf589b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c22bdfdb291542d5bb24e5e1caf589b">&#9670;&#160;</a></span>DeleteFoodFromMealAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.NutritionsViewModel.DeleteFoodFromMealAsync </td>
+          <td>(</td>
+          <td class="paramtype">FoodDetail</td>          <td class="paramname"><span class="paramname"><em>foodDetail</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Xóa thực phẩm khỏi bữa ăn trong nhật ký hàng ngày. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">foodDetail</td><td>Thông tin chi tiết về thực phẩm cần xóa.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Hàm này gửi yêu cầu đến API để xóa thực phẩm khỏi bữa ăn tương ứng. Nếu xóa thành công, thực phẩm sẽ bị loại bỏ khỏi danh sách các món ăn trong bữa sáng, trưa, tối hoặc xế. Sau đó, hàm cập nhật lại tổng số calo và hiển thị thông báo thành công. Nếu có lỗi trong quá trình xóa hoặc API trả về kết quả không thành công, một thông báo lỗi sẽ được hiển thị cho người dùng. </p>
+
+</div>
+</div>
+<a id="a8f03788ca81f7dddfef8c03b026b87cd" name="a8f03788ca81f7dddfef8c03b026b87cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f03788ca81f7dddfef8c03b026b87cd">&#9670;&#160;</a></span>LoadDailyDiary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.NutritionsViewModel.LoadDailyDiary </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tải nhật ký hàng ngày của người dùng từ API và cập nhật các bữa ăn. </p>
+<p>Hàm này lấy thông tin nhật ký hàng ngày của người dùng từ API, phân loại các thực phẩm theo từng bữa ăn (bữa sáng, bữa trưa, bữa tối, bữa xế) và cập nhật các danh sách thực phẩm tương ứng. </p>
+
+</div>
+</div>
+<a id="a36783f217cfc64f8113470d03c3c225a" name="a36783f217cfc64f8113470d03c3c225a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36783f217cfc64f8113470d03c3c225a">&#9670;&#160;</a></span>LoadFoodLibraryAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.NutritionsViewModel.LoadFoodLibraryAsync </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tải thư viện thực phẩm từ API và cập nhật danh sách thực phẩm trong ViewModel. </p>
+<p>Hàm này gửi yêu cầu đến API để lấy danh sách các thực phẩm và thêm vào <code>FoodLibraryItems</code>. Sau đó, danh sách này được sao chép vào <code>FilteredFoodLibraryItems</code> để sử dụng cho việc tìm kiếm thực phẩm. </p>
+
+</div>
+</div>
+<a id="a4ad8dc2e3c61ae39c76e83ee0c8a83f6" name="a4ad8dc2e3c61ae39c76e83ee0c8a83f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad8dc2e3c61ae39c76e83ee0c8a83f6">&#9670;&#160;</a></span>SearchFoodLibrary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.NutritionsViewModel.SearchFoodLibrary </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>searchText</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tìm kiếm thực phẩm trong thư viện thực phẩm theo từ khóa. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">searchText</td><td>Từ khóa tìm kiếm.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Hàm này lọc danh sách thực phẩm dựa trên từ khóa tìm kiếm và cập nhật <code>FilteredFoodLibraryItems</code>. Nếu không có từ khóa, tất cả thực phẩm sẽ được hiển thị. </p>
+
+</div>
+</div>
+<a id="af848025b814446e77bbef9787865fbac" name="af848025b814446e77bbef9787865fbac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af848025b814446e77bbef9787865fbac">&#9670;&#160;</a></span>UpdateTotalCaloriesExpression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.NutritionsViewModel.UpdateTotalCaloriesExpression </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cập nhật biểu thức tính tổng số calo tiêu thụ từ các bữa ăn. </p>
+<p>Hàm này tính tổng số calo từ các thực phẩm trong bữa sáng, bữa trưa, bữa tối và bữa xế, sau đó cập nhật biểu thức hiển thị tổng calo tiêu thụ và calo còn lại. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/ViewModels/<b>NutritionsViewModel.cs</b></li>
 </ul>

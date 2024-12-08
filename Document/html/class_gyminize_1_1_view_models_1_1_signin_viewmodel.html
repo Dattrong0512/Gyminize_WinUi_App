@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -95,10 +94,17 @@ $(function(){ initResizable(false); });
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_view_models_1_1_signin_viewmodel-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.ViewModels.SigninViewmodel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel để xử lý các hoạt động đăng nhập.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize.ViewModels.SigninViewmodel:</div>
 <div class="dyncontent">
@@ -109,51 +115,515 @@ Inheritance diagram for Gyminize.ViewModels.SigninViewmodel:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac367fdec382a5cd62e853654a312cf46" id="r_ac367fdec382a5cd62e853654a312cf46"><td class="memItemLeft" align="right" valign="top"><a id="ac367fdec382a5cd62e853654a312cf46" name="ac367fdec382a5cd62e853654a312cf46"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SigninViewmodel</b> (<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service.html">INavigationService</a> navigationService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a> localSettings, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service.html">IDialogService</a> dialogService, <a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service.html">IWindowService</a> windowService)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SigninViewmodel</b> (INavigationService navigationService, ILocalSettingsService localSettings, IDialogService dialogService, IWindowService windowService)</td></tr>
 <tr class="separator:ac367fdec382a5cd62e853654a312cf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a533e224e19af78ccaf4f925ccf2e87bd" id="r_a533e224e19af78ccaf4f925ccf2e87bd"><td class="memItemLeft" align="right" valign="top"><a id="a533e224e19af78ccaf4f925ccf2e87bd" name="a533e224e19af78ccaf4f925ccf2e87bd"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>ExchangeCodeForTokensAsync</b> (string code, string codeVerifier)</td></tr>
+<tr class="memitem:a533e224e19af78ccaf4f925ccf2e87bd" id="r_a533e224e19af78ccaf4f925ccf2e87bd"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a533e224e19af78ccaf4f925ccf2e87bd">ExchangeCodeForTokensAsync</a> (string code, string codeVerifier)</td></tr>
+<tr class="memdesc:a533e224e19af78ccaf4f925ccf2e87bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trao đổi mã ủy quyền lấy token.  <br /></td></tr>
 <tr class="separator:a533e224e19af78ccaf4f925ccf2e87bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ef1f4536d01032713d9d432a0e8a48f" id="r_a5ef1f4536d01032713d9d432a0e8a48f"><td class="memItemLeft" align="right" valign="top"><a id="a5ef1f4536d01032713d9d432a0e8a48f" name="a5ef1f4536d01032713d9d432a0e8a48f"></a>
-async void&#160;</td><td class="memItemRight" valign="bottom"><b>sendVerificationCode</b> (string email, string code)</td></tr>
+<tr class="memitem:a5bdd1460607577411002830db610a670" id="r_a5bdd1460607577411002830db610a670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bdd1460607577411002830db610a670">PostCustomer</a> (string username, string password)</td></tr>
+<tr class="memdesc:a5bdd1460607577411002830db610a670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post thông tin khách hàng lên csdl qua API.  <br /></td></tr>
+<tr class="separator:a5bdd1460607577411002830db610a670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef1f4536d01032713d9d432a0e8a48f" id="r_a5ef1f4536d01032713d9d432a0e8a48f"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ef1f4536d01032713d9d432a0e8a48f">sendVerificationCode</a> (string email, string code)</td></tr>
+<tr class="memdesc:a5ef1f4536d01032713d9d432a0e8a48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gửi mã xác minh đến email được chỉ định.  <br /></td></tr>
 <tr class="separator:a5ef1f4536d01032713d9d432a0e8a48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0261de619e7fbaabd154bbabd8c9368" id="r_af0261de619e7fbaabd154bbabd8c9368"><td class="memItemLeft" align="right" valign="top"><a id="af0261de619e7fbaabd154bbabd8c9368" name="af0261de619e7fbaabd154bbabd8c9368"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>output</b> (string message)</td></tr>
+<tr class="memitem:af0261de619e7fbaabd154bbabd8c9368" id="r_af0261de619e7fbaabd154bbabd8c9368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0261de619e7fbaabd154bbabd8c9368">output</a> (string message)</td></tr>
+<tr class="memdesc:af0261de619e7fbaabd154bbabd8c9368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Xuất thông báo.  <br /></td></tr>
 <tr class="separator:af0261de619e7fbaabd154bbabd8c9368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae8de7ddddb03e02d82883fbbbe3c88b2" id="r_ae8de7ddddb03e02d82883fbbbe3c88b2"><td class="memItemLeft" align="right" valign="top"><a id="ae8de7ddddb03e02d82883fbbbe3c88b2" name="ae8de7ddddb03e02d82883fbbbe3c88b2"></a>
-static string&#160;</td><td class="memItemRight" valign="bottom"><b>base64urlencodeNoPadding</b> (IBuffer buffer)</td></tr>
+<tr class="memitem:ae8de7ddddb03e02d82883fbbbe3c88b2" id="r_ae8de7ddddb03e02d82883fbbbe3c88b2"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8de7ddddb03e02d82883fbbbe3c88b2">base64urlencodeNoPadding</a> (IBuffer buffer)</td></tr>
+<tr class="memdesc:ae8de7ddddb03e02d82883fbbbe3c88b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mã hóa buffer thành chuỗi base64 URL-encoded không có padding.  <br /></td></tr>
 <tr class="separator:ae8de7ddddb03e02d82883fbbbe3c88b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af83c592eaf5d3bd13890a8c5f1213648" id="r_af83c592eaf5d3bd13890a8c5f1213648"><td class="memItemLeft" align="right" valign="top"><a id="af83c592eaf5d3bd13890a8c5f1213648" name="af83c592eaf5d3bd13890a8c5f1213648"></a>
-<a class="el" href="interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service.html">ILocalSettingsService</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_localSettingsService</b></td></tr>
+ILocalSettingsService&#160;</td><td class="memItemRight" valign="bottom"><b>_localSettingsService</b></td></tr>
 <tr class="separator:af83c592eaf5d3bd13890a8c5f1213648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aef953940280a610cabb03baf3ff942b5" id="r_aef953940280a610cabb03baf3ff942b5"><td class="memItemLeft" align="right" valign="top"><a id="aef953940280a610cabb03baf3ff942b5" name="aef953940280a610cabb03baf3ff942b5"></a>
 SolidColorBrush&#160;</td><td class="memItemRight" valign="bottom"><b>StatusColor</b><code> [get, set]</code></td></tr>
+<tr class="memdesc:aef953940280a610cabb03baf3ff942b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy hoặc đặt màu trạng thái. <br /></td></tr>
 <tr class="separator:aef953940280a610cabb03baf3ff942b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af263a972bd0d7aa29f137fdb511fac8f" id="r_af263a972bd0d7aa29f137fdb511fac8f"><td class="memItemLeft" align="right" valign="top"><a id="af263a972bd0d7aa29f137fdb511fac8f" name="af263a972bd0d7aa29f137fdb511fac8f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>RememberMe</b><code> [get, set]</code></td></tr>
+<tr class="memdesc:af263a972bd0d7aa29f137fdb511fac8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy hoặc đặt tùy chọn ghi nhớ đăng nhập. <br /></td></tr>
 <tr class="separator:af263a972bd0d7aa29f137fdb511fac8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae11c1c79cde29b99f81e527d5f84308a" id="r_ae11c1c79cde29b99f81e527d5f84308a"><td class="memItemLeft" align="right" valign="top"><a id="ae11c1c79cde29b99f81e527d5f84308a" name="ae11c1c79cde29b99f81e527d5f84308a"></a>
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>LoginCommandByGoogle</b><code> [get]</code></td></tr>
+<tr class="memdesc:ae11c1c79cde29b99f81e527d5f84308a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lệnh đăng nhập bằng Google. <br /></td></tr>
 <tr class="separator:ae11c1c79cde29b99f81e527d5f84308a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc3463f0e8e8a8e38c5119f416fe7ae" id="r_acdc3463f0e8e8a8e38c5119f416fe7ae"><td class="memItemLeft" align="right" valign="top"><a id="acdc3463f0e8e8a8e38c5119f416fe7ae" name="acdc3463f0e8e8a8e38c5119f416fe7ae"></a>
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>LoginCommandByUser</b><code> [get]</code></td></tr>
+<tr class="memdesc:acdc3463f0e8e8a8e38c5119f416fe7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lệnh đăng nhập bằng thông tin người dùng. <br /></td></tr>
 <tr class="separator:acdc3463f0e8e8a8e38c5119f416fe7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a276773e55e7d9552d4da0af819e84661" id="r_a276773e55e7d9552d4da0af819e84661"><td class="memItemLeft" align="right" valign="top"><a id="a276773e55e7d9552d4da0af819e84661" name="a276773e55e7d9552d4da0af819e84661"></a>
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>SignUpNavigateCommand</b><code> [get]</code></td></tr>
+<tr class="memdesc:a276773e55e7d9552d4da0af819e84661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lệnh điều hướng đến trang đăng ký. <br /></td></tr>
 <tr class="separator:a276773e55e7d9552d4da0af819e84661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5661b8029587f002fb59569d3ef3b3da" id="r_a5661b8029587f002fb59569d3ef3b3da"><td class="memItemLeft" align="right" valign="top"><a id="a5661b8029587f002fb59569d3ef3b3da" name="a5661b8029587f002fb59569d3ef3b3da"></a>
 ICommand&#160;</td><td class="memItemRight" valign="bottom"><b>ForgotPasswordProcessingCommand</b><code> [get]</code></td></tr>
+<tr class="memdesc:a5661b8029587f002fb59569d3ef3b3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lệnh xử lý quên mật khẩu. <br /></td></tr>
 <tr class="separator:a5661b8029587f002fb59569d3ef3b3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa101816780989645ac9873857f86aca5" id="r_aa101816780989645ac9873857f86aca5"><td class="memItemLeft" align="right" valign="top"><a id="aa101816780989645ac9873857f86aca5" name="aa101816780989645ac9873857f86aca5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnSignUpByUserNavigate</b> ()</td></tr>
+<tr class="memdesc:aa101816780989645ac9873857f86aca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lệnh điều hướng đến trang đăng ký. <br /></td></tr>
+<tr class="separator:aa101816780989645ac9873857f86aca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dbc36952ea3e0e51c4cf29f546d7d89" id="r_a3dbc36952ea3e0e51c4cf29f546d7d89"><td class="memItemLeft" align="right" valign="top"><a id="a3dbc36952ea3e0e51c4cf29f546d7d89" name="a3dbc36952ea3e0e51c4cf29f546d7d89"></a>
+async void&#160;</td><td class="memItemRight" valign="bottom"><b>OnLoginByUser</b> ()</td></tr>
+<tr class="memdesc:a3dbc36952ea3e0e51c4cf29f546d7d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Đăng nhập người dùng bằng thông tin đăng nhập. <br /></td></tr>
+<tr class="separator:a3dbc36952ea3e0e51c4cf29f546d7d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1a467a50a205a278c7e8fafc24553f" id="r_a5d1a467a50a205a278c7e8fafc24553f"><td class="memItemLeft" align="right" valign="top"><a id="a5d1a467a50a205a278c7e8fafc24553f" name="a5d1a467a50a205a278c7e8fafc24553f"></a>
+async void&#160;</td><td class="memItemRight" valign="bottom"><b>OnLoginByGoogle</b> ()</td></tr>
+<tr class="memdesc:a5d1a467a50a205a278c7e8fafc24553f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Đăng nhập người dùng bằng Google OAuth. <br /></td></tr>
+<tr class="separator:a5d1a467a50a205a278c7e8fafc24553f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22ac8094957bd0e93d58c2c145d48b4" id="r_ad22ac8094957bd0e93d58c2c145d48b4"><td class="memItemLeft" align="right" valign="top"><a id="ad22ac8094957bd0e93d58c2c145d48b4" name="ad22ac8094957bd0e93d58c2c145d48b4"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>ListenForOAuthCallback</b> ()</td></tr>
+<tr class="memdesc:ad22ac8094957bd0e93d58c2c145d48b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lắng nghe callback OAuth. <br /></td></tr>
+<tr class="separator:ad22ac8094957bd0e93d58c2c145d48b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b70b13c7a15005b68be392a670c5609" id="r_a2b70b13c7a15005b68be392a670c5609"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b70b13c7a15005b68be392a670c5609">ProcessingDataLogin</a> (string DataLogin)</td></tr>
+<tr class="memdesc:a2b70b13c7a15005b68be392a670c5609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Xử lý dữ liệu đăng nhập.  <br /></td></tr>
+<tr class="separator:a2b70b13c7a15005b68be392a670c5609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e118f83f1cf6954e41f3ce8835447e2" id="r_a9e118f83f1cf6954e41f3ce8835447e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e118f83f1cf6954e41f3ce8835447e2">CheckCustomerByGet</a> (string username, string password)</td></tr>
+<tr class="memdesc:a9e118f83f1cf6954e41f3ce8835447e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra khách hàng tồn tại bằng tên đăng nhập và mật khẩu.  <br /></td></tr>
+<tr class="separator:a9e118f83f1cf6954e41f3ce8835447e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92850fb424e7763c4dc523cdbe1b93f1" id="r_a92850fb424e7763c4dc523cdbe1b93f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92850fb424e7763c4dc523cdbe1b93f1">CheckCustomerHealthByUsername</a> (string username)</td></tr>
+<tr class="memdesc:a92850fb424e7763c4dc523cdbe1b93f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kiểm tra thông sức khỏe khách hàng tồn tại bằng tên đăng nhập.  <br /></td></tr>
+<tr class="separator:a92850fb424e7763c4dc523cdbe1b93f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35ff4c882b5ad1bce3cd92f6b53fb17" id="r_ac35ff4c882b5ad1bce3cd92f6b53fb17"><td class="memItemLeft" align="right" valign="top"><a id="ac35ff4c882b5ad1bce3cd92f6b53fb17" name="ac35ff4c882b5ad1bce3cd92f6b53fb17"></a>
+async void&#160;</td><td class="memItemRight" valign="bottom"><b>OnForgotPasswordProcessing</b> ()</td></tr>
+<tr class="memdesc:ac35ff4c882b5ad1bce3cd92f6b53fb17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Xử lý yêu cầu quên mật khẩu. <br /></td></tr>
+<tr class="separator:ac35ff4c882b5ad1bce3cd92f6b53fb17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a75f94a98f680942d4a5ed593c8bb3fe6" id="r_a75f94a98f680942d4a5ed593c8bb3fe6"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75f94a98f680942d4a5ed593c8bb3fe6">randomDataBase64url</a> (uint length)</td></tr>
+<tr class="memdesc:a75f94a98f680942d4a5ed593c8bb3fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tạo chuỗi base64 URL-encoded ngẫu nhiên.  <br /></td></tr>
+<tr class="separator:a75f94a98f680942d4a5ed593c8bb3fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f4ac970c6862d09b70bbdc73bb2b32" id="r_ae8f4ac970c6862d09b70bbdc73bb2b32"><td class="memItemLeft" align="right" valign="top">static IBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8f4ac970c6862d09b70bbdc73bb2b32">sha256</a> (string input)</td></tr>
+<tr class="memdesc:ae8f4ac970c6862d09b70bbdc73bb2b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tính toán hash SHA-256 của chuỗi đầu vào.  <br /></td></tr>
+<tr class="separator:ae8f4ac970c6862d09b70bbdc73bb2b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a24689dc0a7c6854825701743e1f3097d" id="r_a24689dc0a7c6854825701743e1f3097d"><td class="memItemLeft" align="right" valign="top"><a id="a24689dc0a7c6854825701743e1f3097d" name="a24689dc0a7c6854825701743e1f3097d"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>loginStatus</b></td></tr>
+<tr class="separator:a24689dc0a7c6854825701743e1f3097d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c597327e0e5214d5feedb28af2e040" id="r_a22c597327e0e5214d5feedb28af2e040"><td class="memItemLeft" align="right" valign="top"><a id="a22c597327e0e5214d5feedb28af2e040" name="a22c597327e0e5214d5feedb28af2e040"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>username</b></td></tr>
+<tr class="separator:a22c597327e0e5214d5feedb28af2e040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed57b0d721d3797c908178cb009c6387" id="r_aed57b0d721d3797c908178cb009c6387"><td class="memItemLeft" align="right" valign="top"><a id="aed57b0d721d3797c908178cb009c6387" name="aed57b0d721d3797c908178cb009c6387"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>password</b></td></tr>
+<tr class="separator:aed57b0d721d3797c908178cb009c6387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e91d2bc095c0cbea7ec65109ed18a7b" id="r_a2e91d2bc095c0cbea7ec65109ed18a7b"><td class="memItemLeft" align="right" valign="top"><a id="a2e91d2bc095c0cbea7ec65109ed18a7b" name="a2e91d2bc095c0cbea7ec65109ed18a7b"></a>
+readonly INavigationService&#160;</td><td class="memItemRight" valign="bottom"><b>_navigationService</b></td></tr>
+<tr class="separator:a2e91d2bc095c0cbea7ec65109ed18a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8b47b9a08aa2280a0f223af25dac5a" id="r_acc8b47b9a08aa2280a0f223af25dac5a"><td class="memItemLeft" align="right" valign="top"><a id="acc8b47b9a08aa2280a0f223af25dac5a" name="acc8b47b9a08aa2280a0f223af25dac5a"></a>
+readonly IDialogService&#160;</td><td class="memItemRight" valign="bottom"><b>_dialogService</b></td></tr>
+<tr class="separator:acc8b47b9a08aa2280a0f223af25dac5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e0319becbc4cec63fd0cdbf35b31ac" id="r_a74e0319becbc4cec63fd0cdbf35b31ac"><td class="memItemLeft" align="right" valign="top"><a id="a74e0319becbc4cec63fd0cdbf35b31ac" name="a74e0319becbc4cec63fd0cdbf35b31ac"></a>
+readonly IWindowService&#160;</td><td class="memItemRight" valign="bottom"><b>_windowService</b></td></tr>
+<tr class="separator:a74e0319becbc4cec63fd0cdbf35b31ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefff690cde40c7ac5755c606bfb8eede" id="r_aefff690cde40c7ac5755c606bfb8eede"><td class="memItemLeft" align="right" valign="top"><a id="aefff690cde40c7ac5755c606bfb8eede" name="aefff690cde40c7ac5755c606bfb8eede"></a>
+Customer&#160;</td><td class="memItemRight" valign="bottom"><b>customer</b></td></tr>
+<tr class="separator:aefff690cde40c7ac5755c606bfb8eede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc37362008475543fcb382fd241cd0a5" id="r_acc37362008475543fcb382fd241cd0a5"><td class="memItemLeft" align="right" valign="top"><a id="acc37362008475543fcb382fd241cd0a5" name="acc37362008475543fcb382fd241cd0a5"></a>
+UIElement?&#160;</td><td class="memItemRight" valign="bottom"><b>_shell</b> = null</td></tr>
+<tr class="separator:acc37362008475543fcb382fd241cd0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d2742705aa0d739cca9637dbb6ac44" id="r_a41d2742705aa0d739cca9637dbb6ac44"><td class="memItemLeft" align="right" valign="top"><a id="a41d2742705aa0d739cca9637dbb6ac44" name="a41d2742705aa0d739cca9637dbb6ac44"></a>
+SolidColorBrush&#160;</td><td class="memItemRight" valign="bottom"><b>_statusColor</b></td></tr>
+<tr class="separator:a41d2742705aa0d739cca9637dbb6ac44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accdf6b56a29ca4e178e05966e627ba4c" id="r_accdf6b56a29ca4e178e05966e627ba4c"><td class="memItemLeft" align="right" valign="top"><a id="accdf6b56a29ca4e178e05966e627ba4c" name="accdf6b56a29ca4e178e05966e627ba4c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>rememberMe</b></td></tr>
+<tr class="separator:accdf6b56a29ca4e178e05966e627ba4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a43abc4d7d17493814edbe9569f36c7be" id="r_a43abc4d7d17493814edbe9569f36c7be"><td class="memItemLeft" align="right" valign="top"><a id="a43abc4d7d17493814edbe9569f36c7be" name="a43abc4d7d17493814edbe9569f36c7be"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>clientID</b> = &quot;25264695175-026qgqsmvslrgn5gm2vj9gseu1ugf4ro.apps.googleusercontent.com&quot;</td></tr>
+<tr class="separator:a43abc4d7d17493814edbe9569f36c7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49aae42ac7ad2a7c1356c02d15158ba7" id="r_a49aae42ac7ad2a7c1356c02d15158ba7"><td class="memItemLeft" align="right" valign="top"><a id="a49aae42ac7ad2a7c1356c02d15158ba7" name="a49aae42ac7ad2a7c1356c02d15158ba7"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>clientSecret</b> = &quot;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&quot;</td></tr>
+<tr class="separator:a49aae42ac7ad2a7c1356c02d15158ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b68f6bfb5c8a6b3f538b691fc5282c" id="r_ac5b68f6bfb5c8a6b3f538b691fc5282c"><td class="memItemLeft" align="right" valign="top"><a id="ac5b68f6bfb5c8a6b3f538b691fc5282c" name="ac5b68f6bfb5c8a6b3f538b691fc5282c"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>redirectURI</b> = &quot;http://localhost:8080&quot;</td></tr>
+<tr class="separator:ac5b68f6bfb5c8a6b3f538b691fc5282c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b392183aa29cb417f927f840b6c13f0" id="r_a1b392183aa29cb417f927f840b6c13f0"><td class="memItemLeft" align="right" valign="top"><a id="a1b392183aa29cb417f927f840b6c13f0" name="a1b392183aa29cb417f927f840b6c13f0"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>authorizationEndpoint</b> = &quot;https://accounts.google.com/o/oauth2/v2/auth&quot;</td></tr>
+<tr class="separator:a1b392183aa29cb417f927f840b6c13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e460c32cc50103cfb910210276fcbe" id="r_a55e460c32cc50103cfb910210276fcbe"><td class="memItemLeft" align="right" valign="top"><a id="a55e460c32cc50103cfb910210276fcbe" name="a55e460c32cc50103cfb910210276fcbe"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>tokenEndpoint</b> = &quot;https://oauth2.googleapis.com/token&quot;</td></tr>
+<tr class="separator:a55e460c32cc50103cfb910210276fcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434e987adbbc03461b6940e22e751612" id="r_a434e987adbbc03461b6940e22e751612"><td class="memItemLeft" align="right" valign="top"><a id="a434e987adbbc03461b6940e22e751612" name="a434e987adbbc03461b6940e22e751612"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>userInfoEndpoint</b> = &quot;https://www.googleapis.com/oauth2/v3/userinfo&quot;</td></tr>
+<tr class="separator:a434e987adbbc03461b6940e22e751612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ViewModel để xử lý các hoạt động đăng nhập. </p>
+<p>ViewModel này quản lý quá trình đăng nhập, bao gồm xác thực người dùng, xử lý OAuth và điều hướng. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae8de7ddddb03e02d82883fbbbe3c88b2" name="ae8de7ddddb03e02d82883fbbbe3c88b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8de7ddddb03e02d82883fbbbe3c88b2">&#9670;&#160;</a></span>base64urlencodeNoPadding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string Gyminize.ViewModels.SigninViewmodel.base64urlencodeNoPadding </td>
+          <td>(</td>
+          <td class="paramtype">IBuffer</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mã hóa buffer thành chuỗi base64 URL-encoded không có padding. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer để mã hóa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Chuỗi đã được mã hóa. </dd></dl>
+
+</div>
+</div>
+<a id="a9e118f83f1cf6954e41f3ce8835447e2" name="a9e118f83f1cf6954e41f3ce8835447e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e118f83f1cf6954e41f3ce8835447e2">&#9670;&#160;</a></span>CheckCustomerByGet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Gyminize.ViewModels.SigninViewmodel.CheckCustomerByGet </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kiểm tra khách hàng tồn tại bằng tên đăng nhập và mật khẩu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Tên đăng nhập. </td></tr>
+    <tr><td class="paramname">password</td><td>Mật khẩu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True nếu khách hàng tồn tại, ngược lại false. </dd></dl>
+
+</div>
+</div>
+<a id="a92850fb424e7763c4dc523cdbe1b93f1" name="a92850fb424e7763c4dc523cdbe1b93f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92850fb424e7763c4dc523cdbe1b93f1">&#9670;&#160;</a></span>CheckCustomerHealthByUsername()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Gyminize.ViewModels.SigninViewmodel.CheckCustomerHealthByUsername </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kiểm tra thông sức khỏe khách hàng tồn tại bằng tên đăng nhập. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Tên đăng nhập. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True nếu dữ liệu sức khỏe khách hàng tồn tại, ngược lại false </dd></dl>
+
+</div>
+</div>
+<a id="a533e224e19af78ccaf4f925ccf2e87bd" name="a533e224e19af78ccaf4f925ccf2e87bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a533e224e19af78ccaf4f925ccf2e87bd">&#9670;&#160;</a></span>ExchangeCodeForTokensAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.SigninViewmodel.ExchangeCodeForTokensAsync </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>codeVerifier</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trao đổi mã ủy quyền lấy token. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Mã ủy quyền. </td></tr>
+    <tr><td class="paramname">codeVerifier</td><td>Mã xác minh. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Một task đại diện cho hoạt động bất đồng bộ. </dd></dl>
+
+</div>
+</div>
+<a id="af0261de619e7fbaabd154bbabd8c9368" name="af0261de619e7fbaabd154bbabd8c9368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0261de619e7fbaabd154bbabd8c9368">&#9670;&#160;</a></span>output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.SigninViewmodel.output </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Xuất thông báo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Thông báo cần xuất. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5bdd1460607577411002830db610a670" name="a5bdd1460607577411002830db610a670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bdd1460607577411002830db610a670">&#9670;&#160;</a></span>PostCustomer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.SigninViewmodel.PostCustomer </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Post thông tin khách hàng lên csdl qua API. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Tên đăng nhập. </td></tr>
+    <tr><td class="paramname">password</td><td>Mật khẩu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b70b13c7a15005b68be392a670c5609" name="a2b70b13c7a15005b68be392a670c5609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b70b13c7a15005b68be392a670c5609">&#9670;&#160;</a></span>ProcessingDataLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void Gyminize.ViewModels.SigninViewmodel.ProcessingDataLogin </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>DataLogin</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Xử lý dữ liệu đăng nhập. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DataLogin</td><td>Dữ liệu đăng nhập. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a75f94a98f680942d4a5ed593c8bb3fe6" name="a75f94a98f680942d4a5ed593c8bb3fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f94a98f680942d4a5ed593c8bb3fe6">&#9670;&#160;</a></span>randomDataBase64url()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string Gyminize.ViewModels.SigninViewmodel.randomDataBase64url </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>length</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tạo chuỗi base64 URL-encoded ngẫu nhiên. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Độ dài của chuỗi. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Chuỗi đã được tạo. </dd></dl>
+
+</div>
+</div>
+<a id="a5ef1f4536d01032713d9d432a0e8a48f" name="a5ef1f4536d01032713d9d432a0e8a48f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef1f4536d01032713d9d432a0e8a48f">&#9670;&#160;</a></span>sendVerificationCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void Gyminize.ViewModels.SigninViewmodel.sendVerificationCode </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gửi mã xác minh đến email được chỉ định. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Địa chỉ email. </td></tr>
+    <tr><td class="paramname">code</td><td>Mã xác minh </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8f4ac970c6862d09b70bbdc73bb2b32" name="ae8f4ac970c6862d09b70bbdc73bb2b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f4ac970c6862d09b70bbdc73bb2b32">&#9670;&#160;</a></span>sha256()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IBuffer Gyminize.ViewModels.SigninViewmodel.sha256 </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tính toán hash SHA-256 của chuỗi đầu vào. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Chuỗi đầu vào. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Hash dưới dạng IBuffer. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize/ViewModels/<b>SigninViewmodel.cs</b></li>
 </ul>

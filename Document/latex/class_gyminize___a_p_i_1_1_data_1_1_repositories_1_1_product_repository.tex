@@ -1,17 +1,80 @@
 \doxysection{Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Product\+Repository Class Reference}
 \hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository}{}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository}\index{Gyminize\_API.Data.Repositories.ProductRepository@{Gyminize\_API.Data.Repositories.ProductRepository}}
+
+
+Lớp Repository để quản lý các thao tác với sản phẩm (Product) trong cơ sở dữ liệu.  
+
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a787e9b6a1e00680d4abb33156cabebef}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a787e9b6a1e00680d4abb33156cabebef} 
-{\bfseries Product\+Repository} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} context)
+\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a787e9b6a1e00680d4abb33156cabebef}{Product\+Repository}} (\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} context)
+\begin{DoxyCompactList}\small\item\em Khởi tạo một instance mới của lớp \doxylink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository}{Product\+Repository} với context cơ sở dữ liệu. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_product}{Product}} $>$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a0e18dde2b66cfeb322510a7b4f6f4ab9}{Getall\+Product}} ()
+\begin{DoxyCompactList}\small\item\em Lấy danh sách tất cả các sản phẩm từ cơ sở dữ liệu. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_product}{Product}} $>$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_aa7c3b3b56ed21fd59a9bc3aed9277fd8}{Get\+All\+Product\+By\+Category}} (string category\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Lấy danh sách sản phẩm theo danh mục (category) từ cơ sở dữ liệu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a0e18dde2b66cfeb322510a7b4f6f4ab9}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a0e18dde2b66cfeb322510a7b4f6f4ab9} 
-List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_product}{Product}} $>$ {\bfseries Getall\+Product} ()
-\item 
-\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_aa7c3b3b56ed21fd59a9bc3aed9277fd8}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_aa7c3b3b56ed21fd59a9bc3aed9277fd8} 
-List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_product}{Product}} $>$ {\bfseries Get\+All\+Product\+By\+Category} (string category\+\_\+name)
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_ac740db917ee770eb1ad45d22289346b0}\label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_ac740db917ee770eb1ad45d22289346b0} 
+readonly \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}} {\bfseries \+\_\+context}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lớp Repository để quản lý các thao tác với sản phẩm (Product) trong cơ sở dữ liệu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a787e9b6a1e00680d4abb33156cabebef}\index{Gyminize\_API.Data.Repositories.ProductRepository@{Gyminize\_API.Data.Repositories.ProductRepository}!ProductRepository@{ProductRepository}}
+\index{ProductRepository@{ProductRepository}!Gyminize\_API.Data.Repositories.ProductRepository@{Gyminize\_API.Data.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{ProductRepository()}{ProductRepository()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a787e9b6a1e00680d4abb33156cabebef} 
+Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Product\+Repository.\+Product\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_entity_database_context}{Entity\+Database\+Context}}}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo một instance mới của lớp \doxylink{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository}{Product\+Repository} với context cơ sở dữ liệu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Context cơ sở dữ liệu để tương tác với bảng sản phẩm.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a0e18dde2b66cfeb322510a7b4f6f4ab9}\index{Gyminize\_API.Data.Repositories.ProductRepository@{Gyminize\_API.Data.Repositories.ProductRepository}!GetallProduct@{GetallProduct}}
+\index{GetallProduct@{GetallProduct}!Gyminize\_API.Data.Repositories.ProductRepository@{Gyminize\_API.Data.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetallProduct()}{GetallProduct()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_a0e18dde2b66cfeb322510a7b4f6f4ab9} 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_product}{Product}} $>$ Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Product\+Repository.\+Getall\+Product (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy danh sách tất cả các sản phẩm từ cơ sở dữ liệu. 
+
+\begin{DoxyReturn}{Returns}
+Danh sách các sản phẩm.
+\end{DoxyReturn}
+\Hypertarget{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_aa7c3b3b56ed21fd59a9bc3aed9277fd8}\index{Gyminize\_API.Data.Repositories.ProductRepository@{Gyminize\_API.Data.Repositories.ProductRepository}!GetAllProductByCategory@{GetAllProductByCategory}}
+\index{GetAllProductByCategory@{GetAllProductByCategory}!Gyminize\_API.Data.Repositories.ProductRepository@{Gyminize\_API.Data.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetAllProductByCategory()}{GetAllProductByCategory()}}
+{\footnotesize\ttfamily \label{class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_product_repository_aa7c3b3b56ed21fd59a9bc3aed9277fd8} 
+List$<$ \mbox{\hyperlink{class_gyminize___a_p_i_1_1_data_1_1_model_1_1_product}{Product}} $>$ Gyminize\+\_\+\+API.\+Data.\+Repositories.\+Product\+Repository.\+Get\+All\+Product\+By\+Category (\begin{DoxyParamCaption}\item[{string}]{category\+\_\+name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lấy danh sách sản phẩm theo danh mục (category) từ cơ sở dữ liệu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category\+\_\+name} & Tên danh mục cần tìm sản phẩm.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Danh sách các sản phẩm thuộc danh mục đã cho.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

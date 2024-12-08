@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -92,10 +91,14 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize___a_p_i_1_1_controllers_1_1_payment_controller-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize_API.Controllers.PaymentController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Controller quản lý các hoạt động liên quan đến thanh toán, bao gồm lấy thông tin thanh toán theo ID đơn hàng và tạo thanh toán mới.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize_API.Controllers.PaymentController:</div>
 <div class="dyncontent">
@@ -105,16 +108,127 @@ Inheritance diagram for Gyminize_API.Controllers.PaymentController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa19759c2c863aeda7ef1f03c2978a5ac" id="r_aa19759c2c863aeda7ef1f03c2978a5ac"><td class="memItemLeft" align="right" valign="top"><a id="aa19759c2c863aeda7ef1f03c2978a5ac" name="aa19759c2c863aeda7ef1f03c2978a5ac"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PaymentController</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_payment_repository.html">PaymentRepository</a> paymentRepository)</td></tr>
+<tr class="memitem:aa19759c2c863aeda7ef1f03c2978a5ac" id="r_aa19759c2c863aeda7ef1f03c2978a5ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa19759c2c863aeda7ef1f03c2978a5ac">PaymentController</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_payment_repository.html">PaymentRepository</a> paymentRepository)</td></tr>
+<tr class="memdesc:aa19759c2c863aeda7ef1f03c2978a5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo controller với repository để quản lý các hoạt động thanh toán.  <br /></td></tr>
 <tr class="separator:aa19759c2c863aeda7ef1f03c2978a5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44da48fb9fb950dbc5254ae3a5d4490" id="r_ae44da48fb9fb950dbc5254ae3a5d4490"><td class="memItemLeft" align="right" valign="top"><a id="ae44da48fb9fb950dbc5254ae3a5d4490" name="ae44da48fb9fb950dbc5254ae3a5d4490"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>GetPaymentByOrderId</b> (int order_id)</td></tr>
+<tr class="memitem:ae44da48fb9fb950dbc5254ae3a5d4490" id="r_ae44da48fb9fb950dbc5254ae3a5d4490"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae44da48fb9fb950dbc5254ae3a5d4490">GetPaymentByOrderId</a> (int order_id)</td></tr>
+<tr class="memdesc:ae44da48fb9fb950dbc5254ae3a5d4490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy thông tin thanh toán dựa trên ID đơn hàng.  <br /></td></tr>
 <tr class="separator:ae44da48fb9fb950dbc5254ae3a5d4490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6136dca35c4938f99f263ff51d006da1" id="r_a6136dca35c4938f99f263ff51d006da1"><td class="memItemLeft" align="right" valign="top"><a id="a6136dca35c4938f99f263ff51d006da1" name="a6136dca35c4938f99f263ff51d006da1"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>AddPayment</b> ([FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_payment.html">Payment</a> payment)</td></tr>
+<tr class="memitem:a6136dca35c4938f99f263ff51d006da1" id="r_a6136dca35c4938f99f263ff51d006da1"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6136dca35c4938f99f263ff51d006da1">AddPayment</a> ([FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_payment.html">Payment</a> payment)</td></tr>
+<tr class="memdesc:a6136dca35c4938f99f263ff51d006da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tạo một thanh toán mới.  <br /></td></tr>
 <tr class="separator:a6136dca35c4938f99f263ff51d006da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a74a01147fa09ceb6d5c31182ed142b3c" id="r_a74a01147fa09ceb6d5c31182ed142b3c"><td class="memItemLeft" align="right" valign="top"><a id="a74a01147fa09ceb6d5c31182ed142b3c" name="a74a01147fa09ceb6d5c31182ed142b3c"></a>
+readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_payment_repository.html">PaymentRepository</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_paymentRepository</b></td></tr>
+<tr class="separator:a74a01147fa09ceb6d5c31182ed142b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Controller quản lý các hoạt động liên quan đến thanh toán, bao gồm lấy thông tin thanh toán theo ID đơn hàng và tạo thanh toán mới. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa19759c2c863aeda7ef1f03c2978a5ac" name="aa19759c2c863aeda7ef1f03c2978a5ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19759c2c863aeda7ef1f03c2978a5ac">&#9670;&#160;</a></span>PaymentController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize_API.Controllers.PaymentController.PaymentController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_payment_repository.html">PaymentRepository</a></td>          <td class="paramname"><span class="paramname"><em>paymentRepository</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Khởi tạo controller với repository để quản lý các hoạt động thanh toán. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paymentRepository</td><td>Repository chứa các phương thức thao tác với dữ liệu thanh toán</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6136dca35c4938f99f263ff51d006da1" name="a6136dca35c4938f99f263ff51d006da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6136dca35c4938f99f263ff51d006da1">&#9670;&#160;</a></span>AddPayment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.PaymentController.AddPayment </td>
+          <td>(</td>
+          <td class="paramtype">[FromBody] <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_payment.html">Payment</a></td>          <td class="paramname"><span class="paramname"><em>payment</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tạo một thanh toán mới. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payment</td><td>Thông tin thanh toán cần thêm vào hệ thống</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về thông tin thanh toán đã được tạo nếu thành công, hoặc lỗi nếu có vấn đề xảy ra</dd></dl>
+
+</div>
+</div>
+<a id="ae44da48fb9fb950dbc5254ae3a5d4490" name="ae44da48fb9fb950dbc5254ae3a5d4490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae44da48fb9fb950dbc5254ae3a5d4490">&#9670;&#160;</a></span>GetPaymentByOrderId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.PaymentController.GetPaymentByOrderId </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>order_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lấy thông tin thanh toán dựa trên ID đơn hàng. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">order_id</td><td>ID đơn hàng cần lấy thông tin thanh toán</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về thông tin thanh toán nếu tìm thấy, hoặc trả về lỗi 404 nếu không tìm thấy</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Controllers/<b>PaymentController.cs</b></li>
 </ul>

@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -92,10 +91,14 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize___a_p_i_1_1_controllers_1_1_dailydiary_controller-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize_API.Controllers.DailydiaryController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Controller để quản lý các hoạt động liên quan đến nhật ký hàng ngày (Daily Diary). Các hành động trong controller này cho phép truy cập, tạo mới và lấy thông tin nhật ký hàng ngày.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize_API.Controllers.DailydiaryController:</div>
 <div class="dyncontent">
@@ -105,19 +108,163 @@ Inheritance diagram for Gyminize_API.Controllers.DailydiaryController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a49c98040092b0cf14dec60b193d5e643" id="r_a49c98040092b0cf14dec60b193d5e643"><td class="memItemLeft" align="right" valign="top"><a id="a49c98040092b0cf14dec60b193d5e643" name="a49c98040092b0cf14dec60b193d5e643"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DailydiaryController</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository.html">DailydiaryRepository</a> dailyDiaryRepository)</td></tr>
+<tr class="memitem:a49c98040092b0cf14dec60b193d5e643" id="r_a49c98040092b0cf14dec60b193d5e643"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49c98040092b0cf14dec60b193d5e643">DailydiaryController</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository.html">DailydiaryRepository</a> dailyDiaryRepository)</td></tr>
+<tr class="memdesc:a49c98040092b0cf14dec60b193d5e643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo controller với repository để quản lý nhật ký hàng ngày.  <br /></td></tr>
 <tr class="separator:a49c98040092b0cf14dec60b193d5e643"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44fc3f68315f14501eeeedaf8f5b5802" id="r_a44fc3f68315f14501eeeedaf8f5b5802"><td class="memItemLeft" align="right" valign="top"><a id="a44fc3f68315f14501eeeedaf8f5b5802" name="a44fc3f68315f14501eeeedaf8f5b5802"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllDailyDiary</b> ()</td></tr>
+<tr class="memitem:a44fc3f68315f14501eeeedaf8f5b5802" id="r_a44fc3f68315f14501eeeedaf8f5b5802"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44fc3f68315f14501eeeedaf8f5b5802">GetAllDailyDiary</a> ()</td></tr>
+<tr class="memdesc:a44fc3f68315f14501eeeedaf8f5b5802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy tất cả các nhật ký hàng ngày từ cơ sở dữ liệu.  <br /></td></tr>
 <tr class="separator:a44fc3f68315f14501eeeedaf8f5b5802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c0be219ac664264f3aa17a5dff1bc18" id="r_a6c0be219ac664264f3aa17a5dff1bc18"><td class="memItemLeft" align="right" valign="top"><a id="a6c0be219ac664264f3aa17a5dff1bc18" name="a6c0be219ac664264f3aa17a5dff1bc18"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>GetDailydiaryByIdCustomer</b> (int customer_id, DateTime day)</td></tr>
+<tr class="memitem:a6c0be219ac664264f3aa17a5dff1bc18" id="r_a6c0be219ac664264f3aa17a5dff1bc18"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c0be219ac664264f3aa17a5dff1bc18">GetDailydiaryByIdCustomer</a> (int customer_id, DateTime day)</td></tr>
+<tr class="memdesc:a6c0be219ac664264f3aa17a5dff1bc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy nhật ký hàng ngày của khách hàng theo ID và ngày cụ thể.  <br /></td></tr>
 <tr class="separator:a6c0be219ac664264f3aa17a5dff1bc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aca0523b45ff2ccd6d10e94b5d1f4c1" id="r_a7aca0523b45ff2ccd6d10e94b5d1f4c1"><td class="memItemLeft" align="right" valign="top"><a id="a7aca0523b45ff2ccd6d10e94b5d1f4c1" name="a7aca0523b45ff2ccd6d10e94b5d1f4c1"></a>
-IActionResult&#160;</td><td class="memItemRight" valign="bottom"><b>AddDailyDiary</b> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary.html">Dailydiary</a> dailyDiary)</td></tr>
+<tr class="memitem:a7aca0523b45ff2ccd6d10e94b5d1f4c1" id="r_a7aca0523b45ff2ccd6d10e94b5d1f4c1"><td class="memItemLeft" align="right" valign="top">IActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aca0523b45ff2ccd6d10e94b5d1f4c1">AddDailyDiary</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary.html">Dailydiary</a> dailyDiary)</td></tr>
+<tr class="memdesc:a7aca0523b45ff2ccd6d10e94b5d1f4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thêm một nhật ký hàng ngày mới vào cơ sở dữ liệu.  <br /></td></tr>
 <tr class="separator:a7aca0523b45ff2ccd6d10e94b5d1f4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a862c63dbe84bf690c30e9112403ccc59" id="r_a862c63dbe84bf690c30e9112403ccc59"><td class="memItemLeft" align="right" valign="top"><a id="a862c63dbe84bf690c30e9112403ccc59" name="a862c63dbe84bf690c30e9112403ccc59"></a>
+readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository.html">DailydiaryRepository</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_dailyDiaryRepository</b></td></tr>
+<tr class="separator:a862c63dbe84bf690c30e9112403ccc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Controller để quản lý các hoạt động liên quan đến nhật ký hàng ngày (Daily Diary). Các hành động trong controller này cho phép truy cập, tạo mới và lấy thông tin nhật ký hàng ngày. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a49c98040092b0cf14dec60b193d5e643" name="a49c98040092b0cf14dec60b193d5e643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c98040092b0cf14dec60b193d5e643">&#9670;&#160;</a></span>DailydiaryController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize_API.Controllers.DailydiaryController.DailydiaryController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_dailydiary_repository.html">DailydiaryRepository</a></td>          <td class="paramname"><span class="paramname"><em>dailyDiaryRepository</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Khởi tạo controller với repository để quản lý nhật ký hàng ngày. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dailyDiaryRepository</td><td>Repository chứa các phương thức thao tác với dữ liệu nhật ký hàng ngày</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7aca0523b45ff2ccd6d10e94b5d1f4c1" name="a7aca0523b45ff2ccd6d10e94b5d1f4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aca0523b45ff2ccd6d10e94b5d1f4c1">&#9670;&#160;</a></span>AddDailyDiary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.DailydiaryController.AddDailyDiary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_dailydiary.html">Dailydiary</a></td>          <td class="paramname"><span class="paramname"><em>dailyDiary</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thêm một nhật ký hàng ngày mới vào cơ sở dữ liệu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dailyDiary</td><td>Đối tượng nhật ký hàng ngày cần thêm vào</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về đối tượng nhật ký hàng ngày mới được tạo</dd></dl>
+
+</div>
+</div>
+<a id="a44fc3f68315f14501eeeedaf8f5b5802" name="a44fc3f68315f14501eeeedaf8f5b5802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44fc3f68315f14501eeeedaf8f5b5802">&#9670;&#160;</a></span>GetAllDailyDiary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.DailydiaryController.GetAllDailyDiary </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lấy tất cả các nhật ký hàng ngày từ cơ sở dữ liệu. </p>
+<dl class="section return"><dt>Returns</dt><dd>Danh sách tất cả các nhật ký hàng ngày</dd></dl>
+
+</div>
+</div>
+<a id="a6c0be219ac664264f3aa17a5dff1bc18" name="a6c0be219ac664264f3aa17a5dff1bc18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0be219ac664264f3aa17a5dff1bc18">&#9670;&#160;</a></span>GetDailydiaryByIdCustomer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IActionResult Gyminize_API.Controllers.DailydiaryController.GetDailydiaryByIdCustomer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customer_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lấy nhật ký hàng ngày của khách hàng theo ID và ngày cụ thể. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customer_id</td><td>ID khách hàng</td></tr>
+    <tr><td class="paramname">day</td><td>Ngày cần lấy nhật ký</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về nhật ký hàng ngày của khách hàng nếu tồn tại, hoặc lỗi 404 nếu không tìm thấy</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Controllers/<b>DailydiaryController.cs</b></li>
 </ul>

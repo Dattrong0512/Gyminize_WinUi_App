@@ -24,11 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="iconapp.png"/></td>
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Đây là mô tả về các hàm và lớp trong project này</div>
+   <div id="projectbrief">Document cho project Gyminize</div>
   </td>
  </tr>
  </tbody>
@@ -92,6 +91,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gyminize_1_1_tests_1_1_m_s_test_1_1_view_model_1_1_nutrition_view_model_test-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest Class Reference</div></div>
 </div><!--header-->
@@ -99,181 +99,51 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e7b3e3ac5ab83815815c216745b1761" id="r_a8e7b3e3ac5ab83815815c216745b1761"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e7b3e3ac5ab83815815c216745b1761">Setup</a> ()</td></tr>
+<tr class="memitem:a8e7b3e3ac5ab83815815c216745b1761" id="r_a8e7b3e3ac5ab83815815c216745b1761"><td class="memItemLeft" align="right" valign="top"><a id="a8e7b3e3ac5ab83815815c216745b1761" name="a8e7b3e3ac5ab83815815c216745b1761"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Setup</b> ()</td></tr>
 <tr class="separator:a8e7b3e3ac5ab83815815c216745b1761"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a895fb5cd82a1c41d376d607fb9e6ef" id="r_a2a895fb5cd82a1c41d376d607fb9e6ef"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a895fb5cd82a1c41d376d607fb9e6ef">LoadDailyDiary_ShouldPopulateItems_WhenApiReturnsData</a> ()</td></tr>
+<tr class="memitem:a2a895fb5cd82a1c41d376d607fb9e6ef" id="r_a2a895fb5cd82a1c41d376d607fb9e6ef"><td class="memItemLeft" align="right" valign="top"><a id="a2a895fb5cd82a1c41d376d607fb9e6ef" name="a2a895fb5cd82a1c41d376d607fb9e6ef"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>LoadDailyDiary_ShouldPopulateItems_WhenApiReturnsData</b> ()</td></tr>
 <tr class="separator:a2a895fb5cd82a1c41d376d607fb9e6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad18dd32d8d71086ca285a9659ce5cd59" id="r_ad18dd32d8d71086ca285a9659ce5cd59"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad18dd32d8d71086ca285a9659ce5cd59">LoadDailyDiary_ShouldShowErrorDialog_WhenApiThrowsException</a> ()</td></tr>
+<tr class="memitem:ad18dd32d8d71086ca285a9659ce5cd59" id="r_ad18dd32d8d71086ca285a9659ce5cd59"><td class="memItemLeft" align="right" valign="top"><a id="ad18dd32d8d71086ca285a9659ce5cd59" name="ad18dd32d8d71086ca285a9659ce5cd59"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>LoadDailyDiary_ShouldShowErrorDialog_WhenApiThrowsException</b> ()</td></tr>
 <tr class="separator:ad18dd32d8d71086ca285a9659ce5cd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa99b4c21f09ee925aaed7e029f12d3e5" id="r_aa99b4c21f09ee925aaed7e029f12d3e5"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa99b4c21f09ee925aaed7e029f12d3e5">LoadFoodLibrary_ShouldPopulateItems_WhenApiReturnsData</a> ()</td></tr>
+<tr class="memitem:aa99b4c21f09ee925aaed7e029f12d3e5" id="r_aa99b4c21f09ee925aaed7e029f12d3e5"><td class="memItemLeft" align="right" valign="top"><a id="aa99b4c21f09ee925aaed7e029f12d3e5" name="aa99b4c21f09ee925aaed7e029f12d3e5"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFoodLibrary_ShouldPopulateItems_WhenApiReturnsData</b> ()</td></tr>
 <tr class="separator:aa99b4c21f09ee925aaed7e029f12d3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affe5a760ae2f37b526907a79bf039678" id="r_affe5a760ae2f37b526907a79bf039678"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affe5a760ae2f37b526907a79bf039678">AddFoodToMeal_ShouldCallApiAndUpdateData_WhenValidMealIsSelected</a> ()</td></tr>
+<tr class="memitem:affe5a760ae2f37b526907a79bf039678" id="r_affe5a760ae2f37b526907a79bf039678"><td class="memItemLeft" align="right" valign="top"><a id="affe5a760ae2f37b526907a79bf039678" name="affe5a760ae2f37b526907a79bf039678"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>AddFoodToMeal_ShouldCallApiAndUpdateData_WhenValidMealIsSelected</b> ()</td></tr>
 <tr class="separator:affe5a760ae2f37b526907a79bf039678"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63e1f7712cd6af020473349f198a2c54" id="r_a63e1f7712cd6af020473349f198a2c54"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63e1f7712cd6af020473349f198a2c54">AddFoodToMeal_ShouldShowErrorDialog_WhenApiPutThrowsException</a> ()</td></tr>
+<tr class="memitem:a63e1f7712cd6af020473349f198a2c54" id="r_a63e1f7712cd6af020473349f198a2c54"><td class="memItemLeft" align="right" valign="top"><a id="a63e1f7712cd6af020473349f198a2c54" name="a63e1f7712cd6af020473349f198a2c54"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>AddFoodToMeal_ShouldShowErrorDialog_WhenApiPutThrowsException</b> ()</td></tr>
 <tr class="separator:a63e1f7712cd6af020473349f198a2c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7ce40c08ac408b6567c2d4d07cc8d34" id="r_ab7ce40c08ac408b6567c2d4d07cc8d34"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7ce40c08ac408b6567c2d4d07cc8d34">DeleteFoodFromMeal_ShouldRemoveItemFromList_WhenApiCallSucceeds</a> ()</td></tr>
+<tr class="memitem:ab7ce40c08ac408b6567c2d4d07cc8d34" id="r_ab7ce40c08ac408b6567c2d4d07cc8d34"><td class="memItemLeft" align="right" valign="top"><a id="ab7ce40c08ac408b6567c2d4d07cc8d34" name="ab7ce40c08ac408b6567c2d4d07cc8d34"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>DeleteFoodFromMeal_ShouldRemoveItemFromList_WhenApiCallSucceeds</b> ()</td></tr>
 <tr class="separator:ab7ce40c08ac408b6567c2d4d07cc8d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e1b277aefe337ac2d8fd8e9b96cc628" id="r_a0e1b277aefe337ac2d8fd8e9b96cc628"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e1b277aefe337ac2d8fd8e9b96cc628">DeleteFoodFromMeal_ShouldShowErrorDialog_WhenApiDeleteThrowsException</a> ()</td></tr>
+<tr class="memitem:a0e1b277aefe337ac2d8fd8e9b96cc628" id="r_a0e1b277aefe337ac2d8fd8e9b96cc628"><td class="memItemLeft" align="right" valign="top"><a id="a0e1b277aefe337ac2d8fd8e9b96cc628" name="a0e1b277aefe337ac2d8fd8e9b96cc628"></a>
+async Task&#160;</td><td class="memItemRight" valign="bottom"><b>DeleteFoodFromMeal_ShouldShowErrorDialog_WhenApiDeleteThrowsException</b> ()</td></tr>
 <tr class="separator:a0e1b277aefe337ac2d8fd8e9b96cc628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae49ea20256d459c4c7ba952440e3dacc" id="r_ae49ea20256d459c4c7ba952440e3dacc"><td class="memItemLeft" align="right" valign="top"><a id="ae49ea20256d459c4c7ba952440e3dacc" name="ae49ea20256d459c4c7ba952440e3dacc"></a>
+Mock&lt; ILocalSettingsService &gt;?&#160;</td><td class="memItemRight" valign="bottom"><b>_mockLocalSettingsService</b></td></tr>
+<tr class="separator:ae49ea20256d459c4c7ba952440e3dacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35a6437a8ccd8dda61c6524a72e113b" id="r_ae35a6437a8ccd8dda61c6524a72e113b"><td class="memItemLeft" align="right" valign="top"><a id="ae35a6437a8ccd8dda61c6524a72e113b" name="ae35a6437a8ccd8dda61c6524a72e113b"></a>
+Mock&lt; IDialogService &gt;?&#160;</td><td class="memItemRight" valign="bottom"><b>_mockDialogService</b></td></tr>
+<tr class="separator:ae35a6437a8ccd8dda61c6524a72e113b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae90fb56222c163760bb5b4bcb0542f6d" id="r_ae90fb56222c163760bb5b4bcb0542f6d"><td class="memItemLeft" align="right" valign="top"><a id="ae90fb56222c163760bb5b4bcb0542f6d" name="ae90fb56222c163760bb5b4bcb0542f6d"></a>
+Mock&lt; INavigationService &gt;?&#160;</td><td class="memItemRight" valign="bottom"><b>_mockNavigationService</b></td></tr>
+<tr class="separator:ae90fb56222c163760bb5b4bcb0542f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee7321a8eb3861ccbe4cfbe281f428d1" id="r_aee7321a8eb3861ccbe4cfbe281f428d1"><td class="memItemLeft" align="right" valign="top"><a id="aee7321a8eb3861ccbe4cfbe281f428d1" name="aee7321a8eb3861ccbe4cfbe281f428d1"></a>
+Mock&lt; IApiServicesClient &gt;?&#160;</td><td class="memItemRight" valign="bottom"><b>_mockApiServicesClient</b></td></tr>
+<tr class="separator:aee7321a8eb3861ccbe4cfbe281f428d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcd999c3aaaa3fcec340c6c0204047e" id="r_a2fcd999c3aaaa3fcec340c6c0204047e"><td class="memItemLeft" align="right" valign="top"><a id="a2fcd999c3aaaa3fcec340c6c0204047e" name="a2fcd999c3aaaa3fcec340c6c0204047e"></a>
+<a class="el" href="class_gyminize_1_1_view_models_1_1_nutritions_view_model.html">NutritionsViewModel</a>?&#160;</td><td class="memItemRight" valign="bottom"><b>_viewModel</b></td></tr>
+<tr class="separator:a2fcd999c3aaaa3fcec340c6c0204047e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00013">13</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="affe5a760ae2f37b526907a79bf039678" name="affe5a760ae2f37b526907a79bf039678"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affe5a760ae2f37b526907a79bf039678">&#9670;&#160;</a></span>AddFoodToMeal_ShouldCallApiAndUpdateData_WhenValidMealIsSelected()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.AddFoodToMeal_ShouldCallApiAndUpdateData_WhenValidMealIsSelected </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00115">115</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
-<a id="a63e1f7712cd6af020473349f198a2c54" name="a63e1f7712cd6af020473349f198a2c54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63e1f7712cd6af020473349f198a2c54">&#9670;&#160;</a></span>AddFoodToMeal_ShouldShowErrorDialog_WhenApiPutThrowsException()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.AddFoodToMeal_ShouldShowErrorDialog_WhenApiPutThrowsException </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00146">146</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
-<a id="ab7ce40c08ac408b6567c2d4d07cc8d34" name="ab7ce40c08ac408b6567c2d4d07cc8d34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7ce40c08ac408b6567c2d4d07cc8d34">&#9670;&#160;</a></span>DeleteFoodFromMeal_ShouldRemoveItemFromList_WhenApiCallSucceeds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.DeleteFoodFromMeal_ShouldRemoveItemFromList_WhenApiCallSucceeds </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00178">178</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
-<a id="a0e1b277aefe337ac2d8fd8e9b96cc628" name="a0e1b277aefe337ac2d8fd8e9b96cc628"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e1b277aefe337ac2d8fd8e9b96cc628">&#9670;&#160;</a></span>DeleteFoodFromMeal_ShouldShowErrorDialog_WhenApiDeleteThrowsException()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.DeleteFoodFromMeal_ShouldShowErrorDialog_WhenApiDeleteThrowsException </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00196">196</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
-<a id="a2a895fb5cd82a1c41d376d607fb9e6ef" name="a2a895fb5cd82a1c41d376d607fb9e6ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a895fb5cd82a1c41d376d607fb9e6ef">&#9670;&#160;</a></span>LoadDailyDiary_ShouldPopulateItems_WhenApiReturnsData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.LoadDailyDiary_ShouldPopulateItems_WhenApiReturnsData </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00038">38</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
-<a id="ad18dd32d8d71086ca285a9659ce5cd59" name="ad18dd32d8d71086ca285a9659ce5cd59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad18dd32d8d71086ca285a9659ce5cd59">&#9670;&#160;</a></span>LoadDailyDiary_ShouldShowErrorDialog_WhenApiThrowsException()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.LoadDailyDiary_ShouldShowErrorDialog_WhenApiThrowsException </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00069">69</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
-<a id="aa99b4c21f09ee925aaed7e029f12d3e5" name="aa99b4c21f09ee925aaed7e029f12d3e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa99b4c21f09ee925aaed7e029f12d3e5">&#9670;&#160;</a></span>LoadFoodLibrary_ShouldPopulateItems_WhenApiReturnsData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">async Task Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.LoadFoodLibrary_ShouldPopulateItems_WhenApiReturnsData </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00095">95</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
-<a id="a8e7b3e3ac5ab83815815c216745b1761" name="a8e7b3e3ac5ab83815815c216745b1761"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e7b3e3ac5ab83815815c216745b1761">&#9670;&#160;</a></span>Setup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Gyminize.Tests.MSTest.ViewModel.NutritionViewModelTest.Setup </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_nutrition_view_model_test_8cs_source.html#l00022">22</a> of file <a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Hi/Desktop/DO_AN_WIN/Gyminize_WinUi_App/Gyminize.Tests.MSTest/ViewModel/<a class="el" href="_nutrition_view_model_test_8cs_source.html">NutritionViewModelTest.cs</a></li>
+<li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize.Tests.MSTest/ViewModel/<b>NutritionViewModelTest.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

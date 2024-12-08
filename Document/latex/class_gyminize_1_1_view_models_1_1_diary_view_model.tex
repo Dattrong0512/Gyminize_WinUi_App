@@ -15,7 +15,7 @@ class \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_d
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_ad1bbcc1508e24ee74bb92912c4830e35}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_ad1bbcc1508e24ee74bb92912c4830e35} 
-{\bfseries Diary\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_date_time_provider}{IDate\+Time\+Provider}} date\+Time\+Provider, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service)
+{\bfseries Diary\+View\+Model} (ILocal\+Settings\+Service local\+Settings\+Service, IApi\+Services\+Client api\+Services\+Client, IDate\+Time\+Provider date\+Time\+Provider, IDialog\+Service dialog\+Service)
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a5677c73619c53a01f28586bb2d0af848}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a5677c73619c53a01f28586bb2d0af848} 
 async void {\bfseries Initialize\+Async} ()
@@ -48,7 +48,7 @@ int {\bfseries \+\_\+exercise\+Status}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a805cf052d95ed8fbbbdce02f7285d5d9}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a805cf052d95ed8fbbbdce02f7285d5d9} 
-List$<$ \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status}{Day\+Status}} $>$ {\bfseries Day\+Statuses} = new List$<$\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status}{Day\+Status}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+List$<$ \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status}{Day\+Status}} $>$ {\bfseries Day\+Statuses} = new List$<$\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_diary_view_model_1_1_day_status}{Day\+Status}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_ac79c7dffd1a13f26f0ab31d77ea81a4e}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_ac79c7dffd1a13f26f0ab31d77ea81a4e} 
 string {\bfseries Selected\+Day\+Text}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
@@ -68,6 +68,18 @@ int {\bfseries Burned\+Calories}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_ab9d67dc3bf8c7d55fa1b676670b43648}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_ab9d67dc3bf8c7d55fa1b676670b43648} 
 int {\bfseries Total\+Calories}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_abb79d90b0d9e93533cdfbd5914321f13}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_abb79d90b0d9e93533cdfbd5914321f13} 
+bool {\bfseries Is\+Lunch\+Empty}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_aa70a334129a1941a17cbb0409a13bdff}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_aa70a334129a1941a17cbb0409a13bdff} 
+bool {\bfseries Is\+Breakfast\+Empty}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a0afe891b343d9eb055496013d73703d4}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a0afe891b343d9eb055496013d73703d4} 
+bool {\bfseries Is\+Snack\+Empty}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a8002fe9f2e2e540fbf7b67864f07c779}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a8002fe9f2e2e540fbf7b67864f07c779} 
+bool {\bfseries Is\+Dinner\+Empty}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_aeefa716e344c039934354660d5299e52}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_aeefa716e344c039934354660d5299e52} 
 ICommand {\bfseries Selected\+Dates\+Changed\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
@@ -75,16 +87,70 @@ ICommand {\bfseries Selected\+Dates\+Changed\+Command}\hspace{0.3cm}{\ttfamily  
 ICommand {\bfseries Decorate\+Day\+Item\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a596064151c5f5dfd2f36e76acf0ace94}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a596064151c5f5dfd2f36e76acf0ace94} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}} $>$ {\bfseries Breakfast\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Food\+Detail $>$ {\bfseries Breakfast\+Items} = new Observable\+Collection$<$Food\+Detail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_ae43b844c4fd03889365a16b038937fa8}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_ae43b844c4fd03889365a16b038937fa8} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}} $>$ {\bfseries Lunch\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Food\+Detail $>$ {\bfseries Lunch\+Items} = new Observable\+Collection$<$Food\+Detail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a016526a204307e6aa46bc75fdb28611f}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a016526a204307e6aa46bc75fdb28611f} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}} $>$ {\bfseries Dinner\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Food\+Detail $>$ {\bfseries Dinner\+Items} = new Observable\+Collection$<$Food\+Detail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a9c04fec9cddef14906797d1b5e5e6325}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a9c04fec9cddef14906797d1b5e5e6325} 
-Observable\+Collection$<$ \mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}} $>$ {\bfseries Snack\+Items} = new Observable\+Collection$<$\mbox{\hyperlink{class_gyminize_1_1_models_1_1_food_detail}{Food\+Detail}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Observable\+Collection$<$ Food\+Detail $>$ {\bfseries Snack\+Items} = new Observable\+Collection$<$Food\+Detail$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_aea350104824e8dd751a28da44388e7f3}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_aea350104824e8dd751a28da44388e7f3} 
+void {\bfseries Add\+Icon\+To\+Day} (Calendar\+View\+Day\+Item day\+Item, Windows.\+UI.\+Color background\+Color)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a90620cbb0021461ef9e1dc70734d2588}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a90620cbb0021461ef9e1dc70734d2588} 
+readonly ILocal\+Settings\+Service {\bfseries \+\_\+local\+Settings\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_aa2ba056b57de8c26ddcecdfb3664919d}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_aa2ba056b57de8c26ddcecdfb3664919d} 
+readonly IDate\+Time\+Provider {\bfseries \+\_\+date\+Time\+Provider}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_ac51368ed95f6adf42ec4ac293c7e98f7}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_ac51368ed95f6adf42ec4ac293c7e98f7} 
+readonly IApi\+Services\+Client {\bfseries \+\_\+api\+Services\+Client}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_aadb19e27d60aec5ed598903aef479a29}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_aadb19e27d60aec5ed598903aef479a29} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a34688f1d979139805d4025e26a5b4251}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a34688f1d979139805d4025e26a5b4251} 
+string {\bfseries \+\_\+customer\+\_\+id}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a012f24a5d35c787a24a999ab461ed22d}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a012f24a5d35c787a24a999ab461ed22d} 
+int {\bfseries \+\_\+weight\+Text}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a5ae1466f31a7ab574e0abbaed2f0a991}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a5ae1466f31a7ab574e0abbaed2f0a991} 
+string {\bfseries \+\_\+selected\+Day\+Text}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a2ef64d588e7bc5c27341deae966dc610}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a2ef64d588e7bc5c27341deae966dc610} 
+string {\bfseries \+\_\+plan\+Name\+Text}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_abc180f205a7acd40bd9ea0d0bdc380a4}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_abc180f205a7acd40bd9ea0d0bdc380a4} 
+string {\bfseries \+\_\+type\+Workout\+Text}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_aad260774553a96ef095e22905f80f786}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_aad260774553a96ef095e22905f80f786} 
+int {\bfseries \+\_\+burned\+Calories}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a539c5c6b19f2eae9ea81bafc3788b931}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a539c5c6b19f2eae9ea81bafc3788b931} 
+int {\bfseries \+\_\+total\+Calories}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a60c4de1d4911db92927ca2523682b0f5}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a60c4de1d4911db92927ca2523682b0f5} 
+bool {\bfseries \+\_\+is\+Lunch\+Empty}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a83dab9efb4bd223d3b5f294d8e7f8389}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a83dab9efb4bd223d3b5f294d8e7f8389} 
+bool {\bfseries \+\_\+is\+Breakfast\+Empty}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_ac02956fc466d7a0c351e4f112efaa311}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_ac02956fc466d7a0c351e4f112efaa311} 
+bool {\bfseries \+\_\+is\+Snack\+Empty}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_diary_view_model_a53894edccc31736402ef4533e1ccc4a2}\label{class_gyminize_1_1_view_models_1_1_diary_view_model_a53894edccc31736402ef4533e1ccc4a2} 
+bool {\bfseries \+\_\+is\+Dinner\+Empty}
 \end{DoxyCompactItemize}
 
 

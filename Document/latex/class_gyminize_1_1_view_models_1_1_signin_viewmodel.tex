@@ -1,5 +1,10 @@
 \doxysection{Gyminize.\+View\+Models.\+Signin\+Viewmodel Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel}{}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+
+
+View\+Model để xử lý các hoạt động đăng nhập.  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Signin\+Viewmodel\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,50 +15,317 @@ Inheritance diagram for Gyminize.\+View\+Models.\+Signin\+Viewmodel\+:\begin{fig
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac367fdec382a5cd62e853654a312cf46}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac367fdec382a5cd62e853654a312cf46} 
-{\bfseries Signin\+Viewmodel} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{IWindow\+Service}} window\+Service)
+{\bfseries Signin\+Viewmodel} (INavigation\+Service navigation\+Service, ILocal\+Settings\+Service local\+Settings, IDialog\+Service dialog\+Service, IWindow\+Service window\+Service)
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a533e224e19af78ccaf4f925ccf2e87bd}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a533e224e19af78ccaf4f925ccf2e87bd} 
-async Task {\bfseries Exchange\+Code\+For\+Tokens\+Async} (string code, string code\+Verifier)
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5ef1f4536d01032713d9d432a0e8a48f}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5ef1f4536d01032713d9d432a0e8a48f} 
-async void {\bfseries send\+Verification\+Code} (string email, string code)
-\item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af0261de619e7fbaabd154bbabd8c9368}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af0261de619e7fbaabd154bbabd8c9368} 
-void {\bfseries output} (string message)
-\end{DoxyCompactItemize}
+async Task \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a533e224e19af78ccaf4f925ccf2e87bd}{Exchange\+Code\+For\+Tokens\+Async}} (string code, string code\+Verifier)
+\begin{DoxyCompactList}\small\item\em Trao đổi mã ủy quyền lấy token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5bdd1460607577411002830db610a670}{Post\+Customer}} (string username, string password)
+\begin{DoxyCompactList}\small\item\em Post thông tin khách hàng lên csdl qua API. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5ef1f4536d01032713d9d432a0e8a48f}{send\+Verification\+Code}} (string email, string code)
+\begin{DoxyCompactList}\small\item\em Gửi mã xác minh đến email được chỉ định. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af0261de619e7fbaabd154bbabd8c9368}{output}} (string message)
+\begin{DoxyCompactList}\small\item\em Xuất thông báo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8de7ddddb03e02d82883fbbbe3c88b2}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8de7ddddb03e02d82883fbbbe3c88b2} 
-static string {\bfseries base64urlencode\+No\+Padding} (IBuffer buffer)
-\end{DoxyCompactItemize}
+static string \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8de7ddddb03e02d82883fbbbe3c88b2}{base64urlencode\+No\+Padding}} (IBuffer buffer)
+\begin{DoxyCompactList}\small\item\em Mã hóa buffer thành chuỗi base64 URL-\/encoded không có padding. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af83c592eaf5d3bd13890a8c5f1213648}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af83c592eaf5d3bd13890a8c5f1213648} 
-\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} {\bfseries \+\_\+local\+Settings\+Service}
+ILocal\+Settings\+Service {\bfseries \+\_\+local\+Settings\+Service}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aef953940280a610cabb03baf3ff942b5}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aef953940280a610cabb03baf3ff942b5} 
 Solid\+Color\+Brush {\bfseries Status\+Color}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lấy hoặc đặt màu trạng thái. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af263a972bd0d7aa29f137fdb511fac8f}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af263a972bd0d7aa29f137fdb511fac8f} 
 bool {\bfseries Remember\+Me}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lấy hoặc đặt tùy chọn ghi nhớ đăng nhập. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae11c1c79cde29b99f81e527d5f84308a}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae11c1c79cde29b99f81e527d5f84308a} 
 ICommand {\bfseries Login\+Command\+By\+Google}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lệnh đăng nhập bằng Google. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acdc3463f0e8e8a8e38c5119f416fe7ae}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acdc3463f0e8e8a8e38c5119f416fe7ae} 
 ICommand {\bfseries Login\+Command\+By\+User}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lệnh đăng nhập bằng thông tin người dùng. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a276773e55e7d9552d4da0af819e84661}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a276773e55e7d9552d4da0af819e84661} 
 ICommand {\bfseries Sign\+Up\+Navigate\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lệnh điều hướng đến trang đăng ký. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5661b8029587f002fb59569d3ef3b3da}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5661b8029587f002fb59569d3ef3b3da} 
 ICommand {\bfseries Forgot\+Password\+Processing\+Command}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Lệnh xử lý quên mật khẩu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aa101816780989645ac9873857f86aca5}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aa101816780989645ac9873857f86aca5} 
+void {\bfseries On\+Sign\+Up\+By\+User\+Navigate} ()
+\begin{DoxyCompactList}\small\item\em Lệnh điều hướng đến trang đăng ký. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a3dbc36952ea3e0e51c4cf29f546d7d89}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a3dbc36952ea3e0e51c4cf29f546d7d89} 
+async void {\bfseries On\+Login\+By\+User} ()
+\begin{DoxyCompactList}\small\item\em Đăng nhập người dùng bằng thông tin đăng nhập. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5d1a467a50a205a278c7e8fafc24553f}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5d1a467a50a205a278c7e8fafc24553f} 
+async void {\bfseries On\+Login\+By\+Google} ()
+\begin{DoxyCompactList}\small\item\em Đăng nhập người dùng bằng Google OAuth. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ad22ac8094957bd0e93d58c2c145d48b4}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ad22ac8094957bd0e93d58c2c145d48b4} 
+async Task {\bfseries Listen\+For\+OAuth\+Callback} ()
+\begin{DoxyCompactList}\small\item\em Lắng nghe callback OAuth. \end{DoxyCompactList}\item 
+async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a2b70b13c7a15005b68be392a670c5609}{Processing\+Data\+Login}} (string Data\+Login)
+\begin{DoxyCompactList}\small\item\em Xử lý dữ liệu đăng nhập. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a9e118f83f1cf6954e41f3ce8835447e2}{Check\+Customer\+By\+Get}} (string username, string password)
+\begin{DoxyCompactList}\small\item\em Kiểm tra khách hàng tồn tại bằng tên đăng nhập và mật khẩu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a92850fb424e7763c4dc523cdbe1b93f1}{Check\+Customer\+Health\+By\+Username}} (string username)
+\begin{DoxyCompactList}\small\item\em Kiểm tra thông sức khỏe khách hàng tồn tại bằng tên đăng nhập. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac35ff4c882b5ad1bce3cd92f6b53fb17}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac35ff4c882b5ad1bce3cd92f6b53fb17} 
+async void {\bfseries On\+Forgot\+Password\+Processing} ()
+\begin{DoxyCompactList}\small\item\em Xử lý yêu cầu quên mật khẩu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a75f94a98f680942d4a5ed593c8bb3fe6}{random\+Data\+Base64url}} (uint length)
+\begin{DoxyCompactList}\small\item\em Tạo chuỗi base64 URL-\/encoded ngẫu nhiên. \end{DoxyCompactList}\item 
+static IBuffer \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8f4ac970c6862d09b70bbdc73bb2b32}{sha256}} (string input)
+\begin{DoxyCompactList}\small\item\em Tính toán hash SHA-\/256 của chuỗi đầu vào. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a24689dc0a7c6854825701743e1f3097d}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a24689dc0a7c6854825701743e1f3097d} 
+string {\bfseries login\+Status}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a22c597327e0e5214d5feedb28af2e040}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a22c597327e0e5214d5feedb28af2e040} 
+string {\bfseries username}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aed57b0d721d3797c908178cb009c6387}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aed57b0d721d3797c908178cb009c6387} 
+string {\bfseries password}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a2e91d2bc095c0cbea7ec65109ed18a7b}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a2e91d2bc095c0cbea7ec65109ed18a7b} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acc8b47b9a08aa2280a0f223af25dac5a}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acc8b47b9a08aa2280a0f223af25dac5a} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a74e0319becbc4cec63fd0cdbf35b31ac}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a74e0319becbc4cec63fd0cdbf35b31ac} 
+readonly IWindow\+Service {\bfseries \+\_\+window\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aefff690cde40c7ac5755c606bfb8eede}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_aefff690cde40c7ac5755c606bfb8eede} 
+Customer {\bfseries customer}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acc37362008475543fcb382fd241cd0a5}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_acc37362008475543fcb382fd241cd0a5} 
+UIElement? {\bfseries \+\_\+shell} = null
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a41d2742705aa0d739cca9637dbb6ac44}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a41d2742705aa0d739cca9637dbb6ac44} 
+Solid\+Color\+Brush {\bfseries \+\_\+status\+Color}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_accdf6b56a29ca4e178e05966e627ba4c}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_accdf6b56a29ca4e178e05966e627ba4c} 
+bool {\bfseries remember\+Me}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a43abc4d7d17493814edbe9569f36c7be}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a43abc4d7d17493814edbe9569f36c7be} 
+const string {\bfseries client\+ID} = "{}25264695175-\/026qgqsmvslrgn5gm2vj9gseu1ugf4ro.\+apps.\+googleusercontent.\+com"{}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a49aae42ac7ad2a7c1356c02d15158ba7}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a49aae42ac7ad2a7c1356c02d15158ba7} 
+const string {\bfseries client\+Secret} = "{}GOCSPX-\/3Faa\+\_\+\+F5\+ACrlly\+RYq\+R1m\+Tuw\+DUi4y7"{}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac5b68f6bfb5c8a6b3f538b691fc5282c}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ac5b68f6bfb5c8a6b3f538b691fc5282c} 
+const string {\bfseries redirect\+URI} = "{}http\+://localhost\+:8080"{}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a1b392183aa29cb417f927f840b6c13f0}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a1b392183aa29cb417f927f840b6c13f0} 
+const string {\bfseries authorization\+Endpoint} = "{}https\+://accounts.\+google.\+com/o/oauth2/v2/auth"{}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a55e460c32cc50103cfb910210276fcbe}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a55e460c32cc50103cfb910210276fcbe} 
+const string {\bfseries token\+Endpoint} = "{}https\+://oauth2.\+googleapis.\+com/token"{}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a434e987adbbc03461b6940e22e751612}\label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a434e987adbbc03461b6940e22e751612} 
+const string {\bfseries user\+Info\+Endpoint} = "{}https\+://www.\+googleapis.\+com/oauth2/v3/userinfo"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model để xử lý các hoạt động đăng nhập. 
+
+View\+Model này quản lý quá trình đăng nhập, bao gồm xác thực người dùng, xử lý OAuth và điều hướng. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8de7ddddb03e02d82883fbbbe3c88b2}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!base64urlencodeNoPadding@{base64urlencodeNoPadding}}
+\index{base64urlencodeNoPadding@{base64urlencodeNoPadding}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{base64urlencodeNoPadding()}{base64urlencodeNoPadding()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8de7ddddb03e02d82883fbbbe3c88b2} 
+static string Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+base64urlencode\+No\+Padding (\begin{DoxyParamCaption}\item[{IBuffer}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Mã hóa buffer thành chuỗi base64 URL-\/encoded không có padding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer để mã hóa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Chuỗi đã được mã hóa. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a9e118f83f1cf6954e41f3ce8835447e2}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!CheckCustomerByGet@{CheckCustomerByGet}}
+\index{CheckCustomerByGet@{CheckCustomerByGet}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{CheckCustomerByGet()}{CheckCustomerByGet()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a9e118f83f1cf6954e41f3ce8835447e2} 
+bool Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+Check\+Customer\+By\+Get (\begin{DoxyParamCaption}\item[{string}]{username}{, }\item[{string}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Kiểm tra khách hàng tồn tại bằng tên đăng nhập và mật khẩu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Tên đăng nhập. \\
+\hline
+{\em password} & Mật khẩu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True nếu khách hàng tồn tại, ngược lại false. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a92850fb424e7763c4dc523cdbe1b93f1}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!CheckCustomerHealthByUsername@{CheckCustomerHealthByUsername}}
+\index{CheckCustomerHealthByUsername@{CheckCustomerHealthByUsername}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{CheckCustomerHealthByUsername()}{CheckCustomerHealthByUsername()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a92850fb424e7763c4dc523cdbe1b93f1} 
+bool Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+Check\+Customer\+Health\+By\+Username (\begin{DoxyParamCaption}\item[{string}]{username}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Kiểm tra thông sức khỏe khách hàng tồn tại bằng tên đăng nhập. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Tên đăng nhập. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True nếu dữ liệu sức khỏe khách hàng tồn tại, ngược lại false 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a533e224e19af78ccaf4f925ccf2e87bd}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!ExchangeCodeForTokensAsync@{ExchangeCodeForTokensAsync}}
+\index{ExchangeCodeForTokensAsync@{ExchangeCodeForTokensAsync}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{ExchangeCodeForTokensAsync()}{ExchangeCodeForTokensAsync()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a533e224e19af78ccaf4f925ccf2e87bd} 
+async Task Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+Exchange\+Code\+For\+Tokens\+Async (\begin{DoxyParamCaption}\item[{string}]{code}{, }\item[{string}]{code\+Verifier}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trao đổi mã ủy quyền lấy token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Mã ủy quyền. \\
+\hline
+{\em code\+Verifier} & Mã xác minh. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Một task đại diện cho hoạt động bất đồng bộ. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af0261de619e7fbaabd154bbabd8c9368}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!output@{output}}
+\index{output@{output}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_af0261de619e7fbaabd154bbabd8c9368} 
+void Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+output (\begin{DoxyParamCaption}\item[{string}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Xuất thông báo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Thông báo cần xuất. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5bdd1460607577411002830db610a670}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!PostCustomer@{PostCustomer}}
+\index{PostCustomer@{PostCustomer}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{PostCustomer()}{PostCustomer()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5bdd1460607577411002830db610a670} 
+void Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+Post\+Customer (\begin{DoxyParamCaption}\item[{string}]{username}{, }\item[{string}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Post thông tin khách hàng lên csdl qua API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Tên đăng nhập. \\
+\hline
+{\em password} & Mật khẩu. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a2b70b13c7a15005b68be392a670c5609}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!ProcessingDataLogin@{ProcessingDataLogin}}
+\index{ProcessingDataLogin@{ProcessingDataLogin}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{ProcessingDataLogin()}{ProcessingDataLogin()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a2b70b13c7a15005b68be392a670c5609} 
+async void Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+Processing\+Data\+Login (\begin{DoxyParamCaption}\item[{string}]{Data\+Login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Xử lý dữ liệu đăng nhập. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data\+Login} & Dữ liệu đăng nhập. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a75f94a98f680942d4a5ed593c8bb3fe6}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!randomDataBase64url@{randomDataBase64url}}
+\index{randomDataBase64url@{randomDataBase64url}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{randomDataBase64url()}{randomDataBase64url()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a75f94a98f680942d4a5ed593c8bb3fe6} 
+static string Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+random\+Data\+Base64url (\begin{DoxyParamCaption}\item[{uint}]{length}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Tạo chuỗi base64 URL-\/encoded ngẫu nhiên. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Độ dài của chuỗi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Chuỗi đã được tạo. 
+\end{DoxyReturn}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5ef1f4536d01032713d9d432a0e8a48f}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!sendVerificationCode@{sendVerificationCode}}
+\index{sendVerificationCode@{sendVerificationCode}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{sendVerificationCode()}{sendVerificationCode()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_a5ef1f4536d01032713d9d432a0e8a48f} 
+async void Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+send\+Verification\+Code (\begin{DoxyParamCaption}\item[{string}]{email}{, }\item[{string}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gửi mã xác minh đến email được chỉ định. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Địa chỉ email. \\
+\hline
+{\em code} & Mã xác minh \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8f4ac970c6862d09b70bbdc73bb2b32}\index{Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}!sha256@{sha256}}
+\index{sha256@{sha256}!Gyminize.ViewModels.SigninViewmodel@{Gyminize.ViewModels.SigninViewmodel}}
+\doxysubsubsection{\texorpdfstring{sha256()}{sha256()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_signin_viewmodel_ae8f4ac970c6862d09b70bbdc73bb2b32} 
+static IBuffer Gyminize.\+View\+Models.\+Signin\+Viewmodel.\+sha256 (\begin{DoxyParamCaption}\item[{string}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Tính toán hash SHA-\/256 của chuỗi đầu vào. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chuỗi đầu vào. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Hash dưới dạng IBuffer. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

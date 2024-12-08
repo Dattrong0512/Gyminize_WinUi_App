@@ -1,9 +1,14 @@
 \doxysection{Gyminize.\+View\+Models.\+Home\+View\+Model Class Reference}
 \hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model}{}\label{class_gyminize_1_1_view_models_1_1_home_view_model}\index{Gyminize.ViewModels.HomeViewModel@{Gyminize.ViewModels.HomeViewModel}}
+
+
+View\+Model trang chủ .  
+
+
 Inheritance diagram for Gyminize.\+View\+Models.\+Home\+View\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.830065cm]{class_gyminize_1_1_view_models_1_1_home_view_model}
+\includegraphics[height=2.000000cm]{class_gyminize_1_1_view_models_1_1_home_view_model}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Classes}
@@ -14,17 +19,16 @@ class \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_home_view_model_1_1_we
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_ab9e8e4755ac9c4aa27ebbc2805281f06}\label{class_gyminize_1_1_view_models_1_1_home_view_model_ab9e8e4755ac9c4aa27ebbc2805281f06} 
-{\bfseries Home\+View\+Model} (\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_navigation_service}{INavigation\+Service}} navigation\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_window_service}{IWindow\+Service}} window\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} local\+Settings, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_dialog_service}{IDialog\+Service}} dialog\+Service, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_api_services_client}{IApi\+Services\+Client}} api\+Services\+Client, \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_date_time_provider}{IDate\+Time\+Provider}} date\+Time\+Provider)
-\item 
+\mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_home_view_model_ab9e8e4755ac9c4aa27ebbc2805281f06}{Home\+View\+Model}} (INavigation\+Service navigation\+Service, IWindow\+Service window\+Service, ILocal\+Settings\+Service local\+Settings, IDialog\+Service dialog\+Service, IApi\+Services\+Client api\+Services\+Client, IDate\+Time\+Provider date\+Time\+Provider)
+\begin{DoxyCompactList}\small\item\em Khởi tạo \doxylink{class_gyminize_1_1_view_models_1_1_home_view_model}{Home\+View\+Model}, thiết lập các dịch vụ và lệnh. \end{DoxyCompactList}\item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a7515e1ce6886cfb7c1d61a7164d8149d}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a7515e1ce6886cfb7c1d61a7164d8149d} 
 async void {\bfseries Open\+Save\+Weight} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Lưu cân nặng mới và cập nhật lên hệ thống. \end{DoxyCompactList}\item 
 async void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_home_view_model_a2bf9f1cc4d910ffed654bfa4ec59d25a}{On\+Navigated\+To}} (object parameter)
-\item 
-void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_home_view_model_a2f8250a190bd30d1b922c2870aaf2886}{On\+Navigated\+From}} ()
+\begin{DoxyCompactList}\small\item\em Khi người dùng điều hướng đến trang, lấy thông tin cân nặng, calo và kế hoạch tập luyện. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a2f8250a190bd30d1b922c2870aaf2886}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a2f8250a190bd30d1b922c2870aaf2886} 
+void {\bfseries On\+Navigated\+From} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,7 +36,7 @@ void \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_home_view_model_a2f8250
 string {\bfseries \+\_\+customer\+\_\+id}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_ab4a5e83498365e8ea40c39bfcb20c9d8}\label{class_gyminize_1_1_view_models_1_1_home_view_model_ab4a5e83498365e8ea40c39bfcb20c9d8} 
-\mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_services_1_1_i_local_settings_service}{ILocal\+Settings\+Service}} {\bfseries localsetting}
+ILocal\+Settings\+Service {\bfseries localsetting}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -44,7 +48,7 @@ virtual void {\bfseries On\+Property\+Changed} (string property\+Name)
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a16a668103dc6cb4b83a603df51260023}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a16a668103dc6cb4b83a603df51260023} 
-bool {\bfseries Is\+Weight\+Text\+Box\+Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+bool {\bfseries Is\+Weight\+Text\+Box\+Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
 \item 
 \Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_aca26a20f31e3a35a0d2769beeef31812}\label{class_gyminize_1_1_view_models_1_1_home_view_model_aca26a20f31e3a35a0d2769beeef31812} 
 string {\bfseries Remain\+Calories}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
@@ -106,19 +110,135 @@ List$<$ \mbox{\hyperlink{class_gyminize_1_1_view_models_1_1_home_view_model_1_1_
 \Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a035a31d472ea87c54155d329bdb364b9}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a035a31d472ea87c54155d329bdb364b9} 
 Property\+Changed\+Event\+Handler {\bfseries Property\+Changed}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_adf22b50b0855ebcfea11694af29295c0}\label{class_gyminize_1_1_view_models_1_1_home_view_model_adf22b50b0855ebcfea11694af29295c0} 
+void {\bfseries Open\+Workout\+Link} ()
+\begin{DoxyCompactList}\small\item\em Mở liên kết đến trang web hướng dẫn tập luyện. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a8bddfcf5087977760b54233b3981e1cf}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a8bddfcf5087977760b54233b3981e1cf} 
+void {\bfseries Open\+Recipe\+Link} ()
+\begin{DoxyCompactList}\small\item\em Mở liên kết đến trang web công thức nấu ăn. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a07941091ac330b8172ff5dc1a12c95e1}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a07941091ac330b8172ff5dc1a12c95e1} 
+void {\bfseries Open\+Sleep\+Link} ()
+\begin{DoxyCompactList}\small\item\em Mở liên kết đến trang web hướng dẫn giấc ngủ. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a13eefba097466d0392e399c12bba95a4}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a13eefba097466d0392e399c12bba95a4} 
+void {\bfseries Open\+Edit\+Weight} ()
+\begin{DoxyCompactList}\small\item\em Kích hoạt chỉnh sửa cân nặng, cho phép nhập liệu. \end{DoxyCompactList}\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a5844a6948ca9a62ebe8c199014c396f7}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a5844a6948ca9a62ebe8c199014c396f7} 
+async void {\bfseries Generate\+Chart\+Lines} ()
+\begin{DoxyCompactList}\small\item\em Tạo các đường biểu đồ cho cân nặng trong 7 ngày qua. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a54a88abb071fae7ca8c7cadfaa56eff9}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a54a88abb071fae7ca8c7cadfaa56eff9} 
+readonly INavigation\+Service {\bfseries \+\_\+navigation\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_aaec8c14c212bdb3d6d7c84d4961e31f0}\label{class_gyminize_1_1_view_models_1_1_home_view_model_aaec8c14c212bdb3d6d7c84d4961e31f0} 
+readonly IWindow\+Service {\bfseries \+\_\+window\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a82696e6d2367684b61eb6c9748b69ae1}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a82696e6d2367684b61eb6c9748b69ae1} 
+readonly IDialog\+Service {\bfseries \+\_\+dialog\+Service}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a7b5794ec00312d5f0842c9cf4c943c94}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a7b5794ec00312d5f0842c9cf4c943c94} 
+readonly IApi\+Services\+Client {\bfseries \+\_\+api\+Services\+Client}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_aa8a0c698a35468691f3d882f4a0ee67e}\label{class_gyminize_1_1_view_models_1_1_home_view_model_aa8a0c698a35468691f3d882f4a0ee67e} 
+readonly IDate\+Time\+Provider {\bfseries \+\_\+date\+Time\+Provider}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a018444b527392b6f99cc7a5fc9e8ef7f}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a018444b527392b6f99cc7a5fc9e8ef7f} 
+bool {\bfseries \+\_\+is\+Weight\+Text\+Box\+Enabled}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a8a39f136344215a3bbb98c27515fe6c8}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a8a39f136344215a3bbb98c27515fe6c8} 
+Customer\+Health {\bfseries \+\_\+customer\+Health}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a5656e919c3711662bd1dbda93bd97f11}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a5656e919c3711662bd1dbda93bd97f11} 
+Customer {\bfseries \+\_\+customer}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_aacca0ff66d03b88216459e5e7f74d2c8}\label{class_gyminize_1_1_view_models_1_1_home_view_model_aacca0ff66d03b88216459e5e7f74d2c8} 
+string {\bfseries weight\+Text}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a1b71e4f283a28da9c763e7e5362a6594}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a1b71e4f283a28da9c763e7e5362a6594} 
+string {\bfseries goal\+Calories}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a49727f8763896f41946a8b006ead8d00}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a49727f8763896f41946a8b006ead8d00} 
+string {\bfseries weight\+Temp}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a3f7674bdc62589f0b0b0e0bb24f616ef}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a3f7674bdc62589f0b0b0e0bb24f616ef} 
+string {\bfseries \+\_\+remain\+Calories}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a7f482f73754d631947d00b5d0beb5e7c}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a7f482f73754d631947d00b5d0beb5e7c} 
+string {\bfseries \+\_\+burned\+Calories}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a9795c6e352257ebce702928d09abf2b9}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a9795c6e352257ebce702928d09abf2b9} 
+string {\bfseries username}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a51d4577329d12ce1a2f8937f66a006a6}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a51d4577329d12ce1a2f8937f66a006a6} 
+double {\bfseries \+\_\+progress\+Value}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a2e9bc003f4f8176d8c10358289ae644d}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a2e9bc003f4f8176d8c10358289ae644d} 
+string {\bfseries \+\_\+type\+Workout\+Date}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a0ccfd7a003613bc44d0035fe4d3c7979}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a0ccfd7a003613bc44d0035fe4d3c7979} 
+string {\bfseries \+\_\+status\+Icon\+Path}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a5941dac1d6857e7944830d3382341769}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a5941dac1d6857e7944830d3382341769} 
+string {\bfseries \+\_\+type\+Workout\+Icon\+Path}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a8d9a78c3ef1aad97c22b84d67fe81c80}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a8d9a78c3ef1aad97c22b84d67fe81c80} 
+string {\bfseries \+\_\+exercise\+Status}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a8581c08f9bb04f5bc21a776986784a9b}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a8581c08f9bb04f5bc21a776986784a9b} 
+Visibility {\bfseries \+\_\+status\+Visibility}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_adf90ec8d170e7b3a6057ce521472ebe8}\label{class_gyminize_1_1_view_models_1_1_home_view_model_adf90ec8d170e7b3a6057ce521472ebe8} 
+bool {\bfseries \+\_\+is\+Over\+Goal\+Calories}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a620db872b365a541346201065cc2cf95}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a620db872b365a541346201065cc2cf95} 
+Observable\+Collection$<$ Line $>$ {\bfseries \+\_\+chart\+Lines}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_aea2b59f01d5d61ad106f0b67ff58bd1b}\label{class_gyminize_1_1_view_models_1_1_home_view_model_aea2b59f01d5d61ad106f0b67ff58bd1b} 
+Observable\+Collection$<$ Line $>$ {\bfseries \+\_\+axis\+Lines}
+\item 
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a6c80c42457f33b48e998ad3bbe3a4d3a}\label{class_gyminize_1_1_view_models_1_1_home_view_model_a6c80c42457f33b48e998ad3bbe3a4d3a} 
+Observable\+Collection$<$ Text\+Block $>$ {\bfseries \+\_\+axis\+Labels}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model trang chủ . 
+
+View\+Model này chịu trách nhiệm quản lý logic giao diện và dữ liệu người dùng cho màn hình. Nó cung cấp các lệnh và thuộc tính được liên kết với UI. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_ab9e8e4755ac9c4aa27ebbc2805281f06}\index{Gyminize.ViewModels.HomeViewModel@{Gyminize.ViewModels.HomeViewModel}!HomeViewModel@{HomeViewModel}}
+\index{HomeViewModel@{HomeViewModel}!Gyminize.ViewModels.HomeViewModel@{Gyminize.ViewModels.HomeViewModel}}
+\doxysubsubsection{\texorpdfstring{HomeViewModel()}{HomeViewModel()}}
+{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_home_view_model_ab9e8e4755ac9c4aa27ebbc2805281f06} 
+Gyminize.\+View\+Models.\+Home\+View\+Model.\+Home\+View\+Model (\begin{DoxyParamCaption}\item[{INavigation\+Service}]{navigation\+Service}{, }\item[{IWindow\+Service}]{window\+Service}{, }\item[{ILocal\+Settings\+Service}]{local\+Settings}{, }\item[{IDialog\+Service}]{dialog\+Service}{, }\item[{IApi\+Services\+Client}]{api\+Services\+Client}{, }\item[{IDate\+Time\+Provider}]{date\+Time\+Provider}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Khởi tạo \doxylink{class_gyminize_1_1_view_models_1_1_home_view_model}{Home\+View\+Model}, thiết lập các dịch vụ và lệnh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation\+Service} & Dịch vụ điều hướng.\\
+\hline
+{\em window\+Service} & Dịch vụ cửa sổ.\\
+\hline
+{\em local\+Settings} & Dịch vụ lưu trữ cài đặt cục bộ.\\
+\hline
+{\em dialog\+Service} & Dịch vụ hiển thị hộp thoại.\\
+\hline
+{\em api\+Services\+Client} & Dịch vụ API.\\
+\hline
+{\em date\+Time\+Provider} & Dịch vụ thời gian.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a2f8250a190bd30d1b922c2870aaf2886}\index{Gyminize.ViewModels.HomeViewModel@{Gyminize.ViewModels.HomeViewModel}!OnNavigatedFrom@{OnNavigatedFrom}}
-\index{OnNavigatedFrom@{OnNavigatedFrom}!Gyminize.ViewModels.HomeViewModel@{Gyminize.ViewModels.HomeViewModel}}
-\doxysubsubsection{\texorpdfstring{OnNavigatedFrom()}{OnNavigatedFrom()}}
-{\footnotesize\ttfamily \label{class_gyminize_1_1_view_models_1_1_home_view_model_a2f8250a190bd30d1b922c2870aaf2886} 
-void Gyminize.\+View\+Models.\+Home\+View\+Model.\+On\+Navigated\+From (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}.
-
 \Hypertarget{class_gyminize_1_1_view_models_1_1_home_view_model_a2bf9f1cc4d910ffed654bfa4ec59d25a}\index{Gyminize.ViewModels.HomeViewModel@{Gyminize.ViewModels.HomeViewModel}!OnNavigatedTo@{OnNavigatedTo}}
 \index{OnNavigatedTo@{OnNavigatedTo}!Gyminize.ViewModels.HomeViewModel@{Gyminize.ViewModels.HomeViewModel}}
 \doxysubsubsection{\texorpdfstring{OnNavigatedTo()}{OnNavigatedTo()}}
@@ -127,8 +247,13 @@ async void Gyminize.\+View\+Models.\+Home\+View\+Model.\+On\+Navigated\+To (\beg
 
 
 
-Implements \mbox{\hyperlink{interface_gyminize_1_1_contracts_1_1_view_models_1_1_i_navigation_aware}{Gyminize.\+Contracts.\+View\+Models.\+INavigation\+Aware}}.
+Khi người dùng điều hướng đến trang, lấy thông tin cân nặng, calo và kế hoạch tập luyện. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Tham số đầu vào khi điều hướng.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -16,12 +16,22 @@ using Windows.Gaming.Input.ForceFeedback;
 using Gyminize.Contracts.ViewModels;
 using Windows.ApplicationModel.Email;
 namespace Gyminize.ViewModels;
+
+/// \class Guide1ViewModel
+/// \brief ViewModel cho màn hình hướng dẫn đầu tiên trong ứng dụng.
+/// 
+/// ViewModel này chịu trách nhiệm quản lý logic giao diện và dữ liệu người dùng cho màn hình Guide1.
+/// Nó cung cấp các lệnh và thuộc tính được liên kết với UI.
 public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
 {
     private string _username;
     private CustomerInfo _customerInfoBack;
     private readonly INavigationService _navigationService;
     private readonly IWindowService _windowService;
+
+    /// \brief Khởi tạo một đối tượng Guide1ViewModel.
+    /// \param navigationService Dịch vụ điều hướng được sử dụng để chuyển giữa các trang.
+    /// \param windowService Dịch vụ quản lý cửa sổ ứng dụng.
     public Guide1ViewModel(INavigationService navigationService, IWindowService windowService)
     {
         _windowService = windowService;
@@ -49,16 +59,20 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         _windowService.SetIsMaximizable(false);
         _windowService.SetWindowSize(1200, 800);
     }
-    
+
+    /// \brief Lệnh xử lý khi chọn giới tính nam.
     public ICommand MaleCheckCommand { get; }
+    /// \brief Lệnh xử lý khi chọn giới tính nữ.
     public ICommand FemaleCheckCommand{ get;}
+    /// \brief Lệnh xử lý khi mất focus khỏi ô nhập tuổi.
     public ICommand AgeLostFocusCommand { get; }
+    /// \brief Lệnh xử lý khi mất focus khỏi ô nhập chiều cao.
     public ICommand HeightLostFocusCommand { get; }
+    /// \brief Lệnh xử lý khi mất focus khỏi ô nhập cân nặng.
     public ICommand WeightLostFocusCommand { get; }
-    public ICommand NavigateToGuidePage2Command
-    {
-        get;
-    }
+    /// \brief Lệnh chuyển sang trang hướng dẫn thứ 2.
+    public ICommand NavigateToGuidePage2Command{ get; }
+
 
     private ComboBox _activityLevelComboBox;
     public ComboBox ActivityLevelComboBox
@@ -129,6 +143,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         set => SetProperty(ref _weightErrorTextBlock, value);
     }
 
+    /// \brief Xử lý sự kiện khi người dùng chọn giới tính Nam.
+    /// \param e Đối tượng RoutedEventArgs chứa thông tin sự kiện.
+    /// \details Hàm này đảm bảo chỉ có một trong hai giới tính (Nam hoặc Nữ) được chọn tại một thời điểm.
     private void MaleSexCheck(RoutedEventArgs? e)
     {
         
@@ -138,6 +155,10 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
         
     }
+
+    /// \brief Xử lý sự kiện khi người dùng chọn giới tính Nữ.
+    /// \param e Đối tượng RoutedEventArgs chứa thông tin sự kiện.
+    /// \details Hàm này đảm bảo chỉ có một trong hai giới tính (Nam hoặc Nữ) được chọn tại một thời điểm.
     private void FemaleSexCheck(RoutedEventArgs? e)
     {
 
@@ -148,6 +169,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
 
     }
 
+    /// \brief Xử lý sự kiện khi mất tiêu điểm tại ô nhập tuổi.
+    /// \param e Đối tượng RoutedEventArgs chứa thông tin về sự kiện.
+    /// \details Hàm này kiểm tra độ tuổi nhập vào có hợp lệ hay không (trong khoảng từ 16 đến 70).
     private void OnAgeLostFocus(RoutedEventArgs? e)
     {
         if (int.TryParse(AgeTextBox.Text, out int age))
@@ -173,6 +197,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// \brief Xử lý sự kiện khi mất tiêu điểm tại ô nhập chiều cao.
+    /// \param e Đối tượng RoutedEventArgs chứa thông tin về sự kiện.
+    /// \details Hàm này kiểm tra chiều cao nhập vào có hợp lệ hay không (trong khoảng từ 110 đến 210 cm).
     private void OnHeightLostFocus(RoutedEventArgs? e)
     {
         if (int.TryParse(HeightTextBox.Text, out int height))
@@ -195,6 +222,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// \brief Xử lý sự kiện khi mất tiêu điểm tại ô nhập cân nặng.
+    /// \param e Đối tượng RoutedEventArgs chứa thông tin về sự kiện.
+    /// \details Hàm này kiểm tra cân nặng nhập vào có hợp lệ hay không (trong khoảng từ 35 đến 250 kg).
     private void OnWeightLostFocus(RoutedEventArgs? e)
     {
         if (double.TryParse(WeightTextBox.Text, out var weight))
@@ -217,6 +247,9 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// \brief Lấy mức độ hoạt động đã chọn từ ComboBox.
+    /// \return Giá trị mức độ hoạt động (1: Không vận động, 2: Thấp, 3: Trung bình, 4: Cao).
+    /// \details Hàm này trả về giá trị của mức độ hoạt động mà người dùng đã chọn trong ComboBox.
     private int GetSelectedActivityLevel()
     {
         return SelectedActivityLevel?.Content switch
@@ -229,6 +262,10 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         };
     }
 
+    /// \brief Lấy tên mức độ hoạt động từ giá trị.
+    /// \param activityLevel Giá trị mức độ hoạt động (1-4).
+    /// \return Tên mức độ hoạt động tương ứng.
+    /// \details Hàm này trả về tên mức độ hoạt động dựa trên giá trị được cung cấp.
     private string GetActivityLevel(int activityLevel)
     {
         return activityLevel switch
@@ -241,6 +278,8 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         };
     }
 
+    /// \brief Điều hướng tới trang Hướng dẫn 2.
+    /// \details Hàm này kiểm tra dữ liệu người dùng, nếu hợp lệ thì chuyển hướng sang trang 2 với dữ liệu người dùng.
     private void NavigateToGuidePage2()
     {
         if(isValidData()) {
@@ -271,6 +310,8 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// \brief Xử lý khi ViewModel nhận tham số điều hướng.
+    /// \param parameter Đối tượng truyền vào khi điều hướng.
     public void OnNavigatedTo(object parameter)
     {
         if (parameter is CustomerInfo customerInfo)
@@ -299,6 +340,8 @@ public partial class Guide1ViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// \brief Kiểm tra dữ liệu người dùng có hợp lệ không.
+    /// \return true nếu dữ liệu hợp lệ, ngược lại false.
     private bool isValidData()
     {
         bool isAgeValid = AgeErrorTextBlock.Visibility != Visibility.Visible && !string.IsNullOrEmpty(AgeTextBox.Text);
