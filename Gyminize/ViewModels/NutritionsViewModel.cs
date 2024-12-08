@@ -159,10 +159,7 @@ public partial class NutritionsViewModel : ObservableObject
         try
         {
             CustomerId = await LocalSetting.ReadSettingAsync<string>("customer_id");
-            var utcNow = DateTime.UtcNow;
-            var localTimeZone = TimeZoneInfo.Local;
-            var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, localTimeZone);
-            var day = localDateTime; // Lấy ngày theo múi giờ địa phương hiện tại
+            var day = DateTime.UtcNow; // Lấy ngày theo múi giờ địa phương hiện tại
             CurrentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{CustomerId}/day/{day:yyyy-MM-dd HH:mm:ss}");
             if (CurrentDailydiary != null)
             {

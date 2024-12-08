@@ -133,10 +133,7 @@ public partial class DiaryViewModel : ObservableRecipient
     public async void InitializeAsync()
     {
         await GetCustomerId();
-        var utcNow = _dateTimeProvider.UtcNow;
-        var localTimeZone = TimeZoneInfo.Local;
-        var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, localTimeZone);
-        var daySelected = localDateTime; // Lấy ngày theo múi giờ địa phương hiện tại
+        var daySelected = _dateTimeProvider.UtcNow;
         SelectedDayText = _dateTimeProvider.Now.ToString("dd/MM/yyyy");
         await LoadFullData(daySelected);
     }
@@ -277,10 +274,7 @@ public partial class DiaryViewModel : ObservableRecipient
                     break;
             }
         }
-        var utcNow = _dateTimeProvider.UtcNow;
-        var localTimeZone = TimeZoneInfo.Local;
-        var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, localTimeZone);
-        var daySelected = localDateTime; // Lấy ngày theo múi giờ địa phương hiện tại
+        var daySelected = _dateTimeProvider.UtcNow; // Lấy ngày theo múi giờ địa phương hiện tại
         LoadWorkoudetails(daySelected);
     }
 

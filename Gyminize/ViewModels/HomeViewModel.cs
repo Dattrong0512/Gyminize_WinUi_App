@@ -328,10 +328,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         var endpoint = $"api/Customerhealth/get/" + _customer_id;
 
         _customerHealth = _apiServicesClient.Get<CustomerHealth>(endpoint);
-        var utcNow = _dateTimeProvider.UtcNow;
-        var localTimeZone = TimeZoneInfo.Local;
-        var localDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, localTimeZone);
-        var day = localDateTime; // Lấy ngày theo múi giờ địa phương hiện tại
+        var day = _dateTimeProvider.UtcNow;
         var CurrentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{day:yyyy-MM-dd HH:mm:ss}");
         if (CurrentDailydiary != null)
         {
