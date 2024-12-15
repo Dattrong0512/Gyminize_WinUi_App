@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 //using Gyminize_API.GraphQL;
 using GraphQL.Server.Transports.AspNetCore.SystemTextJson;
 using Gyminize_API.Data.Model;
+using Gyminize_API.Services.PaymentServices;
 //using Gyminize_API.GraphQl.Mutations;
 
 
@@ -50,7 +51,7 @@ builder.Services.AddDbContext<EntityDatabaseContext>(options =>
     ServiceLifetime.Scoped
 );
 
-
+builder.Services.AddSingleton<IVnPayService, VnPayService>();
 
 var app = builder.Build();
 

@@ -220,7 +220,6 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         localsetting = localSettings;
         _windowService.SetWindowSize(1500, 800);
 
-
         GenerateChartLines();
     }
 

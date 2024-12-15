@@ -1,0 +1,10 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Payment services API",
+    "description": "A simple example ASP.NET Core Web API",
+    "version": "v1"
+  },
+  "paths": { },
+  "components": { }
+}

@@ -14,6 +14,8 @@ using Gyminize.Views;
 using System.Diagnostics;
 using Twilio.Rest.Api.V2010.Account;
 using Gyminize.Core.Services;
+using System.Net;
+using System.Text;
 
 
 namespace Gyminize.ViewModels;
@@ -75,6 +77,8 @@ public partial class CartViewModel : ObservableRecipient
     public ObservableCollection<Orderdetail> OrderDetailsItems { get; set; } = new ObservableCollection<Orderdetail>();
     
     public Orders currentOrder = new Orders();
+
+
 
     /// <summary>
     /// Constructor khởi tạo các lệnh và gọi phương thức tải dữ liệu giỏ hàng.
@@ -235,4 +239,6 @@ public partial class CartViewModel : ObservableRecipient
             await _dialogService.ShowErrorDialogAsync("Bạn chưa thêm sản phẩm nào vào giỏ hàng");
         }
     }
+
+
 }

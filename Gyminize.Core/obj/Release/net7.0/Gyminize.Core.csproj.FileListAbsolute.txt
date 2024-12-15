@@ -1,0 +1,13 @@
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\bin\Release\net7.0\Gyminize.Core.deps.json
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\bin\Release\net7.0\Gyminize.Core.dll
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\bin\Release\net7.0\Gyminize.Core.pdb
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.csproj.AssemblyReference.cache
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.AssemblyInfoInputs.cache
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.AssemblyInfo.cs
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.csproj.CoreCompileInputs.cache
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.sourcelink.json
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.dll
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\refint\Gyminize.Core.dll
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\Gyminize.Core.pdb
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Gyminize.Core\obj\Release\net7.0\ref\Gyminize.Core.dll

@@ -23,9 +23,7 @@ using Windows.ApplicationModel.Background;
 using Gyminize.Services;
 using Windows.Web.AtomPub;
 using Gyminize.Core.Services;
-using Twilio.Rest.Verify.V2.Service;
-using Twilio;
-using Twilio;
+
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 using System.Net.Mail;
@@ -138,6 +136,7 @@ public partial class SigninViewmodel : ObservableObject
     /// \brief Đăng nhập người dùng bằng thông tin đăng nhập.
     private async void OnLoginByUser()
     {
+
         if (CheckCustomerByGet(Username, Password))
         {
             if (Password != customer.customer_password)

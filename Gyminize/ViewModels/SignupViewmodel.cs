@@ -55,8 +55,9 @@ namespace Gyminize.ViewModels
             _apiService = apiServicesClient;
             SignupCommand = new RelayCommand(OnSignUp);
             GoBackCommand = new RelayCommand(OnGoBack);
+            
         }
-
+        
         /// \brief Kiểm tra sự tồn tại của tài khoản người dùng.
         /// \param username Tên tài khoản cần kiểm tra.
         /// \return `true` nếu tài khoản tồn tại, ngược lại `false`.

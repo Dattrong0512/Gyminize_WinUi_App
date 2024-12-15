@@ -1,0 +1,5 @@
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Payment\src\core\Payment.Application\obj\Debug\net7.0\Payment.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Payment\src\core\Payment.Application\obj\Debug\net7.0\Payment.Application.AssemblyInfoInputs.cache
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Payment\src\core\Payment.Application\obj\Debug\net7.0\Payment.Application.AssemblyInfo.cs
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Payment\src\core\Payment.Application\obj\Debug\net7.0\Payment.Application.csproj.CoreCompileInputs.cache
+C:\Users\Hi\Desktop\DO_AN_WIN\Gyminize_WinUi_App\Payment\src\core\Payment.Application\obj\Debug\net7.0\Payment.Application.sourcelink.json
