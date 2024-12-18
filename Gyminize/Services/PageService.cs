@@ -33,6 +33,7 @@ public class PageService : IPageService
         Configure<PaymentViewModel, PaymentPage>();
         Configure<ExploreListDetailsViewModel, ExploreListDetailsPage>();
         Configure<WebViewViewModel, WebViewPage>();
+        Configure<OrderViewModel, OrderPage>();
     }
 
     // Lấy loại trang dựa trên khóa trang.

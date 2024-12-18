@@ -7,4 +7,5 @@ public interface ISampleDataService
 {
 
     Task<IEnumerable<Influencer>> GetInfluencerListDetailsDataAsync();
+
 }

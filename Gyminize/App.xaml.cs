@@ -121,6 +121,8 @@ public partial class App : Application
             services.AddTransient<ExploreListDetailsPage>();
             services.AddTransient<WebViewViewModel>();
             services.AddTransient<WebViewPage>();
+            services.AddTransient<OrderViewModel>();
+            services.AddTransient<OrderPage>();
             services.AddSingleton<Customer>();
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));

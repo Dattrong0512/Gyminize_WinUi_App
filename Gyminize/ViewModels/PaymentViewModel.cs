@@ -12,6 +12,7 @@ using Gyminize.Contracts.ViewModels;
 using Gyminize.Core.Contracts.Services;
 using Gyminize.Views;
 using System.Diagnostics;
+using Microsoft.UI.Xaml;
 
 
 namespace Gyminize.ViewModels;
@@ -343,7 +344,8 @@ public partial class PaymentViewModel : ObservableRecipient
         else if (IsBankSelected)
         {
             var newPayment = new Payment();
-            newPayment.payment_amount = 200000;
+            newPayment.payment_amount = TotalPrice;
+            
             var resultPayment = _apiServicesClient.Post<Payment>($"api/Cart/createPaymentVnpay/orderId/" + currentOrder.orders_id, newPayment);
             if (resultPayment != null)
             {
@@ -364,7 +366,24 @@ public partial class PaymentViewModel : ObservableRecipient
         }
         else if (IsCodSelected)
         {
-            // Xử lý thanh toán khi nhận hàng (COD)
+            var resultPayment = _apiServicesClient.Put<Orders>($"api/Order/update/orders_id/{currentOrder.orders_id}/status/Completed-COD", null);
+            if(resultPayment != null)
+            {
+                await _dialogService.ShowSuccessMessageAsync("Đặt hàng thành công");
+                var pageKey = typeof(ShopViewModel).FullName;
+                if (pageKey != null)
+                {
+                    _navigationService.NavigateTo(pageKey);
+                }
+            } else
+            {
+                await _dialogService.ShowSuccessMessageAsync("Đặt hàng thành công");
+                var pageKey = typeof(ShopViewModel).FullName;
+                if (pageKey != null)
+                {
+                    _navigationService.NavigateTo(pageKey);
+                }
+            }
         }
     }
 }

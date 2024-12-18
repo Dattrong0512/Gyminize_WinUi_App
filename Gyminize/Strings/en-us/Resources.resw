@@ -183,4 +183,10 @@
   <data name="Shell_WebView.Content" xml:space="preserve">
     <value>WebView</value>
   </data>
+  <data name="Shell_DataGrid.Content" xml:space="preserve">
+    <value>DataGrid</value>
+  </data>
+  <data name="Shell_Order.Content" xml:space="preserve">
+    <value>Order</value>
+  </data>
 </root>

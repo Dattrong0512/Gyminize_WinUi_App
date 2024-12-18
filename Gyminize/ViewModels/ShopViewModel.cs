@@ -285,7 +285,7 @@ public partial class ShopViewModel : ObservableRecipient
     {
         await GetCustomerID();
         var orderlist = _apiServicesClient.Get<List<Orders>>($"api/Order/get/customerID/All/" + CustomerId);
-        var filteredOrder = orderlist.FirstOrDefault(order => order.status != "Completed");
+        var filteredOrder = orderlist.FirstOrDefault(order => !order.status.Contains("Completed"));
         if (filteredOrder != null)
         {
             OrderId = filteredOrder.orders_id;

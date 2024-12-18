@@ -1094,7 +1094,6 @@ public class DialogService : IDialogService
 
         var dialog = new ContentDialog
         {
-            Title = "Processing Payment",
             Content = new StackPanel
             {
                 HorizontalAlignment = HorizontalAlignment.Center,

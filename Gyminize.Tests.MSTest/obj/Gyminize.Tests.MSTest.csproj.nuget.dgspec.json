@@ -330,6 +330,10 @@
               "target": "Package",
               "version": "[7.1.2, )"
             },
+            "CommunityToolkit.WinUI.UI.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
             "Markdown.Xaml": {
               "target": "Package",
               "version": "[1.0.0, )"

@@ -889,4 +889,5 @@ select * from payment;
 -- WHERE workoutdetail_id = 4;
 
 select * from orders;
+select * from payment;
 select * from orderdetail
