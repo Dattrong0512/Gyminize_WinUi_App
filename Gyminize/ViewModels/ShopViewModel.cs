@@ -285,7 +285,7 @@ public partial class ShopViewModel : ObservableRecipient
     {
         await GetCustomerID();
         var orderlist = _apiServicesClient.Get<List<Orders>>($"api/Order/get/customerID/All/" + CustomerId);
-        var filteredOrder = orderlist.FirstOrDefault(order => string.IsNullOrEmpty(order.status));
+        var filteredOrder = orderlist.FirstOrDefault(order => order.status != "Completed");
         if (filteredOrder != null)
         {
             OrderId = filteredOrder.orders_id;
@@ -307,6 +307,7 @@ public partial class ShopViewModel : ObservableRecipient
             {
                 await _dialogService.ShowErrorDialogAsync("Lỗi hệ thống: không thể tạo đơn hàng mới");
             }
+            OrderId = result.orders_id;
         }
     }
 

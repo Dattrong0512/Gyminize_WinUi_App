@@ -24,4 +24,6 @@ public interface IDialogService
     Task <int> ShowProductDialogWithSupplierAsync(Product product, int orderid);
 
     Task ShowSuccessMessageAsync(string message);
+
+    Task<int> ShowVNPAYPaymentProcessDialogAsync(int orderId);
 }

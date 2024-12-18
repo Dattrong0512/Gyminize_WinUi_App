@@ -147,22 +147,37 @@ public class CartController : ControllerBase
     {
         var order = _context.OrdersEntity.FirstOrDefault(x => x.orders_id == orderId);
 
+        if (order == null)
+        {
+            return NotFound(new { message = "Order not found" });
+        }
+
         if (order.status == "Not Payment")
         {
-            return Ok("Đơn hàng chưa thanh toán");
+            return Ok(new { message = "Đơn hàng thanh toán thất bại" });
         }
-        else if(order.status == "Pending")
+        else if (order.status == "Pending")
         {
-            return Ok("Đơn hàng đang thanh toán");
+            return Ok(new { message = "Đơn hàng đang thanh toán" });
         }
+        else if (order.status == "Completed")
+        {
+            return Ok(new { message = "Đơn hàng thanh toán thành công" });
+        }
+
         var payment = _context.PaymentEntity.FirstOrDefault(x => x.orders_id == orderId);
+        if (payment == null)
+        {
+            return NotFound(new { message = "Payment not found" });
+        }
+
         return Ok(new
         {
+            message = "Thông tin thanh toán",
             status = payment.payment_status,
             orderId = payment.orders_id,
             paymentAmount = payment.payment_amount
         });
     }
-
 }
 

@@ -1,4 +1,5 @@
 ﻿// Tệp App.xaml.cs chứa logic khởi động và cấu hình ứng dụng.
+
 using Gyminize.Activation;
 using Gyminize.Contracts.Services;
 using Gyminize.Core.Contracts.Services;
@@ -74,7 +75,10 @@ public partial class App : Application
             services.AddSingleton<IDialogService, DialogService>();
             services.AddSingleton<IApiServicesClient,ApiServicesClient>();
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+            services.AddTransient<IWebViewService, WebViewService>();
             // Core Services
+            services.AddSingleton<ISampleDataService, SampleDataService>();
+                
             //services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();
 
@@ -113,6 +117,10 @@ public partial class App : Application
             services.AddTransient<CartViewModel>();
             services.AddTransient<PaymentPage>();
             services.AddTransient<PaymentViewModel>();
+            services.AddTransient<ExploreListDetailsViewModel>();
+            services.AddTransient<ExploreListDetailsPage>();
+            services.AddTransient<WebViewViewModel>();
+            services.AddTransient<WebViewPage>();
             services.AddSingleton<Customer>();
             // Đăng ký cấu hình.
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));

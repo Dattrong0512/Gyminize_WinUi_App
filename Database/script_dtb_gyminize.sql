@@ -417,16 +417,16 @@ VALUES
 -- Chèn dữ liệu vào bảng Orders
 INSERT INTO Orders (customer_id, total_price,address,phone_number,status)
 VALUES 
-(1, 50.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(2, 20.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(3, 30.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(4, 15.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(5, 25.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(6, 10.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(7, 8.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(8, 100.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(9, 35.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan'),
-(10, 40.00,'123 Hai ba trung, Ha noi','0123456789', 'da thanh toan');
+(1, 500000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(2, 2000000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(3, 300000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(4, 1500000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(5, 250000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(6, 10000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(7, 8000000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(8, 1000000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(9, 35000,'123 Hai ba trung, Ha noi','0123456789', 'Completed'),
+(10, 4000000,'123 Hai ba trung, Ha noi','0123456789', 'Completed');
 
 -- Chèn dữ liệu vào bảng OrderDetail
 INSERT INTO OrderDetail (product_id, orders_id, product_amount)
@@ -658,10 +658,51 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+--Trigger dùng để update lại thông tin tổng tiền sản phẩm trong đơn hàng mỗi khi thêm hay xóa thông tin OrderDetail tương ứng 
+CREATE OR REPLACE FUNCTION update_order_total_price()
+RETURNS TRIGGER AS $$
+DECLARE
+    price_amount_del DECIMAL(10,2);
+	price_amount_ins DECIMAL(10,2);
+BEGIN
+    IF (TG_OP = 'INSERT') THEN
+        SELECT p.product_price * NEW.product_amount INTO price_amount_ins FROM Product p
+		WHERE p.product_id = NEW.product_id;
+
+        UPDATE Orders
+        SET total_price = total_price + price_amount_ins 
+        WHERE orders_id = NEW.orders_id;
+
+	ELSIF (TG_OP = 'UPDATE') THEN
+        SELECT p.product_price * NEW.product_amount INTO price_amount_ins FROM Product p
+		WHERE p.product_id = NEW.product_id;
+
+		SELECT p.product_price * OLD.product_amount INTO price_amount_del FROM Product p
+		WHERE p.product_id = OLD.product_id;
+
+        UPDATE Orders
+        SET total_price = total_price + price_amount_ins - price_amount_del
+        WHERE orders_id = NEW.orders_id;
+
+    ELSIF (TG_OP = 'DELETE') THEN
+        SELECT p.product_price * OLD.product_amount INTO price_amount_del FROM Product p
+		WHERE p.product_id = OLD.product_id;
+
+        UPDATE Orders
+        SET total_price = total_price - price_amount_del
+        WHERE orders_id = OLD.orders_id;
+
+    END IF;
+
+    RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+
 --Kích hoạt trigger
 DROP TRIGGER IF EXISTS trg_generate_workout_details ON PlanDetail;
 DROP TRIGGER IF EXISTS trg_update_calories_remain ON FoodDetail;
 DROP TRIGGER IF EXISTS trg_update_daily_weight ON Customer_Health;
+DROP TRIGGER IF EXISTS trg_update_order_total_price ON OrderDetail;
 
 CREATE TRIGGER trg_generate_workout_details
 AFTER INSERT ON PlanDetail
@@ -677,6 +718,11 @@ CREATE TRIGGER trg_update_daily_weight
 AFTER UPDATE ON Customer_Health
 FOR EACH ROW
 EXECUTE FUNCTION update_daily_weight();
+
+CREATE TRIGGER trg_update_order_total_price
+AFTER INSERT OR DELETE OR UPDATE ON OrderDetail
+FOR EACH ROW
+EXECUTE FUNCTION update_order_total_price();
 
 -- Test trigger
 -- INSERT INTO PlanDetail (plan_id, customer_id, start_date, end_date)
@@ -842,4 +888,5 @@ select * from payment;
 -- SET description = ''
 -- WHERE workoutdetail_id = 4;
 
-
+select * from orders;
+select * from orderdetail

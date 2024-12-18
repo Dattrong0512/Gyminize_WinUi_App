@@ -334,7 +334,7 @@ public partial class PaymentViewModel : ObservableRecipient
     /// <summary>
     /// Xử lý quá trình thanh toán.
     /// </summary>
-    private void PaymentProcess()
+    private async void PaymentProcess()
     {
         if (IsMomoSelected)
         {
@@ -342,7 +342,25 @@ public partial class PaymentViewModel : ObservableRecipient
         }
         else if (IsBankSelected)
         {
-            // Xử lý thanh toán qua Ngân hàng (hoặc VNPAY)
+            var newPayment = new Payment();
+            newPayment.payment_amount = 200000;
+            var resultPayment = _apiServicesClient.Post<Payment>($"api/Cart/createPaymentVnpay/orderId/" + currentOrder.orders_id, newPayment);
+            if (resultPayment != null)
+            {
+                var status = await _dialogService.ShowVNPAYPaymentProcessDialogAsync(currentOrder.orders_id);
+                if (status <= 0)
+                {
+                    //do nothing
+                }
+                else if (status == 1)
+                {
+                    var pageKey = typeof(ShopViewModel).FullName;
+                    if (pageKey != null)
+                    {
+                        _navigationService.NavigateTo(pageKey);
+                    }
+                }
+            }
         }
         else if (IsCodSelected)
         {

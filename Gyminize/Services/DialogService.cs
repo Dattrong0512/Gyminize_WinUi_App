@@ -1041,4 +1041,201 @@ public class DialogService : IDialogService
         popup.IsOpen = false;
     }
 
+    private const int MaxPollingTime = 9000000; // Tối đa  15p
+
+    public class ApiResponse
+    {
+        public string message
+        {
+            get; set;
+        }
+        public string Status
+        {
+            get; set;
+        } // Optional: cho các trường hợp có status
+        public int OrderId
+        {
+            get; set;
+        }   // Optional: cho các trường hợp có orderId
+        public decimal PaymentAmount
+        {
+            get; set;
+        } // Optional: nếu có paymentAmount
+    }
+
+    public async Task<int> ShowVNPAYPaymentProcessDialogAsync(int orderId)
+    {
+        int status = 0;
+        Debug.WriteLine("Bắt đầu ShowVNPAYPaymentProcessDialogAsync...");
+
+        var progressRing = new ProgressRing
+        {
+            Visibility = Visibility.Visible,
+            IsActive = true,
+            Width = 50,
+            Height = 50,
+            HorizontalAlignment = HorizontalAlignment.Center
+        };
+
+        var statusIcon = new FontIcon
+        {
+            Visibility = Visibility.Collapsed,
+            Glyph = "\uEA3A", // Default icon
+            FontSize = 50,
+            HorizontalAlignment = HorizontalAlignment.Center
+        };
+
+        var textStatus = new TextBlock
+        {
+            Text = "Đơn hàng đang thanh toán",
+            HorizontalAlignment = HorizontalAlignment.Center,
+            Margin = new Thickness(0, 0, 0, 20)
+        };
+
+        var dialog = new ContentDialog
+        {
+            Title = "Processing Payment",
+            Content = new StackPanel
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Children =
+            {
+                textStatus,
+                progressRing,
+                statusIcon
+            }
+            },
+            CloseButtonText = "Hủy",
+            DefaultButton = ContentDialogButton.Close
+        };
+
+        Debug.WriteLine("ContentDialog đã được khởi tạo.");
+
+        // Set dialog root element
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            dialog.XamlRoot = rootElement.XamlRoot;
+            Debug.WriteLine("XamlRoot đã được thiết lập.");
+        }
+
+        // Hiển thị dialog trước khi chạy polling
+        var showDialogTask = dialog.ShowAsync().AsTask();
+        Debug.WriteLine("ContentDialog đang được hiển thị...");
+
+        // Chạy polling trong Task ngầm
+        var pollingTask = Task.Run(async () =>
+        {
+            var endpoint = $"api/Cart/check-payment-status/{orderId}";
+            int elapsedTime = 0;
+
+            Debug.WriteLine($"Bắt đầu polling API với endpoint: {endpoint}");
+
+            while (elapsedTime < MaxPollingTime)
+            {
+                try
+                {
+                    Debug.WriteLine($"Gọi API lần {elapsedTime / 5000 + 1}...");
+                    var orderStatus = ApiServices.Get<ApiResponse>(endpoint);
+                    Debug.WriteLine($"API trả về: {orderStatus?.message}");
+
+                    // Nếu thanh toán thành công
+                    if (orderStatus.message == "Đơn hàng thanh toán thành công")
+                    {
+                        Debug.WriteLine("Trạng thái: Thành công.");
+                        status = 1;
+
+                        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+                        if (dispatcherQueue != null)
+                        {
+                            await dispatcherQueue.EnqueueAsync(() =>
+                            {
+                                progressRing.Visibility = Visibility.Collapsed;
+                                statusIcon.Glyph = "\uE930"; // Success icon
+                                statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Green);
+                                statusIcon.Visibility = Visibility.Visible;
+                                textStatus.Text = "Đơn hàng thanh toán thành công";
+                                dialog.CloseButtonText = "OK";
+                            });
+                        }
+                        else
+                        {
+                            await App.MainWindow.DispatcherQueue.EnqueueAsync(() =>
+                            {
+                                progressRing.Visibility = Visibility.Collapsed;
+                                statusIcon.Glyph = "\uE930"; // Success icon
+                                statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Green);
+                                statusIcon.Visibility = Visibility.Visible;
+                                textStatus.Text = "Đơn hàng thanh toán thành công";
+                                dialog.CloseButtonText = "OK";
+                            });
+                            Debug.WriteLine("Trạng thái: chỉnh thành công(main win).");
+                        }
+                        Debug.WriteLine("Trạng thái: chỉnh thành công.");
+                        break;
+                    }
+                    // Nếu thanh toán thất bại
+                    else if (orderStatus.message == "Đơn hàng thanh toán thất bại")
+                    {
+                        Debug.WriteLine("Trạng thái: Thất bại.");
+                        status = -1;
+
+                        await DispatcherQueue.GetForCurrentThread().EnqueueAsync(() =>
+                        {
+                            progressRing.Visibility = Visibility.Collapsed;
+                            statusIcon.Glyph = "\uE8D7"; // Failure icon
+                            statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Red);
+                            statusIcon.Visibility = Visibility.Visible;
+                            textStatus.Text = "Đơn hàng thanh toán thất bại";
+                            dialog.CloseButtonText = "OK";
+                        });
+                        break;
+                    }
+
+                    // Tạm dừng 5 giây trước khi polling lại
+                    await Task.Delay(5000);
+                    elapsedTime += 5000;
+                    Debug.WriteLine($"Đã chờ {elapsedTime} ms, tiếp tục polling...");
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Lỗi khi gọi API: {ex.Message}");
+
+                    await DispatcherQueue.GetForCurrentThread().EnqueueAsync(() =>
+                    {
+                        progressRing.Visibility = Visibility.Collapsed;
+                        statusIcon.Glyph = "\uE8C9"; // Error icon
+                        statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Gray);
+                        statusIcon.Visibility = Visibility.Visible;
+                        textStatus.Text = "Lỗi kết nối";
+                        dialog.CloseButtonText = "Lỗi";
+                    });
+                    break;
+                }
+            }
+
+            if (elapsedTime >= MaxPollingTime)
+            {
+                Debug.WriteLine("Đã hết thời gian chờ polling.");
+                await DispatcherQueue.GetForCurrentThread().EnqueueAsync(() =>
+                {
+                    progressRing.Visibility = Visibility.Collapsed;
+                    statusIcon.Glyph = "\uE8C9"; // Timeout icon
+                    statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Gray);
+                    statusIcon.Visibility = Visibility.Visible;
+                    textStatus.Text = "Hết thời gian chờ";
+                    dialog.CloseButtonText = "Timeout";
+                });
+            }
+        });
+
+        // Chờ polling hoàn thành
+        await pollingTask;
+
+        // Chờ người dùng đóng dialog
+        await showDialogTask;
+
+        Debug.WriteLine("Kết thúc ShowVNPAYPaymentProcessDialogAsync.");
+        return status;
+    }
 }
