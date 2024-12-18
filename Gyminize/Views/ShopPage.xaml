@@ -51,7 +51,7 @@
                 BorderThickness="1"
                 Command="{Binding SelectCartCommand}">
                 <StackPanel Orientation="Horizontal">
-                    <FontIcon Foreground="#003366" Glyph="&#xE719;" />
+                    <FontIcon Foreground="#003366" Glyph="&#xE7BF;" />
                     <TextBlock Foreground="Red" Text="(" />
                     <TextBlock Foreground="Red" Text="{Binding CartItemCount}" />
                     <TextBlock Foreground="Red" Text=")" />

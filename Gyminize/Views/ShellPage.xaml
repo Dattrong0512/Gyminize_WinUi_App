@@ -84,7 +84,7 @@
 
                 <NavigationViewItem x:Uid="Shell_Order" helpers:NavigationHelper.NavigateTo="Gyminize.ViewModels.OrderViewModel">
                     <NavigationViewItem.Icon>
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe80a;" />
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE7B8;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>

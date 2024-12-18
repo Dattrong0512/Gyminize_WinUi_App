@@ -145,7 +145,7 @@
     <value>Select an item from the list.</value>
   </data>
   <data name="Shell_ExploreListDetails.Content" xml:space="preserve">
-    <value>ExploreListDetails</value>
+    <value>Khám phá</value>
   </data>
   <data name="WebView_Loading.Text" xml:space="preserve">
     <value>Loading...</value>
@@ -184,7 +184,7 @@
     <value>WebView</value>
   </data>
   <data name="Shell_DataGrid.Content" xml:space="preserve">
-    <value>DataGrid</value>
+    <value>Đơn hàng</value>
   </data>
   <data name="Shell_Order.Content" xml:space="preserve">
     <value>Order</value>

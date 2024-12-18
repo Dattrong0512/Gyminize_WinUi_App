@@ -698,6 +698,17 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+--Trigger cập nhật lại order_date trên order khi thêm mới một Payment 
+CREATE OR REPLACE FUNCTION update_order_date()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE Orders
+    SET order_date = NEW.payment_date
+    WHERE order_id = NEW.order_id;
+    RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+
 --Kích hoạt trigger
 DROP TRIGGER IF EXISTS trg_generate_workout_details ON PlanDetail;
 DROP TRIGGER IF EXISTS trg_update_calories_remain ON FoodDetail;

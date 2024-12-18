@@ -39,11 +39,13 @@
                 <Button
                     Margin="10,0,0,0"
                     Command="{Binding EditNameCommand}"
-                    Content="Sửa" />
+                    Content="Sửa"
+                    Visibility="Collapsed" />
                 <Button
                     Margin="10,0,0,0"
                     Command="{Binding SaveNameCommand}"
-                    Content="Lưu" />
+                    Content="Lưu"
+                    Visibility="Collapsed" />
             </StackPanel>
             <TextBlock
                 Margin="10,0,0,0"
@@ -75,7 +77,7 @@
                 Margin="10,0,0,0"
                 FontSize="14"
                 Foreground="Red"
-                Text="Số điện thoại không được trống và phải là một số có 11 số"
+                Text="Số điện thoại không được trống và phải là một số có 10 số"
                 Visibility="{Binding IsPhoneNumberInvalid, Converter={StaticResource InverseBoolToVisibilityConverter}}" />
 
             <StackPanel Margin="10" Orientation="Horizontal">
@@ -174,7 +176,7 @@
             Orientation="Vertical">
             <TextBlock FontSize="20">
                 <Run Text="Tổng tiền hàng: " />
-                <Run Text="{Binding ProductPrice}" />
+                <Run Text="{Binding ProductPrice, Converter={StaticResource PriceConverter}}" />
                 <Run Text="đ" />
             </TextBlock>
             <TextBlock FontSize="20">

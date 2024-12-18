@@ -11,6 +11,7 @@
     <Page.Resources>
         <converters:StatusToPaymentMethodConverter x:Key="StatusToPaymentMethodConverter" />
         <converters:StatusToPaymentStatusConverter x:Key="StatusToPaymentStatusConverter" />
+        <converters:PriceConverter x:Key="PriceConverter" />
     </Page.Resources>
 
     <Grid x:Name="ContentArea" Background="White">
@@ -23,7 +24,7 @@
             </controls:DataGrid.Resources>
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn Binding="{Binding orders_id}" Header="Mã đơn hàng" />
-                <controls:DataGridTextColumn Binding="{Binding orders_date}" Header="Ngày đặt hàng" />
+                <controls:DataGridTextColumn Binding="{Binding order_date}" Header="Ngày đặt hàng" />
                 <controls:DataGridTemplateColumn Header="Danh sách sản phẩm">
                     <controls:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -41,9 +42,9 @@
                         </DataTemplate>
                     </controls:DataGridTemplateColumn.CellTemplate>
                 </controls:DataGridTemplateColumn>
-                <controls:DataGridTextColumn Binding="{Binding orders_address}" Header="Địa chỉ giao hàng" />
+                <controls:DataGridTextColumn Binding="{Binding address}" Header="Địa chỉ giao hàng" />
                 <controls:DataGridTextColumn Binding="{Binding phone_number}" Header="Số điện thoại" />
-                <controls:DataGridTextColumn Binding="{Binding total_price}" Header="Tổng tiền" />
+                <controls:DataGridTextColumn Binding="{Binding total_price, Converter={StaticResource PriceConverter}}" Header="Tổng tiền" />
                 <controls:DataGridTextColumn Binding="{Binding status, Converter={StaticResource StatusToPaymentMethodConverter}}" Header="Phương thức thanh toán" />
                 <controls:DataGridTextColumn Binding="{Binding status, Converter={StaticResource StatusToPaymentStatusConverter}}" Header="Tình trạng" />
             </controls:DataGrid.Columns>

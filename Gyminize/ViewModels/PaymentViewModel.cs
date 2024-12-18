@@ -41,7 +41,7 @@ public partial class PaymentViewModel : ObservableRecipient
 
     public bool CanProceedToPayment => !IsNameInvalid && !IsPhoneNumberInvalid && !IsAddressInvalid &&
                    !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(PhoneNumber) && !string.IsNullOrWhiteSpace(Address) &&
-                   (IsMomoSelected || IsBankSelected || IsCodSelected);
+                   (IsMomoSelected || IsBankSelected || IsCodSelected) && (IsNameEnabled == false || IsPhoneNumberEnabled == false || IsAddressEnabled == false ) ;
 
 
     private decimal _shippingFee;
@@ -233,7 +233,7 @@ public partial class PaymentViewModel : ObservableRecipient
         Address = currentOrder.address;
 
         _productPrice = currentOrder.total_price;
-        _shippingFee = 20;
+        _shippingFee = 0;
 
         _totalPrice = _productPrice + _shippingFee;
     }
@@ -287,14 +287,19 @@ public partial class PaymentViewModel : ObservableRecipient
     /// </summary>
     private void SavePhoneNumber()
     {
-        if (string.IsNullOrEmpty(PhoneNumber) || PhoneNumber.Length != 11 || !PhoneNumber.All(char.IsDigit))
+        if (string.IsNullOrEmpty(PhoneNumber) || PhoneNumber.Length != 10 || !PhoneNumber.All(char.IsDigit))
         {
             IsPhoneNumberInvalid = true;
         }
         else
         {
-            IsPhoneNumberInvalid = false;
-            IsPhoneNumberEnabled = false;
+            var resultPayment = _apiServicesClient.Put<Orders>($"api/Order/update/orders_id/{currentOrder.orders_id}/phone_number/{PhoneNumber}", null);
+            if(resultPayment == null)
+            {
+                IsPhoneNumberInvalid = false;
+                IsPhoneNumberEnabled = false;
+                _dialogService.ShowSuccessMessageAsync("Cập nhật số điện thoại thành công");
+            };
         }
         CheckCanProceedToPayment();
     }
@@ -318,8 +323,13 @@ public partial class PaymentViewModel : ObservableRecipient
         }
         else
         {
-            IsAddressInvalid = false;
-            IsAddressEnabled = false;
+            var resultPayment = _apiServicesClient.Put<Orders>($"api/Order/update/orders_id/{currentOrder.orders_id}/address/{Address}", null);
+            if (resultPayment == null)
+            {
+                IsAddressInvalid = false;
+                IsAddressEnabled = false;
+                _dialogService.ShowSuccessMessageAsync("Cập nhật địa chỉ thành công");
+            }
         }
         CheckCanProceedToPayment();
     }
@@ -367,7 +377,7 @@ public partial class PaymentViewModel : ObservableRecipient
         else if (IsCodSelected)
         {
             var resultPayment = _apiServicesClient.Put<Orders>($"api/Order/update/orders_id/{currentOrder.orders_id}/status/Completed-COD", null);
-            if(resultPayment != null)
+            if(resultPayment == null)
             {
                 await _dialogService.ShowSuccessMessageAsync("Đặt hàng thành công");
                 var pageKey = typeof(ShopViewModel).FullName;
@@ -375,15 +385,7 @@ public partial class PaymentViewModel : ObservableRecipient
                 {
                     _navigationService.NavigateTo(pageKey);
                 }
-            } else
-            {
-                await _dialogService.ShowSuccessMessageAsync("Đặt hàng thành công");
-                var pageKey = typeof(ShopViewModel).FullName;
-                if (pageKey != null)
-                {
-                    _navigationService.NavigateTo(pageKey);
-                }
-            }
+            } 
         }
     }
 }
