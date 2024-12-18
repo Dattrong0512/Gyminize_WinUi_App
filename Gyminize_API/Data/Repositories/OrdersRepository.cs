@@ -69,7 +69,6 @@ public class OrdersRepository
                 }
             }
         }
-        Debug.WriteLine(order);
         // Thêm đơn hàng vào database
         _context.OrdersEntity.Add(order);
         _context.SaveChanges();
@@ -100,7 +99,49 @@ public class OrdersRepository
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Lỗi trong UpdateStatusOrder: {ex.Message}");
+            Debug.WriteLine($"Lỗi trong UpdateStatusOrder: {ex.Message}");
+            throw;
+        }
+    }
+    public bool UpdateAddressOrder(int orders_id, string address)
+    {
+        try
+        {
+            var order = _context.OrdersEntity
+                .Where(o => o.orders_id == orders_id)
+                .FirstOrDefault();
+            if (order == null)
+            {
+                return false;
+            }
+            order.address = address;
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Lỗi trong UpdateAddressOrder: {ex.Message}");
+            throw;
+        }
+    }
+    public bool UpdatePhoneNumberOrder(int orders_id, string phonenumber)
+    {
+        try
+        {
+            var order = _context.OrdersEntity
+                .Where(o => o.orders_id == orders_id)
+                .FirstOrDefault();
+            if (order == null)
+            {
+                return false;
+            }
+            order.phone_number = phonenumber;
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Lỗi trong UpdatePhoneNumberOrder: {ex.Message}");
             throw;
         }
     }

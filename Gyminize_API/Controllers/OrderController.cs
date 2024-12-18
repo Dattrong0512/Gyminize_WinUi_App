@@ -73,8 +73,6 @@ public class OrderController : ControllerBase
         }
     }
 
-
-
     /// \brief API để cập nhật trạng thái của một đơn hàng.
     /// \param orders_id ID của đơn hàng.
     /// \param status Trạng thái mới của đơn hàng.
@@ -84,6 +82,19 @@ public class OrderController : ControllerBase
     {
         var UpdateStatus = _ordersRepository.UpdateStatusOrder(orders_id, status);
         return Ok(UpdateStatus);
+    }
+
+    [HttpPut("update/orders_id/{orders_id:int}/address/{address}")]
+    public IActionResult UpdateAddressOrder(int orders_id, string address)
+    {
+        var UpdateAddress = _ordersRepository.UpdateAddressOrder(orders_id, address);
+        return Ok(UpdateAddress);
+    }
+    [HttpPut("update/orders_id/{orders_id:int}/phone_number/{phonenumber}")]
+    public IActionResult UpdatePhoneNumberOrder(int orders_id, string phonenumber)
+    {
+        var UpdatePhoneNumber = _ordersRepository.UpdatePhoneNumberOrder(orders_id, phonenumber);
+        return Ok(UpdatePhoneNumber);
     }
 }
 
