@@ -153,38 +153,38 @@ public class SampleDataService : ISampleDataService
 
             new() {
                 influencer_id = 16,
-                influencer_name = "Trang Le Fitness",
+                influencer_name = "SmallGym",
                 influencer_country = "Việt Nam",
                 influencer_platform = "Youtube",
-                influencer_background = "Trang Lê (Trang Lê Fitness) là một YouTuber nổi bật tại Việt Nam trong lĩnh vực thể hình và sức khỏe. Cô chuyên chia sẻ các nội dung liên quan đến tập luyện gym, dinh dưỡng, và lối sống lành mạnh. Kênh của Trang Lê chủ yếu hướng đến việc giúp mọi người cải thiện thể hình, tăng cường sức khỏe, và duy trì một cuộc sống năng động",
-                influencer_link = "https://www.youtube.com/@TrangLeFitness"
+                influencer_background = "SmallGym là một kênh YouTube nổi bật trong cộng đồng yêu thích thể hình tại Việt Nam. Kênh này được điều hành bởi những người đam mê thể dục thể thao và fitness, chuyên cung cấp các video liên quan đến các chủ đề tập luyện, xây dựng cơ bắp, dinh dưỡng và lối sống lành mạnh. SmallGym tập trung vào việc hỗ trợ người xem có thể tập luyện hiệu quả tại các phòng gym nhỏ, tại nhà hoặc những không gian hạn chế",
+                influencer_link = "https://www.youtube.com/@SmallGym"
             },
 
             new() {
                 influencer_id = 17,
-                influencer_name = "Lực Sĩ Phạm Văn Mách",
+                influencer_name = "An Nguyễn Fitness",
                 influencer_country = "Việt Nam",
                 influencer_platform = "Youtube",
-                influencer_background = "Phạm Văn Mách là một YouTuber và huấn luyện viên thể hình nổi tiếng tại Việt Nam, được biết đến rộng rãi trong cộng đồng yêu thích thể thao và gym. Anh là một trong những người có ảnh hưởng lớn trong ngành thể hình tại Việt Nam, nổi bật với những video chia sẻ về luyện tập, dinh dưỡng và phát triển thể hình",
-                influencer_link = "https://www.youtube.com/@Lucsyphamvanmach"
+                influencer_background = "An Nguyen Fitness là một YouTuber và influencer nổi tiếng trong cộng đồng thể hình tại Việt Nam. Anh được biết đến với các video chia sẻ về những chủ đề liên quan đến thể hình, chế độ dinh dưỡng và phong cách sống lành mạnh. An Nguyễn, người sáng lập kênh An Nguyen Fitness, đã tạo dựng được một cộng đồng lớn và được đông đảo người yêu thích nhờ vào sự chia sẻ kiến thức bổ ích và kinh nghiệm thực tế của mình trong việc tập luyện và cải thiện sức khỏe",
+                influencer_link = "https://www.youtube.com/@shredan72"
             },
 
             new() {
                 influencer_id = 18,
-                influencer_name = "Miss Tram Fitness",
+                influencer_name = "Coach Vincent Fitness",
                 influencer_country = "Việt Nam",
                 influencer_platform = "Youtube",
-                influencer_background = "Miss Tram Fitness là một kênh YouTube nổi bật tại Việt Nam, chuyên cung cấp các kiến thức về fitness, chăm sóc sức khỏe và làm đẹp. Kênh này tập trung vào việc chia sẻ những bài tập thể dục hiệu quả, các phương pháp giảm cân, tăng cường sức khỏe, cũng như những bí quyết chăm sóc sắc đẹp từ bên trong lẫn bên ngoài.",
-                influencer_link = "https://www.youtube.com/@misstramfitness5700"
+                influencer_background = "Coach Vincent Fitness là một YouTuber nổi bật trong cộng đồng thể hình, đặc biệt là tại Việt Nam, và được biết đến nhiều với những video chia sẻ kiến thức về tập luyện thể thao, dinh dưỡng, và lối sống khỏe mạnh. Anh là một huấn luyện viên cá nhân (personal trainer) và có nhiều kinh nghiệm trong việc hướng dẫn mọi người đạt được mục tiêu thể hình và cải thiện sức khỏe.",
+                influencer_link = "https://www.youtube.com/@CoachVincentFitness"
             },
 
             new() {
                 influencer_id = 19,
-                influencer_name = "Ryan Long Fitness",
+                influencer_name = "SVFit - Gym & Cuộc sống tại nhật",
                 influencer_country = "Việt Nam",
                 influencer_platform = "Youtube",
-                influencer_background = "Ryan Long là một YouTuber và huấn luyện viên fitness nổi tiếng, đặc biệt trong cộng đồng yêu thích thể hình và lối sống lành mạnh. Anh sở hữu kênh YouTube Ryan Long Fitness, nơi anh chia sẻ các video hướng dẫn tập luyện, chế độ dinh dưỡng, và các lời khuyên về sức khỏe tổng thể",
-                influencer_link = "https://www.youtube.com/@RyanLongFitness"
+                influencer_background = "SVFit là một kênh YouTube nổi bật, chủ yếu tập trung vào các chủ đề liên quan đến thể hình (gym) và cuộc sống tại Nhật Bản. Kênh này được điều hành bởi một người Việt Nam, và những video của anh ấy chủ yếu chia sẻ các trải nghiệm cá nhân về cuộc sống tại Nhật, cách tập luyện gym, chế độ ăn uống và phát triển cơ thể, cũng như những chia sẻ về lối sống khỏe mạnh",
+                influencer_link = "https://www.youtube.com/@svfit-gymcuocsongtainhat5704"
             },
 
             new() {

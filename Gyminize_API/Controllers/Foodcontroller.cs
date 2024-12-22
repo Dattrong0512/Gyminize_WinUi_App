@@ -33,6 +33,7 @@ public class Foodcontroller : ControllerBase
     {
         try
         {
+
             var allFood = _foodRepository.GetAllFood(); // Lấy tất cả các loại thực phẩm từ repository
             return Ok(allFood); // Trả về danh sách thực phẩm
         }
@@ -41,5 +42,16 @@ public class Foodcontroller : ControllerBase
             Console.WriteLine($"Error: {ex.Message}"); // Log lỗi nếu có
             return StatusCode(500, "Internal server error"); // Trả về lỗi 500 nếu có sự cố
         }
+    }
+
+    [HttpGet("get/food_name/{food_name}")]
+    public IActionResult GetFoodByName(string food_name)
+    {
+        var foods = _foodRepository.GetFoodByName(food_name);
+        if (foods == null)
+        {
+            return NotFound(); // Nếu không tìm thấy nhật ký hàng ngày, trả về lỗi 404
+        }
+        return Ok(foods); // Trả về nhật ký hàng ngày của khách hàng
     }
 }

@@ -65,6 +65,51 @@
             Foreground="#003366"
             SelectedDatesChanged="MyCalendarView_SelectedDatesChanged"
             SelectionMode="Single" />
+
+        <StackPanel
+            Margin="0,0,0,20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal">
+            <StackPanel
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Ellipse
+                    Width="20"
+                    Height="20"
+                    Margin="0,0"
+                    Fill="LightGreen" />
+                <TextBlock
+                    Margin="0,0"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Text="/" />
+                <Ellipse
+                    Width="20"
+                    Height="20"
+                    Margin="0,0"
+                    Fill="LightCoral" />
+                <TextBlock
+                    Margin="5,0"
+                    VerticalAlignment="Center"
+                    Text="Đã/Chưa hoàn thành bài tập trong ngày" />
+            </StackPanel>
+            <StackPanel
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Ellipse
+                    Width="20"
+                    Height="20"
+                    Margin="5,0"
+                    Fill="LightBlue" />
+                <TextBlock
+                    Margin="5,0"
+                    VerticalAlignment="Center"
+                    Text="Ngày nghỉ" />
+            </StackPanel>
+        </StackPanel>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

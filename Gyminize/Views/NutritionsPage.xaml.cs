@@ -19,10 +19,5 @@ namespace Gyminize.Views
             DataContext = ViewModel;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var textBox = sender as TextBox;
-            ViewModel.SearchFoodCommand.Execute(textBox.Text);
-        }
     }
 }

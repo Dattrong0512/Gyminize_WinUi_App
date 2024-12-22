@@ -15,10 +15,10 @@ namespace Gyminize.Core.Services
         static ApiServices()
         {
             _client = new HttpClient();
-            _client.BaseAddress = new Uri("https://localhost:7141/"); // Thay đổi base URL nếu cần
+            _client.BaseAddress = new Uri("https://localhost:7141/");
+            _client.DefaultRequestHeaders.AcceptCharset.Add(new System.Net.Http.Headers.StringWithQualityHeaderValue("utf-8"));
         }
 
-        // Hàm POST tổng quát dạng static
         public static T Post<T>(string endpoint, object data)
         {
             try
@@ -31,13 +31,10 @@ namespace Gyminize.Core.Services
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-
                     return JsonSerializer.Deserialize<T>(responseContent, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                    
                 }
                 else
                 {
-                    // Xử lý lỗi
                     var errorContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                     Debug.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                     Debug.WriteLine($"Error Details: {errorContent}");
@@ -51,7 +48,6 @@ namespace Gyminize.Core.Services
             }
         }
 
-        // Hàm GET tổng quát dạng static
         public static T Get<T>(string endpoint)
         {
             try
@@ -61,13 +57,10 @@ namespace Gyminize.Core.Services
                 if (response.IsSuccessStatusCode)
                 {
                     var content = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                    var returnContent = JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                    Debug.WriteLine(returnContent);
-                    return JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                    return JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
                 }
                 else
                 {
-                    // Xử lý lỗi
                     var errorContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                     Debug.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                     Debug.WriteLine($"Error Details: {errorContent}");
@@ -80,6 +73,7 @@ namespace Gyminize.Core.Services
                 return default;
             }
         }
+
         public static T Put<T>(string endpoint, object data)
         {
             try
@@ -96,7 +90,6 @@ namespace Gyminize.Core.Services
                 }
                 else
                 {
-                    // Xử lý lỗi
                     var errorContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                     Debug.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                     Debug.WriteLine($"Error Details: {errorContent}");
@@ -109,6 +102,7 @@ namespace Gyminize.Core.Services
                 return default;
             }
         }
+
         public static bool Delete(string endpoint, object data)
         {
             try
@@ -129,7 +123,6 @@ namespace Gyminize.Core.Services
                 }
                 else
                 {
-                    // Xử lý lỗi
                     var errorContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                     Debug.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
                     Debug.WriteLine($"Error Details: {errorContent}");

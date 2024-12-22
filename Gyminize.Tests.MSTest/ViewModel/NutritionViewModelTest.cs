@@ -119,7 +119,7 @@ namespace Gyminize.Tests.MSTest.ViewModel
                 });
 
             // Act
-            await _viewModel!.LoadFoodLibraryAsync();
+            _viewModel!.LoadFoodLibraryAsync();
 
             // Assert (Đảm bảo có 2 item như đã tạo và item đầu là Apple )
             Assert.AreEqual(2, _viewModel.FoodLibraryItems.Count);

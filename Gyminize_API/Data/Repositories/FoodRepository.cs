@@ -27,12 +27,43 @@ public class FoodRepository
         try
         {
             // Trả về danh sách tất cả thực phẩm từ cơ sở dữ liệu
-            return _context.FoodEntity.ToList();
+            return _context.FoodEntity
+            .Select(f => new Food
+            {
+                food_id = f.food_id,
+                food_name = f.food_name,
+                calories = f.calories,
+                serving_unit = f.serving_unit
+            }).Take(100)
+            .ToList();
         }
         catch (Exception ex)
         {
             // Log chi tiết lỗi nếu có
             Console.WriteLine($"Lỗi trong GetAllFood: {ex.Message}");
+            throw;
+        }
+    }
+
+    public List<Food> GetFoodByName(string food_name)
+    {
+        try
+        {
+            // Trả về danh sách tất cả thực phẩm từ cơ sở dữ liệu
+            return _context.FoodEntity
+            .Select(f => new Food
+            {
+                food_id = f.food_id,
+                food_name = f.food_name,
+                calories = f.calories,
+                serving_unit = f.serving_unit
+            }).Where(f => f.food_name.ToLower().Contains(food_name.ToLower()))
+            .ToList();
+        }
+        catch (Exception ex)
+        {
+            // Log chi tiết lỗi nếu có
+            Console.WriteLine($"Lỗi trong GetFoodByName: {ex.Message}");
             throw;
         }
     }

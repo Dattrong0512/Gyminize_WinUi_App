@@ -128,7 +128,8 @@
                     Margin="10"
                     Command="{Binding TogglePaymentMethod}"
                     CommandParameter="Momo"
-                    IsChecked="{Binding IsMomoSelected, Mode=TwoWay}">
+                    IsChecked="{Binding IsMomoSelected, Mode=TwoWay}"
+                    Visibility="Collapsed">
                     <StackPanel Orientation="Vertical">
                         <Image
                             Width="100"

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Gyminize.Contracts.Services;
-
 using Microsoft.UI.Xaml.Controls;
 using System.Reflection.Metadata;
 using System.Diagnostics;
@@ -25,6 +24,8 @@ namespace Gyminize.ViewModels;
 /// </remarks>
 public partial class NutritionsViewModel : ObservableObject
 {
+   
+
     public ILocalSettingsService LocalSetting
     {
         get;
@@ -50,6 +51,20 @@ public partial class NutritionsViewModel : ObservableObject
         get => _totalCaloriesExpression;
         set => SetProperty(ref _totalCaloriesExpression, value);
     }
+
+    private bool _isEmplyLibrary = false;
+    public bool IsEmptyLibrary
+    {
+        get => _isEmplyLibrary;
+        set => SetProperty(ref _isEmplyLibrary, value);
+    }
+
+    private string _searchText;
+    public string SearchText
+    {
+        get => _searchText;
+        set => SetProperty(ref _searchText, value);
+    }
     public string CustomerId;
     public ICommand DeleteFoodFromMealCommand
     {
@@ -59,24 +74,25 @@ public partial class NutritionsViewModel : ObservableObject
     {
         get;
     }
-    public ICommand SearchFoodCommand
+    public ICommand SearchButtonClickedCommand
     {
         get;
     }
 
-    /// <summary>
-    /// Hàm khởi tạo cho ViewModel dinh dưỡng.
-    /// </summary>
-    /// <param name="navigationService">Dịch vụ điều hướng để chuyển màn hình.</param>
-    /// <param name="dialogService">Dịch vụ quản lý hộp thoại.</param>
-    /// <param name="localSetting">Dịch vụ lưu trữ cài đặt cục bộ của ứng dụng.</param>
-    /// <param name="apiServicesClient">Dịch vụ kết nối API để lấy và gửi dữ liệu từ/đến máy chủ.</param>
-    /// <remarks>
-    /// Hàm khởi tạo này thiết lập các dịch vụ cần thiết cho ViewModel, bao gồm điều hướng, 
-    /// hộp thoại và các dịch vụ API. Nó cũng khởi tạo các lệnh (commands) cho các chức năng 
-    /// như thêm thực phẩm vào bữa ăn, xóa thực phẩm và tìm kiếm thực phẩm.
-    /// </remarks>
-    public NutritionsViewModel(INavigationService navigationService,IDialogService dialogService ,ILocalSettingsService localSetting, IApiServicesClient apiServicesClient)
+
+/// <summary>
+/// Hàm khởi tạo cho ViewModel dinh dưỡng.
+/// </summary>
+/// <param name="navigationService">Dịch vụ điều hướng để chuyển màn hình.</param>
+/// <param name="dialogService">Dịch vụ quản lý hộp thoại.</param>
+/// <param name="localSetting">Dịch vụ lưu trữ cài đặt cục bộ của ứng dụng.</param>
+/// <param name="apiServicesClient">Dịch vụ kết nối API để lấy và gửi dữ liệu từ/đến máy chủ.</param>
+/// <remarks>
+/// Hàm khởi tạo này thiết lập các dịch vụ cần thiết cho ViewModel, bao gồm điều hướng, 
+/// hộp thoại và các dịch vụ API. Nó cũng khởi tạo các lệnh (commands) cho các chức năng 
+/// như thêm thực phẩm vào bữa ăn, xóa thực phẩm và tìm kiếm thực phẩm.
+/// </remarks>
+public NutritionsViewModel(INavigationService navigationService,IDialogService dialogService ,ILocalSettingsService localSetting, IApiServicesClient apiServicesClient)
     {
         _apiServicesClient = apiServicesClient;
         _navigationService = navigationService;
@@ -84,9 +100,9 @@ public partial class NutritionsViewModel : ObservableObject
         _dialogService = dialogService;
         DeleteFoodFromMealCommand = new AsyncRelayCommand<FoodDetail>(DeleteFoodFromMealAsync);
         AddFoodToMealCommand = new AsyncRelayCommand<Food?>(AddFoodToMealAsync); // Sửa lại dòng này
-        SearchFoodCommand = new RelayCommand<string>(SearchFoodLibrary);
+        SearchButtonClickedCommand = new RelayCommand(SearchFoodLibrary);
         LoadFoodLibraryAsync();
-        LoadDailyDiary();
+        _ = LoadDailyDiary();
         
     }
     /// <summary>
@@ -96,20 +112,20 @@ public partial class NutritionsViewModel : ObservableObject
     /// Hàm này gửi yêu cầu đến API để lấy danh sách các thực phẩm và thêm vào `FoodLibraryItems`. 
     /// Sau đó, danh sách này được sao chép vào `FilteredFoodLibraryItems` để sử dụng cho việc tìm kiếm thực phẩm.
     /// </remarks>
-    public async Task LoadFoodLibraryAsync()
+    public async void LoadFoodLibraryAsync()
     {
         try
         {
-            var foods = _apiServicesClient.Get<List<Food>>("api/Food");
+            var foods =  _apiServicesClient.Get<List<Food>>("api/Food");
             if (foods != null && foods.Any())
             {
-                FoodLibraryItems.Clear();
+                FilteredFoodLibraryItems.Clear();
                 foreach (var food in foods)
                 {
-                    FoodLibraryItems.Add(food);
+                    FilteredFoodLibraryItems.Add(food);
                 }
+                IsEmptyLibrary = false;
             }
-            FilteredFoodLibraryItems = new ObservableCollection<Food>(FoodLibraryItems);
         }
         catch (Exception ex)
         {
@@ -126,23 +142,26 @@ public partial class NutritionsViewModel : ObservableObject
     /// Hàm này lọc danh sách thực phẩm dựa trên từ khóa tìm kiếm và cập nhật `FilteredFoodLibraryItems`.
     /// Nếu không có từ khóa, tất cả thực phẩm sẽ được hiển thị.
     /// </remarks>
-    public void SearchFoodLibrary(string searchText)
+    public void SearchFoodLibrary()
     {
-        if (string.IsNullOrWhiteSpace(searchText))
+        if (string.IsNullOrWhiteSpace(SearchText))
         {
-            FilteredFoodLibraryItems.Clear();
-            foreach (var item in FoodLibraryItems)
-            {
-                FilteredFoodLibraryItems.Add(item);
-            }
+            LoadFoodLibraryAsync();
         }
         else
         {
-            var filteredItems = FoodLibraryItems.Where(f => f.food_name.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
-            FilteredFoodLibraryItems.Clear();
-            foreach (var item in filteredItems)
+            IsEmptyLibrary = false;
+            // Mã hóa SearchText thành UTF-8
+            var encodedSearchText = Uri.EscapeDataString(SearchText);
+            var result = _apiServicesClient.Get<List<Food>>($"api/Food/get/food_name/{encodedSearchText}");
+            if (result.Count() == 0) { IsEmptyLibrary = true; } else { IsEmptyLibrary = false; }
+            if (result != null)
             {
-                FilteredFoodLibraryItems.Add(item);
+                FilteredFoodLibraryItems.Clear();
+                foreach (var item in result)
+                {
+                    FilteredFoodLibraryItems.Add(item);
+                }
             }
         }
     }
