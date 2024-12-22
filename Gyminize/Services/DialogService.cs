@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using CommunityToolkit.WinUI;
+using CommunityToolkit.WinUI.UI.Controls;
 using Gyminize.Contracts.Services;
 using Gyminize.Helpers;
 using Microsoft.Web.WebView2.Core;
@@ -21,6 +22,7 @@ using Gyminize.Converters;
 using Microsoft.UI.Xaml.Data;
 using Windows.UI.Text;
 using Microsoft.UI.Xaml.Controls.Primitives;
+using Windows.Storage;
 
 
 public class DialogService : IDialogService
@@ -1236,5 +1238,66 @@ public class DialogService : IDialogService
 
         Debug.WriteLine("Kết thúc ShowVNPAYPaymentProcessDialogAsync.");
         return status;
+    }
+
+    public async Task ShowMarkdownDialogAsync(string markdownText)
+    {
+        var dialog = new ContentDialog
+        {
+            Title = "Lưu ý Quan Trọng",
+            CloseButtonText = "OKEE"
+        };
+
+        dialog.Resources["ContentDialogMaxWidth"] = 800;
+        dialog.Resources["ContentDialogMaxHeight"] = 600;
+        var markdownTextBlock = new MarkdownTextBlock
+        {
+            Text = markdownText,
+            TextWrapping = TextWrapping.Wrap,
+            FontFamily = new Microsoft.UI.Xaml.Media.FontFamily("Helvetica"),
+            FontSize = 16
+        };
+
+        dialog.Content = new ScrollViewer
+        {
+            Content = markdownTextBlock,
+            VerticalScrollBarVisibility = ScrollBarVisibility.Auto
+        };
+
+        var primaryButtonStyle = new Style(typeof(Button));
+        primaryButtonStyle.Setters.Add(new Setter(Button.BackgroundProperty, new SolidColorBrush(Microsoft.UI.Colors.DarkSlateBlue)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.ForegroundProperty, new SolidColorBrush(Microsoft.UI.Colors.White)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.FontSizeProperty, 16.0));
+        primaryButtonStyle.Setters.Add(new Setter(Button.PaddingProperty, new Thickness(10, 5, 10, 5)));
+        primaryButtonStyle.Setters.Add(new Setter(Button.CornerRadiusProperty, new CornerRadius(10)));
+
+        dialog.CloseButtonStyle = primaryButtonStyle;
+
+        if (App.MainWindow.Content is FrameworkElement rootElement)
+        {
+            dialog.XamlRoot = rootElement.XamlRoot;
+        }
+        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+        await dispatcherQueue.EnqueueAsync(async () =>
+        {
+            await dialog.ShowAsync();
+        });
+    }
+
+    public async Task ShowMarkdownDialogFromFileAsync(string filePath)
+    {
+        try
+        {
+            // Use ms-appx:/// URI scheme to access the file in the Assets folder
+            var uri = new Uri($"ms-appx:///{filePath}");
+            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(uri);
+            string markdownText = await FileIO.ReadTextAsync(file);
+            await ShowMarkdownDialogAsync(markdownText);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error reading markdown file: {ex.Message}");
+            await ShowErrorDialogAsync("Failed to load the markdown file.");
+        }
     }
 }

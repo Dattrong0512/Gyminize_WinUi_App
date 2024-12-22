@@ -48,9 +48,9 @@
             <TextBlock
                 Margin="10,150,10,60"
                 VerticalAlignment="Top"
-                FontSize="12"
+                FontSize="14"
                 Foreground="White"
-                Text="Lose belly fat, get ripped abs in just 4 weeks with this efficient plan. It also helps pump up your arms, strengthen your back shoulders..."
+                Text="Kế hoạch tập 3 ngày một tuần"
                 TextWrapping="Wrap" />
 
             <!--  Nút bấm Start  -->
@@ -103,9 +103,9 @@
             <TextBlock
                 Margin="10,150,10,60"
                 VerticalAlignment="Top"
-                FontSize="12"
+                FontSize="14"
                 Foreground="White"
-                Text="Lose belly fat, get ripped abs in just 4 weeks with this efficient plan. It also helps pump up your arms, strengthen your back shoulders..."
+                Text="Kế hoạch tập 4 ngày một tuần"
                 TextWrapping="Wrap" />
 
             <!--  Nút bấm Start  -->
@@ -160,7 +160,7 @@
                 VerticalAlignment="Top"
                 FontSize="12"
                 Foreground="White"
-                Text="Lose belly fat, get ripped abs in just 4 weeks with this efficient plan. It also helps pump up your arms, strengthen your back shoulders..."
+                Text="Kế hoạch tập 5 ngày một tuần"
                 TextWrapping="Wrap" />
 
             <!--  Nút bấm Start  -->

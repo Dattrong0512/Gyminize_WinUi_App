@@ -26,4 +26,10 @@ public interface IDialogService
     Task ShowSuccessMessageAsync(string message);
 
     Task<int> ShowVNPAYPaymentProcessDialogAsync(int orderId);
+
+    Task ShowMarkdownDialogAsync(string markdownText);
+
+    Task ShowMarkdownDialogFromFileAsync(string filePath);
+
+
 }

@@ -27,6 +27,7 @@ namespace Gyminize.ViewModels;
 /// </remarks>
 public partial class PlanSelectionViewModel : ObservableRecipient, INavigationAware
 {
+    private readonly IDialogService _dialogService;
     private readonly INavigationService _navigationService;
     private readonly ILocalSettingsService _localSettingsService;
     private UIElement? _shell = null;
@@ -65,10 +66,11 @@ public partial class PlanSelectionViewModel : ObservableRecipient, INavigationAw
     /// </summary>
     /// <param name="navigationService">Dịch vụ điều hướng để chuyển trang.</param>
     /// <param name="localSettingsService">Dịch vụ lưu trữ cài đặt người dùng.</param>
-    public PlanSelectionViewModel(INavigationService navigationService, ILocalSettingsService localSettingsService)
+    public PlanSelectionViewModel(INavigationService navigationService, ILocalSettingsService localSettingsService, IDialogService dialogService)
     {
         _navigationService = navigationService;
         _localSettingsService = localSettingsService;
+        _dialogService = dialogService;
         Plan1SelectedCommand = new RelayCommand(Plan1Selection);
         Plan2SelectedCommand = new RelayCommand(Plan2Selection);
         Plan3SelectedCommand = new RelayCommand(Plan3Selection);
@@ -77,7 +79,7 @@ public partial class PlanSelectionViewModel : ObservableRecipient, INavigationAw
     /// <summary>
     /// Thực thi lệnh khi người dùng chọn kế hoạch 1.
     /// </summary>
-    public void Plan1Selection()
+    public async void Plan1Selection()
     {
         var endpoint = $"api/Plandetail/create/customer_id/{customer_id}/plan/1";
         var result = ApiServices.Post<Plandetail>(endpoint, null);
@@ -85,13 +87,14 @@ public partial class PlanSelectionViewModel : ObservableRecipient, INavigationAw
         _shell = App.GetService<ShellPage>();
         frame.Content = _shell;
         App.MainWindow.Content = frame;
+        await _dialogService.ShowMarkdownDialogFromFileAsync("Assets/alert.txt");
         _navigationService.NavigateTo(typeof(PlanViewModel).FullName);
     }
 
     /// <summary>
     /// Thực thi lệnh khi người dùng chọn kế hoạch 2.
     /// </summary>
-    public void Plan2Selection()
+    public async void Plan2Selection()
     {
         var endpoint = $"api/Plandetail/create/customer_id/{customer_id}/plan/2";
         var result = ApiServices.Post<Plandetail>(endpoint, null);
@@ -99,13 +102,14 @@ public partial class PlanSelectionViewModel : ObservableRecipient, INavigationAw
         _shell = App.GetService<ShellPage>();
         frame.Content = _shell;
         App.MainWindow.Content = frame;
+        await _dialogService.ShowMarkdownDialogFromFileAsync("Assets/alert.txt");
         _navigationService.NavigateTo(typeof(PlanViewModel).FullName);
     }
 
     /// <summary>
     /// Thực thi lệnh khi người dùng chọn kế hoạch 3.
     /// </summary>
-    public void Plan3Selection()
+    public async void Plan3Selection()
     {
         var endpoint = $"api/Plandetail/create/customer_id/{customer_id}/plan/3";
         var result = ApiServices.Post<Plandetail>(endpoint, null);
@@ -113,6 +117,7 @@ public partial class PlanSelectionViewModel : ObservableRecipient, INavigationAw
         _shell = App.GetService<ShellPage>();
         frame.Content = _shell;
         App.MainWindow.Content = frame;
+        await _dialogService.ShowMarkdownDialogFromFileAsync("Assets/alert.txt");
         _navigationService.NavigateTo(typeof(PlanViewModel).FullName);
     }
 

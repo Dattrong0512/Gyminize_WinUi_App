@@ -196,6 +196,11 @@ public partial class PlanViewModel : ObservableRecipient
     {
         get; set;
     }
+
+    public ICommand InfoButtonCommand
+    {
+        get; set;
+    }
     public ICommand ShowSingleExerciseVideoCommand
     {
         get; set;
@@ -235,6 +240,7 @@ public partial class PlanViewModel : ObservableRecipient
         SelectWorkoutDetailCommand = new RelayCommand<Workoutdetail>(SelectWorkoutDetail);
         ShowSingleExerciseVideoCommand = new RelayCommand<Exercisedetail>(ShowSingleExerciseVideo);
         PlayingWorkoutExercisesCommand = new AsyncRelayCommand(PlayingWorkoutExercises);
+        InfoButtonCommand = new RelayCommand(ShowInfoDialog);
         InitializeViewModelAsync();
     }
 
@@ -427,6 +433,11 @@ public partial class PlanViewModel : ObservableRecipient
     {
         var exercise = ex.Exercise;
         _dialogService.ShowExerciseVideoDialogAsync(exercise);
+    }
+
+    public async void ShowInfoDialog()
+    {
+        await _dialogService.ShowMarkdownDialogFromFileAsync("Assets/alert.txt");
     }
 }
 

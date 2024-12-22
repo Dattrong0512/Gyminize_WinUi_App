@@ -33,7 +33,14 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
+            <Button
+                Grid.Row="0"
+                Width="50"
+                Height="50"
+                HorizontalAlignment="Right"
+                Command="{Binding InfoButtonCommand}">
+                <FontIcon Foreground="DarkSlateBlue" Glyph="&#xE946;" />
+            </Button>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <TextBlock
                     Margin="0,0,10,0"
@@ -87,7 +94,10 @@
                     Height="35"
                     Margin="0,0,10,0"
                     Padding="8"
+                    Background="DarkSlateBlue"
                     Command="{Binding PlayingWorkoutExercisesCommand}"
+                    CornerRadius="20"
+                    Foreground="White"
                     Visibility="{Binding WorkoutButtonVisibility}">
                     <TextBlock FontSize="16" Text="{Binding StartExerciseText, Mode=TwoWay}" />
                 </Button>

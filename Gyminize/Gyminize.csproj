@@ -41,6 +41,7 @@
     <Content Remove="Assets\training1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Assets\alert.txt" />
     <None Remove="Assets\chilling.jpg" />
     <None Remove="Assets\google.png" />
     <None Remove="Assets\Icon\arm.svg" />
@@ -363,5 +364,11 @@
   
   <ItemGroup>
     <PRIResource Remove="ApiServices\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Update="Assets\alert.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
