@@ -15,7 +15,7 @@
 
     <Grid
         x:Name="ContentArea"
-        Background="Ivory"
+        Background="White"
         CornerRadius="20">
         <Grid Padding="10" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>

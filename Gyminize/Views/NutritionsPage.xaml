@@ -19,16 +19,16 @@
         <!--  Style cho Border  -->
         <Style x:Key="CustomBorderStyle" TargetType="Border">
             <Setter Property="Background" Value="White" />
-            <Setter Property="BorderBrush" Value="DarkCyan" />
-            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#ADBBDA" />
+            <Setter Property="BorderThickness" Value="1" />
             <Setter Property="CornerRadius" Value="10" />
-            <Setter Property="Padding" Value="15" />
-            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="8" />
+            <Setter Property="Margin" Value="5" />
         </Style>
 
         <!--  Style cho Button  -->
         <Style x:Key="CustomButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="LightSkyBlue" />
+            <Setter Property="Background" Value="#3D52A0" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="FontWeight" Value="Bold" />
@@ -63,7 +63,7 @@
                 Margin="0,0,10,10"
                 HorizontalAlignment="Left"
                 FontSize="25"
-                Foreground="DarkCyan"
+                Foreground="#7091E6"
                 Style="{StaticResource CustomTextBlockStyle}"
                 Text="{Binding TotalCaloriesExpression}"
                 TextWrapping="Wrap" />
@@ -72,6 +72,9 @@
             <ScrollViewer
                 Grid.Row="1"
                 Margin="0,0,10,0"
+                Padding="20"
+                Background="{StaticResource AppBarBackgroundThemeBrush}"
+                CornerRadius="20"
                 VerticalScrollBarVisibility="Auto">
                 <StackPanel Spacing="20">
                     <!--  Bữa Sáng  -->
@@ -360,10 +363,12 @@
                     Text="{Binding SearchText, Mode=TwoWay}" />
                 <Button
                     Grid.Column="1"
-                    Margin="0,0,20,0"
+                    Margin="0,0,10,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
-                    Command="{Binding SearchButtonClickedCommand}">
+                    Background="White"
+                    Command="{Binding SearchButtonClickedCommand}"
+                    CornerRadius="20">
                     <FontIcon Foreground="#003366" Glyph="&#xF78B;" />
                 </Button>
             </Grid>

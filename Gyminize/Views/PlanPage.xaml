@@ -11,13 +11,14 @@
         <local:DayBorderBrushConverter x:Key="DayBorderBrushConverter" />
         <local:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
         <local:DayBorderBackGroundConverter x:Key="DayBorderBackgroundConverter" />
+        <local:DayBorderForegroundConverter x:Key="DayBorderForegroundConverter" />
         <Style x:Key="DayBorderStyle" TargetType="Border">
             <Setter Property="Width" Value="130" />
             <Setter Property="Height" Value="80" />
             <Setter Property="Margin" Value="10" />
             <Setter Property="Padding" Value="10" />
             <Setter Property="BorderBrush" Value="DarkSlateBlue" />
-            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="BorderThickness" Value="2" />
             <Setter Property="CornerRadius" Value="15" />
         </Style>
     </Page.Resources>
@@ -38,7 +39,9 @@
                 Width="50"
                 Height="50"
                 HorizontalAlignment="Right"
-                Command="{Binding InfoButtonCommand}">
+                BorderBrush="#003366"
+                Command="{Binding InfoButtonCommand}"
+                CornerRadius="10">
                 <FontIcon Foreground="DarkSlateBlue" Glyph="&#xE946;" />
             </Button>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -129,9 +132,13 @@
                                 <Run
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
                                     Text="Ngày 1" />
                                 <LineBreak />
-                                <Run FontSize="14" Text="{Binding DataContext.Day1, ElementName=ContentArea}" />
+                                <Run
+                                    FontSize="14"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
+                                    Text="{Binding DataContext.Day1, ElementName=ContentArea}" />
                             </TextBlock>
 
                         </Border>
@@ -145,9 +152,13 @@
                                 <Run
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
                                     Text="Ngày 2" />
                                 <LineBreak />
-                                <Run FontSize="14" Text="{Binding DataContext.Day2, ElementName=ContentArea}" />
+                                <Run
+                                    FontSize="14"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
+                                    Text="{Binding DataContext.Day2, ElementName=ContentArea}" />
                             </TextBlock>
                         </Border>
                     </StackPanel>
@@ -166,9 +177,13 @@
                                 <Run
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
                                     Text="Ngày 3" />
                                 <LineBreak />
-                                <Run FontSize="14" Text="{Binding DataContext.Day3, ElementName=ContentArea}" />
+                                <Run
+                                    FontSize="14"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
+                                    Text="{Binding DataContext.Day3, ElementName=ContentArea}" />
                             </TextBlock>
                         </Border>
                         <Border
@@ -181,9 +196,13 @@
                                 <Run
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
                                     Text="Ngày 4" />
                                 <LineBreak />
-                                <Run FontSize="14" Text="{Binding DataContext.Day4, ElementName=ContentArea}" />
+                                <Run
+                                    FontSize="14"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
+                                    Text="{Binding DataContext.Day4, ElementName=ContentArea}" />
                             </TextBlock>
                         </Border>
                         <Border
@@ -196,9 +215,13 @@
                                 <Run
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
                                     Text="Ngày 5" />
                                 <LineBreak />
-                                <Run FontSize="14" Text="{Binding DataContext.Day5, ElementName=ContentArea}" />
+                                <Run
+                                    FontSize="14"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
+                                    Text="{Binding DataContext.Day5, ElementName=ContentArea}" />
                             </TextBlock>
                         </Border>
                     </StackPanel>
@@ -217,9 +240,13 @@
                                 <Run
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
                                     Text="Ngày 6" />
                                 <LineBreak />
-                                <Run FontSize="14" Text="{Binding DataContext.Day6, ElementName=ContentArea}" />
+                                <Run
+                                    FontSize="14"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
+                                    Text="{Binding DataContext.Day6, ElementName=ContentArea}" />
                             </TextBlock>
                         </Border>
                         <Border
@@ -232,9 +259,13 @@
                                 <Run
                                     FontSize="16"
                                     FontWeight="Bold"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
                                     Text="Ngày 7" />
                                 <LineBreak />
-                                <Run FontSize="14" Text="{Binding DataContext.Day7, ElementName=ContentArea}" />
+                                <Run
+                                    FontSize="14"
+                                    Foreground="{Binding IsSelected, Converter={StaticResource DayBorderForegroundConverter}, Mode=TwoWay}"
+                                    Text="{Binding DataContext.Day7, ElementName=ContentArea}" />
                             </TextBlock>
                         </Border>
                     </StackPanel>
@@ -336,7 +367,7 @@
                     Visibility="{Binding IsBreakDay, Mode=TwoWay, Converter={StaticResource InverseBoolToVisibilityConverter}}">
                     <TextBlock
                         FontSize="15"
-                        Text="Hôm nay không có bài tập nào, nghỉ ngơi cũng là một hình thức luyện tập !!"
+                        Text="Không có bài tập nào, nghỉ ngơi cũng là một hình thức luyện tập !!"
                         TextWrapping="Wrap" />
                     <Image
                         Width="300"

@@ -9,11 +9,11 @@ using Microsoft.UI;
 
 namespace Gyminize.Converters;
 
-public class DayBorderBackGroundConverter : IValueConverter
+public class DayBorderForegroundConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, string language)
     {
-        return (bool)value ? new SolidColorBrush(ColorHelper.FromArgb(0xFF, 0x3D, 0x52, 0xA0)) : new SolidColorBrush(ColorHelper.FromArgb(0xFF, 0xED, 0xE8, 0xF5));
+        return (bool)value ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.Black);
     }
     public object ConvertBack(object value, Type targetType, object parameter, string language) => throw new NotImplementedException();
 }

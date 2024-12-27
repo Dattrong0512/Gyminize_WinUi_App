@@ -47,7 +47,7 @@
             <Setter Property="FontSize" Value="40" />
             <Setter Property="Width" Value="100" />
         </Style>
-
+        <conv:NumberToCommaSeparatedStringConverter x:Key="NumberToCommaSeparatedStringConverter"/>
         <conv:IsOverGoalCaloriesToColorConverter x:Key="IsOverGoalCaloriesToColorConverter" />
     </Page.Resources>
 
@@ -70,104 +70,125 @@
             Orientation="Vertical">
             <Border
                 Width="350"
-                Height="250"
+                Height="290"
+                Padding="10"
                 Style="{StaticResource PrimaryBorderStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Grid>
-                        <ProgressRing
-                            Width="200"
-                            Height="200"
-                            HorizontalAlignment="Center"
-                            Background="LightGray"
-                            Foreground="{Binding IsOverGoalCalories, Converter={StaticResource IsOverGoalCaloriesToColorConverter}, Mode=TwoWay}"
-                            IsIndeterminate="False"
-                            Value="{Binding ProgressValue, Mode=TwoWay}" />
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock
+                <Grid>
+                    <Button
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Command="{Binding NavigateToNutritionPageCommand}"
+                        CornerRadius="10">
+                        <FontIcon Glyph="&#xE712;" />
+                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <ProgressRing
+                                Width="200"
+                                Height="200"
                                 HorizontalAlignment="Center"
-                                FontSize="28"
-                                Style="{StaticResource PrimaryTextStyle}"
-                                Text="{Binding RemainCalories}" />
-                            <TextBlock
-                                FontSize="14"
-                                Style="{StaticResource PrimaryTextStyle}"
-                                Text="Calories còn lại" />
-                        </StackPanel>
-                    </Grid>
-                    <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                        <StackPanel
-                            Margin="10"
-                            HorizontalAlignment="Center"
-                            Orientation="Horizontal">
-                            <Image
-                                Width="24"
-                                Height="24"
-                                Margin="0,0,10,0"
-                                Source="ms-appx:///Assets/Icon/goal.png" />
-                            <TextBlock>
-                                <Run FontSize="15" Text="Mục tiêu" />
-                                <LineBreak />
-                                <Run FontSize="20" Text="{Binding GoalCalories}" />
-                            </TextBlock>
-                        </StackPanel>
-                        <StackPanel
-                            Margin="10"
-                            HorizontalAlignment="Center"
-                            Orientation="Horizontal">
-                            <Image
-                                Width="24"
-                                Height="24"
-                                Margin="0,0,10,0"
-                                Source="ms-appx:///Assets/Icon/food.png" />
-                            <TextBlock>
-                                <Run FontSize="15" Text="Thức ăn" />
-                                <LineBreak />
-                                <Run FontSize="20" Text="{Binding BurnedCalories}" />
-                            </TextBlock>
+                                Background="LightGray"
+                                Foreground="{Binding IsOverGoalCalories, Converter={StaticResource IsOverGoalCaloriesToColorConverter}, Mode=TwoWay}"
+                                IsIndeterminate="False"
+                                Value="{Binding ProgressValue, Mode=TwoWay}" />
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    FontSize="28"
+                                    Style="{StaticResource PrimaryTextStyle}"
+                                    Text="{Binding RemainCalories, Converter={StaticResource NumberToCommaSeparatedStringConverter}}" />
+                                <TextBlock
+                                    FontSize="14"
+                                    Style="{StaticResource PrimaryTextStyle}"
+                                    Text="Calories còn lại" />
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+
+                            <StackPanel
+                                Margin="10"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                                <Image
+                                    Width="24"
+                                    Height="24"
+                                    Margin="0,0,10,0"
+                                    Source="ms-appx:///Assets/Icon/goal.png" />
+                                <TextBlock>
+                                    <Run FontSize="15" Text="Mục tiêu" />
+                                    <LineBreak />
+                                    <Run FontSize="20" Text="{Binding GoalCalories, Converter={StaticResource NumberToCommaSeparatedStringConverter}}" />
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel
+                                Margin="10"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                                <Image
+                                    Width="24"
+                                    Height="24"
+                                    Margin="0,0,10,0"
+                                    Source="ms-appx:///Assets/Icon/food.png" />
+                                <TextBlock>
+                                    <Run FontSize="15" Text="Thức ăn" />
+                                    <LineBreak />
+                                    <Run FontSize="20" Text="{Binding BurnedCalories, Converter={StaticResource NumberToCommaSeparatedStringConverter}}" />
+                                </TextBlock>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
-                </StackPanel>
+                </Grid>
             </Border>
 
             <Border
                 Width="350"
+                Height="130"
                 Margin="20"
                 Padding="10"
                 Style="{StaticResource PrimaryBorderStyle}">
-                <StackPanel Margin="10" Orientation="Vertical">
-                    <TextBlock
-                        Margin="0,0,0,10"
-                        FontSize="14"
-                        Foreground="RoyalBlue"
-                        Style="{StaticResource PrimaryTextStyle}"
-                        Text="Tập luyện" />
-                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                        <Image
-                            Width="30"
-                            Height="30"
-                            Margin="0,0,10,0"
-                            Source="{Binding TypeWorkoutIconPath}" />
-                        <TextBlock Margin="0,10,0,0">
-                            <Run FontSize="20" Text="{Binding TypeWorkoutDate}" />
-                        </TextBlock>
-                    </StackPanel>
-                    <StackPanel
-                        Margin="10"
-                        HorizontalAlignment="Center"
-                        Orientation="Horizontal"
-                        Visibility="{Binding StatusVisibility}">
-                        <Image
-                            Width="30"
-                            Height="30"
-                            Margin="0,0,10,15"
-                            Source="{Binding StatusIconPath}" />
+                <Grid>
+                    <Button
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Command="{Binding NavigateToPlanPageCommand}"
+                        CornerRadius="10">
+                        <FontIcon Glyph="&#xE712;" />
+                    </Button>
+                    <StackPanel Margin="10" Orientation="Vertical">
                         <TextBlock
-                            Margin="0,10,0,0"
-                            FontSize="18"
-                            Text="{Binding ExerciseStatus}"
-                            TextWrapping="Wrap" />
+                            Margin="0,0,0,10"
+                            FontSize="14"
+                            Foreground="RoyalBlue"
+                            Style="{StaticResource PrimaryTextStyle}"
+                            Text="Tập luyện" />
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Image
+                                Width="30"
+                                Height="30"
+                                Margin="0,0,10,0"
+                                Source="{Binding TypeWorkoutIconPath}" />
+                            <TextBlock Margin="0,10,0,0">
+                                <Run FontSize="20" Text="{Binding TypeWorkoutDate}" />
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="10"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal"
+                            Visibility="{Binding StatusVisibility}">
+                            <Image
+                                Width="30"
+                                Height="30"
+                                Margin="0,0,10,15"
+                                Source="{Binding StatusIconPath}" />
+                            <TextBlock
+                                Margin="0,10,0,0"
+                                FontSize="18"
+                                Text="{Binding ExerciseStatus}"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
+                </Grid>
             </Border>
         </StackPanel>
 
@@ -176,10 +197,10 @@
             <Border
                 Width="365"
                 Height="290"
-                Margin="10"
+                Margin="10,0,10,0"
                 Padding="0"
                 Style="{StaticResource PrimaryBorderStyle}">
-                <Canvas Name="ChartCanvas" Background="White">
+                <Canvas Name="ChartCanvas" Background="#3D52A0">
                     <!--  Canvas Content Here  -->
                     <ItemsControl ItemsSource="{Binding ChartLines}">
                         <ItemsControl.ItemsPanel>
@@ -208,7 +229,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Line
-                                    Stroke="Black"
+                                    Stroke="White"
                                     StrokeThickness="1"
                                     X1="{Binding X1}"
                                     X2="{Binding X2}"
@@ -228,7 +249,7 @@
                                 <TextBlock
                                     Canvas.Left="{Binding X}"
                                     Canvas.Top="{Binding Y}"
-                                    Foreground="Black"
+                                    Foreground="White"
                                     Text="{Binding Text}" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -236,7 +257,11 @@
                 </Canvas>
             </Border>
 
-            <Border Margin="10" Style="{StaticResource PrimaryBorderStyle}">
+            <Border
+                Width="365"
+                Height="130"
+                Margin="10,20,10,20"
+                Style="{StaticResource PrimaryBorderStyle}">
                 <Grid>
                     <TextBlock
                         Margin="0"
@@ -305,27 +330,29 @@
                 Padding="10"
                 Style="{StaticResource PrimaryBorderStyle}"
                 Tapped="OnSleepBorderTapped">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.0" Color="#EDE8F5" />
+                        <GradientStop Offset="1.0" Color="#7091E6" />
+                    </LinearGradientBrush>
+                </Border.Background>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse
-                        Width="30"
-                        Height="30"
-                        Fill="LightBlue">
-                        <Ellipse.Stroke>
-                            <SolidColorBrush Color="Blue" />
-                        </Ellipse.Stroke>
-                    </Ellipse>
+                    <FontIcon
+                        FontSize="30"
+                        Foreground="#EDE8F5"
+                        Glyph="&#xE708;" />
                     <TextBlock
                         Margin="10,10,10,5"
                         HorizontalAlignment="Center"
                         FontSize="18"
                         FontWeight="Bold"
-                        Foreground="RoyalBlue"
+                        Foreground="#3D52A0"
                         Style="{StaticResource PrimaryTextStyle}"
                         Text="Giấc ngủ" />
                     <TextBlock
                         HorizontalAlignment="Center"
                         FontSize="14"
-                        Foreground="Gray"
+                        Foreground="#EDE8F5"
                         Text="Eat right, sleep tight" />
                 </StackPanel>
             </Border>
@@ -336,27 +363,29 @@
                 Padding="10"
                 Style="{StaticResource PrimaryBorderStyle}"
                 Tapped="OnRecipeBorderTapped">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.0" Color="#EDE8F5" />
+                        <GradientStop Offset="1.0" Color="#7091E6" />
+                    </LinearGradientBrush>
+                </Border.Background>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse
-                        Width="30"
-                        Height="30"
-                        Fill="LightBlue">
-                        <Ellipse.Stroke>
-                            <SolidColorBrush Color="Blue" />
-                        </Ellipse.Stroke>
-                    </Ellipse>
+                    <FontIcon
+                        FontSize="30"
+                        Foreground="#EDE8F5"
+                        Glyph="&#xE82D;" />
                     <TextBlock
                         Margin="10,10,10,5"
                         HorizontalAlignment="Center"
                         FontSize="18"
                         FontWeight="Bold"
-                        Foreground="RoyalBlue"
+                        Foreground="#3D52A0"
                         Style="{StaticResource PrimaryTextStyle}"
                         Text="Công thức" />
                     <TextBlock
                         HorizontalAlignment="Center"
                         FontSize="14"
-                        Foreground="Gray"
+                        Foreground="#EDE8F5"
                         Text="Cook, eat, log, repeat" />
                 </StackPanel>
             </Border>
@@ -367,27 +396,29 @@
                 Padding="10"
                 Style="{StaticResource PrimaryBorderStyle}"
                 Tapped="OnWorkoutBorderTapped">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.0" Color="#EDE8F5" />
+                        <GradientStop Offset="1.0" Color="#7091E6" />
+                    </LinearGradientBrush>
+                </Border.Background>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse
-                        Width="30"
-                        Height="30"
-                        Fill="LightBlue">
-                        <Ellipse.Stroke>
-                            <SolidColorBrush Color="Blue" />
-                        </Ellipse.Stroke>
-                    </Ellipse>
+                    <FontIcon
+                        FontSize="30"
+                        Foreground="#EDE8F5"
+                        Glyph="&#xE805;" />
                     <TextBlock
                         Margin="10,10,10,5"
                         HorizontalAlignment="Center"
                         FontSize="18"
                         FontWeight="Bold"
-                        Foreground="RoyalBlue"
+                        Foreground="#3D52A0"
                         Style="{StaticResource PrimaryTextStyle}"
                         Text="Luyện tập" />
                     <TextBlock
                         HorizontalAlignment="Center"
                         FontSize="14"
-                        Foreground="Gray"
+                        Foreground="#EDE8F5"
                         Text="Sweating is self-care" />
                 </StackPanel>
             </Border>

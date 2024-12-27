@@ -22,6 +22,7 @@ using Microsoft.UI;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Microsoft.UI.Text;
+using Windows.ApplicationModel.VoiceCommands;
 
 
 namespace Gyminize.ViewModels;
@@ -141,6 +142,14 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
     {
         get;
     }
+    public ICommand NavigateToNutritionPageCommand
+    {
+        get;
+    }
+    public ICommand NavigateToPlanPageCommand
+    {
+        get;
+    }
 
     public class WeightDataPoint
     {
@@ -219,7 +228,8 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         _customer = new Customer();
         localsetting = localSettings;
         _windowService.SetWindowSize(1500, 800);
-
+        NavigateToNutritionPageCommand = new RelayCommand(NavigateToNutritionPage);
+        NavigateToPlanPageCommand = new RelayCommand(NavigateToPlanPage);
         GenerateChartLines();
     }
 
@@ -459,7 +469,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         AxisLabels.Add(new TextBlock
         {
             Text = "Biểu đồ cân nặng trong 7 ngày qua",
-            Foreground = new SolidColorBrush(Colors.RoyalBlue),
+            Foreground = new SolidColorBrush(Colors.White),
             FontSize = 16,
             FontWeight = FontWeights.Bold,
             Margin = new Thickness(marginLeft + canvasWidth / 2 - 120, 0, 0, 0)
@@ -476,25 +486,25 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
                 Y1 = y1,
                 X2 = marginLeft + (i + 1) * xInterval,
                 Y2 = y2,
-                Stroke = new SolidColorBrush(Colors.OrangeRed),
+                Stroke = new SolidColorBrush(Colors.NavajoWhite),
                 StrokeThickness = 2
             };
             ChartLines.Add(line);
         }
 
-        AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop + canvasHeight, X2 = marginLeft + canvasWidth, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 1 });
+        AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop + canvasHeight, X2 = marginLeft + canvasWidth, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.White), StrokeThickness = 1 });
 
-        AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop, X2 = marginLeft, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 1 });
+        AxisLines.Add(new Line { X1 = marginLeft, Y1 = marginTop, X2 = marginLeft, Y2 = marginTop + canvasHeight, Stroke = new SolidColorBrush(Colors.White), StrokeThickness = 1 });
 
         for (int i = 0; i < DataPoints.Count; i++)
         {
-            AxisLabels.Add(new TextBlock { Text = DataPoints[i].Date.ToString("dd"), Foreground = new SolidColorBrush(Colors.Black), Margin = new Thickness(marginLeft + i * xInterval - 15, marginTop + canvasHeight + 5, 0, 0) });
+            AxisLabels.Add(new TextBlock { Text = DataPoints[i].Date.ToString("dd"), Foreground = new SolidColorBrush(Colors.White), Margin = new Thickness(marginLeft + i * xInterval - 15, marginTop + canvasHeight + 5, 0, 0) });
         }
 
         for (int i = 0; i < DataPoints.Count; i++)
         {
             double yPosition = marginTop + canvasHeight - ((DataPoints[i].Weight - minWeight) / weightRange * canvasHeight);
-            AxisLabels.Add(new TextBlock { FontSize = 9, Text = DataPoints[i].Weight.ToString("F1"), Foreground = new SolidColorBrush(Colors.Black), Margin = new Thickness(marginLeft - 30, yPosition - 10, 0, 0) });
+            AxisLabels.Add(new TextBlock { FontSize = 9, Text = DataPoints[i].Weight.ToString("F1"), Foreground = new SolidColorBrush(Colors.White), Margin = new Thickness(marginLeft - 30, yPosition - 10, 0, 0) });
         }
     }
 
@@ -503,6 +513,24 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
     protected virtual void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    private void NavigateToPlanPage()
+    {
+        var pageKey = typeof(PlanViewModel).FullName;
+        if (pageKey != null)
+        {
+            _navigationService.NavigateTo(pageKey);
+        }
+    }
+
+    private void NavigateToNutritionPage()
+    {
+        var pageKey = typeof(NutritionsViewModel).FullName;
+        if (pageKey != null)
+        {
+            _navigationService.NavigateTo(pageKey);
+        }
     }
 
     public void OnNavigatedFrom()

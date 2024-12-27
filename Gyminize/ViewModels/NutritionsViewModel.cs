@@ -230,7 +230,7 @@ public NutritionsViewModel(INavigationService navigationService,IDialogService d
                             DinnerItems.Sum(item => item.TotalCalories) +
                             SnackItems.Sum(item => item.TotalCalories);
 
-        TotalCaloriesExpression = $"{CurrentDailydiary.total_calories:F0} - {totalCalories} = {CurrentDailydiary.total_calories - totalCalories:F0}";
+        TotalCaloriesExpression = $"{CurrentDailydiary.total_calories:N0} - {totalCalories:N0} = {CurrentDailydiary.total_calories - totalCalories:N0}";
     }
 
 

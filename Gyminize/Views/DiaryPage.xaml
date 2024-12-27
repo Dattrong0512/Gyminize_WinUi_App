@@ -37,6 +37,7 @@
             <Setter Property="Foreground" Value="Gray" />
         </Style>
         <conv:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
+        <conv:NumberToCommaSeparatedStringConverter x:Key="NumberToCommaSeparatedStringConverter" />
     </Page.Resources>
 
     <Grid
@@ -187,13 +188,13 @@
                                 FontSize="24"
                                 FontWeight="Bold"
                                 Foreground="DarkOrange"
-                                Text="{Binding BurnedCalories}" />
+                                Text="{Binding BurnedCalories, Converter={StaticResource NumberToCommaSeparatedStringConverter}}" />
                             <Run FontSize="24" Text="/" />
                             <Run
                                 FontSize="24"
                                 FontWeight="Bold"
                                 Foreground="DarkOrange"
-                                Text="{Binding TotalCalories}" />
+                                Text="{Binding TotalCalories, Converter={StaticResource NumberToCommaSeparatedStringConverter}}" />
                             <LineBreak />
                             <Run FontSize="13" Text="Calories tiêu thụ" />
                         </TextBlock>
@@ -278,7 +279,6 @@
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
                                             <Grid
-                                                Margin="10"
                                                 Padding="7"
                                                 Background="GhostWhite"
                                                 CornerRadius="10">
