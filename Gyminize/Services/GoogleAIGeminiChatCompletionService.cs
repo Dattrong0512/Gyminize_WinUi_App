@@ -3,11 +3,11 @@ using System.Net.Http.Headers;
 
 using System.Text;
 
-/// <summary>
-/// Lớp này thực hiện việc gọi API của Google AI Gemini để hoàn thành cuộc trò chuyện với người dùng.
-/// </summary>
 namespace Gyminize.Services
 {
+    /// <summary>
+    /// Lớp này chịu trách nhiệm cung cấp dịch vụ hoàn thành cuộc trò chuyện từ Google AI Gemini.
+    /// </summary>
     public sealed class GoogleAIGeminiChatCompletionService
     {
         private readonly HttpClient _httpClient; // Đối tượng HttpClient dùng để gửi yêu cầu HTTP.

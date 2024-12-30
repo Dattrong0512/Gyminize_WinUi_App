@@ -270,7 +270,14 @@ public partial class PlanViewModel : ObservableRecipient
     public async Task GetCustomerID()
     {
         var customer_id = await _localsetting.ReadSettingAsync<string>("customer_id");
-        CustomerId = int.Parse(customer_id);
+        if (int.TryParse(customer_id, out var parsedCustomerId))
+        {
+            CustomerId = parsedCustomerId;
+        }
+        else
+        {
+            throw new InvalidOperationException("Customer ID không hợp lệ.");
+        }
     }
 
     /// <summary>

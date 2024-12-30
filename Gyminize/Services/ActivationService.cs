@@ -10,6 +10,9 @@ using Microsoft.UI.Xaml.Controls;
 
 namespace Gyminize.Services;
 
+/// <summary>
+/// Lớp này chịu trách nhiệm xử lý các sự kiện kích hoạt của ứng dụng.
+/// </summary>
 public class ActivationService : IActivationService
 {
     private readonly ActivationHandler<LaunchActivatedEventArgs> _defaultHandler;

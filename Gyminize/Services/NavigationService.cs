@@ -11,9 +11,9 @@ using Microsoft.UI.Xaml.Navigation;
 
 namespace Gyminize.Services;
 
-// Để biết thêm thông tin về điều hướng giữa các trang, xem
-// https://github.com/microsoft/TemplateStudio/blob/main/docs/WinUI/navigation.md
-
+/// <summary>
+/// Lớp này chịu trách nhiệm cung cấp dịch vụ điều hướng.
+/// </summary>
 public class NavigationService : INavigationService
 {
     private readonly IPageService _pageService;

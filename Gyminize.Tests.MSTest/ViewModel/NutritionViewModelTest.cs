@@ -71,7 +71,7 @@ namespace Gyminize.Tests.MSTest.ViewModel
             Assert.AreEqual(1, _viewModel.LunchItems.Count);
             Assert.AreEqual(0, _viewModel.DinnerItems.Count);
             Assert.AreEqual(0, _viewModel.SnackItems.Count);
-            Assert.AreEqual("2000 - 400 = 1600", _viewModel.TotalCaloriesExpression);
+            Assert.AreEqual("2,000 - 400 = 1,600", _viewModel.TotalCaloriesExpression);
         }
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace Gyminize.Tests.MSTest.ViewModel
             _viewModel!.LoadFoodLibraryAsync();
 
             // Assert (Đảm bảo có 2 item như đã tạo và item đầu là Apple )
-            Assert.AreEqual(2, _viewModel.FoodLibraryItems.Count);
-            Assert.AreEqual("Apple", _viewModel.FoodLibraryItems[0].food_name);
+            Assert.AreEqual(2, _viewModel.FilteredFoodLibraryItems.Count);
+            Assert.AreEqual("Apple", _viewModel.FilteredFoodLibraryItems[0].food_name);
         }
 
         /// <summary>

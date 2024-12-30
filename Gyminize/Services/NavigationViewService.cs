@@ -8,6 +8,9 @@ using Microsoft.UI.Xaml.Controls;
 
 namespace Gyminize.Services;
 
+/// <summary>
+/// Lớp này chịu trách nhiệm cung cấp dịch vụ NavigationView.
+/// </summary>
 public class NavigationViewService : INavigationViewService
 {
     private readonly INavigationService _navigationService;

@@ -3238,3 +3238,4 @@ J:\Study\WindowPrograming\Clone_23\Gyminize_WinUi_App\Gyminize.Tests.MSTest\obj\
 J:\Study\WindowPrograming\Clone_23\Gyminize_WinUi_App\Gyminize.Tests.MSTest\obj\x64\Debug\net7.0-windows10.0.19041.0\qualifiers.txt
 J:\Study\WindowPrograming\Clone_23\Gyminize_WinUi_App\Gyminize.Tests.MSTest\obj\x64\Debug\net7.0-windows10.0.19041.0\qualifiers.txt.intermediate
 J:\Study\WindowPrograming\Clone_23\Gyminize_WinUi_App\Gyminize.Tests.MSTest\obj\x64\Debug\net7.0-windows10.0.19041.0\MultipleQualifiersPerDimensionFound.txt
+J:\Study\WindowPrograming\Clone_23\Gyminize_WinUi_App\Gyminize.Tests.MSTest\bin\x64\Debug\net7.0-windows10.0.19041.0\Assets\alert.txt

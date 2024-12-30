@@ -8,6 +8,9 @@ using Microsoft.UI.Xaml.Controls;
 
 namespace Gyminize.Services;
 
+/// <summary>
+/// Lớp này chịu trách nhiệm cung cấp trang dựa trên ViewModel.
+/// </summary>
 public class PageService : IPageService
 {
     private readonly Dictionary<string, Type> _pages = new();

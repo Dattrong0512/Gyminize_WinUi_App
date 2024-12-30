@@ -15,8 +15,6 @@
  DROP TABLE IF EXISTS Customer_Health;
  DROP TABLE IF EXISTS Customer;
 
-
- 
 CREATE TABLE IF NOT EXISTS Customer (
     customer_id SERIAL PRIMARY KEY,
     customer_name VARCHAR(100),
@@ -2559,13 +2557,6 @@ INSERT INTO Food (food_name, calories, protein, carbs, fats, serving_unit) VALUE
 ('Nấm portabella sống', 19, 0, 0, 0, '100g'),
 ('Nấm sò', 5, 0, 0, 0, '100g');
 
-DROP INDEX IF EXISTS idx_food_name;
-CREATE INDEX idx_food_name ON Food (food_name);
--- EXPLAIN ANALYZE SELECT * FROM Food WHERE food_name = 'Ức gà';
--- DROP INDEX idx_food_name;
--- Chèn dữ liệu vào bảng FoodDetail
-
-
 INSERT INTO FoodDetail (dailydiary_id, food_id, meal_type, food_amount)
 VALUES 
 (1, 1, 1, 200),
@@ -3223,4 +3214,4 @@ select * from payment;
 select * from orders;
 select * from payment;
 
-select * from orderdetail
+select * from orderdetail;

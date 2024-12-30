@@ -7,6 +7,9 @@ using Microsoft.Web.WebView2.Core;
 
 namespace Gyminize.Services;
 
+/// <summary>
+/// Lớp này chịu trách nhiệm cung cấp dịch vụ liên quan WebView.
+/// </summary>
 public class WebViewService : IWebViewService
 {
     private WebView2? _webView;

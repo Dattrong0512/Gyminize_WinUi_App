@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Document cho project Gyminize</div>
+   <div id="projectbrief">Document cho các class chính của project</div>
   </td>
  </tr>
  </tbody>
@@ -102,20 +102,20 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a351dc91f599e46ab78842d2e788a3bea" id="r_a351dc91f599e46ab78842d2e788a3bea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a351dc91f599e46ab78842d2e788a3bea">PlandetailRepository</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a> context)</td></tr>
+<tr class="memitem:a351dc91f599e46ab78842d2e788a3bea" id="r_a351dc91f599e46ab78842d2e788a3bea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a351dc91f599e46ab78842d2e788a3bea">PlandetailRepository</a> (EntityDatabaseContext context)</td></tr>
 <tr class="memdesc:a351dc91f599e46ab78842d2e788a3bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo một instance mới của lớp <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_plandetail_repository.html" title="Lớp Repository để quản lý các thao tác với chi tiết kế hoạch (PlanDetail) trong cơ sở dữ liệu.">PlandetailRepository</a> với context cơ sở dữ liệu.  <br /></td></tr>
 <tr class="separator:a351dc91f599e46ab78842d2e788a3bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dc57c33da40b042a47b779136125009" id="r_a7dc57c33da40b042a47b779136125009"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_plandetail.html">Plandetail</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dc57c33da40b042a47b779136125009">GetPlandetailById</a> (int customerID)</td></tr>
+<tr class="memitem:a7dc57c33da40b042a47b779136125009" id="r_a7dc57c33da40b042a47b779136125009"><td class="memItemLeft" align="right" valign="top">Plandetail?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dc57c33da40b042a47b779136125009">GetPlandetailById</a> (int customerID)</td></tr>
 <tr class="memdesc:a7dc57c33da40b042a47b779136125009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy thông tin chi tiết kế hoạch (PlanDetail) của khách hàng dựa trên customerID.  <br /></td></tr>
 <tr class="separator:a7dc57c33da40b042a47b779136125009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cb7b5c875d54d3993eb548fcfef6034" id="r_a3cb7b5c875d54d3993eb548fcfef6034"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_plandetail.html">Plandetail</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cb7b5c875d54d3993eb548fcfef6034">AddPlandetail</a> (int customerId, int plan)</td></tr>
+<tr class="memitem:a3cb7b5c875d54d3993eb548fcfef6034" id="r_a3cb7b5c875d54d3993eb548fcfef6034"><td class="memItemLeft" align="right" valign="top">Plandetail&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cb7b5c875d54d3993eb548fcfef6034">AddPlandetail</a> (int customerId, int plan)</td></tr>
 <tr class="memdesc:a3cb7b5c875d54d3993eb548fcfef6034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thêm mới chi tiết kế hoạch cho khách hàng nếu chưa có kế hoạch hoặc kế hoạch đã hết hạn.  <br /></td></tr>
 <tr class="separator:a3cb7b5c875d54d3993eb548fcfef6034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a672be8b7c7eef4fc991d694f4bc9ae0c" id="r_a672be8b7c7eef4fc991d694f4bc9ae0c"><td class="memItemLeft" align="right" valign="top"><a id="a672be8b7c7eef4fc991d694f4bc9ae0c" name="a672be8b7c7eef4fc991d694f4bc9ae0c"></a>
-readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_context</b></td></tr>
+readonly EntityDatabaseContext&#160;</td><td class="memItemRight" valign="bottom"><b>_context</b></td></tr>
 <tr class="separator:a672be8b7c7eef4fc991d694f4bc9ae0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -133,7 +133,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database
         <tr>
           <td class="memname">Gyminize_API.Data.Repositories.PlandetailRepository.PlandetailRepository </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a></td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td class="paramtype">EntityDatabaseContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -165,7 +165,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_plandetail.html">Plandetail</a> Gyminize_API.Data.Repositories.PlandetailRepository.AddPlandetail </td>
+          <td class="memname">Plandetail Gyminize_API.Data.Repositories.PlandetailRepository.AddPlandetail </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customerId</em></span>, </td>
         </tr>
@@ -204,7 +204,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_plandetail.html">Plandetail</a>? Gyminize_API.Data.Repositories.PlandetailRepository.GetPlandetailById </td>
+          <td class="memname">Plandetail? Gyminize_API.Data.Repositories.PlandetailRepository.GetPlandetailById </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>customerID</em></span></td><td>)</td>
           <td></td>
@@ -229,7 +229,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Data/Repositories/<b>PlandetailRepository.cs</b></li>
+<li>J:/Study/WindowPrograming/Clone_23/Gyminize_WinUi_App/Gyminize_API/Data/Repositories/<b>PlandetailRepository.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

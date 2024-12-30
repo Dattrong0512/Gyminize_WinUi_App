@@ -8,22 +8,32 @@ using Microsoft.Web.WebView2.Core;
 
 namespace Gyminize.ViewModels;
 
-// TODO: Review best practices and distribution guidelines for WebView2.
-// https://docs.microsoft.com/microsoft-edge/webview2/get-started/winui
-// https://docs.microsoft.com/microsoft-edge/webview2/concepts/developer-guide
-// https://docs.microsoft.com/microsoft-edge/webview2/concepts/distribution
+/// <summary>
+/// ViewModel cho WebView, cung cấp các thuộc tính và lệnh để điều khiển WebView.
+/// </summary>
 public partial class WebViewViewModel : ObservableRecipient, INavigationAware
 {
-    // TODO: Set the default URL to display.
+    /// <summary>
+    /// Nguồn của WebView.
+    /// </summary>
     [ObservableProperty]
     private Uri source = new("https://docs.microsoft.com/windows/apps/");
 
+    /// <summary>
+    /// Trạng thái tải của WebView.
+    /// </summary>
     [ObservableProperty]
     private bool isLoading = true;
 
+    /// <summary>
+    /// Trạng thái lỗi của WebView.
+    /// </summary>
     [ObservableProperty]
     private bool hasFailures;
 
+    /// <summary>
+    /// Dịch vụ WebView.
+    /// </summary>
     public IWebViewService WebViewService
     {
         get;
@@ -31,14 +41,21 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
 
     private ILocalSettingsService _localSettingsService;
 
+    /// <summary>
+    /// Khởi tạo một thể hiện mới của lớp <see cref="WebViewViewModel"/>.
+    /// </summary>
+    /// <param name="webViewService">Dịch vụ WebView.</param>
+    /// <param name="localSettingsService">Dịch vụ cài đặt cục bộ.</param>
     public WebViewViewModel(IWebViewService webViewService, ILocalSettingsService localSettingsService)
     {
         WebViewService = webViewService;
         _localSettingsService = localSettingsService;
-        //InitializeAsync();
-        
     }
 
+    /// <summary>
+    /// Khởi tạo ViewModel, đọc cài đặt liên kết từ dịch vụ cài đặt cục bộ.
+    /// </summary>
+    /// <returns>Một tác vụ đại diện cho thao tác không đồng bộ.</returns>
     public async Task InitializeAsync()
     {
         var link = await _localSettingsService.ReadSettingAsync<string>("YtbLink");
@@ -48,6 +65,10 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Lệnh mở liên kết hiện tại trong trình duyệt mặc định.
+    /// </summary>
+    /// <returns>Một tác vụ đại diện cho thao tác không đồng bộ.</returns>
     [RelayCommand]
     private async Task OpenInBrowser()
     {
@@ -57,12 +78,18 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Lệnh tải lại WebView.
+    /// </summary>
     [RelayCommand]
     private void Reload()
     {
         WebViewService.Reload();
     }
 
+    /// <summary>
+    /// Lệnh điều hướng tới trang tiếp theo trong lịch sử duyệt web.
+    /// </summary>
     [RelayCommand(CanExecute = nameof(BrowserCanGoForward))]
     private void BrowserForward()
     {
@@ -72,11 +99,18 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Kiểm tra xem WebView có thể điều hướng tới trang tiếp theo hay không.
+    /// </summary>
+    /// <returns>True nếu có thể điều hướng tới trang tiếp theo, ngược lại là False.</returns>
     private bool BrowserCanGoForward()
     {
         return WebViewService.CanGoForward;
     }
 
+    /// <summary>
+    /// Lệnh điều hướng tới trang trước đó trong lịch sử duyệt web.
+    /// </summary>
     [RelayCommand(CanExecute = nameof(BrowserCanGoBack))]
     private void BrowserBack()
     {
@@ -86,14 +120,22 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Kiểm tra xem WebView có thể điều hướng tới trang trước đó hay không.
+    /// </summary>
+    /// <returns>True nếu có thể điều hướng tới trang trước đó, ngược lại là False.</returns>
     private bool BrowserCanGoBack()
     {
         return WebViewService.CanGoBack;
     }
 
+    /// <summary>
+    /// Phương thức được gọi khi điều hướng đến trang.
+    /// </summary>
+    /// <param name="parameter">Dữ liệu được truyền khi điều hướng.</param>
     public void OnNavigatedTo(object parameter)
     {
-        if(parameter is string)
+        if (parameter is string)
         {
             var link = parameter as string;
             Source = new Uri(link);
@@ -101,6 +143,9 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         WebViewService.NavigationCompleted += OnNavigationCompleted;
     }
 
+    /// <summary>
+    /// Phương thức được gọi khi điều hướng đi từ trang.
+    /// </summary>
     public void OnNavigatedFrom()
     {
         StopWebView();
@@ -108,6 +153,11 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         WebViewService.NavigationCompleted -= OnNavigationCompleted;
     }
 
+    /// <summary>
+    /// Xử lý sự kiện hoàn thành điều hướng của WebView.
+    /// </summary>
+    /// <param name="sender">Nguồn của sự kiện.</param>
+    /// <param name="webErrorStatus">Trạng thái lỗi của WebView.</param>
     private void OnNavigationCompleted(object? sender, CoreWebView2WebErrorStatus webErrorStatus)
     {
         IsLoading = false;
@@ -120,6 +170,9 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Lệnh thử lại điều hướng khi có lỗi.
+    /// </summary>
     [RelayCommand]
     private void OnRetry()
     {
@@ -127,6 +180,10 @@ public partial class WebViewViewModel : ObservableRecipient, INavigationAware
         IsLoading = true;
         WebViewService?.Reload();
     }
+
+    /// <summary>
+    /// Dừng WebView bằng cách điều hướng đến trang trống.
+    /// </summary>
     private void StopWebView()
     {
         // Navigate to a blank page to stop any media playback

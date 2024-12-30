@@ -11,6 +11,9 @@ using Gyminize_API.Services.PaymentServices;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Gyminize_API.Controllers;
+/// <summary>
+/// Controller xử lý các yêu cầu liên quan đến giỏ hàng và thanh toán.
+/// </summary>
 [Route("api/[controller]")]
 [ApiController]
 public class CartController : ControllerBase
@@ -18,14 +21,24 @@ public class CartController : ControllerBase
     private readonly IVnPayService _vpnPayService;
     private readonly EntityDatabaseContext _context;
     private Payment payment;
+
+    /// <summary>
+    /// Khởi tạo đối tượng CartController.
+    /// </summary>
+    /// <param name="vpnPayService">Dịch vụ thanh toán VnPay.</param>
+    /// <param name="context">Ngữ cảnh cơ sở dữ liệu.</param>
     public CartController(IVnPayService vpnPayService, EntityDatabaseContext context)
     {
         _vpnPayService = vpnPayService;
         _context = context;
-
         payment = new Payment();
-
     }
+
+    /// <summary>
+    /// Tạo và xử lý URL thanh toán VnPay cho đơn hàng.
+    /// </summary>
+    /// <param name="orderId">ID của đơn hàng.</param>
+    /// <returns>Trả về đối tượng Payment với trạng thái "Pending".</returns>
     [HttpPost("createPaymentVnpay/orderId/{orderId:int}")]
     public IActionResult CreateAndHandlePaymentUrl(int orderId)
     {
@@ -50,31 +63,17 @@ public class CartController : ControllerBase
         payment.payment_status = "Pending";
         myprocess.Start();
 
-
         return Ok(payment);
     }
 
+    /// <summary>
+    /// Xử lý callback sau khi thanh toán từ VnPay.
+    /// </summary>
+    /// <returns>Trả về giao diện HTML thông báo kết quả thanh toán.</returns>
     [HttpGet("paymentcallback")]
     public async Task<IActionResult> PaymentCallback()
     {
         var response = _vpnPayService.PaymentExcute(Request.Query);
-
-        // Kiểm tra nếu response là null hoặc mã phản hồi không phải là "00" (thất bại)
-        if (response == null || response.VnPayResponseCode != "00")
-        {
-            return Content(@"
-            <html>
-                <head>
-                    <meta charset='UTF-8'>
-                    <title>Thanh toán thất bại</title>
-                </head>
-                <body>
-                    <h2 style='color:red;'>Thanh toán thất bại!</h2>
-                </body>
-            </html>", "text/html; charset=utf-8");
-        }
-
-        // Chuyển đổi OrderId từ string sang int một cách an toàn
         if (!int.TryParse(response.OrderId, out int orderId))
         {
             return Content(@"
@@ -89,10 +88,25 @@ public class CartController : ControllerBase
             </html>", "text/html; charset=utf-8");
         }
 
-        // Tìm đơn hàng trong cơ sở dữ liệu theo orderId
         var order = _context.OrdersEntity
             .Where(x => x.orders_id == orderId)
             .FirstOrDefault();
+
+        if (response == null || response.VnPayResponseCode != "00")
+        {
+            order.status = "Not Payment";
+            _context.SaveChanges();
+            return Content(@"
+            <html>
+                <head>
+                    <meta charset='UTF-8'>
+                    <title>Thanh toán thất bại</title>
+                </head>
+                <body>
+                    <h2 style='color:red;'>Thanh toán thất bại!</h2>
+                </body>
+            </html>", "text/html; charset=utf-8");
+        }
 
         if (order == null)
         {
@@ -108,7 +122,6 @@ public class CartController : ControllerBase
             </html>", "text/html; charset=utf-8");
         }
 
-
         payment.orders_id = orderId;
         payment.payment_date = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
         payment.payment_method = "VnPay";
@@ -118,10 +131,8 @@ public class CartController : ControllerBase
 
         _context.PaymentEntity.Add(payment);
         _context.SaveChanges();
-        // Cập nhật trạng thái đơn hàng (thành công)
         order.status = "Completed";
         _context.SaveChanges();
-        // Trả về giao diện thành công với mã hóa UTF-8
         return Content($@"
         <html>
             <head>
@@ -140,8 +151,13 @@ public class CartController : ControllerBase
                 <p><strong>Số tiền:</strong> {payment.payment_amount.ToString("N2")} VND</p>
             </body>
         </html>", "text/html; charset=utf-8");
-
     }
+
+    /// <summary>
+    /// Kiểm tra trạng thái thanh toán của đơn hàng.
+    /// </summary>
+    /// <param name="orderId">ID của đơn hàng.</param>
+    /// <returns>Trả về trạng thái thanh toán của đơn hàng.</returns>
     [HttpGet("check-payment-status/{orderId}")]
     public IActionResult CheckPaymentStatus(int orderId)
     {

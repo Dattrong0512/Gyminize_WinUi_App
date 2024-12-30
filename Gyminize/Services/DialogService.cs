@@ -24,7 +24,11 @@ using Windows.UI.Text;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Windows.Storage;
 
+namespace Gyminize.Services;
 
+/// <summary>
+/// Lớp này chịu trách nhiệm hiển thị các hộp thoại dialog và cung cấp dịch vụ cho việc tương tác với người dùng.
+/// </summary>
 public class DialogService : IDialogService
 {
     /// <summary>
@@ -1031,13 +1035,13 @@ public class DialogService : IDialogService
             var popupHeight = border.ActualHeight;
 
             // Đặt vị trí của popup để hiển thị ở giữa màn hình
-            popup.HorizontalOffset = ((windowBounds.Width - popupWidth) / 2) - 80;
+            popup.HorizontalOffset = ((windowBounds.Width - popupWidth) / 2) - 140;
             popup.VerticalOffset = 20;
             popup.IsOpen = true; // Mở popup
         });
 
         // Đợi 2 giây rồi đóng popup
-        await Task.Delay(2000);
+        await Task.Delay(1000);
 
         // Đóng popup
         popup.IsOpen = false;
@@ -1065,6 +1069,11 @@ public class DialogService : IDialogService
         } // Optional: nếu có paymentAmount
     }
 
+    /// <summary>
+    /// Hiển thị hộp thoại xử lý thanh toán VNPAY cho đơn hàng.
+    /// </summary>
+    /// <param name="orderId">ID của đơn hàng cần thanh toán.</param>
+    /// <returns>Trả về trạng thái thanh toán: 1 nếu thành công, -1 nếu thất bại, 0 nếu hết thời gian chờ.</returns>
     public async Task<int> ShowVNPAYPaymentProcessDialogAsync(int orderId)
     {
         int status = 0;
@@ -1145,33 +1154,15 @@ public class DialogService : IDialogService
                     {
                         Debug.WriteLine("Trạng thái: Thành công.");
                         status = 1;
-
-                        var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
-                        if (dispatcherQueue != null)
+                        await App.MainWindow.DispatcherQueue.EnqueueAsync(() =>
                         {
-                            await dispatcherQueue.EnqueueAsync(() =>
-                            {
-                                progressRing.Visibility = Visibility.Collapsed;
-                                statusIcon.Glyph = "\uE930"; // Success icon
-                                statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Green);
-                                statusIcon.Visibility = Visibility.Visible;
-                                textStatus.Text = "Đơn hàng thanh toán thành công";
-                                dialog.CloseButtonText = "OK";
-                            });
-                        }
-                        else
-                        {
-                            await App.MainWindow.DispatcherQueue.EnqueueAsync(() =>
-                            {
-                                progressRing.Visibility = Visibility.Collapsed;
-                                statusIcon.Glyph = "\uE930"; // Success icon
-                                statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Green);
-                                statusIcon.Visibility = Visibility.Visible;
-                                textStatus.Text = "Đơn hàng thanh toán thành công";
-                                dialog.CloseButtonText = "OK";
-                            });
-                            Debug.WriteLine("Trạng thái: chỉnh thành công(main win).");
-                        }
+                            progressRing.Visibility = Visibility.Collapsed;
+                            statusIcon.Glyph = "\uE930"; // Success icon
+                            statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Green);
+                            statusIcon.Visibility = Visibility.Visible;
+                            textStatus.Text = "Đơn hàng thanh toán thành công";
+                            dialog.CloseButtonText = "OK";
+                        });
                         Debug.WriteLine("Trạng thái: chỉnh thành công.");
                         break;
                     }
@@ -1181,10 +1172,10 @@ public class DialogService : IDialogService
                         Debug.WriteLine("Trạng thái: Thất bại.");
                         status = -1;
 
-                        await DispatcherQueue.GetForCurrentThread().EnqueueAsync(() =>
+                        await App.MainWindow.DispatcherQueue.EnqueueAsync(() =>
                         {
                             progressRing.Visibility = Visibility.Collapsed;
-                            statusIcon.Glyph = "\uE8D7"; // Failure icon
+                            statusIcon.Glyph = "\uE711"; // Failure icon
                             statusIcon.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Red);
                             statusIcon.Visibility = Visibility.Visible;
                             textStatus.Text = "Đơn hàng thanh toán thất bại";
@@ -1202,7 +1193,7 @@ public class DialogService : IDialogService
                 {
                     Debug.WriteLine($"Lỗi khi gọi API: {ex.Message}");
 
-                    await DispatcherQueue.GetForCurrentThread().EnqueueAsync(() =>
+                    await App.MainWindow.DispatcherQueue.EnqueueAsync(() =>
                     {
                         progressRing.Visibility = Visibility.Collapsed;
                         statusIcon.Glyph = "\uE8C9"; // Error icon
@@ -1218,7 +1209,7 @@ public class DialogService : IDialogService
             if (elapsedTime >= MaxPollingTime)
             {
                 Debug.WriteLine("Đã hết thời gian chờ polling.");
-                await DispatcherQueue.GetForCurrentThread().EnqueueAsync(() =>
+                await App.MainWindow.DispatcherQueue.EnqueueAsync(() =>
                 {
                     progressRing.Visibility = Visibility.Collapsed;
                     statusIcon.Glyph = "\uE8C9"; // Timeout icon
@@ -1240,6 +1231,10 @@ public class DialogService : IDialogService
         return status;
     }
 
+    /// <summary>
+    /// Hiển thị hộp thoại với nội dung Markdown.
+    /// </summary>
+    /// <param name="markdownText">Nội dung Markdown cần hiển thị.</param>
     public async Task ShowMarkdownDialogAsync(string markdownText)
     {
         var dialog = new ContentDialog
@@ -1284,6 +1279,10 @@ public class DialogService : IDialogService
         });
     }
 
+    /// <summary>
+    /// Hiển thị hộp thoại với nội dung Markdown từ tệp.
+    /// </summary>
+    /// <param name="filePath">Đường dẫn đến tệp Markdown cần hiển thị.</param>
     public async Task ShowMarkdownDialogFromFileAsync(string filePath)
     {
         try

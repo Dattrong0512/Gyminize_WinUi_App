@@ -86,9 +86,11 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_dialog_service-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DialogService Class Reference</div></div>
 </div><!--header-->
@@ -100,6 +102,11 @@ Inheritance diagram for DialogService:</div>
   <img src="class_dialog_service.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dialog_service_1_1_api_response.html">ApiResponse</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1c4c5333a3ac09047c1fff40c730b23" id="r_ae1c4c5333a3ac09047c1fff40c730b23"><td class="memItemLeft" align="right" valign="top">async Task&lt;(string? selectedMeal, int Quantity)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1c4c5333a3ac09047c1fff40c730b23">ShowMealSelectionDialogAsync</a> ()</td></tr>
@@ -132,6 +139,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ac83faf1d628fa0742e4814159f5709" id="r_a9ac83faf1d628fa0742e4814159f5709"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac83faf1d628fa0742e4814159f5709">ShowSuccessMessageAsync</a> (string message)</td></tr>
 <tr class="memdesc:a9ac83faf1d628fa0742e4814159f5709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hiển thị thông báo thành công trong một cửa sổ pop-up ở giữa màn hình. Thông báo sẽ được hiển thị trong 2 giây và tự động đóng lại.  <br /></td></tr>
 <tr class="separator:a9ac83faf1d628fa0742e4814159f5709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a786844e74e62924711aea2f1967e2445" id="r_a786844e74e62924711aea2f1967e2445"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a786844e74e62924711aea2f1967e2445">ShowVNPAYPaymentProcessDialogAsync</a> (int orderId)</td></tr>
+<tr class="memdesc:a786844e74e62924711aea2f1967e2445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hiển thị hộp thoại xử lý thanh toán VNPAY cho đơn hàng.  <br /></td></tr>
+<tr class="separator:a786844e74e62924711aea2f1967e2445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cac8f6d6cdda6adaf38acdff5736375" id="r_a3cac8f6d6cdda6adaf38acdff5736375"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cac8f6d6cdda6adaf38acdff5736375">ShowMarkdownDialogAsync</a> (string markdownText)</td></tr>
+<tr class="memdesc:a3cac8f6d6cdda6adaf38acdff5736375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hiển thị hộp thoại với nội dung Markdown.  <br /></td></tr>
+<tr class="separator:a3cac8f6d6cdda6adaf38acdff5736375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89da188325f828ee7ba7a99ae02c1fc7" id="r_a89da188325f828ee7ba7a99ae02c1fc7"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89da188325f828ee7ba7a99ae02c1fc7">ShowMarkdownDialogFromFileAsync</a> (string filePath)</td></tr>
+<tr class="memdesc:a89da188325f828ee7ba7a99ae02c1fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hiển thị hộp thoại với nội dung Markdown từ tệp.  <br /></td></tr>
+<tr class="separator:a89da188325f828ee7ba7a99ae02c1fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -168,6 +184,12 @@ WebView2&#160;</td><td class="memItemRight" valign="bottom"><b>_exerciseVideoWeb
 <tr class="memitem:a4f36325473c363c6178987c05fc8828a" id="r_a4f36325473c363c6178987c05fc8828a"><td class="memItemLeft" align="right" valign="top"><a id="a4f36325473c363c6178987c05fc8828a" name="a4f36325473c363c6178987c05fc8828a"></a>
 ContentDialog&#160;</td><td class="memItemRight" valign="bottom"><b>_workoutDialog</b></td></tr>
 <tr class="separator:a4f36325473c363c6178987c05fc8828a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:aed84390877bb5f0a9fda1de5bffb3b0a" id="r_aed84390877bb5f0a9fda1de5bffb3b0a"><td class="memItemLeft" align="right" valign="top"><a id="aed84390877bb5f0a9fda1de5bffb3b0a" name="aed84390877bb5f0a9fda1de5bffb3b0a"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>MaxPollingTime</b> = 9000000</td></tr>
+<tr class="separator:aed84390877bb5f0a9fda1de5bffb3b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a250b6200c34af08b64ef75ae8fc94523" name="a250b6200c34af08b64ef75ae8fc94523"></a>
@@ -305,6 +327,72 @@ ContentDialog&#160;</td><td class="memItemRight" valign="bottom"><b>_workoutDial
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Trả về giá trị boolean, true nếu người dùng đã hoàn thành các bài tập, false nếu chưa.</dd></dl>
+
+</div>
+</div>
+<a id="a3cac8f6d6cdda6adaf38acdff5736375" name="a3cac8f6d6cdda6adaf38acdff5736375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cac8f6d6cdda6adaf38acdff5736375">&#9670;&#160;</a></span>ShowMarkdownDialogAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task DialogService.ShowMarkdownDialogAsync </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>markdownText</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hiển thị hộp thoại với nội dung Markdown. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">markdownText</td><td>Nội dung Markdown cần hiển thị.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a89da188325f828ee7ba7a99ae02c1fc7" name="a89da188325f828ee7ba7a99ae02c1fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89da188325f828ee7ba7a99ae02c1fc7">&#9670;&#160;</a></span>ShowMarkdownDialogFromFileAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task DialogService.ShowMarkdownDialogFromFileAsync </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hiển thị hộp thoại với nội dung Markdown từ tệp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>Đường dẫn đến tệp Markdown cần hiển thị.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -503,8 +591,42 @@ ContentDialog&#160;</td><td class="memItemRight" valign="bottom"><b>_workoutDial
 
 </div>
 </div>
+<a id="a786844e74e62924711aea2f1967e2445" name="a786844e74e62924711aea2f1967e2445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a786844e74e62924711aea2f1967e2445">&#9670;&#160;</a></span>ShowVNPAYPaymentProcessDialogAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; int &gt; DialogService.ShowVNPAYPaymentProcessDialogAsync </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>orderId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hiển thị hộp thoại xử lý thanh toán VNPAY cho đơn hàng. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">orderId</td><td>ID của đơn hàng cần thanh toán.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Trả về trạng thái thanh toán: 1 nếu thành công, -1 nếu thất bại, 0 nếu hết thời gian chờ.</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize/Services/<b>DialogService.cs</b></li>
+<li>J:/Study/WindowPrograming/Clone_23/Gyminize_WinUi_App/Gyminize/Services/<b>DialogService.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

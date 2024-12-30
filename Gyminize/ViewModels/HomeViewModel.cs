@@ -210,7 +210,7 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
     /// <param name="localSettings">Dịch vụ lưu trữ cài đặt cục bộ.</param>
     /// <param name="dialogService">Dịch vụ hiển thị hộp thoại.</param>
     /// <param name="apiServicesClient">Dịch vụ API.</param>
-    /// <param name="dateTimeProvider">Dịch vụ thời gian.</param>
+    /// <param name="dateTimeProvider">Dịch vụ lấy thời gian hiện tại.</param>
     public HomeViewModel(INavigationService navigationService, IWindowService windowService, ILocalSettingsService localSettings, IDialogService dialogService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider)
     {
         _dateTimeProvider = dateTimeProvider;
@@ -515,6 +515,9 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
+    /// <summary>
+    /// Điều hướng đến page Kế hoạch trong ứng dụng
+    /// </summary>
     private void NavigateToPlanPage()
     {
         var pageKey = typeof(PlanViewModel).FullName;
@@ -524,6 +527,9 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Điều hướng đến page Dinh dưỡng trong ứng dụng
+    /// </summary>
     private void NavigateToNutritionPage()
     {
         var pageKey = typeof(NutritionsViewModel).FullName;
@@ -533,6 +539,9 @@ public partial class HomeViewModel : ObservableObject, INavigationAware
         }
     }
 
+    /// <summary>
+    /// Phương thức được gọi khi điều hướng đi từ trang.
+    /// </summary>
     public void OnNavigatedFrom()
     {
 

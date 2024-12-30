@@ -8,5 +8,6 @@ var searchData=
   ['gyminize_3a_3aviewmodels_5',['ViewModels',['../namespace_gyminize_1_1_view_models.html',1,'Gyminize']]],
   ['gyminize_5fapi_6',['Gyminize_API',['../namespace_gyminize___a_p_i.html',1,'']]],
   ['gyminize_5fapi_3a_3acontrollers_7',['Controllers',['../namespace_gyminize___a_p_i_1_1_controllers.html',1,'Gyminize_API']]],
-  ['gyminize_5fapi_3a_3adata_8',['Data',['../namespace_gyminize___a_p_i_1_1_data.html',1,'Gyminize_API']]]
+  ['gyminize_5fapi_3a_3adata_8',['Data',['../namespace_gyminize___a_p_i_1_1_data.html',1,'Gyminize_API']]],
+  ['gyminize_5fapi_3a_3adata_3a_3arepositories_9',['Repositories',['../namespace_gyminize___a_p_i_1_1_data_1_1_repositories.html',1,'Gyminize_API::Data']]]
 ];

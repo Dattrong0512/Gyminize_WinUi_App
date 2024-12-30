@@ -27,7 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Gyminize
    </div>
-   <div id="projectbrief">Document cho project Gyminize</div>
+   <div id="projectbrief">Document cho các class chính của project</div>
   </td>
  </tr>
  </tbody>
@@ -102,17 +102,20 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59a3254303be99f530f96d6db1fe5af3" id="r_a59a3254303be99f530f96d6db1fe5af3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59a3254303be99f530f96d6db1fe5af3">FoodRepository</a> (<a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a> context)</td></tr>
+<tr class="memitem:a59a3254303be99f530f96d6db1fe5af3" id="r_a59a3254303be99f530f96d6db1fe5af3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59a3254303be99f530f96d6db1fe5af3">FoodRepository</a> (EntityDatabaseContext context)</td></tr>
 <tr class="memdesc:a59a3254303be99f530f96d6db1fe5af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo một instance mới của lớp <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_repositories_1_1_food_repository.html" title="Lớp Repository để quản lý các thao tác dữ liệu thực phẩm trong cơ sở dữ liệu.">FoodRepository</a> với context cơ sở dữ liệu.  <br /></td></tr>
 <tr class="separator:a59a3254303be99f530f96d6db1fe5af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58e5b4b5d36fbe18ed2adc893bb183bb" id="r_a58e5b4b5d36fbe18ed2adc893bb183bb"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_food.html">Food</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58e5b4b5d36fbe18ed2adc893bb183bb">GetAllFood</a> ()</td></tr>
+<tr class="memitem:a58e5b4b5d36fbe18ed2adc893bb183bb" id="r_a58e5b4b5d36fbe18ed2adc893bb183bb"><td class="memItemLeft" align="right" valign="top">List&lt; Food &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58e5b4b5d36fbe18ed2adc893bb183bb">GetAllFood</a> ()</td></tr>
 <tr class="memdesc:a58e5b4b5d36fbe18ed2adc893bb183bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy tất cả các thực phẩm từ cơ sở dữ liệu.  <br /></td></tr>
 <tr class="separator:a58e5b4b5d36fbe18ed2adc893bb183bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6b2afe7b83ed55877acd9dbb924894c" id="r_ac6b2afe7b83ed55877acd9dbb924894c"><td class="memItemLeft" align="right" valign="top"><a id="ac6b2afe7b83ed55877acd9dbb924894c" name="ac6b2afe7b83ed55877acd9dbb924894c"></a>
+List&lt; Food &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetFoodByName</b> (string food_name)</td></tr>
+<tr class="separator:ac6b2afe7b83ed55877acd9dbb924894c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:abbd2bdddc273058f401d59c16478ae79" id="r_abbd2bdddc273058f401d59c16478ae79"><td class="memItemLeft" align="right" valign="top"><a id="abbd2bdddc273058f401d59c16478ae79" name="abbd2bdddc273058f401d59c16478ae79"></a>
-readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_context</b></td></tr>
+readonly EntityDatabaseContext&#160;</td><td class="memItemRight" valign="bottom"><b>_context</b></td></tr>
 <tr class="separator:abbd2bdddc273058f401d59c16478ae79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -130,7 +133,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database
         <tr>
           <td class="memname">Gyminize_API.Data.Repositories.FoodRepository.FoodRepository </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database_context.html">EntityDatabaseContext</a></td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
+          <td class="paramtype">EntityDatabaseContext</td>          <td class="paramname"><span class="paramname"><em>context</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -162,7 +165,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt; <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_model_1_1_food.html">Food</a> &gt; Gyminize_API.Data.Repositories.FoodRepository.GetAllFood </td>
+          <td class="memname">List&lt; Food &gt; Gyminize_API.Data.Repositories.FoodRepository.GetAllFood </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -181,7 +184,7 @@ readonly <a class="el" href="class_gyminize___a_p_i_1_1_data_1_1_entity_database
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>J:/Study/WindowPrograming/Clone_17/Gyminize_WinUi_App/Gyminize_API/Data/Repositories/<b>FoodRepository.cs</b></li>
+<li>J:/Study/WindowPrograming/Clone_23/Gyminize_WinUi_App/Gyminize_API/Data/Repositories/<b>FoodRepository.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

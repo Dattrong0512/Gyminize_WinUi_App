@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using Gyminize.Contracts.Services;
 using Gyminize.Core.Services;
 using Gyminize.Services;
+
+/// <summary>
+/// Lớp này chịu trách nhiệm cung cấp dịch vụ liên quan API.
+/// </summary>
 public class ApiServicesClient : IApiServicesClient
 {
     /// <summary>

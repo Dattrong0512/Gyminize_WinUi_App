@@ -5,6 +5,9 @@ using Microsoft.UI.Xaml;
 
 namespace Gyminize.Services;
 
+/// <summary>
+/// Lớp này chịu trách nhiệm chọn chủ đề cho ứng dụng.
+/// </summary>
 public class ThemeSelectorService : IThemeSelectorService
 {
     private const string SettingsKey = "AppBackgroundRequestedTheme";

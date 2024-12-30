@@ -16,6 +16,9 @@ using WinUIEx;
 
 namespace Gyminize.ViewModels;
 
+/// <summary>
+/// ViewModel cho trang nhật, hỗ trợ tương tác với UI, quản lý các hành động và xem trạng thái luyện tập dinh dưỡng của các ngày trước đó.
+/// </summary>
 public partial class DiaryViewModel : ObservableRecipient
 {
     // Khởi tạo DiaryViewModel.
@@ -118,6 +121,13 @@ public partial class DiaryViewModel : ObservableRecipient
     public ObservableCollection<FoodDetail> DinnerItems { get; set; } = new ObservableCollection<FoodDetail>();
     public ObservableCollection<FoodDetail> SnackItems { get; set; } = new ObservableCollection<FoodDetail>();
 
+    /// <summary>
+    /// Khởi tạo một thể hiện mới của lớp <see cref="DiaryViewModel"/>.
+    /// </summary>
+    /// <param name="localSettingsService">Dịch vụ cài đặt cục bộ.</param>
+    /// <param name="apiServicesClient">Dịch vụ API.</param>
+    /// <param name="dateTimeProvider">Dịch vụ cung cấp thời gian.</param>
+    /// <param name="dialogService">Dịch vụ hộp thoại.</param>
     public DiaryViewModel(ILocalSettingsService localSettingsService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider, IDialogService dialogService)
     {
         _localSettingsService = localSettingsService;
@@ -130,6 +140,9 @@ public partial class DiaryViewModel : ObservableRecipient
         _dialogService = dialogService;
     }
 
+    /// <summary>
+    /// Khởi tạo dữ liệu không đồng bộ.
+    /// </summary>
     public async void InitializeAsync()
     {
         await GetCustomerId();
@@ -137,6 +150,11 @@ public partial class DiaryViewModel : ObservableRecipient
         SelectedDayText = _dateTimeProvider.Now.ToString("dd/MM/yyyy");
         await LoadFullData(daySelected);
     }
+
+    /// <summary>
+    /// Tải dữ liệu đầy đủ cho ngày được chọn.
+    /// </summary>
+    /// <param name="daySelected">Ngày được chọn.</param>
     public async Task LoadFullData(DateTime daySelected)
     {
         try
@@ -151,12 +169,20 @@ public partial class DiaryViewModel : ObservableRecipient
 
         LoadWorkoudetails(daySelected);
     }
+
+    /// <summary>
+    /// Lấy ID khách hàng.
+    /// </summary>
     public async Task GetCustomerId()
     {
         var customerId = await _localSettingsService.ReadSettingAsync<string>("customer_id");
         _customer_id = customerId ?? string.Empty;
     }
 
+    /// <summary>
+    /// Tải dữ liệu nhật ký hàng ngày.
+    /// </summary>
+    /// <param name="daySelected">Ngày được chọn.</param>
     public void LoadDailyDiary(DateTime daySelected)
     {
         var CurrentDailydiary = _apiServicesClient.Get<Dailydiary>($"api/Dailydiary/get/daily_customer/{_customer_id}/day/{daySelected:yyyy-MM-dd HH:mm:ss}");
@@ -207,8 +233,11 @@ public partial class DiaryViewModel : ObservableRecipient
         }
     }
 
-    
 
+    /// <summary>
+    /// Tải chi tiết kế hoạch tập luyện.
+    /// </summary>
+    /// <param name="daySelected">Ngày được chọn.</param>
     public void LoadWorkoudetails(DateTime daySelected)
     {
         var planDetail = _apiServicesClient.Get<Plandetail>($"api/Plandetail/get/plandetail/{_customer_id}");
@@ -236,12 +265,20 @@ public partial class DiaryViewModel : ObservableRecipient
         }
     }
 
+    /// <summary>
+    /// Phương thức được gọi khi ngày được chọn thay đổi.
+    /// </summary>
+    /// <param name="daySelected">Ngày được chọn.</param>
     public void SelectedDatesChanged(DateTime daySelected)
     {
         SelectedDayText = daySelected.ToString("dd/MM/yyyy");
         LoadFullData(daySelected);
     }
 
+    /// <summary>
+    /// Trang trí mục ngày trong CalendarView.
+    /// </summary>
+    /// <param name="dayItem">Mục ngày trong CalendarView.</param>
     public void DecorateDayItem(CalendarViewDayItem dayItem)
     {
         if (dayItem == null) return;
@@ -259,15 +296,15 @@ public partial class DiaryViewModel : ObservableRecipient
             switch (_exerciseStatus)
             {
                 case 1: // Ngày nghỉ
-                    AddIconToDay(dayItem, Windows.UI.Color.FromArgb(255, 173, 216, 230)); // LightBlue
+                    AddColorToDay(dayItem, Windows.UI.Color.FromArgb(255, 173, 216, 230)); // LightBlue
                     break;
 
                 case 2: // Đã hoàn thành
-                    AddIconToDay(dayItem, Windows.UI.Color.FromArgb(255, 144, 238, 144)); // LightGreen
+                    AddColorToDay(dayItem, Windows.UI.Color.FromArgb(255, 144, 238, 144)); // LightGreen
                     break;
 
                 case 3: // Chưa hoàn thành
-                    AddIconToDay(dayItem, Windows.UI.Color.FromArgb(255, 240, 128, 128)); // LightCoral
+                    AddColorToDay(dayItem, Windows.UI.Color.FromArgb(255, 240, 128, 128)); // LightCoral
                     break;
 
                 default: // Không trạng thái
@@ -278,24 +315,14 @@ public partial class DiaryViewModel : ObservableRecipient
         LoadWorkoudetails(daySelected);
     }
 
-    private void AddIconToDay(CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)
+    /// <summary>
+    /// Thêm màu cho các ngày tùy theo trạng thái.
+    /// </summary>
+    /// <param name="dayItem">Ngày được trang trí.</param>
+    /// <param name="backgroundColor">Màu tương ứng.</param>
+    private void AddColorToDay(CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)
     {
         if(dayItem.Date > DateTime.Now.Date) { return; }
         dayItem.Background = new SolidColorBrush(backgroundColor);
-
-        //var icon = new SymbolIcon(symbol)
-        //{
-        //    Width = 12,
-        //    Height = 12
-        //};
-
-        //var container = VisualTreeHelper.GetChild(dayItem, 0) as Grid;
-        //if (container != null)
-        //{
-        //    if (!container.Children.OfType<SymbolIcon>().Any(existingIcon => existingIcon.Symbol == symbol))
-        //    {
-        //        container.Children.Add(icon);
-        //    }
-        //}
     }
 }

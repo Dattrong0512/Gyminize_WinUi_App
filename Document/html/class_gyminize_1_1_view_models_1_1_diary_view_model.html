@@ -100,6 +100,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Gyminize.ViewModels.DiaryViewModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel cho trang nhật, hỗ trợ tương tác với UI, quản lý các hành động và xem trạng thái luyện tập dinh dưỡng của các ngày trước đó.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Gyminize.ViewModels.DiaryViewModel:</div>
 <div class="dyncontent">
@@ -114,29 +117,31 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad1bbcc1508e24ee74bb92912c4830e35" id="r_ad1bbcc1508e24ee74bb92912c4830e35"><td class="memItemLeft" align="right" valign="top"><a id="ad1bbcc1508e24ee74bb92912c4830e35" name="ad1bbcc1508e24ee74bb92912c4830e35"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DiaryViewModel</b> (ILocalSettingsService localSettingsService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider, IDialogService dialogService)</td></tr>
+<tr class="memitem:ad1bbcc1508e24ee74bb92912c4830e35" id="r_ad1bbcc1508e24ee74bb92912c4830e35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1bbcc1508e24ee74bb92912c4830e35">DiaryViewModel</a> (ILocalSettingsService localSettingsService, IApiServicesClient apiServicesClient, IDateTimeProvider dateTimeProvider, IDialogService dialogService)</td></tr>
+<tr class="memdesc:ad1bbcc1508e24ee74bb92912c4830e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo một thể hiện mới của lớp <a class="el" href="class_gyminize_1_1_view_models_1_1_diary_view_model.html" title="ViewModel cho trang nhật, hỗ trợ tương tác với UI, quản lý các hành động và xem trạng thái luyện tập ...">DiaryViewModel</a>.  <br /></td></tr>
 <tr class="separator:ad1bbcc1508e24ee74bb92912c4830e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5677c73619c53a01f28586bb2d0af848" id="r_a5677c73619c53a01f28586bb2d0af848"><td class="memItemLeft" align="right" valign="top"><a id="a5677c73619c53a01f28586bb2d0af848" name="a5677c73619c53a01f28586bb2d0af848"></a>
 async void&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeAsync</b> ()</td></tr>
+<tr class="memdesc:a5677c73619c53a01f28586bb2d0af848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Khởi tạo dữ liệu không đồng bộ. <br /></td></tr>
 <tr class="separator:a5677c73619c53a01f28586bb2d0af848"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae90bdc96c15ca45f8b9501297fa2c226" id="r_ae90bdc96c15ca45f8b9501297fa2c226"><td class="memItemLeft" align="right" valign="top"><a id="ae90bdc96c15ca45f8b9501297fa2c226" name="ae90bdc96c15ca45f8b9501297fa2c226"></a>
-async Task&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFullData</b> (DateTime daySelected)</td></tr>
+<tr class="memitem:ae90bdc96c15ca45f8b9501297fa2c226" id="r_ae90bdc96c15ca45f8b9501297fa2c226"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae90bdc96c15ca45f8b9501297fa2c226">LoadFullData</a> (DateTime daySelected)</td></tr>
+<tr class="memdesc:ae90bdc96c15ca45f8b9501297fa2c226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải dữ liệu đầy đủ cho ngày được chọn.  <br /></td></tr>
 <tr class="separator:ae90bdc96c15ca45f8b9501297fa2c226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1eb71645ad05e1b88fbea7a118f30e9" id="r_ad1eb71645ad05e1b88fbea7a118f30e9"><td class="memItemLeft" align="right" valign="top"><a id="ad1eb71645ad05e1b88fbea7a118f30e9" name="ad1eb71645ad05e1b88fbea7a118f30e9"></a>
 async Task&#160;</td><td class="memItemRight" valign="bottom"><b>GetCustomerId</b> ()</td></tr>
+<tr class="memdesc:ad1eb71645ad05e1b88fbea7a118f30e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lấy ID khách hàng. <br /></td></tr>
 <tr class="separator:ad1eb71645ad05e1b88fbea7a118f30e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2667dc1114578299fcfc3b6486c788a6" id="r_a2667dc1114578299fcfc3b6486c788a6"><td class="memItemLeft" align="right" valign="top"><a id="a2667dc1114578299fcfc3b6486c788a6" name="a2667dc1114578299fcfc3b6486c788a6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadDailyDiary</b> (DateTime daySelected)</td></tr>
+<tr class="memitem:a2667dc1114578299fcfc3b6486c788a6" id="r_a2667dc1114578299fcfc3b6486c788a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2667dc1114578299fcfc3b6486c788a6">LoadDailyDiary</a> (DateTime daySelected)</td></tr>
+<tr class="memdesc:a2667dc1114578299fcfc3b6486c788a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải dữ liệu nhật ký hàng ngày.  <br /></td></tr>
 <tr class="separator:a2667dc1114578299fcfc3b6486c788a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28c529b3ca03ff96321c8212f3de8a47" id="r_a28c529b3ca03ff96321c8212f3de8a47"><td class="memItemLeft" align="right" valign="top"><a id="a28c529b3ca03ff96321c8212f3de8a47" name="a28c529b3ca03ff96321c8212f3de8a47"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadWorkoudetails</b> (DateTime daySelected)</td></tr>
+<tr class="memitem:a28c529b3ca03ff96321c8212f3de8a47" id="r_a28c529b3ca03ff96321c8212f3de8a47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28c529b3ca03ff96321c8212f3de8a47">LoadWorkoudetails</a> (DateTime daySelected)</td></tr>
+<tr class="memdesc:a28c529b3ca03ff96321c8212f3de8a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tải chi tiết kế hoạch tập luyện.  <br /></td></tr>
 <tr class="separator:a28c529b3ca03ff96321c8212f3de8a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff18e22eead0d086443f0d13028dea87" id="r_aff18e22eead0d086443f0d13028dea87"><td class="memItemLeft" align="right" valign="top"><a id="aff18e22eead0d086443f0d13028dea87" name="aff18e22eead0d086443f0d13028dea87"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SelectedDatesChanged</b> (DateTime daySelected)</td></tr>
+<tr class="memitem:aff18e22eead0d086443f0d13028dea87" id="r_aff18e22eead0d086443f0d13028dea87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff18e22eead0d086443f0d13028dea87">SelectedDatesChanged</a> (DateTime daySelected)</td></tr>
+<tr class="memdesc:aff18e22eead0d086443f0d13028dea87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phương thức được gọi khi ngày được chọn thay đổi.  <br /></td></tr>
 <tr class="separator:aff18e22eead0d086443f0d13028dea87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40862c6cacbfb8d51b33f36197cb7db2" id="r_a40862c6cacbfb8d51b33f36197cb7db2"><td class="memItemLeft" align="right" valign="top"><a id="a40862c6cacbfb8d51b33f36197cb7db2" name="a40862c6cacbfb8d51b33f36197cb7db2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DecorateDayItem</b> (CalendarViewDayItem dayItem)</td></tr>
+<tr class="memitem:a40862c6cacbfb8d51b33f36197cb7db2" id="r_a40862c6cacbfb8d51b33f36197cb7db2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40862c6cacbfb8d51b33f36197cb7db2">DecorateDayItem</a> (CalendarViewDayItem dayItem)</td></tr>
+<tr class="memdesc:a40862c6cacbfb8d51b33f36197cb7db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trang trí mục ngày trong CalendarView.  <br /></td></tr>
 <tr class="separator:a40862c6cacbfb8d51b33f36197cb7db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -201,9 +206,9 @@ ObservableCollection&lt; FoodDetail &gt;&#160;</td><td class="memItemRight" vali
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aea350104824e8dd751a28da44388e7f3" id="r_aea350104824e8dd751a28da44388e7f3"><td class="memItemLeft" align="right" valign="top"><a id="aea350104824e8dd751a28da44388e7f3" name="aea350104824e8dd751a28da44388e7f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddIconToDay</b> (CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)</td></tr>
-<tr class="separator:aea350104824e8dd751a28da44388e7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba59005c2d73a5f303db11c4bb059344" id="r_aba59005c2d73a5f303db11c4bb059344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba59005c2d73a5f303db11c4bb059344">AddColorToDay</a> (CalendarViewDayItem dayItem, Windows.UI.Color backgroundColor)</td></tr>
+<tr class="memdesc:aba59005c2d73a5f303db11c4bb059344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thêm màu cho các ngày tùy theo trạng thái.  <br /></td></tr>
+<tr class="separator:aba59005c2d73a5f303db11c4bb059344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -253,8 +258,265 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isSnackEmpty</b></td
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isDinnerEmpty</b></td></tr>
 <tr class="separator:a53894edccc31736402ef4533e1ccc4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ViewModel cho trang nhật, hỗ trợ tương tác với UI, quản lý các hành động và xem trạng thái luyện tập dinh dưỡng của các ngày trước đó. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad1bbcc1508e24ee74bb92912c4830e35" name="ad1bbcc1508e24ee74bb92912c4830e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1bbcc1508e24ee74bb92912c4830e35">&#9670;&#160;</a></span>DiaryViewModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Gyminize.ViewModels.DiaryViewModel.DiaryViewModel </td>
+          <td>(</td>
+          <td class="paramtype">ILocalSettingsService</td>          <td class="paramname"><span class="paramname"><em>localSettingsService</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IApiServicesClient</td>          <td class="paramname"><span class="paramname"><em>apiServicesClient</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDateTimeProvider</td>          <td class="paramname"><span class="paramname"><em>dateTimeProvider</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDialogService</td>          <td class="paramname"><span class="paramname"><em>dialogService</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Khởi tạo một thể hiện mới của lớp <a class="el" href="class_gyminize_1_1_view_models_1_1_diary_view_model.html" title="ViewModel cho trang nhật, hỗ trợ tương tác với UI, quản lý các hành động và xem trạng thái luyện tập ...">DiaryViewModel</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">localSettingsService</td><td>Dịch vụ cài đặt cục bộ.</td></tr>
+    <tr><td class="paramname">apiServicesClient</td><td>Dịch vụ API.</td></tr>
+    <tr><td class="paramname">dateTimeProvider</td><td>Dịch vụ cung cấp thời gian.</td></tr>
+    <tr><td class="paramname">dialogService</td><td>Dịch vụ hộp thoại.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aba59005c2d73a5f303db11c4bb059344" name="aba59005c2d73a5f303db11c4bb059344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba59005c2d73a5f303db11c4bb059344">&#9670;&#160;</a></span>AddColorToDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.DiaryViewModel.AddColorToDay </td>
+          <td>(</td>
+          <td class="paramtype">CalendarViewDayItem</td>          <td class="paramname"><span class="paramname"><em>dayItem</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Windows.UI.Color</td>          <td class="paramname"><span class="paramname"><em>backgroundColor</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thêm màu cho các ngày tùy theo trạng thái. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dayItem</td><td>Ngày được trang trí.</td></tr>
+    <tr><td class="paramname">backgroundColor</td><td>Màu tương ứng.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a40862c6cacbfb8d51b33f36197cb7db2" name="a40862c6cacbfb8d51b33f36197cb7db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40862c6cacbfb8d51b33f36197cb7db2">&#9670;&#160;</a></span>DecorateDayItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.DiaryViewModel.DecorateDayItem </td>
+          <td>(</td>
+          <td class="paramtype">CalendarViewDayItem</td>          <td class="paramname"><span class="paramname"><em>dayItem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trang trí mục ngày trong CalendarView. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dayItem</td><td>Mục ngày trong CalendarView.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2667dc1114578299fcfc3b6486c788a6" name="a2667dc1114578299fcfc3b6486c788a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2667dc1114578299fcfc3b6486c788a6">&#9670;&#160;</a></span>LoadDailyDiary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.DiaryViewModel.LoadDailyDiary </td>
+          <td>(</td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>daySelected</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tải dữ liệu nhật ký hàng ngày. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">daySelected</td><td>Ngày được chọn.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae90bdc96c15ca45f8b9501297fa2c226" name="ae90bdc96c15ca45f8b9501297fa2c226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae90bdc96c15ca45f8b9501297fa2c226">&#9670;&#160;</a></span>LoadFullData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task Gyminize.ViewModels.DiaryViewModel.LoadFullData </td>
+          <td>(</td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>daySelected</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tải dữ liệu đầy đủ cho ngày được chọn. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">daySelected</td><td>Ngày được chọn.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a28c529b3ca03ff96321c8212f3de8a47" name="a28c529b3ca03ff96321c8212f3de8a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c529b3ca03ff96321c8212f3de8a47">&#9670;&#160;</a></span>LoadWorkoudetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.DiaryViewModel.LoadWorkoudetails </td>
+          <td>(</td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>daySelected</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tải chi tiết kế hoạch tập luyện. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">daySelected</td><td>Ngày được chọn.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aff18e22eead0d086443f0d13028dea87" name="aff18e22eead0d086443f0d13028dea87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff18e22eead0d086443f0d13028dea87">&#9670;&#160;</a></span>SelectedDatesChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Gyminize.ViewModels.DiaryViewModel.SelectedDatesChanged </td>
+          <td>(</td>
+          <td class="paramtype">DateTime</td>          <td class="paramname"><span class="paramname"><em>daySelected</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Phương thức được gọi khi ngày được chọn thay đổi. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">daySelected</td><td>Ngày được chọn.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>J:/Study/WindowPrograming/Clone_20/Gyminize_WinUi_App/Gyminize/ViewModels/<b>DiaryViewModel.cs</b></li>
+<li>J:/Study/WindowPrograming/Clone_23/Gyminize_WinUi_App/Gyminize/ViewModels/<b>DiaryViewModel.cs</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

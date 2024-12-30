@@ -299,7 +299,7 @@ public partial class ShopViewModel : ObservableRecipient
                 total_price = 0,
                 address = "",
                 phone_number = "",
-                status = "",
+                status = "Not Payment",
                 Orderdetail = new List<Orderdetail>()
             };
             var result = _apiServicesClient.Post<Orders>("api/Order/add", order);
@@ -379,7 +379,7 @@ public partial class ShopViewModel : ObservableRecipient
         try
         {
             var orderlist = _apiServicesClient.Get<List<Orders>>($"api/Order/get/customerId/All/{CustomerId}");
-            var filteredOrder = orderlist.FirstOrDefault(order => string.IsNullOrEmpty(order.status));
+            var filteredOrder = orderlist.FirstOrDefault(order => order.status.Equals("Pending", StringComparison.OrdinalIgnoreCase) || order.status.Equals("Not Payment", StringComparison.OrdinalIgnoreCase));
             if (filteredOrder != null)
             {
                 OrderDetailsItems.Clear();
